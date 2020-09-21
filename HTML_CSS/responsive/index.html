@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* 550px */
+    .container>img {
+
+        width: 25%;
+    }
+
+    /* break points */
+
+
+
+
+
+    /* tablet */
+    @media only screen and (max-width: 900px) {
+        .container>img {
+
+            width: 33.333%;
+        }
+    }
+
+    /* pablet */
+    @media only screen and (max-width: 600px) {
+        .container>img {
+
+            width: 50%;
+        }
+    }
+
+    /* smart phone */
+    @media only screen and (max-width: 480px) {
+        .container>img {
+
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <img src="https://previews.123rf.com/images/allazotova/allazotova1101/allazotova110100053/8708385-blue-flower.jpg"
+            alt="">
+        <img src="https://previews.123rf.com/images/allazotova/allazotova1101/allazotova110100053/8708385-blue-flower.jpg"
+            alt="">
+        <img src="https://image.shutterstock.com/image-vector/colorful-flowers-260nw-62989624.jpg" alt="">
+        <img src="https://previews.123rf.com/images/allazotova/allazotova1101/allazotova110100053/8708385-blue-flower.jpg"
+            alt="">
+    </div>
+</body>
+
+</html>
