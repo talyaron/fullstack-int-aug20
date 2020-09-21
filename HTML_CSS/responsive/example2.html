@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    article {
+        width: 31%;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        border-radius: 1vw;
+        
+    }
+
+    article>img {
+        width: 100%;
+        border-radius: 1vw 1vw 0px 0px;
+    }
+
+    .textWrapper{
+        padding: 20px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        article {
+
+            width: 45%;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        article {
+
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <article>
+            <img src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="">
+            <div class="textWrapper">
+                <h1>Some title 1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reprehenderit, deleniti distinctio
+                    nihil, labore porro rem eveniet voluptas temporibus, similique voluptatibus culpa. Assumenda sed
+                    quod
+                    accusantium atque nulla quidem beatae.</p>
+            </div>
+
+        </article>
+        <article>
+            <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
+                alt="">
+            <div class="textWrapper">
+                <h1>Some title 2</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum iusto cumque reiciendis maxime
+                    corporis eaque provident modi officia libero, saepe fuga velit rem, odio, possimus hic! Accusamus
+                    neque
+                    cum aspernatur?</p>
+            </div>
+        </article>
+        <article>
+            <img src="https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0d3f33fb6aa6e0154b7713a00454c83d"
+                alt="">
+            <div class="textWrapper">
+                <h1>Some title 3</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, odio. Accusamus enim possimus,
+                    excepturi
+                    blanditiis similique beatae repellendus, saepe veniam, doloribus officiis officia eveniet omnis amet
+                    qui
+                    debitis nulla mollitia.</p>
+            </div>
+        </article>
+    </div>
+</body>
+
+</html>
