@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    nav{
+
+    }
+
+    nav__item{
+
+    }
+
+    .card{
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.445);
+        border-radius: 5px;
+        max-width: 300px;
+        padding: 20px;
+    }
+
+    .card__main{
+        display: grid;
+        grid-template-columns: 30px auto 30px;
+        column-gap: 10px;
+    }
+    .card__text{
+
+    }
+
+    .card__like{
+        background-color: lightblue;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card__like--unlike:active{
+        background-color: lightcoral;
+    }
+
+    .card__like--like:active{
+        background-color: green;
+    }
+
+    /* .card__unlike{
+        background-color: lightblue;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: lightcoral;
+    }
+
+    .card__like{
+        background-color: lightblue;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        background-color: green;
+    } */
+</style>
+<body>
+    <div class="card">
+        <div class="card__main">
+            <div class="card__like card__like--unlike">-</div>
+            <div class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, earum. Alias quibusdam dolore quas aperiam illum doloribus quidem. Earum odio minima neque soluta quia sit magni est fuga delectus officia.</div>
+            <div class="card__like card__like--like">+</div>
+        </div>
+       
+        
+    </div>
+</body>
+</html>

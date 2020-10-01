@@ -1,0 +1,23 @@
+:root{
+    --cardColor: rgb(158, 165, 255);
+    --shadowShort:1px 1px 3px rgba(0, 0, 0, 0.447);
+    --cardRadius: 40px;
+    --backgroundImage: url('https://www.aviv-flower.co.il/images/2019/03/11/home-phlox.jpg');
+    
+}
+
+.card{
+    background-image:var(--backgroundImage); 
+    border-left:var(--cardRadius) solid black;
+    box-shadow: var(--shadowShort);
+    border-radius: var(--cardRadius);
+    max-width: 300px;
+    /* background-color: var(--cardColor);
+} */
+
+.cardTypeTwo{
+    box-shadow: var(--shadowShort);
+    border-radius: var(--cardRadius);
+    max-width: 400px;
+    background-color: var(--cardColor);
+}
