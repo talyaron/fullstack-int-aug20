@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+  font-family: "Commissioner", sans-serif;
+}
+form {
+  margin-top: 20px;
+}
+
+div {
+  margin: 10px 0 10px 0;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: solid 1px;
+  padding: 10px;
+}
+
+input[type="email"]:hover {
+  background-color: violet;
+}
+
+input[type="date"] {
+  border-color: purple;
+  border-style: dotted;
+}
