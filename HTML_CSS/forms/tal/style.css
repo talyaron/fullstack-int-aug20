@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body{
     font-family: 'Nunito', sans-serif;
 
@@ -38,4 +39,8 @@ button{
 }
 button:hover, button:active{
     background-color: rgb(61, 61, 253);
+=======
+form {
+    display: flex;
+>>>>>>> Stashed changes
 }
