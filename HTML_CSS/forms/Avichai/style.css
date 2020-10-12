@@ -1,0 +1,65 @@
+body{
+    font-weight: bold;
+}
+.formus{
+    padding: 20px;
+    box-shadow: 5px 5px 15px black;
+    width: 50%;
+   margin: auto;
+   margin-top: 100px;
+   top: 3rem;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 16px;
+   background-color: rgb(137, 199, 219);
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: auto;
+}
+#age{
+    margin-top: 5px;
+    width: 10rem;
+}
+input[type="color"]{
+    width: 20px;
+    height: 20px;
+}
+input[type="text"]{
+    border: none;
+    border-bottom: 1px solid gray;
+}
+input[type="text"]:focus{
+    outline: 0;
+    background-color: moccasin;
+}
+input[type="number"]{
+    border: none;
+    border-bottom: 1px solid gray;
+}
+.Gender{
+    margin-top: 5px;
+}
+.eye{
+    margin-top: 5px;
+}
+button{
+    border-radius: 6px;
+    background-color: blue;
+    color:white;
+    padding: 10px 10px;
+    width: fit-content;
+    border:none;
+    margin-top: 10px;
+    margin-left: 10px;
+    display:block;
+}
+button:hover, button:active{
+    background-color: rgb(61, 61, 253);
+    outline: none;
+}
+button:focus{
+    outline: none;
+    background-color: rgb(49, 49, 105);
+}
