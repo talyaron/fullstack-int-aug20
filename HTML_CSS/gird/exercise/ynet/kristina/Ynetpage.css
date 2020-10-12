@@ -1,0 +1,232 @@
+:root {
+    --menucolor: rgb(99, 118, 189);
+    --bordercolor: #0c0c6b;
+}
+
+body {
+    margin-left: 7%;
+    margin-right: 7%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    direction: rtl;
+    position: static;
+}
+
+.navibar {
+    direction: rtl;
+    position: relative;
+    top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1;
+    column-gap: 1px;
+    row-gap: 1px;
+}
+
+.menu-opstions {
+    border: var(--menucolor) solid 1px;
+    border-radius: 17px;
+    font-size: 15px;
+    max-width: 50px;
+    max-height: 20px;
+    background-color: var(--menucolor);
+    color: white;
+    transform: rotate(-90deg);
+    margin-block-start: 1em;
+    margin-block-end: -5em;
+    margin-inline-start: -25px;
+    margin-inline-end: -15px;
+}
+
+.menu {
+    position: relative;
+    top: 15px;
+    border: solid rgb(228, 227, 227) 1px;
+    min-width: 100%;
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    color: var(--menucolor);
+    font-size: 12px;
+}
+
+.top-section {
+    position: relative;
+    border: solid white 1px;
+    width: 100%;
+    height: 50%;
+}
+
+.rolling-title {
+    float: right;
+    position: absolute;
+    left: 88%;
+    top: 40px;
+    width: 150px;
+    height: 250px;
+    direction: rtl;
+    border: solid rgb(233, 233, 233) 1px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+}
+
+.rolling-articles {
+    border: white solid 1px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    font-family: arial;
+    overflow: scroll;
+    height: 100%;
+    direction: rtl;
+    background-color: white;
+    color: black;
+}
+
+.top-article {
+    position: relative;
+    top: 40px;
+    gap: 5px;
+    border: rgb(255, 255, 255) solid 1px;
+    direction: ltr;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 0.9fr 0.8fr;
+    row-gap: 10px;
+    width: 90%;
+}
+
+.top-article>img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.text-top-article {
+    position: relative;
+    font-size: 20px;
+    direction: rtl;
+    border: solid white 1px;
+    width: 80%;
+    height: 100px;
+    margin-left: 70px;
+    bottom: 10%;
+}
+
+.text-top-article>h4 {
+    font-size: 12px;
+    color: #939394;
+}
+
+.text-top-article>h1 {
+    float: right;
+    color: #939394;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-top-article>h2 {
+    position: absolute;
+}
+
+.text-top-article>p {
+    position: relative;
+    bottom: -120px;
+}
+
+.down-section-border {
+    position: relative;
+    bottom: 250px;
+    left: 20px;
+}
+
+.down-section-grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    row-gap: 10px;
+}
+
+.left-down-articles {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: -5px;
+    position: relative;
+    direction: rtl;
+    width: 610px;
+    height: 100px;
+    bottom: 240px;
+}
+
+.left-down-articles>p {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1px;
+    border: rgb(255, 255, 255) solid 1px;
+    color: white;
+    font-size: 15px;
+    height: 120px;
+    bottom: 16px;
+}
+
+.ynet-left-img>img {
+    position: absolute;
+    padding: 30px;
+    left: 50%;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.wapper-section {
+    position: relative;
+    border: solid 1px var(--bordercolor);
+    background-color: var(--bordercolor);
+    color: white;
+    top: 18vw;
+    width: 100%;
+    height: 25px;
+    text-align: right;
+}
+
+.grid-img {
+    position: relative;
+    top: 116%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5px;
+}
+
+.grid-img2 {
+    position: relative;
+    top: 65%;
+    right: 104%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 5px;
+    direction: rtl;
+}
+
+.announcements {
+    border: rgb(245, 243, 243) 1px;
+    background-color: rgb(245, 243, 243);
+    direction: rtl;
+    font-size: small;
+    color: rgb(95, 159, 243);
+    height: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    top: 280px;
+}

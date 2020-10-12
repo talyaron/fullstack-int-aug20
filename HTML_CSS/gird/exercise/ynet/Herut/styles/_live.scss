@@ -1,0 +1,30 @@
+.live{
+  grid-area: live ;
+  border-left: 1px solid $color-lightGrey;
+  .titleLink{
+    background-color: $color-primaryRed;
+    text-align: right;
+    padding: 0.3em;
+    width: 80%;
+    float: right;
+    a{
+      font-size: 14px! important;
+      font-weight: 700 ! important;
+      color: white;
+      text-decoration: none;
+      margin-right: 0.5rem;
+    }
+  }
+  .scrolle{
+    height: 19rem;
+    padding: .5rem;
+    padding-right: 0%;
+    overflow: hidden;
+    width: 80%;
+    float: right;
+    marquee{
+      height: 20rem;
+      text-align: right;
+    }
+  }
+}

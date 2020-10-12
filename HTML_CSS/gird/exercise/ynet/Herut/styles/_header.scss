@@ -1,0 +1,90 @@
+header{
+  grid-area: header ;
+  margin-top: 1em;
+}
+
+.categoryMenu{
+  display: flex;
+  position: relative;
+  padding-top: 0.5em;  
+  padding-bottom: 1.5em;
+
+  .leftWrapper{
+    width: 82%;
+    ul{
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      li{
+        cursor: pointer;
+      }
+    }
+  }
+  .rightWrapper{
+    position: absolute;
+    right: 0%;
+    width: 20%;
+    cursor: pointer;
+    .logo{
+      background-image: url("https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/10/01/rk0sDzQ8v/sookot_desktop.png");
+    }
+  }
+} 
+
+.subMenu{
+border-bottom: 1px solid #e1e1e1;
+border-top: 1px solid #e1e1e1;
+height: 40px;
+padding-top: 6px;
+padding-bottom: 3px;
+margin-bottom:1em;
+display: flex;
+flex-direction: row-reverse;
+width: 100%;
+align-items: center;
+
+  ul{
+    border-left: 1px solid #e1e1e1;
+    height: 30px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    list-style-type: none;
+    align-items: center;
+    li{
+      a{
+        color: #6281af;
+        &:hover{
+          color: red;
+        }
+      }
+    }
+  }
+  .redMail{
+    padding: 3em;
+   color: red;
+  }
+}
+
+
+// @mixin center($color) {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: $color;
+// }
+
+// header{
+//   background-color: $background-color ;
+//   display: flex;
+
+//   h5{
+//       color:blue;
+//       @include center(black);
+
+//        &:hover{
+//             color:yellow;  
+//        }
+//   }
+// }

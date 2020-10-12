@@ -1,0 +1,2831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/ico"
+        href="data:image/jpeg;base64,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" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ynet </title>
+</head>
+<style>
+    body {
+        box-sizing: border-box;
+        --backgroundcoloractiv: rgba(255, 0, 0, 0.596);
+    }
+
+    .boxbox {
+        width: 65%;
+        margin: auto;
+    }
+
+    :root {
+        --backgroundcolor1: rgb(111, 158, 219);
+        --backgroundcolor2: rgba(111, 158, 219, 0.507);
+        --boxshadow: 0.05vw 0.05vw 0.2vw 0.2vw rgba(121, 121, 121, 0.212);
+    }
+
+    .boxbox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.5vw;
+        grid-template-areas:
+            "aaa aaa aaa"
+            "bbb bbb bbb"
+            "ccc ccc ccc"
+            "ddd ddd ddd"
+            "eee eee eee"
+            "fff fff fff"
+            "ggg ggg ggg"
+            "hhh hhh hhh"
+            "yyy yyy yyy"
+            "ooo ooo ooo"
+
+    }
+
+    .aaa {
+        grid-area: aaa;
+        height: 8vw;
+        border: 0.3vw solid rgba(0, 0, 0, 0.288);
+
+    }
+
+    .box1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .box1:hover {
+        border: 0.05vw solid rgba(0, 0, 0, 0.288);
+        box-sizing: border-box;
+        opacity: 90%;
+        transition-duration: 300ms;
+    }
+
+    .bbb {
+        grid-area: bbb;
+        height: 4vw;
+        display: grid;
+        grid-template-columns: repeat(32, 1fr);
+        grid-gap: 0.5vw;
+        grid-template-areas:
+            "jy26 jy27 jy28 jy1 jy2 jy3 jy4 jy5 jy6 jy7 jy8 jy9 jy10 jy11 jy12 jy13 jy14 jy15 jy16 jy17 jy18 jy19 jy20 jy21 jy22 jy23 jy24 jy25 jy25 jy25 jy25 jy25"
+    }
+
+    .jy1 {
+        grid-area: jy1;
+        height: 4vw;
+    }
+
+    .jy2 {
+        grid-area: jy2;
+        height: 4vw;
+    }
+
+    .jy3 {
+        grid-area: jy3;
+        height: 4vw;
+    }
+
+    .jy4 {
+        grid-area: jy4;
+        height: 4vw;
+    }
+
+    .jy5 {
+        grid-area: jy5;
+        height: 4vw;
+    }
+
+    .jy6 {
+        grid-area: jy6;
+        height: 4vw;
+    }
+
+    .jy7 {
+        grid-area: jy7;
+        height: 4vw;
+    }
+
+    .jy8 {
+        grid-area: jy8;
+        height: 4vw;
+    }
+
+    .jy9 {
+        grid-area: jy9;
+        height: 4vw;
+    }
+
+    .jy10 {
+        grid-area: jy10;
+        height: 4vw;
+    }
+
+    .jy11 {
+        grid-area: jy11;
+        height: 4vw;
+    }
+
+    .jy12 {
+        grid-area: jy12;
+        height: 4vw;
+    }
+
+    .jy13 {
+        grid-area: jy13;
+        height: 4vw;
+    }
+
+    .jy14 {
+        grid-area: jy14;
+        height: 4vw;
+    }
+
+    .jy15 {
+        grid-area: jy15;
+        height: 4vw;
+    }
+
+    .jy16 {
+        grid-area: jy16;
+        height: 4vw;
+    }
+
+    .jy17 {
+        grid-area: jy17;
+        height: 4vw;
+    }
+
+    .jy18 {
+        grid-area: jy18;
+        height: 4vw;
+    }
+
+    .jy19 {
+        grid-area: jy19;
+        height: 4vw;
+    }
+
+    .jy20 {
+        grid-area: jy20;
+        height: 4vw;
+    }
+
+    .jy21 {
+        grid-area: jy21;
+        height: 4vw;
+    }
+
+    .jy22 {
+        grid-area: jy22;
+        height: 4vw;
+    }
+
+    .jy23 {
+        grid-area: jy23;
+        height: 4vw;
+    }
+
+    .jy24 {
+        grid-area: jy24;
+        height: 4vw;
+    }
+
+    .jy25 {
+        grid-area: jy25;
+        height: 4vw;
+    }
+
+    .jy26 {
+        grid-area: jy26;
+        height: 4vw;
+    }
+
+    .jy27 {
+        grid-area: jy27;
+        height: 4vw;
+    }
+
+    .jy28 {
+        grid-area: jy28;
+        height: 4vw;
+    }
+
+    .A {
+        transform: rotate(-90deg);
+        padding: 0.2vw 0.3vw;
+    }
+
+    .aa1 {
+        background-color: var(--backgroundcolor1);
+        border-radius: 2vw;
+        height: 4vw;
+        width: 1.5vw;
+        direction: rtl;
+        white-space: nowrap;
+        box-shadow: var(--boxshadow);
+        font-family: sans-serif;
+        font-weight: 600;
+        box-sizing: border-box;
+        font-size: 1vw;
+    }
+
+    .aa1:active {
+        background-color: var(--backgroundcoloractiv);
+        opacity: 90%;
+    }
+
+    .aa1:hover {
+        box-sizing: border-box;
+        border: solid 0.01vw var(--backgroundcolor1);
+        transition-duration: 500ms;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .ccc {
+        grid-area: ccc;
+        height: 2.4vw;
+        border-top: 0.1vw solid var(--backgroundcolor2);
+        border-bottom: 0.1vw solid var(--backgroundcolor2);
+        display: grid;
+        grid-template-columns: repeat(13, 1fr);
+        grid-gap: 0.5vw;
+        grid-template-areas:
+            "maen1 maen2 maen3 maen4 maen5 maen6 maen7 maen8 maen9 maen10 maen11 maen12 maen13 "
+    }
+
+    .maen1 {
+        grid-area: maen1;
+    }
+
+    .maen2 {
+        grid-area: maen2;
+    }
+
+    .maen3 {
+        grid-area: maen3;
+    }
+
+    .maen4 {
+        grid-area: maen4;
+    }
+
+    .maen5 {
+        grid-area: maen5;
+    }
+
+    .maen6 {
+        grid-area: maen6;
+    }
+
+    .maen7 {
+        grid-area: maen7;
+    }
+
+    .maen8 {
+        grid-area: maen8;
+    }
+
+    .maen9 {
+        grid-area: maen9;
+    }
+
+    .maen10 {
+        grid-area: maen10;
+    }
+
+    .maen11 {
+        grid-area: maen11;
+    }
+
+    .maen12 {
+        grid-area: maen12;
+    }
+
+    .maen13 {
+        grid-area: maen13;
+    }
+
+    .maen {
+
+        font-weight: 600;
+        height: 1.8vw;
+        border-top: 0.6vw solid white;
+        font-size: 1vw;
+        text-align: center;
+        font-family: sans-serif;
+        white-space: nowrap;
+    }
+
+    .maen>a:hover {
+        color: rgba(255, 0, 0, 0.795);
+        box-sizing: border-box;
+        transition-duration: 350ms;
+        text-decoration: underline
+    }
+
+    .border {
+        border-right: 0.1vw solid var(--backgroundcolor2);
+        height: 1.6vw;
+        margin: 0.4vw 0vw 0vw 0vw;
+    }
+
+    .maen>a {
+
+        text-decoration: none;
+        color: rgb(110, 110, 161);
+    }
+
+    .maen1 {
+        font-weight: 600;
+        height: 2.4vw;
+        padding: 0.2vw 1.5vw;
+        font-size: 1.4vw;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .nn1 {
+
+        color: red;
+        text-decoration: none;
+    }
+
+    .ddd {
+        grid-area: ddd;
+        height: 20vw;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "maenm1 maenm1 maenm1 maenm2 maenm2 maenm3"
+            "maenm1 maenm1 maenm1 maenm2 maenm2 maenm4";
+        grid-gap: 0.5vw;
+    }
+
+    .maenm1 {
+        grid-area: maenm1;
+        height: 20vw;
+
+    }
+
+    .ddd>.maenm1>a>img {
+        border-radius: 0.3vw;
+    }
+
+    .maenm2 {
+        grid-area: maenm2;
+        height: 20vw;
+        border-radius: 0.5vw;
+    }
+
+    .text1 {
+        color: rgba(0, 0, 0, 0.5);
+        padding: 0.2vw;
+        font-size: 2.3vw;
+        direction: rtl;
+    }
+
+    .text2 {
+        padding: 0vw 0.2vw;
+        font-size: 0.7vw;
+        direction: rtl;
+    }
+
+    .text3 {
+        padding: 0.5vw 0.2vw;
+        font-size: 1.3vw;
+        direction: rtl;
+    }
+
+    .text4 {
+        padding: 2vw 0.2vw;
+        font-size: 0.7vw;
+        direction: rtl;
+    }
+
+    .vh {
+        font-family: Tahoma, sans-serif;
+        font-style: normal;
+        font-variant-ligatures: normal;
+        font-variant-caps: normal;
+        font-variant-numeric: normal;
+        font-variant-east-asian: normal;
+        font-weight: bold;
+        font-stretch: normal;
+    }
+
+    .maenm3 {
+        grid-area: maenm3;
+        box-sizing: border-box;
+        height: 1vw;
+        border-radius: 0.2vw;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .text5 {
+        text-align: center;
+        background-color: red;
+        border-radius: 0.2vw 0.2vw 0vw 0vw;
+        font-size: 1.2vw;
+        box-shadow: var(--boxshadow);
+        font-family: arial;
+        font-weight: 600;
+    }
+
+    .text5:hover {
+        box-sizing: border-box;
+        transition-duration: 400ms;
+        background-color: rgba(148, 145, 145, 0.788);
+        color: black;
+    }
+
+    .text6 {
+        padding: 0.1vw;
+        font-size: 1.1vw;
+        position: relative;
+        animation-name: ggg;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes ggg {
+        0% {
+            top: 50px;
+        }
+
+        100% {
+            top: -1000px;
+        }
+    }
+
+    .maenm4:hover .text6 {
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+    }
+
+
+    .text9 {
+        font-size: 1vw;
+        padding: 0.5vw;
+        margin-top: 2vw;
+        text-align: center;
+        color: black;
+
+    }
+
+    .text9:hover {
+        color: red;
+    }
+
+    .text8 {
+        font-size: 0.8vw;
+        margin: 0vw 0vw 0.5vw 0vw;
+        text-align: center;
+        color: rgba(255, 0, 0, 0.932);
+
+    }
+
+    .maenm4 {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3zPbivdE6d8IOeEpG_HnEPP1MYUls0Bq31w&usqp=CAU");
+        background-repeat: repeat;
+        grid-area: maenm4;
+        box-shadow: var(--boxshadow);
+        box-sizing: border-box;
+        height: 18.5vw;
+        border-radius: 0vw 0vw 0.2vw 0.2vw;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .eee {
+        grid-area: eee;
+        height: 2vw;
+    }
+
+    .Column4 {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 0.8vw;
+        grid-template-areas:
+            "Column41  Column42 Column42 Column42 Column42 Column42 ";
+    }
+
+    .Column41 {
+        grid-area: Column41;
+        background-color: rgba(56, 55, 55, 0.959);
+        height: 2vw;
+        font-size: 1.4vw;
+        text-align: center;
+        border: 0.2vw solid rgb(0, 0, 0);
+        box-sizing: border-box;
+        border-radius: 0.2vw;
+    }
+
+    .Column4>.Column41>a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .Column41:hover {
+        background-color: rgba(56, 55, 55, 0.692);
+        opacity: 90%;
+
+    }
+
+    .Column42 {
+        grid-area: Column42;
+        background-color: var(--backgroundcolor2);
+        border-radius: 0.2vw;
+        height: 2vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.5vw;
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .aass {
+        background-color: blue;
+        margin: 0.35vw 0vw 0vw 0.4vw;
+        width: 1vw;
+        height: 1.1vw;
+        padding: 0.1vw 0.4vw;
+        font-size: 0.8vw;
+    }
+
+    .aass:active {
+        background-color: var(--backgroundcoloractiv);
+        opacity: 90%;
+    }
+
+    .bbss {
+        color: rgb(5, 5, 5);
+        background-color: white;
+        margin: 0.35vw 0.5vw 0vw 0vw;
+        height: 1.1vw;
+        padding: 0.1vw 10vw;
+        font-size: 1vw;
+    }
+
+    .ccss {
+        margin: 0.3vw 0.1vw 0vw 0vw;
+        width: 1.3vw;
+        height: 1.3vw;
+        border-radius: 0.2vw 0vw 0vw 0.2vw;
+        padding: 0.1vw 0.4vw;
+        font-size: 1vw;
+    }
+
+    .ccssy {
+        margin: 0vw 5vw 0.11vw -0.3vw;
+        width: 3vw;
+        height: 1.8vw;
+        padding: 0.1vw 0.4vw;
+        font-size: 1vw;
+    }
+
+    .hhss {
+        margin: 0.25vw 0vw 0vw 2.5vw;
+        width: 1.3vw;
+        height: 1.3vw;
+        padding: 0.1vw 0.4vw;
+        font-size: 1vw;
+    }
+
+    .iiss {
+        margin: 0.40vw 0.5vw 0vw 0vw;
+        font-size: 1.2vw;
+        color: black;
+    }
+
+    div .v {
+
+        color: rgb(77, 75, 75);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        border: solid 0.1vw rgba(0, 0, 0, 0.308);
+
+    }
+
+
+    .box2ht {
+        color: rgba(121, 121, 121, 0.719);
+        height: 20vw;
+        width: 9.2vw;
+        display: none;
+        position: absolute;
+        z-index: 1;
+        overflow: auto;
+        background-color: white;
+    }
+
+    .box2ht .v {
+        font-size: 1.2vw;
+        width: 8vw;
+        height: 1.5vw;
+        color: rgb(77, 75, 75);
+        padding: 0vw;
+        display: block;
+        background-color: rgba(111, 158, 219, 0.507);
+
+    }
+
+    .box2ht .v:hover {
+
+        background-color: rgba(56, 55, 55, 0.959);
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.418);
+        color: white;
+    }
+
+    .ok {
+        margin: 0.2vw 0vw 0vw -2vw;
+    }
+
+    .ok:hover .box2ht {
+        display: block;
+    }
+
+
+    .boxht {
+        color: rgb(77, 75, 75);
+        font-size: 1.3vw;
+        margin: 0vw 0vw 0vw 0vw;
+
+
+    }
+
+
+
+    .fff {
+        grid-area: fff;
+        height: 25.5vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.8vw;
+        box-sizing: border-box;
+    }
+
+    .eee1 {
+        box-sizing: border-box;
+        height: 25.2vw;
+        box-sizing: border-box;
+    }
+
+    .s1 {
+        width: 100%;
+        height: 23.125%;
+        box-sizing: border-box;
+        background-color: rgba(255, 0, 0, 0.884);
+        border-radius: 0.4vw;
+    }
+
+    /* give more meaningful names */
+    .s2 {
+        width: 100%;
+        height: 22.5%;
+        margin-top: 2.5%;
+        box-sizing: border-box;
+        background-color: rgb(0, 60, 255);
+        border-radius: 0.4vw;
+    }
+
+    .s3 {
+        background-color: rgba(255, 0, 0, 0.884);
+    }
+
+    .s4 {
+        background-color: rgb(74, 139, 177);
+    }
+
+    .ll {
+        vertical-align: top;
+        display: inline-block;
+        width: 70%;
+        font-size: 0.85vw;
+        height: 100%;
+        padding: 0.5vw;
+        box-sizing: border-box;
+        direction: rtl;
+        font-family: sans-serif;
+    }
+
+    .llimg {
+        vertical-align: top;
+        display: inline-block;
+        width: 30%;
+        border-radius: 0vw 0.4vw 0.4vw 0vw;
+    }
+
+    .llimg:hover {
+        box-sizing: border-box;
+        border: solid 0.05vw rgba(156, 154, 154, 0.534);
+        transition-duration: 300ms;
+        opacity: 95%;
+    }
+
+    .eee2 {
+        height: 25vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.8vw;
+        grid-template-areas:
+            "as1 as2 "
+            "as3 as2"
+            "as4 as5 "
+    }
+
+    .as1 {
+        grid-area: as1;
+        height: 13vw;
+        box-shadow: var(--boxshadow);
+        border-radius: 0.4vw;
+    }
+
+    .as2 {
+        grid-area: as2;
+        height: 16.35vw;
+        box-shadow: var(--boxshadow);
+        border-radius: 0.4vw;
+    }
+
+    .as3 {
+        grid-area: as3;
+        height: 2vw;
+        box-shadow: var(--boxshadow);
+        border-radius: 0.4vw;
+    }
+
+    .as4 {
+        grid-area: as4;
+        height: 8vw;
+        box-shadow: var(--boxshadow);
+        border-radius: 0.4vw;
+    }
+
+    .as5 {
+        grid-area: as5;
+        height: 8vw;
+        box-shadow: var(--boxshadow);
+        border-radius: 0.4vw;
+    }
+
+    /*.as1:hover{
+    box-sizing: border-box;
+    border: solid 0.01vw rgba(255, 255, 255, 0);
+    opacity: 95%;
+}*/
+    .ggg {
+        grid-area: ggg;
+        height: 13vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.2vw;
+        box-sizing: border-box;
+    }
+
+    .kkk1 {
+        height: 13vw;
+        grid-gap: 0.8vw;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "kkk11 kkk11 kkk11"
+            "kkk12 kkk13 kkk14"
+    }
+
+    .kkk11 {
+        background-color: blue;
+        grid-area: kkk11;
+        height: 1.5vw;
+        direction: rtl;
+        font-size: 1.1vw;
+        padding: 0vw 0.5vw;
+        font-family: arial ! important;
+        color: white;
+        border-radius: 0.1vw;
+    }
+
+    .kkk12 {
+        grid-area: kkk12;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .kkk13 {
+        grid-area: kkk13;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .kkk14 {
+        grid-area: kkk14;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .kkk2 {
+        height: 13vw;
+        grid-gap: 0.8vw;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "kkk21 kkk21 kkk21"
+            "kkk22 kkk23 kkk24"
+
+    }
+
+    .kkk21 {
+        background-color: blue;
+        grid-area: kkk21;
+        height: 1.5vw;
+        direction: rtl;
+        font-size: 1.1vw;
+        padding: 0vw 0.5vw;
+        font-family: arial ! important;
+        color: white;
+        border-radius: 0.1vw;
+    }
+
+    .kkk22 {
+        grid-area: kkk22;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        border-radius: 0.2vw;
+    }
+
+    .kkk23 {
+        grid-area: kkk23;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .kkk24 {
+        grid-area: kkk24;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .po {
+        padding: 0.2vw 0.5vw;
+        font-size: 0.8vw;
+        font-family: arial ! important;
+        color: black;
+        direction: rtl;
+    }
+
+    .po:hover {
+        color: #ff0000;
+    }
+
+    .pl:hover {
+        box-sizing: border-box;
+        border: solid 0.001vw white;
+        transition-duration: 50ms;
+    }
+
+    .r2 {
+        height: 60%;
+        border-radius: 0.2vw 0.2vw 0vw 0vw;
+    }
+
+    .hhh {
+        grid-area: hhh;
+        height: 20vw;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 0.8vw;
+        grid-template-areas:
+            "hhh1 hhh1 hhh1 hhh2 hhh2 hhh3"
+    }
+
+    .hhh1 {
+        grid-area: hhh1;
+        height: 20vw;
+        color: white;
+        font-family: arial ! important;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0.763vw;
+        grid-template-areas:
+            "hhh11 hhh11 hhh11 hhh11"
+            "hhh12 hhh12 hhh12 hhh19"
+            "hhh13 hhh13 hhh13 hhh19"
+            "hhh14 hhh14 hhh14 hhh19"
+            "hhh15 hhh15 hhh15 hhh19"
+            "hhh16 hhh16 hhh16 hhh19"
+            "hhh17 hhh17 hhh17 hhh19"
+            "hhh18 hhh18 hhh18 hhh18"
+    }
+
+    .hhh11 {
+        border-radius: 0.1vw;
+        background-color: blue;
+        grid-area: hhh11;
+        height: 1.5vw;
+        direction: rtl;
+        font-size: 1.1vw;
+        padding: 0vw 0.5vw;
+    }
+
+    .hhh12 {
+        grid-area: hhh12;
+        height: 2vw;
+    }
+
+    .hhh13 {
+        grid-area: hhh13;
+        height: 2vw;
+    }
+
+    .hhh14 {
+        grid-area: hhh14;
+        height: 2vw;
+    }
+
+    .hhh15 {
+        grid-area: hhh15;
+        height: 2vw;
+    }
+
+    .hhh16 {
+        grid-area: hhh16;
+        height: 2vw;
+    }
+
+    .hhh17 {
+        grid-area: hhh17;
+        height: 2vw;
+    }
+
+    .hhh18 {
+        grid-area: hhh18;
+        border-radius: 0.1vw;
+        background-color: rgba(128, 128, 128, 0.267);
+        height: 1.2vw;
+        direction: rtl;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 0.2vw;
+        grid-template-areas:
+            "hhh18text1 hhh18text2 hhh18text3 hhh18text4 hhh18text5 hhh18text6 hhh18text7 hhh18text8"
+    }
+
+    .t1 {
+        border-top: 0.2vw solid rgba(128, 128, 128, 0);
+        border-left: 0.1vw solid rgba(71, 123, 190, 0.267);
+        white-space: nowrap;
+        height: 1vw;
+        padding: 0vw 0.5vw;
+        text-decoration: underline;
+        font-size: 0.5vw;
+    }
+
+    #fv {
+        color: rgba(71, 123, 190, 0.877);
+
+    }
+
+    .hhh18text1 {
+        grid-area: hhh18text1;
+    }
+
+    .hhh18text2 {
+        grid-area: hhh18text2;
+    }
+
+    .hhh18text3 {
+        grid-area: hhh18text3;
+    }
+
+    .hhh18text4 {
+        grid-area: hhh18text4;
+    }
+
+    .hhh18text5 {
+        grid-area: hhh18text5;
+    }
+
+    .hhh18text6 {
+        grid-area: hhh18text6;
+    }
+
+    .hhh18text7 {
+        grid-area: hhh18text7;
+    }
+
+    .hhh18text8 {
+        grid-area: hhh18text8;
+    }
+
+    .hhhtext1 {
+        color: black;
+        direction: rtl;
+        font-size: 0.62vw;
+        padding: 0vw 0.4vw;
+        font-family: Tahoma, sans-serif;
+        font-style: normal;
+        font-variant-ligatures: normal;
+        font-variant-caps: normal;
+        font-variant-numeric: normal;
+        font-variant-east-asian: normal;
+        font-weight: bold;
+        font-stretch: normal;
+    }
+
+    .hhhtext1:hover {
+        color: red;
+    }
+
+    .hhhtext2 {
+        color: rgba(128, 128, 128, 0.836);
+        direction: rtl;
+        font-size: 0.5vw;
+        padding: 0.1vw 0.4vw;
+        font-family: Tahoma, sans-serif;
+        font-style: normal;
+        font-variant-ligatures: normal;
+        font-variant-caps: normal;
+        font-variant-numeric: normal;
+        font-variant-east-asian: normal;
+        font-weight: bold;
+        font-stretch: normal;
+    }
+
+    .hhh19 {
+        grid-area: hhh19;
+        height: 15.3vw;
+    }
+
+    .vc1 {
+        height: 30%;
+        width: 100%;
+    }
+
+    .vc1:hover {
+        box-sizing: border-box;
+        border: solid 0.001vw white;
+        transition-duration: 50ms;
+    }
+
+    .poo {
+        padding: 0.2vw 0.3vw;
+        font-size: 0.75vw;
+        font-family: arial ! important;
+        color: black;
+        direction: rtl;
+    }
+
+    .poo:hover {
+        color: red;
+    }
+
+    .hhh2 {
+        grid-area: hhh2;
+        height: 20vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.8vw;
+        grid-template-areas:
+            "hhh21 hhh21"
+            "hhh22 hhh22"
+    }
+
+    .hhh21 {
+        grid-area: hhh21;
+        height: 6.5vw;
+
+    }
+
+    .hhh22 {
+        grid-area: hhh22;
+        height: 12.7vw;
+    }
+
+
+    .hhh3 {
+        grid-area: hhh3;
+        height: 20vw;
+    }
+
+    .f1 {
+        height: 100%;
+        width: 100%;
+    }
+
+    .yyy {
+        grid-area: yyy;
+        height: 13vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.2vw;
+        box-sizing: border-box;
+    }
+
+    .yyy1 {
+        height: 13vw;
+        grid-gap: 0.8vw;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "yyy11 yyy11 yyy11"
+            "yyy12 yyy13 yyy14"
+    }
+
+    .yyy11 {
+        background-color: blue;
+        grid-area: yyy11;
+        height: 1.5vw;
+        direction: rtl;
+        font-size: 1.1vw;
+        padding: 0vw 0.5vw;
+        font-family: arial ! important;
+        color: white;
+        border-radius: 0.1vw;
+    }
+
+    .yyy12 {
+        grid-area: yyy12;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .yyy13 {
+        grid-area: yyy13;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .yyy14 {
+        grid-area: yyy14;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .yyy2 {
+        height: 13vw;
+        grid-gap: 0.8vw;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "yyy21 yyy21 yyy21"
+            "yyy22 yyy23 yyy24"
+
+    }
+
+    .yyy21 {
+        background-color: blue;
+        grid-area: yyy21;
+        height: 1.5vw;
+        direction: rtl;
+        font-size: 1.1vw;
+        padding: 0vw 0.5vw;
+        font-family: arial ! important;
+        color: white;
+        border-radius: 0.1vw;
+    }
+
+    .yyy22 {
+        grid-area: yyy22;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        border-radius: 0.2vw;
+    }
+
+    .yyy23 {
+        grid-area: yyy23;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .yyy24 {
+        grid-area: yyy24;
+        height: 10.4vw;
+        direction: rtl;
+        box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+    }
+
+    .zx1:hover {
+        opacity: 80%;
+    }
+
+    .ooo {
+        grid-area: ooo;
+        height: 5vw;
+    }
+
+
+
+    @media only screen and (max-width:900px) {
+
+        .boxbox {
+            width: 95%;
+            margin: auto;
+        }
+
+        .aaa {
+            grid-area: aaa;
+            height: 10vw;
+            border: 0.3vw solid rgba(0, 0, 0, 0.288);
+
+        }
+
+        .box1 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box1:hover {
+            border: 0.05vw solid rgba(0, 0, 0, 0.288);
+            box-sizing: border-box;
+            opacity: 90%;
+            transition-duration: 300ms;
+        }
+
+        .bbb {
+            grid-area: bbb;
+            height: 10vw;
+            display: grid;
+            grid-template-columns: repeat(16, 1fr);
+            grid-gap: 2vw;
+            grid-template-areas:
+                "jy26 jy27 jy28 jy1 jy2 jy3 jy4 jy5 jy6 jy7 jy8 jy9 jy10 jy25 jy25 jy25 jy25 jy25"
+        }
+
+        .jy1 {
+            grid-area: jy1;
+            height: 5vw;
+        }
+
+        .jy2 {
+            grid-area: jy2;
+            height: 5vw;
+        }
+
+        .jy3 {
+            grid-area: jy3;
+            height: 5vw;
+        }
+
+        .jy4 {
+            grid-area: jy4;
+            height: 5vw;
+        }
+
+        .jy5 {
+            grid-area: jy5;
+            height: 5vw;
+        }
+
+        .jy6 {
+            grid-area: jy6;
+            height: 5vw;
+        }
+
+        .jy7 {
+            grid-area: jy7;
+            height: 5vw;
+        }
+
+        .jy8 {
+            grid-area: jy8;
+            height: 5vw;
+        }
+
+        .jy9 {
+            grid-area: jy9;
+            height: 5vw;
+        }
+
+        .jy10 {
+            grid-area: jy10;
+            height: 5vw;
+        }
+
+        .jy25 {
+            grid-area: jy25;
+
+            ;
+            height: 8.5vw;
+        }
+
+        .jy26 {
+            grid-area: jy26;
+            height: 5vw;
+        }
+
+        .jy27 {
+            grid-area: jy27;
+        }
+
+        .jy28 {
+            grid-area: jy28;
+        }
+
+        .A {
+            transform: rotate(-90deg);
+            padding: 0.5vw 0.3vw;
+        }
+
+        .aa1 {
+            background-color: var(--backgroundcolor1);
+            border-radius: 2vw;
+            height: 8.5vw;
+            width: 3vw;
+            direction: rtl;
+            white-space: nowrap;
+            box-shadow: var(--boxshadow);
+            font-family: sans-serif;
+            font-weight: 600;
+            box-sizing: border-box;
+            font-size: 1.8vw;
+        }
+
+        .l5 {
+            display: none;
+        }
+
+        .aa1:active {
+            background-color: var(--backgroundcoloractiv);
+            opacity: 90%;
+        }
+
+        .aa1:hover {
+            box-sizing: border-box;
+            border: solid 0.01vw var(--backgroundcolor1);
+            transition-duration: 500ms;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .border {
+            border-right: 0.1vw solid var(--backgroundcolor2);
+            width: 1vw;
+
+        }
+
+        .ccc {
+            grid-area: ccc;
+            height: 2.4vw;
+            border-top: 0.1vw solid var(--backgroundcolor2);
+            border-bottom: 0.1vw solid var(--backgroundcolor2);
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-gap: 0.5vw;
+            grid-template-areas:
+                "maen1 maen1 maen14 maen2 maen3 maen4 maen5 maen6 maen7 maen8 maen9"
+        }
+
+        .maen1 {
+            grid-area: maen1;
+        }
+
+        .maen2 {
+            grid-area: maen2;
+        }
+
+        .maen3 {
+            grid-area: maen3;
+        }
+
+        .maen4 {
+            grid-area: maen4;
+        }
+
+        .maen5 {
+            grid-area: maen5;
+        }
+
+        .maen6 {
+            grid-area: maen6;
+        }
+
+        .maen7 {
+            grid-area: maen7;
+        }
+
+        .maen8 {
+            grid-area: maen8;
+        }
+
+        .maen9 {
+            grid-area: maen9;
+        }
+
+        .maen10 {
+            grid-area: maen10;
+        }
+
+        .maen11 {
+            grid-area: maen11;
+        }
+
+        .maen12 {
+            grid-area: maen12;
+        }
+
+        .maen13 {
+            grid-area: maen13;
+        }
+
+        .maen {
+            font-weight: 600;
+            height: 1.8vw;
+            border-top: 0.1vw solid white;
+            font-size: 1.8vw;
+            text-align: center;
+            font-family: sans-serif;
+            white-space: nowrap;
+        }
+
+        .maen>a:hover {
+            color: rgba(255, 0, 0, 0.795);
+            box-sizing: border-box;
+            transition-duration: 350ms;
+            text-decoration: underline
+        }
+
+        .maen>a {
+            text-decoration: none;
+            color: rgb(110, 110, 161);
+        }
+
+        .maen1 {
+            font-weight: 600;
+            height: 2.4vw;
+            padding: 0vw 0vw;
+            font-size: 1.8vw;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .nn1 {
+            color: red;
+            text-decoration: none;
+        }
+
+        .nn2 {
+            display: none;
+        }
+
+        .ddd {
+            grid-area: ddd;
+            height: 50vw;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-areas:
+                ". . maenm1 maenm1 maenm1 maenm1 . ."
+                ". maenm2 maenm2 maenm2  maenm2 maenm2 maenm2 .";
+            grid-gap: 0.5vw;
+            border-bottom: 0.1vw solid var(--backgroundcolor1);
+        }
+
+        .maenm1 {
+            grid-area: maenm1;
+            height: 28vw;
+        }
+
+        .text1 {
+            color: rgba(0, 0, 0, 0.5);
+            padding: 0.2vw;
+            font-size: 4.2vw;
+            direction: rtl;
+            text-align: center;
+        }
+
+        .text2 {
+            padding: 0vw 0.2vw;
+            font-size: 1.6vw;
+            direction: rtl;
+            text-align: center;
+        }
+
+        .text3 {
+            padding: 0.5vw 0.2vw;
+            font-size: 1.8vw;
+            direction: rtl;
+            text-align: center;
+        }
+
+        .text4 {
+            padding: 0.2vw 0.2vw;
+            font-size: 1.5vw;
+            direction: rtl;
+            text-align: center;
+        }
+
+        .maenm3 {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPBxn_Isl1i63lOOm0ThmPAXQd6NCIuSeDAQ&usqp=CAU");
+            background-repeat: repeat;
+            grid-area: maenm3;
+            box-shadow: 0vw;
+            box-sizing: border-box;
+            height: 0vw;
+            border-radius: 0.2vw;
+        }
+
+        .text5 {
+            font-size: 0vw;
+        }
+
+        .text6 {
+            font-size: 0vw;
+        }
+
+        .maenm4 {
+            display: none;
+        }
+
+        .eee {
+            grid-area: eee;
+            height: 4vw;
+        }
+
+        .Column4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 0.8vw;
+            grid-template-areas:
+                "Column41 Column42 Column42 Column42 ";
+        }
+
+        .Column41 {
+            grid-area: Column41;
+            background-color: rgba(56, 55, 55, 0.959);
+            height: 4vw;
+            font-size: 2.8vw;
+            text-align: center;
+            border: 0.2vw solid rgb(0, 0, 0);
+            box-sizing: border-box;
+            border-radius: 0.5vw;
+        }
+
+        .Column4>.Column41>a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .Column41:hover {
+            background-color: rgba(56, 55, 55, 0.692);
+            opacity: 100%;
+
+        }
+
+        .Column42 {
+            grid-area: Column42;
+            background-color: var(--backgroundcolor2);
+            border-radius: 0.2vw;
+            height: 4vw;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2vw;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .aass {
+            background-color: blue;
+            margin: 0.9vw 0vw 0vw 0.8vw;
+            width: 1.5vw;
+            height: 2vw;
+            padding: 0.1vw 0.4vw;
+            font-size: 1.4vw;
+        }
+
+        .aass:active {
+            background-color: var(--backgroundcoloractiv);
+            opacity: 90%;
+        }
+
+        .bbss {
+            color: rgb(5, 5, 5);
+            background-color: white;
+            margin: 0.9vw 0.5vw 0vw 0vw;
+            height: 2vw;
+            padding: 0.1vw 10vw;
+            font-size: 1.8vw;
+        }
+
+        .ccss {
+            margin: 0.3vw 0.1vw 0vw 0vw;
+            width: 3vw;
+            height: 3vw;
+            border-radius: 0.2vw 0vw 0vw 0.2vw;
+            padding: 0.1vw 0.4vw;
+            font-size: 1vw;
+        }
+
+        .ccssy {
+            margin: 0.2vw 1vw 0.11vw -0.3vw;
+            width: 5vw;
+            height: 3.2vw;
+            padding: 0.1vw 0.4vw;
+            font-size: 1vw;
+        }
+
+        .boxht {
+            color: rgb(77, 75, 75);
+            font-size: 1.4vw;
+            margin: 0vw 0vw 0vw 0vw;
+        }
+
+        .hhss {
+            margin: 0.65vw 0vw 0vw 1.5vw;
+            width: 2.5vw;
+            height: 2.5vw;
+            padding: 0.1vw 0.4vw;
+            font-size: 1vw;
+        }
+
+        .iiss {
+            margin: 0.6vw 0.5vw 0vw 0vw;
+            font-size: 2.5vw;
+            color: black;
+        }
+
+        .ok {
+            margin: 0.7vw 0.4vw 0vw 2vw;
+
+        }
+
+        div .v {
+
+            color: rgb(77, 75, 75);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border: solid 0.1vw rgba(0, 0, 0, 0.308);
+
+        }
+
+        .box2ht {
+            color: rgba(121, 121, 121, 0.719);
+            height: 26vw;
+            width: 14vw;
+            display: none;
+            position: absolute;
+            font-size: 20px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            overflow: auto;
+            background-color: white;
+        }
+
+        .box2ht .v {
+            font-size: 1.8vw;
+            width: 12vw;
+            height: 2.5vw;
+            color: rgb(77, 75, 75);
+            padding: 0vw;
+            background-color: rgba(111, 158, 219, 0.507);
+
+        }
+
+
+        .boxht {
+            color: rgb(77, 75, 75);
+            font-size: 2vw;
+
+        }
+
+
+        .fff {
+            grid-area: fff;
+            height: 135vw;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 0.8vw;
+            box-sizing: border-box;
+        }
+
+        .eee1 {
+            box-sizing: border-box;
+            height: 65vw;
+            box-sizing: border-box;
+        }
+
+        .s1 {
+            width: 100%;
+            height: 22.5%;
+            box-sizing: border-box;
+            background-color: rgba(255, 0, 0, 0.884);
+            border-radius: 0.4vw;
+        }
+
+        .s2 {
+            width: 100%;
+            height: 22.5%;
+            margin-top: 2.2%;
+            box-sizing: border-box;
+            background-color: rgb(0, 60, 255);
+            border-radius: 0.4vw;
+        }
+
+        .s3 {
+            background-color: rgba(255, 0, 0, 0.884);
+        }
+
+        .s4 {
+            background-color: rgb(74, 139, 177);
+        }
+
+        .ll {
+            vertical-align: top;
+            display: inline-block;
+            width: 70%;
+            font-size: 2.3vw;
+            height: 100%;
+            padding: 1vw;
+            box-sizing: border-box;
+            direction: rtl;
+            font-family: sans-serif;
+        }
+
+        .llimg {
+            vertical-align: top;
+            display: inline-block;
+            width: 30%;
+            border-radius: 0vw 0.4vw 0.4vw 0vw;
+        }
+
+        .llimg:hover {
+            box-sizing: border-box;
+            border: solid 0vw rgba(156, 154, 154, 0.534);
+            transition-duration: 300ms;
+
+        }
+
+        .eee2 {
+            height: 65vw;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 0.5vw;
+            grid-template-areas:
+                "as1 as2 "
+                "as3 as2"
+                "as4 as5 "
+        }
+
+        .as1 {
+            grid-area: as1;
+            height: 32vw;
+            box-shadow: var(--boxshadow);
+            border-radius: 0.4vw;
+        }
+
+        .as2 {
+            grid-area: as2;
+            height: 39vw;
+            box-shadow: var(--boxshadow);
+            border-radius: 0.4vw;
+        }
+
+        .as3 {
+            grid-area: as3;
+            height: 5.5vw;
+            box-shadow: var(--boxshadow);
+            border-radius: 0.4vw;
+        }
+
+        .as4 {
+            grid-area: as4;
+            height: 24vw;
+            box-shadow: var(--boxshadow);
+            border-radius: 0.4vw;
+        }
+
+        .as5 {
+            grid-area: as5;
+            height: 24vw;
+            box-shadow: var(--boxshadow);
+            border-radius: 0.4vw;
+        }
+
+        .ggg {
+            grid-area: ggg;
+            height: 70vw;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1.2vw;
+            box-sizing: border-box;
+        }
+
+        .kkk1 {
+            height: 33vw;
+            grid-gap: 0.8vw;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+                "kkk11 kkk11 kkk11"
+                "kkk12 kkk13 kkk14"
+        }
+
+        .kkk11 {
+            background-color: blue;
+            grid-area: kkk11;
+            height: 2.5vw;
+            direction: rtl;
+            font-size: 2.2vw;
+            padding: 0vw 2vw;
+            font-family: arial ! important;
+            color: white;
+            border-radius: 0.1vw;
+        }
+
+        .kkk12 {
+            grid-area: kkk12;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .kkk13 {
+            grid-area: kkk13;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .kkk14 {
+            grid-area: kkk14;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .kkk2 {
+            height: 33vw;
+            grid-gap: 0.8vw;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+                "kkk21 kkk21 kkk21"
+                "kkk22 kkk23 kkk24"
+
+        }
+
+        .kkk21 {
+            background-color: blue;
+            grid-area: kkk21;
+            height: 2.5vw;
+            direction: rtl;
+            font-size: 2.2vw;
+            padding: 0vw 2vw;
+            font-family: arial ! important;
+            color: white;
+            border-radius: 0.1vw;
+        }
+
+        .kkk22 {
+            grid-area: kkk22;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+            border-radius: 0.2vw;
+        }
+
+        .kkk23 {
+            grid-area: kkk23;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .kkk24 {
+            grid-area: kkk24;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .po {
+            padding: 0.2vw 0.5vw;
+            font-size: 2.2vw;
+            font-family: arial ! important;
+            color: black;
+            direction: rtl;
+        }
+
+        .po:hover {
+            color: black;
+        }
+
+        .pl:hover {
+            box-sizing: border-box;
+            border: solid 0vw white;
+            transition-duration: 50ms;
+        }
+
+        .r2 {
+            height: 60%;
+            border-radius: 0.2vw 0.2vw 0vw 0vw;
+        }
+
+        .hhh {
+            grid-area: hhh;
+            height: 105vw;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 0.8vw;
+            grid-template-areas:
+                "hhh1 hhh1 hhh1 hhh1 hhh1"
+                "hhh2 hhh2 hhh2 hhh3 hhh3"
+        }
+
+        .hhh1 {
+            grid-area: hhh1;
+            height: 45vw;
+            color: white;
+            font-family: arial ! important;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 0.763vw;
+            grid-template-areas:
+                "hhh11 hhh11 hhh11 hhh11"
+                "hhh12 hhh12 hhh12 hhh19"
+                "hhh13 hhh13 hhh13 hhh19"
+                "hhh14 hhh14 hhh14 hhh19"
+                "hhh15 hhh15 hhh15 hhh19"
+                "hhh16 hhh16 hhh16 hhh19"
+                "hhh17 hhh17 hhh17 hhh19"
+                "hhh18 hhh18 hhh18 hhh18"
+        }
+
+        .hhh11 {
+            border-radius: 0.1vw;
+            background-color: blue;
+            grid-area: hhh11;
+            height: 2.5vw;
+            direction: rtl;
+            font-size: 2.2vw;
+            padding: 0vw 2.2vw;
+        }
+
+        .hhh12 {
+            grid-area: hhh12;
+            height: 5vw;
+        }
+
+        .hhh13 {
+            grid-area: hhh13;
+            height: 5vw;
+        }
+
+        .hhh14 {
+            grid-area: hhh14;
+            height: 5vw;
+        }
+
+        .hhh15 {
+            grid-area: hhh15;
+            height: 5vw;
+        }
+
+        .hhh16 {
+            grid-area: hhh16;
+            height: 5vw;
+        }
+
+        .hhh17 {
+            grid-area: hhh17;
+            height: 5vw;
+        }
+
+        .hhh18 {
+            grid-area: hhh18;
+            border-radius: 0.1vw;
+            background-color: rgba(128, 128, 128, 0.267);
+            height: 5vw;
+            direction: rtl;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 0.55vw;
+            grid-template-areas:
+                "hhh18text1 hhh18text2 hhh18text3 hhh18text4 hhh18text5 hhh18text6 hhh18text7 hhh18text8"
+        }
+
+        .t1 {
+            border-top: 0.5vw solid rgba(128, 128, 128, 0);
+            border-left: 0.1vw solid white;
+            white-space: nowrap;
+            height: 5vw;
+            padding: 0.4vw 0.95vw;
+            text-decoration: underline;
+            font-size: 2.1vw;
+        }
+
+        #fv {
+            color: rgba(71, 123, 190, 0.877);
+
+        }
+
+        .hhh18text1 {
+            grid-area: hhh18text1;
+        }
+
+        .hhh18text2 {
+            grid-area: hhh18text2;
+        }
+
+        .hhh18text3 {
+            grid-area: hhh18text3;
+        }
+
+        .hhh18text4 {
+            grid-area: hhh18text4;
+        }
+
+        .hhh18text5 {
+            grid-area: hhh18text5;
+        }
+
+        .hhh18text6 {
+            grid-area: hhh18text6;
+        }
+
+        .hhh18text7 {
+            grid-area: hhh18text7;
+        }
+
+        .hhh18text8 {
+            grid-area: hhh18text8;
+        }
+
+        .hhhtext1 {
+            color: black;
+            direction: rtl;
+            font-size: 1.8vw;
+            padding: 0vw 0.4vw;
+            font-family: Tahoma, sans-serif;
+            font-style: normal;
+            font-variant-ligatures: normal;
+            font-variant-caps: normal;
+            font-variant-numeric: normal;
+            font-variant-east-asian: normal;
+            font-weight: bold;
+            font-stretch: normal;
+        }
+
+        .hhhtext1:hover {
+            color: red;
+        }
+
+        .hhhtext2 {
+            color: rgba(128, 128, 128, 0.836);
+            direction: rtl;
+            font-size: 1vw;
+            padding: 0.1vw 0.4vw;
+            font-family: Tahoma, sans-serif;
+            font-style: normal;
+            font-variant-ligatures: normal;
+            font-variant-caps: normal;
+            font-variant-numeric: normal;
+            font-variant-east-asian: normal;
+            font-weight: bold;
+            font-stretch: normal;
+        }
+
+        .hhh19 {
+            grid-area: hhh19;
+            height: 15.3vw;
+        }
+
+        .vc1 {
+            height: 80%;
+            width: 100%;
+        }
+
+        .vc1:hover {
+            box-sizing: border-box;
+            border: solid 0.001vw white;
+            transition-duration: 50ms;
+        }
+
+        .poo {
+            padding: 0.2vw 0.3vw;
+            font-size: 1.9vw;
+            font-family: arial ! important;
+            color: black;
+            direction: rtl;
+        }
+
+        .poo:hover {
+            color: red;
+        }
+
+        .hhh2 {
+            grid-area: hhh2;
+            height: 55vw;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 0.5vw;
+            grid-template-areas:
+                "hhh21 hhh21"
+                "hhh22 hhh22"
+        }
+
+        .hhh21 {
+            grid-area: hhh21;
+            height: 27.15vw;
+
+        }
+
+        .hhh22 {
+            grid-area: hhh22;
+            height: 27.15vw;
+        }
+
+
+        .hhh3 {
+            grid-area: hhh3;
+            height: 55vw;
+        }
+
+
+        .yyy {
+            grid-area: yyy;
+            height: 70vw;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1.2vw;
+            box-sizing: border-box;
+        }
+
+        .yyy1 {
+            height: 33vw;
+            grid-gap: 0.8vw;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+                "yyy11 yyy11 yyy11"
+                "yyy12 yyy13 yyy14"
+        }
+
+        .yyy11 {
+            background-color: blue;
+            grid-area: yyy11;
+            height: 2.5vw;
+            direction: rtl;
+            font-size: 2.2vw;
+            padding: 0vw 2vw;
+            font-family: arial ! important;
+            color: white;
+            border-radius: 0.1vw;
+        }
+
+        .yyy12 {
+            grid-area: yyy12;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .yyy13 {
+            grid-area: yyy13;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .yyy14 {
+            grid-area: yyy14;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .yyy2 {
+            height: 33vw;
+            grid-gap: 0.8vw;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+                "yyy21 yyy21 yyy21"
+                "yyy22 yyy23 yyy24"
+
+        }
+
+        .yyy21 {
+            background-color: blue;
+            grid-area: yyy21;
+            height: 2.5vw;
+            direction: rtl;
+            font-size: 2.2vw;
+            padding: 0vw 2vw;
+            font-family: arial ! important;
+            color: white;
+            border-radius: 0.1vw;
+        }
+
+        .yyy22 {
+            grid-area: yyy22;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+            border-radius: 0.2vw;
+        }
+
+        .yyy23 {
+            grid-area: yyy23;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+        .yyy24 {
+            grid-area: yyy24;
+            height: 30vw;
+            direction: rtl;
+            box-shadow: 0.02vw 0.02vw 0.5vw rgba(0, 0, 0, 0.185);
+        }
+
+    }
+</style>
+
+<body>
+    <div class="boxbox">
+
+        <article class="aaa">
+            <div class="box1">
+                <a
+                    href="https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsu0BYOeDIvEe1518Yt0EP2EmPsH7TBIrSRbNrBTTrotu9hkW8y6XCq1qc2rBu57vFNzYUQgN4Tbc3lDNK9IGsXJIgGeaJ879voFhbe-DlUM61iqZQnhC3gIheDHvgWHv35pWDNsL_WQylCUMl6EzBWVLNswGpA19GYJr_SpxZ5IhByZpIi5BeY_DUupbr1DowHD_M6_gsHmBTkoYgwY1EkdelaEwn0dc8_UD-WQCbpRXuVg-4IrBkqXf0q5J2SR&sai=AMfl-YT0dCjiqis5YzOagxNI-Mbxt8aL_7Ie2hApCyTCs7jn9FZrrOGmJ7p97xo3NWykXW1-n1zxOa5tEH4ETiLEaHRSi5BfzL7GRoRy12_pl29vYFg7nBeADkfBtW3G5YeCoikSzw&sig=Cg0ArKJSzN6jGlvIUbRP&adurl=https://z.ynet.co.il/mShort/commerce/2020/OsemCommunities/%3Fexternalurl%3Dtrue&nm=7&nx=678&ny=-60&mb=2"><img
+                        style="width: 100%; height: 100%; margin-bottom:-3.5px ;"
+                        src="https://tpc.googlesyndication.com/simgad/4294043008667048876"></a>
+            </div>
+        </article>
+
+        <article class="bbb">
+            <a href="https://www.alljobs.co.il/?utm_source=ynet&utm_medium=cooperation&utm_campaign=Banana">
+                <div class="aa1 jy26">
+                    <img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/05/13/H1zllnNZF9U/AllJobs3.png">
+                </div>
+            </a>
+            <a
+                href="https://www.winwin.co.il/Pages/Home_page.aspx?boneId=811&nsId=14&objId=225&utm_source=ynet_banana_article&utm_medium=component&utm_campaign=ongoing">
+                <div class="aa1 jy27">
+                    <img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/05/13/BkxxlhN11FqU/winwin.png">
+                </div>
+            </a>
+            <a href="https://www.e-vrit.co.il/">
+                <div class="aa1 jy28">
+                    <img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/05/13/H1GenN11t9I/evrit.png">
+                </div>
+            </a>
+
+            <div class="aa1 jy1">
+                <div class="A"><a href="https://www.mynet.co.il/Common/home/">mynet</a></div>
+            </div>
+            <div class="aa1 jy2">
+                <div class="A"><a href="https://www.ynet.co.il/news/category/194">דעות</a></div>
+            </div>
+            <div class="aa1 jy3">
+                <div class="A"><a href="https://www.ynet.co.il/news/category/30732">בחירות</a></div>
+            </div>
+            <div class="aa1 jy4">
+                <div class="A"><a href="https://www.bigdeal.co.il/allcamp.aspx"> ביג דיל</a></div>
+            </div>
+            <div class="aa1 jy5">
+                <div class="A"><a
+                        href="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/05/13/Hyhln411K5I/shops.png">קניות</a>
+                </div>
+            </div>
+            <div class="aa1 jy6">
+                <div class="A"><a href="https://www.ynet.co.il/economy/category/8315">נדל"ן</a></div>
+            </div>
+            <div class="aa1 jy7">
+                <div class="A"><a href="https://www.ynet.co.il/activism">מעורבות</a></div>
+            </div>
+            <div class="aa1 jy8 ">
+                <div class="A"><a href="https://www.ynet.co.il/health/parents">הורים</a></div>
+            </div>
+            <div class="aa1 jy9 ">
+                <div class="A"><a href="https://www.ynet.co.il/dating">יחסים</a></div>
+            </div>
+            <div class="aa1 jy10 ">
+                <div class="A"><a href="https://www.ynet.co.il/category/6377">מדע</a></div>
+            </div>
+            <div class="aa1 jy11 l5">
+                <div class="A"><a
+                        href="https://www.ynet.co.il/home/0,7340,L-8091,00.html?utm_source=ynet.ros&utm_medium=banana&utm_campaign=karyera&utm_content=karyera-banana">קריירה</a>
+                </div>
+            </div>
+            <div class="aa1 jy12 l5">
+                <div class="A"><a href="https://www.ynet.co.il/economy/category/5363">צרכנות</a></div>
+            </div>
+            <div class="aa1 jy13 l5">
+                <div class="A"><a href="https://www.ynet.co.il/food">אוכל</a></div>
+            </div>
+            <div class="aa1 jy14 l5">
+                <div class="A"><a href="https://www.ynet.co.il/vacation">חופש</a></div>
+            </div>
+            <div class="aa1 jy15 l5">
+                <div class="A"><a href="https://www.ynet.co.il/wheels">רכב</a></div>
+            </div>
+            <div class="aa1 jy16 l5">
+                <div class="A"><a href="https://www.ynet.co.il/judaism">יהדות</a></div>
+            </div>
+            <div class="aa1 jy17 l5">
+                <div class="A"><a href="https://www.ynet.co.il/digital">דיגיטל</a></div>
+            </div>
+            <div class="aa1 jy18 l5">
+                <div class="A"><a href="https://www.ynet.co.il/health">בריאות</a></div>
+            </div>
+            <div class="aa1 jy19 l5">
+                <div class="A"><a href="https://pplus.ynet.co.il/home/0,7340,L-11211,00.html">רכילות</a></div>
+            </div>
+            <div class="aa1 jy20 l5">
+                <div class="A"><a href="https://www.ynet.co.il/entertainment">תרבות</a></div>
+            </div>
+            <div class="aa1 jy21 l5">
+                <div class="A"><a href="https://www.ynet.co.il/sport">ספורט</a></div>
+            </div>
+            <div class="aa1 jy22 l5">
+                <div class="A"><a href="https://www.ynet.co.il/economy">כלכלה</a></div>
+            </div>
+            <div class="aa1 jy23 l5">
+                <div class="A"><a href="https://www.ynet.co.il/health/category/31372">קורונה</a></div>
+            </div>
+            <div class="aa1 jy24 l5">
+                <div class="A"><a href="https://www.ynet.co.il/news">חדשות</a></div>
+            </div>
+            <div class="aa jy25"><a href="https://www.ynet.co.il/home/0,7340,L-8,00.html"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/10/01/rk0sDzQ8v/sookot_desktop.png"></a>
+            </div>
+        </article>
+
+        <article class="ccc">
+            <div class=" maen1 vh"><a class="nn1" href="https://www.ynet.co.il/home/0,7340,L-3456,00.html">דואר אדום
+                    ✉</a></div>
+            <div class="border maen14"></div>
+            <div class="maen2 maen "><a href="https://www.ynetnews.com/category/3083"> English</a></div>
+            <div class="maen3 maen "><a href="https://www.vesty.co.il/main"> Vesty</a></div>
+            <div class="maen4 maen "><a href="https://www.ynetespanol.com/"> Espanol</a></div>
+            <div class="maen5 maen"><a
+                    href="https://www.alljobs.co.il/?utm_source=ynet&utm_medium=cooperation&utm_content=Internal%20Page%20Header&utm_campaign=Placements%20-%20Permanent">דרושים</a>
+            </div>
+            <div class="maen6 maen "><a
+                    href="http://myday.ynet.co.il/?utm_source=ynet.hp&utm_medium=tapuz&utm_campaign=general&utm_content=myday-tapuz">
+                    חתונות</a></div>
+            <div class="maen7 maen"><a
+                    href="http://b.ynet.co.il/?utm_source=ynet.hp&utm_medium=tapuz&utm_campaign=bituach&utm_content=bituach-tapuz">
+                    ביטוח</a></div>
+            <div class="maen8 maen "><a
+                    href="https://www.ynet.co.il/home/0,7340,L-10978,00.html?utm_source=ynet.hp&utm_medium=tapuz&utm_campaign=baaley.miktzua&utm_content=baaley.miktzua-tapuz">
+                    מקצוענים</a></div>
+            <div class="maen9 maen"><a href="https://www.ynet.co.il/category/10511">לימודים</a></div>
+            <div class="maen10 maen nn2"><a href="http://z.ynet.co.il/mshort/commerce/2017/specialprojects">פרויקטים</a>
+            </div>
+            <div class="maen11 maen nn2"><a
+                    href="https://www.frogi.co.il/?utm_source=ynet.co.il&utm_medium=referral&utm_campaign=Header">פרוגי</a>
+            </div>
+            <div class="maen12 maen nn2"><a href="https://www.ynet.co.il/home/0,7340,L-1069,00.html">אסטרולוגיה</a>
+            </div>
+            <div class="maen13 maen nn2"><a href="https://www.ynet.co.il/home/0,7340,L-3456,00.html">בלייזר</a></div>
+        </article>
+
+        <article class="ddd">
+            <div class="maenm1">
+                <a href="https://www.ynet.co.il/news/article/H1CKrBq8P#autoplay">
+                    <img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/05/B1dLtp008w/B1dLtp008w_10_0_630_360_0_x-large.jpg"></a>
+            </div>
+            <div class="maenm2">
+                <div class="text1 vh"">5.10.20</div>
+                        <div class=" text2 vh"">יום שני י"ז בתשרי התשפ"א</div>
+                <div class="text3 vh">משרד הבריאות מסתיר את </br> ממצאי החקירה, השר שותק</div>
+                <div class="text4 vh">גם שעות ארוכות אחרי שפורסם כי השרה מתל אביב העבירה את יום הכיפורים בטבריה, הציוץ
+                    האחרון של חברה למפלגה, השר אדלשטיין, מתמקד באבחונה כחולת קורונה ומאחל לה החלמה מהירה. במשרד הבריאות
+                    לא פרסמו את פרטי החקירה, אך ל-ynet נודע כי בבית הכנסת שבו הייתה אותרו שמונה חולים שאינם תושבי טבריה
+                </div>
+            </div>
+            <div class="maenm3 vh">
+                <a href="https://www.ynet.co.il/home/0,7340,L-184,00.html">
+                    <div class="text5">מבזקים</div>
+                </a>
+            </div>
+
+            <div class="maenm4">
+                <div class="text6">
+                    <a href="https://www.ynet.co.il/articles/0,7340,L-5819226,00.html">
+                        <div class="text9" style="margin-top: 0vw;">ליברמן: יש בישראל קבוצה שלא סופרת את הממשלה וקבוצה
+                            שנדרשת לציית</div>
+                        <div class="text8">11:35 12/10/20</div>
+                    </a>
+                    <a href="https://www.ynet.co.il/articles/0,7340,L-5819066,00.html">
+                        <div class="text9 ">הממשלה אישרה את העלאתם של 2,000 מבני הפלאשמורה</div>
+                        <div class="text8">12:53 12/10/20</div>
+                        <a href="https://www.ynet.co.il/articles/0,7340,L-5819045,00.html">
+                            <div class="text9 ">שני חוקרים אמריקנים זכו בפרס נובל לכלכלה על חקר תורת המכרזים</div>
+                            <div class="text8">08:56 12/10/20</div>
+                        </a>
+                        <a href="https://www.ynet.co.il/articles/0,7340,L-5818927,00.html">
+                            <div class="text9 ">הסופר יהושע קנז הלך לעולמו</div>
+                            <div class="text8">11:38 12/10/20</div>
+                        </a>
+                        <a href="https://www.ynet.co.il/articles/0,7340,L-5818927,00.html">
+                            <div class="text9 ">הסכם השלום עם איחוד האמירויות אושר בממשלה ויועבר להצבעה בכנסת</div>
+                            <div class="text8">05:10 12/10/20</div>
+                        </a>
+                        <a href="https://www.ynet.co.il/articles/0,7340,L-5818927,00.html">
+                            <div class="text9 ">נתניהו ויורש העצר של איחוד האמירויות סיכמו להיפגש בקרוב</div>
+                            <div class="text8">08:56 12/10/20</div>
+                        </a>
+                        <div class="text9 ">גרמניה: להרעלתו של מנהיג האופוזיציה הרוסי חייבות להיות השלכות</div>
+                        <a href="https://www.ynet.co.il/articles/0,7340,L-5818927,00.html">
+                            <div class="text8">14:18 12/10/20</div>
+                        </a>
+                        <a href="https://www.ynet.co.il/articles/0,7340,L-5819066,00.html">
+                            <div class="text9 ">הממשלה אישרה את העלאתם של 2,000 מבני הפלאשמורה</div>
+                            <div class="text8">12:53 12/10/20</div>
+                            <a href="https://www.ynet.co.il/articles/0,7340,L-5819045,00.html">
+                                <div class="text9 ">שני חוקרים אמריקנים זכו בפרס נובל לכלכלה על חקר תורת המכרזים</div>
+                                <div class="text8">08:56 12/10/20</div>
+                            </a>
+                            <a href="https://www.ynet.co.il/articles/0,7340,L-5818927,00.html">
+                                <div class="text9 ">הסופר יהושע קנז הלך לעולמו</div>
+                                <div class="text8">11:38 12/10/20</div>
+                            </a>
+                            <a href="https://www.ynet.co.il/articles/0,7340,L-5818927,00.html">
+                                <div class="text9 ">הסכם השלום עם איחוד האמירויות אושר בממשלה ויועבר להצבעה בכנסת</div>
+                                <div class="text8">05:10 12/10/20</div>
+                            </a>
+                            <a href="https://www.ynet.co.il/articles/0,7340,L-5818927,00.html">
+                                <div class="text9 ">נתניהו ויורש העצר של איחוד האמירויות סיכמו להיפגש בקרוב</div>
+                                <div class="text8">08:56 12/10/20</div>
+                            </a>
+                            <div class="text9 ">גרמניה: להרעלתו של מנהיג האופוזיציה הרוסי חייבות להיות השלכות</div>
+                            <a href="https://www.ynet.co.il/articles/0,7340,L-5818927,00.html">
+                                <div class="text8">14:18 12/10/20</div>
+                            </a>
+        </article>
+
+        <article class="eee">
+            <div class="Column4">
+                <a href="https://www.ynet.co.il/home/0,7340,L-8,00.html">
+                    <div class="Column41">התחברות</div>
+                </a>
+                <div class="Column42">
+                    <a href="https://www.ynet.co.il/home/0,7340,L-8,00.html">
+                        <div class="aass">🔍</div>
+                    </a>
+                    <a href="https://www.ynet.co.il/home/0,7340,L-8,00.html">
+                        <div class="bbss">ynet</div>
+                    </a>
+                    <a href="">
+                        <div class="ccss"><img src="https://www.ynet.co.il/images/Accessibility_button.png"></div>
+                    </a>
+                    <a href="">
+                        <div class="ccss"><img src="https://www.ynet.co.il/images/new_facebook_button.png"></div>
+                    </a>
+                    <a href="">
+                        <div class="ccss"><img src="https://www.ynet.co.il/images/new_youtube_button.png"></div>
+                    </a>
+                    <a href="">
+                        <div class="ccssy"><img src="https://www.ynet.co.il/images/yad2Newlogo.png"></div>
+                    </a>
+                    <div class="ok">
+                        <a class="boxht">▿תל-אביב-יפו</a>
+                        <div class="box2ht">
+                            <a class="v" href="#">ירושלים</a>
+                            <a class="v" href="#">תל אביב</a>
+                            <a class="v" href="#">חיפה</a>
+                            <a class="v" href="#">פתח תקווה</a>
+                            <a class="v" href="#">אשדוד</a>
+                            <a class="v" href="#">נתניה</a>
+                            <a class="v" href="#">באר שבע</a>
+                            <a class="v" href="#">בני ברק</a>
+                            <a class="v" href="#">חולון</a>
+                            <a class="v" href="#">רמת גן</a>
+                            <a class="v" href="#">רחובות</a>
+                            <a class="v" href="#">אשקלון</a>
+                            <a class="v" href="#">בת ים</a>
+                            <a class="v" href="#">בית שמש</a>
+                            <a class="v" href="#">כפר סבא</a>
+                            <a class="v" href="#">הרצליה</a>
+                            <a class="v" href="#">חדרה</a>
+                            <a class="v" href="#">נצרת</a>
+
+
+                        </div>
+                    </div>
+
+                    </a>
+                    <a href="https://ynet.co.il/home/0,7340,L-201,00.html">
+                        <div class="hhss"><img src="https://ynet.co.il/Cnt/Images/Weather/1310.png"></div>
+                    </a>
+                    <a href="https://ynet.co.il/home/0,7340,L-201,00.html">
+                        <div class="iiss ">29°</div>
+                    </a>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="fff">
+
+            <div class="eee1">
+                <a href="https://www.ynet.co.il/news/article/rJg3Ju3LP">
+                    <div class="s1">
+                        <div class="ll">
+                            <b>בעקבות תחקיר ynet: מתנדבים במד"א נעצרו</b><br />
+                            המשטרה עצרה 5 מתנדבים בחשד שביצעו בדיקות קורונה פיראטיות </br>ברחבי הארץ, שעבורן גבו לפי
+                            החשד עשרות אלפי שקלים
+                        </div><img class="llimg"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/07/SJxNi78j8w/SJxNi78j8w_0_0_640_360_0_medium.jpg">
+                    </div>
+                </a>
+                <a href="https://www.ynet.co.il/article/SJ1T34nIP#autoplay">
+                    <div class="s2">
+                        <div class="ll">
+                            <b>מה זה חור שחור ואיך הוא נוצר?</b><br />
+                            חזקים בצורה שלא תיאמן, מסוגלים לרסק כוכבים ובלתי אפשרי לצאת </br>מהם: מדענים מסבירים על
+                            תעלומת החורים השחורים
+                        </div><img class="llimg"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2019/04/15/9187863/9187863_0_0_1920_1080_0_medium.jpg">
+                    </div>
+                </a>
+                <a href="https://pplus.ynet.co.il/articles/0,7340,L-5811792,00.html#autoplay">
+                    <div class="s2 s3">
+                        <div class="ll">
+                            <b>"קורונה? אני עוסק בנדל"ן יוקרה – הביקוש גובר"</b><br />
+                            כוכב הדוקו-ריאליטי "מסמנים את סאנסט" מספר על הדרך לפסגה,</br> מסביר למה הקורונה לא פוגעת
+                            בעשירים ונזכר בביקור בישראל
+                        </div><img class="llimg"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/06/SkeUvxcY8v/SkeUvxcY8v_170_87_1126_634_0_medium.jpg">
+                    </div>
+                </a>
+                <a href="https://www.ynet.co.il/economy/poalimdigital/article/rJd2v9dLD">
+                    <div class="s2 s4">
+                        <div class="ll">
+                            <b>"הקורונה היא הזדמנות לתכנן מחדש את החיים"</b><br />
+                            מה לקחת איתנו הלאה מתקופה זו כדי לשפר את חיינו, ואיך יוצאים </br> ממנה מחוזקים? ד"ר שרון רמר
+                            ביאל ממליצה לראות את נקודות האור
+                        </div><img class="llimg"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/09/30/10273513/10273513_0_87_1000_563_0_medium.jpg">
+                    </div>
+                </a>
+
+            </div>
+            <div class="eee2">
+                <div class="as1">
+                    <a
+                        href="https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjstxxj-bJOkto1HUIckJbBIS_kZ5qxRmIA_MABK1xUxvAjQ2UQ6ZUUN4Fln1_y5VZII7DAV-8wio6O_OwIH5womucVKpS4Y-np77CrcQNsD9drUvHNGNWkw19tO0iWo_3HITTqoUc4vxV1ps3Qglg9a5_kyFk6yXdqdGr18mmj4Asr_DzP7ILJ2omV5Ye2Ao_owj2LTXMhJLb8zy1JFyg9uMs2r8n2or7Kkx9D2T1LHNXsipUv0iRvJ5VWqE49V9Ou2c&sai=AMfl-YSd7mHRiH_eKHiySIMow7unaah8obPN9QsGzTL40rNr_w9JwOGD8Ijs5MZycV3JIASBB_EFRNRMrQsm-tpgJM6TXx5Pv7QcZWJxojsRXvOK9ZkcL6z9az2nIvZX3jsgYb9bqQ&sig=Cg0ArKJSzBXIGvuP6MSa&adurl=https://premium.ynet.co.il/web/register%3Futm_source%3Dynet%26utm_medium%3Dcpc%26utm_campaign%3Dynetplus-september%26utm_term%3DCensor%26utm_content%3Dbanner300_250%23/campaigns&nm=2&nx=190&ny=-134&mb=2">
+                        <img style="border-radius: 0.3vw;"
+                            src="https://tpc.googlesyndication.com/simgad/15784469142130968465">
+                    </a></div>
+                <div class="as2">
+                    <a
+                        href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuZQAD0RquYtTRHifMsfh-fFbxsPJR81Cj5AmdIbvzucf2jECaDbgDuPIRCLWbBc9RP_eQJbe_xqqZEfx9aK7y_PMhZT7KrLZZimIAdHQRORa82ddwpnMdviEcwMpllLx7GpzBblF5zGb351ydVUZtCDdjFa3RgxvACHmFGveEqG6jSOKIhTdRsNGrggiddGypguzL5M91Kl3eaNF5DfBHu5CWPNcd4vhm23mpKTp2Lon7pxXn7d0QhdJZqPAIOdczB78WNa2DLGCs&sai=AMfl-YSlSDgeXU-HDn8FGjY9YXb82fGvahc2hMU7rKTNHamgtXGmgXldOcScegi_oJhSvwZdjfL58GD2Uq6FJUZtYEGxS5QsEPkpjzYIC2TY8F3CmJqe4xiHee-mBIZsGDHicNjPyw&sig=Cg0ArKJSzBnb8l2stGFvEAE&urlfix=1&adurl=https://www.blender.co.il/%3Fp%3Dymimun%26utm_source%3Dynet%26utm_medium%3Dstrip%26utm_campaign%3Dchikchak%26utm_content%3Dstriphp">
+                        <img style="border-radius: 0.3vw;"
+                            src="https://tpc.googlesyndication.com/simgad/11877484019160373005">
+                    </a></div>
+                <div class="as3">
+                    <a href="https://premium.ynet.co.il/Web/Manage/Main">
+                        <img style="border-radius: 0.3vw;"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/05/24/rkoryhDiL/rkoryhDiL_0_0_300_38_medium.jpg">
+                    </a></div>
+                <div class="as4">
+                    <a
+                        href="https://www.runy.co.il/catalog/product/view/id/107490/s/m6004661100/category/5354/?utm_source=ynet.co.il&utm_medium=referral&utm_campaign=twenty_nine&utm_content=kidum_buy_and%20_save">
+                        <img style="border-radius: 0.3vw;"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/09/03/BktDZXA7D/BktDZXA7D_0_0_182_102_medium.jpg">
+                    </a></div>
+                <div class="as5">
+                    <a
+                        href="https://b.ynet.co.il/pearl/clientzone/vehicle/proposal.html?utm_source=ynet.hp&utm_medium=buy_save_146_82&utm_campaign=bituach.car&utm_content=bituach.car-buy_save_146_82">
+                        <img style="border-radius: 0.3vw;"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/09/15/HJFFLlRED/HJFFLlRED_0_0_182_102_0_medium.jpg">
+                    </a> </div>
+            </div>
+        </article>
+
+
+        <article class="ggg">
+            <div class="kkk1">
+                <div class="kkk11">הכי חם</div>
+                <div class="kkk12 pl"><a href="https://xnet.ynet.co.il/articles/0,7340,L-5785967,00.html"><img
+                            class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/08/rJte2dnUw/rJte2dnUw_0_0_183_103_0_medium.jpg">
+                        <div class="po vh"> מתחבא בין מפעלים: בלופט של המעצבת אורנה שאול
+                        </div>
+                </div></a>
+                <div class="kkk13 pl"><a href="https://www.ynet.co.il/vacation/flights/article/ByNJaqiID#autoplay"><img
+                            class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2017/06/19/7855194/7855194_2_0_979_551_0_medium.jpg">
+                        <div class="po vh"> בלגן בשמיים: ביטולי טיסות חזור לישראלים
+                        </div>
+                </div></a>
+                <div class="kkk14 pl"><a href="https://newmedia.calcalist.co.il/magazine-08-10-20/m02.html"><img
+                            class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/08/ByhXcc28v/ByhXcc28v_0_0_182_102_0_medium.jpg">
+                        <div class="po vh"> אסון חייו ובגידת הממשלה: מנכ"ל אמדוקס ישראל כועס
+                        </div>
+                </div></a>
+            </div>
+            <div class="kkk2">
+                <div class="kkk21 ">עוד כותרות</div>
+                <div class="kkk22 pl"><a href="https://www.ynet.co.il/articles/0,7340,L-5811727,00.html"><img class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/07/10289133/10289133_0_0_1920_1080_0_medium.jpg">
+                        <div class="po vh"> "תחבורה ציבורית לא תתקן את הכשל בכבישים"
+                        </div>
+                </div></a>
+                <div class="kkk23 pl"><a href="https://pplus.ynet.co.il/articles/0,7340,L-5811792,00.html#autoplay"><img
+                            class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/08/10290818/10290818_0_0_640_360_0_medium.jpg">
+                        <div class="po vh"> השערוריות שלא הכרתם בזוגיות של הנסיך וויליאם וקייט מידלטון
+                        </div>
+                </div></a>
+                <div class="kkk24 pl"><a href="https://www.ynet.co.il/articles/0,7340,L-5801278,00.html"><img class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/09/22/10259223/10259223_0_78_1000_561_0_medium.jpg">
+                        <div class="po vh"> הבר נסגר? כך תכינו קוקטיילים מעולים בבית
+                        </div>
+                </div></a>
+            </div>
+        </article>
+
+        <article class="hhh">
+            <div class="hhh1">
+
+                <div class="hhh11">חדשות
+                </div>
+                <div class="hhh12">
+                    <a href="https://www.ynet.co.il/article/H19SJ62LP#autoplay">
+                        <div class="hhhtext1">נתוני הקורונה: 27 נפטרו היום, שיא במספר המונשמים
+                        </div>
+                    </a>
+                    <div class="hhhtext2">סיון חילאי ,17:23 , 08.10.20</div>
+                </div>
+                <div class="hhh13">
+                    <a href="https://www.ynet.co.il/article/HyMFAnsID">
+                        <div class="hhhtext1">האחיות שמובילות את המאבק בקורונה: "אין שעות, קוראים לך ואת באה"
+                        </div>
+                    </a>
+                    <div class="hhhtext2">חיים גולדיטש ,22:29 , 08.10.20</div>
+                </div>
+                <div class="hhh14">
+                    <a href="https://www.ynet.co.il/news/article/ByKNeAn8D">
+                        <div class="hhhtext1">גם הרמטכ"ל הפר את הוראות הסגר: "מקבל אחריות"
+                        </div>
+                    </a>
+                    <div class="hhhtext2">ynet , 20:52 , 08.10.20</div>
+                </div>
+                <div class="hhh15">
+                    <a href="https://www.ynet.co.il/news/article/HJ11G4p28D#autoplay">
+                        <div class="hhhtext1">גרטה או ארגון הבריאות? הפייבוריטים לנובל לשלום
+                        </div>
+                    </a>
+                    <div class="hhhtext2">סוכנויות הידיעות ,20:50 , 08.10.20</div>
+                </div>
+                <div class="hhh16">
+                    <a href="https://www.ynet.co.il/article/B1NbYLnIv#autoplay">
+                        <div class="hhhtext1">פרשת בדיקות הקורונה הפיראטיות: בכיר במד"א עוכב לחקירה
+                        </div>
+                    </a>
+                    <div class="hhhtext2">גלעד כהן, חיים גולדיטש ,12:31 , 08.10.20</div>
+                </div>
+                <div class="hhh17">
+                    <a href="https://www.ynet.co.il/judaism/article/HJhrX3h8D#autoplay">
+                        <div class="hhhtext1">רבני בני ברק קוראים לחגוג בבתי הכנסת בניגוד להגבלות
+                        </div>
+                    </a>
+                    <div class="hhhtext2">קובי נחשוני , 18:54 , 08.10.20</div>
+                </div>
+                <div class="hhh18">
+                    <div class="hhh18text1 t1 vh"><a id="fv" href=""> מבזקים</div></a>
+                    <div class="hhh18text2 t1 vh"><a id="fv" href="">מזג אויר</div></a>
+                    <div class="hhh18text3 t1 vh"><a id="fv" href="">בעולם</div></a>
+                    <div class="hhh18text4 t1 vh"><a id="fv" href="">פוליטי מדיני</div></a>
+                    <div class="hhh18text5 t1 vh"><a id="fv" href="">דעות</div></a>
+                    <div class="hhh18text6 t1 vh"><a id="fv" href=""> ארה"ב בוחרת 2020</div></a>
+                    <div class="hhh18text7 t1 vh"><a id="fv" href="">עוד בחדשות</div>
+
+                </div>
+                <div class="hhh19">
+                    <a href="https://www.ynet.co.il/news/article/HJ11G4p28D#autoplay">
+                        <img class="vc1"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/08/H1uJyR28v/H1uJyR28v_0_98_2500_1408_0_medium.jpg">
+                        <div class="poo vh"> גרטה או ארגון הבריאות? הפייבוריטים לנובל לשלום
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="hhh2">
+                <div class="hhh21 zx1">
+                    <a
+                        href="https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsvnwsWKsuis52TL-wt5mnpl80YFubT0kw-or-ZkZ8umH-D0NLbw_Bo38_HeKH4_6nTfAZ5ega0ZJ-EVrDOM7D1Q43JXQMTCGQSRSCjDBNktxQJPiNcN5Hwmling-bGZNFNYa2Wsv3UMmzMqg77eq3Oag8igU0msMC5zaaefVOuNIvvpikY891ba1Rw3nru2J-o_8w9drzJc4o4XRClOF9WUi_pDwV0ovBu4EWukCW7jizWu9sF9jxPaxxi_hZ9brezy0S0q5V-1rbSvH6o&sai=AMfl-YQMcNofgEOGFFQZFf3agCkBE3yJm_1ErujhWh3vwd_Od4P6eCuAOsIrMSzKt0aK8MR7-yawN5uxgXNp16DuRNiORzQAH8s_GRf3wqnBjxKn3jriOegjK0bErfmQZuNP-T0xcA&sig=Cg0ArKJSzEV2LKoQ6BIc&adurl=https://www.yad2.co.il%3Futm_source%3Dynet%26utm_medium%3Dmikum_kavua_384_104_general%26utm_campaign%3Dseger2&nm=7&nx=246&ny=-28&mb=2">
+                        <img class="f1" src="https://tpc.googlesyndication.com/simgad/17457975053458277423">
+                    </a>
+                </div>
+                <div class="hhh22 zx1">
+                    <a
+                        href="https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsscxUsRej0S_ej3cl-sNEu9m3_4xoxYJ2qIyg33I91-IoFuFvDRdQWou35dhV7TTy9r11nSsF7Ubyt3rln99qRg3G2NsK04FrYOLnABZWyJwmd5GnFsh4OnfA6EoM51f_nF7R6CfIZpQPPaETxFuWJSBBcj0iBSLInpBeO5q__A18Jcv1avjlYzHPumksOyZamkJ85mHoqEmISmmqeMSbfAT1VoGu-H_luGzT-YgCLgmpfHIYoNgpgV1q741iZPx8v47a_B7J9L4o25EBPLHHA&sai=AMfl-YRMZp9VbHdr3OinDQndf-RQEoWwHqoj48xrovODJEDhnevXa5FLql_FuIpImkF_797Mugs2JtgnEtXRI-WKTF3xI1ZByI_bBF954T3xXCsWhDvjQmd8PDm6vBk3cRfG0d8lKg&sig=Cg0ArKJSzHap-8bq54Da&adurl=https://www.ynetshops.co.il/Prod/101885%3Futm_source%3Dynet.co.il%26utm_medium%3Dreferral%26utm_campaign%3Dynetshops_double_bed%26utm_content%3Ddesktop_384_222&nm=10&nx=240&ny=-75&mb=2">
+                        <img class="f1" src="https://tpc.googlesyndication.com/simgad/15727849491822662135">
+                    </a>
+                </div>
+
+            </div>
+            <div class="hhh3 zx1">
+                <a
+                    href="https://adcg.doubleclick.net/pcs/click%3Fxai%3DAKAOjstgjs6j1_x3q82GtSwB0-GX9zo-UQdjCoEZn5fRyszXth238WLIbFNNNq3ntI8dLi2vAOn3KpgBjMn_ZRxjBS7YMf6Nyoh1vTwjBaKyMTzU164TIujLP_5eDoEX-pmWkh2UKJQxcCDhGCzk3J86W90SiF_sGET1O9sY5L2nrBJziq5NrcYNBK7IUFzlWKr8pNZNZSddfheMcsft78u7twIV0hA5u-O_UhX5gTzqQdzJ6-kousuyUQmF7NukH6accz9hFKj5rPrdf1cuQaJISw%26sai%3DAMfl-YRtnRkJm4aOfVvCig59SS92mgy6v15e3EWshCd-tcMv7pyLUEd8bS290vKKRHi84Gqpm4EakoD340XyDiI2ZUWUdmwrc4R164mOv-V8Jr4b0ove3CiS-BsHnKFoArehTHhy3A%26sig%3DCg0ArKJSzClnvMWfFuyDEAE%26urlfix%3D1%26adurl%3Dhttps://rep.erate.co.il/t:rep;pid:125432;tid:129363;perId:267">
+                    <img class="f1" src="https://media.erate.co.il/131/403/8071/129363">
+                </a>
+            </div>
+        </article>
+        <article class="yyy">
+            <div class="yyy1">
+                <div class="yyy11">צרכנות</div>
+                <div class="yyy12 pl"><a href="https://www.ynet.co.il/economy/article/Byg0jLo8v"><img class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/06/22/10050244/10050244_4_0_4605_2592_0_medium.jpg">
+                        <div class="po vh"> זינוק במחירי התבואות בעולם: המזון שלנו עלול להתייקר
+                        </div>
+                </div></a>
+                <div class="yyy13 pl"><a href="https://www.ynet.co.il/economy/article/Byh119I2ID"><img class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/08/S16gEv28w/S16gEv28w_263_529_2461_1386_0_medium.jpg">
+                        <div class="po vh"> לראשונה בדייסון: שואב אבק עם סוללה נשלפת - בתוספת מחיר
+                        </div>
+                </div></a>
+                <div class="yyy14 pl"><a href="https://www.ynet.co.il/economy/article/r1ef7ELUv"><img class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/03/HkITw4ULD/HkITw4ULD_0_0_1000_667_0_medium.jpg">
+                        <div class="po vh"> מחפשים דירה? כך תתנהלו מול המתווך
+                        </div>
+                </div></a>
+            </div>
+            <div class="yyy2">
+                <div class="yyy21 ">Pplus רכילות</div>
+                <div class="yyy22 pl"><a href="https://pplus.ynet.co.il/articles/0,7340,L-5811792,00.html#autoplay"><img
+                            class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/08/10290818/10290818_0_0_640_360_0_medium.jpg">
+                        <div class="po vh"> "השערוריות שלא הכרתם בזוגיות של הנסיך וויליאם וקייט מידלטון"
+                        </div>
+                </div></a>
+                <div class="yyy23 pl"><a href="https://pplus.ynet.co.il/articles/0,7340,L-5812472,00.html"><img
+                            class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/08/10290156/10290156_0_0_640_360_0_medium.jpg">
+                        <div class="po vh"> מי השחקנים שהורידו חולצות בהכי הרבה סרטים?
+                        </div>
+                </div></a>
+                <div class="yyy24 pl"><a href="https://pplus.ynet.co.il/articles/0,7340,L-5811986,00.html"><img
+                            class="r2"
+                            src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/07/10288901/10288901_70_4_521_292_0_medium.jpg">
+                        <div class="po vh">הסוף? מייקל לואיס סגר את העסק שלו
+
+                        </div>
+                </div></a>
+            </div>
+        </article>
+        <article class="ooo">
+        </article>
+
+
+    </div>
+
+</body>
+
+</html>

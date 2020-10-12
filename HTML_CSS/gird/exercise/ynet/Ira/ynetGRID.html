@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {--primary-color: red;
+            --secondary-color: rgb(0, 0, 102);
+
+    }
+    body {
+        padding: 10px;
+    }
+
+    .secondMENU__list {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        margin: 0px;
+        height: 40px;
+        padding: 0px;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #6281af;
+
+    }
+
+    .navMENU__list {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        padding: 5px;
+
+    }
+
+    .secondMENU__list img {
+        height: 15px;
+        width: auto;
+        padding-left: 10px;
+    }
+
+    .secondMENU {
+        border-bottom: 1px solid #e5e3e3;
+        border-top: 1px solid #e5e3e3;
+    }
+
+    .redMAILcontainer {
+        border-right: solid #e5e3e3 2px;
+        padding-right: 5px;
+    }
+
+    .redMAIL__text {
+        color: #eb1116;
+        font-weight: bold;
+    }
+
+    .redMAILcontainer--underline {
+        text-decoration: none;
+    }
+
+    .mainARTICLE {
+        height: 335px;
+        padding: 5px;
+        display: grid;
+        column-gap: 10px;
+        row-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'MAINimg MAINimg MAINimg MAINtext MAINtext short'
+            'MAINimg MAINimg MAINimg MAINtext MAINtext short'
+            'MAINimg MAINimg MAINimg MAINtext MAINtext short';
+    }
+
+    .mainARTICLE__img {
+        grid-area: MAINimg;
+    }
+
+    .mainARTICLE__text {
+        grid-area: MAINtext;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: right;
+        width: 300px;
+        padding: 5px;
+        text-align: right;
+
+    }
+
+    .mainARTICLE__shortNEWS {
+        grid-area: short;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-left: outset;
+    }
+
+    .mainARTICLE__img {
+        text-align: center;
+        background-size: cover;
+        background-image: url(https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/06/HyQ7Rlr5LP/HyQ7Rlr5LP_0_0_1280_721_0_x-large.jpg)
+    }
+
+    .mainARTICLE__shortNEWS--titel {
+        background-color: var(--primary-color);
+        color: white;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 4vh;
+        margin: 1px;
+        text-align: right;
+
+    }
+
+    .searchBAR {
+        background-color: rgb(230, 234, 243);
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        grid-template-rows: 36px;
+        margin-top: 10px;
+        margin-bottom: 19px;
+    }
+
+    .MIDconteiner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(32px, auto);
+        grid-gap: 14px;
+        grid-template-areas: "MIDconteiner__first MIDconteiner__first MIDconteiner__first . . ."
+            "MIDconteiner__second MIDconteiner__second MIDconteiner__second . . ."
+            "MIDconteiner__third MIDconteiner__third MIDconteiner__third . . ."
+            "MIDconteiner__four MIDconteiner__four MIDconteiner__four . . ."
+            "lt lt lt rt rt rt"
+            "arti1 arti2 arti3 arti4 . .";
+    }
+
+    .MIDconteiner__first {
+        grid-area: MIDconteiner__first;
+    }
+
+    .MIDconteiner__second {
+        grid-area: MIDconteiner__second;
+    }
+
+    .MIDconteiner__third {
+        grid-area: MIDconteiner__third;
+    }
+
+    .MIDconteiner__four {
+        grid-area: MIDconteiner__four;
+    }
+
+    .lt {
+        grid-area: lt;
+    }
+
+    .rt {
+        grid-area: rt;
+    }
+
+    .arti1 {
+        grid-area: arti1;
+    }
+
+    .arti2 {
+        grid-area: arti2;
+    }
+
+    .arti3 {
+        grid-area: arti3;
+    }
+
+    .arti4 {
+        grid-area: arti4;
+    }
+
+    .MIDconteiner__first {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(102px, auto);
+        grid-template-areas: "firstTX firstTX firstPIC";
+    }
+
+    .MIDconteiner__second {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(102px, auto);
+        grid-template-areas: "secondTX secondTX secondPIC";
+
+    }
+
+    .MIDconteiner__third {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(102px, auto);
+        grid-template-areas: "thirdTX thirdTX thirdPIC";
+
+    }
+
+    .MIDconteiner__four {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(102px, auto);
+        grid-template-areas: "fourTX fourTX fourPIC";
+
+    }
+
+    .firstTX {
+        grid-area: firstTX;
+    }
+
+    .firstPIC {
+        grid-area: firstPIC;
+    }
+
+    .secondTX {
+        grid-area: secondTX;
+    }
+
+    .secondPIC {
+        grid-area: secondPIC;
+    }
+
+
+    .thirdTX {
+        grid-area: thirdTX;
+    }
+
+    .thirdPIC {
+        grid-area: thirdPIC;
+    }
+
+    .fourTX {
+        grid-area: fourTX;
+    }
+
+    .fourPIC {
+        grid-area: fourPIC;
+    }
+
+
+    .pic img {
+        height: 100%;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .MIDconteiner h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4vh;
+        color: white;
+        text-align: right;
+        margin: 10px;
+    }
+
+    .tx {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .MIDconteiner p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 3vh;
+        color: white;
+        text-align: right;
+    }
+
+    .MIDconteiner__first--blu {
+        background-color: var(--secondary-color);
+
+    }
+
+    .MIDconteiner__first--red {
+        background-color: var(--primary-color);
+
+    }
+
+    .EXTRAtitel {
+        background-color: var(--secondary-color);
+        padding: 6px;
+        text-align: right;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: bold;
+    }
+    .smoler {font-size: 3vh;
+    font-family: Arial, Helvetica, sans-serif;}
+</style>
+
+<body>
+
+    <div class="navMENU">
+        <ul class="navMENU__list">
+            <li><a
+                    href="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/HkVl8hFzEev/alljobs.png"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/HkVl8hFzEev/alljobs.png"
+                        alt=""></a></li>
+            <li><a
+                    href="https://www.winwin.co.il/Pages/Home_page.aspx?boneId=811&nsId=14&objId=225&utm_source=ynet_banana_article&utm_medium=component&utm_campaign=ongoing"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/HJDlLhYG4gD/winwinb.png"
+                        alt=""></a></li>
+            <li><a href="https://www.e-vrit.co.il/"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/S1n8hKGNgD/_____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.mynet.co.il/Common/home/"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/SJUlIhYzElP/mynet.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/news/category/194"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/SySVnM4lD/____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/news/category/30732"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/08/18/SJZ8vIYGw/___________.png"
+                        alt=""></a></li>
+            <li><a href="https://www.bigdeal.co.il/allcamp.aspx"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/r1LhFGElP/_______.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynetshops.co.il/?utm_source=ynet&utm_medium=banana&utm_campaign=ynetshops_banana"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/S1keLnFz4xD/_____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/economy/category/8315"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/S1YI2YfNgw/____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/health/parents"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/HJO82KG4gw/_______.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/health/parents"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/S1z8hYzNew/_____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/dating"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/ryII2FMVeP/_____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/category/6377"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/rycU3YGNxP/__________.png"
+                        alt=""></a></li>
+            <li><a
+                    href="https://www.ynet.co.il/home/0,7340,L-8091,00.html?utm_source=ynet.ros&utm_medium=banana&utm_campaign=karyera&utm_content=karyera-banana"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/HJeeU2KzVxw/______.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/economy/category/5363"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/Byp8ntzVlD/______.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/food"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/SJ4s6M4gP/____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/vacation"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/r1NL2tfExD/____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/wheels"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/SJblU2YzExw/___.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/judaism"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/ryS8hFfVxv/_____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/digital"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/rJZ8hKGVlP/______.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/health"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/S1lLhYzNlD/______.png"
+                        alt=""></a></li>
+            <li><a href="https://pplus.ynet.co.il/home/0,7340,L-11211,00.html"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/HyzgU3KMVev/______.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/entertainment"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/B1Qx82FMEev/_____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/sport"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/rJsIntMElv/_____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/economy"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/HkP83YGNxP/_____.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/health/category/31372"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/07/21/Sk0L3Ff4eD/______.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/news"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/05/13/Sytxh4WY5L/news.png"
+                        alt=""></a></li>
+            <li><a href="https://www.ynet.co.il/home/0,7340,L-8,00.html"><img
+                        src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/wcm_upload/2020/10/01/rk0sDzQ8v/sookot_desktop.png"
+                        alt=""></a></li>
+
+        </ul>
+
+    </div>
+    <div class="secondMENU">
+
+        <ul class="secondMENU__list">
+            <li class="redMAILcontainer"><a class="redMAILcontainer--underline" href="https://redmail.ynet.co.il/"><span
+                        class="redMAIL__text">דואר
+                        אדום</span><img src="img/redMAIL.PNG" alt=""></a>
+            </li>
+            <li><a href="https://www.ynetnews.com/category/3083"></a>English</li>
+            <li><a href="https://www.vesty.co.il/main"></a>vesty</li>
+            <li><a href="https://www.ynetespanol.com/"></a>espanol</li>
+            <li><a href=""></a>דרושים</li>
+            <li><a href=""></a>חתונות</li>
+            <li><a href=""></a>ביטוח</li>
+            <li><a href=""></a>בעלי מקצוע</li>
+            <li><a href=""></a>לימודים</li>
+            <li><a href=""></a>פרויקטים</li>
+            <li><a href=""></a>פרוגי</li>
+            <li><a href=""></a>אסטרולוגיה</li>
+            <li><a href=""></a>בלייזר</li>
+            <li><a href=""></a>מוספים</li>
+            <li><a href=""></a>מזג אוויר</li>
+        </ul>
+    </div>
+    <div class="mainARTICLE">
+        <div class="mainARTICLE__img"></div>
+        <div class="mainARTICLE__text">
+            <h1>10.10.20</h1>
+            <h3> יום רביעי י"ט בתשרי התשפ"א </h3>
+            <div>
+                מצב החירום הוארך, מהומות במאה שערים ומודיעין עילית
+            </div>
+            <div> במשאל טלפוני לפני חצות - ובמקביל להפגנה בתל אביב נגד הגבלת זכות המחאה - הוארך בשבוע מצב החירום המיוחד.
+                המשמעות: הגבלת ההפגנות נמשכת, ואיתה איסור הכניסה לבתי כנסת. אמש: חרדים יידו אבנים על שוטרים וניידות
+                במודיעין עילית ובירושלים, לפחות 7 נעצרו</div>
+
+
+        </div>
+        <div class="mainARTICLE__shortNEWS">
+            <h3 class="mainARTICLE__shortNEWS--titel">מבזקים</h3>
+            <div>
+                20:15 10/10/20
+                ארה"ב: סגן הנשיא מייק פנס נמצא שלילי לקורונה ערב העימות
+            </div>
+            <div>21:44 10/10/20
+                נשיא צרפת: נטיל הגבלות חדשות במקומות שבהם יש עלייה בתחלואה בקורונה</div>
+            <div>20:05 10/10/20
+                תוכנית הסיוע החדשה של האוצר: מענקים למובטלים והקדמת מענק לעצמאים</div>
+
+        </div>
+    </div>
+    <div class="searchBAR">
+        <div class="searchBAR__logIN">1</div>
+        <div class="searchBAR__SEARCHwindow">2</div>
+        <div class="access">3
+
+        </div>
+        <div class="weather">4</div>
+    </div>
+    <div class="MIDconteiner">
+        <div class="MIDconteiner__first MIDconteiner__first--red">
+            <div class="tx firstTX">
+                <h1>צה"ל פשט על חיפה עם פשקווילים, אך בשכונות החרדיות פחות</h1>
+                <p>מאות חיילי פיקוד העורף גויסו למבצע נרחב תחת השם "ההר הירוק תמיד", מסייעים לנזקקים ועובדים מול ראשי
+                    הקהילה. למרות הירידה בתחלואה</p>
+            </div>
+            <div class="pic firstPIC"><img
+                    src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/11/Hybi3AKlwD/Hybi3AKlwD_0_0_1280_732_0_medium.jpg"
+                    alt=""></div>
+
+        </div>
+
+        <div class="MIDconteiner__second MIDconteiner__first--blu">
+            <div class="tx secondTX">
+                <h1>אחרי פחות מחצי שנה: מנכ"לית האוצר התפטרה מתפקידה</h1>
+                <p>המנכ"לית האשימה בפני מקורביה על רקע אי אישור תקציב 2021: "המצב הזוי, לא יכולה להמשיך"</p>
+            </div>
+            <div class="pic secondPIC"><img
+                    src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/11/Sk0ietgPv/Sk0ietgPv_1_0_640_360_0_medium.jpg"
+                    alt=""></div>
+
+        </div>
+
+        <div class="MIDconteiner__third MIDconteiner__first--red">
+            <div class="tx thirdTX">
+                <h1>נפטר האדם המבוגר בישראל בגיל 117</h1>
+                <p>שלמה סלאיימן היה אב לשישה ילדים וסב לעשרות נכדים, נינים ובני נינים. השבוע הוא נפטר בשיבה טובה
+                    כשמשפחתו לצידו</p>
+            </div>
+            <div class="pic thirdPIC"><img
+                    src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/11/r1z0P3lwD/r1z0P3lwD_0_0_529_298_0_medium.jpg"
+                    alt=""> </div>
+
+        </div>
+
+        <div class="MIDconteiner__four MIDconteiner__first--blu">
+            <div class="tx fourTX">
+                <h1>ניגן לבדו ביער - וקיבל קנס בסך 3,500 שקלים</h1>
+                <p>לאחר שסגרו את האולפנים וחדרי החזרות, המתופף מאיר הררה חיפש מקום יצירתי להתאמן בו מבלי להפריע לשכנים
+                </p>
+            </div>
+            <div class="pic fourPIC"><img
+                    src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/11/rJebw5PgPw/rJebw5PgPw_211_0_490_275_0_medium.jpg"
+                    alt=""> </div>
+        </div>
+
+        <div class="EXTRAtitel lt">עוד כותרות
+        </div>
+        <div class="EXTRAtitel rt">עוד כותרות
+        </div>
+
+        <div class="smoler arti1"><img
+                src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/05/28/9999370/9999370_0_0_981_550_0_medium.jpg"
+                alt="">
+            המפתח של טראמפ לניצחון: דיכוי הצבעה כך עולה</div>
+        <div class="smoler arti2"><img
+                src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2019/11/25/9617547/9617547_1_75_980_552_0_medium.jpg"
+                alt="">
+            סרטן ריאה: תסמיני המחלה ואבחון מוקדם </div>
+        <div class="smoler arti3"><img
+                src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/07/BJVoS0n5Uw/BJVoS0n5Uw_1_0_3000_1689_0_medium.jpg"
+                alt="">
+            לברון והלייקרס יזכו באליפות? "הוא גאון כדורסל" אך</div>
+        <div class="smoler arti4"><img
+                src="https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2020/10/08/10290623/10290623_0_0_1920_1080_0_medium.jpg"
+                alt="">
+            הכי טבעי שיש: לטייל בעירום מלא</div>
+
+<!-- You have to align rtl -->
+    </div>
+
+
+</body>
+
+</html>

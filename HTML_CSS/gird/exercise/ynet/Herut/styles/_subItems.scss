@@ -1,0 +1,46 @@
+@import './variables';
+
+.subItems{
+  grid-area: subItems ;
+  display: grid;
+  grid-template-rows: repeat(4,1fr);
+  gap: var(--space);
+  color: white;
+  .subItem{
+    display: flex;
+    cursor: pointer;
+    max-height:9em;
+    overflow: hidden;
+    img{
+      width: 33%;
+    }
+    .text{
+      width: 67%;
+      padding: 1em;
+      background-color: $color-primaryRed;
+      text-align: right;
+      line-height: 2em;
+      color: white;
+      h3{
+        margin: .2em 0;
+        font-size: 1.2rem;
+      }
+      p{
+        font-size: .9rem;
+        max-height:3em;
+        overflow: hidden;
+        line-height: 1.5em;
+      }
+    }
+  }
+  .subItem--blue>.text{
+    background-color: $color-primaryBlue ;
+   
+  }
+}
+
+
+
+
+
+  

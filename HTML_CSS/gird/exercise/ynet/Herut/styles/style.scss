@@ -1,0 +1,46 @@
+@import './variables';
+
+@import './header';
+@import './mainArticle';
+@import './live';
+@import './accessibilityMenu';
+@import './subItems';
+@import './adContainer';
+@import './moreHeadLines';
+
+
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.15;
+  font-size: 12px;
+  text-align: right;
+  width: 87vw;
+  margin: auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.ynet{
+  margin: .1em;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: 
+  'header header header header header header'
+  'mainArticle__img mainArticle__img mainArticle__img mainArticle__text mainArticle__text live'
+  'accessibilityMenu accessibilityMenu accessibilityMenu accessibilityMenu accessibilityMenu accessibilityMenu'
+  'subItems subItems subItems adContainer adContainer adContainer'
+  'moreHeadLines moreHeadLines moreHeadLines popular popular popular';
+  
+  gap: 1.2em;
+}
+
+@import './mobileScreen';
