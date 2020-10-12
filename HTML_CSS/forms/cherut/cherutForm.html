@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  form {
+    width: 50vw;
+    margin:  3em auto;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    text-align: center;
+    /* padding-bottom: 1em; */
+    font-size: 3em;
+  }
+
+  .atr{
+    width: 60%;
+    margin: auto;
+  }
+
+  label{
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1em;
+  }
+
+  input{
+    direction: none;
+    width: 100%;
+    border: none;
+    height: 2em;
+    margin-bottom: 1em;
+  }
+
+input:focus{
+outline: 0;
+}
+  button{
+    width: 60%;
+    margin: auto;
+    margin: 2em auto;
+    padding: 1em;
+    border: none;
+    box-shadow: 1px 1px 3px black;
+    font-size: 1em;
+    background-color: black;
+    color: aquamarine;
+  }
+
+</style>
+
+<body>
+  <form action="">
+    <h1>sign in form</h1>
+    <div class="atr">
+      <label for="input">userName</label>
+      <input type="text" placeholder="userName">
+    </div>
+    <div class="atr">
+      <label for="input">password</label>
+      <input type="password" placeholder="password">
+    </div>
+
+    <button>sign in</button>
+  </form>
+</body>
+
+</html>
