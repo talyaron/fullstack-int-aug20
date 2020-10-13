@@ -1,12 +1,15 @@
 :root{
     
 }
-
+img{
+    width: 100%;
+}
 .phone{
-    width: 350px;
-    height: 800px;
+    width: 300px;
+    height: 700px;
     margin: auto;  
      border: 1px solid black;
+     border-radius: 10px;
 }
 .header{
     display: flex;
@@ -26,5 +29,116 @@
 }
 .searchBox{
     border: 2px solid black;
-    height: 50px;
+    height: 35px;
 }
+.searchBox__logo{
+    float: right;
+}
+.brand{
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: 2px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.brand__item1{
+}
+.brand__item2{
+}
+.brand__item3{
+}
+.brand__item4{
+}
+.filter{
+    border: 1px solid black;
+    background-color: red;
+    width: 7%;
+    height: 3.5%;
+    position: relative;
+    left:92%;
+    bottom: 5%;
+}
+.card{
+    border: 2px solid black;
+    width: 80%;
+    height: 25%;
+    margin: auto;
+    box-shadow: 4px 4px 12px rgb(209, 199, 199);
+}
+.card__title{
+    display: inline;
+    font-size: 22px;
+    font-weight: 550;
+}
+.card__like{
+    display: inline;
+    float: right;
+}
+.card__like>img{
+    width: 95%;
+}
+.card__product{
+    height: 60%;
+    width: 85%;
+    margin: auto;
+    border: 2px solid black;
+}
+.card__product>img{
+    width: 95%;
+}
+.card__price{
+    display: inline;
+}
+.card__logo{
+    float: right;
+}
+.footer{
+    border: 2px solid black;
+    width: 95%;
+    height: 10%;
+    margin: auto;
+    margin-top: 40%;
+    display: flex;
+}
+.footerLeft{
+    position: relative;
+    top: 40%;
+    width: 35%;
+    height: 50%;
+    display: grid;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+.footerMiddle{
+    width: 20%;
+    height: 70%;
+
+}
+.footerRight{
+    position: relative;
+    top: 40%;
+    width: 35%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+}
+.footerLeft__home>img{
+    width: 85%;
+}
+.footerLeft__safari>img{
+    width: 85%;
+}
+.footerMiddle__checkout>img{
+    border-radius: 10px;
+    width: 80%;
+}
+.footerRight__notfication>img{
+    width: 85%;
+}
+.footerRight__profile>img{
+    width: 85%;
+}
+
