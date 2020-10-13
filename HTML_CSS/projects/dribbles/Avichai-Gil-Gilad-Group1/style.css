@@ -38,17 +38,35 @@ img{
     margin-top: 10%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
     border: 2px solid black;
     margin-left: 20px;
     margin-right: 20px;
+    height: 8%;
 }
 .brand__item1{
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 30px;
+    background-image: url("logos/nike.png");
 }
 .brand__item2{
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 30px;
+    background-image: url("logos/reebok.png");
 }
 .brand__item3{
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 30px;
+    background-image: url("logos/jordan.png");
 }
 .brand__item4{
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 30px;
+    background-image: url("logos/adidas.png");
 }
 .filter{
     border: 1px solid black;
@@ -60,20 +78,24 @@ img{
     bottom: 5%;
 }
 .card{
-    border: 2px solid black;
     width: 80%;
     height: 25%;
     margin: auto;
     box-shadow: 4px 4px 12px rgb(209, 199, 199);
+    background-color: white;
+    border-radius: 10px;
 }
 .card__title{
     display: inline;
     font-size: 22px;
-    font-weight: 550;
+    font-weight: 500;
+    margin-left: 5%;
 }
 .card__like{
     display: inline;
     float: right;
+    border-radius: 5px;
+    margin-right: 5%;
 }
 .card__like>img{
     width: 95%;
@@ -82,16 +104,23 @@ img{
     height: 60%;
     width: 85%;
     margin: auto;
-    border: 2px solid black;
+    margin-bottom: 7%;
 }
 .card__product>img{
     width: 95%;
 }
 .card__price{
     display: inline;
+    font-size: 20px;
+    margin-left: 5%;
+}
+.card__price>span{
+    font-size: 14px;
+
 }
 .card__logo{
     float: right;
+    margin-right: 5%;
 }
 .footer{
     border: 2px solid black;
