@@ -1,8 +1,16 @@
+:root {
+    --colorOrange: rgb(248, 132, 0);
+    --colorGrey: rgba(128, 128, 128, 0.383);
+    --borderRadius: 2vw;
+    --titleFont: 'Noto Sans TC', sans-serif;
+}
+
 .screen {
     width: 20%;
     margin: auto;
     border: 1px solid black;
     border-radius: 2vw;
+    color: rgba(128, 128, 128, 0.383);
 }
 
 .ScreenHelpus {
@@ -36,6 +44,7 @@
     top: -15vh;
     left: 2vw;
     font-weight: bold;
+    color: rgba(255, 255, 255, 0.555);
 }
 
 .donate {
