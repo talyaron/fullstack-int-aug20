@@ -5,38 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+ 
+ .gender {
+        border: solid white 2px;
+        width: 296px;
+        height: 70px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    
+ }
+        
+        
+    .gender__title {
+        border: white solid 1px;
+
+    }
+    .gender__men{
+        border: solid 1px gray;
+        width: 100px;
+    }
+</style>
 
 <body>
     <div class="phone">
         <div class="header">
-            <div class="header__back"> < </div>
-            <div class="header__title">Filters</div>
-            <div class="header__nightMode"></div>
-        </div>
-        <div class="gender">
+            <div class="header__back">
+                < </div>
+                    <div class="header__title">Filters</div>
+                    <div class="header__nightMode"> <img src="logos/nightmod.png"> </div>
+            </div>
             <div class="gender__title"> Gender: </div>
-            <div class="gender__men"> Men </div>
-            <div class="gender__women"> Women </div>
-            <div class="gender__both"> Both </div>
+            <div class="gender">
+                <div class="gender__men"> Men </div>
+                <div class="gender__women"> Women </div>
+                <div class="gender__both"> Both </div>
+            </div>
+            <div class="price">
+                <div class="price__title"> Price: </div>
+                <div class="price__range"></div>
+            </div>
+            <div class="color">
+                <div class="color__title"> Color: </div>
+                <div class="color__spectrum"></div>
+            </div>
+            <div class="size">
+                <div class="size__title"></div>
+                <div class="size__size"></div>
+            </div>
+            <div class="footer">
+                <div class="footer__clear"> Clear </div>
+                <div class="footer__apply"> Apply </div>
+            </div>
         </div>
-        <div class="price">
-            <div class="price__title"> Price: </div>
-            <div class="price__range"></div>
-        </div>
-        <div class="color">
-            <div class="color__title"> Color: </div>
-            <div class="color__spectrum"></div>
-        </div>
-        <div class="size">
-            <div class="size__title"></div>
-            <div class="size__size"></div>
-        </div>
-        <div class="footer">
-            <div class="footer__clear"> Clear </div>
-            <div class="footer__apply"> Apply </div>
-        </div>
-    </div>
 </body>
 
 </html>
