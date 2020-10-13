@@ -10,6 +10,7 @@ img{
     margin: auto;  
      border: 1px solid black;
      border-radius: 10px;
+     background-color: rgb(253, 252, 252);
 }
 .header{
     display: flex;
@@ -22,7 +23,6 @@ img{
     margin-left: 10px;
 }
 .header__title{
-
 }
 .header__nightMode{
     margin-right: 10px;
@@ -39,7 +39,6 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 15px;
-    border: 2px solid black;
     margin-left: 20px;
     margin-right: 20px;
     height: 8%;
@@ -66,6 +65,7 @@ img{
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 30px;
+    background-size: 45px;
     background-image: url("logos/adidas.png");
 }
 .filter{
