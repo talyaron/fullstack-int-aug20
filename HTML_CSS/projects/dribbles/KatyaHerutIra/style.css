@@ -53,30 +53,32 @@
 .kidsImg__helpus {
     font-size: 3vw;
     position: relative;
-    top: -15vh;
+    top: -11.5vh;
     left: 2vw;
     font-weight: bold;
-    color: var(--colorWhite);
+    color: var(--colorLightWhite);
+    font-family: var(--titleFont);
+    margin: 0;
 }
 
 .middleTitle {
     font-size: 0.9vw;
     position: relative;
-    top: -13vh;
+    top: -6vh;
     left: 4vw;
     color: rgba(128, 128, 128, 0.692);
+    margin: 0;
 }
 
 .loginButtons {
     position: relative;
-    top: -12vh;
+    top: -6vh;
     right: 0.5vw;
     display: grid;
     grid-template-columns: 85% 10%;
     grid-template-rows: 50% 50%;
     width: 100%;
     margin: 10%;
-<<<<<<< HEAD
     row-gap: 10%;
 }
 
@@ -116,11 +118,7 @@
 .text {
     width: 90%;
     position: relative;
-    top: -10vh;
+    top: -5vh;
     left: 1vw;
     text-align: center;
 }
-=======
-}
-
->>>>>>> master
