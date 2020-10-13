@@ -1,0 +1,54 @@
+.screen {
+    width: 20%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 2vw;
+}
+
+.ScreenHelpus {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.ScreenHelpus__Color {
+    color: rgb(248, 132, 0);
+}
+
+.ScreenHelpus {
+    margin: 7% 0 0 7%;
+}
+
+.kidsImg {
+    width: 90%;
+    margin: 5% auto;
+}
+
+.kidsImg>img {
+    width: 100%;
+    border-radius: 1vw;
+}
+
+.kidsImg__helpus {
+    font-size: 3vw;
+    position: relative;
+    top: -15vh;
+    left: 2vw;
+    font-weight: bold;
+}
+
+.donate {
+    font-size: 0.9vw;
+    position: relative;
+    top: -15vh;
+    left: 4vw;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: 50% 50%;
+    width: 90%;
+    margin: 10%;
+}
