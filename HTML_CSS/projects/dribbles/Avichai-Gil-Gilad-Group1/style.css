@@ -1,0 +1,13 @@
+.phone{
+    width: 350px;
+    height: 800px;
+    margin: auto;  
+     border: 1px solid black;
+}
+.header{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 100px;
+}
