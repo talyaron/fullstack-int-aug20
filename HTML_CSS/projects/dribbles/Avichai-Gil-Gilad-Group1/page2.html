@@ -13,6 +13,7 @@
     height: 800px;
     margin: auto;  
      border: 1px solid black;
+     background-color: rgb(235, 235, 235);
 }
 .header{
     margin-top: 5px;
@@ -25,10 +26,11 @@
          text-align: center;
      }
      .miniCard{
+         background-color: white;
          width: 300px;
          height: 100px;
          margin: auto;
-         border: 1px solid black;
+         
          border-radius: 10px;
          
      }
@@ -54,9 +56,20 @@
          background-color: rgb(105, 188, 252);
          border: 0px
          
+     }
+     .miniCard__product>img{
+      float:right;
+      margin-right: 10px;
+     border-radius: 15px;
+     margin-top: -80px;
+     width: 100px;
+     height: 85px;
 
      }
-     
+    
+         
+       
+    
     </style>
     <div class="phone">
         <div class="header">
@@ -71,7 +84,19 @@
             <div class="miniCard__title"> <h3>Tap Fury</h3></div>
             <div class="miniCard__price"> <h3>$ 170.35</h3></div>
             <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
-            
+            <div class="miniCard__product"><img src="logos/11.jpeg" height="80px"  alt=""></div>
+        </div>
+        <div class="miniCard">
+            <div class="miniCard__title"> <h3>Dual Court</h3></div>
+            <div class="miniCard__price"> <h3>$ 80.97</h3></div>
+            <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
+            <div class="miniCard__product"><img src="logos/dual court.png" height="80px"  alt=""></div>
+        </div>
+        <div class="miniCard">
+            <div class="miniCard__title"> <h3>Tap Fury</h3></div>
+            <div class="miniCard__price"> <h3>$ 64.97</h3></div>
+            <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
+            <div class="miniCard__product"><img src="logos/club mask.png" height="80px"  alt=""></div>
         </div>
         <div class="footer">
             <div class="footer__checkout"></div>

@@ -1,0 +1,65 @@
+:root {
+    --colorOrange: rgb(248, 132, 0);
+    --colorGrey: rgba(128, 128, 128, 0.383);
+    --borderRadius: 2vw;
+    --titleFont: 'Noto Sans TC', sans-serif;
+}
+
+.screen {
+    width: 20%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 2vw;
+    color: rgba(128, 128, 128, 0.383);
+}
+
+.ScreenHelpus {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.ScreenHelpus__Color {
+    color: rgb(248, 132, 0);
+}
+
+.ScreenHelpus {
+    margin: 7% 0 0 7%;
+}
+
+.kidsImg {
+    width: 90%;
+    margin: 5% auto;
+}
+
+.kidsImg>img {
+    width: 100%;
+    border-radius: 1vw;
+}
+
+.kidsImg__helpus {
+    font-size: 3vw;
+    position: relative;
+    top: -15vh;
+    left: 2vw;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.555);
+}
+
+.donate {
+    font-size: 0.9vw;
+    position: relative;
+    top: -15vh;
+    left: 4vw;
+}
+
+.buttons {
+    position: relative;
+    display: grid;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: 50% 50%;
+    width: 90%;
+    margin: 10%;
+}
+
