@@ -1,3 +1,7 @@
+:root{
+    
+}
+
 .phone{
     width: 350px;
     height: 800px;
@@ -5,9 +9,22 @@
      border: 1px solid black;
 }
 .header{
-    margin-top: 5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border: 1px solid black;
     height: 100px;
+}
+.header__nav{
+    margin-left: 10px;
+}
+.header__title{
+
+}
+.header__nightMode{
+    margin-right: 10px;
+}
+.searchBox{
+    border: 2px solid black;
+    height: 50px;
 }
