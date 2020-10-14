@@ -40,7 +40,8 @@ img{
 }
 .headerB__nav>img{
     position: relative;
-    top: 15px;
+    top: 10px;
+    width: 3rem;
 }
 
 .searchBox{
@@ -168,7 +169,7 @@ input[type="text"]{
 }
 .card__logo{
     position: relative;
-    bottom: 13px;
+    bottom: 15px;
     float: right;
     margin-right: 5%;
 }
@@ -176,9 +177,10 @@ input[type="text"]{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 95%;
+    height: 92%;
 }
 .miniCard {
+    font-family: 'Mandali';
     position: relative;
     top: 2vh;
     box-shadow: 0 4px 4px -2px gray;
@@ -190,21 +192,24 @@ input[type="text"]{
 }
 
 .miniCard__title {
-    margin-left: 25px;
-    margin-top: -15px;
+    display: inline;
+    position: relative;
+    left: 2%;
 
 }
 
 .miniCard__price {
-    margin-left: 25px;
-    margin-top: -15px;
-
+    display: inline;
+    position: relative;
+    top: 1.7rem;
+    right: 3.7rem
 }
 
 .miniCard__view {
-    margin-left: 25px;
-    margin-top: -15px;
-
+    display: inline;
+    position: relative;
+    top: 3.3rem;
+    right: 8rem
 }
 
 .button__view:hover {
@@ -231,7 +236,7 @@ input[type="text"]{
     float: right;
     margin-right: 10px;
     border-radius: 15px;
-    margin-top: -90px;
+    margin-top: -30px;
     width: 100px;
     height: 85px;
 
@@ -326,10 +331,6 @@ input[type="text"]{
     width: 120%;
     height: 60%;
     
-  
-    
-
-    
 }
 
 .size__size__40:hover {
@@ -407,6 +408,7 @@ input[type="text"]{
         width: 11%;
     }
     .headerB__nav>img{
+        top: 0;
         width: 100%;
     }
     .headerB__title1{
@@ -529,11 +531,11 @@ input[type="text"]{
         height: 50%;
         width: 85%;
         margin: auto;
-        margin-bottom: 4vh;
+        margin-bottom: 1.5rem;
     }
     .card__product>img{
         position: relative;
-        top: 3vh;
+        top: 1rem;
         width: 95%;
     }
     .miniCard{
@@ -563,7 +565,6 @@ input[type="text"]{
     .footerMiddle{
         width: 20%;
         height: 70%;
-    
     }
     .footerRight{
         position: relative;
