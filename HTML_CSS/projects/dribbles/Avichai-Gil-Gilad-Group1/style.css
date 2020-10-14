@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Mandali';
+    src:url("font/Mandali.ttf.woff") format('woff'),
+        url('font/Mandali.ttf.svg#Mandali') format('svg'),
+        url('font/Mandali.ttf.eot'),
+        url('font/Mandali.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
 :root{
     
 }
@@ -13,28 +22,70 @@ img{
     margin: auto;  
      border: 1px solid black;
      border-radius: 10px;
+     background-image: linear-gradient(white, rgb(245, 243, 243));
 }
 .header{
+    height: 14%;
+}
+.header__grid{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
-    height: 100px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    top: 30%;
+    left: 1%;
 }
-.header__nav{
-    margin-left: 10px;
+.header__nav{  
+    left: 2%;
+    position: relative;
+    width: 11%;
+}
+.header__nav>img{
+    width: 100%;
 }
 .header__title{
+    margin-bottom: 2%;
+    font-family: 'Mandali';
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    left: 3.5%;
+    position: relative;
 }
 .header__nightMode{
-    margin-right: 10px;
+    width: 18%;
+}
+.header__nightMode>img{
+    width: 100%;
 }
 .searchBox{
-    border: 2px solid black;
-    height: 35px;
+    height: 5%;
 }
-.searchBox__logo{
+input[type="text"]{
+    height: 70%;
+    width: 80%;
+    position: relative;
+    left: 5%;
+    outline: 0;
+    border: 0;
+    font-weight: 550;
+    font-size: 1rem;
+    font-family: 'Roboto';
+}
+
+.searchBox>img{
     float: right;
+    margin-right: 4%;
+    width: 10%;
+}
+.searchBoxLine{
+    height: 1px;
+    background-color: lightgray;
+    width: 90%;
+    margin: auto;
+    margin-top: 2%;
 }
 .brand{
     margin-top: 10%;
@@ -108,7 +159,7 @@ img{
     bottom: 11%;
 
 }
-.filter>img{
+.filter>a>img{
     width: 100%;
     height: 100%;
     border-top-left-radius:13px;
