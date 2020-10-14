@@ -15,9 +15,20 @@
 
     }
 
+    .headerFilter {
+        height: 14%;
+    }
 
-
-
+    .headerFilter__grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        position: relative;
+        top: 30%;
+        left: 1%;  
+    }
 
     .gender {
         border: solid white 2px;
@@ -40,22 +51,23 @@
 
     }
 
-    .gender__men>button:hover {
+    .gender__men>button:focus {
         background-color: rgb(254, 85, 69);
-
+        outline: 0;
         color: white;
 
     }
 
-    .gender__women>button:hover {
+    .gender__women>button:focus {
         background-color: rgb(254, 85, 69);
-
+        outline: 0;
         color: white;
 
     }
 
-    .gender__both>button:hover {
+    .gender__both>button:focus {
         background-color: rgb(254, 85, 69);
+        outline: 0;
         color: white;
 
 
@@ -114,7 +126,7 @@
         margin-bottom: 15px;
     }
 
-     .size__title {
+    .size__title {
         font-size: 20px;
         margin-left: 12px;
         margin-top: 15px;
@@ -141,78 +153,92 @@
         max-height: 1px;
         margin-top: -20px;
     }
+
     .size__size__40:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
         max-height: 1px;
         margin-top: -20px;
-        
+
     }
+
     .size__size__41:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
         max-height: 1px;
         margin-top: -20px;
     }
+
     .size__size__43:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
         max-height: 1px;
         margin-top: -20px;
     }
+
     .size__size__44:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
         max-height: 1px;
         margin-top: -20px;
     }
-    .footer__clear>button{
-        margin-left: 15px;
-        background-color: rgb(255, 255, 255);
-        border:lightgray 1px solid;
-        width: 120px;
-        height: 50px;
-        position: relative;  
-        bottom: 70px;
 
-        border-radius: 12px;
-    }
-    .footer__apply>button{
+    .footer__clear>button {
         margin-left: 15px;
         background-color: rgb(255, 255, 255);
-        border:lightgray 1px solid;
+        border: lightgray 1px solid;
         width: 120px;
         height: 50px;
         border-radius: 12px;
-        position: relative;  
-        bottom: 70px;
-
-       
+        position: relative;
+        top: 10px;
     }
-    .footer__clear>button:hover{
+
+    .footer__apply>button {
+        margin-left: 15px;
+        background-color: rgb(255, 255, 255);
+        border: lightgray 1px solid;
+        width: 120px;
+        height: 50px;
+        border-radius: 12px;
+        position: relative;
+        top: 10px;
+    }
+
+    .footer__clear>button:focus {
         background-color: rgb(105, 188, 252);
+        outline: 0;
         color: white;
     }
-    .footer__apply>button:hover{
+
+    .footer__apply>button:focus {
         background-color: rgb(105, 188, 252);
+        outline: 0;
         color: white;
-        
-        
+
+
     }
 
-
-    .footer{
-        border: white solid 0px;
+    .footer3 {
+        width: 100%;
+        height: 10%;
+        margin: auto;
+        position: absolute;
+        bottom: 0;
+        border-radius: 8px;
+        display: flex;
+        background-color: white;
     }
 </style>
 
 <body>
     <div class="phone">
-        <div class="header">
-            <div class="header__back"> </div>
-
-            <div class="header__title">Filters</div>
-            <div class="header__nightMode"> <img src="logos/nightmod.png"> </div>
+        <div class="headerFilter">
+            <div class="headerFilter__grid">
+                <div class="header__back">1</div>
+                <div class="header__title">Filters</div>
+                <div class="header__nightMode"> <img src="logos/nightmod.png"> </div>
+            </div>
         </div>
         <div class="gender__title"> <b>Gender: </b> </div>
         <div class="gender">
@@ -241,9 +267,9 @@
                 <div class="size__size__44">44</div>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer__clear"><button> <b>Clear All</b></button>  </div>
-            <div class="footer__apply"><button><b>Apply</b></button>  </div>
+        <div class="footer3">
+            <div class="footer__clear"><button> <b>Clear All</b></button> </div>
+            <div class="footer__apply"><button><b>Apply</b></button> </div>
         </div>
     </div>
 </body>

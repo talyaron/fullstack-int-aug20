@@ -4,87 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 
 </head>
 
 <body>
     <style>
-        @font-face {
-            font-family: 'Mandali';
-            src: url("font/Mandali.ttf.woff") format('woff'),
-                url('font/Mandali.ttf.svg#Mandali') format('svg'),
-                url('font/Mandali.ttf.eot'),
-                url('font/Mandali.ttf.eot?#iefix') format('embedded-opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        .phone {
-            width: 300px;
-            height: 700px;
-            margin: auto;
-            border: 1px solid black;
-            border-radius: 10px;
-            background-image: linear-gradient(white, rgb(245, 243, 243));
-        }
-
-        .header {
-            height: 14%;
-        }
-
-        .header__grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 90%;
-            margin: auto;
-            position: relative;
-            top: 30%;
-            left: 1%;
-        }
-
-        .header__nav {
-            left: 2%;
-            position: relative;
-            width: 11%;
-        }
-
-        .header__nav>img {
-            width: 100%;
-        }
-
-        .header__title {
-            margin-bottom: 2%;
-            font-family: 'Mandali';
-            font-weight: bold;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            left: 3.5%;
-            position: relative;
-        }
-
-        .header__nightMode {
-            width: 18%;
-        }
-
-        .header__nightMode>img {
-            width: 100%;
-        }
 
         .brand_selection {
             text-align: center;
+            height: 50px;
+            border: 1px solid black;
         }
 
         .miniCard {
-
             box-shadow: 0 4px 4px -2px gray;
+            background: white;
             width: 275px;
             height: 100px;
             margin: auto;
-
             border-radius: 10px;
-
         }
 
         .miniCard__title {
@@ -107,6 +47,12 @@
 
         .button__view:hover {
             background-color: rgb(105, 188, 252);
+            outline: 0;
+
+        }
+        .button__view:focus{
+            background-color: rgb(105, 188, 252);
+            outline: 0;
 
         }
 
@@ -122,11 +68,12 @@
             float: right;
             margin-right: 10px;
             border-radius: 15px;
-            margin-top: -80px;
+            margin-top: -90px;
             width: 100px;
             height: 85px;
 
         }
+
     </style>
     <div class="phone">
 
@@ -136,7 +83,7 @@
                 <div class="header__nav">
                     <img src="logos/nav.png">
                 </div>
-                <div class="header__title">ORIX</div>
+                <div class="header__title">EXPLORE</div>
                 <div class="header__nightMode">
                     <img src="logos/nightmod.png">
                 </div>
@@ -179,12 +126,29 @@
             <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
             <div class="miniCard__product"><img src="logos/club mask.png" height="80px" alt=""></div>
         </div>
+
         <div class="footer">
-            <div class="footer__checkout"></div>
-            <div class="footer__home"></div>
-            <div class="footer__safari"></div>
-            <div class="footer__notfication"></div>
-            <div class="footer__profile"></div>
+            <div class="footerLeft">
+                <div class="footerLeft__home">
+                    <img src="logos/home.png">
+                </div>
+                <div class="footerLeft__safari">
+                    <img src="logos/safari.png">
+                </div>
+            </div>
+            <div class="footerMiddle">
+                <div class="footerMiddle__checkout">
+                    <img src="logos/checkout.png">
+                </div>
+            </div>
+            <div class="footerRight">
+                <div class="footerRight__notfication">
+                    <img src="logos/notfiaction.png">
+                </div>
+                <div class="footerRight__profile">
+                    <img src="logos/profile.png">
+                </div>
+            </div>
         </div>
 
     </div>

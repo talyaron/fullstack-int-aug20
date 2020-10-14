@@ -18,15 +18,17 @@ img{
 }
 .phone{
     width: 300px;
-    height: 700px;
+    height: 680px;
     margin: auto;  
+    position: relative;
      border: 1px solid black;
      border-radius: 10px;
-     background-image: linear-gradient(white, rgb(245, 243, 243));
+     background-image: linear-gradient(white, white, rgb(233, 232, 232));
 }
 .header{
     height: 14%;
 }
+
 .header__grid{
     display: flex;
     justify-content: space-between;
@@ -58,6 +60,7 @@ img{
     width: 18%;
 }
 .header__nightMode>img{
+    border-radius: 13px;
     width: 100%;
 }
 .searchBox{
@@ -166,8 +169,8 @@ input[type="text"]{
     border-bottom-left-radius:13px;
 }
 .card{
-    width: 80%;
-    height: 30%;
+    width: 85%;
+    height: 35%;
     margin: auto;
     box-shadow: 0 4px 4px -2px gray;
     background-color: white;
@@ -211,12 +214,14 @@ input[type="text"]{
     margin-right: 5%;
 }
 .footer{
-    border: 2px solid black;
-    width: 95%;
+    width: 100%;
     height: 10%;
     margin: auto;
-    margin-top: 40%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
     display: flex;
+    background-color: white;
 }
 .footerLeft{
     position: relative;
@@ -227,6 +232,7 @@ input[type="text"]{
     display: flex;
     justify-content: space-between;
     margin-right: 10%;
+    left: 5%;
 }
 .footerMiddle{
     width: 20%;
@@ -241,6 +247,7 @@ input[type="text"]{
     display: flex;
     justify-content: space-between;
     margin-left: 10%;
+    right: 5%;
 }
 .footerLeft__home>img{
     width: 85%;
