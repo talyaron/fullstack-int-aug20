@@ -10,24 +10,21 @@
 <link rel="stylesheet" href="css/MenuBar.css">
 <link rel="stylesheet" href="css/card.css">
 <style>
-    body{
+    body {
         background-color: #EEEEEF;
+
     }
+
     .mainScrean {
-        /* margin-top: 30px;
-        margin-left: 30%;
-        margin-right: 30%; */
-        /*  width: 450px; */
-
-        max-width: 900px;
+        max-width: 1290px;
         height: 98vh;
-
         margin: auto;
-
         border-radius: 30px;
-        background: linear-gradient(180deg, #93A973 60vw, white 40vh);
+        background: linear-gradient(180deg, #93A973 40%, white 40%);
         overflow: hidden;
     }
+
+
 
 
     .MenuBar_Logo {
@@ -36,19 +33,43 @@
         font-size: 3rem;
     }
 
-
-
     .Mainpic {
         padding-top: 3%;
-
+        display: flex;
+        justify-content: center;
     }
 
     .Mainpic>img {
         border-radius: 10px;
-        width: 90%;
-        height: 40vw;
+        width: 80%;
+        height: 60%;
         transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    @media only screen and (max-width: 810px) {
+        .mainScrean {
+            max-width: 810px;
+            height: 98vh;
+            margin: auto;
+            border-radius: 30px;
+            background: linear-gradient(180deg, #93A973 60vw, white 40vh);
+            overflow: hidden;
+        }
+
+        .Mainpic>img {
+            border-radius: 10px;
+            width: 90%;
+            height: 40vw;
+            transform-style: preserve-3d;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+
+    .testcontainer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+
     }
 </style>
 
@@ -65,59 +86,59 @@
                 <img src="img/cart.jpg" alt="">
             </div>
             <div class="MenuBar_serch">
-                <input type="search" name="MenuBar_serch" id="MenuBar_serch">
+                <input type="search" name="MenuBar_serch" id="MenuBar_serch" placeholder="Serch Bar Enter Text To Serch">
             </div>
         </div>
-
-        <div class="Mainpic center">
-            <img src="img/d.jpg" alt="">
-        </div>
-
-        <div class="cardContainer center">
-            <div class="card">
-                <img src="img/a.jpg" alt="">
-                <h1>Indo Cactus</h1>
-                <h2>New ba bla</h2>
-                <span class="card_cost">$45.00</span>
-                <!-- <button class="Card__AddBoutton">+</button> -->
-                <input type="button" class="Card__AddBoutton" value="+">
-            </div>
-            
-            <div class="card">
-                <img src="img/b.jpg" alt="">
-                <h1>Indo Cactus</h1>
-                <h2>New ba bla</h2>
-                <span class="card_cost">$45.00</span>
-                <input type="button" class="Card__AddBoutton" value="+" >
-            </div>
-
-            <div class="card">
-                <img src="img/c.jpg" alt="">
-                <h1>Indo Cactus</h1>
-                <h2>New ba bla</h2>
-                <span class="card_cost">$45.00</span>
-                <input type="button" class="Card__AddBoutton" value="+">
-            </div>
-
-            <div class="card">
+        <div class="testcontainer">
+            <div class="Mainpic ">
                 <img src="img/d.jpg" alt="">
-                <h1>Indo Cactus</h1>
-                <h2>New ba bla</h2>
-                <span class="card_cost">$45.00</span>
-                <input type="button" class="Card__AddBoutton" value="+">
             </div>
 
-            <div class="card">
-                <img src="img/e.jpg" alt="">
-                <h1>Indo Cactus</h1>
-                <h2>New ba bla</h2>
-                <span class="card_cost">$45.00</span>
-                <input type="button" class="Card__AddBoutton" value="+">
+            <div class="cardContainer center">
+                <div class="card">
+                    <img src="img/a.jpg" alt="">
+                    <h1>Indo Cactus</h1>
+                    <h2>New ba bla</h2>
+                    <span class="card_cost">$45.00</span>
+                    <!-- <button class="Card__AddBoutton">+</button> -->
+                    <input type="button" class="Card__AddBoutton" value="+">
+                </div>
+
+                <div class="card">
+                    <img src="img/b.jpg" alt="">
+                    <h1>Indo Cactus</h1>
+                    <h2>New ba bla</h2>
+                    <span class="card_cost">$45.00</span>
+                    <input type="button" class="Card__AddBoutton" value="+">
+                </div>
+
+                <div class="card">
+                    <img src="img/c.jpg" alt="">
+                    <h1>Indo Cactus</h1>
+                    <h2>New ba bla</h2>
+                    <span class="card_cost">$45.00</span>
+                    <input type="button" class="Card__AddBoutton" value="+">
+                </div>
+
+                <div class="card">
+                    <img src="img/d.jpg" alt="">
+                    <h1>Indo Cactus</h1>
+                    <h2>New ba bla</h2>
+                    <span class="card_cost">$45.00</span>
+                    <input type="button" class="Card__AddBoutton" value="+">
+                </div>
+
+                <div class="card">
+                    <img src="img/e.jpg" alt="">
+                    <h1>Indo Cactus</h1>
+                    <h2>New ba bla</h2>
+                    <span class="card_cost">$45.00</span>
+                    <input type="button" class="Card__AddBoutton" value="+">
+                </div>
+
             </div>
 
         </div>
-
-
 
 
 
