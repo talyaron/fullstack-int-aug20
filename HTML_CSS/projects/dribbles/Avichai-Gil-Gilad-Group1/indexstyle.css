@@ -1,5 +1,213 @@
 .mainContainer{
     width: 85%;
+    height: 110vh;
     margin: auto;
     border: 1px solid black;
+    position: relative;
+}
+img{
+    width: 100%;
+}
+.headerB{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+.headerB__nav{
+    border:1px solid black;
+}
+.headerB__title1{
+    border:1px solid black;
+}
+.searchBox{
+    width: 65%;
+    margin: auto;
+    margin-top: 2%;
+}
+.searchBox>img{
+    width: 4%;
+    float: right;
+    position: relative;
+    bottom: 3px;
+}
+input[type="text"]{
+    height: 100%;
+    width: 80%;
+    position: relative;
+    left: 1%;
+    outline: 0;
+    border: 0;
+    font-weight: 550;
+    font-size: 1rem;
+    font-family: 'Roboto';
+}
+
+.searchBoxLine{
+    height: 2px;
+    background-color: lightgray;
+    width: 100%;
+    margin: auto;
+    margin-top: 1%;
+}
+.brand{
+    display: flex;
+    justify-content: space-evenly;
+    width: 55%;
+    margin:auto;
+    margin-top: 1%;
+    
+}
+.brand__item1, .brand__item2, .brand__item3, .brand__item4{
+    background: #f6f6f6;
+    border-radius: 50%;
+    width: 40%;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2vh;
+}
+
+.brand__item1>img, .brand__item2>img,.brand__item3>img,.brand__item4>img{
+    display: block;
+    width: 50%;
+}
+.brandName{
+    width: 64%;
+    margin: auto;
+    position: relative;
+    bottom: 1.5vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardsBody{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2vw;
+}
+.bigCardContainer{
+    border: 1px solid black;
+}
+.card{
+    width: 85%;
+    height: 34vh;
+    position: relative;
+    top: 4%;
+    margin: auto;
+    box-shadow: 0 4px 4px -2px gray;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.card__title{
+    display: inline-block;
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 5%;
+}
+.card__title>span{
+    font-size: 10px;
+    font-weight: 100;
+    color: rgb(223, 219, 219);
+}
+.card__like{
+    position: relative;
+    top: 25px;
+    float: right;
+    border-radius: 5px;
+    margin-right: 5%;
+}
+.card__like>img{
+    width: 95%;
+}
+.card__product{
+    height: 50%;
+    width: 85%;
+    margin: auto;
+    margin-bottom: 5vh;
+}
+.card__product>img{
+    width: 95%;
+}
+.card__price{
+    display: inline;
+    font-size: 20px;
+    margin-left: 5%;
+}
+.card__price>span{
+    font-size: 14px;
+
+}
+.card__logo{
+    position: relative;
+    bottom: 13px;
+    float: right;
+    margin-right: 5%;
+}
+.miniCardContainer{
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.miniCard {
+    position: relative;
+    top: 0;
+    box-shadow: 0 4px 4px -2px gray;
+    background: white;
+    width: 25vw;
+    height: 6vw;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.miniCard__title {
+    margin-left: 25px;
+    margin-top: -10px;
+
+}
+
+.miniCard__price {
+    margin-left: 25px;
+    margin-top: -10px;
+
+}
+
+.miniCard__view {
+    margin-left: 25px;
+    margin-top: -15px;
+
+}
+
+.button__view:hover {
+    background-color: rgb(105, 188, 252);
+    outline: 0;
+
+}
+
+.button__view:focus {
+    background-color: rgb(105, 188, 252);
+    outline: 0;
+
+}
+
+.button__view {
+    border-radius: 7px;
+    width: 60px;
+    height: 30px;
+    background-color: rgb(190, 194, 197);
+    border: 0px
+}
+
+.miniCard__product>img {
+    float: right;
+    margin-right: 10px;
+    border-radius: 15px;
+    margin-top: -90px;
+    width: 100px;
+    height: 85px;
+
 }
