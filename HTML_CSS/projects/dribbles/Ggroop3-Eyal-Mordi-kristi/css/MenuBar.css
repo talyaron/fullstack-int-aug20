@@ -8,7 +8,7 @@
    border-radius: 20px 20px 0 0;
 }
 div{
-    border: 1px solid black;
+   /*  border: 1px solid black; */
 } 
 .MenuBar_Lbutton{
 grid-row: 1;
@@ -32,9 +32,15 @@ margin-left: 25px;
 .MenuBar_serch{
     grid-row: 2;
     grid-column: 1/4;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding-top: 2%;
     padding-bottom: 2%; 
+}
+
+#MenuBar_serch{
+    border: none;
+    line-height: 3;
+    border-radius: 10px;
 }
 
 #MenuBar_serch{

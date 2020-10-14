@@ -1,0 +1,72 @@
+.cardContainer{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    display: grid;
+    grid-gap:1rem;
+    /* grid-template-rows: repeat(); */
+    
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+}
+
+.card{
+    background-color: white;
+    width: 150px;
+    height: 220px;
+    border-radius: 15px;
+    transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+position: relative;
+}
+
+.card>img{
+    width: 100%;
+    height: 60%;
+    border-radius: 15px;
+    border: 1px solid #EEEEEF;
+    /* margin-bottom: 3%; */
+}
+
+.card>h1{
+    font-size: 1.5em;
+    margin-top: 5%;
+    margin-bottom: 0px;
+}
+
+.card>h2{
+    font-size: 0.8em;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #B3B3B3;
+}
+
+.Card__AddBoutton{
+position: absolute;
+    right: 5%;
+    bottom: 2%;
+   background-color: #8BCA7F;
+   border: none;
+   color: white;
+   padding: 0px 3px 3px 3px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 26px;
+   margin: 4px 2px;
+   cursor: pointer;
+   border-radius: 50%;
+}
+
+
+
+
+.Card__AddBoutton:active{
+    background-color: #7c7dca;
+}
+
+.card:hover{
+    background-color: #F0F0F0;
+}

@@ -1,0 +1,78 @@
+body {
+  text-align: center;
+  background-color: white;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+.bigContainer {
+  background-color: gray;
+  max-width: 900px;
+  height: 650px;
+  margin: auto;
+  border-radius: 18px;
+}
+
+.container {
+ 
+  margin: auto;
+}
+
+.menuBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto auto 20px auto;
+}
+
+.menuBar_Lbutton {
+  margin-top: 30px;
+}
+
+.menuBar_Rbutton {
+  margin-top: 30px;
+}
+
+.cardItem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto 10px auto;
+  max-width: 350px;
+  background-color: white;
+  border-radius: 12px;
+  height: 65px;
+}
+
+.cardItem_Text > h5 {
+  text-align: start;
+  margin: 5px 0 0 0;
+}
+
+.cardItem_Text > p {
+  color: gray;
+  text-align: start;
+  margin: 7px 0 0 0;
+}
+
+.cardItem_Bar {
+  margin: auto;
+}
+
+.numberInput {
+  width: 30px;
+  text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.mainButton {
+  margin-top: 165px;
+  width: 300px;
+  border-radius: 15px;
+  height: 50px;
+  outline: 0;
+  box-shadow: none !important;
+}
