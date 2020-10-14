@@ -4,6 +4,7 @@
     margin: auto;
     border: 1px solid black;
     position: relative;
+    background-image: linear-gradient(white, white, rgb(233, 232, 232));
 }
 img{
     width: 100%;
@@ -89,7 +90,6 @@ input[type="text"]{
     grid-column-gap: 2vw;
 }
 .bigCardContainer{
-    border: 1px solid black;
 }
 .card{
     width: 85%;
@@ -149,9 +149,9 @@ input[type="text"]{
     margin-right: 5%;
 }
 .miniCardContainer{
-    border: 1px solid black;
     display: grid;
     grid-template-columns: 1fr;
+    grid-row-gap: 17px;
 }
 .miniCard {
     position: relative;
@@ -162,17 +162,18 @@ input[type="text"]{
     height: 6vw;
     border-radius: 10px;
     margin: auto;
+    margin-top: 5px;
 }
 
 .miniCard__title {
     margin-left: 25px;
-    margin-top: -10px;
+    margin-top: -15px;
 
 }
 
 .miniCard__price {
     margin-left: 25px;
-    margin-top: -10px;
+    margin-top: -15px;
 
 }
 
