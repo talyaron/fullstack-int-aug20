@@ -2,6 +2,8 @@
     max-width: 1200px;
     font-family: Arial, Helvetica, sans-serif;
     flex-wrap: wrap;
+    text-align: center;
+    margin: auto;
 }
 .cards__wrap{
     display: flex;
@@ -15,7 +17,8 @@
    color: #ff6a00;
 }
 
-.card{
+.card,
+.bottom__buttons{
     width: 33.33%;
     text-align: center;
 }
@@ -30,12 +33,19 @@ img{
 p{
     color: #919495;
 }
-.card__num{
+.bottom__buttons{
+   margin: auto;
+}
+
+.card__num--left{
     color: #d9d9d9;
 }
 .card__num--middle{
     color: #ff6a00;
     padding: 10px;
+}
+.card__num--right{
+    color: #d9d9d9; 
 }
 
 .next__button{
@@ -47,7 +57,8 @@ p{
     color: #fff;
 }
 @media only screen and (max-width: 480px) {
-    .card {
+    .card,
+    .bottom__buttons {
      min-width: 280px;
      width: 100%;
     }
@@ -55,7 +66,7 @@ p{
        display: none;
     }
     .right{
-        display: none;
+       display: none;
     }
     
 }
