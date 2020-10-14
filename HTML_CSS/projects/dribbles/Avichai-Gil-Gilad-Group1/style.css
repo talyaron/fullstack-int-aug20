@@ -110,9 +110,9 @@ input[type="text"]{
 .brand__item1{
     background: #f6f6f6;
     border-radius: 50%;
-    height: 50px;
+    height: 94%;
 }
-.brand__item1>img{
+.brand__item1>a>img{
     display: block;
     margin-left: 16%;
     margin-top: 30%;
@@ -121,9 +121,9 @@ input[type="text"]{
 .brand__item2{
     background: #f6f6f6;
     border-radius: 50%;
-    height: 50px;
+    height: 94%;
 }
-.brand__item2>img{
+.brand__item2>a>img{
     display: block;
     margin-left: 14%;
     margin-top: 29%;
@@ -133,10 +133,10 @@ input[type="text"]{
 .brand__item3{
     background: #f6f6f6;
     border-radius: 50%;
-    height: 50px;
+    height: 94%;
 
 }
-.brand__item3>img{
+.brand__item3>a>img{
     display: block;
     margin:auto;
     margin-top: 12%;
@@ -145,10 +145,10 @@ input[type="text"]{
 .brand__item4{
     background: #f6f6f6;
     border-radius: 50%;
-    height: 50px;
+    height: 94%;
 
 }
-.brand__item4>img{
+.brand__item4>a>img{
     display: block;
     margin:auto;
     width: 80%;
@@ -157,9 +157,9 @@ input[type="text"]{
 .filter{
     width: 15%;
     height: 6%;
-    position: relative;
+    position: absolute;
     left:85%;
-    bottom: 11%;
+    top: 23%;
 
 }
 .filter>a>img{
@@ -171,6 +171,8 @@ input[type="text"]{
 .card{
     width: 85%;
     height: 35%;
+    position: relative;
+    top: 4%;
     margin: auto;
     box-shadow: 0 4px 4px -2px gray;
     background-color: white;
@@ -250,19 +252,19 @@ input[type="text"]{
     right: 5%;
 }
 .footerLeft__home>img{
-    width: 85%;
+    width: 75%;
 }
 .footerLeft__safari>img{
-    width: 85%;
+    width: 80%;
 }
 .footerMiddle__checkout>img{
     border-radius: 10px;
     width: 80%;
 }
 .footerRight__notfication>img{
-    width: 85%;
+    width: 80%;
 }
 .footerRight__profile>img{
-    width: 85%;
+    width: 80%;
 }
 
