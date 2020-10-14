@@ -2,12 +2,17 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
+    
+    body{
+        font-family: 'Mandali';
+    }
     :root {
         --button_height: 50px;
         --button_width: 80px;
@@ -18,6 +23,20 @@
     .headerFilter {
         height: 14%;
     }
+    .header__back>a>button{
+        font-size: 20px;
+        
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border-radius: 10px;
+        border: solid rgb(231, 231, 231) 1px;
+        background-color: white;
+
+    }
+.header__back>a>button:focus{
+    outline: 0;
+}
 
     .headerFilter__grid {
         display: flex;
@@ -33,7 +52,7 @@
     .gender {
         border: solid white 2px;
         width: 296px;
-        height: 70px;
+        height: 70px;   
         background-color: white;
         display: flex;
         flex-direction: row;
@@ -126,62 +145,90 @@
         margin-bottom: 15px;
     }
 
+        
+   
     .size__title {
         font-size: 20px;
         margin-left: 12px;
-        margin-top: 15px;
+        margin-top: -5%;
+        margin-bottom: 5%;
+        
     }
 
     .size__size {
 
-        font-size: 20px;
-        margin-top: 50px;
-        border: solid white 1px;
-        box-shadow: 0px -10px 15px gray;
+        font-size: 30px;
+        
+        
+        
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         text-align: center;
-
-
-
-
+        background-color: transparent;
+        font-family: 'Courier New', Courier, monospace;
+        position:relative;
+        color: lightgray;
+        border: white solid 1px;
+        background-color: white;
+        height: 200px;
     }
+   
+        
+    
 
     .size__size__39:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
-        max-height: 1px;
+        background-color: white;
+        border-radius: 50%;
         margin-top: -20px;
+        width: 120%;
+        height: 60%;
+        
+      
+        
+
+        
     }
 
     .size__size__40:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
-        max-height: 1px;
+        background-color: white;
+        border-radius: 50%;
         margin-top: -20px;
-
+        width: 120%;
+        height: 60%;
     }
 
     .size__size__41:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
-        max-height: 1px;
+        background-color: white;
+        border-radius: 50%;
         margin-top: -20px;
+        width: 120%;
+        height: 60%;
     }
 
     .size__size__43:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
-        max-height: 1px;
+        background-color: white;
+        border-radius: 50%;
         margin-top: -20px;
+        width: 120%;
+        height: 60%;
     }
 
     .size__size__44:hover {
         color: rgb(254, 85, 69);
         font-size: 40px;
-        max-height: 1px;
+        background-color: white;
+        border-radius: 50%;
         margin-top: -20px;
-    }
+        width: 120%;
+        height: 60%;}
 
     .footer__clear>button {
         margin-left: 15px;
@@ -235,7 +282,7 @@
     <div class="phone">
         <div class="headerFilter">
             <div class="headerFilter__grid">
-                <div class="header__back">1</div>
+                <div class="header__back"><a href="page2.html"><button><b><</b></button></a></div>
                 <div class="header__title">Filters</div>
                 <div class="header__nightMode"> <img src="logos/nightmod.png"> </div>
             </div>
@@ -254,22 +301,22 @@
         </div>
         <div class="color">
             <div class="color__title"> <b>Color:</b> </div>
-            <div class="color__spectrum"><input style="margin-left:63%;" type="color"></form> <img
+            <div class="color__spectrum"><input style="margin-left:67.3%; border: none;width: 7%;" type="color" value="#800080"></form> <img
                     src="logos/spectrum.PNG" alt=""></div>
         </div>
         <div class="size">
             <div class="size__title"><b>Size:</b></div>
             <div class="size__size">
-                <div class="size__size__39">39</div>
-                <div class="size__size__40">40</div>
-                <div class="size__size__41">41</div>
-                <div class="size__size__43">43</div>
-                <div class="size__size__44">44</div>
+                <div class="size__size__39"><b>39</b></div>
+                <div class="size__size__40"><b>40</b></div>
+                <div class="size__size__41"><b>41</b></div>
+                <div class="size__size__43"><b>42</b></div>
+                <div class="size__size__44"><b>43</b></div>
             </div>
         </div>
         <div class="footer3">
             <div class="footer__clear"><button> <b>Clear All</b></button> </div>
-            <div class="footer__apply"><a href="page1.html"><button><b>Apply</b></button></a> </div>
+            <div class="footer__apply"><a href="index.html"><button><b>Apply</b></button></a> </div>
         </div>
     </div>
 </body>
