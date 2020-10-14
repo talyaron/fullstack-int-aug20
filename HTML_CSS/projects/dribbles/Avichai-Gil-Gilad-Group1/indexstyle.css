@@ -370,6 +370,9 @@ input[type="text"]{
         grid-template-columns: 1fr ;
         grid-column-gap: 0;
     }
+    .card{
+        height: 50vw;
+    }
     .card__product{
         height: 50%;
         width: 85%;

@@ -23,7 +23,7 @@
     .headerFilter {
         height: 14%;
     }
-    .header__back>button{
+    .header__back>a>button{
         font-size: 20px;
         
         width: 30px;
@@ -34,6 +34,9 @@
         background-color: white;
 
     }
+.header__back>a>button:focus{
+    outline: 0;
+}
 
     .headerFilter__grid {
         display: flex;
@@ -277,7 +280,7 @@
     <div class="phone">
         <div class="headerFilter">
             <div class="headerFilter__grid">
-                <div class="header__back"><button><b><</b></button></div>
+                <div class="header__back"><a href="page2.html"><button><b><</b></button></a></div>
                 <div class="header__title">Filters</div>
                 <div class="header__nightMode"> <img src="logos/nightmod.png"> </div>
             </div>
