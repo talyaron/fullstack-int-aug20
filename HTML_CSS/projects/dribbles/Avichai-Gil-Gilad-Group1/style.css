@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Mandali';
+    src:url("font/Mandali.ttf.woff") format('woff'),
+        url('font/Mandali.ttf.svg#Mandali') format('svg'),
+        url('font/Mandali.ttf.eot'),
+        url('font/Mandali.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
 :root{
     
 }
@@ -9,32 +18,77 @@ img{
 }
 .phone{
     width: 300px;
-    height: 700px;
+    height: 680px;
     margin: auto;  
+    position: relative;
      border: 1px solid black;
      border-radius: 10px;
+     background-image: linear-gradient(white, white, rgb(233, 232, 232));
 }
 .header{
+    height: 14%;
+}
+
+.header__grid{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
-    height: 100px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    top: 30%;
+    left: 1%;
 }
-.header__nav{
-    margin-left: 10px;
+.header__nav{  
+    left: 2%;
+    position: relative;
+    width: 11%;
+}
+.header__nav>img{
+    width: 100%;
 }
 .header__title{
+    margin-bottom: 2%;
+    font-family: 'Mandali';
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    left: 3.5%;
+    position: relative;
 }
 .header__nightMode{
-    margin-right: 10px;
+    width: 18%;
+}
+.header__nightMode>img{
+    border-radius: 13px;
+    width: 100%;
 }
 .searchBox{
-    border: 2px solid black;
-    height: 35px;
+    height: 5%;
 }
-.searchBox__logo{
+input[type="text"]{
+    height: 70%;
+    width: 80%;
+    position: relative;
+    left: 5%;
+    outline: 0;
+    border: 0;
+    font-weight: 550;
+    font-size: 1rem;
+    font-family: 'Roboto';
+}
+
+.searchBox>img{
     float: right;
+    margin-right: 4%;
+    width: 10%;
+}
+.searchBoxLine{
+    height: 1px;
+    background-color: lightgray;
+    width: 90%;
+    margin: auto;
+    margin-top: 2%;
 }
 .brand{
     margin-top: 10%;
@@ -56,9 +110,9 @@ img{
 .brand__item1{
     background: #f6f6f6;
     border-radius: 50%;
-    height: 50px;
+    height: 94%;
 }
-.brand__item1>img{
+.brand__item1>a>img{
     display: block;
     margin-left: 16%;
     margin-top: 30%;
@@ -67,9 +121,9 @@ img{
 .brand__item2{
     background: #f6f6f6;
     border-radius: 50%;
-    height: 50px;
+    height: 94%;
 }
-.brand__item2>img{
+.brand__item2>a>img{
     display: block;
     margin-left: 14%;
     margin-top: 29%;
@@ -79,10 +133,10 @@ img{
 .brand__item3{
     background: #f6f6f6;
     border-radius: 50%;
-    height: 50px;
+    height: 94%;
 
 }
-.brand__item3>img{
+.brand__item3>a>img{
     display: block;
     margin:auto;
     margin-top: 12%;
@@ -91,10 +145,10 @@ img{
 .brand__item4{
     background: #f6f6f6;
     border-radius: 50%;
-    height: 50px;
+    height: 94%;
 
 }
-.brand__item4>img{
+.brand__item4>a>img{
     display: block;
     margin:auto;
     width: 80%;
@@ -103,20 +157,22 @@ img{
 .filter{
     width: 15%;
     height: 6%;
-    position: relative;
+    position: absolute;
     left:85%;
-    bottom: 11%;
+    top: 23%;
 
 }
-.filter>img{
+.filter>a>img{
     width: 100%;
     height: 100%;
     border-top-left-radius:13px;
     border-bottom-left-radius:13px;
 }
 .card{
-    width: 80%;
-    height: 30%;
+    width: 85%;
+    height: 35%;
+    position: relative;
+    top: 4%;
     margin: auto;
     box-shadow: 0 4px 4px -2px gray;
     background-color: white;
@@ -160,12 +216,14 @@ img{
     margin-right: 5%;
 }
 .footer{
-    border: 2px solid black;
-    width: 95%;
+    width: 100%;
     height: 10%;
     margin: auto;
-    margin-top: 40%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
     display: flex;
+    background-color: white;
 }
 .footerLeft{
     position: relative;
@@ -176,6 +234,7 @@ img{
     display: flex;
     justify-content: space-between;
     margin-right: 10%;
+    left: 5%;
 }
 .footerMiddle{
     width: 20%;
@@ -190,21 +249,22 @@ img{
     display: flex;
     justify-content: space-between;
     margin-left: 10%;
+    right: 5%;
 }
 .footerLeft__home>img{
-    width: 85%;
+    width: 75%;
 }
 .footerLeft__safari>img{
-    width: 85%;
+    width: 80%;
 }
 .footerMiddle__checkout>img{
     border-radius: 10px;
     width: 80%;
 }
 .footerRight__notfication>img{
-    width: 85%;
+    width: 80%;
 }
 .footerRight__profile>img{
-    width: 85%;
+    width: 80%;
 }
 
