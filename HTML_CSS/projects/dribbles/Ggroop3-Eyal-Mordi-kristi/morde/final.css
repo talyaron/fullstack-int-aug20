@@ -1,0 +1,140 @@
+button {
+  border: 0;
+  background-color: #a4b494;
+}
+
+.container {
+  background-color: #eeeeef;
+  max-width: 1290px;
+  max-height: 900px;
+  margin: auto;
+  border-radius: 30px;
+}
+
+.menuBar {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.menuBar_Lbutton {
+  grid-row: 2;
+  margin: auto;
+}
+
+.backIcon {
+  width: 32px;
+  height: 26px;
+}
+
+.menuBar_Logo {
+  margin: auto;
+  grid-row: 2;
+}
+
+.menuBar_Logo > p {
+  margin: auto;
+  font-family: "Quintessential", cursive;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.menuBar_Rbutton {
+  margin: auto;
+  grid-row: 2;
+}
+
+.cartIcon {
+  width: 32px;
+  height: 26px;
+}
+
+.midContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  margin: auto;
+}
+
+.cardItem {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  max-width: 350px;
+  margin: auto;
+  background-color: white;
+  border-radius: 12px;
+  grid-row: 2;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cardItem_Pic {
+  margin-left: 3px;
+  margin-top: 2px;
+}
+
+.cardItem_Text > p {
+  margin: 0;
+  margin-top: 13px;
+  opacity: 0.5;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.cardItem_Text > h5 {
+  margin: 0;
+  margin-top: 13px;
+  margin-left: 10px;
+  font-size: 17px;
+}
+
+.cardItem_Bar {
+  margin: auto;
+}
+
+.numberInput {
+  width: 30px;
+  text-align: center;
+  border: 0;
+  background-color: #e8e8e8;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.row3 {
+  grid-row: 3;
+}
+
+.row4 {
+  grid-row: 4;
+}
+
+.row5 {
+  grid-row: 5;
+}
+
+.bottomContainer {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.divBtn {
+  grid-row: 4;
+  margin: auto;
+}
+
+.mainButton {
+  border-radius: 15px;
+  height: 50px;
+  outline: 0;
+  max-width: 300px;
+  width: 300px;
+  font-weight: bold;
+  color: white;
+}
+
+.mainButton:hover {
+  background-color: gray;
+}
