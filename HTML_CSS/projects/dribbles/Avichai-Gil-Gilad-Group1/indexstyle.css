@@ -7,6 +7,12 @@
     font-weight: normal;
     font-style: normal;
 }
+:root {
+    --button_height: 50px;
+    --button_width: 80px;
+
+
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -29,8 +35,12 @@ img{
     margin-top: 1%;
     font-family: 'Mandali';
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     letter-spacing: 3px;
+}
+.headerB__nav>img{
+    position: relative;
+    top: 15px;
 }
 
 .searchBox{
@@ -102,6 +112,8 @@ input[type="text"]{
     grid-column-gap: 2vw;
 }
 .bigCardContainer{
+    position: relative;
+    bottom: 1vw;
 }
 .card{
     width: 85%;
@@ -161,7 +173,10 @@ input[type="text"]{
     margin-right: 5%;
 }
 .miniCardContainer{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 95%;
 }
 .miniCard {
     position: relative;
@@ -169,10 +184,9 @@ input[type="text"]{
     box-shadow: 0 4px 4px -2px gray;
     background: white;
     width: 25vw;
-    height: 6vw;
+    height: 16%;
     border-radius: 10px;
-    margin: auto;
-    margin-top: px;
+    margin-top: -10%;
 }
 
 .miniCard__title {
@@ -222,12 +236,150 @@ input[type="text"]{
     height: 85px;
 
 }
+
+.gender {
+    width: 85%;
+    height: 70px;   
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.gender__title {
+    border: white solid 1px;
+    font-size: 20px;
+    margin-left: 12px;
+    margin-top: 3px;
+
+}
+
+.gender__men>button:focus,.gender__women>button:focus,.gender__both>button:focus {
+    background-color: rgb(254, 85, 69);
+    outline: 0;
+    color: white;
+
+}
+
+
+.button__gender__men,.button__gender__women, .button__gender__both {
+    height: var(--button_height);
+    width: var(--button_width);
+    border-radius: 15px;
+    margin: 10px;
+    background-color: white;
+    border: solid 1px lightgray;
+
+
+}
+.price__title {
+    margin-left: 12px;
+    margin-top: 15px;
+    font-size: 20px;
+
+}
+
+.price__range>img {
+    margin-left: 27px;
+    max-width: 80%;
+    min-height: 90px;
+}
+
+.color__title {
+    font-size: 20px;
+    margin-left: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.size__title {
+    font-size: 20px;
+    margin-left: 12px;
+    margin-bottom: 5%;
+    position: relative;
+    top: 15px;
+    
+}
+
+.size__size {
+    font-size: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    position:relative;
+    color: lightgray;
+    height: 200px;
+}
+
+    
+
+
+.size__size__39:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+    
+  
+    
+
+    
+}
+
+.size__size__40:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+}
+
+.size__size__41:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+}
+
+.size__size__43:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+}
+
+.size__size__44:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;}
+
 .filterButton{
     display: none;
 }
 .footer{
     display: none;
 }
+
+
+/* Phone Screen */
 @media only screen and (max-width:600px){
     .mainContainer{
         width: 300px;
@@ -371,7 +523,7 @@ input[type="text"]{
         grid-column-gap: 0;
     }
     .card{
-        height: 50vw;
+        height: 15rem
     }
     .card__product{
         height: 50%;
