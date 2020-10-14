@@ -24,6 +24,7 @@ img{
      border: 1px solid black;
      border-radius: 10px;
      background-image: linear-gradient(white, white, rgb(233, 232, 232));
+     overflow: hidden;
 }
 .header{
     height: 14%;
@@ -112,7 +113,7 @@ input[type="text"]{
     border-radius: 50%;
     height: 94%;
 }
-.brand__item1>a>img{
+.brand__item1>img{
     display: block;
     margin-left: 16%;
     margin-top: 30%;
@@ -123,7 +124,7 @@ input[type="text"]{
     border-radius: 50%;
     height: 94%;
 }
-.brand__item2>a>img{
+.brand__item2>img{
     display: block;
     margin-left: 14%;
     margin-top: 29%;
@@ -136,7 +137,7 @@ input[type="text"]{
     height: 94%;
 
 }
-.brand__item3>a>img{
+.brand__item3>img{
     display: block;
     margin:auto;
     margin-top: 12%;
@@ -148,7 +149,7 @@ input[type="text"]{
     height: 94%;
 
 }
-.brand__item4>a>img{
+.brand__item4>img{
     display: block;
     margin:auto;
     width: 80%;
@@ -177,6 +178,7 @@ input[type="text"]{
     box-shadow: 0 4px 4px -2px gray;
     background-color: white;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 .card__title{
     display: inline-block;
@@ -185,7 +187,14 @@ input[type="text"]{
     font-weight: 500;
     margin-left: 5%;
 }
+.card__title>span{
+    font-size: 10px;
+    font-weight: 100;
+    color: rgb(223, 219, 219);
+}
 .card__like{
+    position: relative;
+    top: 25px;
     float: right;
     border-radius: 5px;
     margin-right: 5%;
@@ -194,7 +203,7 @@ input[type="text"]{
     width: 95%;
 }
 .card__product{
-    height: 60%;
+    height: 50%;
     width: 85%;
     margin: auto;
     margin-top: 10%;
@@ -212,8 +221,13 @@ input[type="text"]{
 
 }
 .card__logo{
+    position: relative;
+    bottom: 13px;
     float: right;
     margin-right: 5%;
+}
+.card--bottom{
+
 }
 .footer{
     width: 100%;
