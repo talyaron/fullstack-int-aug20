@@ -1,0 +1,62 @@
+:root {
+  --colorOrange: rgb(248, 132, 0);
+  --colorGrey: rgba(128, 128, 128, 0.383);
+  --borderRadius: 2vw;
+  --titleFont: 'Noto Sans TC', sans-serif;
+}
+
+body{
+  background-color: var(--colorGrey);
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.screen {
+  width: 300px;
+  height: 600px;
+  margin: auto;
+  /* border: 1px solid black; */
+  border-radius: 2vw;
+  color: rgba(128, 128, 128, 0.383);
+  padding: 1.7em;
+  background-color: white;
+  overflow: hidden;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  
+ 
+}
+
+.headerButton__back{
+  font-size: .75rem;
+  font-weight: bold;
+}
+
+.headerButton__rewards{
+  font-size: .9rem;
+  font-weight: bold;
+}
+
+.gallery{
+  /* padding-top: .3em; */
+}
+
+.gallery__title{
+  font-family: var(--titleFont);
+ font-weight: normal;
+ font-size: 3em;
+ margin-top: 0.45em;
+ margin-bottom: 0.453em;
+}
+
+.mediaWrapper{
+    border: 1px solid black;
+    height: 100vh;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+}
+
