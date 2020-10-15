@@ -1,0 +1,125 @@
+:root {
+    /*Screen*/
+    --borderRadiusOutside: 2vw;
+    --widthScreen: 20%;
+    --marginScreen: auto;
+    --borderScreen: 1px solid black;
+    /*img*/
+    --borderRadiusImg: 1vw;
+    /*Colors */
+    --colorOrange: rgb(248, 132, 0);
+    --colorGrey: rgba(128, 128, 128, 0.383);
+    --colorLightWhite: rgba(255, 255, 255, 0.555);
+    --colorWhite: white;
+    /*Font*/
+    --titleFont: 'Noto Sans TC', sans-serif;
+    /* Buttons */
+    --paddingButtons: 5%;
+    --borderButtons: 1px solid rgb(241, 241, 241);
+    --borderRadiusButtons: 0.5vw;
+    --backgroundColorButtons: rgb(241, 241, 241);
+    --centerButton: center;
+}
+
+.screen {
+    width: var(--widthScreen);
+    /* margin: var(--marginScreen); */
+    border: var(--borderScreen);
+    border-radius: var(--borderRadiusOutside);
+}
+
+.headerButton__helpus {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1vw;
+    font-weight: bold;
+    margin: 7% 0 0 7%;
+    outline: none;
+}
+
+.headerButton__helpus--Color {
+    color: var(--colorOrange);
+}
+
+.kidsImg {
+    width: 90%;
+    margin: 5% auto;
+}
+
+.kidsImg>img {
+    width: 100%;
+    border-radius: var(--borderRadiusImg);
+}
+
+.kidsImg__helpus {
+    font-size: 3vw;
+    position: relative;
+    top: -11.5vh;
+    left: 2vw;
+    font-weight: bold;
+    color: var(--colorLightWhite);
+    font-family: var(--titleFont);
+    margin: 0;
+}
+
+.middleTitle {
+    font-size: 0.9vw;
+    position: relative;
+    top: -6vh;
+    left: 4vw;
+    color: rgba(128, 128, 128, 0.692);
+    margin: 0;
+}
+
+.loginButtons {
+    position: relative;
+    top: -6vh;
+    right: 0.5vw;
+    display: grid;
+    grid-template-columns: 85% 10%;
+    grid-template-rows: 50% 50%;
+    width: 100%;
+    margin: 10%;
+    row-gap: 10%;
+}
+
+.loginButtons__Login {
+    padding: var(--paddingButtons);
+    border: var(--borderButtons);
+    border-radius: var(--borderRadiusButtons);
+    background-color: var(--backgroundColorButtons);
+    display: flex;
+    align-items: var(--centerButton);
+    align-self: var(--centerButton);
+}
+
+.loginButtons__Login>img {
+    width: 8%;
+    height: 100%;
+    padding-right: 5%;
+    display: flex;
+    align-items: var(--centerButton);
+    align-self: var(--centerButton);
+}
+
+.symbols {
+    position: relative;
+    right: 2.7vw;
+    display: flex;
+    align-items: var(--centerButton);
+    justify-content: var(--centerButton);
+    align-self: var(--centerButton);
+    height: 70%;
+    border: var(--borderButtons);
+    align-self: var(--centerButton);
+    border-radius: 0.5vw;
+    background-color: var(--colorWhite);
+}
+
+.text {
+    width: 90%;
+    position: relative;
+    top: -5vh;
+    left: 1vw;
+    text-align: center;
+}
