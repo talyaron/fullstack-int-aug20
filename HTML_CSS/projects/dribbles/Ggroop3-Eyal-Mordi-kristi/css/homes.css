@@ -33,7 +33,7 @@ body {
 .Mainpic {
     margin: auto;
     display: grid;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .Mainpic>img {
@@ -117,5 +117,5 @@ body {
     border-radius: 15px;
     color: white;
     background-color: #93A973;
-    height: 28px;
+    height: 30px;
 }
