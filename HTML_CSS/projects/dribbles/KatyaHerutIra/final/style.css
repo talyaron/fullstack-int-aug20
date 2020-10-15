@@ -1,7 +1,7 @@
 :root {
     /*Screen*/
     --borderRadiusOutside: 2vw;
-    /* --widthScreen: 20%; */
+    --widthScreen: 20%;
     --marginScreen: auto;
     --borderScreen: 1px solid black;
     /*img*/
@@ -23,8 +23,8 @@
 
 .screen {
     width: var(--widthScreen);
-    margin: var(--marginScreen);
-    border: var(--borderScreen);
+    /* margin: var(--marginScreen); */
+    /* border: var(--borderScreen); */
     border-radius: var(--borderRadiusOutside);
 }
 
@@ -104,7 +104,7 @@
 
 .symbols {
     position: relative;
-    right: 2vw;
+    right: 2.7vw;
     display: flex;
     align-items: var(--centerButton);
     justify-content: var(--centerButton);

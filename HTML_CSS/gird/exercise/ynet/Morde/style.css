@@ -1,0 +1,161 @@
+:root {
+  --headerImagesPadding: 0px 3px 0px 3px;
+  --logoPaddingLeft: 20px;
+  --anchorMenuPadding: 15px 0px 15px 0px;
+  --anchorMenuBorderColour: gray;
+  --anchorMenuBorderStyle: dotted 1px;
+  --anchorMenuFontSize: 12px;
+  --anchorsPadding: 0px 15px 0px 15px;
+}
+
+body {
+  padding: 15px 50px;
+}
+
+.headerImages {
+  padding: var(--headerImagesPadding);
+}
+
+.ynetLogo {
+  padding-left: var(--logoPaddingLeft);
+}
+
+.anchorMenu {
+  margin-top: 20px;
+  border-top: var(--anchorMenuBorderStyle);
+  border-bottom: var(--anchorMenuBorderStyle);
+  border-color: var(--anchorMenuBorderColour);
+  padding: var(--anchorMenuPadding);
+}
+
+.anchor {
+  font-size: var(--anchorMenuFontSize);
+  padding: var(--anchorsPadding);
+}
+
+.anchorRedMail {
+  font-size: var(--anchorMenuFontSize);
+  padding: 0px 15px 0px 15px;
+  font-weight: bold;
+  border-right: dotted 1px;
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.updates {
+  height: 335px;
+  width: 181px;
+  border-left: dotted 1px;
+}
+
+.updatesTitle {
+  background-color: red;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  width: 130px;
+  height: 24px;
+  padding-right: 10px;
+}
+
+.topArticle {
+  padding: 15px;
+  width: 384px;
+  height: 320px;
+}
+
+.topArticleDate {
+  color: #939394;
+  font: bold 42px Tahoma, sans-serif;
+}
+
+.topArticleHebDate {
+  font-size: 14px;
+  color: #ababac;
+  margin-bottom: 13px;
+}
+
+.topArticleTitle {
+  color: black;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.topArticleText {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 13px;
+}
+
+.topArticleImg {
+  width: 586px;
+  height: 335.344px;
+  margin-top: 10px;
+}
+
+.divider {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.seperate {
+  background-color: #e6eaf3;
+  height: 36px;
+  width: 1022px;
+}
+
+.ynetLoginImg {
+  padding-right: 10px;
+}
+
+.secondSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.rightArticle {
+  text-align: center;
+  margin-top: 350px;
+}
+
+.leftArticle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 586px;
+  height: 102px;
+  padding: 10px;
+}
+
+.articleImg {
+  width: 180px;
+  height: 102px;
+}
+
+.articleTitle {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  width: 404px;
+  height: 102px;
+  padding-right: 10px;
+  background-color: #ff0000;
+}
+
+.articleTitle2 {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  width: 404px;
+  height: 102px;
+  padding-right: 10px;
+  background-color: royalblue;
+}
+
+.articleText {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
