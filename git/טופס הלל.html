@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/ico" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQbIoWc8EpzaHr9PtGHP2BdhmF9CzaRiO0sHA&usqp=CAU" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כפתורים</title>
+   
+</head>
+<style>
+.box{
+    background-color: rgba(220, 220, 220, 0.692);
+    width: 550px;
+    height: 810px;
+    margin: auto;
+    border: solid 2px rgb(220, 220, 220);
+    margin-top: 40px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    user-select:none;
+}
+
+.card{
+    background-color: rgba(220, 220, 220, 0.692);
+    margin-top: 40px;
+    width: 524px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 35px 100px 100px 100px 100px 36px;
+    grid-gap: 10px;
+    grid-template-areas:
+    ". bix1 bix2 bix3 bix4 ."
+    "bix5 bix5 bix5 bix5 bix5 bix5";
+    box-sizing: border-box;
+    border-radius: 11px;
+}
+
+.bix1{
+    grid-area: bix1;}
+
+.bix2{
+    grid-area: bix2;}
+
+.bix3{
+    grid-area: bix3;}
+
+.bix4{
+    grid-area: bix4;}
+
+    .bix_1 {
+        background-color: rgb(216, 215, 215);
+    border: solid 2px white;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 6px;
+    display: flex;
+    direction: rtl;
+    box-sizing: border-box;
+}
+.bix_1:hover{
+    box-sizing: border-box;
+    box-shadow: 2px 2px 3px  white, -2px -2px 3px white;
+    background-color: rgba(252, 172, 172, 0.671);
+    
+    
+}
+.bix_1:hover .img {
+    background-color: rgb(250, 233, 233);
+    
+}
+.img{
+    height: 100%;
+    width: 35%;
+    background-color: rgb(235, 235, 235);
+    border-radius: 0px 4px 4px 0px;
+    text-align: center;
+}
+img{
+    margin-top: 6px;
+    height: 65%;
+    width: 65%;
+}
+
+.text{
+    padding: 7px 4px;
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    color: rgba(42, 119, 68, 0.596);
+}
+.bix_1:hover .text{
+    text-shadow: 0.1px 0.1px 1px black;
+}
+.bix5{
+    grid-area: bix5;
+    background-color:white;
+    border-radius: 12px;
+    height: 740px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "bt1"
+    "bt2"
+    "bt3"
+    "bt4"
+    "bt5"
+    "bt6"
+    "bt7"
+    "bt8"
+    "bt9"
+}
+.bt1{
+    grid-area: bt1;
+    height: 130px;
+    text-align: center;
+}
+.bix5>.bt1>img{
+    width: 100px;
+    height: 100px;
+    margin-top: 25px;
+    border-radius: 50px;
+}
+.bt2{
+    grid-area: bt2;    
+}
+.bt3{
+    grid-area: bt3;}
+.bt4{
+    grid-area: bt4;}
+.bt5{
+    grid-area: bt5;}
+.bt6{
+    grid-area: bt6;}
+.bt7{
+    grid-area: bt7;}
+.bt8{
+    grid-area: bt8;}
+
+.bix_2{
+    direction: rtl;
+}
+.text5{
+margin: 10px 55px 0px 0px;
+padding: 0px 5px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+text-transform: uppercase
+}
+.div{
+    background-color: rgb(235, 235, 235);
+    margin: auto;
+margin-top: 0px;
+    width: 400px;
+    height: 38px;
+    border-radius: 4px;
+    text-align: right;
+}
+
+input[type=text] ,input[type=password],input[type=date] {
+border: none;
+padding: 3px;
+width: 100%;
+height: 100%;
+background-color: rgb(235, 235, 235);
+border-radius: 4px;
+color: rgb(44, 44, 44);
+font-size: 15px;
+font-weight: 550;
+text-shadow: 0.1px 0.1px 1px rgb(170, 170, 170);
+font-family: Arial, Helvetica, sans-serif;
+outline: none;
+text-align: right;
+
+}
+
+.bt9{
+    grid-area: bt9;
+text-align: center;
+margin-top: 10px;
+height: 40px;
+}
+#br1{
+border: none;
+padding: 3px;
+width: 100%;
+height: 100%;
+background-color: rgb(235, 235, 235);
+border-radius: 4px;
+color: rgb(44, 44, 44);
+font-size: 15px;
+font-weight: 550;
+text-shadow: 0.1px 0.1px 1px rgb(170, 170, 170);
+font-family: Arial, Helvetica, sans-serif;
+outline: none;
+
+
+}
+
+
+
+#button{
+border-radius: 10px;
+    padding: 8px 10px;
+    border: 0.5px solid rgba(44, 44, 44, 0.24);
+    outline: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(44, 44, 44);
+    text-align: right;
+}
+#button:hover{
+    box-shadow:0.1vw 0.1vw 1vw  0.5vw rgba(121, 121, 121, 0.301);
+
+}
+
+@media only screen and (max-width:400px) {
+
+    .box{
+        width: 380px;
+        height: 840px;
+        margin: 0;
+        margin-top: 0px;
+    }
+    
+    .card{
+        margin-top: 0px;
+        width: 340px;
+        display: grid;
+        grid-template-columns: 9px 68px 68px 68px 68px 9px;
+        grid-gap: 10px;
+        grid-template-areas:
+        ". bix1 bix2 bix3 bix4 ."
+        "bix5 bix5 bix5 bix5 bix5 bix5";
+    }
+    
+        .bix_1{
+        text-align: center;
+        display: block;
+    }
+
+    .img{
+        display: none;
+    }
+
+    .text{
+        padding: 0;
+        margin-top: 6px;
+        font-size: 14px;
+    }
+    .bix_1:hover .text{
+        text-shadow: 0.1px 0.1px 1px rgba(0, 0, 0, 0.377);
+    }
+    .bix5{
+        text-align: center;
+        grid-area: bix5;
+        height:780px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas:
+        "bt1"
+        "bt2"
+        "bt3"
+        "bt4"
+        "bt5"
+        "bt6"
+        "bt7"
+        "bt8"
+        "bt9"
+    }
+    .bix5>.bt1>img{
+        width: 90px;
+        height: 90px;
+        margin-top: 20px;
+    }
+
+    .text5{
+        margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    
+    
+    }
+    .div{
+        
+        width: 250px;
+        height: 30px;
+        border-radius: 5px;
+    }
+    
+
+
+    #button{
+        padding: 8px 45px;
+        box-sizing: border-box;
+       
+    }
+    #button:hover{
+        box-shadow:0.1vw 0.1vw 1vw  0.5vw rgba(121, 121, 121, 0.301);
+        background-color: rgba(252, 172, 172, 0.274);
+        border: 2px solid rgba(46, 46, 46, 0.473);
+    }
+
+
+    input[type=text] ,input[type=password],input[type=date], #br1{
+        text-align: right;
+    }
+}
+</style>
+
+<body>
+ 
+<div class="box">
+    <div class="card">
+       <div class="bix1 bix_1">
+            <div class="img">
+            <img src="https://img.icons8.com/cotton/2x/dog-house.png" alt="דף הבית">
+        </div>
+        <div class="text">דף הבית</div>
+    </div>
+        <div class="bix2 bix_1">
+            <div class="img">
+            <img src="https://img.icons8.com/windows/2x/xbox-x.png" alt="התנתקות">
+        </div>
+        <div class="text">התנתקות</div>
+    </div>
+        <div class="bix3 bix_1">
+            <div class="img">
+            <img src="https://img.icons8.com/ultraviolet/2x/user-shield.png" alt="אזור אישי">
+        </div>
+        <div class="text">אזור אישי</div>
+    </div>
+        <div class="bix4 bix_1">
+            <div class="img">
+            <img src="https://img.icons8.com/material-rounded/2x/replace.png" alt="חזור">
+        </div>
+        <div class="text">חזור</div>
+    </div>
+        <div class="bix5">
+            <div class="bt1 bix_2">
+                <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPBxn_Isl1i63lOOm0ThmPAXQd6NCIuSeDAQ&usqp=CAU"
+                 alt="">
+        </div>
+           
+        <div class="bt2 bix_2">
+                <div class="text5">תעודת זהות:</div>
+                <div class="div">
+                    <input type="text"autofocus>  
+                </div>
+            </div>
+            <div class="bt3 bix_2">
+                <div class="text5">שם משפחה ושם פרטי:</div>
+                <div class="div">
+                    <input type="text">  
+                </div>
+            </div>
+            <div class="bt4 bix_2">
+                <div class="text5">כתובת:</div>
+                <div class="div">
+
+                    <input type="text" >  
+                </div>
+            </div>
+            <div class="bt5 bix_2">
+                <div class="text5">עיר:</div>
+                <div class="div">
+                    <input list="browsers" name="browser" id="br1" style=" appearance: none;" >
+                    <datalist id="browsers">
+                      <option id="bb" value="אשקלון">
+                      <option value="באר שבע">
+                      <option value="דימונה">
+                      <option value="הרצליה">
+                      <option value="חיפה">
+                    <option value="טבריה">
+                    <option value="עפולה">
+                    <option value="אשדוד">
+                    <option value="תל אביב">
+                    <option value="חולון">
+                    <option value="באר שבע">
+                     <option value="בני ברק">
+
+                    </datalist>
+                </div>
+            </div>
+            <div class="bt6 bix_2">
+                <div class="text5">תאריך:</div>
+                <div class="div">
+                    <input type="date">  
+                </div>
+            </div>
+            <div class="bt7 bix_2">
+                <div class="text5">מייל:</div>
+                <div class="div">
+                    
+                    <input type="text"> 
+                </div>
+            </div>
+            <div class="bt8 bix_2">
+                <div class="text5">הזן סיסמה:</div>
+                <div class="div">
+                    <input type="password">  
+                </div>
+            </div>
+            <div class="bt9 ">
+             <button id="button">להמשך לחץ כאן</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
