@@ -24,7 +24,7 @@
 .screen {
     width: var(--widthScreen);
     /* margin: var(--marginScreen); */
-    border: var(--borderScreen);
+    /* border: var(--borderScreen); */
     border-radius: var(--borderRadiusOutside);
 }
 

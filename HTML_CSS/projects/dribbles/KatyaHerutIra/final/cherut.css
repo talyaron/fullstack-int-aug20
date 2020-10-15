@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
 .screen {
   min-width: 300px;
   width: 300px;
-  height:90vh;
+  height:80vh;
   /* margin: auto; */
   margin-top: .7vh;
   /* border: 1px solid black; */
