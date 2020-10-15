@@ -159,9 +159,12 @@ input[type="text"]{
     width: 95%;
 }
 .card__price{
-    display: inline;
+    display: relative;
     font-size: 20px;
     margin-left: 5%;
+    margin-top: -6%;
+    
+    
 }
 .card__price>span{
     font-size: 14px;
@@ -172,6 +175,8 @@ input[type="text"]{
     bottom: 15px;
     float: right;
     margin-right: 5%;
+    bottom: 15%;
+    
 }
 .miniCardContainer{
     display: flex;
@@ -382,6 +387,7 @@ input[type="text"]{
 
 /* Phone Screen */
 @media only screen and (max-width:600px){
+ 
     .mainContainer{
         width: 300px;
         height: 680px;
