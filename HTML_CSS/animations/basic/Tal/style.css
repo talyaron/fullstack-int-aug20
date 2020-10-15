@@ -1,0 +1,67 @@
+#box {
+    background-color: blue;
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+    animation: moveDiagonal 3s ease-in-out 0s 2 normal forwards;
+
+}
+
+#box2 {
+    background-color: chocolate;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+    animation: moveDiagonal2 300s ease-in-out 300ms 2;
+}
+
+
+@keyframes moveDiagonal {
+    0% {
+        top: 0px;
+        left: 0px;
+
+        width: 10px;
+        height: 10px;
+    }
+
+    50% {
+        top: 200px;
+        left: 200px;
+        width: 300px;
+        height: 300px;
+    }
+
+    100%{
+        top:200px;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@keyframes moveDiagonal2 {
+
+
+    from {
+        top: 200px;
+        left: 200px;
+        width: 300px;
+        height: 300px;
+    }
+
+    to {
+        top: 0px;
+        left: 0px;
+
+        width: 10px;
+        height: 10px;
+    }
+}
