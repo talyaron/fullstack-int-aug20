@@ -1,0 +1,13 @@
+:root {
+    /* COLOR */
+    --colorViolet: rgb(91, 9, 199)(167, 0, 0);
+    --colorWhite: white;
+    --colorYellow: yellow;
+    /* FONT */
+    --fontFamily: 'Nunito Sans', sans-serif;
+    --fontWeight: bold;
+    /* SCREEN */
+    --borderRadius: border-radius: 5%;
+    width: ;
+    height: ;
+}
