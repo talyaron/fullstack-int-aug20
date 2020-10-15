@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style חדש .css">
+</head>
+<style>
+    .box {
+        margin: auto;
+        width: 95%;
+        font-family: Arial, Helvetica, sans-serif;
+        white-space: nowrap;
+    }
+    
+    .card {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(https://www.mitsu.co.il/wp-content/uploads/2012/12/gatso-derech-hevron-map.jpg);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        box-shadow: 0.1vw 0.1vw 1vw 0.5vw rgba(121, 121, 121, 0.301);
+        height: 173vw;
+        border-radius: 5vw;
+        grid-template-areas: "a a a ""b b b ""c c c"
+    }
+    
+    .card__statusBar {
+        background-color: rgba(255, 255, 255, 0.582);
+        grid-area: a;
+        height: 8vw;
+        border-radius: 5vw 5vw 0vw 0vw;
+        display: grid;
+        grid-template-columns: 9fr 1fr 1fr 1fr 0.2fr;
+        border: solid blueviolet;
+    }
+    
+    .card__statusBar>img {
+        margin-top: 2vw;
+        width: 70%;
+        height: 70%;
+    }
+    
+    .hour {
+        margin-top: 2vw;
+        font-size: 4vw;
+        margin-left: 5vw;
+    }
+    
+    .arrow_text1 {
+        position: absolute;
+        margin: 16vw 0vw 0vw 6vw;
+        font-size: 6vw;
+    }
+    
+    .b {
+        grid-area: b;
+        height: 65vw;
+    }
+    
+    .c {
+        grid-area: c;
+        background-color: rgba(255, 255, 255, 0.911);
+        height: 100vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-radius: 5vw;
+        grid-template-areas: ". a1 ."". a2 .""a3 a3 a3""a4 a4 a4""a5 a5 a5""a6 a6 a6"". a7 ."
+    }
+    
+    .a1 {
+        grid-area: a1;
+        height: 2vw;
+        margin-top: 3vw;
+    }
+    
+    .div {
+        background: rgba(128, 128, 128, 0.938);
+        width: 15vw;
+        height: 1vw;
+        text-align: center;
+        margin: auto;
+        border-radius: 50vw;
+    }
+    
+    .a2 {
+        grid-area: a2;
+        height: 10vw;
+    }
+    
+    .te1 {
+        padding: 2vw;
+        text-align: center;
+        font-size: 5vw;
+    }
+    
+    .a3 {
+        grid-area: a3;
+        height: 30vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .icon {
+        margin-left: 4.2vw;
+        background-color: rgb(236, 235, 235);
+        width: 22vw;
+        height: 25vw;
+        border-radius: 2vw;
+        margin-top: 2.5vw;
+        text-align: center;
+        padding: 3%;
+        font-size: 3.5vw;
+    }
+    
+    .icon:hover {
+        box-shadow: 0.1vw 0.1vw 1vw 0.5vw rgba(121, 121, 121, 0.589);
+        font-size: 4vw;
+    }
+    
+    .icon>img {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .a4 {
+        grid-area: a4;
+        height: 15vw;
+        font-size: 3vw;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .a4>div {
+        margin-top: 6vw;
+        margin-left: 2vw;
+    }
+    
+    .a4>img,
+    .a5>img {
+        padding: 7px;
+        margin-top: 3%;
+        margin-left: 4.2vw;
+        width: 8vw;
+        height: 8vw;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .a5 {
+        grid-area: a5;
+        height: 15vw;
+        display: flex;
+    }
+    
+    .a6 {
+        grid-area: a6;
+        height: 15vw;
+        text-align: center;
+    }
+    
+    button {
+        background-color: rgb(112, 174, 216);
+        color: white;
+        border-radius: 20vw;
+        outline: none;
+        border: none;
+        font-size: 4vw;
+        text-align: center;
+        font-weight: 600;
+        height: 12vw;
+        width: 70vw;
+    }
+    
+    button:active {
+        border: solid 0.05vw rgb(47, 120, 168);
+    }
+    
+    button:hover {
+        box-shadow: 0.2vw 0.2vw 0.2vw 0.1vw rgba(112, 174, 216, 0.425);
+    }
+    
+    .card__swipeBar {
+        grid-area: a7;
+        margin-top: -13%;
+        background-color: rgb(61, 61, 61);
+        margin: auto;
+        border-radius: 100vw;
+        width: 40vw;
+        height: 1.5vw;
+    }
+    
+    .a4:hover img {
+        box-shadow: 0.1vw 0.1vw 1vw 0.5vw rgba(121, 121, 121, 0.192);
+    }
+    
+    .a5:hover img {
+        border-radius: 3vw;
+        box-shadow: 0.1vw 0.1vw 1vw 0.5vw rgba(121, 121, 121, 0.192);
+    }
+</style>
+
+<body>
+    <div class="box">
+
+
+        <div class="card">
+
+            <article class="card__statusBar">
+
+                <div class="hour">9:45</div>
+
+
+                <img src="https://img.icons8.com/fluent-systems-filled/2x/no-connection--v2.png" alt="">
+
+
+                <img src="https://img.icons8.com/fluent-systems-filled/2x/wifi.png" alt="">
+
+
+                <img src="https://img.icons8.com/fluent-systems-regular/2x/medium-battery.png" alt="">
+
+            </article>
+
+            <article class="b">
+
+            </article>
+            <article class="c">
+                <div class="a1">
+                    <div class="div"></div>
+                </div>
+                <div class="a2">
+                    <div class="te1">Barrier</div>
+                </div>
+                <div class="a3">
+                    <div class="icon">
+                        <img src="https://img.icons8.com/color/2x/error.png" alt="">
+                        <div>Hazard</div>
+                    </div>
+                    <div class="icon">
+                        <img src="https://img.icons8.com/color/2x/under-construction.png" alt="">
+                        <div>Roabworks</div>
+                    </div>
+                    <div class="icon">
+                        <img src="https://img.icons8.com/color/2x/road-closure.png" alt="">
+                        <div>Event</div>
+                    </div>
+                </div>
+                <div class="a4">
+                    <img src="https://img.icons8.com/ios-filled/2x/camera.png" alt="">
+                    <div>Hazard</div>
+                </div>
+                <div class="a5">
+                    <img src="https://img.icons8.com/plasticine/2x/stopwatch.png" alt="">
+                    <div>Hazard</div>
+                </div>
+                <div class="a6">
+                    <div class="text3"></div>
+                    <button>Close</button>
+                </div>
+
+                <div class=card__swipeBar ">
+                    
+                </div>
+
+            </article>
+        </div>
+    </div>
+</body>
+
+</html>

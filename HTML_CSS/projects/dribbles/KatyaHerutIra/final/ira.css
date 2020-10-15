@@ -1,0 +1,118 @@
+
+    body {
+        background-color: #eef1f5;
+    }
+
+    .iraScreen {
+        background-color: white;
+        border-radius: 25px;
+        margin: auto;
+        width: 30%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr auto 1fr 1fr;
+        grid-template-areas:
+            "headr"
+            "info"
+            "heading"
+            "midBUTTONS"
+            "DONATE";
+    }
+
+    .btn {
+        border: none;
+        background: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin: 5px;
+    }
+
+    .headr {
+        grid-area: headr;
+    }
+
+    .info {
+        grid-area: info;
+    }
+
+    .heading {
+        grid-area: heading;
+    }
+
+    .midBUTTONS {
+        grid-area: midBUTTONS;
+    }
+
+    .DONATE {
+        grid-area: DONATE;
+    }
+
+    .headr {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px;
+    }
+
+    .headr__BACK {
+        margin: 15px;
+        margin-top: 17px;
+    }
+
+    .headr__share {
+        margin: 15px;
+        margin-top: 17px;
+    }
+
+
+    .info {
+        position: relative;
+        margin-left: 15px;
+    }
+
+    .info__img {
+        border-radius: 15%;
+        width: 66%;
+    }
+
+
+    .info__img img {
+        width: 100%;
+        border-radius: 15%
+    }
+
+    .info__text {
+        position: absolute;
+        background-color: white;
+        border-radius: 15%;
+        width: 45%;
+        right: 20%;
+        bottom: -15%;
+        height: 67%;
+        font-size: 8px;
+        text-align: center;
+        box-shadow: 5px 5px 20px rgba(68, 68, 68, 0.6);
+    }
+
+    .heading {
+        font-family: 'Source Sans Pro', sans-serif;
+        text-transform: capitalize;
+        margin: 4%;
+    }
+    .midBUTTONS { margin: 4%;
+    display: flex;
+flex-direction: column;
+justify-content: space-between;
+background-color: white;}
+
+    .MIDbtn { 
+    border: solid 1px lightgray;
+border-radius: 1vh;
+width: 26vw;
+height: 8vh;
+box-shadow: 5px 5px 20px rgba(68, 68, 68, 0.6);
+}
+
+.MIDbtn a {text-decoration: none}
+    .midBUTTONS__upper { margin-bottom: 12px;}
+    .midBUTTONS__downer { }
+

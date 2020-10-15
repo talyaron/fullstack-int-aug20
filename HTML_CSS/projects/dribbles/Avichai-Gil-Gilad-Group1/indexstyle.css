@@ -18,11 +18,11 @@ body{
 }
 .mainContainer{
     width: 85%;
-    height: 110vh;
     margin: auto;
     border: 1px solid black;
     position: relative;
-    background-image: linear-gradient(white, white, rgb(233, 232, 232));
+    background-image: linear-gradient(white, white, rgb(243, 243, 243));
+    overflow: hidden;
 }
 img{
     width: 100%;
@@ -53,7 +53,7 @@ img{
     width: 4%;
     float: right;
     position: relative;
-    bottom: 1px;
+    bottom: 9px;
     right: 5px;
     
 }
@@ -88,11 +88,11 @@ input[type="text"]{
     background: #f6f6f6;
     border-radius: 50%;
     width: 40%;
-    height: 12vh;
+    height: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2vh;
+    margin: 1.5rem;
 }
 
 .brand__item1>img, .brand__item2>img,.brand__item3>img,.brand__item4>img{
@@ -103,25 +103,27 @@ input[type="text"]{
     width: 60%;
     margin: auto;
     position: relative;
-    bottom: 1.5vh;
+    bottom: 13px;
     display: flex;
     justify-content: space-evenly;
 }
 .cardsBody{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 2vw;
+    grid-column-gap: 1rem;
 }
 .bigCardContainer{
     position: relative;
-    bottom: 1vw;
+    bottom: 0.5rem;
+    height: 100%;
 }
 .card{
-    width: 85%;
-    height: 34vh;
+    width: 80%;
+    height: 40%;
     position: relative;
-    top: 4%;
+    top: 5%;
     margin: auto;
+    margin-top: 4%;
     box-shadow: 0 4px 4px -2px gray;
     background-color: white;
     border-radius: 10px;
@@ -150,47 +152,49 @@ input[type="text"]{
     width: 95%;
 }
 .card__product{
-    height: 50%;
+    height: 45%;
     width: 85%;
     margin: auto;
-    margin-bottom: 5vh;
+    position: relative;
+    bottom: 1.5%;
+    margin-bottom: 10%;
+
 }
 .card__product>img{
     width: 95%;
 }
 .card__price{
-    display: relative;
     font-size: 20px;
     margin-left: 5%;
-    margin-top: -6%;
-    
-    
+    position: relative;
+    bottom: 1%;
 }
 .card__price>span{
     font-size: 14px;
-
 }
 .card__logo{
     position: relative;
-    bottom: 15px;
+    bottom: 1.5rem;
     float: right;
     margin-right: 5%;
-    bottom: 15%;
-    
 }
+.card__logo>img{
+    width: 85%;
+}
+
 .miniCardContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 92%;
+    height: 98%;
 }
 .miniCard {
     font-family: 'Mandali';
     position: relative;
-    top: 2vh;
+    top: 1.5rem;
     box-shadow: 0 4px 4px -2px gray;
     background: white;
-    width: 25vw;
+    width: 90%;
     height: 16%;
     border-radius: 10px;
     margin-top: -10%;
@@ -206,14 +210,14 @@ input[type="text"]{
 .miniCard__price {
     display: inline;
     position: relative;
-    top: 1.7rem;
+    top: 2.1rem;
     right: 3.7rem
 }
 
 .miniCard__view {
     display: inline;
     position: relative;
-    top: 3.3rem;
+    top: 4rem;
     right: 8rem
 }
 
@@ -241,14 +245,18 @@ input[type="text"]{
     float: right;
     margin-right: 10px;
     border-radius: 15px;
-    margin-top: -30px;
+    position: relative;
+    bottom: 1rem;
     width: 100px;
     height: 85px;
 
 }
 
 .gender {
+    position: relative;
+    left: 7%;
     width: 85%;
+    margin-top: 5%;
     height: 70px;   
     background-color: white;
     display: flex;
@@ -283,6 +291,12 @@ input[type="text"]{
 
 
 }
+.filter{
+    margin-top: 10%;
+}
+.price{
+    margin-top: 10%;
+}
 .price__title {
     margin-left: 12px;
     margin-top: 15px;
@@ -291,11 +305,27 @@ input[type="text"]{
 }
 
 .price__range>img {
-    margin-left: 27px;
-    max-width: 80%;
-    min-height: 90px;
+    margin-left: 23%;
+    margin-bottom: 15%;
+    width: 40%;
 }
 
+.price__range__form {
+
+    margin-left: 13.5%;
+    margin-top: -15%
+}
+
+.price__range__form>input {
+
+
+    width: 60%;
+
+
+}
+.color{
+    margin-top: 10%;
+}
 .color__title {
     font-size: 20px;
     margin-left: 12px;
@@ -303,6 +333,17 @@ input[type="text"]{
     margin-bottom: 15px;
 }
 
+.color__spectrum>input{
+    margin-left: 65%;
+}
+.color__spectrum>img{
+    position: relative;
+    left: 9%;
+    width: 75%;
+}
+.size{
+    margin-top: 10%;
+}
 .size__title {
     font-size: 20px;
     margin-left: 12px;
@@ -321,12 +362,10 @@ input[type="text"]{
     font-family: 'Courier New', Courier, monospace;
     position:relative;
     color: lightgray;
-    height: 200px;
+    height: 100px;
 }
 
     
-
-
 .size__size__39:hover {
     color: rgb(254, 85, 69);
     font-size: 40px;
@@ -375,7 +414,15 @@ input[type="text"]{
     border-radius: 50%;
     margin-top: -20px;
     width: 120%;
-    height: 60%;}
+    height: 60%;
+}
+.dividerLine{
+    height: 2px;
+    margin-top: 1%;
+    width: 90%;
+    margin: auto;
+    background-color: lightgray;
+}
 
 .filterButton{
     display: none;
@@ -384,9 +431,97 @@ input[type="text"]{
     display: none;
 }
 
+@media only screen and (max-width:1450px){
+    .filter{
+        display: none;
+    }
+    .brand__item1, .brand__item2, .brand__item3, .brand__item4{
+        height: 5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .cardsBody{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-column-gap: 0;
+    }
 
+    .bigCardContainer{
+        bottom: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 80%;
+    }
+    .card{
+        width: 75%;
+        height: 68%;
+        margin-bottom: 20px;    
+    }
+    .card__product{
+        height: 45%;
+        width: 75%;
+        margin: auto;
+        position: relative;
+        bottom:25px;
+        margin-top: 5%;
+        margin-bottom: 7%;
+    }
+    .card__product>img{
+        width: 85%;
+        position: relative;
+        left: 15%;
+        top: 5%;
+    }
+    .card__price{
+        font-size: 20px;
+        margin-left: 5%;
+        position: relative;
+        bottom: 1rem;
+    }
+    .card__logo{
+        position: relative;
+        bottom: 3rem;
+        float: right;
+        margin-right: 5%;
+    }
+    .miniCardContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+        position: relative;
+        bottom: 50%;
+        width: 75%;
+        margin: auto;
+        height: 80%;
+    }
+    .miniCard {
+        font-family: 'Mandali';
+        position: relative;
+        width: 25rem;
+        height: 100%;
+        margin: 0;
+
+    }
+
+    #hidden{
+        display: none;
+    }
+
+@media only screen and (max-width:1040px){
+    .bigCardContainer{
+        bottom: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 80%;
+        }
+    .bottomCard{
+        display: none;
+    }
+}
 /* Phone Screen */
-@media only screen and (max-width:600px){
+@media only screen and (max-width:900px){
  
     .mainContainer{
         width: 300px;
@@ -396,6 +531,14 @@ input[type="text"]{
          border-radius: 10px;
          background-image: linear-gradient(white, white, rgb(233, 232, 232));
          overflow: hidden;
+    }
+    .bottomCard{
+        display: inline-block;
+    }
+    .bottomCard{
+        position: relative;
+        left: 8%;
+        margin-top: -10%;
     }
   
     .headerB{
@@ -525,13 +668,17 @@ input[type="text"]{
     #nike{
         margin-left: 5px;
     }
+    .bigCardContainer{
+        display: block;
+    }
     .cardsBody{
         display: grid;
         grid-template-columns: 1fr ;
         grid-column-gap: 0;
     }
     .card{
-        height: 15rem
+        height: 13rem;
+        width:85%;
     }
     .card__product{
         height: 50%;
@@ -541,9 +688,11 @@ input[type="text"]{
     }
     .card__product>img{
         position: relative;
-        top: 1rem;
+        top: 1.5rem;
         width: 95%;
+        left: 5%;
     }
+
     .miniCard{
         display: none;
     }
