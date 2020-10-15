@@ -5,10 +5,7 @@
   --titleFont: 'Noto Sans TC', sans-serif;
 }
 
-html{
-  /* margin: 0%;
-  padding: 0%; */
-}
+
 
 body{
   /* background-color: var(--colorGrey); */
@@ -26,7 +23,7 @@ body::-webkit-scrollbar {
 .screen {
   min-width: 300px;
   width: 300px;
-  height:80vh;
+  height:510px;
   /* margin: auto; */
   margin-top: .7vh;
   /* border: 1px solid black; */
