@@ -21,6 +21,7 @@ body {
     grid-column: 2;
     margin: auto;
     font-family: 'Quintessential', cursive;
+    font-size: 1.3em;
 }
 
 .MenuBar_Rbutton {
