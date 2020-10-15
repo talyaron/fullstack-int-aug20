@@ -38,6 +38,9 @@ img{
 p{
     color: #919495;
 }
+a:link{
+    text-decoration: none;
+}
 .bottom__buttons{
    margin: auto;
    
