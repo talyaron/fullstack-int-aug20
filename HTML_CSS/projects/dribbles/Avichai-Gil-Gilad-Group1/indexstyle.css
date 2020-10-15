@@ -435,7 +435,6 @@ input[type="text"]{
     .filter{
         display: none;
     }
-    }
     .brand__item1, .brand__item2, .brand__item3, .brand__item4{
         height: 5rem;
         margin-left: 1rem;
