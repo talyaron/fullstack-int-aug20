@@ -57,6 +57,10 @@ p{
     border-radius: 30px;
     color: #fff;
 }
+
+.next__button>a {
+    color: white;
+}
 @media only screen and (max-width: 480px) {
     .card,
     .bottom__buttons {
