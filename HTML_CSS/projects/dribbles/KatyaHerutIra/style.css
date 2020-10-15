@@ -1,7 +1,7 @@
 :root {
     /*Screen*/
     --borderRadiusOutside: 2vw;
-    --widthScreen: 20%;
+    /* --widthScreen: 20%; */
     --marginScreen: auto;
     --borderScreen: 1px solid black;
     /*img*/
@@ -104,7 +104,7 @@
 
 .symbols {
     position: relative;
-    right: 2.7vw;
+    right: 2vw;
     display: flex;
     align-items: var(--centerButton);
     justify-content: var(--centerButton);
