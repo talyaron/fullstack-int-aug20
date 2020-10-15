@@ -1,12 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="indexstyle.css">
     <title>Document</title>
 </head>
+
 <body>
-    תנו בראש
+    <div class="mainContainer">
+
+        <!-- header-->
+
+        <div class="headerB">
+            <div class="headerB__nav">
+                <img src="logos/nav.png">
+            </div>
+            <div class="headerB__title1">ORIX</div>
+            <div class="headerB__title2">EXPLORE</div>
+            <div class="headerB__title3">FILTER</div>
+            <div class="headerB__nightMode">
+                <img src="logos/nightmod.png">
+            </div>
+        </div>
+
+        <div class="searchBox">
+            <input type="text" placeholder="Search">
+            <img src="logos/search.png">
+            <div class="searchBoxLine"></div>
+        </div>
+
+        <div class="brand">
+            <div class="brand__item1">
+                <img src="logos/nike1.png">
+            </div>
+            <div class="brand__item2">
+                <img src="logos/reebok1.png">
+            </div>
+            <div class="brand__item3">
+                <img src="logos/jordan1.png">
+            </div>
+            <div class="brand__item4">
+                <img src="logos/jordan1.png">
+            </div>
+        </div>
+        <div class="brandName">
+            <span id="nike">Nike</span>
+            <span>Reebok</span>
+            <span>Jordan</span>
+            <span>Adidas</span>
+        </div>
+        <div class="cardsBody">
+            <div class="bigCardContainer">
+                <div class="card">
+                    <div class="card__title"><span>Top of the month</span><br>Club Mask</div>
+                    <div class="card__like">
+                        <img src="logos/like.png">
+                    </div>
+                    <div class="card__product">
+                        <img src="logos/prodact.png">
+                    </div>
+                    <div class="card__price"><span>$ </span>50.99</div>
+                    <div class="card__logo">
+                        <img src="logos/reeboklogo.png">
+                    </div>
+                </div>
+                <div class="card bottomCard" >
+                    <div class="card__title"><span>Best Seller</span><br>Club Mask</div>
+                    <div class="card__like">
+                        <img src="logos/like.png">
+                    </div>
+                    <div class="card__product">
+                        <img src="logos/prodact.png">
+                    </div>
+                    <div class="card__price"><span>$ </span>50.99</div>
+                    <div class="card__logo">
+                        <img src="logos/reeboklogo.png">
+                    </div>
+                </div>
+            </div>
+            <div class="miniCardContainer">
+                <div class="miniCard">
+                    <div class="miniCard__title">
+                        Tap Fury
+                    </div>
+                    <div class="miniCard__price">
+                        $ 170.35
+                    </div>
+                    <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
+                    <div class="miniCard__product"><img src="logos/tapFury.jpg" alt=""></div>
+                </div>
+                <div class="miniCard">
+                    <div class="miniCard__title">
+                        Tap Fury
+                    </div>
+                    <div class="miniCard__price">
+                        $ 170.35
+                    </div>
+                    <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
+                    <div class="miniCard__product"><img src="logos/11.jpeg" alt=""></div>
+                </div>
+                <div class="miniCard">
+                    <div class="miniCard__title">
+                        Tap Fury
+                    </div>
+                    <div class="miniCard__price">
+                        $ 170.35
+                    </div>
+                    <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
+                    <div class="miniCard__product"><img src="logos/dual court.png" alt=""></div>
+                </div>
+                <div class="miniCard" >
+                    <div class="miniCard__title">
+                        Tap Fury
+                    </div>
+                    <div class="miniCard__price">
+                        $ 170.35
+                    </div>
+                    <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
+                    <div class="miniCard__product"><img src="logos/club mask.png" alt=""></div>
+                </div>
+                <div class="miniCard" id="hidden">
+                    <div class="miniCard__title">
+                        Tap Fury
+                    </div>
+                    <div class="miniCard__price">
+                        $ 170.35
+                    </div>
+                    <div class="miniCard__view"><button class="button__view" style="color: white;">View</button></div>
+                    <div class="miniCard__product"><img src="logos/11.jpeg" alt=""></div>
+                </div>
+            </div>
+            <div class="filter">
+                <div class="gender__title"> <b>Gender: </b> </div>
+                <div class="gender">
+                    <div class="gender__men"><button class="button__gender__men">Men</button> </div>
+                    <div class="gender__women"> <button class="button__gender__women">Women</button> </div>
+                    <div class="gender__both"> <button class="button__gender__both">Both</button> </div>
+                </div>
+                <div class="price">
+                    <div class="dividerLine"></div>
+                    <div class="price__title"> <b>Price:</b> </div>
+                    <div class="price__range">
+                        <img src="logos/123.PNG" alt="">
+                    </div>
+                    <div class="price__range__form"> <b>0$</b> <input type="range" min="0" max="500"><b>500$</b>
+
+                    </div>
+                </div>
+                <div class="color">
+                    <div class="dividerLine"></div>
+                    <div class="color__title"> <b>Color:</b> </div>
+                    <div class="color__spectrum">
+                        <input type="color" value="#800080">
+                        <img src="logos/spectrum1.PNG" alt=""></div>
+                </div>
+                <div class="size">
+                    <div class="dividerLine"></div>
+                    <div class="size__title"><b>Size:</b></div>
+                    <div class="size__size">
+                        <div class="size__size__39"><b>39</b></div>
+                        <div class="size__size__40"><b>40</b></div>
+                        <div class="size__size__41"><b>41</b></div>
+                        <div class="size__size__43"><b>42</b></div>
+                        <div class="size__size__44"><b>43</b></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filterButton">
+            <a href="page3.html">
+                <img src="logos/filter.png">
+            </a>
+        </div>
+
+        <!--footer not displayed on big screen-->
+        <div class="footer">
+            <div class="footerLeft">
+                <div class="footerLeft__home">
+                    <img src="logos/home.png">
+                </div>
+                <div class="footerLeft__safari">
+                    <img src="logos/safari.png">
+                </div>
+            </div>
+            <div class="footerMiddle">
+                <div class="footerMiddle__checkout">
+                    <img src="logos/checkout.png">
+                </div>
+            </div>
+            <div class="footerRight">
+                <div class="footerRight__notfication">
+                    <img src="logos/notfiaction.png">
+                </div>
+                <div class="footerRight__profile">
+                    <img src="logos/profile.png">
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -1,0 +1,751 @@
+@font-face {
+    font-family: 'Mandali';
+    src:url("font/Mandali.ttf.woff") format('woff'),
+        url('font/Mandali.ttf.svg#Mandali') format('svg'),
+        url('font/Mandali.ttf.eot'),
+        url('font/Mandali.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --button_height: 50px;
+    --button_width: 80px;
+
+
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.mainContainer{
+    width: 85%;
+    margin: auto;
+    border: 1px solid black;
+    position: relative;
+    background-image: linear-gradient(white, white, rgb(243, 243, 243));
+    overflow: hidden;
+}
+img{
+    width: 100%;
+}
+.headerB{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+    margin-top: 1%;
+    font-family: 'Mandali';
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+.headerB__nav>img{
+    position: relative;
+    top: 10px;
+    width: 3rem;
+}
+
+.searchBox{
+    width: 65%;
+    margin: auto;
+    margin-top: 1%;
+}
+.searchBox>img{
+    width: 4%;
+    float: right;
+    position: relative;
+    bottom: 9px;
+    right: 5px;
+    
+}
+input[type="text"]{
+    height: 100%;
+    width: 80%;
+    position: relative;
+    left: 1%;
+    outline: 0;
+    border: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-family: 'Roboto';
+}
+
+.searchBoxLine{
+    height: 2px;
+    background-color: lightgray;
+    width: 100%;
+    margin: auto;
+
+}
+.brand{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin:auto;
+    margin-top: 1%;
+    
+}
+.brand__item1, .brand__item2, .brand__item3, .brand__item4{
+    background: #f6f6f6;
+    border-radius: 50%;
+    width: 40%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+}
+
+.brand__item1>img, .brand__item2>img,.brand__item3>img,.brand__item4>img{
+    display: block;
+    width: 50%;
+}
+.brandName{
+    width: 60%;
+    margin: auto;
+    position: relative;
+    bottom: 13px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardsBody{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+}
+.bigCardContainer{
+    position: relative;
+    bottom: 0.5rem;
+    height: 100%;
+}
+.card{
+    width: 80%;
+    height: 40%;
+    position: relative;
+    top: 5%;
+    margin: auto;
+    margin-top: 4%;
+    box-shadow: 0 4px 4px -2px gray;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.card__title{
+    display: inline-block;
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 5%;
+}
+.card__title>span{
+    font-size: 10px;
+    font-weight: 100;
+    color: rgb(223, 219, 219);
+}
+.card__like{
+    position: relative;
+    top: 25px;
+    float: right;
+    border-radius: 5px;
+    margin-right: 5%;
+}
+.card__like>img{
+    width: 95%;
+}
+.card__product{
+    height: 45%;
+    width: 85%;
+    margin: auto;
+    position: relative;
+    bottom: 1.5%;
+    margin-bottom: 10%;
+
+}
+.card__product>img{
+    width: 95%;
+}
+.card__price{
+    font-size: 20px;
+    margin-left: 5%;
+    position: relative;
+    bottom: 1%;
+}
+.card__price>span{
+    font-size: 14px;
+}
+.card__logo{
+    position: relative;
+    bottom: 1.5rem;
+    float: right;
+    margin-right: 5%;
+}
+.card__logo>img{
+    width: 85%;
+}
+
+.miniCardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 98%;
+}
+.miniCard {
+    font-family: 'Mandali';
+    position: relative;
+    top: 1.5rem;
+    box-shadow: 0 4px 4px -2px gray;
+    background: white;
+    width: 90%;
+    height: 16%;
+    border-radius: 10px;
+    margin-top: -10%;
+}
+
+.miniCard__title {
+    display: inline;
+    position: relative;
+    left: 2%;
+
+}
+
+.miniCard__price {
+    display: inline;
+    position: relative;
+    top: 2.1rem;
+    right: 3.7rem
+}
+
+.miniCard__view {
+    display: inline;
+    position: relative;
+    top: 4rem;
+    right: 8rem
+}
+
+.button__view:hover {
+    background-color: rgb(105, 188, 252);
+    outline: 0;
+
+}
+
+.button__view:focus {
+    background-color: rgb(105, 188, 252);
+    outline: 0;
+
+}
+
+.button__view {
+    border-radius: 7px;
+    width: 60px;
+    height: 30px;
+    background-color: rgb(190, 194, 197);
+    border: 0px
+}
+
+.miniCard__product>img {
+    float: right;
+    margin-right: 10px;
+    border-radius: 15px;
+    position: relative;
+    bottom: 1rem;
+    width: 100px;
+    height: 85px;
+
+}
+
+.gender {
+    position: relative;
+    left: 7%;
+    width: 85%;
+    margin-top: 5%;
+    height: 70px;   
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.gender__title {
+    border: white solid 1px;
+    font-size: 20px;
+    margin-left: 12px;
+    margin-top: 3px;
+
+}
+
+.gender__men>button:focus,.gender__women>button:focus,.gender__both>button:focus {
+    background-color: rgb(254, 85, 69);
+    outline: 0;
+    color: white;
+
+}
+
+
+.button__gender__men,.button__gender__women, .button__gender__both {
+    height: var(--button_height);
+    width: var(--button_width);
+    border-radius: 15px;
+    margin: 10px;
+    background-color: white;
+    border: solid 1px lightgray;
+
+
+}
+.filter{
+    margin-top: 10%;
+}
+.price{
+    margin-top: 10%;
+}
+.price__title {
+    margin-left: 12px;
+    margin-top: 15px;
+    font-size: 20px;
+
+}
+
+.price__range>img {
+    margin-left: 23%;
+    margin-bottom: 15%;
+    width: 40%;
+}
+
+.price__range__form {
+
+    margin-left: 13.5%;
+    margin-top: -15%
+}
+
+.price__range__form>input {
+
+
+    width: 60%;
+
+
+}
+.color{
+    margin-top: 10%;
+}
+.color__title {
+    font-size: 20px;
+    margin-left: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.color__spectrum>input{
+    margin-left: 65%;
+}
+.color__spectrum>img{
+    position: relative;
+    left: 9%;
+    width: 75%;
+}
+.size{
+    margin-top: 10%;
+}
+.size__title {
+    font-size: 20px;
+    margin-left: 12px;
+    margin-bottom: 5%;
+    position: relative;
+    top: 15px;
+    
+}
+
+.size__size {
+    font-size: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    position:relative;
+    color: lightgray;
+    height: 100px;
+}
+
+    
+.size__size__39:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+    
+}
+
+.size__size__40:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+}
+
+.size__size__41:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+}
+
+.size__size__43:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+}
+
+.size__size__44:hover {
+    color: rgb(254, 85, 69);
+    font-size: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    width: 120%;
+    height: 60%;
+}
+.dividerLine{
+    height: 2px;
+    margin-top: 1%;
+    width: 90%;
+    margin: auto;
+    background-color: lightgray;
+}
+
+.filterButton{
+    display: none;
+}
+.footer{
+    display: none;
+}
+
+@media only screen and (max-width:1450px){
+    .filter{
+        display: none;
+    }
+    .brand__item1, .brand__item2, .brand__item3, .brand__item4{
+        height: 5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .cardsBody{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-column-gap: 0;
+    }
+
+    .bigCardContainer{
+        bottom: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 80%;
+    }
+    .card{
+        width: 75%;
+        height: 68%;
+        margin-bottom: 20px;    
+    }
+    .card__product{
+        height: 45%;
+        width: 75%;
+        margin: auto;
+        position: relative;
+        bottom:25px;
+        margin-top: 5%;
+        margin-bottom: 7%;
+    }
+    .card__product>img{
+        width: 85%;
+        position: relative;
+        left: 15%;
+        top: 5%;
+    }
+    .card__price{
+        font-size: 20px;
+        margin-left: 5%;
+        position: relative;
+        bottom: 1rem;
+    }
+    .card__logo{
+        position: relative;
+        bottom: 3rem;
+        float: right;
+        margin-right: 5%;
+    }
+    .miniCardContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+        position: relative;
+        bottom: 50%;
+        width: 75%;
+        margin: auto;
+        height: 80%;
+    }
+    .miniCard {
+        font-family: 'Mandali';
+        position: relative;
+        width: 25rem;
+        height: 100%;
+        margin: 0;
+
+    }
+
+    #hidden{
+        display: none;
+    }
+
+@media only screen and (max-width:1040px){
+    .bigCardContainer{
+        bottom: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 80%;
+        }
+    .bottomCard{
+        display: none;
+    }
+}
+/* Phone Screen */
+@media only screen and (max-width:900px){
+ 
+    .mainContainer{
+        width: 300px;
+        height: 680px;
+        margin: auto;  
+        position: relative;
+         border-radius: 10px;
+         background-image: linear-gradient(white, white, rgb(233, 232, 232));
+         overflow: hidden;
+    }
+    .bottomCard{
+        display: inline-block;
+    }
+    .bottomCard{
+        position: relative;
+        left: 8%;
+        margin-top: -10%;
+    }
+  
+    .headerB{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        position: relative;
+        left: 1%;
+        height: 14%;
+    }
+    .headerB__nav{  
+        left: 2%;
+        position: relative;
+        width: 11%;
+    }
+    .headerB__nav>img{
+        top: 0;
+        width: 100%;
+    }
+    .headerB__title1{
+        margin-bottom: 2%;
+        font-family: 'Mandali';
+        font-weight: bold;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        left: 3.5%;
+        position: relative;
+    }
+    .headerB__title2, .headerB__title3{
+        display: none;
+    }
+    .headerB__nightMode{
+        width: 18%;
+    }
+    .headerB__nightMode>img{
+        border-radius: 13px;
+        width: 100%;
+    }
+    .searchBox{
+        position: relative;
+        bottom: 10px;
+        width: 100%;
+        height: 5%;
+        
+    }
+    input[type="text"]{
+        height: 80%;
+        width: 80%;
+        position: relative;
+        left: 5%;
+        outline: 0;
+        border: 0;
+        font-weight: 500;
+        font-size: 1rem;
+        font-family: 'Roboto';
+    }
+    
+    .searchBox>img{
+        position: relative;
+        top: 5px;
+        float: right;
+        margin-right: 4%;
+        width: 10%;
+    }
+    .searchBoxLine{
+        height: 1px;
+        background-color: lightgray;
+        width: 90%;
+        margin: auto;
+        margin-top: 2%;
+    }
+    .filterButton{
+        display: block;
+        width: 15%;
+        height: 6%;
+        position: absolute;
+        left:85%;
+        top: 23%;
+    
+    }
+    .filterButton>a>img{
+        width: 100%;
+        height: 100%;
+        border-top-left-radius:13px;
+        border-bottom-left-radius:13px;
+    }
+    .brand{
+        width: 100%;
+        margin-top: 3%;
+        position: relative;
+        left: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        height: 8vh;
+    }
+    .brand__item1, .brand__item2, .brand__item3, .brand__item4{
+        background: #f6f6f6;
+        border-radius: 50%;
+        width: 80%;
+        height: 6.7vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    
+    .brand__item1>img, .brand__item2>img,.brand__item3>img,.brand__item4>img{
+
+        width: 75%;
+    }
+
+    .brandName{
+        width: 95%;
+        position: relative;
+        left: 7%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+        font-weight: 500;
+        font-size: 13.5px;
+        margin: 0;
+        margin-top: 8px;
+    }
+    #nike{
+        margin-left: 5px;
+    }
+    .bigCardContainer{
+        display: block;
+    }
+    .cardsBody{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-column-gap: 0;
+    }
+    .card{
+        height: 13rem;
+        width:85%;
+    }
+    .card__product{
+        height: 50%;
+        width: 85%;
+        margin: auto;
+        margin-bottom: 1.5rem;
+    }
+    .card__product>img{
+        position: relative;
+        top: 1.5rem;
+        width: 95%;
+        left: 5%;
+    }
+
+    .miniCard{
+        display: none;
+    }
+    .footer{
+        width: 100%;
+        height: 10%;
+        margin: auto;
+        position: absolute;
+        bottom: 0;
+        border-radius: 8px;
+        display: flex;
+        background-color: white;
+    }
+    .footerLeft{
+        position: relative;
+        top: 40%;
+        width: 35%;
+        height: 50%;
+        display: grid;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 10%;
+        left: 5%;
+    }
+    .footerMiddle{
+        width: 20%;
+        height: 70%;
+    }
+    .footerRight{
+        position: relative;
+        top: 40%;
+        width: 35%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10%;
+        right: 5%;
+    }
+    .footerLeft__home>img{
+        width: 75%;
+    }
+    .footerLeft__safari>img{
+        width: 80%;
+    }
+    .footerMiddle__checkout>img{
+        border-radius: 10px;
+        width: 80%;
+    }
+    .footerRight__notfication>img{
+        width: 80%;
+    }
+    .footerRight__profile>img{
+        width: 80%;
+    }
+    
+}
