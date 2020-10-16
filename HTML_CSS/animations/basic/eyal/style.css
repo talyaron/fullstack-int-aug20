@@ -1,0 +1,66 @@
+body {
+    background: rgb(0, 0, 0);
+    padding-top: 5em;
+    display: flex;
+   
+  }
+  
+  
+   #first {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; 
+    border-right: .15em solid #fff; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite,
+    normal,3s;
+  }
+
+  #second {
+    color: black;
+    font-family: monospace;
+    overflow: hidden; 
+    border-right: .15em solid #fff; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em;
+   
+    animation: 
+    hidetext 3s none ,
+    typing 3.5s steps(30, end) 3s ,
+    blink-caret .5s step-end infinite, 3s;
+  }
+
+  #therd {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; 
+    border-right: .15em solid #fff; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation:
+    hidetext 6s none , 
+    typing 3.5s steps(30, end) 6s ,
+    blink-caret .5s step-end infinite, 6s;
+  }
+  
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #fff }
+  }
+
+  @keyframes hidetext {
+    from, to { color:  transparent } 
+  }

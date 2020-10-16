@@ -1,0 +1,140 @@
+:root {
+    /* COLOR */
+    --colorViolet: rgb(127, 33, 204);
+    --colorWhite: white;
+    --colorYellow: yellow;
+    /* FONT */
+    --fontFamily: 'Nunito Sans', sans-serif;
+    --fontWeight: bold;
+    /* SCREEN */
+    --borderRadius: 20px;
+    width: ;
+    height: ;
+    /* SHADOW */
+    --boxShadow: 0px 0px 5px black;
+}
+
+.screen {
+    box-shadow: var(--boxShadow);
+    /* border: 1px solid black; */
+    background-image: url(IMG/maps.PNG);
+    width: 90%;
+    height: 70vh;
+    border-radius: var(--borderRadius);
+    background-size: cover;
+    font-family: var(--fontFamily);
+}
+
+.search {
+    position: relative;
+    top: 8%;
+    left: 1.5%;
+}
+
+.search input {
+    border: none;
+    box-shadow: var(--boxShadow);
+    background-color: var(--colorWhite);
+    width: 95%;
+    height: 4vh;
+    border-radius: 20px;
+    outline: none;
+    padding-left: 2%;
+    font-weight: var(--fontWeight);
+    font-size: 110%;
+}
+
+.buttons {
+    position: relative;
+    top: 11%;
+    left: 1%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 15%;
+}
+
+.buttons>div {
+    display: flex;
+    justify-self: center;
+    box-shadow: var(--boxShadow);
+    width: 70%;
+    padding: 7%;
+    border-radius: 30px;
+    font-weight: var(--fontWeight);
+}
+
+.left {
+    background-color: var(--colorWhite);
+}
+
+.rigth {
+    background-color: var(--colorViolet);
+    color: var(--colorWhite);
+}
+
+.huck {
+    background-color: var(--colorWhite);
+    border-top-right-radius: var(--borderRadius);
+    border-top-left-radius: var(--borderRadius);
+    box-shadow: -1px -1px 5px black;
+    height: 22vh;
+    position: relative;
+    top: 50%;
+    margin: 0;
+}
+
+.info {
+    width: 95%;
+    height: 90%;
+    margin: 0;
+    padding: 1% 0 0 1%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: repeat(3, 33%);
+}
+
+.infohotel,
+.infotime,
+.infokm {
+    display: flex;
+    align-items: center;
+}
+
+.infohotel {
+    font-weight: var(--fontWeight);
+    font-size: 2rem;
+}
+
+.infotime {
+    color: rgb(105, 104, 104);
+}
+
+span {
+    color: green;
+    font-size: 150%;
+}
+
+.go {
+    grid-row: 1/4;
+    grid-column: 2/3;
+}
+
+.go>img {
+    position: relative;
+    top: 15%;
+    left: 30%;
+    width: 15%;
+    height: 70%;
+}
+
+footer {
+    position: relative;
+    top: 49.5%;
+    background-color: var(--colorWhite);
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+}
