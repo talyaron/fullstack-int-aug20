@@ -3,10 +3,33 @@
     height: 600px;
     margin: auto;
     box-shadow: 2px 2px 6px gray;
-    border-radius: 12px;
+    border-radius: 20px;
 }
-.status-bar{}
-.status-bar__time{}
-.status-bar__wifi{}
-.status-bar__celular{}
-.status-bar__battrey{}
+.status-bar{
+    direction: rtl;
+    margin-top:20%;
+    padding:3px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.status-bar__time{
+    margin: 10px;
+    position: sticky;
+    right: 300%;
+}
+
+.status-bar__cellular>img{
+    position: sticky;
+    float: right;
+    width: 30px;
+    margin-top:0px;
+}
+.status-bar__battery>img{
+    position: sticky;
+    width: 30px;
+    margin-top: 9px;
+
+
+
+}
