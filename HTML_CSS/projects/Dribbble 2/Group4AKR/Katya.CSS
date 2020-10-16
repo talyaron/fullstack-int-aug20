@@ -8,8 +8,8 @@
     --fontWeight: bold;
     /* SCREEN */
     --borderRadius: 20px;
-    width: ;
-    height: ;
+    /* --screenWidth: 90%; */
+    --screenHeight: 70vh;
     /* SHADOW */
     --boxShadow: 0px 0px 5px black;
 }
@@ -18,8 +18,8 @@
     box-shadow: var(--boxShadow);
     /* border: 1px solid black; */
     background-image: url(IMG/maps.PNG);
-    width: 90%;
-    height: 70vh;
+    width: var(--screenWidth);
+    height: var(--screenHeight);
     border-radius: var(--borderRadius);
     background-size: cover;
     font-family: var(--fontFamily);
