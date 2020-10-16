@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<style>
+    :root {
+        --mainTextColor: rgb(0, 0, 102);
+
+
+
+    }
+
+    .page2 {
+        margin: auto;
+        width: 90%;
+        height: 100%;
+        border: solid rgb(70, 170, 39);
+
+    }
+
+    .page2__title {
+        display: flex;
+        flex-direction: column;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        width: auto;
+        font-size: 13px;
+        color: var(--mainTextColor);
+        border: solid blueviolet;
+    }
+
+    .page2__photos {
+        display: grid;
+        grid-area: auto;
+        width: 100%;
+        border: solid rgb(226, 86, 43);
+
+
+    }
+
+    .page2__photo {
+        border-radius: 5px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .page2__cardsGrid {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        border: solid rgb(166, 255, 0);
+
+    }
+
+    .page2__card {
+        max-height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        color: var(--mainTextColor);
+        text-align: left;
+        /* border: solid rgb(212, 0, 0); */
+        font-size: 13px;
+
+    }
+
+    .page2__card-text {
+        /* border: solid rgb(129, 129, 129); */
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+    }
+
+    .page2__card-icon {
+
+        background-color: cornflowerblue;
+        width: 100%;
+        height: 100%;
+
+    }
+</style>
+
+
+
+
+<body>
+    <div class="phone">
+
+        <div class="statusBar"></div>
+        <div class="page2">
+            <div class="page2__title">
+                <h1>our service</h1>
+                what do you get when you use our services?
+            </div>
+            <div class="page2__photos">
+                <div class="page2__photo">0</div>
+                <div class="page2__photo">0</div>
+                <div class="page2__photo">0</div>
+
+
+            </div>
+
+            <div class="page2__cardsGrid">
+
+                <div class="page2__card">
+                    <div class="page2__card-icon">ICON</div>
+
+                    <div class="page2__card-text">
+
+                        <h3>our service</h3>
+                        what do you get when you use our services?
+
+                    </div>
+                </div>
+
+                <div class="page2__card">
+                    <div class="page2__card-icon">ICON</div>
+
+                    <div class="page2__card-text">
+
+                        <h3>our service</h3>
+                        what do you get when you use our services?
+
+                    </div>
+                </div>
+
+                <div class="page2__card">
+                    <div class="page2__card-icon">ICON</div>
+
+                    <div class="page2__card-text">
+
+                        <h3>our service</h3>
+                        what do you get when you use our services?
+
+                    </div>
+                </div>
+
+                <div class="page2__card">
+                    <div class="page2__card-icon">ICON</div>
+
+                    <div class="page2__card-text">
+
+                        <h3>our service</h3>
+                        what do you get when you use our services?
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>

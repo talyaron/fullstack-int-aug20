@@ -1,0 +1,148 @@
+:root {
+    /* COLOR */
+    --colorViolet: rgb(127, 33, 204);
+    --colorWhite: white;
+    --colorYellow: yellow;
+    /* FONT */
+    --fontFamily: 'Nunito Sans', sans-serif;
+    --fontWeight: bold;
+    /* SCREEN */
+    --borderRadius: 20px;
+    /* --screenWidth: 90%; */
+    --screenHeight: 70vh;
+    /* SHADOW */
+    --boxShadow: 0px 0px 5px black;
+}
+body{
+    font-family: var(--fontFamily);
+}
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: var(--borderRadius);
+}
+.page{
+    height: var(--screenHeight);
+    position: relative;
+    border: 1px solid black;
+    border-radius: var(--borderRadius);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "imgGallery info"
+    "footer footer";
+}
+
+.page__imgGallery{
+    grid-area: imgGallery;
+    border: 1px solid blue;
+    height: 60vh;
+    background-image:url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*");
+    background-position: center;
+    background-size: cover;
+}
+.imgGallery__text{
+    position: relative;
+    color: white;
+    padding: 0.5%;
+    margin-left: 3%;
+    width: 25%;
+    top: 7%;
+
+}
+.imgGallery__text>h1{
+    font-size: 1.5rem;
+    display: inline;
+}
+.imgGallery__text>h5{
+    opacity: 0.6;
+    margin-top: -2%;
+}
+.imgGallery__text>img{
+    width: 35%;
+    float: right;
+    position: relative;
+    bottom: 5rem;
+    display: inline;
+}
+.imgGallery__play{
+    width: 3.5%;
+    height: 11%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20%;
+    left: 3.5%;
+    background-color:rgb(101, 59, 223);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgGallery__playButton {
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 10px 0px 10px 17px;
+    border-color: transparent transparent transparent white;
+    position: relative;
+  }
+.page__info{
+    grid-area: info;
+    border: 1px solid red;
+    height: 60vh
+}
+.page__infoTextTop{
+    border: 1px solid black;
+    width: 60%;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+.page__infoGoPro{
+    border: 1px solid black;
+    width: 5%;
+    position: absolute;
+    right: 8%;
+    bottom: 80%;
+    height: 10%;
+}
+.page__infoTextBottom{
+    font-weight: bolder;
+    width: 70%;
+    margin-left: 7%;
+    margin-top: 20%;
+}
+
+.page__infoListenBox{
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    width: 45%;
+    height: 25%;
+    background-color: 	rgb(255, 229, 204);
+    position: absolute;
+    bottom: 14.2%;
+    left: 52%;
+}
+.infoListenBox__content{
+    width: 70%;
+    margin: auto;
+    margin-top: 6%;
+    display: flex;
+    justify-content: space-around;
+}
+.infoListenBox__loader{
+    margin-top: 2%;
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid orange; 
+    border-right: 5px solid orange; 
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    width: 40px;
+    height: 40px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+.page__footer{
+    grid-area: footer;
+    height: 9vh;
+    border: 2px solid brown;
+}
