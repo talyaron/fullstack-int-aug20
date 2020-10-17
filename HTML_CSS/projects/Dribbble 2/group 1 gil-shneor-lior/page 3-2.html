@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<style>
+    :root {
+        --menucolor: rgba(33, 33, 105, 0.822);
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    /* title */
+
+    .page3_title {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .page3_title__title {
+        font-size: 22px;
+        color: var(--menucolor);
+    }
+
+    .page3_title__menu {
+        position: relative;
+        bottom: -25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 5px;
+        font-size: 12px;
+        margin-left: 7px;
+        color: rgb(201, 197, 197);
+
+    }
+
+    .page3_title__menu--text:hover {
+        color: var(--menucolor);
+    }
+
+    /* page 3 products */
+
+    .page3_products {
+        margin-top: 20%;
+        margin-left: 5%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        row-gap: 20%;
+    }
+
+    .page3_product__img>img {
+        max-width:90px;
+        max-height: 110px;
+    }
+</style>
+
+<body>
+    <!-- phone -->
+
+    <div class="phone">
+        <div class="status-bar">
+            <div class="status-bar__battery"><img src="../group 1 gil-shneor-lior/icons/iphone battrey.png"> </div>
+            <div class="status-bar__cellular"><img src="../group 1 gil-shneor-lior/icons/wifi icon.png" alt=""></div>
+            <div class="status-bar__time">9:41</div>
+
+        </div>
+        <!-- page 3 title -->
+
+        <div class="page3_title">
+            <div class="page3_title__title"><b>All Product</b></div>
+            <div class="page3_title__menu">
+                <div class="page3_title__menu--text" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                    <b>All <div> Categories</b></div>
+            </div>
+            <div class="page3_title__menu--text"><b>Seating</b></div>
+            <div class="page3_title__menu--text"><b>Table</b></div>
+            <div class="page3_title__menu--text"><b>Art&decor</b></div>
+            <div class="page3_title__menu--text" style="overflow:hidden"><b>Cabinets</b></div>
+
+        </div>
+
+    </div>
+    <!-- page 3 product -->
+
+    <div class="page3_products">
+            <div class="page3_products__img" style="max-height: 40;"><img src="../group 1 gil-shneor-lior/icons/1.png"></div>
+            <div class="page3_pruducts__img"><img src="../group 1 gil-shneor-lior/icons/2.png"></div>
+            <div class="page3_products__img"><img src="../group 1 gil-shneor-lior/icons/3.png"></div>
+            <div class="page3_pruducts__img"><img src="../group 1 gil-shneor-lior/icons/4.png"></div>
+            <div class="page3_products__img"><img src="../group 1 gil-shneor-lior/icons/5.png"></div>
+            <div class="page3_pruducts__img"><img src="../group 1 gil-shneor-lior/icons/6.png"></div>
+        </div>
+        <div class="page3_products__name"></div>
+        <div class="page3_products__price"></div>
+    </div>
+
+    <!-- down seaction button-->
+
+    <div class="page3_down-seaction">
+        <div class="page3_down-seaction__button"></div>
+    </div>
+
+    </div>
+</body>
+
+</html>
