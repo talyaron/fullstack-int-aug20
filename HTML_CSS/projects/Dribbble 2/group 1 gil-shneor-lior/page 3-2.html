@@ -47,17 +47,56 @@
     /* page 3 products */
 
     .page3_products {
-        margin-top: 20%;
-        margin-left: 5%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        row-gap: 20%;
+        margin-top: 15%;
+        row-gap: -10%;
+        margin-left: 7%;
+
     }
 
-    .page3_product__img>img {
-        max-width:90px;
-        max-height: 110px;
+    .page3_products__product>h1 {
+        font-size: 90%;
+    }
+
+    .page3_products__product>img {
+        width: 70px;
+        height: 100px;
+        border-radius: 11px;
+    }
+
+    .page3_products__product>p {
+        position: relative;
+        bottom: 8px;
+        font-size: 10px;
+        color: rgba(83, 80, 80, 0.637);
+        font-weight: bold;
+    }
+
+    .page3_products__product>h1 {
+        position: relative;
+        bottom: 11px;
+        font-size: 11px;
+        color: var(--menucolor);
+    }
+
+    .page3_products__product:hover {
+        margin: 1px;
+    }
+
+    /* page3_down-seaction */
+
+    .page3_down-seaction__button>button {
+        background-color: white;
+        width: max-content;
+        height: 42px;
+        border-radius: 10%;
+        position: absolute;
+        left: 43%;
+        top: 85%;
+        font-weight: bold;
+        border: solid 1px var( --menucolor);
+        font-size: 10px;
     }
 </style>
 
@@ -90,21 +129,44 @@
     <!-- page 3 product -->
 
     <div class="page3_products">
-            <div class="page3_products__img" style="max-height: 40;"><img src="../group 1 gil-shneor-lior/icons/1.png"></div>
-            <div class="page3_pruducts__img"><img src="../group 1 gil-shneor-lior/icons/2.png"></div>
-            <div class="page3_products__img"><img src="../group 1 gil-shneor-lior/icons/3.png"></div>
-            <div class="page3_pruducts__img"><img src="../group 1 gil-shneor-lior/icons/4.png"></div>
-            <div class="page3_products__img"><img src="../group 1 gil-shneor-lior/icons/5.png"></div>
-            <div class="page3_pruducts__img"><img src="../group 1 gil-shneor-lior/icons/6.png"></div>
+        <div class="page3_products__product">
+            <img src="../group 1 gil-shneor-lior/icons/1.png" alt="">
+            <p> White Hunter </p>
+            <h1> 200$ </h1>
         </div>
-        <div class="page3_products__name"></div>
-        <div class="page3_products__price"></div>
+        <div class="page3_products__product">
+            <img src="../group 1 gil-shneor-lior/icons/2.png" alt="">
+            <p> Star Mirrors </p>
+            <h1> 175$ </h1>
+        </div>
+        <div class="page3_products__product">
+            <img src="../group 1 gil-shneor-lior/icons/3.png" alt="">
+            <p> Elegant mirrors </p>
+            <h1> 150$ </h1>
+        </div>
+        <div class="page3_products__product">
+            <img src="../group 1 gil-shneor-lior/icons/4.png" alt="">
+            <p> Brand Die </p>
+            <h1> 200$ </h1>
+        </div>
+        <div class="page3_products__product">
+            <img src="../group 1 gil-shneor-lior/icons/5.png" alt="">
+            <p> Creamy soffa </p>
+            <h1> 175$ </h1>
+        </div>
+        <div class="page3_products__product">
+            <img src="../group 1 gil-shneor-lior/icons/6.png" alt="">
+            <p> White Singl... </p>
+            <h1> 150$ </h1>
+        </div>
+    </div>
+
     </div>
 
     <!-- down seaction button-->
 
     <div class="page3_down-seaction">
-        <div class="page3_down-seaction__button"></div>
+        <div class="page3_down-seaction__button"><button>See Full Catalog</button></div>
     </div>
 
     </div>
