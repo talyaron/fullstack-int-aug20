@@ -33,6 +33,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
+    /* animations */
     /*iphone bar */
     .status-bar__time {
         margin: 10px;
@@ -169,6 +170,8 @@
         height: 100%;
     }
     .page2__title {
+        animation-name: zoomIn;
+        animation-duration: 1s;
         margin-top: none;
         display: flex;
         flex-direction: column;
@@ -176,6 +179,12 @@
         width: auto;
         font-size: 13px;
         color: var(--menucolor);
+    }
+    @keyframes zoomIn {
+        from {
+            transform: scale(9);
+            opacity: 0;
+        }
     }
     .page2__photos {
         margin-top: 15px;
@@ -217,6 +226,9 @@
         font-size: 13px;
         margin-top: 10px;
         border-radius: 10px;
+        transition-duration: 100ms;
+        transition-timing-function: ease-in-out;
+        animation-fill-mode: both;
     }
     .page2__card:hover {
         width: 110%;
