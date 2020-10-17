@@ -1,7 +1,14 @@
 /* website */
 
+.website{}
+.web--logo{}
+.web--logo__logo{}
+.web--logo__navbar{}
 
 
+
+
+/* briair */
 
 /* moblie */
 @media only screen and (max-width:900px){
