@@ -5,9 +5,10 @@
     width: 300px;
     border-radius: 20px;
     margin: auto;
-    
+    box-shadow: 5px 5px 5px 5px ;
     
 }
+/* --------------------------------------index css --------------------------*/
 .header2{
     height: 50px;
     width: 300px;
@@ -146,7 +147,46 @@
     font-size: 25px;
     margin-left: 150%;    
 }
+.footer{background-color: white;
+    height: 7%;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px;
+    padding-top: 3%;
+    margin-top: 7%;
+    
+}
+.footer__calendar{
+    margin-top: 3%;
+    margin-left: 10%;
+}
+.footer__place{
+    margin-left: 35%;
+    margin-top: -8%;
+}
+.footer__search{
+    margin-left: 60%;
+    margin-top: -8%;
+}
+.footer__settings{
+    margin-left: 83%;
+    margin-top: -8%;
+}
+.footer__calendar>:hover{
+    
+    
+    background-color: rgba(27, 27, 214, 0.493);
+    border-radius: 50%;
+    margin-top: -3.8%;
+  
+   padding: 5px
+}
 
+.footer__settings>:hover
+{
+    background-color: lightblue;
+}
+/* -------------------------------------------------------------index2 css---------------------------------------------*/
 
-
-
+.header__day{
+    
+}
