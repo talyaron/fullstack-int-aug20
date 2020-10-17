@@ -3,35 +3,34 @@
     --colorViolet: rgb(127, 33, 204);
     --colorWhite: white;
     --colorYellow: yellow;
+    --colorGrey: rgb(105, 104, 104);
     /* FONT */
     --fontFamily: 'Nunito Sans', sans-serif;
     --fontWeight: bold;
     /* SCREEN */
     --borderRadius: 20px;
-    /* --screenWidth: 90%; */
     --screenHeight: 70vh;
     /* SHADOW */
-    --boxShadow: 0px 0px 5px black;
+    --boxShadow: 0px 0px 5px grey;
 }
 
 .screen {
     box-shadow: var(--boxShadow);
     /* border: 1px solid black; */
     background-image: url(IMG/maps.PNG);
-    width: var(--screenWidth);
     height: var(--screenHeight);
     border-radius: var(--borderRadius);
     background-size: cover;
     font-family: var(--fontFamily);
 }
 
-.search {
+.screenSearch {
     position: relative;
     top: 8%;
     left: 1.5%;
 }
 
-.search input {
+.screenSearch input {
     border: none;
     box-shadow: var(--boxShadow);
     background-color: var(--colorWhite);
@@ -44,7 +43,7 @@
     font-size: 110%;
 }
 
-.buttons {
+.screenButtons {
     position: relative;
     top: 11%;
     left: 1%;
@@ -53,7 +52,7 @@
     width: 15%;
 }
 
-.buttons>div {
+.screenButtons>div {
     display: flex;
     justify-self: center;
     box-shadow: var(--boxShadow);
@@ -63,27 +62,27 @@
     font-weight: var(--fontWeight);
 }
 
-.left {
+.screenButtons__left {
     background-color: var(--colorWhite);
 }
 
-.rigth {
+.screenButtons__rigth {
     background-color: var(--colorViolet);
     color: var(--colorWhite);
 }
 
-.huck {
+.screenSecond {
     background-color: var(--colorWhite);
     border-top-right-radius: var(--borderRadius);
     border-top-left-radius: var(--borderRadius);
-    box-shadow: -1px -1px 5px black;
+    box-shadow: -1px -1px 5px gray;
     height: 22vh;
     position: relative;
     top: 50%;
     margin: 0;
 }
 
-.info {
+.screenSecond__info {
     width: 95%;
     height: 90%;
     margin: 0;
@@ -93,19 +92,24 @@
     grid-template-rows: repeat(3, 33%);
 }
 
-.infohotel,
-.infotime,
-.infokm {
+.screenSecond__info>div {
+    position: relative;
+    left: 5%;
+}
+
+.screenSecond__info--hotel,
+.screenSecond__info--time,
+.screenSecond__info--km {
     display: flex;
     align-items: center;
 }
 
-.infohotel {
+.screenSecond__info--hotel {
     font-weight: var(--fontWeight);
     font-size: 2rem;
 }
 
-.infotime {
+.screenSecond__info--time {
     color: rgb(105, 104, 104);
 }
 
@@ -114,12 +118,12 @@ span {
     font-size: 150%;
 }
 
-.go {
+.screenSecond__info--go {
     grid-row: 1/4;
     grid-column: 2/3;
 }
 
-.go>img {
+.screenSecond__info--go>img {
     position: relative;
     top: 15%;
     left: 30%;
@@ -127,9 +131,11 @@ span {
     height: 70%;
 }
 
-footer {
+.screenFooter {
+    box-shadow: 0px 4px 3px grey;
     position: relative;
     top: 49.5%;
+    padding-left: 15%;
     background-color: var(--colorWhite);
     height: 5vh;
     display: flex;
@@ -137,4 +143,73 @@ footer {
     justify-content: space-around;
     border-bottom-left-radius: var(--borderRadius);
     border-bottom-right-radius: var(--borderRadius);
+}
+
+.screenFooter>div>img {
+    width: 15%;
+}
+
+@media only screen and (max-width: 1100px) {
+    .screenButtons {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 40%;
+    }
+    .screenSecond__info--hotel {
+        font-size: 1.8rem;
+        position: relative;
+        top: 25%;
+    }
+    .screenSecond__info--time {
+        font-size: 1.2rem;
+    }
+    .screenSecond__info--km {
+        font-size: 1.5rem;
+    }
+    span {
+        color: green;
+        font-size: 140%;
+    }
+    .screenSecond__info--go>img {
+        top: 22%;
+        width: 30%;
+        height: 70%;
+    }
+    .screenFooter {
+        top: 50%;
+    }
+    .screenFooter>div>img {
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .screenButtons {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 70%;
+    }
+    .screenSecond__info--hotel {
+        font-size: 1.2rem;
+        position: relative;
+        top: 25%;
+    }
+    .screenSecond__info--time {
+        font-size: 0.8rem;
+    }
+    .screenSecond__info--km {
+        font-size: 1rem;
+    }
+    span {
+        color: green;
+        font-size: 130%;
+    }
+    .screenSecond__info--go>img {
+        top: 22%;
+        width: 40%;
+        height: 70%;
+    }
+    .screenFooter>div>img {
+        width: 25%;
+    }
 }
