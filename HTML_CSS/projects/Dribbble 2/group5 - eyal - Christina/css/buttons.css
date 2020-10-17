@@ -1,5 +1,14 @@
-:root{--color1: #f4f1ee;
---color2:white;
---color3: rgba(0, 0, 0, .3); /* shadow */
---color4: rgba(204,198,197,.5);/* shadow */
---color5:#e9e6e4;}
+:root{
+    --color1: #f4f1ee;
+    --color2:#fff;
+    --color3: rgba(0, 0, 0, .3); 
+    --color4: rgba(204,198,197,.5);
+    --color5:#e9e6e4;
+    --color6:white;
+    --color7:#bdb5b4;
+    --color8:#0088cc;
+    --color9:#efedec;
+    --color10: #f7f4f4;
+
+
+}
