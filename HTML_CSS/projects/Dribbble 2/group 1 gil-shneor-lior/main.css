@@ -216,9 +216,14 @@
         text-align: left;
         font-size: 13px;
         margin-top: 10px;
+        border-radius: 10px;
+    }
+    .page2__card:hover {
+        width: 110%;
     }
     h3 {
         margin: 0;
+        margin-bottom: 10px;
     }
     .page2__card-text {
         width: 100%;
@@ -238,6 +243,10 @@
         margin-left: 3px;
         margin-top: 3px;
     }
+    .page2__icon--toys {}
+    .page2__icon--heart {}
+    .page2__icon--airplane {}
+    .page2__icon--clock {}
     /* moblie page 3 */
     /* moblie page 3 */
     /* moblie page 3 */
