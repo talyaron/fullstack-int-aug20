@@ -1,0 +1,21 @@
+    * {
+        background-color: white;
+        color: white;
+    }
+    
+    .circle {
+        width: 150px;
+        height: 150px;
+        border: solid 10px rgba(0, 0, 0, 0.486);
+        background: url(image-asset.jpeg);
+        box-shadow: 20px 10px 10px 10px rgb(0, 0, 0, 0);
+        -moz-box-shadow: 10px 10px rgba(0, 0, 0, 0.795);
+        -o-box-shadow: 10px -10px -10px -10px rgba(0, 0, 0, 0.6);
+        border-radius: 100px;
+        background-size: 110% 110%;
+    }
+    
+    .bigmainPic>img {
+        width: 10px;
+        height: 15px;
+    }
