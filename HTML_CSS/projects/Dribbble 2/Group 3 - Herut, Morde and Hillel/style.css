@@ -14,3 +14,24 @@
   --buttonPadding: 1rem;
   --bodyBackgroundColor: #ade8f6;
 }
+
+body {
+  background-color: var(--bodyBackgroundColor);
+}
+
+.screen {
+  max-width: 900px;
+  min-width: var(--screenMinWidth);
+  min-height: var(--screenMinHeight);
+  border-radius: var(--borderRadius);
+  border: var(--border);
+  background-color: var(--backgroundColor);
+}
+
+.notificationBar {
+}
+
+.profileSection {
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr 2fr;
+}
