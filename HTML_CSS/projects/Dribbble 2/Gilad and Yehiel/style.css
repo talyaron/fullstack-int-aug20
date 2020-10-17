@@ -1,0 +1,100 @@
+.phone{
+    background-color: rgb(238, 232, 216);
+    
+    height: 600px;
+    width: 300px;
+    border-radius: 20px;
+    margin: auto;
+    
+    
+}
+.header2{
+    height: 50px;
+    width: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    
+    
+}
+.header2__back{
+   
+    display: inline-block;
+    
+     
+    margin-top:12%;
+    margin-left:7%;
+    font-size: 30px;
+
+    
+    
+
+}
+.header2__date{
+    display: inline-block;
+    margin-left: 25%;
+     
+    
+    margin-top: 5%;
+   
+}
+.card{
+    width:250px;
+    height: 150px;
+    background-color: rgb(85, 73, 197);
+    margin-top: 15%;
+    margin-left:25px ;
+    padding-top:15px;
+    border-radius: 2%;
+    box-shadow: gray 5px 5px 7px 1px;
+    
+}
+.card__date{
+    margin-left:7%;
+    
+}
+.card__temperature{
+    font-size: 60px;
+    margin-left: 7%;
+
+    margin-top: 17%;
+}
+.card___notice{
+        float: right;
+       margin-top: -15%;
+       margin-right: 7%;
+       color: white;        
+}
+.details{
+    margin-left: 43%;
+    margin-top: 5%;
+}
+.time{
+    
+
+}
+.time__hour{
+    margin-left: 5%;
+    margin-top: 10%;
+    margin-bottom: -6%;
+}
+.time__humidity{
+  margin-left: 63%;
+  margin-top: -5%;
+  margin-bottom: -6%;
+
+}
+.time__logo{
+    margin-left: 73%;
+margin-top: -6%;
+margin-bottom: -6%;
+}
+.time__temperature{
+    float: right;
+    margin-top: -1%;
+   
+    margin-right: 5%;
+   
+}
+
+
+
