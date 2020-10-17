@@ -1,21 +1,27 @@
-:root {
-    --color1: #f4f1ee;
-    --color2: #fff;
-    --color3: rgba(0, 0, 0, .3);
-    --color4: rgba(204, 198, 197, .5);
-    --color5: #e9e6e4;
-    --color6: white;
-    --color7: #bdb5b4;
+:root{
+    --color1: #B81F0E; /* פנימי עליון */
+    --color2:#E14712;
+    --color3: rgba(0, 0, 0, .3); 
+    --color4: rgba(204,198,197,.5);
+    --color5:white;
+    --color6:#CD410E;
+    --color7:#bdb5b4;
+    --color8:#0088cc;
+    --color9:#B81F0E;
+    --color10: #E14712;
+    --degrees:30deg;
+
+
 }
 
 .screen {
     max-width: 250px;
-    height: 600px;
-    /* background-color: aqua; */
-    background: #2E3338;
+height: 600px;
+
+background: #2E3338;
     margin: auto;
     border-radius: 50px;
-}
+    position: relative;
 
 .button {
     background-image: -webkit-linear-gradient(top, var(--color1), var(--color2));
@@ -43,17 +49,79 @@
     width: 30px;
 }
 
-.tick:after {
-    content: "<";
-    left: 20px;
-    top: 14px;
-}
+  .test{
+      position: absolute;
+      bottom: 5px;
+      margin-left: 10%;
+  }
+  
+.button{
 
-.button:hover {
-    background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
-    background-image: linear-gradient(top, #fff, #f4f1ee);
-    color: #0088cc;
-}
+               
+              background-image: -webkit-linear-gradient(var(--degrees) , var(--color1),var(--color2));
+              background-image: linear-gradient(var(--degrees), var(--color1),var(--color2));
+              border-radius: 50%;
+              box-shadow: 0px 8px 10px 0px var(--color3), inset 0px 4px 1px 1px var(--color6), inset 0px -3px 1px 1px var(--color4);
+              float:left;
+              height: 60px;
+              margin: 0 10px 10px 0;
+              position: relative;
+              width: 60px;			
+              -webkit-transition: all .1s linear;
+              transition: all .1s linear;
+          }
+  
+          .button:after{
+              color: var(--color5);
+              content: "";
+              display: block;
+              font-size: 30px;
+              height: 30px;
+              text-decoration: none;
+              text-shadow: 0px -1px 1px var(--color7), 1px 1px 1px var(--color6);
+              position: absolute;
+              width: 30px;
+          }
+  
+  
+          
+  
+          .tick:after{
+              content: "K";
+              left:20px;
+              top:14px;
+          }
+  
+   
+  
+         /*  .button:hover{
+              background-image: -webkit-linear-gradient(60deg, var(--color2), var(--color1));
+              background-image: linear-gradient(60deg, var(--color2),var(--color1));
+              color:var(--color8);
+          } */
+  
+          
+  
+         /*  .tick:hover:after{
+              color: #dbd2d2;
+              text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white; 
+          } */
+  
+         
+  
+          
+  
+          .button:active{
+              background-image: -webkit-linear-gradient(var(--degrees), var(--color9),var(--color10));
+            /*   background-image: linear-gradient(top,var(--color9), #f7f4f4); */
+              box-shadow: 0 3px 5px 0 var(--color3), inset 0px -3px 1px 1px var(--color4);
+          }
+  
+          .button:active:after{
+              color: #83d244;
+              text-shadow:0px 0px 6px #83d244;
+              
+          }
 
 .tick:hover:after {
     color: #83d244;
