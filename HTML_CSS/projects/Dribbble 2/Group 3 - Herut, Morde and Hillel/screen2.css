@@ -1,0 +1,16 @@
+:root {
+  --screenMinWidth: 410px;
+  --screenMinHeight: 730px;
+  --borderRadius: 2em;
+  --border: solid 5px #1f5060;
+  --backgroundColor: #f8fdff;
+  --successTitlecolor: #a6b43f;
+  --successTitleFontSize: ;
+  --mainTextcolor: #316170;
+  --maintTextFontSize: ;
+  --buttonColor: #c5df21;
+  --buttonWidht: 80%;
+  --buttonHeight: 35px;
+  --buttonPadding: 1rem;
+  --bodyBackgroundColor: #ade8f6;
+}
