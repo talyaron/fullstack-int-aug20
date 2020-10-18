@@ -283,7 +283,7 @@
             color: red;
         }
     }
-    .page2__icon--airplane {
+    .page2__icon--airplane:hover {
         animation-name: moveToTop
     }
     @keyframes moveToTop {
