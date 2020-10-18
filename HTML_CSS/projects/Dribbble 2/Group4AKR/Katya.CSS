@@ -71,6 +71,31 @@
     color: var(--colorWhite);
 }
 
+.mark {
+    position: relative;
+    top: 25%;
+    left: 60%;
+}
+
+.mark>img {
+    height: 2%;
+    width: 2%;
+}
+
+.youHere {
+    width: 5%;
+    text-align: center;
+    font-weight: var(--fontWeight);
+    font-size: 1.1rem;
+    position: relative;
+    top: 15%;
+    left: 42.5%;
+}
+
+.youHere__arrow {
+    color: red;
+}
+
 .screenSecond {
     background-color: var(--colorWhite);
     border-top-right-radius: var(--borderRadius);
@@ -113,7 +138,7 @@
     color: rgb(105, 104, 104);
 }
 
-span {
+.screenSecond__info--timeDot {
     color: green;
     font-size: 150%;
 }
