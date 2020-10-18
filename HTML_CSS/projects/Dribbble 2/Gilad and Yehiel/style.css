@@ -1,12 +1,11 @@
 .phone{
-    background-color: rgb(238, 232, 216);
-    
+    background-image: url(./logo/phone2.PNG);
     height: 600px;
     width: 300px;
     border-radius: 20px;
-    margin: auto;
+    margin-left:35%;
     box-shadow: 5px 5px 5px 5px ;
-    
+    margin-top: 2%;
 }
 /* --------------------------------------index css --------------------------*/
 .header2{
@@ -41,12 +40,13 @@
 .card{
     width:250px;
     height: 150px;
-    background-color: rgb(85, 73, 197);
+    background-image: url(./logo/background_blue6.PNG);
     margin-top: 15%;
     margin-left:25px ;
     padding-top:15px;
     border-radius: 2%;
     box-shadow: gray 5px 5px 7px 1px;
+    
     
 }
 .card__date{
@@ -63,7 +63,15 @@
         float: right;
        margin-top: -15%;
        margin-right: 7%;
-       color: white;        
+       color: white; 
+       background-color: rgba(8, 8, 105, 0.301);  
+       width: 120px;
+         
+       text-align: center;
+       font-size: 12px;   
+       padding-bottom: 3%;
+       border-radius:50%;
+       
 }
 .details{
     margin-left: 40%;
@@ -153,7 +161,8 @@
     border-bottom-right-radius: 20px;
     padding-top: 3%;
     margin-top: 7%;
-    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .footer__calendar{
     margin-top: 3%;
@@ -171,15 +180,7 @@
     margin-left: 83%;
     margin-top: -8%;
 }
-.footer__calendar>:hover{
-    
-    
-    background-color: rgba(27, 27, 214, 0.493);
-    border-radius: 50%;
-    margin-top: -3.8%;
-  
-   padding: 5px
-}
+
 
 .footer__settings>:hover
 {
@@ -187,6 +188,98 @@
 }
 /* -------------------------------------------------------------index2 css---------------------------------------------*/
 
+.header{
+    height: 50px;
+    width: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+   
+}
 .header__day{
+    font-size: 10px;
+    display: inline-block;  
+    margin-left:7%;
+    margin-left: 25%;
     
+   
+}
+
+.header__week{
+    display: inline-block;
+    margin-left: 13%;
+     font-size: 10px;
+    color: rgb(34, 34, 119);
+    margin-top: 5%;
+    background-color: rgba(34, 34, 119, 0.356);
+    padding: 5px;
+    border-radius: 50%;
+}
+.header__month{
+    font-size: 10px;
+    
+    float: right;
+    margin-right: 25%;
+    margin-top: 5%;
+}
+
+.month{
+    margin-left:40%;
+    margin-top: 3%;
+}
+.text{
+    margin-left:32%;
+    margin-top: 2%;
+    font-size: 25px;
+}
+.card__1{
+    margin-top: -13%;
+}
+.card__2{
+
+    margin-top: -13%;
+}
+.card__3{
+
+    margin-top: -13%;
+}
+.footer__2{
+    margin-top: -24%;
+    padding-top: 5%;
+
+}
+.card__3__1{
+   
+    width:250px;
+    height: 120px;
+    background-color: rgb(85, 73, 197);
+    margin-top: 15%;
+    margin-left:25px ;
+    padding-top:15px;
+    border-radius: 2%;
+    box-shadow: gray 5px 5px 7px 1px;
+    
+}
+.footer2{
+    background-color: white;
+    height: 7%;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px;
+    padding-top: 3%;
+    margin-top: 7%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom:3%;
+}
+/* -------------------------------------------------------------index4 css---------------------------------------------*/
+
+.footer4{
+    background-color: white;
+    height: 7%;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px;
+    padding-top: 3%;
+    margin-top: 7%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom:3%;
 }

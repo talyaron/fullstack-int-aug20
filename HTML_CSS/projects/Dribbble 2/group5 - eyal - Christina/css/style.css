@@ -32,7 +32,7 @@
 .screen{
     display: grid;
     grid-template-columns: 1fr;   
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
     max-width: 255px;
     height: 600px;
     background-image: linear-gradient(140deg , #34393F,#17191C );  /* #17191C */
@@ -44,31 +44,45 @@
     position: relative;
 
 }
-
+.umenu{
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
 .container{
-    justify-self: center;
+    align-self: flex-start;
+   
 }
 
 
 
 .circle>img{
+    margin: auto;
     width: 200px;
     height: 200px;
     border: solid 6px rgba(0, 0, 0, 0.486);
     border-radius: 100px;
     background-size: 110% 100%;
 
-    box-shadow: -8px -7px 10px 1px #383c3f,
-                10px 10px 10px #181819; 
+   
    
     border-radius: 100px;
     background-size: 110% 100%;
 }
+
+.tavlit{
+    box-shadow: -8px -7px 10px 1px #383c3f,
+    10px 10px 10px #181819; 
+}
  
 .Dmenu{
     grid-row: 3;
+    display: flex;
+    margin-bottom: 20%;
+    margin-left: 10px;
+    
     align-self:end;
-    justify-self: center;
+    justify-content: space-between;
     
     }
 

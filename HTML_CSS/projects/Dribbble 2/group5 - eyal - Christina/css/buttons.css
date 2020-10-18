@@ -1,14 +1,45 @@
 :root{
-    --color1: #f4f1ee;
-    --color2:#fff;
-    --color3: rgba(0, 0, 0, .3); 
-    --color4: rgba(204,198,197,.5);
-    --color5:#e9e6e4;
-    --color6:white;
-    --color7:#bdb5b4;
-    --color8:#0088cc;
-    --color9:#efedec;
-    --color10: #f7f4f4;
-
-
+ --heightWight:30px;   
 }
+.redbutton {
+    background: #2A3035;
+    background-image: -webkit-linear-gradient(top, #2A3035, #1C1E22);
+    background-image: -moz-linear-gradient(top, #2A3035, #1C1E22);
+    background-image: -ms-linear-gradient(top, #2A3035, #1C1E22);
+    background-image: -o-linear-gradient(top, #2A3035, #1C1E22);
+    background-image: -webkit-gradient(to bottom, #2A3035, #1C1E22);
+    -webkit-border-radius: 56px;
+    -moz-border-radius: 56px;
+    border-radius: 56px;
+    height: var(--heightWight);
+    line-height: 14px;
+    color: #84878A;
+    font-family: Open Sans;
+    width: var(--heightWight);
+    font-size: 20px;
+    font-weight: 900;
+    padding: 12px;
+    -webkit-box-shadow: 1px 1px 6px 0 #000000;
+    -moz-box-shadow: 1px 1px 6px 0 #000000;
+    box-shadow: 1px 1px 6px 0 #000000;
+    text-shadow: 1px 1px 6px #000000;
+    border: solid #22252A 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .redbutton:active {
+    border: solid #D6490D 3px;
+    background: #BD220F;
+    background-image: -webkit-linear-gradient(top, #BD220F, #E0530A);
+    background-image: -moz-linear-gradient(top, #BD220F, #E0530A);
+    background-image: -ms-linear-gradient(top, #BD220F, #E0530A);
+    background-image: -o-linear-gradient(top, #BD220F, #E0530A);
+    background-image: -webkit-gradient(to bottom, #BD220F, #E0530A);
+    -webkit-border-radius: 58px;
+    -moz-border-radius: 58px;
+    border-radius: 58px;
+    text-decoration: none;
+ }

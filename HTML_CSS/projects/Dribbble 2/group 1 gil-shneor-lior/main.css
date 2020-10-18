@@ -253,10 +253,32 @@
     .material-icons {
         color: rgb(152, 153, 255);
         margin-left: 3px;
-        margin-top: 3px;
+        margin-top: 4px;
     }
-    .page2__icon--toys {}
-    .page2__icon--heart {}
+    .page2__icon--toys:hover {
+        animation-name: rotate;
+        animation-duration: 800ms;
+        animation-timing-function: ease-in-out
+    }
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg)
+        }
+        to {
+            transform: rotate(360deg)
+        }
+    }
+    .page2__icon--heart:hover {
+        animation-name: heartbeatSlow;
+        animation-iteration-count: infinite;
+        animation-duration: .5s
+    }
+    @keyframes heartbeatSlow {
+        35%,
+        65% {
+            transform: scale(1.2)
+        }
+    }
     .page2__icon--airplane {}
     .page2__icon--clock {}
     /* moblie page 3 */
