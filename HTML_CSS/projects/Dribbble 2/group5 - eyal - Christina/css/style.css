@@ -1,23 +1,21 @@
 :root{
-    --color1: #B81F0E; /* פנימי עליון */
-    --color2:#E14712;
-    --color3: rgba(0, 0, 0, .3); 
-    --color4: rgba(204,198,197,.5);
-    --color5:white;
-    --color6:#CD410E;
-    --color7:#bdb5b4;
-    --color8:#0088cc;
-    --color9:#B81F0E;
-    --color10: #E14712;
+    --shadowMainBigPic:#383c3f;
+    --shadowMainSmallPic:1;
+
+    --shadowMainBigButton:#24292D;
+    --shadowMainSmallButton:1;
+
     --degrees:30deg;
 
 
 }
 
- /* div{
+
+
+ div{
       border:  1px solid burlywood;
   }
- */
+
 
 
 
@@ -33,8 +31,9 @@
     display: grid;
     grid-template-columns: 1fr;   
     grid-template-rows: 1fr 5fr 1fr;
-    max-width: 255px;
-    height: 600px;
+    max-width: 355px;
+    height: 700px;
+    
     background-image: linear-gradient(140deg , #34393F,#17191C );  /* #17191C */
 
 /* background: #25282C; */
@@ -60,19 +59,21 @@
     margin: auto;
     width: 200px;
     height: 200px;
+   /*  width: 80%;
+    height: 80%; */
     border: solid 6px rgba(0, 0, 0, 0.486);
-    border-radius: 100px;
-    background-size: 110% 100%;
-
-   
-   
     border-radius: 100px;
     background-size: 110% 100%;
 }
 
-.tavlit{
+/* .tavlit (--test){
     box-shadow: -8px -7px 10px 1px #383c3f,
     10px 10px 10px #181819; 
+} */
+
+.tavlit{
+    box-shadow: -8px -7px 10px 1px var(--ShadowColor) /* #24292D */,
+                10px 10px 10px #181819; 
 }
  
 .Dmenu{
@@ -80,76 +81,9 @@
     display: flex;
     margin-bottom: 20%;
     margin-left: 10px;
-    
     align-self:end;
-    justify-content: space-between;
+    justify-content: space-evenly ;
     
     }
 
-.button{
 
-               
-              background-image: -webkit-linear-gradient(var(--degrees) , var(--color1),var(--color2));
-              background-image: linear-gradient(var(--degrees), var(--color1),var(--color2));
-              border-radius: 50%;
-              box-shadow: 0px 8px 10px 0px var(--color3), inset 0px 4px 1px 1px var(--color6), inset 0px -3px 1px 1px var(--color4);
-              float:left;
-              height: 60px;
-              margin: 0 10px 10px 0;
-              position: relative;
-              width: 60px;			
-              -webkit-transition: all .1s linear;
-              transition: all .1s linear;
-          }
-  
-          .button:after{
-              color: var(--color5);
-              content: "";
-              display: block;
-              font-size: 30px;
-              height: 30px;
-              text-decoration: none;
-              text-shadow: 0px -1px 1px var(--color7), 1px 1px 1px var(--color6);
-              position: absolute;
-              width: 30px;
-          }
-  
-  
-          
-  
-          .tick:after{
-              content: "K";
-              left:20px;
-              top:14px;
-          }
-  
-   
-  
-         /*  .button:hover{
-              background-image: -webkit-linear-gradient(60deg, var(--color2), var(--color1));
-              background-image: linear-gradient(60deg, var(--color2),var(--color1));
-              color:var(--color8);
-          } */
-  
-          
-  
-         /*  .tick:hover:after{
-              color: #dbd2d2;
-              text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white; 
-          } */
-  
-         
-  
-          
-  
-          .button:active{
-              background-image: -webkit-linear-gradient(var(--degrees), var(--color9),var(--color10));
-            /*   background-image: linear-gradient(top,var(--color9), #f7f4f4); */
-              box-shadow: 0 3px 5px 0 var(--color3), inset 0px -3px 1px 1px var(--color4);
-          }
-  
-          .button:active:after{
-              color: #83d244;
-              text-shadow:0px 0px 6px #83d244;
-              
-          }
