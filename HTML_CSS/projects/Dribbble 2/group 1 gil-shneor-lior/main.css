@@ -258,29 +258,64 @@
     .page2__icon--toys:hover {
         animation-name: rotate;
         animation-duration: 800ms;
-        animation-timing-function: ease-in-out
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
     }
     @keyframes rotate {
         from {
             transform: rotate(0deg)
         }
         to {
-            transform: rotate(360deg)
+            transform: rotate(360deg);
+            color: rgb(104, 122, 0);
         }
     }
     .page2__icon--heart:hover {
         animation-name: heartbeatSlow;
         animation-iteration-count: infinite;
-        animation-duration: .5s
+        animation-duration: .6s;
+        animation-timing-function: ease-in-out;
     }
     @keyframes heartbeatSlow {
         35%,
         65% {
-            transform: scale(1.2)
+            transform: scale(1.2);
+            color: red;
         }
     }
-    .page2__icon--airplane {}
-    .page2__icon--clock {}
+    .page2__icon--airplane {
+        animation-name: moveToTop
+    }
+    @keyframes moveToTop {
+        to {
+            transform: translateY(-800px)
+        }
+    }
+    .page2__icon--clock:hover {
+        animation-name: pulseShake;
+        animation-iteration-count: infinite;
+        animation-duration: .5s;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes pulseShake {
+        6%,
+        24%,
+        42%,
+        60%,
+        77%,
+        95% {
+            transform: translateX(3px)
+        }
+        9%,
+        27%,
+        45%,
+        63%,
+        80%,
+        98% {
+            transform: translateX(-3px);
+            color: rgb(59, 0, 73);
+        }
+    }
     /* moblie page 3 */
     /* moblie page 3 */
     /* moblie page 3 */
