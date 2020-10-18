@@ -1,6 +1,6 @@
 :root {
   --screenMinWidth: 410px;
-  --screenMinHeight: 730px;
+  --screenMinHeight: 100vh;
   --borderRadius: 2em;
   --border: solid 5px #1f5060;
   --backgroundColor: #f8fdff;
@@ -28,7 +28,26 @@ body {
 }
 
 .notificationBar {
-  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.notificationBar > p {
+  margin: 0;
+}
+
+.notificationBar__rightIcons {
+  grid-column: 3;
+}
+
+.floatRight {
+  float: right;
+  margin-left: 5px;
 }
 
 .profileSection {
