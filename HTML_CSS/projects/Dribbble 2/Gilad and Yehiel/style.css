@@ -1,5 +1,5 @@
 .phone{
-    background-image: url(./logo/background_phone.PNG);
+    background-image: url(./logo/phone2.PNG);
     height: 600px;
     width: 300px;
     border-radius: 20px;
@@ -40,12 +40,13 @@
 .card{
     width:250px;
     height: 150px;
-    background-image: url(./logo/background_blue2.PNG);
+    background-image: url(./logo/background_blue6.PNG);
     margin-top: 15%;
     margin-left:25px ;
     padding-top:15px;
     border-radius: 2%;
     box-shadow: gray 5px 5px 7px 1px;
+    
     
 }
 .card__date{
@@ -179,15 +180,7 @@
     margin-left: 83%;
     margin-top: -8%;
 }
-.footer__calendar>:hover{
-    
-    
-    background-color: rgba(27, 27, 214, 0.493);
-    border-radius: 50%;
-    margin-top: -3.8%;
-  
-   padding: 5px
-}
+
 
 .footer__settings>:hover
 {
@@ -250,7 +243,8 @@
     margin-top: -13%;
 }
 .footer__2{
-    margin-top: -19%;
+    margin-top: -24%;
+    padding-top: 5%;
 
 }
 .card__3__1{
@@ -263,4 +257,29 @@
     padding-top:15px;
     border-radius: 2%;
     box-shadow: gray 5px 5px 7px 1px;
+    
+}
+.footer2{
+    background-color: white;
+    height: 7%;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px;
+    padding-top: 3%;
+    margin-top: 7%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom:3%;
+}
+/* -------------------------------------------------------------index4 css---------------------------------------------*/
+
+.footer4{
+    background-color: white;
+    height: 7%;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px;
+    padding-top: 3%;
+    margin-top: 7%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom:3%;
 }
