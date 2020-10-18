@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<STyle>
+    :root {
+        /* COLOR */
+        --colorViolet: rgb(127, 33, 204);
+        --colorWhite: white;
+        --colorYellow: yellow;
+        --colorGrey: rgb(105, 104, 104);
+        /* FONT */
+        --fontFamily: 'Nunito Sans', sans-serif;
+        --fontWeight: bold;
+
+
+    }
+
+
+    body {
+        background-color: var(--colorViolet);
+        display: flex;
+        justify-content: center;
+    }
+
+    .screen {
+        margin: 0px;
+        border: 1px solid white;
+        border-radius: 15px;
+        background-color: var(--colorViolet);
+        font-family: var(--fontFamily);
+        font-weight: var(--fontWeight);
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "boxTEXT"
+            "boxTEXT__text"
+            "boxAUDIO"
+            "boxBUTTONS"
+            "boxFOOTER";
+        color: var(--colorWhite);
+        max-width: 600px;
+
+    }
+
+    .boxTEXT {
+        grid-area: boxTEXT;
+        margin: 5px;
+        position: relative;
+        align-self: center;
+    }
+
+    .boxAUDIO {
+        grid-area: boxAUDIO;
+        margin: 5px;
+        align-self: center;
+
+    }
+
+    .boxBUTTONS {
+        grid-area: boxBUTTONS;
+        margin: 10px;
+        align-self: center;
+
+    }
+
+    .boxFOOTER {
+        grid-area: boxFOOTER;
+        margin: 5px;
+        align-self: center;
+        text-align: center;
+    }
+
+    .boxTEXT__title {
+        margin: 5px;
+        position: absolute;
+        left: 55px;
+        align-self: center;
+        animation-name: fidoMOOVE;
+        animation-duration: 4s;
+        animation-play-state: running;
+
+
+
+    }
+
+    .boxTEXT__text {
+        margin: 5px;
+        grid-area: boxTEXT__text;
+        align-self: center;
+        text-align: center;
+
+    }
+
+    .boxTEXT__btnPRO {
+        border: var(--colorYellow);
+        border-radius: 15px;
+        background-color: var(--colorYellow);
+        padding: 10px;
+        text-transform: uppercase;
+        position: absolute;
+        right: 55px;
+        
+    }
+
+    .boxTEXT__btnPRO:hover {animation-name: yellowTOgreen;
+        animation-duration: 4s;
+        animation-play-state: running;}
+
+    .boxTEXT__btnPRO a {
+        text-decoration: none;
+    }
+
+    .boxTEXT__title--fido {
+        text-transform: capitalize;
+    }
+
+    .boxAUDIO__audioTRACK audio {
+        width: 50%;
+        margin: 0px;
+        min-width: 40%;
+        width: 100%;
+    }
+
+    .bigBTN a {
+        text-decoration: none;
+    }
+
+    .bigBTN {
+        border: white;
+        border-radius: 15px;
+        padding: 10px;
+        text-transform: capitalize;
+
+    }
+
+    .boxBUTTONS__tryPRO {
+        background-color: white;
+        margin-top: 13px;
+    }
+
+    .boxBUTTONS__continue {
+        background-color: var(--colorYellow);
+    }
+
+    .boxBUTTONS__tryPRO span {
+        text-transform: uppercase;
+    }
+
+    .boxAUDIO__text {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 460px) {
+        .screen {
+            border: none;
+            grid-template-areas:
+                "boxTEXT"
+                "boxTEXT__text"
+                "boxAUDIO"
+                "."
+                "boxBUTTONS"
+                "boxFOOTER";
+        }
+
+        .boxTEXT__btnPRO {
+
+            right: 170px;
+        }
+
+        .boxTEXT__title--fido {
+            font-size: 20px;
+        }
+
+        .boxTEXT__text {
+            text-align: left;
+        }
+
+        .boxAUDIO__audioTRACK audio {
+            margin: 0px;
+            width: 100%;
+        }
+
+        .boxAUDIO__text {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+    }
+
+
+    @keyframes yellowTOgreen {
+        from {
+            background-color: yellow;
+        }
+
+        to {
+            background-color: green;
+        }
+    }
+
+    @keyframes fidoMOOVE {
+        0% {
+            left: 55px;
+        }
+50% {  transform: rotate(360deg);}
+        100% {
+            left: 300px;
+        }
+    }
+</STyle>
+
+<body>
+    <div class="screen">
+        <div class="boxTEXT">
+            <div class="boxTEXT__title">
+                <div class="boxTEXT__title--fido"> fido</div>
+            </div>
+            <div class="boxTEXT__btnPRO"><a
+                    href="https://dribbble.com/search/shots/popular/mobile?q=healthy%20%26%20happy%20pup">pro</a></div>
+        </div>
+        <div class="boxTEXT__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nesciunt veniam
+            veritatis earum!</div>
+
+
+        <div class="boxAUDIO">
+            <div class="boxAUDIO__text"> what the experts are saying</div>
+            <div class="boxAUDIO__audioTRACK">
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+        <div class="boxBUTTONS">
+            <div class="boxBUTTONS__continue bigBTN"><a
+                    href="https://dribbble.com/search/shots/popular/mobile?q=healthy%20%26%20happy%20pup">continue for
+                    4.99$ to mounth</a></div>
+
+            <div class="boxBUTTONS__tryPRO bigBTN"><a
+                    href="https://dribbble.com/search/shots/popular/mobile?q=healthy%20%26%20happy%20pup">not sure? try
+                    for 7 days <span> free</span></a></div>
+        </div>
+        <div class="boxFOOTER">
+            what is pro? subscribtion terms </div>
+    </div>
+</body>
+
+</html>
