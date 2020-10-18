@@ -64,11 +64,15 @@
     border-radius: 100px;
     background-size: 110% 100%;
 
-    box-shadow: -8px -7px 10px 1px #383c3f,
-                10px 10px 10px #181819; 
+   
    
     border-radius: 100px;
     background-size: 110% 100%;
+}
+
+.tavlit{
+    box-shadow: -8px -7px 10px 1px #383c3f,
+    10px 10px 10px #181819; 
 }
  
 .Dmenu{
