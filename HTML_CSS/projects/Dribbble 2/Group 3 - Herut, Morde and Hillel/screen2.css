@@ -1,16 +1,123 @@
 :root {
   --screenMinWidth: 410px;
-  --screenMinHeight: 730px;
+  /* --screenMinHeight: 730px; */
   --borderRadius: 2em;
   --border: solid 5px #1f5060;
   --backgroundColor: #f8fdff;
   --successTitlecolor: #a6b43f;
-  --successTitleFontSize: ;
+  --successTitleFontSize: 3em ;
   --mainTextcolor: #316170;
-  --maintTextFontSize: ;
+  --maintTextFontSize: 1.5em ;
   --buttonColor: #c5df21;
   --buttonWidht: 80%;
   --buttonHeight: 35px;
-  --buttonPadding: 1rem;
+  --buttonPadding: 1.2rem;
   --bodyBackgroundColor: #ade8f6;
 }
+
+body{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  background-color: var(--bodyBackgroundColor);
+}
+
+.screen{
+  min-width: var(--screenMinWidth) ;
+  height: var(--screenMinHeight) ;
+  border-radius: var(--borderRadius);
+  border: var(--border);
+  background-color: var(--backgroundColor);
+  padding: 1em;
+}
+
+.notificationBar{
+  font-weight: bold;
+  font-size:1em;
+}
+
+.floatRight {
+  float: right;
+  margin-left: 5px;
+}
+
+.successPage{
+/* background-color: #a6b43f; */
+margin: 1em;
+margin-top: 2em;
+display: flex;
+flex-direction: column;
+justify-items: center;
+justify-content: space-between;
+/* position: relative; */
+
+}
+
+/* .successPage__closeIco{
+  display: flex;
+  justify-items: self-end;
+} */
+
+.successPage__pic{
+  background-image: url(./img/screen2.png);
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  
+}
+
+.successPage__text{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.successPage__text h1{
+  color: var(--successTitlecolor);
+  font-size: var(--successTitleFontSize);
+  margin-bottom: .34em;
+  
+}
+
+.successPage__text h2{
+  color: var(--mainTextcolor);
+  font-size: var(--maintTextFontSize);
+  margin:.3em 0;
+  font-weight: bold;
+}
+
+
+.successPage__text p{
+  color: grey;
+  font-size: 1.25em;
+  margin: 0%;
+}
+
+button{
+  background-color: var(--buttonColor);
+  width:  95%;
+  /* height:  var(--buttonHeight); */
+  padding:  var(--buttonPadding);
+  border: none;
+  border-radius: .6em;
+  text-align: center;
+  color: white;
+  align-self: center;
+  outline: none;
+  cursor: pointer;
+font-size: 1.3rem;
+
+  margin: 10em auto 1em auto;
+  /* margin: 2em auto; */
+
+  border: none;
+
+  font-size: 1em;
+
+
+
+}
+
+
+
