@@ -3,7 +3,7 @@
     --shadowMainSmallPic:1;
 
     --shadowMainBigButton:#24292D;
-    --shadowMainSmallButton:1;
+    --shadowMainSmallButton:#3E454B;
 
     --degrees:30deg;
 
@@ -12,10 +12,10 @@
 
 
 
- div{
+ /* div{
       border:  1px solid burlywood;
   }
-
+ */
 
 
 
@@ -43,7 +43,7 @@
     position: relative;
 
 }
-.umenu{
+.Ubar{
     align-self: center;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -71,9 +71,14 @@
     10px 10px 10px #181819; 
 } */
 
-.tavlit{
+.havlta{
     box-shadow: -8px -7px 10px 1px var(--ShadowColor) /* #24292D */,
                 10px 10px 10px #181819; 
+}
+
+.havltaSmallElements{
+    box-shadow: -4px -3px 5px 1px var(--ShadowColor) /* #24292D */,
+                5px 5px 5px #181819; 
 }
  
 .Dmenu{
