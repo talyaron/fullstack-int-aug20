@@ -4,8 +4,8 @@
     border-radius: 100%;
     background-color: green;
     position: relative;
-    animation: crazy 3s ease-in-out 300ms 1 ;
-   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: crazy 3s ease-in-out 300ms 1;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 @keyframes crazy {
@@ -16,10 +16,7 @@
         height: 50px;
         border-radius: 0%;
         background-color: blue;
-
-
     }
-
     to {
         top: 200px;
         left: 200px;
@@ -28,5 +25,4 @@
         border-radius: 100%;
         background-color: yellow;
     }
-
 }
