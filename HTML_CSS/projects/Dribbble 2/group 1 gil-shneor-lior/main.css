@@ -46,10 +46,44 @@
         width: 30px;
         margin-top: 0px;
     }
-    .status-bar__battery>img {
+    .status-bar__battery {
+        direction: ltr;
+        margin-right: 10px;
+        margin-top: 10px;
+        width: 25px;
+        height: 10px;
+        border-radius: 2px;
+        background-color: rgb(182, 206, 250);
+    }
+    /* .status-bar__batteryChupchik { 
+        right: 180px;
+        top: 100%;
         position: sticky;
-        width: 30px;
-        margin-top: 9px;
+        border-radius: 2px;
+        width: 5px;
+        height: 7px;
+        background-color: rgb(0, 0, 0);
+    }*/
+    .status-bar__battery:hover .bar__batteryjuice {
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    /* kjhhhhhhhhhhhhhhhhhhhhhhhhh */
+    .bar__batteryjuice {
+        animation-name: fill-up;
+        width: 15%;
+        height: 100%;
+        background-color: red;
+        border-radius: 2px;
+    }
+    @keyframes fill-up {
+        0% {
+            width: 15%;
+        }
+        100% {
+            width: 100%;
+            background-color: rgb(201, 236, 0);
+        }
     }
     /* mobile page 1 */
     /* mobile page 1 */
@@ -258,12 +292,11 @@
     .page2__icon--toys:hover {
         animation-name: rotate;
         animation-duration: 800ms;
-        animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
     }
     @keyframes rotate {
         from {
-            transform: rotate(0deg)
+            transform: rotate(0deg);
         }
         to {
             transform: rotate(360deg);
@@ -296,6 +329,7 @@
         100% {
             margin-top: -50px;
             color: rgb(22, 27, 41);
+            position: absolute;
         }
     }
     .page2__icon--clock:hover {
