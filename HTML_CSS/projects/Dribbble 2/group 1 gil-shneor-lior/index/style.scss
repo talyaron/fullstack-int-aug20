@@ -1,22 +1,68 @@
-.item {
-    width: 100px;
-    height: 100px;
-    background-color: salmon;
+.page2__card {
+    background-color: rgb(211, 152, 142);
+    margin-left: 300px;
+    margin-top: 300px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 5px 5px 9px 2px #888888;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    color: var(--menucolor);
+    text-align: left;
+    font-size: 20px;
+    border-radius: 10px;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+    animation-fill-mode: both;
 
-    h1 {
+    &:hover {
+        width: 110%;
+    }
+
+    h3 {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    &-text {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-icon {
+        background-color: rgb(218, 231, 255);
+        width: 50px;
+        height: 50px;
+        border-radius: 500px;
+        overflow: hidden;
+
+        &--heart:hover {
+            animation-name: heartbeatSlow;
+            animation-iteration-count: infinite;
+            animation-duration: .6s;
+            animation-timing-function: ease-in-out;
+        }
+
+
+    }
+
+}
+
+@keyframes heartbeatSlow {
+
+    35%,
+    65% {
+        // transform: scale(1.2);
         color: red;
     }
+}
 
-    h3{
-        color: skyblue;
-    }
-
-    &:hover{
-        box-shadow: slategray 12px 12px 12px;
-
-    }
-    &--small{
-        color: springgreen;
-    }
-
+.material-icons {
+    height: 12222px;
+    scale: (5);
+    color: rgb(0, 2, 143);
+    margin-left: 25%;
+    margin-top: 25%;
 }
