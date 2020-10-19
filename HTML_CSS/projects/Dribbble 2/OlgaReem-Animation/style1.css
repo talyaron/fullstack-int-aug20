@@ -98,5 +98,74 @@ font-size: 15px;
         margin-top: 10%;
 
       }
+      .Temperature__Condition{
+        display: block;
+        margin-top: 30%;
+        margin-left: 25%;
+          width: 85px;
+          height: 220px;
+        
+          /* overflow-y: scroll; 
+          -webkit-overflow-scrolling:touch;
+          background-color: whitesmoke; */
+        }
+
       
+      ul{
+        
+        display: block;
+        margin: auto;
+        width: 100px;
+        height: 100px;
+      /* overflow-x: hidden; */
+      /* overflow-y: hidden; */
+        overflow-y: scroll; 
+        -webkit-overflow-scrolling:touch;
+        
+
+      }
+      ul::-webkit-scrollbar {
+        display: none;
+    }
+      Li{
+        /* background-color:rgb(53, 39, 53) ; */
+        list-style-type:none ;
+        height: 80px;
+        font-size: 70px;
+        color: whitesmoke;
+
+      }
+      #sun{
+        fill: white;
+      }
+      
+    
+
+      .nav__bottom{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        
+
+      }
+    
+      .power__Button{
+        display: block;
+        margin: auto;
+
+        
+
+      }
+      
+      #img__light--off{
+        fill:  orange;
+        margin-left: 43%;
+        margin-top: 23%;
+        
+
+        /* display: block;
+        margin: auto; */
+         ;
+      }
+       
       
