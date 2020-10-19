@@ -2,7 +2,8 @@
   --screenMinWidth: 410px;
   /* --screenMinHeight: 100vh; */
   --borderRadius: 2em;
-  --border: solid .8em #1f5060;
+  /* --border: solid .8em #1f5060; */
+  --border: solid 5px #1f5060;
   --backgroundColor: #f8fdff;
   --successTitlecolor: #a6b43f;
   --successTitleFontSize: 3em ;
