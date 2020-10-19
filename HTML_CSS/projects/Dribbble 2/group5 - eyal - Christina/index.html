@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script>
+        var music = new Audio('mp3/Future_Ft_The_Weeknd_-_Low_Life.mp3');
 
+        function playMusic() {
+        music.play();
+        }
+        function stopMusic() {
+        music.pause();
+        }
+    </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/range2.css">
+    <link rel="stylesheet" href="css/range.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -15,28 +24,28 @@
 
 
 <body>
-    <div class="center">
-        <!--   <img src="pics/51112759db8509332c3bac5e490bb1a3.webp" alt=""> -->
+    <div class="maxscreen center">
+        
         <div class="screen ">
 
             <div class="Ubar">
                 <div class="Ubar__Bleft center"><a href="#" class="button havltaSmallElements center "
                         style="--ShadowColor:var(--shadowMainSmallButton);--buttonSize:var(--small);">
                         <span class="material-icons">
-                            <!-- arrow_back -->  keyboard_backspace
-                            </span>
+                            <!-- arrow_back --> keyboard_backspace
+                        </span>
                     </a>
                 </div>
                 <div class="Ubar__text center">
                     <P>PALYING NOW</P>
                 </div>
                 <div class="Ubar__Bright center"><a href="#" class="button havltaSmallElements center "
-                        style="--ShadowColor:var(--shadowMainSmallButton);--buttonSize:var(--small);"> 
+                        style="--ShadowColor:var(--shadowMainSmallButton);--buttonSize:var(--small);">
                         <span class="material-icons">
                             menu
-                            </span>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
+                </div>
 
             </div>
 
@@ -64,23 +73,24 @@
                     style="--ShadowColor:var(--shadowMainBigButton);--buttonSize:var(--Big);">
                     <span class="material-icons">
                         fast_rewind
-                        </span>
-                </a>
-
-
-                <a href="#" class="Dmenu_Center_button button havlta center"
-                    style="--ShadowColor:var(--shadowMainBigButton);--buttonSize:var(--Big);">
-                    <span class="material-icons">
-                        play_arrow
                     </span>
                 </a>
 
 
+                <a href="#" class="Dmenu_Center_button button havlta center"
+                    style="--ShadowColor:var(--shadowMainBigButton);--buttonSize:var(--Big);" onclick="playMusic()">
+                    <span class="material-icons">
+                        play_arrow
+                    </span>
+
+                </a>
+
+
                 <a href="#" class="Dmenu_Right_button button havlta center"
-                    style="--ShadowColor:var(--shadowMainBigButton); --buttonSize:var(--Big);">
+                    style="--ShadowColor:var(--shadowMainBigButton); --buttonSize:var(--Big);" onclick="stopMusic()">
                     <span class="material-icons">
                         fast_forward
-                        </span>
+                    </span>
                 </a>
 
             </div>
@@ -90,6 +100,7 @@
 
         </div>
     </div>
+   
 </body>
 
 </html>
