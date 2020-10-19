@@ -14,10 +14,9 @@
     --boxShadow: 0px 0px 5px grey;
 }
 
-.screen {
+.mainScreen {
     box-shadow: var(--boxShadow);
-    /* border: 1px solid black; */
-    background-image: url(IMG/maps.PNG);
+    background-image: url(IMG/maps.jpg);
     height: var(--screenHeight);
     border-radius: var(--borderRadius);
     background-size: cover;
@@ -64,11 +63,27 @@
 
 .screenButtons__left {
     background-color: var(--colorWhite);
+    box-shadow: 1px 1px 5px black;
+    transition: width .3s;
+    transition-timing-function: cubic-bezier(.03, .03, .98, .97);
+}
+
+.screenButtons__left:hover {
+    box-shadow: 1px 1px 7px var(--colorViolet);
+    width: 80%;
 }
 
 .screenButtons__rigth {
     background-color: var(--colorViolet);
     color: var(--colorWhite);
+    box-shadow: 1px 1px 5px black;
+    transition: width .3s;
+    transition-timing-function: cubic-bezier(.03, .03, .98, .97);
+}
+
+.screenButtons__rigth:hover {
+    box-shadow: 1px 1px 7px var(--colorViolet);
+    width: 80%;
 }
 
 .mark {
@@ -83,17 +98,69 @@
 }
 
 .youHere {
-    width: 5%;
+    width: 4%;
+    height: 10%;
     text-align: center;
     font-weight: var(--fontWeight);
     font-size: 1.1rem;
+    background-color: rgba(161, 159, 159, 0.472);
+    border-radius: 50%;
     position: relative;
-    top: 15%;
-    left: 42.5%;
+    top: -3%;
+    left: 38%;
+    animation: here 3s ease-in-out infinite;
+}
+
+@keyframes here {
+    0% {
+        background-color: rgba(161, 159, 159, 0.472);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.048);
+    }
+    100% {
+        background-color: rgba(161, 159, 159, 0.472);
+    }
 }
 
 .youHere__arrow {
     color: red;
+}
+
+.direction {
+    width: 3.5%;
+    position: relative;
+    top: -4.5%;
+    left: 40%;
+    animation: direction 9s ease-in-out infinite;
+}
+
+.direction>img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+@keyframes direction {
+    0% {
+        top: -4.5%;
+        left: 40%;
+    }
+    25% {
+        top: 9%;
+        left: 43%;
+    }
+    50% {
+        top: 14%;
+        left: 50%;
+    }
+    75% {
+        top: 15%;
+        left: 56%;
+    }
+    100% {
+        top: 10%;
+        left: 59%;
+    }
 }
 
 .screenSecond {
@@ -105,6 +172,25 @@
     position: relative;
     top: 50%;
     margin: 0;
+    transition: height 1s;
+    transition-timing-function: 1s cubic-bezier(.52, .81, .87, .5);
+    animation: screen 3s ease-in-out;
+}
+
+.screenSecond:hover {
+    height: 28vh;
+}
+
+@keyframes screen {
+    0% {
+        border-radius: 0%;
+        height: 0vh;
+    }
+    100% {
+        height: 22vh;
+        border-top-right-radius: var(--borderRadius);
+        border-top-left-radius: var(--borderRadius);
+    }
 }
 
 .screenSecond__info {
@@ -180,6 +266,47 @@
         grid-template-columns: 50% 50%;
         width: 40%;
     }
+    .youHere {
+        width: 10%;
+        height: 10%;
+        font-size: 1.3rem;
+        top: 15%;
+        left: 38%;
+    }
+    .mark {
+        position: relative;
+        top: 25%;
+        left: 60%;
+    }
+    .mark>img {
+        height: 4%;
+        width: 4%;
+    }
+    .direction {
+        width: 6%;
+    }
+    @keyframes direction {
+        0% {
+            top: 12%;
+            left: 40%;
+        }
+        25% {
+            top: 20%;
+            left: 43%;
+        }
+        50% {
+            top: 25%;
+            left: 50%;
+        }
+        75% {
+            top: 20%;
+            left: 56%;
+        }
+        100% {
+            top: 12%;
+            left: 59%;
+        }
+    }
     .screenSecond__info--hotel {
         font-size: 1.8rem;
         position: relative;
@@ -197,7 +324,7 @@
     }
     .screenSecond__info--go>img {
         top: 22%;
-        width: 30%;
+        width: 35%;
         height: 70%;
     }
     .screenFooter {
@@ -213,6 +340,20 @@
         display: grid;
         grid-template-columns: 50% 50%;
         width: 70%;
+    }
+    .youHere {
+        width: 12%;
+        height: 10%;
+        font-size: 0.7rem;
+        top: 12%;
+        left: 36%;
+    }
+    .mark>img {
+        height: 6%;
+        width: 6%;
+    }
+    .direction {
+        width: 11%;
     }
     .screenSecond__info--hotel {
         font-size: 1.2rem;
