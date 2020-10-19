@@ -1,0 +1,17 @@
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: salmon;
+}
+.item h1 {
+  color: red;
+}
+.item h3 {
+  color: skyblue;
+}
+.item:hover {
+  box-shadow: slategray 12px 12px 12px;
+}
+.item--small {
+  color: springgreen;
+}
