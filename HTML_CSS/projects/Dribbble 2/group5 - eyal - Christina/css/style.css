@@ -9,7 +9,10 @@
 
 
 }
-
+html{
+    color: #84888B;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 
  /* div{
@@ -49,8 +52,7 @@
     grid-template-columns: 1fr 2fr 1fr;
 }
 .Ubar__text{
-    color: #84888B;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
     font-weight: bold;
     font-size: 0.8rem;
 }
@@ -59,8 +61,20 @@
    
 }
 
+.container>h1{
+    margin-top: 10%;
+    /* font-weight: bold; */
+    font-size: 1.8em;
+    color: #e7e7e7;
+}
 
 
+.container>h2{
+    margin-top: 5%;
+    /* font-weight: bold; */
+    font-size: 1em;
+    /* color: #e7e7e7; */
+}
 .circle>img{
     margin: auto;
     width: 200px;
@@ -70,6 +84,10 @@
     border: solid 6px rgba(0, 0, 0, 0.486);
     border-radius: 100px;
     background-size: 110% 100%;
+}
+
+.InputPosition{
+    margin-top: 15%;
 }
 
 /* .tavlit (--test){
