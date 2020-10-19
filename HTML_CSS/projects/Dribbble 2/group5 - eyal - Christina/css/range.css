@@ -1,0 +1,64 @@
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+/* כרום */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  box-shadow: inset -5px -6px 9px -3px #424649;
+  background: linear-gradient(to right, #CE5937 0%, #F9FC59 50%, #0AC51A 100%);
+   border-radius: 5px;
+  border-bottom: 2px solid  #3f4244c7;
+  border-left: 2px solid  #3f4244c7;
+}
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d,
+    inset 18px 13px 23px -11px rgba(0,0,0,0.32);
+   
+    height: 30px;
+    width: 30px;
+
+    border-radius: 100px;
+    border: 7px solid  #34393E;
+
+    background: linear-gradient(135deg, #AA8416 0%, #B1961C 50%, #F2F562 100%);
+    cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+
+/* דפדפן פוקוס */
+
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 2.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #3C4043, 0px 0px 1px #0d0d0d;
+  background: linear-gradient(to right, #CE5937 0%, #F9FC59 50%, #0AC51A 100%);
+  border-radius: 100px;
+  border: 5px solid #050809;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d,
+  inset 18px 13px 23px -11px rgba(0,0,0,0.32);
+  border: 12px solid  #34393E;
+  height: 18px;
+  width: 18px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #AA8416 0%, #B1961C 50%, #F2F562 100%);
+  cursor: pointer;
+  
+}
+
+

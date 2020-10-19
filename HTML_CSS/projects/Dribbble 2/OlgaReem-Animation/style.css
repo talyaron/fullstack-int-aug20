@@ -1,0 +1,102 @@
+body{
+  background-color: rgb(211, 202, 219);
+}
+.phone{
+    background-color: rgb(41, 31, 41);
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(234, 241, 238);
+    height: 630px;
+    width: 300px;
+    border-radius: 50px;
+    margin: auto;}
+    .header{
+        height: 50px;
+        width: 300px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        
+        
+    }
+    .arrow {
+        border: solid orange;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+      }
+      .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+    .back__button{
+       
+        display: inline-block;
+        color: orange;
+         
+        margin-top:12%;
+        margin-left:7%;
+        font-size: 30px;
+  }
+  .nav__top{
+    display: inline-block;
+    margin-left: 20%;
+    text-align: center;
+    
+     color: rgba(245, 245, 245, 0.082);
+    margin-top: 10%;
+    width: 35%;
+    background-color:rgb(53, 39, 53) ;
+    padding: 5px;
+    
+    border-radius: 30px;
+    color: #fff;
+
+  }
+    
+    span{
+font-size: 15px;
+    }
+
+        
+    #thermometer{
+      fill: rgb(234, 241, 238);
+     
+    }
+    #Floor__Lamp {
+      fill: rgb(53, 39, 53);
+    }
+    #Integrated__Lighting{
+     fill:  rgb(53, 39, 53);
+    }
+    
+    
+   
+      .Air__Conditioner{
+        color: rgb(225, 222, 228);
+       display: flex;
+       /* justify-content:start ; */
+        /* margin-left: 32%;
+        margin-top: 10%;
+        width: 35%;
+        */
+        padding: 5px;
+        
+      }
+      .Floor__Lamp{
+        color: rgb(53, 39, 53);
+       display: flex;
+       padding: 5px; 
+      }
+      .Integrated__Lighting{
+        color: rgb(53, 39, 53);
+        display: flex;
+        padding: 5px; 
+      }
+      .card_devices{
+        display: flex;
+        justify-content:space-between;
+        margin-top: 10%;
+
+      }
+      
+      

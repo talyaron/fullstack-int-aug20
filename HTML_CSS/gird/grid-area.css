@@ -1,31 +1,23 @@
-.newsPaper{
-
-    grid-template-areas: 
-    ". secondary secondary" 
-    "primary primary ."
-    ;
-    
+.newsPaper {
+    grid-template-areas: ". secondary secondary" "primary primary primary";
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
-    gap:10px;
-    
-
-    
+    gap: 10px;
 }
 
-.primary{
+.primary {
     grid-area: primary;
-    
 }
 
-.secondary{
+.secondary {
     grid-area: secondary;
 }
-article{
+
+article {
     background-color: rgb(245, 245, 245);
 }
-.newsPaper img{
+
+.newsPaper img {
     width: 100%;
     max-height: 400px;
 }

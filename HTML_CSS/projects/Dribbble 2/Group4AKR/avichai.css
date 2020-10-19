@@ -1,0 +1,565 @@
+:root {
+    /* COLOR */
+    --colorViolet: rgb(127, 33, 204);
+    --colorWhite: white;
+    --colorYellow: yellow;
+    /* FONT */
+    --fontFamily: 'Nunito Sans', sans-serif;
+    --fontWeight: bold;
+    /* SCREEN */
+    --borderRadius: 20px;
+    /* --screenWidth: 90%; */
+    --screenHeight: 70vh;
+    /* SHADOW */
+    --boxShadow: 0px 0px 5px black;
+}
+
+body {
+    font-family: var(--fontFamily);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--borderRadius);
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    height: 42.5rem;
+    box-shadow: var(--boxShadow);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--borderRadius);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "imgGallery info" "pageFooter pageFooter";
+    background-image: linear-gradient(white, white, rgb(250, 250, 250));
+}
+
+.page__imgGallery {
+    grid-area: imgGallery;
+    height: 37rem;
+    background-image: url("IMG/dog1.jpg");
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+    background-position: center;
+    background-size: cover;
+    animation: imgGallery 25s ease-in 0ms infinite normal;
+}
+
+@keyframes imgGallery {
+    0% {
+        background-image: url("IMG/dog1.jpg");
+    }
+    20% {
+        background-image: url("IMG/dog2.png");
+    }
+    40% {
+        background-image: url("IMG/dog3.jpg");
+    }
+    60% {
+        background-image: url("IMG/dog4.png");
+    }
+    80% {
+        background-image: url("IMG/dog5.jpg");
+    }
+}
+
+.page__imgGalleryLine {
+    width: 85%;
+    margin: auto;
+    height: 7%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.page__imgGalleryLine>div {
+    width: 45%;
+    height: 15%;
+    background-color: white;
+    margin-right: 10px;
+    opacity: 0.3;
+}
+
+#first {
+    animation: first 3s ease-in-out 0s 1 normal;
+}
+
+@keyframes first {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+#second {
+    animation: second 5s ease-in-out 2.5s 1 normal;
+}
+
+@keyframes second {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+#third {
+    animation: third 5s ease-in-out 6s 1 normal;
+}
+
+@keyframes third {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+#fourth {
+    animation: fourth 5s ease-in-out 11s 1 normal;
+}
+
+@keyframes fourth {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+#fifth {
+    animation: fifth 5s ease-in-out 16s 1 normal;
+}
+
+@keyframes fifth {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.imgGallery__text {
+    position: relative;
+    color: white;
+    width: 85%;
+    height: 10%;
+    margin: auto;
+    top: 2%;
+}
+
+.imgGallery__text>h1 {
+    font-size: 1.5rem;
+    display: inline;
+}
+
+.imgGallery__text>h5 {
+    opacity: 0.6;
+    margin-top: 0;
+}
+
+.imgGallery__text>img {
+    width: 10%;
+    float: right;
+    position: relative;
+    bottom: 4.5rem;
+    display: inline;
+}
+
+.imgGallery__play {
+    width: 3.5%;
+    height: 9%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20%;
+    left: 3.5%;
+    background-color: rgb(101, 59, 223);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgGallery__playButton {
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 10px 0px 10px 20px;
+    border-color: transparent transparent transparent white;
+    position: relative;
+}
+
+.page__info {
+    grid-area: info;
+    height: 37rem;
+}
+
+#runningDog {
+    width: 10%;
+    height: 7%;
+    position: relative;
+    top: 1%;
+    left: 0%;
+    animation: arc 6s linear infinite;
+}
+
+@keyframes arc {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.page__infoTextTop {
+    width: 100%;
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.page__infoGoPro {
+    width: 19%;
+    position: absolute;
+    right: 16%;
+    bottom: 58%;
+    height: 8%;
+    background-color: rgb(253, 237, 0);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+
+.page__infoGoProMobile,
+.page__infoGoMapMobile,
+.page__infoMoreMobile {
+    display: none;
+}
+
+.page__infoGoMap {
+    width: 14%;
+    position: absolute;
+    right: 35.5%;
+    bottom: 58%;
+    height: 8%;
+    background-color: rgb(101, 59, 223);
+    color: white;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.page__infoMore {
+    width: 14%;
+    position: absolute;
+    right: 1.5%;
+    bottom: 58%;
+    height: 8%;
+    background-color: rgb(101, 59, 223);
+    color: white;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.page__infoTextBottom {
+    width: 70%;
+    height: 20%;
+    margin-left: 3%;
+    font-size: 2rem;
+    font-weight: 800;
+    position: relative;
+    top: 30%;
+}
+
+.page__infoListenBox {
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    width: 50%;
+    height: 25%;
+    background-color: rgb(255, 229, 204);
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    border: 1px solid rgb(206, 184, 163);
+}
+
+.infoListenBox__content {
+    width: 70%;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.infoListenBox__loader {
+    margin-top: 2%;
+    border: 5px solid rgb(255, 229, 204);
+    border-top: 5px solid orange;
+    border-right: 5px solid orange;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.pageFooter {
+    grid-area: pageFooter;
+    position: relative;
+    top: 15px;
+}
+
+.pageFooter__icons {
+    width: 85%;
+    margin: auto;
+    margin-top: 0;
+    height: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pageFooter__icons>img {
+    width: 4%;
+}
+
+@media only screen and (max-width:1150px) {
+    .imgGallery__playButton {
+        border-width: 8px 0px 8px 15px;
+    }
+    .page__infoGoPro,
+    .page__infoGoMap,
+    .page__infoMore {
+        display: none;
+    }
+    .page__infoGoProMobile {
+        width: 12%;
+        position: absolute;
+        right: 19%;
+        bottom: 60%;
+        height: 5%;
+        background-color: rgb(253, 237, 0);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+    .page__infoGoMapMobile {
+        width: 12%;
+        position: absolute;
+        right: 35%;
+        bottom: 60%;
+        height: 5%;
+        background-color: rgb(101, 59, 223);
+        color: white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+    .page__infoMoreMobile {
+        width: 12%;
+        position: absolute;
+        right: 2.5%;
+        bottom: 60%;
+        height: 5%;
+        background-color: rgb(101, 59, 223);
+        color: white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .imgGallery__text>img {
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .page {
+        grid-template-columns: 1fr;
+        grid-template-areas: "imgGallery imgGallery" "info info" "pageFooter pageFooter";
+    }
+    .page__imgGallery {
+        height: 25rem;
+    }
+    .imgGallery__text {
+        width: 85%;
+        top: 1%;
+        margin: auto;
+    }
+    .imgGallery__text>h5 {
+        margin-top: -1%;
+    }
+    .imgGallery__text>img {
+        width: 13%;
+        bottom: 4.2rem;
+    }
+    .imgGallery__play {
+        bottom: 45%;
+        left: 10%;
+        width: 10%;
+        height: 7%;
+    }
+    .imgGallery__playButton {
+        border-width: 8px 0px 8px 16px;
+    }
+    .page__info {
+        height: 12rem;
+    }
+    #runningDog {
+        width: 6%;
+        top: 20%;
+    }
+    .page__infoTextTop {
+        width: 85%;
+        margin: auto;
+        margin-top: -2%;
+    }
+    .page__infoTextTop>h1 {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+    .page__infoTextTop>span {
+        font-weight: bold;
+        opacity: 0.7;
+    }
+    .page__infoGoProMobile {
+        width: 15%;
+        position: absolute;
+        right: 24%;
+        bottom: 25%;
+        height: 5%;
+        background-color: rgb(253, 237, 0);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+    .page__infoGoMapMobile {
+        width: 20%;
+        bottom: 25%;
+        right: 40%;
+    }
+    .page__infoMoreMobile {
+        width: 20%;
+        bottom: 25%;
+    }
+    .page__infoGoPro {
+        display: none;
+    }
+    .page__infoGoMap {
+        display: none;
+    }
+    .page__infoMore {
+        display: none;
+    }
+    .page__infoTextBottom {
+        width: 85%;
+        margin: auto;
+        margin-top: 5%;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .page__infoListenBox {
+        width: 90%;
+        height: 12%;
+        position: absolute;
+        bottom: 5%;
+        left: 4%;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+    .infoListenBox__content {
+        width: 85%;
+        position: relative;
+        display: block;
+        align-items: center;
+    }
+    .infoListenBox__content>h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: auto;
+        margin-top: 1%;
+        float: left;
+    }
+    .infoListenBox__loader {
+        margin-left: 80%;
+        width: 20px;
+        height: 20px;
+        position: relative;
+    }
+    .pageFooter {
+        width: 100%;
+        background: rgb(250, 250, 250);
+        z-index: 1;
+    }
+    .pageFooter__icons {
+        position: relative;
+        width: 80%;
+        top: 1%;
+        margin: auto;
+    }
+    .pageFooter__icons>img {
+        width: 10%;
+        height: 80%;
+    }
+}
