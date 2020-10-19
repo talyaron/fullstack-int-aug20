@@ -1,0 +1,22 @@
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: salmon;
+
+    h1 {
+        color: red;
+    }
+
+    h3{
+        color: skyblue;
+    }
+
+    &:hover{
+        box-shadow: slategray 12px 12px 12px;
+
+    }
+    &--small{
+        color: springgreen;
+    }
+
+}

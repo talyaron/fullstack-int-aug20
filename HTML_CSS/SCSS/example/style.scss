@@ -1,0 +1,23 @@
+.item{
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+
+    h1{
+        color: red;
+    }
+
+    p{
+        color: blue;
+    }
+
+    &:hover{
+        box-shadow: 4px 4px 12px gray;
+    }
+
+    &--small{
+        width: 30px;
+        height: 30px;
+        background-color: blanchedalmond;
+    }
+}
