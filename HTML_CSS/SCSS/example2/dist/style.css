@@ -1,0 +1,22 @@
+.box {
+  border-radius: 10px;
+  background-color: blueviolet;
+  padding: 10px;
+  width: 200px;
+}
+.box > img {
+  width: 100px;
+}
+.box p {
+  font-size: 20px;
+  color: white;
+}
+.box .gold {
+  color: gold;
+}
+.box > div {
+  background: green;
+}
+.box > div > div {
+  color: goldenrod;
+}
