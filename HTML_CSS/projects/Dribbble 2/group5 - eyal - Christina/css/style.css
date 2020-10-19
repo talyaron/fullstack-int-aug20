@@ -117,8 +117,9 @@ width: 80%;
     
     }
 
-  /*   .Dmenu_Center_button:active{
-        content:;
-    } */
+   
+    /* .aaa { display: none; }
+    .Dmenu_Center_button:active  + .aaa { display: block; }
+     */
 
 
