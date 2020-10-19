@@ -53,10 +53,14 @@ justify-content: space-between;
 
 }
 
-/* .successPage__closeIco{
-  display: flex;
-  justify-items: self-end;
+/* .successPage__closeIcon{
+  padding-bottom: 2em;
 } */
+
+.successPage__closeIcon:hover{
+  /* transform: rotate(30deg); */
+cursor: pointer;
+}
 
 .successPage__pic{
   background-image: url(./img/screen3.png);
@@ -77,14 +81,16 @@ justify-content: space-between;
   display: block;
   margin: auto;
   position: relative;
-  top: -5px;
+  top: 380px;
   left: 58px;
   /* width: 300px; */
   /* z-index: -1; */
  /* */
 
    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-   animation:grow  7s linear ;
+   animation:grow  4s  linear  ;
+   animation-delay:2.5s;
+   animation-fill-mode: forwards;
 }
 
 @keyframes grow{
@@ -124,15 +130,24 @@ justify-content: space-between;
   left: 25px;
   z-index: 1;
 
-  animation:hands  1.5s linear ;
+  animation:hands  1s linear ;
   animation-fill-mode: forwards;
 
   top: -675px;
   left:25px;
   transform: rotate(15deg);
   transform-origin: top left;
+  /* animation-delay:1.5s; */
   
 }
+
+/* .successPage__pic :hover{  
+  animation:hands  1s linear ;
+  
+  animation-fill-mode: forwards;
+
+  
+} */
 
 @keyframes hands{
 
@@ -143,22 +158,45 @@ justify-content: space-between;
   to {  top: -675px;
     left:25px;
     transform: rotate(0deg);}
-
-  /* from {top:-672px; left: 10px;}
-  to {top:-672px; left: 25px;} */
-
-
-/* 
-  0%   {top:490px; left: 58px;}
-  10%  {top:480px; left: 58px;}
-  20%  {top:470px; left: 58px;}
-  30%  {top:460px; left: 58px;}
-  40%  {top:450px; left: 58px;}
-  60%  {top:490px; left: 58px;}
-  70%  {top:300px; left: 58px;}
-  80%  {top:490px; left: 58px;}
-  100% {top:490px; left: 58px;} */
+   
 }
+
+.successPage__pic img.water
+{
+  display: block;
+  margin: auto;
+  position: relative;
+  width:290px;
+  top: -1000px;
+  left:180px;
+  z-index: 1;
+  /* display: none;  */
+  /* animation:water  1.5s linear ; */
+  animation: water 0.5s 12;
+  /* infinite */
+  animation-delay:1.2s;
+  animation-fill-mode: forwards;
+  opacity:0;
+  /* top: -675px;
+  left:25px; */
+  /* transform: rotate(15deg);
+  transform-origin: top left; */
+
+}
+
+
+@keyframes water{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes flickerAnimation {
+
+}
+
+
+
 
 .successPage__text{
   text-align: center;
@@ -198,7 +236,7 @@ button{
   align-self: center;
   outline: none;
   cursor: pointer;
-font-size: 1.3rem;
+  font-size: 1.3rem;
 
   margin: 10em auto 1em auto;
   /* margin: 2em auto; */
@@ -210,6 +248,10 @@ font-size: 1.3rem;
 
 
 }
+button:hover{
+  transform: scale(1.05); 
+}
+
 
 
 
