@@ -50,7 +50,6 @@ html{
 
 }
 .Ubar{
-    margin-top: 10%;
     align-self: center;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -61,19 +60,29 @@ html{
     font-size: 0.8rem;
 }
 .container{
-    margin-top: 10%;
     align-self: flex-start;
-   
+    overflow: hidden;
 }
-
-.container>h1{
+.midconteaimer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.container>.textdiv>h1{
     margin-top: 10%;
     font-size: 1.8em;
     color: #e7e7e7;
 }
+.line{
+    line-height: 4;
+    width: 90%;
+    border: 1px solid #363a3ea2;
+    background: #363a3ea2;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 15px;
+}
 
-
-.container>h2{
+.container>.textdiv>h2{
     margin-top: 5%;
     font-size: 1em;
 }
@@ -88,23 +97,13 @@ html{
     background-size: 110% 100%;
 }
 
-.InputPosition{
-    margin-top: 20%;
+.container>.textdiv>.InputPosition{
+    margin-top: 10%;
     margin-bottom: 10%;
 width: 80%;
 }
 
-@media only screen and (min-width: 750px) {
-    .container{
-        margin-top: 5%;
-       
-    }
-
-    .container>h1{
-        margin-top: 3%;
-       
-    }
-    
+@media only screen and (min-width: 820px) {
     .circle>img{
         
         width: 300px;
@@ -114,7 +113,6 @@ width: 80%;
 
     .InputPosition{
         margin-top: 10px;
-        margin-bottom: 5%;
     width: 80%;
     }
 
