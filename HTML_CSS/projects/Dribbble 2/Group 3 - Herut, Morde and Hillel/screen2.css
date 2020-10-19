@@ -1,8 +1,8 @@
 :root {
   --screenMinWidth: 410px;
-  /* --screenMinHeight: 730px; */
+  /* --screenMinHeight: 100vh; */
   --borderRadius: 2em;
-  --border: solid 5px #1f5060;
+  --border: solid .8em #1f5060;
   --backgroundColor: #f8fdff;
   --successTitlecolor: #a6b43f;
   --successTitleFontSize: 3em ;
@@ -59,13 +59,105 @@ justify-content: space-between;
 } */
 
 .successPage__pic{
-  background-image: url(./img/screen2.png);
+  background-image: url(./img/screen3.png);
+  position: relative;
   width: 100%;
   height: 400px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  /* overflow: hidden; */
+  overflow: hidden;
+  /* z-index: -2; */
   
+}
+
+.successPage__pic .tree {
+  /* content: url(./img/tree.png); */
+  display: block;
+  margin: auto;
+  position: relative;
+  top: -5px;
+  left: 58px;
+  /* width: 300px; */
+  /* z-index: -1; */
+ /* */
+
+   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+   animation:grow  7s linear ;
+}
+
+@keyframes grow{
+  from {top:380px; left: 58px;}
+  to {top:-5px; left: 58px;}
+/* 
+  0%   {top:490px; left: 58px;}
+  10%  {top:480px; left: 58px;}
+  20%  {top:470px; left: 58px;}
+  30%  {top:460px; left: 58px;}
+  40%  {top:450px; left: 58px;}
+  60%  {top:490px; left: 58px;}
+  70%  {top:300px; left: 58px;}
+  80%  {top:490px; left: 58px;}
+  100% {top:490px; left: 58px;} */
+}
+
+.successPage__pic img.ground {
+  display: block;
+  margin: auto;
+  position: relative;
+  width:320px;
+  /* height: 70px; */
+  top: -60px;
+  left: -5px;
+  z-index: 1;
+  
+}
+
+.successPage__pic img.hands
+{
+  display: block;
+  margin: auto;
+  position: relative;
+  width:290px;
+  top: -672px;
+  left: 25px;
+  z-index: 1;
+
+  animation:hands  1.5s linear ;
+  animation-fill-mode: forwards;
+
+  top: -675px;
+  left:25px;
+  transform: rotate(15deg);
+  transform-origin: top left;
+  
+}
+
+@keyframes hands{
+
+
+  from {   top: -675px;
+    left:25px;
+    transform: rotate(15deg); }
+  to {  top: -675px;
+    left:25px;
+    transform: rotate(0deg);}
+
+  /* from {top:-672px; left: 10px;}
+  to {top:-672px; left: 25px;} */
+
+
+/* 
+  0%   {top:490px; left: 58px;}
+  10%  {top:480px; left: 58px;}
+  20%  {top:470px; left: 58px;}
+  30%  {top:460px; left: 58px;}
+  40%  {top:450px; left: 58px;}
+  60%  {top:490px; left: 58px;}
+  70%  {top:300px; left: 58px;}
+  80%  {top:490px; left: 58px;}
+  100% {top:490px; left: 58px;} */
 }
 
 .successPage__text{
