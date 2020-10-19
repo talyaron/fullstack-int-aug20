@@ -12,13 +12,8 @@
 html{
     color: #84888B;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-body {
     background-color: #181819;
 }
-
-
  /* div{
       border:  1px solid burlywood;
   }
@@ -32,19 +27,20 @@ body {
 }
 
 
-
-
 .screen{
+   /*  margin-top: 10%; */
     display: grid;
     grid-template-columns: 1fr;   
     grid-template-rows: 1fr 5fr 1fr;
-    max-width: 355px;
+   /*  max-width: 355px;
+    height: 700px; */
+    width:50%;
     height: 700px;
     
     background-image: linear-gradient(140deg ,#34393E,#18191D );  /* #17191C */
 
 /* background: #25282C; */
-    margin: auto;
+    /* margin: auto; */
     border-radius: 50px;
     border: 5px solid #2C3036;
     position: relative;
@@ -91,7 +87,7 @@ body {
 }
 
 .InputPosition{
-    margin-top: 15%;
+    margin-top: 30px;
 width: 80%;
 }
 
@@ -111,13 +107,18 @@ width: 80%;
 }
  
 .Dmenu{
+    align-items: flex-end;
     grid-row: 3;
     display: flex;
-    margin-bottom: 20%;
+    margin-bottom: 40px;
     margin-left: 10px;
-    align-self:end;
+   /*  align-self:end; */
     justify-content: space-evenly ;
     
     }
+
+  /*   .Dmenu_Center_button:active{
+        content:;
+    } */
 
 
