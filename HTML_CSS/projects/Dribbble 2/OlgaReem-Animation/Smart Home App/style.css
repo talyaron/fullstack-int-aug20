@@ -1,0 +1,245 @@
+body{
+    background-color: #e3dfdb;
+}
+.container{
+    max-width: 980px;
+    height: 80%px;
+    border-radius: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: auto;
+    background-color: #311a2e;
+    text-align: center;
+    border: 0.8vw solid #fff;
+    }
+.nav__top{
+    color: #6a5968;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 35px;
+    font-size: 14px;
+    margin: 0px 5%;
+}
+.button{
+    background-color: #311a2e;
+    padding: 2px 6px;
+    width: 75px;
+    border-radius: 8px;
+    }
+.button:hover{
+    background-color: #ffb600;
+    padding: 2px 6px;
+    width: 75px;
+    border-radius: 10px;
+    color: #110c00;
+    transition: all .6s; 
+}
+.card__top{
+    display: flex;
+    margin-top: 15px;
+}
+.text__card--top{
+    height: 40px;
+    width: 100px;
+    padding-top: 5px;
+    }
+.card__airLight--bottom{
+display: flex;
+justify-content: start;
+padding-top: 1px;
+transition: all .5s;
+    }
+.card_devices{
+    background-color: #f2f2f2;
+    max-width: 96%;
+    margin: auto;
+    border-radius: 25px;
+    text-align: left;   
+    padding-bottom: 15%;
+    color: #311a2e;
+}
+p{
+    font-size: 23px;
+    padding: 30px 15px 0px 15px;
+    
+}
+.title__bold{
+    font-weight: bold;
+}
+.card__wrap{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 3px;
+    line-height: 18px;
+   }
+   .card__inside--wrap{
+       padding: 8px 8px 15px 8px;
+   }
+   .card__air--center{
+       display: flex;
+       padding-top: 1px;
+       color: transparent;
+       transition: all .5s;
+       }
+      
+    #img__wind{
+        width: 0.8em;
+        opacity: 0;
+        transition: all .5s;
+    }
+    .air__temp{
+        font-size: 0.8em;
+    }
+   #img__off{
+       padding-left: 15px;
+   }
+   #img__therm,
+   #img__lamp,
+   #img__light,
+   #img__TV{
+   fill: #311a2e;
+   }
+
+   .card__light--center,
+   .card__TV--center,
+   .card__lamp--center{
+    padding-top: 1px; 
+    font-size: 0.8em;
+    color: transparent;
+    transition: all .5s;
+   }
+
+
+.nav__bottom{
+    display: flex;
+    justify-content: space-around;
+    fill:#7e707c;
+    stroke: #7e707c;
+    stroke-width: 5%;
+    padding: 30px;
+    }
+    #img__home:hover, #img__heart:hover, #img__item:hover, #img__settings:hover{
+        fill:#ffb600;
+        stroke: #ffb600;
+        
+        }
+
+#img__light--minus,
+#img__light--plus,
+#img__air--minus,
+#img__air--plus{
+    fill: transparent;
+    transition: all .5s;
+}
+#img__light--off{
+    fill: #311a2e;
+}
+
+
+.card{
+    min-width: 25%;
+    height: 150px;
+    background-color: #e8e8e8;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    transition: all .3s;
+}
+.card:hover{
+    background-color: #fff;
+    border: 1px solid #fff;
+    transition: all .5s; 
+    height: 170px;
+}
+.card:hover .card__air--center{
+    padding-top: 10px;
+    color:  #311a2e;
+    transition: all .5s; 
+    }
+.card:hover .air__temp{
+font-size: 3em;
+transition: all .5s; 
+}
+.card:hover #img__wind{
+    width: 2em;
+    opacity: 100;
+    fill: #311a2e;
+    transition: all .5s;
+   
+}
+.card:hover .card__airLight--bottom{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    transition: all .5s;
+        }
+        #img__air--off{
+            fill: #311a2e;
+            transition: all .5s;  
+        }
+.card:hover #img__air--minus, .card:hover #img__air--plus, .card:hover #img__air--off{
+    fill:  #ffb600;
+    transition: all .5s;
+}
+
+.lamp:hover .card__lamp--center{
+    padding-top: 10px;
+    color:  #311a2e;
+    font-size: 3em;
+    transition: all .5s; 
+   }
+.lamp:hover #img__lamp--off{
+    fill:  #ffb600;
+    transition: all .5s;
+}
+.lamp:hover .card__lamp--bottom{
+    padding-top: 20px;
+    transition: all .5s;
+}
+.light:hover .card__light--center{
+    padding: 20px 0px 8px 0px;
+    color:  #311a2e;
+    font-size: 3em;
+    transition: all .5s; 
+   }
+
+.light .card__light--bottom{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    transition: all .5s;
+}
+.light:hover #img__light--minus, .light:hover #img__light--plus, .card:hover #img__light--off{
+    fill:  #ffb600;
+    transition: all .5s;
+}
+.TV:hover .card__TV--center{
+    padding-top: 10px;
+    color:  #311a2e;
+    font-size: 3em;
+    transition: all .5s; 
+}
+.TV:hover #img__TV--off{
+    fill:  #ffb600;
+    transition: all .5s;
+}
+.TV:hover .card__TV--bottom{
+    padding-top: 20px;
+    transition: all .5s;
+}
+
+
+@media only screen and (max-width:  480px) {
+    .card{
+        width: 40%;;
+        min-height: 130px;
+    }  
+}
+@media only screen and (max-width: 480px) {
+    .card{
+        min-width: 110px;
+        min-height: 110px;
+    }  
+}
