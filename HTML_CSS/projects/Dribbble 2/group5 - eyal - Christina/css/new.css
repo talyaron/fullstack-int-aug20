@@ -1,0 +1,128 @@
+:root {
+    --shadowMainBigPic: #383c3f;
+    --shadowMainSmallPic: 1;
+    --shadowMainBigButton: #24292D;
+    --shadowMainSmallButton: #3E454B;
+    --degrees: 30deg;
+}
+
+.center {
+    display: grid;
+    place-items: center;
+}
+
+.screen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    max-width: 355px;
+    height: 700px;
+    background-image: linear-gradient(140deg, #34393E, #18191D);
+    margin: auto;
+    border-radius: 50px;
+    border: 5px solid #2C3036;
+    position: relative;
+}
+
+.Ubar {
+    align-self: center;
+    display: grid;
+    grid-template-columns: auto 2fr auto;
+}
+
+.Ubar__text {
+    color: #84888B;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
+
+.container {
+    align-self: flex-start;
+}
+
+.circle>img {
+    margin: 90px;
+    width: 150px;
+    height: 150px;
+    border: solid 6px rgba(0, 0, 0, 0.486);
+    border-radius: 100px;
+    background-size: 110% 100%;
+}
+
+.havlta {
+    box-shadow: -8px -7px 10px 1px var(--ShadowColor), 10px 10px 10px #181819;
+}
+
+.havltaSmallElements {
+    box-shadow: -4px -3px 5px 1px var(--ShadowColor), 5px 5px 5px #181819;
+}
+
+.secBar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.Bleft__text {
+    text-align: left;
+    color: white;
+    font-style: normal;
+    height: 200px;
+}
+
+.bottom {
+    display: flex;
+    max-height: 100%;
+    max-width: 100%;
+    align-self: auto;
+}
+
+@media screen and (max-width: 998px) {
+    body {
+        background-color: #181819;
+    }
+}
+
+h3 {
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 10px;
+    color: gray;
+    margin: 5px 0px 0px 0.2px;
+}
+
+p {
+    text-align: left;
+}
+
+.slidecontainer {
+    max-width: 150px;
+    align-items: center;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
