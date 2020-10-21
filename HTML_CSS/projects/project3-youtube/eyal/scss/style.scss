@@ -1,0 +1,20 @@
+/* ניסיון */
+.MainScrean {
+    background-color: black;
+    max-width: 2200px;
+    /* max-content; */
+    height: 900px;
+    /*  max-content; */
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 1fr 5fr;
+
+    @import "UpperMenu";
+    @import "LeftMenu";
+    @import "MainContainer";
+
+
+    
+   
+
+}
