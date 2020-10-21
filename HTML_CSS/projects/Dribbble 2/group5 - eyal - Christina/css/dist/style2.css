@@ -6,6 +6,11 @@
   --degrees:30deg;
 }
 
+.center {
+  display: grid;
+  place-items: center;
+}
+
 html {
   color: #84888B;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -16,11 +21,6 @@ html {
      border:  1px solid burlywood;
  }
 */
-.center {
-  display: grid;
-  place-items: center;
-}
-
 .maxscreen {
   max-width: 900px;
   min-width: 455px;

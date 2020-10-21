@@ -9,6 +9,12 @@
 
 
 }
+
+.center {
+    display: grid;
+    place-items: center;
+}
+
 html{
     color: #84888B;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -21,10 +27,7 @@ html{
 
 
 
-.center {
-    display: grid;
-    place-items: center;
-}
+
 
 .maxscreen{
     max-width: 900px;
