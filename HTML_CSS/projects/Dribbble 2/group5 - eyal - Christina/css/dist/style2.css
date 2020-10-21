@@ -1,0 +1,135 @@
+:root {
+  --shadowMainBigPic:#383c3f;
+  --shadowMainSmallPic:1;
+  --shadowMainBigButton:#24292D;
+  --shadowMainSmallButton:#3E454B;
+  --degrees:30deg;
+}
+
+html {
+  color: #84888B;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #181819;
+}
+
+/* div{
+     border:  1px solid burlywood;
+ }
+*/
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.maxscreen {
+  max-width: 900px;
+  min-width: 455px;
+  margin: auto;
+}
+.maxscreen > .screen {
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  /*  max-width: 355px;
+   height: 700px; */
+  width: 60%;
+  height: 700px;
+  background-image: linear-gradient(140deg, #34393E, #18191D);
+  /* #17191C */
+  border-radius: 50px;
+  border: 5px solid #2C3036;
+  position: relative;
+}
+
+.Ubar {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.Ubar__text {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.container {
+  align-self: flex-start;
+  overflow: hidden;
+}
+.container > .textdiv > h1 {
+  margin-top: 10%;
+  font-size: 1.8em;
+  color: #e7e7e7;
+}
+.container > .textdiv > h2 {
+  margin-top: 5%;
+  font-size: 1em;
+}
+.container > .textdiv > .InputPosition {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 80%;
+}
+
+.midconteaimer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.line {
+  line-height: 4;
+  width: 90%;
+  border: 1px solid #363a3ea2;
+  background: #363a3ea2;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.circle > img {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  /*  width: 80%;
+   height: 80%; */
+  border: solid 6px rgba(0, 0, 0, 0.486);
+  border-radius: 300px;
+  background-size: 110% 100%;
+}
+
+@media only screen and (min-width: 820px) {
+  .circle > img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .InputPosition {
+    margin-top: 10px;
+    width: 80%;
+  }
+}
+/* .tavlit (--test){
+    box-shadow: -8px -7px 10px 1px #383c3f,
+    10px 10px 10px #181819; 
+} */
+.havlta {
+  box-shadow: -8px -7px 10px 1px var(--ShadowColor), 10px 10px 10px #181819;
+}
+
+.havltaSmallElements {
+  box-shadow: -4px -3px 5px 1px var(--ShadowColor), 5px 5px 5px #181819;
+}
+
+.Dmenu {
+  align-items: flex-end;
+  grid-row: 3;
+  display: flex;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  /*  align-self:end; */
+  justify-content: space-evenly;
+}
+
+/* .aaa { display: none; }
+.Dmenu_Center_button:active  + .aaa { display: block; }
+ */
