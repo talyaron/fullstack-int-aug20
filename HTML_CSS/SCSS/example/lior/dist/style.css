@@ -1,0 +1,32 @@
+.page3_products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 15%;
+  row-gap: -10%;
+  margin-left: 7%;
+}
+
+.page3_products__product h1 {
+  font-size: 90%;
+}
+.page3_products__product img {
+  width: 70px;
+  height: 100px;
+  border-radius: 11px;
+}
+.page3_products__product p {
+  position: relative;
+  bottom: 8px;
+  font-size: 10px;
+  color: rgba(83, 80, 80, 0.637);
+  font-weight: bold;
+}
+.page3_products__product h1 {
+  position: relative;
+  bottom: 11px;
+  font-size: 11px;
+  color: var(--menucolor);
+}
+.page3_products__product :hover {
+  margin: 1px;
+}

@@ -368,9 +368,23 @@
         text-align: center;
         margin-top: 15px;
     }
+    
     .page3_title__title {
         font-size: 22px;
         color: var(--menucolor);
+    }
+   /* .page3_title__title>b {
+         animation-name: title;
+         animation-duration: 5s;
+     }
+     @keyframes title {
+        from {
+            opacity: 0;
+            transform: translateX(-60px);
+        }
+        to { opacity: 1 }
+    }
+   */
     }
     .page3_title__menu {
         position: relative;
@@ -419,10 +433,10 @@
     }
     /* page3_down-seaction */
     .page3_down-seaction__button>button {
-        position: absolute;
+        position: relative;
         height: 42px;
-        left: 41%;
-        top: 74%;
+        left: 31%;
+        margin-top: 15%;
         border-radius: 5px;
         font-weight: bold;
         border: solid 2px rgb(93, 93, 245);
