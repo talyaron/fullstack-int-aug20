@@ -1,4 +1,4 @@
-/* ניסיון */
+
 .MainScrean {
     background-color: black;
     max-width: 2200px;
@@ -6,12 +6,13 @@
     height: 900px;
     /*  max-content; */
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns:  1fr 5fr;
     grid-template-rows: 1fr 5fr;
-
+    
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     @import "UpperMenu";
     @import "LeftMenu";
-    @import "MainContainer";
+    @import "ManiContainer";
 
 
     

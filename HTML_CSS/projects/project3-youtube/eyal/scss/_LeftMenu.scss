@@ -1,7 +1,76 @@
 .LeftMenu {
     width: 100%;
     height: 100%;
-    background-color: rgb(47, 206, 41);
+    background-color: white;
     grid-row: 2;
-    grid-column: 2;
+    grid-column: 1;
+    font-family: roberto;
+    color: rgb(3, 3, 3);
+    h1{
+        font-size: 1.2em;
+    }
+    
+    ul{
+       list-style: none;
+       
+       li{
+        display: flex;
+       flex-direction: row;
+       align-items: center;
+       margin-top: 5%;
+       margin-bottom: 5%;
+
+       .material-icons{
+           margin-left: 10%;
+           color: rgb(96, 96, 96);
+       }
+
+       .roundimg{
+           border-radius: 100%;
+           /* padding: 10%; */
+           margin-left: 10%;
+       }
+      
+            &:hover .material-icons {
+                color: red;
+            }
+        
+       }
+    }
+
+    .underline{
+        height: 0px;
+        width: 90%;
+        border: 1px solid rgb(96, 96, 96);
+        display: grid;
+      /*  margin-right: 10px; */
+       margin: auto;
+    }
+
+   
+
+}
+
+
+@media only screen and (max-width: 1310px){
+    >.LeftMenu {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+      
+        grid-row: 2;
+        grid-column: 1;
+    
+        .main{ font-size: 0.6em; }
+
+       .Sub{ display: none;}
+
+       li{
+           display: flex;
+           flex-direction: column;
+       }
+
+       
+        
+    }
 }
