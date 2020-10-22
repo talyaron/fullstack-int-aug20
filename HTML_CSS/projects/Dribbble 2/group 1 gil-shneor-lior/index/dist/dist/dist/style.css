@@ -47,3 +47,26 @@
   height: 100%;
   width: 35%;
 }
+
+.container {
+  width: 104%;
+  margin: -2%;
+  margin-top: 50px;
+  padding: 40px;
+  position: absolute;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1.5rem;
+  background-color: #313131;
+  transition: all 300ms;
+}
+
+.video {
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
