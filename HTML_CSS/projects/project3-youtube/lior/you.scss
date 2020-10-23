@@ -1,1 +1,8 @@
-@use 'topbar';
+top__bar {
+ 
+
+    &  bell__icon>img {
+        width: 10%;
+       height: 5%;
+    }
+}
