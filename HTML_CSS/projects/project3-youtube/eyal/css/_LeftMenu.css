@@ -35,7 +35,7 @@
 .LeftMenu .underline {
   height: 0px;
   width: 90%;
-  border: 1px solid #606060;
+  border-bottom: 1px solid #606060;
   display: grid;
   /*  margin-right: 10px; */
   margin: auto;
