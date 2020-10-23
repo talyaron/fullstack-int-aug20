@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.topMenu {
+  position: relative;
+  top: 0;
+  display: grid;
+  position: fixed;
+  grid-template-columns: 1fr 1fr 20fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 1% 1% 0 1%;
+  background-color: white;
+}
+.topMenu__small > img {
+  width: 30%;
+}
+.topMenu__logo {
+  position: relative;
+  right: 50%;
+  top: -30%;
+}
+.topMenu__logo > img {
+  width: 130%;
+}
+.topMenu input {
+  width: 50%;
+  height: 45%;
+  position: relative;
+  left: 25%;
+}
+.topMenu button {
+  width: 50%;
+  height: 57%;
+  position: relative;
+  right: 490%;
+}
+.topMenu__pic {
+  position: relative;
+  top: -10%;
+}
+.topMenu__pic > img {
+  width: 80%;
+  border-radius: 50%;
+}
+
+.side {
+  width: 3.1%;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  top: 7.5%;
+  position: fixed;
+}
+
+.sideMenu {
+  display: grid;
+  width: 1.3%;
+  height: 35%;
+  margin: 0;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  background-color: white;
+  position: absolute;
+  top: 7.7%;
+  position: fixed;
+  padding: 1% 1% 0 0.8%;
+}
+.sideMenu__icons > img {
+  width: 100%;
+}
+
+.list {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+.listClips {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 95%;
+  row-gap: 5%;
+  column-gap: 2%;
+}
