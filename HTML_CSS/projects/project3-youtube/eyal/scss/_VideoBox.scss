@@ -4,7 +4,7 @@
       height: 100%;
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 1fr;
 
 
@@ -19,6 +19,8 @@
     &__Text {
         grid-row: 2;
         grid-column: 2;
+        justify-content: start;
+        align-self: center;
        
         P{
             margin-top: 10px;
@@ -31,7 +33,13 @@
         grid-column: 1;
         margin-top: 10px;
         margin-bottom: 0px; 
-        border-radius: 100%;
+        
+        img{
+            border-radius: 100%;
+            width: 36px;
+            height: 36px;
+           
+        }
     }
 
 }
