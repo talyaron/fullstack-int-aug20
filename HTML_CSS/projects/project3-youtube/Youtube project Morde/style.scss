@@ -1,0 +1,133 @@
+.horizontalNavbar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-right: 21px;
+    margin-left: 10px;
+
+    .horizontalNavbar__center>input{
+        width: 531px;
+        height: 24px;
+    }
+
+    .horizontalNavbar__center>button{
+        width: 60px;
+        height: 30px;
+        position: absolute;
+        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    }
+
+    .horizontalNavbar__center>button>img{
+        width: 12px;
+    }
+
+    .horizontalNavbar__left>img{
+        margin-left: 22px;
+        width: 22px;
+    }
+
+    .horizontalNavbar__left>.horizontalNavbar__hiddenIcon{
+        display: none;
+    }
+}
+
+
+
+.mainContainer{
+    display: flex;
+
+    .mainContainer__verticalNavbar{
+        margin-top: 15px;
+        margin-right: 14px;
+        display: inline-block;
+        text-align: center;
+        img{
+            width: 22px;
+        }
+    
+        p{
+            font-size: 9px;
+            font-weight: bold;
+        }
+    
+        .mainContainer__vertivalNavbarItem{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .mainContainer__vertivalNavbarItem:hover{
+            background-color: #f2f2f2;
+        }
+    }
+
+    .mainContainer__videos{
+        display: grid;
+        grid-template-columns: 3fr 3fr 3fr 3fr;
+        grid-template-rows: 3fr 3fr;
+        background-color: #f9f9f9;
+        margin: auto;
+        margin-top: 12px;
+        margin-right: 12px;
+
+        .mainContainer__videosCard{
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .horizontalNavbar{
+        .horizontalNavbar__center>input{
+            width: 300px;
+        }
+    }
+
+    .mainContainer>.mainContainer__videos{
+        grid-template-columns: 3fr 3fr 3fr;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .horizontalNavbar{
+        .horizontalNavbar__center>input{
+            width: 200px;
+        }
+    }
+    .mainContainer>.mainContainer__verticalNavbar{
+        display: none;
+    }
+
+    .mainContainer>.mainContainer__videos{
+        grid-template-columns: 3fr 3fr;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .horizontalNavbar{
+        .horizontalNavbar__center>input{
+            width: 100px;
+        }
+    }
+
+    .mainContainer>.mainContainer__videos{
+        grid-template-columns: 3fr;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .horizontalNavbar{
+        .horizontalNavbar__center{
+            display: none;
+        }
+    }
+
+    .horizontalNavbar>.horizontalNavbar__left>.horizontalNavbar__hiddenIcon{
+        display: inline;
+    }
+
+
+}
+
