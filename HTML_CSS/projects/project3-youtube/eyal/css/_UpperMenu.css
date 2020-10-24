@@ -1,9 +1,39 @@
 .UpperMenu {
   width: 100%;
-  height: 100px;
-  background-color: blue;
+  height: 100%;
+  background-color: white;
   grid-row: 1;
   grid-column: 1/3;
   /* border-radius: 10px; */
- /*  border: 1px solid black; */
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.UpperMenu .rightsection {
+  display: flex;
+  flex-direction: row;
+}
+.UpperMenu .rightsection #button {
+  border-style: none;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: white;
+}
+.UpperMenu .rightsection #button:active {
+  background-color: #C7C7C7;
+}
+.UpperMenu .rightsection .logo {
+  height: 38px;
+  width: 80px;
+  margin-right: 10px;
+}
+.UpperMenu .centerSction {
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+  height: 30px;
 }
