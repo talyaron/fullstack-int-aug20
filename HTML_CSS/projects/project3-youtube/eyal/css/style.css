@@ -77,6 +77,12 @@
 .MainScrean .UpperMenu .leftSection img {
   border-radius: 100%;
 }
+.MainScrean .guide-icon.ytd-guide-entry-renderer {
+  height: 24px;
+  width: 24px;
+  margin-left: 24px;
+  color: red;
+}
 .MainScrean .LeftMenu {
   width: 100%;
   height: 100%;
@@ -102,6 +108,7 @@
 .MainScrean .LeftMenu ul li .material-icons {
   margin-left: 10%;
   color: #606060;
+  width: 25px;
 }
 .MainScrean .LeftMenu ul li .roundimg {
   border-radius: 100%;
