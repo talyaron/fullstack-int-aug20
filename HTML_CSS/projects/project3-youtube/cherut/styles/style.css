@@ -1,0 +1,121 @@
+:root {
+  --clr-icons:(#606060);
+}
+
+header {
+  background: rgba(255, 255, 255, 0.98);
+  height: 1.8em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+header .connectedAccount img {
+  border-radius: 50%;
+  width: 2em;
+  height: auto;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+header .header__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .header__icons .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 1.5em;
+  color: var(--clr-icons);
+}
+
+.header__search {
+  display: block;
+  margin: auto;
+  height: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__search .header__searchInput {
+  direction: none;
+  text-align: right;
+  width: 25em;
+}
+
+.header__search .header__searchBtn {
+  height: 2em;
+  width: 5em;
+  height: 100%;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 7.5em;
+  height: auto;
+}
+
+.header__logo .header__logoHamMenu {
+  width: 2em;
+  height: auto;
+  margin-left: 1em;
+}
+
+.sideMenu {
+  background: white;
+  width: 15vw;
+  height: 90vh;
+  position: fixed;
+  right: 0px;
+}
+
+main {
+  background: rgba(247, 243, 243, 0.801);
+  width: 80vw;
+  padding: 1.5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1em;
+}
+
+main .mediaItem {
+  margin-bottom: 3em;
+  direction: rtl;
+}
+
+main .mediaItem .mediaItem__info {
+  padding-top: .7em;
+}
+
+main .mediaItem .mediaItem__info p {
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,41 @@
+@use 'round';
+@use 'rect';
+@use 'box';
+.box {
+  -webkit-transform: rotate(34deg);
+          transform: rotate(34deg);
+  border: 4px solid green;
+  border-radius: 10px;
+  background-color: blueviolet;
+  padding: 10px;
+  width: 200px;
+}
+
+.box > img {
+  width: 100px;
+}
+
+.box p {
+  font-size: 20px;
+  color: white;
+}
+
+.box .gold {
+  color: gold;
+  -webkit-transform: rotate(-34deg);
+          transform: rotate(-34deg);
+  border: 4px solid green;
+  border-radius: 10px;
+  background-color: blueviolet;
+  padding: 10px;
+  width: 200px;
+}
+
+.box > div {
+  background: green;
+}
+
+.box > div > div {
+  color: goldenrod;
+}
+/*# sourceMappingURL=style.css.map */
