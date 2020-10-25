@@ -1,0 +1,20 @@
+header {
+  background: white;
+  height: 3em;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+}
+
+.sideMenu {
+  background: palevioletred;
+  width: 4em;
+  position: absolute;
+  right: 0px;
+  top: 4em;
+}
+
+main {
+  background: #cac9c9;
+  height: 100vh;
+}

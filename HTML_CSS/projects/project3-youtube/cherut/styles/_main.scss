@@ -1,0 +1,23 @@
+main{
+  background: rgba(247, 243, 243, 0.801);
+  // height: 100vh;
+  width: 80vw;
+  padding: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
+  gap: 1em;
+  .mediaItem{
+    // border: solid black;
+    // width: 200px;
+    // height: 250px;
+    margin-bottom: 3em;
+    direction: rtl;
+    .mediaItem__info{
+      padding-top: .7em;
+      p{
+        margin: 0;
+        margin-bottom: .5rem;
+      }
+    }
+  }
+}
