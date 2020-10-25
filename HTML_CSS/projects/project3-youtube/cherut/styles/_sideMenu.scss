@@ -1,11 +1,40 @@
 .sideMenu{
   background: white;
-  width: 15vw;
+  // width: 6vw;
+  width: 72px;
   // height:calc(100vh-4em);
   height:90vh;
   position: fixed;
   right: 0px;
   // top:4em;
+  .sideMenu__miniGuide{
+    width: 5vh;
+    margin: auto;
+    // height: 70px;
+    padding: 1em 0;
+    // border: solid black;
+    text-align: center;
+   
+    :hover {
+      cursor: pointer;
+      color: red;
+      
+    }
+    .svg{
+      width: .8rem;
+      height: .8rem;
+      &:hover {
+        cursor: pointer;
+        color: red;
+        
+      }
+      // margin-bottom: .1em;
+    }
+    span{
+      font-size: .6rem;
+    }
+  }
+  
 
-  // margin: auto;
+ 
 }
