@@ -1,4 +1,282 @@
-top__bar bell__icon > img {
-  width: 10%;
-  height: 50%;
+.pictore img {
+  height: 32px;
+  width: 32px;
+  border-radius: 80%;
+  position: relative;
+  left: 20px;
+  top: 20px;
+}
+
+.bell__icon img {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  left: 85px;
+  bottom: 15px;
+}
+
+.menu__icon img {
+  width: 32px;
+  height: 32px;
+  filter: sepia(100%);
+  position: relative;
+  left: 150px;
+  bottom: 50px;
+}
+
+.crate__icon img {
+  width: 40px;
+  height: 40px;
+  filter: sepia(100%);
+  position: relative;
+  left: 215px;
+  bottom: 87.5px;
+}
+
+.serch__bottun {
+  width: 5%;
+  height: 30%;
+  position: relative;
+  left: 420px;
+  bottom: 120px;
+}
+.serch__bottun img {
+  width: 50%;
+  height: 30%;
+}
+
+.serch__bar input {
+  width: 40%;
+  padding: 8px 10px;
+  position: relative;
+  left: 488px;
+  bottom: 162.5px;
+  text-align: right;
+}
+.serch__bar img {
+  filter: sepia(100%);
+  width: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 152.5px;
+  right: 70px;
+}
+
+.side__menu {
+  width: 16%;
+  height: 100%;
+  position: relative;
+  left: 82.5%;
+  bottom: 32vh;
+}
+
+.top__icon img {
+  width: 120px;
+  height: 70px;
+  margin-left: 10px;
+}
+
+.top__menu__bar img {
+  width: 25px;
+  height: 30px;
+  filter: sepia(100%);
+  position: relative;
+  left: 92.5%;
+  bottom: 8vh;
+}
+
+.text1 {
+  font-size: 3vh;
+  margin-left: 7vw;
+  position: relative;
+  bottom: 50px;
+  left: 10px;
+}
+.text1:hover {
+  background-color: lightgrey;
+}
+.text1 img {
+  width: 25px;
+  height: 30px;
+  position: relative;
+  left: 30px;
+  top: 10px;
+}
+
+.text2 {
+  font-size: 3vh;
+  margin-left: 3vw;
+  position: relative;
+  bottom: 40px;
+  left: 10px;
+}
+.text2:hover {
+  background-color: lightgrey;
+}
+.text2 img {
+  width: 25px;
+  height: 30px;
+  position: relative;
+  left: 25px;
+  top: 10px;
+}
+
+.text3 {
+  font-size: 3vh;
+  margin-left: 3vw;
+  position: relative;
+  bottom: 25px;
+  left: 37.5%;
+}
+.text3:hover {
+  background-color: lightgrey;
+}
+.text3 img {
+  width: 25px;
+  height: 30px;
+  position: relative;
+  left: 27px;
+  top: 10px;
+}
+
+.midelle__menu {
+  height: 100%;
+  position: relative;
+  left: 60%;
+  top: 5vh;
+}
+
+.text4 {
+  font-size: 3vh;
+  margin-left: 3vw;
+  position: relative;
+  bottom: 45px;
+  right: 4vw;
+}
+.text4:hover {
+  background-color: lightgrey;
+}
+.text4 img {
+  width: 20px;
+  height: 25px;
+  position: relative;
+  left: 30px;
+  top: 9px;
+}
+
+.text5 {
+  font-size: 3vh;
+  margin-left: 3vw;
+  position: relative;
+  bottom: 35px;
+  right: 5vw;
+}
+.text5:hover {
+  background-color: lightgrey;
+}
+.text5 img {
+  width: 20px;
+  height: 25px;
+  position: relative;
+  left: 30px;
+  top: 9px;
+}
+
+.text6 {
+  font-size: 3vh;
+  margin-left: 3vw;
+  position: relative;
+  bottom: 10px;
+  right: 8vw;
+}
+.text6:hover {
+  background-color: lightgrey;
+}
+.text6 img {
+  width: 20px;
+  height: 25px;
+  position: relative;
+  left: 140px;
+  bottom: 24px;
+}
+
+.text7 {
+  font-size: 3vh;
+  margin-left: 3vw;
+  position: relative;
+  bottom: 10px;
+  right: 7vw;
+}
+.text7:hover {
+  background-color: lightgrey;
+}
+.text7 img {
+  width: 20px;
+  height: 25px;
+  position: relative;
+  left: 125px;
+  bottom: 24px;
+}
+
+.text8 {
+  font-size: 3vh;
+  margin-left: 3vw;
+  position: relative;
+  bottom: 10px;
+  right: 8vw;
+}
+.text8:hover {
+  background-color: lightgrey;
+}
+.text8 img {
+  width: 20px;
+  height: 25px;
+  position: relative;
+  left: 140px;
+  bottom: 24px;
+}
+
+.text9 {
+  font-size: 3vh;
+  margin-left: 3vw;
+  position: relative;
+  bottom: 8px;
+  right: 3vw;
+}
+.text9:hover {
+  background-color: lightgrey;
+}
+.text9 img {
+  width: 20px;
+  height: 25px;
+  position: relative;
+  left: 140px;
+  bottom: 24px;
+}
+
+.videos {
+  width: 50%;
+  position: relative;
+  right: 650%;
+  display: grid;
+  grid-template-columns: repeat(3, 210%);
+  bottom: 400px;
+  gap: 150px;
+}
+.videos video {
+  width: 20%;
+  height: 15vh;
+  padding: 10px;
+}
+.videos h1 {
+  font-size: 18px;
+  position: relative;
+  left: 70%;
+}
+.videos a {
+  font-size: 15px;
+  position: relative;
+  left: 70%;
+  color: #555454;
+  text-align: right;
 }
