@@ -1,18 +1,20 @@
+
+
 .MainScrean {
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     background-color: #F9F9F9;
-    max-width: 2200px; 
+    max-width: 99vw; 
     /* max-content; */
     height: 900px;
     /*  max-content; */
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: 1fr 5fr;
     font-family: Roboto, Arial, sans-serif;
     font-size: 14px;
     @import "UpperMenu";
     @import "LeftMenu";
-    @import "ManiContainer";
+    @import "MainContainer";
 
 
 

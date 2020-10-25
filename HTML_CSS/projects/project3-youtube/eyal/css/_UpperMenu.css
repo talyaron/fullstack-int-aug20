@@ -31,9 +31,36 @@
   width: 80px;
   margin-right: 10px;
 }
-.UpperMenu .centerSction {
+.UpperMenu .CenterSection {
   display: flex;
   flex-direction: row;
-  width: 150px;
+  width: 40%;
   height: 30px;
+  border: 1px solid #CCCCCC;
+  justify-content: space-between;
+}
+.UpperMenu .CenterSection #SearchContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+  border: none;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.UpperMenu .CenterSection button {
+  border-style: none;
+}
+.UpperMenu .leftSection .material-icons {
+  margin-left: 10px;
+  /*  margin-right: 1%; */
+}
+.UpperMenu .leftSection .material-icons:active {
+  border-radius: 100%;
+  background-color: #C7C7C7;
+  padding: 5px;
+}
+.UpperMenu .leftSection img {
+  border-radius: 100%;
 }
