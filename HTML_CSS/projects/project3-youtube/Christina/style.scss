@@ -30,15 +30,7 @@ html {
     font-size: var(--fontsize);
 }
 
-.footer {
-    background-color: var(--background);
-    color: var(--fontcolor);
-    text-align: center;
-    font-size: 12px;
-    padding: 15px;
-}
-
-@media only screen and (max-width: 980px) {}
+@media only screen and (max-width: 1020px) {}
 
 @import url('https://fonts.googleapis.com/css?family=Muli');
 body {

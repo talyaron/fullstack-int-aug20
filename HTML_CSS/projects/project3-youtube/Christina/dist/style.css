@@ -1,179 +1,182 @@
 @import url("https://fonts.googleapis.com/css?family=Muli");
 :root {
-  --background: #ffffff;
-  --fontcolor: #000;
-  --fontsize: 10px;
+    --background: #ffffff;
+    --fontcolor: #000;
+    --fontsize: 10px;
 }
 
 * {
-  box-sizing: border-box;
-  direction: rtl;
-  font-size: var(--fontsize);
+    box-sizing: border-box;
+    direction: rtl;
+    font-size: var(--fontsize);
 }
 
 .row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  align-items: center;
-  align-content: center;
-  padding: 2%;
-  padding-left: 100px;
-  margin: auto;
-  line-height: 170px;
-  row-gap: 10px;
-  column-gap: 10px;
-  width: 1348.1px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    align-content: center;
+    padding: 2%;
+    padding-left: 100px;
+    margin: auto;
+    line-height: 170px;
+    row-gap: 10px;
+    column-gap: 10px;
+    width: 1348.1px;
 }
 
 html {
-  font-family: "Lucida Sans", sans-serif;
-  font-size: var(--fontsize);
+    font-family: "Lucida Sans", sans-serif;
+    font-size: var(--fontsize);
 }
 
 .footer {
-  background-color: var(--background);
-  color: var(--fontcolor);
-  text-align: center;
-  font-size: 12px;
-  padding: 15px;
+    background-color: var(--background);
+    color: var(--fontcolor);
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
 }
 
 body {
-  background-color: var(--background);
+    background-color: var(--background);
 }
 
 :focus {
-  outline: none;
+    outline: none;
 }
 
 .box {
-  width: 80%;
-  height: 58px;
-  background-color: var(--background);
-  margin: 20px auto;
+    width: 80%;
+    height: 58px;
+    background-color: var(--background);
+    margin: 20px auto;
 }
 
 .search-bar form.example input[type=text] {
-  padding: 10px;
-  font-size: 12px;
-  border: 1px solid 1px solid lightgray;
-  float: right;
-  width: 46%;
-  background: #f8f8f8;
-  margin-right: 350px;
-  border-radius: 0 2px 2px 0;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid 1px solid lightgray;
+    float: right;
+    width: 46%;
+    background: #f8f8f8;
+    margin-right: 350px;
+    border-radius: 0 2px 2px 0;
 }
+
 .search-bar form.example button {
-  position: relative;
-  left: 169px;
-  float: left;
-  width: 62px;
-  padding: 4px;
-  margin: 0;
-  background: var(--background);
-  color: var(--fontcolor);
-  font-size: 17px;
-  border: 1px solid grey;
-  cursor: pointer;
+    position: relative;
+    left: 169px;
+    float: left;
+    width: 62px;
+    padding: 4px;
+    margin: 0;
+    background: var(--background);
+    color: var(--fontcolor);
+    font-size: 17px;
+    border: 1px solid grey;
+    cursor: pointer;
 }
+
 .search-bar form.example button:hover {
-  background: lightgray;
+    background: lightgray;
 }
+
 .search-bar form.example::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 
 input[type=text] {
-  width: 89%;
-  height: 30px;
-  padding: 0 10px;
-  color: #000;
-  border: 1px solid #BEBEBE;
-  border-radius: 2px 0 0 2px;
-  z-index: 2;
+    width: 89%;
+    height: 30px;
+    padding: 0 10px;
+    color: #000;
+    border: 1px solid #BEBEBE;
+    border-radius: 2px 0 0 2px;
+    z-index: 2;
 }
 
 button i {
-  opacity: 0.5;
-  transition: all 0.1s ease-in-out;
+    opacity: 0.5;
+    transition: all 0.1s ease-in-out;
 }
 
 button:hover {
-  background-color: #E4E4E4;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 0 2px rgba(0, 0, 0, 0.05);
-  transition: all 0.07s ease-in-out;
+    background-color: #E4E4E4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 0 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.07s ease-in-out;
 }
 
 .btn {
-  background-color: var(--background);
-  border: none;
-  color: var(--fontcolor);
-  padding: 12px 0 0 0px;
-  font-size: 16px;
-  float: right;
-  margin: -2.5%;
-  cursor: pointer;
-  position: relative;
-  top: -7px;
-  right: -80px;
+    background-color: var(--background);
+    border: none;
+    color: var(--fontcolor);
+    padding: 12px 0 0 0px;
+    font-size: 16px;
+    float: right;
+    margin: -2.5%;
+    cursor: pointer;
+    position: relative;
+    top: -7px;
+    right: -80px;
 }
 
 .yimg {
-  height: 30px;
-  position: relative;
-  float: right;
-  bottom: 30px;
-  right: -80px;
+    height: 30px;
+    position: relative;
+    float: right;
+    bottom: 30px;
+    right: -80px;
 }
 
 .icons {
-  position: relative;
-  right: 120px;
+    position: relative;
+    right: 120px;
 }
 
 .content .button {
-  margin: -5px;
-  position: relative;
-  top: 50px;
-  right: -110px;
-  direction: ltr;
-  border: none;
-  background-color: inherit;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  display: grid;
-  grid-template-rows: 1fr;
+    margin: -5px;
+    position: relative;
+    top: 50px;
+    right: -110px;
+    direction: ltr;
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 1fr;
 }
 
 .button:hover {
-  background: #eee;
+    background: #eee;
 }
 
 .success {
-  color: black;
+    color: black;
 }
 
 .info {
-  color: black;
+    color: black;
 }
 
 .warning {
-  color: black;
+    color: black;
 }
 
 .danger {
-  color: black;
+    color: black;
 }
 
 .default {
-  color: black;
+    color: black;
 }
 
 .row .item {
-  position: relative;
-  left: -180px;
+    position: relative;
+    left: -180px;
 }
