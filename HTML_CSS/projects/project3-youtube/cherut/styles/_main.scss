@@ -15,7 +15,7 @@
       width: 0px;
     }
     li{
-      background-color: #cccbcb;
+      background-color:#949292;
       border-radius: 1em;
       padding:.3em 1em;
       margin-right: 1em;
@@ -23,7 +23,7 @@
       cursor: pointer;
       font-size: .8em;
       &:hover{
-        background-color: #949292;
+        background-color:  #cccbcb;
       }
     }
   }
@@ -139,11 +139,12 @@ main{
     max-height: 150px;
 overflow: hidden;
        img{
-         width: 30%;
+         width: 40%;
          object-fit: cover;
        }
        p{
          margin-left: 1em;
+         font-size: .9rem;
        }
       }
       .main__postsPostReactions{
