@@ -13,24 +13,34 @@ body {
   padding: 3%;
 }
 .menuUp__Grid {
-  margin-top: 10vw;
-  border: solid black;
   display: grid;
-  grid-template-columns: 2fr 5fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 5fr 1fr 1fr;
+  justify-content: space-between;
   gap: 10px;
 }
-.menuUp .upButtons {
-  color: white;
+.menuUp .account {
   margin: auto;
 }
-.menuUp__hamburger {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 40px;
-  height: 40px;
-  background-color: #202020;
+.menuUp .account > img {
   border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+}
+.menuUp .upButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 60%;
+  margin: auto;
+  color: white;
+  justify-content: space-between;
+}
+.menuUp__hamburger {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  border: solid gray;
+  color: white;
 }
 .menuUp__logo {
   width: 100%;
@@ -41,8 +51,9 @@ body {
   max-height: 80px;
 }
 .menuUp__searchBox {
-  display: flex;
-  flex-direction: column;
+  direction: ltr;
+  display: grid;
+  grid-template-columns: 8fr 1fr;
   margin: auto;
   border: solid gray;
   background-color: #222222;
@@ -52,7 +63,7 @@ body {
 .menuUp__searchBoxMglass {
   background-color: gray;
   height: 100%;
-  width: 35%;
+  width: 15%;
 }
 
 .pageGrid {
@@ -61,7 +72,7 @@ body {
 }
 .pageGrid__sideMenu {
   max-height: 700px;
-  margin-top: 50px;
+  margin-top: 70px;
   margin-right: -10px;
   background-color: #525252;
   display: grid;
@@ -84,10 +95,10 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .pageGrid__container {
-  margin-top: 50px;
-  padding: 40px;
+  margin-top: 69px;
+  padding: 48px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-gap: 1.5rem;
   background-color: #313131;
   transition: all 300ms;
@@ -95,16 +106,46 @@ body {
 
 .video {
   display: grid;
-  grid-template-rows: 70% 15% 15%;
+  grid-template-areas: "video video video video video" "video video video video video " "video video video video video " "video video video video video " "name name name name photo " "title title title title photo";
+  gap: 5px;
   height: 190px;
-  background-color: black;
   color: white;
   text-align: center;
 }
 .video > iframe {
   max-width: 100%;
-  max-height: 100%;
+  height: 100%;
+  grid-area: video;
 }
-.video .videoName {
+.videoName {
+  justify-content: start;
   color: white;
+  font-size: 12px;
+  grid-area: name;
+}
+.videoTitle {
+  direction: ltr;
+  color: white;
+  font-size: 8px;
+  grid-area: title;
+}
+.videoPhoto {
+  border-radius: 50%;
+  grid-area: photo;
+}
+.videoPhoto > img {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  grid-area: photo;
+}
+.videoPhotoSmall {
+  border-radius: 50%;
+  grid-area: photo;
+}
+.videoPhotoSmall > img {
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 50%;
+  grid-area: photo;
 }
