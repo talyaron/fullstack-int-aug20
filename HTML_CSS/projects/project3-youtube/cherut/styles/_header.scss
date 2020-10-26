@@ -1,5 +1,5 @@
 header{
-  background: rgb(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.980);
   // opacity: 50;
   height: 1.8em;
   position: sticky;
@@ -10,6 +10,7 @@ header{
   display: flex;
   align-items: center;
   z-index: 2;
+  fill: #606060;
   .connectedAccount{
     img{
       border-radius: 50%;
@@ -21,12 +22,20 @@ header{
   }
   .header__icons{
     display: flex;
+    :hover{
+      cursor: pointer;
+      transform: scale(1.2);
+    }
     .icon{
       width: 24px;
       height: 24px;
       // padding: 8px;
       margin-right:1.5em;
       color: var(--clr-icons);
+      
+      
+
+      
     }
 
 
@@ -44,17 +53,36 @@ header{
   .header__searchInput{
     direction:none;
     // border: none;
+    font-size: 1em;
+    padding-right: .5em;
     text-align: right;
     // padding: .3em .5em;
     // height: 100%;
     // height: 2em;
-    width: 25em;
+    width: 40vw;
+    box-shadow: inset 0 1px 2px #eee;
+    border: 1px solid #ccc;
+    outline: none;
   }
   .header__searchBtn{
     height: 2em;
     width: 5em;
     height: 100%;
-    
+    background-color: #f8f8f8;
+    border: 1px solid #d3d3d3;
+    outline: none;
+    cursor: pointer;
+    svg{
+      width: 10px;
+      margin: auto;
+      fill: #606060ad;
+    }
+    &:hover{
+      background-color: #e2e2e2;
+      fill: #0f0e0ead;
+      
+    }
+
   }
 }
 
@@ -63,6 +91,7 @@ header{
   align-items: center;
   width: 7.5em;
   height: auto;
+  cursor: pointer;
  
   .header__logoHamMenu{
     width: 2em;
@@ -70,5 +99,12 @@ header{
     margin-left: 1em;
     // margin-right: 1em;
     // padding: 8px;
+    // &:hover{
+    //   .sideMenu{
+    //    width: 250px;
+       
+    //   }
+    
+    // }
   }
 }

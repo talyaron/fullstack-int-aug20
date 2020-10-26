@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --clr-icons:(#606060);
 }
@@ -17,6 +18,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   z-index: 2;
+  fill: #606060;
 }
 
 header .connectedAccount img {
@@ -31,6 +33,12 @@ header .header__icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+header .header__icons :hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 header .header__icons .icon {
@@ -51,14 +59,35 @@ header .header__icons .icon {
 
 .header__search .header__searchInput {
   direction: none;
+  font-size: 1em;
+  padding-right: .5em;
   text-align: right;
-  width: 25em;
+  width: 40vw;
+  -webkit-box-shadow: inset 0 1px 2px #eee;
+          box-shadow: inset 0 1px 2px #eee;
+  border: 1px solid #ccc;
+  outline: none;
 }
 
 .header__search .header__searchBtn {
   height: 2em;
   width: 5em;
   height: 100%;
+  background-color: #f8f8f8;
+  border: 1px solid #d3d3d3;
+  outline: none;
+  cursor: pointer;
+}
+
+.header__search .header__searchBtn svg {
+  width: 10px;
+  margin: auto;
+  fill: #606060ad;
+}
+
+.header__search .header__searchBtn:hover {
+  background-color: #e2e2e2;
+  fill: #0f0e0ead;
 }
 
 .header__logo {
@@ -70,6 +99,7 @@ header .header__icons .icon {
           align-items: center;
   width: 7.5em;
   height: auto;
+  cursor: pointer;
 }
 
 .header__logo .header__logoHamMenu {
@@ -78,18 +108,156 @@ header .header__icons .icon {
   margin-left: 1em;
 }
 
+.sideMenu1 {
+  display: none;
+}
+
 .sideMenu {
   background: white;
-  width: 15vw;
+  width: 72px;
   height: 90vh;
   position: fixed;
   right: 0px;
+  top: 3.9em;
+}
+
+.sideMenu .sideMenu__miniGuide {
+  width: 5vh;
+  margin: auto;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.sideMenu .sideMenu__miniGuide:hover {
+  cursor: pointer;
+  fill: red;
+}
+
+.sideMenu .sideMenu__miniGuide .svg {
+  width: .8rem;
+  height: .8rem;
+}
+
+.sideMenu .sideMenu__miniGuide .svg:hover {
+  cursor: pointer;
+  fill: red;
+}
+
+.sideMenu .sideMenu__miniGuide span {
+  font-size: .6rem;
+}
+
+.categoryNavBar ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow-x: scroll;
+  margin-bottom: 0%;
+}
+
+.categoryNavBar ul::-webkit-scrollbar {
+  width: 0px;
+}
+
+.categoryNavBar ul li {
+  background-color: #949292;
+  border-radius: 1em;
+  padding: .3em 1em;
+  margin-right: 1em;
+  color: white;
+  cursor: pointer;
+  font-size: .8em;
+}
+
+.categoryNavBar ul li:hover {
+  background-color: #cccbcb;
 }
 
 main {
-  background: rgba(247, 243, 243, 0.801);
-  width: 80vw;
+  background-color: #f8f8f8;
+  width: calc(100% - 120px);
   padding: 1.5em;
+}
+
+main .mediaItemsWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1em;
+}
+
+main .mediaItemsWrapper .mediaItem {
+  margin-bottom: 2em;
+  direction: rtl;
+}
+
+main .mediaItemsWrapper .mediaItem .mediaItem__info {
+  padding-top: .7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main .mediaItemsWrapper .mediaItem .mediaItem__info .mediaItem__infoChannel {
+  height: 36px;
+  margin-left: 12px;
+}
+
+main .mediaItemsWrapper .mediaItem .mediaItem__info .mediaItem__infoChannel img {
+  width: 35px;
+  border-radius: 50%;
+}
+
+main .mediaItemsWrapper .mediaItem .mediaItem__info .mediaItem__infoTitle {
+  font-size: .9rem;
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+main .mediaItemsWrapper .mediaItem .mediaItem__info .mediaItem__infoDescription, main .mediaItemsWrapper .mediaItem .mediaItem__info span {
+  font-size: .9rem;
+  color: #606060;
+  margin: 0;
+  margin-bottom: .1rem;
+}
+
+main .mediaItemsWrapper .mediaItem .mediaItem__info .mediaItem__infoDescription .views ::after, main .mediaItemsWrapper .mediaItem .mediaItem__info span .views ::after {
+  content: "•";
+  margin: 0 4px;
+}
+
+main .main__posts {
+  direction: rtl;
+  margin: auto;
+  border-top: 4px solid lightgray;
+  border-bottom: 4px solid lightgray;
+  margin-bottom: 2em;
+}
+
+main .main__posts h1 {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: .5px;
+  margin-right: .5em;
+}
+
+main .main__posts h1 span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+main .main__posts .main__postsWrapper {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
@@ -97,18 +265,134 @@ main {
   gap: 1em;
 }
 
-main .mediaItem {
-  margin-bottom: 3em;
-  direction: rtl;
+main .main__posts .main__postsWrapper .main__postsPost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: white;
+  padding: 12px 24px 0 24px;
+  border: 1px solid lightgray;
+  margin-bottom: 1.5em;
 }
 
-main .mediaItem .mediaItem__info {
-  padding-top: .7em;
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main .mediaItem .mediaItem__info p {
-  margin: 0;
-  margin-bottom: .5rem;
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostDetails img {
+  width: 24px;
+  margin-left: .5em;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostDetails span {
+  margin-left: .5em;
+  font-size: .7em;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostContent {
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostContent img {
+  width: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostContent p {
+  margin-left: 1em;
+  font-size: .9rem;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .right, main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #b8b7b7;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .right:hover, main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .left:hover {
+  cursor: pointer;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .right svg, main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .left svg {
+  margin-left: .4em;
+  fill: #b8b7b7;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .right svg:hover svg, main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .left svg:hover svg {
+  fill: red;
+}
+
+main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .right span, main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions .left span {
+  margin-left: .4em;
+}
+
+main .main__posts .morePosts {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+main .main__posts .morePosts button {
+  display: block;
+  margin: auto;
+  border: none;
+  background-color: #f8f8f8;
+  width: 50px;
+  cursor: pointer;
+  fill: #b8b7b7;
+  outline: none;
+}
+
+main .main__posts .morePosts button:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+main .main__posts .morePosts button:hover .main__postsPost1 {
+  display: block;
+}
+
+main .main__postsPost1 {
+  display: none;
 }
 
 body {

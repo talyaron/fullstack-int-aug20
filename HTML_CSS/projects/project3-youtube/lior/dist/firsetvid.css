@@ -1,0 +1,26 @@
+.videos {
+  width: 50%;
+  position: relative;
+  right: 650%;
+  display: grid;
+  grid-template-columns: repeat(3, 210%);
+  bottom: 400px;
+  gap: 150px;
+}
+.videos video {
+  width: 20%;
+  height: 15vh;
+  padding: 10px;
+}
+.videos h1 {
+  font-size: 18px;
+  position: relative;
+  left: 70%;
+}
+.videos a {
+  font-size: 15px;
+  position: relative;
+  left: 70%;
+  color: #555454;
+  text-align: right;
+}
