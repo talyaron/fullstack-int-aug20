@@ -1,8 +1,55 @@
-body {
-  width: 1329px, 5554.25px;
-}
-body #masthead {
-  width: 1329px, 56px;
+body .masthead {
+  height: 56px;
+  width: 100%;
+  padding-top: 0px;
+  padding-right: 16px;
+  padding-bottom: 0px;
+  padding-left: 16px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+body .masthead .start {
+  height: 56px;
+  padding-right: 16px;
+  font-size: 10px;
+  font-family: Roboto, Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+body .masthead .start .guide-button {
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+body .masthead .start .logo {
+  width: 80px;
+  height: 24px;
+  flex: none;
+}
+body .masthead .center {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 728px;
+  min-width: 0px;
+}
+body .masthead .center .search {
+  margin-right: 40px;
+  padding-right: 4px;
+  padding-left: 4px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 1e-9px;
+}
+body .masthead .center .search #search-icon-legacy {
+  cursor: pointer;
+  width: 65px;
+  border: 1px solid #d3d3d3;
+  background-color: #f8f8f8;
+  border-radius: 0 2px 2px 0;
+  margin: 0;
 }
