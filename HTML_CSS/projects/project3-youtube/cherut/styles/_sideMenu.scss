@@ -1,3 +1,7 @@
+.sideMenu1{
+  display: none;
+}
+
 .sideMenu{
   background: white;
   // width: 6vw;
@@ -6,7 +10,7 @@
   height:90vh;
   position: fixed;
   right: 0px;
-  // top:4em;
+  top:3.9em;
   .sideMenu__miniGuide{
     width: 5vh;
     margin: auto;
@@ -15,9 +19,9 @@
     // border: solid black;
     text-align: center;
    
-    :hover {
+    &:hover {
       cursor: pointer;
-      color: red;
+      fill: red;
       
     }
     .svg{
@@ -25,7 +29,7 @@
       height: .8rem;
       &:hover {
         cursor: pointer;
-        color: red;
+        fill: red;
         
       }
       // margin-bottom: .1em;

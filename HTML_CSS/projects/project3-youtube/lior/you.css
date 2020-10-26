@@ -1,5 +1,4 @@
-top__bar bell__icon > img {
-  width: 10%;
-  height: 5%;
-}
+@use 'topbar';
+@use 'sidemenu';
+@use 'firsetvid';
 /*# sourceMappingURL=you.css.map */
