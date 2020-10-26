@@ -2,6 +2,10 @@
 
 body {
     display: block;
+    svg{
+        width: 24px;
+        height: 24px;
+    }
   
 .masthead{
     height: 56px; 
@@ -27,11 +31,13 @@ width: 100%;
         .guide-button{
             width: 24px;
             height: 24px;
+            margin-left: 16px;
+            
             box-sizing: border-box;  
             opacity: 0.6;
     color: currentColor;
     display: block;
-    position: absolute;
+    position: relative;
     border-radius: inherit;
     overflow: hidden;
     overflow-x: hidden;
@@ -48,13 +54,14 @@ width: 100%;
     
 }
 .center{
+    
 
     
-    flex: 1;
+    // flex: 1;
   
     display: flex;
     flex-direction: row;
-    align-items: center;
+    // align-items: center;
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 728px;
@@ -64,6 +71,7 @@ width: 100%;
     margin-right: 40px;
     padding-right: 4px;
     padding-left: 4px;
+    display: flex;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 1e-9px;
@@ -75,18 +83,15 @@ width: 100%;
         border-left: none;
         border-radius: 2px 0 0 2px;
         box-shadow: inset 0 1px 2px var(--ytd-searchbox-legacy-border-shadow-color);
-        color: var(--yt-searchbox-text-color);
+        color: #111111;
         padding: 2px 6px;
-        -ms-flex: 1 1 1e-9px;
-        -webkit-flex: 1;
+        
         flex: 1;
-        -webkit-flex-basis: 1e-9px;
+        
         flex-basis: 1e-9px;
-        display: -ms-flexbox;
-        display: -webkit-flex;
+       
         display: flex;
-        -ms-flex-direction: row;
-        -webkit-flex-direction: row;
+       
         flex-direction: row;
     }
 
@@ -107,9 +112,8 @@ width: 100%;
 }
     
 }
-.{
+
 
 }
 }
-}
-}
+
