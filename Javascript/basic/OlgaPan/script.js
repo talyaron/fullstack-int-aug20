@@ -9,3 +9,10 @@ console.log(giraffe['name'])
 console.log(giraffe['height'])
 console.log(giraffe['color'])
 console.log(giraffe['src'])
+
+const arr = ['Leonid','Eric','Michael', 'Olga','Stas']
+console.log(arr[0])
+console.log(arr[1])
+console.log(arr[2])
+console.log(arr[3])
+console.log(arr[4])
