@@ -17,6 +17,6 @@ console.log(student.name);
 console.log(student['name']);
 
 console.log(student.surename);
-console.log(student['surename'])
+console.log(student['surename']);
 
 
