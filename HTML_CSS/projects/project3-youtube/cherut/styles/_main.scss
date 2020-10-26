@@ -82,10 +82,76 @@ main{
       padding: 12px 24px 0 24px;
       border: 1px solid rgb(211, 211, 211) ;
       margin-bottom: 1.5em;
- 
-      .main__postsPostContent{
+      .main__postsPostDetails{
         display: flex;
-       
+        flex-direction: row;
+        align-items: center;
+        img{
+          width: 24px;
+          margin-left: .5em;
+        }
+        span{
+          margin-left: .5em;
+          font-size: .7em;
+        }
+      }
+      .main__postsPostContent{
+        margin-bottom: 1em;
+        display: flex;
+       img{
+         width: 30%;
+         object-fit: cover;
+       }
+       p{
+         margin-left: 1em;
+       }
+      }
+      .main__postsPostReactions{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        
+      
+
+          .right, .left{
+            display: flex;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            color: rgb(184, 183, 183);
+            &:hover {
+              cursor: pointer;
+              color: red;
+              fill: red;
+            }
+       svg{
+         margin-left: .4em;
+         fill: rgb(184, 183, 183);
+         
+       }
+       span{
+        margin-left: .4em;
+
+       }
+         
+        }
+      }
+    }
+  }
+  .morePosts{
+    width: 100%;
+    margin-bottom: 1em;
+    button{
+      display: block;
+      margin: auto;
+      border: none;
+      background-color: #f8f8f8;
+      width: 50px;
+      cursor: pointer;
+      fill:rgb(184, 183, 183) ;
+      outline: none;
+      &:hover {
+        transform: scale(1.3);
       }
     }
   }

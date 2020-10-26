@@ -15,9 +15,9 @@
     // border: solid black;
     text-align: center;
    
-    :hover {
+    &:hover {
       cursor: pointer;
-      color: red;
+      fill: red;
       
     }
     .svg{
@@ -25,7 +25,7 @@
       height: .8rem;
       &:hover {
         cursor: pointer;
-        color: red;
+        fill: red;
         
       }
       // margin-bottom: .1em;
