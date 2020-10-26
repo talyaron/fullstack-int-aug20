@@ -4,29 +4,32 @@ body {
 
 .menuUp {
   position: absolute;
-  width: 104%;
-  height: 80px;
+  width: 100vw;
+  height: 60px;
   background-color: #4d4d4d;
   display: flex;
   flex-direction: column-reverse;
   margin: -2%;
+  padding: 3%;
 }
-.menuUp__menuUpGrid {
-  margin-top: 0.5%;
+.menuUp__Grid {
+  margin-top: 10vw;
+  border: solid black;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 5fr 1fr 1fr;
+  gap: 10px;
 }
-.menuUp__hamburgerFlex {
-  display: flex;
-  flex-direction: column;
+.menuUp .upButtons {
+  color: white;
+  margin: auto;
 }
 .menuUp__hamburger {
-  padding: 1%;
-  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 40px;
   height: 40px;
   background-color: #202020;
-  opacity: 100%;
   border-radius: 50%;
 }
 .menuUp__logo {
