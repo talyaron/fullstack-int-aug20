@@ -24,6 +24,7 @@ header{
     display: flex;
     :hover{
       cursor: pointer;
+      transform: scale(1.2);
     }
     .icon{
       width: 24px;
@@ -52,6 +53,8 @@ header{
   .header__searchInput{
     direction:none;
     // border: none;
+    font-size: 1em;
+    padding-right: .5em;
     text-align: right;
     // padding: .3em .5em;
     // height: 100%;
@@ -96,8 +99,12 @@ header{
     margin-left: 1em;
     // margin-right: 1em;
     // padding: 8px;
-    &:active{
-      background-color: yellow;
-    }
+    // &:hover{
+    //   .sideMenu{
+    //    width: 250px;
+       
+    //   }
+    
+    // }
   }
 }
