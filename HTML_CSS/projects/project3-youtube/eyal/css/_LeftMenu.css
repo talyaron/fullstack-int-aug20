@@ -58,7 +58,7 @@
     grid-column: 1;
   }
   > .LeftMenu .main {
-    font-size: 0.5 rem;
+    font-size: 0.5rem;
   }
   > .LeftMenu .main li {
     display: flex;
