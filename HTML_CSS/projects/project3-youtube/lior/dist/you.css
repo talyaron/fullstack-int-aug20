@@ -272,6 +272,8 @@
   font-size: 18px;
   position: relative;
   left: 70%;
+  text-align: justify;
+  width: 120%;
 }
 .videos a {
   font-size: 15px;
