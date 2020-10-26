@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 </head>
 <style>
-    
-    .heder{
+    .heder {
         width: 50%;
         margin-right: 20px;
-        margin:0 auto;
+        margin: 0 auto;
         font-size: 4rem;
         background-color: rgba(89, 194, 221, 0.774);
 
     }
-    .box{
+
+    .box {
         width: 50%;
-        margin: 5px  auto auto auto;
+        margin: 5px auto auto auto;
         border: 2px solid black;
         background-color: burlywood;
         padding: 10px;
     }
-    .text{
+
+    .text {
         margin-right: 10px;
     }
 </style>
+
 <body>
-   <div class="heder">
-<h1>החיה שלי</h1>
-   </div>
-    
+    <div class="heder">
+        <h1>החיה שלי</h1>
+    </div>
+
     <script>
-        let animal = {name:"אוגר",size:"קטן",src:"https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_380,w_500/543439",color:"לבן",weight:"150g"};
+        let animal = {
+            name: "אוגר",
+            size: "קטן",
+            src: "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_380,w_500/543439",
+            color: "לבן",
+            weight: "150g"
+        };
         console.log(animal.name);
         console.log(animal.size);
         console.log(animal.src);
@@ -45,6 +54,7 @@
         console.log(animal['src']);
         console.log(animal['color']);
         console.log(animal['weight']);
+        
         document.write('<div class="box">');
         document.write('<div class="text">');
         document.write(animal.name + '<br>');
@@ -54,10 +64,11 @@
         document.write(animal.weight + '<br>');
         document.write('</div>');
         document.write('</div>');
-        
-        </script>
 
-    
-    
+    </script>
+
+
+
 </body>
+
 </html>
