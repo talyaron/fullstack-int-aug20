@@ -1,0 +1,624 @@
+.phone{
+    background-image: url(./logo/phone2.PNG);
+    margin:auto;
+    height: 550px;
+    width: 270px;
+    border:solid 2px black;
+    border-radius: 5%;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.phone__header{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+   margin: auto;
+   text-align: center;
+   margin-top: 5%;
+}
+
+.phone__header__day_button{
+    margin: auto;
+}
+
+.phone__header__day_button:hover{
+    background-color: rgba(173, 216, 230, 0.856);
+    border-radius: 50%;
+    width: 70%;
+    height: 100%;
+}
+
+.phone__header__week_button{
+    margin: auto;
+}
+
+.phone__header__week_button:hover{
+    background-color: rgba(173, 216, 230, 0.856);
+    border-radius: 50%;
+    width: 70%;
+}
+
+.phone__header__month_button{
+    margin: auto;
+}
+
+.phone__header__month_button:hover{
+    background-color: rgba(173, 216, 230, 0.856);
+    border-radius: 50%;
+    width: 70%;
+}
+
+.monthtitle{
+    text-align: center;
+    margin-top: 7%;
+}
+.location{text-align: center;
+    margin-top: 3%;
+    font-size: 25px;
+}
+.card{
+    width: 80%;
+    height: 70%;
+    margin: auto;
+    
+}
+.card__day1{
+    background-image: url(./logo/background_blue6.PNG);
+    border-radius: 5%;
+    height:30%;
+    display: grid;
+    box-shadow: 2px 2px 2px 2px ;
+    grid-template-areas:
+    "a  b"
+    
+    'c  d';
+    align-items: center;
+    margin-bottom: 8%;
+    ;
+}
+.card__day1__day{
+    grid-area: a;
+    margin-left: 10%;
+    
+    
+}
+.card__day1__calendar{
+    grid-area: b;
+    margin-left: 70%;
+    
+}
+.card__day1__temperature{
+    grid-area: c;
+    margin-left: 10%;
+    font-size: 40px;
+}
+.card__day1__messege{
+   grid-area: d;
+   margin-left: 10%;
+}
+
+
+.card__day2{
+    border-radius: 5%;
+    background-image: url(./logo/background_green3.PNG);
+    height:30%;
+    box-shadow: 2px 2px 2px 2px ;
+    display: grid;
+    grid-template-areas:
+    "a  b"
+    
+    'c  d';
+    align-items: center;
+    margin-bottom: 8%;
+    ;
+}
+.card__day2__day{
+    grid-area: a;
+    margin-left: 10%;
+  
+}
+.card__day2__calendar{
+    grid-area: b;
+    margin-left: 70%;
+}
+.card__day2__temperature{
+    grid-area: c;
+    margin-left: 10%;
+    font-size: 40px;
+    
+}
+.card__day2__messege{
+   grid-area: d;
+   margin-left: 15%;
+}
+
+.card__day3{
+    border-radius: 5%;
+    background-image: url(./logo/background_yelow.PNG);
+    height:30%;
+    box-shadow: 2px 2px 2px 2px ;
+    display: grid;
+    grid-template-areas:
+    "a  b"
+    
+    'c  d';
+    align-items: center;
+    margin-bottom: 3%;
+    ;
+}
+.card__day3__day{
+    grid-area: a;
+    margin-left: 10%;
+  
+}
+.card__day3__calendar{
+    grid-area: b;
+    margin-left: 70%;
+}
+.card__day3__temperature{
+    grid-area: c;
+    margin-left: 10%;
+    font-size: 40px;
+    
+}
+.card__day3__messege{
+   grid-area: d;
+   margin-left: 15%;
+}
+
+.footer {
+    margin-top: 8px;
+    padding: 15px;
+    background-color: aliceblue;
+    color: white;
+    text-align: center;
+    display: grid;
+    grid-template-areas:
+    "a b c d";
+ }
+
+ .footer__calendar {
+     grid-area: a;
+     width: 50%;
+     border-radius: 50%;
+     margin: auto;
+
+ }
+ .footer__calendar:hover{
+    background-color: lightblue;
+}
+ .footer__location {
+    grid-area: b;
+    width: 50%;
+    border-radius: 50%;
+    margin: auto;
+
+}
+
+.footer__location:hover{
+    background-color: lightblue;
+}
+
+.footer__search {
+    grid-area: c;
+    width: 50%;
+    border-radius: 50%;
+    margin: auto;
+}
+.footer__search:hover{
+    background-color: lightblue;
+}
+.footer__settings {
+    grid-area: d;
+    width: 50%;
+    border-radius: 50%;
+    margin: auto;
+}
+.footer__settings:hover{
+    background-color: lightblue;
+}
+
+/*---------------------------- PAGE 2 ---------------*/
+.phone__header2{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+   margin: auto;
+   text-align: center;
+   margin-top: 8%;
+}
+:hover>.phone__header2__back{
+    background-color: rgba(173, 216, 230, 0.589);
+    border-radius: 50%;
+    width: 30px;
+    
+   
+    margin: auto;
+}
+
+    
+
+
+.phone2__card{
+    padding-top: 20px;
+    width: 80%;
+    margin: auto;
+
+}
+
+.phone2_card_day1{
+  width: 80%;
+  background-color: rgba(0, 128, 0, 0.288);
+  margin: auto;
+  margin-top: 10%;
+  height: 20%;
+
+}
+
+.card2__day1{
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    height: 20%;
+    background-image: url(./logo/background_blue6.PNG);
+    border-radius: 5%;
+    display: grid;
+    box-shadow: 2px 2px 2px 2px ;
+    grid-template-areas:
+    "a  b"
+    
+    'c  d';
+    align-items: center;
+    margin-bottom: 8%;
+}
+.card2__day1__day{
+    grid-area: a;
+    margin-left: 10%;
+  
+}
+.card2__day1__calendar{
+    grid-area: b;
+    margin-left: 70%;
+    
+}
+.card2__day1__temperature{
+    grid-area: c;
+    margin-left: 10%;
+    font-size: 40px;
+}
+.card2__day1__messege{
+   grid-area: d;
+   margin-left: 10%;
+}
+
+.phone2__details{
+    text-align: center;
+    margin-top: 5%;
+}
+.phone2__time{
+    display: grid;
+    /*grid-template-columns: 4fr  1fr 1fr 1fr;*/
+    margin: auto;
+    width: 85%;
+    grid-template-areas: "a a a a a a a a a a b c d";
+    margin-top: 10%;
+    border-bottom: solid 1px gray;
+}
+.detail__time{
+    grid-area: a;
+    font-size: 10px;
+    
+}
+.detail__percent{
+    grid-area: b;
+
+    font-size: 10px;
+}
+.detail__logo{
+    grid-area: c;
+
+    font-size: 10px;
+    
+}
+.detail__temperature{
+    grid-area: d;
+    margin-top: -30%;
+    
+
+    font-size: 20px;
+}
+.footer__2{
+    
+}
+/*------------------------------- PAGE 3 ----------------------- */
+
+.card2__day2{
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    height: 20%;
+    background-image: url(./logo/background_green3.PNG);
+    border-radius: 5%;
+    display: grid;
+    box-shadow: 2px 2px 2px 2px ;
+    grid-template-areas:
+    "a  b"
+    
+    'c  d';
+    align-items: center;
+    margin-bottom: 8%;
+}
+
+/* ------------------ PAGE 4 --------------------------------------*/
+
+.card2__day3{
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    height: 20%;
+    background-image: url(./logo/background_yelow.PNG);
+    border-radius: 5%;
+    display: grid;
+    box-shadow: 2px 2px 2px 2px ;
+    grid-template-areas:
+    "a  b"
+    
+    'c  d';
+    align-items: center;
+    margin-bottom: 8%;
+}
+
+
+/*-----------------------------------------------animations--------------------------------------------------------------*/
+
+
+.snow1{
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    animation: snowing 1s linear 0s infinite normal none;
+    position: absolute;
+}
+    
+.snow2{
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 15%;
+    position: absolute;
+    animation: snowing2 1s linear 0.5s infinite normal none;
+}
+.snow3{
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 30%;
+    position: absolute;
+    animation: snowing3 1s linear 0.72s infinite normal none;
+}
+.snow4{
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 45%;
+    position: absolute;
+    animation: snowing4 1s linear 0.83s infinite normal none;
+}
+.snow5{
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 60%;
+    position: absolute;
+    animation: snowing5 1s linear 1s infinite normal none;
+}
+.rain1{
+    height: 5px;
+    width: 5px;
+    background-color: lightblue;
+    border-radius: 50%;
+    animation: raining 1s linear 0s infinite normal none;
+    position: absolute;
+}
+    
+.rain2{
+    height: 5px;
+    width: 5px;
+    background-color: lightblue;
+    border-radius: 50%;
+    margin-left: 15%;
+    position: absolute;
+    animation: raining2 0.51s linear 0.5s infinite normal none;
+}
+.rain3{
+    height: 5px;
+    width: 5px;
+    background-color: lightblue;
+    border-radius: 50%;
+    margin-left: 30%;
+    position: absolute;
+    animation: raining3 1s linear 0.72s infinite normal none;
+}
+.rain4{
+    height: 5px;
+    width: 5px;
+    background-color: lightblue;
+    border-radius: 50%;
+    margin-left: 45%;
+    position: absolute;
+    animation: raining4 0.51s linear 0.83s infinite normal none;
+}
+.rain5{
+    height: 5px;
+    width: 5px;
+    background-color: lightblue;
+    border-radius: 50%;
+    margin-left: 60%;
+    position: absolute;
+    animation: raining5 0.5s linear 1s infinite normal none;
+}
+.sun1{
+    width: 15px;
+    height: 15px;
+    
+    border-radius: 50%;
+    margin-top: -3%;
+    position: absolute;
+    animation: scorching1 3s ease-in-out  1s infinite  alternate none;
+   
+}
+
+
+@keyframes snowing{
+    from{
+        margin-top: -8%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left: 4%;
+
+    }
+
+}
+@keyframes snowing2{
+    from{
+        margin-top: -8%;
+        margin-left: 5%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left:10% ;
+
+    }
+
+}
+@keyframes snowing3{
+    from{
+        margin-top: -8%;
+        margin-left: 3%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left:7% ;
+
+    }
+
+}
+@keyframes snowing4{
+    from{
+        margin-top: -8%;
+        margin-left: 2%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left:3% ;
+
+    }
+
+}
+@keyframes snowing5{
+    from{
+        margin-top: -8%;
+        margin-left: 6%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left:0% ;
+
+    }
+
+}
+
+@keyframes raining{
+    from{
+        margin-top: -8%;
+        margin-left:-5% ;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left: 7%;
+
+    }
+
+}
+@keyframes raining2{
+    from{
+        margin-top: -8%;
+        margin-left: 1%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left:9% ;
+
+    }
+
+}
+@keyframes raining3{
+    from{
+        margin-top: -8%;
+        margin-left: -10%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left:7% ;
+
+    }
+
+}
+@keyframes raining4{
+    from{
+        margin-top: -8%;
+        margin-left: -11%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left:6% ;
+
+    }
+
+}
+@keyframes raining5{
+    from{
+        margin-top: -8%;
+        margin-left: 0%;
+
+    }
+    to{
+        margin-top: 4%;
+        margin-left:5% ;
+
+    }
+
+}
+@keyframes scorching1{
+    from{
+        width: 15px;
+        height: 15px;
+        background-color:transparent
+        
+
+   
+
+    }
+    to{
+        margin-left: -1%;
+        margin-top:-3%;
+         width: 30px;
+         height: 30px;
+         background-color: orange
+
+    }
+
+}
