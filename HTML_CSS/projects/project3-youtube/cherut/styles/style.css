@@ -164,7 +164,7 @@ header .header__icons .icon {
 }
 
 .categoryNavBar ul li {
-  background-color: #cccbcb;
+  background-color: #949292;
   border-radius: 1em;
   padding: .3em 1em;
   margin-right: 1em;
@@ -174,7 +174,7 @@ header .header__icons .icon {
 }
 
 .categoryNavBar ul li:hover {
-  background-color: #949292;
+  background-color: #cccbcb;
 }
 
 main {
@@ -315,13 +315,14 @@ main .main__posts .main__postsWrapper .main__postsPost .main__postsPostContent {
 }
 
 main .main__posts .main__postsWrapper .main__postsPost .main__postsPostContent img {
-  width: 30%;
+  width: 40%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 main .main__posts .main__postsWrapper .main__postsPost .main__postsPostContent p {
   margin-left: 1em;
+  font-size: .9rem;
 }
 
 main .main__posts .main__postsWrapper .main__postsPost .main__postsPostReactions {
