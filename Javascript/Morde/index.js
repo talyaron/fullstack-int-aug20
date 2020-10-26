@@ -7,7 +7,17 @@ let favoriteAnimal = {
 }
 
 console.log(favoriteAnimal.name);
+console.log(favoriteAnimal["name"]);
+
 console.log(favoriteAnimal.size);
+console.log(favoriteAnimal["size"]);
+
 console.log(favoriteAnimal.src);
+console.log(favoriteAnimal["src"]);
+
 console.log(favoriteAnimal.color);
+console.log(favoriteAnimal["color"]);
+
 console.log(favoriteAnimal.weight);
+console.log(favoriteAnimal["weight"]);
+
