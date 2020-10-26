@@ -24,7 +24,9 @@ console.log("Weight: " + animal['weight'])
 console.log(animal['name'], animal['size'], animal['src'], animal['color'], animal['weight'])
 
 let image = document.getElementById('animalPic')
+const title = document.getElementById("title")
 image.src = animal.src;
+title.innerText = `My fav animal is: ${animal.name}`;
 
 
 
