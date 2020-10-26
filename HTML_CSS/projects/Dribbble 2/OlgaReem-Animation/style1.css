@@ -135,6 +135,39 @@ font-size: 15px;
         color: whitesmoke;
 
       }
+
+.watch{
+  width:20px;
+  height: 30px;
+/* border-right:2px solid orange; */
+}
+
+.snow{
+  width:20px;
+  height: 30px;
+  /* border-right:2px solid orange; */
+
+}
+
+.sun{
+  width:20px;
+  height: 30px;
+  /* border-right:2px solid orange; */
+
+
+}
+
+.moon{
+  width:30px;
+  height: 30px;
+  /* border-left:2px solid orange; */
+
+
+}
+
+
+
+
       #sun{
         fill: white;
         
