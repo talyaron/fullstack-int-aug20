@@ -1,3 +1,10 @@
+.guide-icon.ytd-guide-entry-renderer {
+  height: 24px;
+  width: 24px;
+  margin-left: 24px;
+  color: red;
+}
+
 .LeftMenu {
   width: 100%;
   height: 100%;
@@ -23,6 +30,7 @@
 .LeftMenu ul li .material-icons {
   margin-left: 10%;
   color: #606060;
+  width: 25px;
 }
 .LeftMenu ul li .roundimg {
   border-radius: 100%;
@@ -35,7 +43,7 @@
 .LeftMenu .underline {
   height: 0px;
   width: 90%;
-  border: 1px solid #606060;
+  border-bottom: 1px solid #606060;
   display: grid;
   /*  margin-right: 10px; */
   margin: auto;

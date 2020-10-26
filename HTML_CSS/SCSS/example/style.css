@@ -1,0 +1,25 @@
+.item {
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+}
+
+.item h1 {
+  color: red;
+}
+
+.item p {
+  color: blue;
+}
+
+.item:hover {
+  -webkit-box-shadow: 4px 4px 12px gray;
+          box-shadow: 4px 4px 12px gray;
+}
+
+.item--small {
+  width: 30px;
+  height: 30px;
+  background-color: blanchedalmond;
+}
+/*# sourceMappingURL=style.css.map */
