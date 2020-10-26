@@ -1,19 +1,22 @@
+body {
+    background-color: #525252;
+}
+
 .menuUp {
     position: absolute;
     width: 104%;
     height: 80px;
-    background-color: #525252;
+    background-color: #4d4d4d;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin: -2%;
-    
-    // fffef
+    // ddddd
     &__menuUpGrid {
         margin-top: 0.5%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
-    // feff
+    // ddddd
     &__hamburgerFlex {
         display: flex;
         flex-direction: column;
@@ -21,8 +24,8 @@
     &__hamburger {
         padding: 1%;
         margin: auto;
-        max-width: 40px;
-        max-height: 40px;
+        width: 40px;
+        height: 40px;
         background-color: rgb(32, 32, 32);
         opacity: 100%;
         border-radius: 50%;
@@ -50,30 +53,58 @@
         }
     }
 }
-.container {
-    width: 104%;
-margin: -2%;
-    margin-top: 50px;
-    padding: 40px;
-    position: absolute;
-    width: 100vw;
+
+.pageGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 1.5rem;
-    background-color: rgb(49, 49, 49);
-    transition: all 300ms;
+    grid-template-columns: 85% 15%;
+    &__sideMenu {
+        max-height: 700px;
+        margin-top: 50px;
+        margin-right: -10px;
+        background-color: #525252;
+        display: grid;
+        grid-template-rows: repeat(7, 1fr);
+        &Button {
+            color: #979797;
+            ;
+            margin-top: 10px;
+            gap: 5px;
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            justify-content: start;
+            &:hover {
+                background-color: rgb(117, 117, 117);
+            }
+            .pageGrid__sideMenuText {
+                direction: rtl;
+                color: blanchedalmond;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        }
+    }
+    &__container {
+        margin-top: 50px;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 1.5rem;
+        background-color: rgb(49, 49, 49);
+        transition: all 300ms;
+    }
 }
-.video{
-    display: flex;
-    flex-direction: row;
-    height: 150px;
+
+.video {
+    display: grid;
+    grid-template-rows: 70% 15% 15%;
+    height: 190px;
     background-color: rgb(0, 0, 0);
     color: white;
     text-align: center;
-
-
-
-
-
-
+    &>iframe {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .videoName {
+        color: white;
+    }
 }
