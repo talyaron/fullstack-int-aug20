@@ -23,7 +23,7 @@ speed = "293km/h";
 console.log(carname, price, year, color, speed);
 
 //5
-car = { mycar: "Porsche 911", price: "90000USD", year: "2020", color: "red", speed: '293km/h' };
+car = { carname: "Porsche 911", price: "90000USD", year: "2020", color: "red", speed: '293km/h' };
 console.log(car);
 
 //6
@@ -53,7 +53,7 @@ function answer4() {
 }
 
 function answer5() {
-    let answer5 = 'color: "red", mycar: "Porsche 911", price: "90000USD", speed: "293km/h". year: "2020"'
+    let answer5 = 'color: "red", carname: "Porsche 911", price: "90000USD", speed: "293km/h". year: "2020"'
     document.getElementById('five').innerHTML = answer5
 }
 
@@ -63,6 +63,6 @@ function answer6() {
 }
 
 function answer7() {
-    let answer7 = '0:{carname: "Renault Wind (N)", price: "8000EUR", year: "2010", color: "white", speed: "190km/h"} 1: {mycar: "Porsche 911", price: "90000USD", year: "2020", color: "red", speed: "293km/h"}'
+    let answer7 = '0:{carname: "Renault Wind (N)", price: "8000EUR", year: "2010", color: "white", speed: "190km/h"} 1: {carname: "Porsche 911", price: "90000USD", year: "2020", color: "red", speed: "293km/h"}'
     document.getElementById('seven').innerHTML = answer7
 }
