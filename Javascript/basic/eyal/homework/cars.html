@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  
+    //HW
+    set information about your car (speed, price, year, etc)
+    1) in plain (primitives) variables
+    2) in an object
+    3) set the obj to an array cars[0]
+    4) change your car to a better car in the same variables
+    5) change the object to the new car,
+    6) save the obj to the cars array in location 1
+    7) print (console.log) the array cars. what happens? -->
+    <script>
+
+        /*  set information about your car 
+                (speed, price, year, etc)
+             in plain (primitives) variables */
+        let carModel = "unday";
+        let speed = "180KM/H";
+        let price = 120000;
+        let year = 2018;
+        let color = "wite";
+
+        /*  set information about your car 
+         in an object */
+        let mycar = { theCarModel: carModel, theSpeed: speed, thePrice: price, theYear: year, theColor: color };
+
+        /* set the obj to an array cars[0] */
+        const cars = [mycar];
+        cars[0] = mycar;
+
+        /*  change your car to a better car in the same variables */
+        /* change the object to the new car */
+
+        mycar.theCarModel = "subaro";
+        mycar.theSpeed = "220KM/H";
+        mycar.thePrice = 220000;
+        mycar.theYear = 2020;
+        mycar.theColor = "black";
+
+        /*  save the obj to the cars array in location 1 */
+        cars[1] = mycar;
+
+        /*  print (console.log) the array cars.*/
+        console.log(cars);
+
+        /* what happens?  */
+        console.log("The result is that the two Objects in the array are identical");
+       /*  The result is that the two Objects in the array are identical */
+
+
+</script>
+</body>
+
+</html>
