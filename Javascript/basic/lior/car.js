@@ -1,5 +1,12 @@
+let speed= "210km"
+let price= "15000$"
+let year= "2015"
+let color= "white"
+let hand= "2"
 
-const car= {speed: "210km" , price: "15000$" , year: "2015" , color: "white" , hand: "2"}
+console.log(speed , price , year , color , hand)
+
+let car= {speed: "210km" , price: "15000$" , year: "2015" , color: "white" , hand: "2"}
 
 console.log(car.speed);
 console.log(car['price']);
@@ -7,29 +14,18 @@ console.log(car.year);
 console.log(car['color']);
 console.log(car.hand) 
 
- /*const car1= {
-    speed: "210km",
-    price: "15000$",
-    year: "2015",
-    color: "white",
-    hand: "2" ,
-    src : "https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit.jpg"
-    };
-    
-    const speed = document.getElementById('speed')
-    const price = document.getElementById('price')
-    const year = document.getElementById('year')
-    const color = document.getElementById('color')
-    const hand = document.getElementById('hand')
-    let image = document.getElementById('carpic')
-    console.dir(image) 
-    image.src = car.src ;
-    speed.innerText = `speed: ${car1.speed}`
-    price.innerText = `price: ${car1.price}`
-    year.innerText = `year: ${car1.year}`
-    color.innerText = `color: ${car1.color}`
-    hand.innerText = `hand: ${car1.hand}` */ 
+const cars = [car]
+console.log(cars[0])
 
-    
-    const car1 = [ 'car']
-    console.log(car1)
+speed= "250km"
+price= "50000$"
+year= "2020"
+color= "black"
+hand= "1"
+
+car = { speed: "250km" , price: "50000$" , year: "2020" , color: "black" , hand: "1"}
+
+console.log(car)
+
+cars[1] = car
+console.log(cars)
