@@ -1,30 +1,21 @@
-const name_Car = "Hyundai I20"
-const maxSpeed_Car = 200;
-const price = 50000;
-const year = 2015;
-const color = "gray";
+function Car(name_Car, maxSpeed_Car, price, year,color) {
+    this.name_Car = name_Car;
+    this.maxSpeed_Car = maxSpeed_Car;
+    this.price = price;
+    this.year = year;
+    this.color = color;
+  }
 
-const myCar = {
-    name : name_Car,
-    speed : maxSpeed_Car,
-    price : price,
-    year : year,
-    color : color
-}
+  const myCar1 =new Car("Hyundai I20",200,50000,2015,"gray");
+  const myCar2 =new Car("Skoda Octavia",240,150000,2020,"gary")
+  console.log(myCar1);
+  console.log(myCar2);
 
-const cars = [];
+  const cars=[];
 
-cars.push(myCar);
+  cars.push(myCar1);
+  cars.push(myCar2);
+  console.log(cars);
 
-
-
-cars.push(
-    myCar2={
-    name : "Skoda Octavia",
-    speed : 240,
-    price : 150000,
-    year : 2020,
-    color : "gary"}
-    );
-console.log(cars)
+  
 
