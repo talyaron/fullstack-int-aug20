@@ -1,7 +1,7 @@
 "use strict";
 
 function age(correntYear, BerthOfYear) {
-  return age = correntYear - BerthOfYear;
+  return correntYear - BerthOfYear;
 }
 
 var correntYear = prompt("Please enter The Corrent Year ", "2020");
