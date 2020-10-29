@@ -8,3 +8,5 @@ function GetFullName(surName,firstName){
    
   
    console.log(GetFullName("eyal","shemuel"))
+
+   /* test */
