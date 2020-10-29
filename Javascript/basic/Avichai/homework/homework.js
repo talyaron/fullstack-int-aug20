@@ -1,34 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    .wrapper{
-        display: flex;
-        justify-content: center;
-        width: 85%;
-        height: 80vh;
-        margin: auto;
-        background-color: lightgray;
-    }
-    h1{
-        margin-top: 10%;
-        font-size: 100px;
-        color: blue;
-    }
-
-</style>
-<body>
-    <div class="wrapper">
-        <h1>HomeWork</h1>
-    </div>
-
-    <script>
-
         //1)
         let name = "Skoda";
         let model = "Roomstar"
@@ -42,8 +11,8 @@
         console.log(car);
 
         //3)
-        const cars = [car]
-        console.log(cars[0])
+        const carArr = [car]
+        console.log(carArr[0])
 
         //4)
         name = "Jeep";
@@ -58,18 +27,12 @@
         console.log(car)
 
         //6)
-        cars[1] = car;
+        carArr[1] = car;
 
         //7)
-        console.log(cars);
+        console.log(carArr);
 
         // When loggeed the array cars it shows both
         // the first car object made then the second
 
 
-
-
-    </script>
-</body>
-
-</html>
