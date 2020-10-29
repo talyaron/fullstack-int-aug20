@@ -1,12 +1,12 @@
-function GetFullName(surName,firstName){
-    const fullName = {firstName:firstName ,surName:surName}
+function GetFullName(surName, firstName) {
+    const fullName = {}
     fullName.firstName = firstName;
     fullName.surName = surName;
-    return  fullName;
-   }
-   
-   
-  
-   console.log(GetFullName("eyal","shemuel"))
+    return fullName;
+}
 
-   /* test */
+
+
+console.log(GetFullName("eyal", "shemuel"))
+
+/* test */
