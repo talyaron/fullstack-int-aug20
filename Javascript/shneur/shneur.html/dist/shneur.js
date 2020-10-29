@@ -68,4 +68,16 @@ cars[0] = vehicle;
 
 vehicle = { brand: "tesla", model: "model3", speed: 500, range: 350, 0 to100: 2.9, color: "white", price: 35000, };
 cars[1] = vehicle;
+console.log(cars) const cars = []
+
+let vehicle = { brend: 'citroen', speed: 180, price: 20000, year: 2007, color: "white", };
+cars[0] = vehicle
+    // console.log(cars)
+
+
+vehicle = { brend: 'tesla', speed: 300, price: 200000, year: 2021, color: "black", };
+
+
+cars[1] = vehicle
+
 console.log(cars)
