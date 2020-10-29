@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>myage</title>
+
 </head>
 
 <body>
+
     <script>
-        function year(year1, year2) {
-            return year1 - year2
+        function age(currentYear, birthYear) {
+            return currentYear - birthYear;
         }
 
-        x = year(2020, 1993)
-        console.log(x)
+        const myAge = age(2020, 1994)
+        console.log(myAge)
     </script>
 </body>
 

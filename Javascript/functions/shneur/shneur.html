@@ -11,13 +11,24 @@
     <script>
         function returnAge(birthDate) {
 
+            console.log(new Date().getFullYear())
 
-
-            return 2020 - birthDate
+            return new Date().getFullYear() - birthDate
         }
 
         let age = returnAge(1996)
         console.log(age)
+
+        function yourName(name, family) {
+
+
+
+            return name + family
+        }
+
+        let fulName = yourName(Shneur, Greenberg)
+        fulName = name + " " + family
+        console.log(fulName)
     </script>
 </body>
 
