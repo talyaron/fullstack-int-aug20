@@ -1,5 +1,3 @@
-/* first car */
-
 let brand = "Audi Q2"
 let year = 2017
 let speed ="160hp"
