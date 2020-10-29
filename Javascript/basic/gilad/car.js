@@ -12,7 +12,8 @@ let car ={brand:"skoda", model:"fabia",price:40000,year:2012,gear:"manual"}
 let carArr = new Array;
 carArr[0] = car;
  
-car ={brand:"audi", model:"a5",price:180000,year:2020,gear:"automatic"}
+// car ={brand:"audi", model:"a5",price:180000,year:2020,gear:"automatic"}
+ car.brand="audi"
 carArr[1] = car;
 console.log(carArr)
 

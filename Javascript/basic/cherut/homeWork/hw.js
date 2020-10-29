@@ -5,7 +5,7 @@ let yearOfIssue = '2012'
 let color = 'white'
 let price = 35000;
 
-console.log(maker);
+console.log(maker,yearOfIssue,color,price);
 
 // 2) in an object
 
@@ -19,7 +19,8 @@ console.log(MyCar);
 
 // 3) set the obj to an array cars[0]
 
-const cars = [MyCar];
+const cars = [];
+cars[0] = MyCar;
 
 console.log(cars);
 
@@ -30,9 +31,9 @@ yearOfIssue = '2018'
 color = 'bule'
 price = 25000;
 
-console.log(maker);
+console.log(maker,yearOfIssue,color,price);
 console.log(MyCar);
-console.log(cars);
+// console.log(cars);
 
 // 5) change the object to the new car,
 MyCar.maker = maker;
