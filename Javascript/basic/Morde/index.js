@@ -16,7 +16,7 @@ const cars = [];
 
 cars.push(myCar);
 
-const myCar2 = {
+myCar = {
     name : "Porche Carrera",
     speed : 320,
     price : 250000,
@@ -24,6 +24,6 @@ const myCar2 = {
     color : "black"
 }
 
-cars.push(myCar2);
+cars.push(myCar);
 console.log(cars)
 
