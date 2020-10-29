@@ -1,5 +1,5 @@
-function  CalculateAge(BirthYear, CurrentYear){
-  return CurrentYear-BirthYear;
+function CalculateAge(BirthYear, CurrentYear) {
+  return CurrentYear - BirthYear;
 }
 
 // let MyAge = CalculateAge(1998,2020);
@@ -7,10 +7,13 @@ function  CalculateAge(BirthYear, CurrentYear){
 
 
 
-function  NamesToObj(FirstName, surname){
-  let obj = {FirstName:FirstName, surname:surname}
-  console.log(obj)
-  // return obj;
+function namesToObj(firstName, surname) {
+  let obj = { firstName, surname }
+  
+  return obj;
 }
 
-NamesToObj('cherut', 'gur');
+namesToObj('cherut', 'gur');
+
+let x = namesToObj('cherut', 'gur');
+console.log(x);

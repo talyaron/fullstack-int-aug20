@@ -17,11 +17,15 @@
         console.log(x)
 
         function name(name, surname) {
-            return name + surname
+
+            return {
+                name,
+                surname
+            }
         }
 
-        x = name('kat ', 'ru')
-        console.log(x)
+        let fullName = name('Katya', 'Ru')
+        console.log(fullName)
     </script>
 </body>
 
