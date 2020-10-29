@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var c = 100; //global
+
+        function sum(a,b){
+
+            console.log(a)
+            c = 50;
+            console.log('c',c);
+            var e = 200;
+            return a+b; //scope 
+          
+           
+        }
+
+        
+
+        let x = sum(10, 16); //global
+        // console.log(x);
+        // console.log(c);
+
+        if(x>20){ //code block 
+            var d = 34;
+        }
+
+        console.log('d:', d)
+        console.log('e', e)
+    </script>
+</body>
+</html>
