@@ -1,5 +1,5 @@
 function age(correntYear,BerthOfYear){
- return  age =  correntYear - BerthOfYear;
+ return   correntYear - BerthOfYear;
 }
 
 
