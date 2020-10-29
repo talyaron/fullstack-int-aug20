@@ -11,7 +11,8 @@
         console.log(car);
 
         //3)
-        const carArr = [car]
+        const carArr = []
+        carArr[0] = car;
         console.log(carArr[0])
 
         //4)
