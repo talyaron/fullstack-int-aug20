@@ -16,12 +16,19 @@ const cars = [];
 
 cars.push(myCar);
 
+<<<<<<< Updated upstream
 myCar = {
     name : "Porche Carrera",
     speed : 320,
     price : 250000,
+=======
+const myCar2 = {
+    name : "Skoda Octavia",
+    speed : 240,
+    price : 120000,
+>>>>>>> Stashed changes
     year : 2020,
-    color : "black"
+    color : "gray"
 }
 
 cars.push(myCar);
