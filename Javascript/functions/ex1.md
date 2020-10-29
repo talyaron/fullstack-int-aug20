@@ -1,0 +1,1 @@
+1) write a function that gets your year of birth ,and current year and return your age
