@@ -7,7 +7,7 @@ let speed = "190km/h"
 console.log(carname, price, year, color, speed)
 
 //2
-let car = { carname: "Renault Wind (N)", price: "8000EUR", year: "2010", color: "white", speed: "190km/h", }
+const car = { carname: "Renault Wind (N)", price: "8000EUR", year: "2010", color: "white", speed: "190km/h", }
 console.log(car)
 
 //3
@@ -15,7 +15,7 @@ const cars = [car]
 console.log(cars[0])
 
 //4
-carname = "Porsche 911"
+carname = "Porsche 911";
 price = "90000USD";
 year = "2020";
 color = "red";
