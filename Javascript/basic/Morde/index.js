@@ -1,23 +1,29 @@
-let favoriteAnimal = {
-    name: "Sloth",
-    size: 1.2 + "cm",
-    src: "https://img.mako.co.il/2018/08/28/shutterstock_243273610_i.jpg",
-    color: "Brown",
-    weight: 20 + "kg"
+const carName = "Suzuki Baleno"
+const speed = 240;
+const price = 150000;
+const year = 2020;
+const color = "white";
+
+const myCar = {
+    name : carName,
+    speed : speed,
+    price : price,
+    year : year,
+    color : color
 }
 
-console.log(favoriteAnimal.name);
-console.log(favoriteAnimal["name"]);
+const cars = [];
 
-console.log(favoriteAnimal.size);
-console.log(favoriteAnimal["size"]);
+cars.push(myCar);
 
-console.log(favoriteAnimal.src);
-console.log(favoriteAnimal["src"]);
+myCar = {
+    name : "Porche Carrera",
+    speed : 320,
+    price : 250000,
+    year : 2020,
+    color : "black"
+}
 
-console.log(favoriteAnimal.color);
-console.log(favoriteAnimal["color"]);
-
-console.log(favoriteAnimal.weight);
-console.log(favoriteAnimal["weight"]);
+cars.push(myCar);
+console.log(cars)
 
