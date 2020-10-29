@@ -1,7 +1,10 @@
 
 
 let animal = { name: "Sloth", size: "50-80 CM", src: "https://images-na.ssl-images-amazon.com/images/I/81%2BikGeEBlL._AC_SX522_.jpg", color: "Gray", weight: "4-7 KG" }
-
+let car1 = { speed:200, year:2009 }
+let car2 = "2"
+const cars = [car1, car2]
+console.log(cars[0])
 
 // First Method
 
