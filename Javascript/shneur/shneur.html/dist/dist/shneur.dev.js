@@ -2,20 +2,23 @@
 
 var cars = [];
 var vehicle = {
-  brend: 'citroen',
-  speed: 180,
-  price: 20000,
-  year: 2007,
-  color: "white"
+  brend: 'tesla',
+  model: "rodster",
+  range: 1000,
+  speed: 402,
+  price$: 250000,
+  zeroTo100: 1.9,
+  color: "red"
 };
-cars[0] = vehicle; // console.log(cars)
-
+cars[0] = vehicle;
 vehicle = {
   brend: 'tesla',
-  speed: 300,
-  price: 200000,
-  year: 2021,
-  color: "black"
+  model: "model 3",
+  range: 570,
+  speed: 260,
+  price$: 35000,
+  zeroTo100: 3.1,
+  color: "white"
 };
 cars[1] = vehicle;
 console.log(cars);
