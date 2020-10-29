@@ -9,12 +9,15 @@
 
 <body>
     <script>
-        function age(yearNow, birthYear){
+        function fullName(firstName, surame) {
 
-            return yearNow-birthYear;
+            return {
+                firstName,
+                surame
+            }
         }
-        let myAge = age(2020,2000)
-        console.log(myAge)
+        let myFullName = fullName("Avichai ", "Nissim")
+        console.log(myFullName)
     </script>
 </body>
 
