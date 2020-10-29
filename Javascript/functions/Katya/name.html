@@ -9,12 +9,16 @@
 
 <body>
     <script>
-        function year(year1, year2) {
-            return year1 - year2
+        function name(name, surname) {
+
+            return {
+                name,
+                surname
+            }
         }
 
-        x = year(2020, 1993)
-        console.log(x)
+        let fullName = name('Katya', 'Ru')
+        console.log(fullName)
     </script>
 </body>
 
