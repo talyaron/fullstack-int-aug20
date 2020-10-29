@@ -1,0 +1,32 @@
+body {
+  background-image: url(https://img2.goodfon.ru/wallpaper/nbig/4/ce/mashina-doroga-fon-4515.jpg);
+  background-size: cover;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.63);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 2%;
+}
+
+p {
+  padding-left: 20%;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+ol {
+  padding-left: 23%;
+  padding-bottom: 3%;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+li {
+  padding: 0.5%;
+}
