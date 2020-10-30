@@ -1,0 +1,31 @@
+.item {
+  background-color: aqua;
+  width: 50%;
+  margin: auto;
+  padding-top: 1%;
+  text-align: center;
+}
+.item h1 {
+  color: blue;
+}
+.item p {
+  color: #882888;
+  font-weight: bold;
+  padding-bottom: 5%;
+}
+.item:hover {
+  box-shadow: 1px 1px 5px grey;
+  animation: item 5s infinite;
+}
+
+@keyframes item {
+  0% {
+    background-color: aqua;
+  }
+  50% {
+    background-color: #1b71aa;
+  }
+  100% {
+    background-color: aqua;
+  }
+}
