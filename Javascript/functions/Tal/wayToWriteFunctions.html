@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function multi(a,b){   //regular
+            return a*b;
+        }
+
+        const multi1 = function(){  //anonymous function
+            return a*b;
+        }
+
+        const multi2 = (a,b)=>{  //arrow function
+            return a*b;
+        }
+
+        let multi3 = multi2;
+        let x = multi3(10, 4);
+        console.log(x)
+    </script>
+</body>
+</html>
