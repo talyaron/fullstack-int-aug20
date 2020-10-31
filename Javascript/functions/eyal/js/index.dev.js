@@ -5,10 +5,10 @@ function GetFullName(surName, firstName) {
     firstName: firstName,
     surName: surName
   };
-  fullName.firstName = firstName;
-  fullName.surName = surName;
+  /* fullName.firstName = firstName;
+  fullName.surName = surName; */
+
   return fullName;
 }
 
 console.log(GetFullName("eyal", "shemuel"));
-/* test */
