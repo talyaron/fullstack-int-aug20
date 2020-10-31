@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//
+// 1) write a function that gets the price of an item and return the vat. (מע״מ)
+// 2) write it as regular function, anonymous founction and arrow function
+
+function addVat(itemPrice){
+  return itemPrice*1.17;
+}
+
+const addVat1 = function(itemPrice){
+  return itemPrice*1.17;
+}
+
+const addVat2 = (itemPrice)=>{ 
+  return itemPrice*1.17;
+}
+
+let totalPrice = addVat(10);
+let totalPrice1 = addVat1(45);
+let totalPrice2 = addVat2(100);
+console.log(totalPrice);
+console.log(totalPrice1);
+console.log(totalPrice2);
+
+
+  </script>
+</body>
+</html>
