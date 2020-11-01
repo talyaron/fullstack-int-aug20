@@ -16,8 +16,10 @@
   gap: 3%;
 }
 .bigcontainer .container #screan {
-  line-height: 1.4;
-  font-size: 16px;
+  line-height: 2;
+  font-size: 21px;
+  background-color: black;
+  color: white;
   grid-row: 1;
   grid-column: 1/3;
 }
