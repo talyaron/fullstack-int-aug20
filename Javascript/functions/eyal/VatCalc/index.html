@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/mystyle.css">
+    
     <title>מחשבון מע"מ</title>
 </head>
 <body>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <div class="bigcontainer">
         <h1>מחשבון מע"מ</h1>
         <P>אנא הכנס מחיר</P>
@@ -22,12 +24,15 @@
             <button id="7" onclick="getInputButton(7)">7</button>
             <button id="8" onclick="getInputButton(8)">8</button>
             <button id="9" onclick="getInputButton(9)">9</button>
-            <button id="0" onclick="getInputButton(0)">0</button>
+            <button id="b0" onclick="getInputButton(0)">0</button>
+            <button id="Clear" onclick="setClearscrean()">Clear</button>
         </div>
         <div class="mathFunctions">
-            <button id="getVatFromPrice">Get the Vat</button>
-            <button id="addVatToPrice">Add the Vat</button>
-            <button id="getVPriceFromTotal">Get the price</button>
+            <button id="setVat" onclick="setVat()">הגדר מע"מ שונה</button>
+            <button id="addVatToPrice" onclick="addVatToPrice()">הוסף מע"מ </button>
+            <button id="substractVatFromPrice" onclick="substractVatFromPrice()">הפחת מע"מ</button>
+            <button id="getVPriceFromTotal" onclick="getVPriceFromTotal()">מצא מע"מ</button>
+
         </div>
     </div>
 </div>

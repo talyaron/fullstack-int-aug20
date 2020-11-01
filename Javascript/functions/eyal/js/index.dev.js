@@ -1,22 +1,58 @@
 "use strict";
 
-function vat1(itemPraice, VatRet) {
-  return itemPraice * (1 + VatRet / 100);
+debugger;
+
+function getInputButton(i) {
+  document.getElementById(i);
+
+  if (document.getElementById("screan").innerHTML == 0) {
+    document.getElementById("screan").innerHTML = i;
+  } else {
+    document.getElementById("screan").innerHTML += i;
+  }
+
+  ;
 }
 
-var vat2 = function vat2(itemPraice, VatRet) {
-  return itemPraice * (1 + VatRet / 100);
-};
+var theVat = 17;
+/* הצג לחיצת לחצן */
 
-var vat3 = function vat3(itemPraice, VatRet) {
-  return itemPraice * (1 + VatRet / 100);
-};
+function setClearscrean() {
+  document.getElementById("Clear");
+  document.getElementById("screan").innerHTML = 0;
+}
+/* הגדר מע"מ שונה */
 
-var vat4 = function vat4(itemPraice, VatRet) {
-  return itemPraice * (1 + VatRet / 100);
-};
 
-console.log(vat1(100, 17));
-console.log(vat2(100, 17));
-console.log(vat3(100, 17));
-console.log(vat4(100, 17));
+function setVat() {
+  theVat = document.getElementById("screan").innerHTML;
+  document.getElementById("screan").innerHTML = 'ערך המע"מ שונה ל ' + theVat + ' אחוז';
+}
+/* הוסף מע"מ */
+
+
+function addVatToPrice() {
+  display = document.getElementById("screan").innerHTML;
+  display = display * (theVat / 100 + 1);
+  document.getElementById("screan").innerHTML = display;
+}
+
+;
+/*  הפחת מע"מ */
+
+function substractVatFromPrice() {
+  display = document.getElementById("screan").innerHTML;
+  display = display * (1 - theVat / 100);
+  document.getElementById("screan").innerHTML = display;
+}
+
+;
+/* מצא מע"מ */
+
+function getVPriceFromTotal() {
+  display = document.getElementById("screan").innerHTML;
+  display = display - display * (1 - theVat / 100);
+  document.getElementById("screan").innerHTML = display;
+}
+
+;
