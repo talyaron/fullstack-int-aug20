@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>VAT HOMEWORK 2/11/20</h1>
+
+    <script>
+
+        function vat1(itemPrice, vatAmount) {   //regular function
+
+            return itemPrice * vatAmount;
+        }
+        const vat2 = function (itemPrice, vatAmount) {  // anonymous function
+            return itemPrice * vatAmount;
+        }
+
+        const vat3 = (itemPrice, vatAmount) => {  // arrow function
+            return itemPrice * vatAmount;
+        }
+
+        vatAmount = 0.17;
+        itemPrice = 24;
+
+        const itemVat1 = vat1(itemPrice, vatAmount)
+        const itemWithVat1 = itemVat1 + itemPrice;
+        console.log(`
+        Made with Regular Function:
+        Item price: ${itemPrice}
+        Vat amount: ${itemVat1}
+        Price with Vat: ${itemWithVat1}`)
+
+
+        itemPrice = 35;
+        const itemVat2 = vat2(itemPrice, vatAmount)
+        const itemWithVat2 = itemVat2 + itemPrice;
+        console.log(`
+        Made with Anonymous Function:
+        Item price: ${itemPrice}
+        Vat amount: ${itemVat2}
+        Price with Vat: ${itemWithVat2}`)
+
+
+        itemPrice = 100;
+        const itemVat3 = vat3(itemPrice, vatAmount)
+        const itemWithVat3 = itemVat3 + itemPrice;
+        console.log(`
+        Made with Arrow Function:
+        Item price: ${itemPrice}
+        Vat amount: ${itemVat3}
+        Price with Vat: ${itemWithVat3}`)
+
+    </script>
+</body>
+
+</html>
