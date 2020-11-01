@@ -9,14 +9,38 @@
 
 <body>
     <script>
+<<<<<<< HEAD
         /*function name(fName, lName) {
 
                                                                                                                                                     return fName + " " + lName;
                                                                                                                                                 }
                                                                                                                                                 alert(name("Shneur", "Greenberg"))*/
+=======
+        /*  function returnAge(birthDate) {
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    console.log(new Date().getFullYear())
+>>>>>>> master
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    return new Date().getFullYear() - birthDate
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+
+<<<<<<< HEAD
         cheshbon = (a, b, c) => a + 5, b = 4
+=======
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                let age = returnAge(1996)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                console.log(age)
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                function yourName(name, family) {
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    return name + family
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                let fulName = yourName(Shneur, Greenberg)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                fulName = name + " " + family
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                console.log(fulName)*/
+>>>>>>> master
 
 
 
@@ -24,6 +48,7 @@
         alert(cheshbon(t))
 
 
+<<<<<<< HEAD
 
 
 
@@ -37,6 +62,30 @@
 
          let fulName = yourName(Shneur, Greenberg)
          fulName = name + " " + family console.log(fulName)*/
+=======
+
+
+        // regular function
+        function taxClculator(price) {
+            tax = (price * 17) / 100;
+            alert("regular function " + tax)
+        }
+        taxClculator(150)
+
+        // arrow function
+        taxClculator = price => {
+            tax = (price * 17) / 100;
+            alert("arrow function " + tax)
+        }
+        taxClculator(86)
+
+        //anonymous function
+        taxClculator = function(price) {
+            tax = (price * 17) / 100;
+            alert("anonymous function " + tax)
+        }
+        taxClculator(55)
+>>>>>>> master
     </script>
 </body>
 

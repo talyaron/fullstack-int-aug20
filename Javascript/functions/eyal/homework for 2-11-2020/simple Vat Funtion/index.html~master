@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <script>
-        function age(yearNow, birthYear){
-
-            return yearNow-birthYear;
-        }
-        let myAge = age(2020,2000)
-        console.log(myAge)
-    </script>
+   <script src="index.js"></script> 
 </body>
-
 </html>
