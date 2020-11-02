@@ -1,10 +1,8 @@
 "use strict";
 
-debugger;
-var movies = []; // const textBo1 = document.getElementById(textbox);
-
-var DOM1 = document.getElementById("uotput");
-var textBox1 = document.getElementById("textbox");
+var movies = [];
+var textBo1 = document.getElementById('textbox');
+var DOM1 = document.getElementById('uotput');
 
 function GetMovies() {
   movies.push(textBox1.value); // console.log(textBox1.value);

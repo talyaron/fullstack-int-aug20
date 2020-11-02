@@ -1,10 +1,3 @@
-debugger;
-var movies = [];
-
-// const textBo1 = document.getElementById(textbox);
-const DOM1 = document.getElementById("uotput");
-const textBox1 = document.getElementById("textbox");
-
 let movies = [];
 const textBo1 = document.getElementById('textbox');
 const DOM1 = document.getElementById('uotput');
