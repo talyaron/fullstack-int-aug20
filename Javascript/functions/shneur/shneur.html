@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  function returnAge(birthDate) {
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            console.log(new Date().getFullYear())
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            return new Date().getFullYear() - birthDate
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        let age = returnAge(1996)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        console.log(age)
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        function yourName(name, family) {
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            return name + family
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        let fulName = yourName(Shneur, Greenberg)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        fulName = name + " " + family
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        console.log(fulName)*/
+
+
+
+        // alert(cheshbon(5))
+        alert(cheshbon(t))
+
+
+
+
+        // regular function
+        function taxClculator(price) {
+            tax = (price * 17) / 100;
+            alert("regular function " + tax)
+
+            //use return. a function return a value. it is beeing used for calculations for other parts in the code.
+        }
+        taxClculator(150)
+
+        // arrow function
+        taxClculator = price => {
+            tax = (price * 17) / 100;
+            alert("arrow function " + tax)
+        }
+        taxClculator(86)
+
+        //anonymous function
+        taxClculator = function(price) {
+            tax = (price * 17) / 100;
+            alert("anonymous function " + tax)
+        }
+        taxClculator(55)
+    </script>
+</body>
+
+</html>

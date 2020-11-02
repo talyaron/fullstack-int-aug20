@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //regular
+        vat= 1.17 //should define let vat or const vat
+        function item(itemPrice, vat){
+            return itemPrice*vat
+        }
+        let itemOne = item(522,vat)
+        console.log(`the total price is: ${itemOne}`)
+
+
+        //anonymous
+        const secondItem= function(itemPrice, vat){
+            return itemPrice*vat
+        }
+        itemOne = secondItem(3543,vat)
+        console.log(`the total price is: ${itemOne}`)
+
+        //arrow
+        const thirdItem= (itemPrice,vat)=>{
+            return itemPrice*vat
+        }
+        itemOne = thirdItem(2313,vat)
+        console.log(`the total price is: ${itemOne}`)
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

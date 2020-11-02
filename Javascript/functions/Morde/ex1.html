@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // write a function that gets your year of birth ,and current year and return your age
+
+        function myAge(thisYear, birthYear){
+            return (thisYear - birthYear);
+        }
+        console.log(myAge(2020,1991));
+
+        // write a function that gets name and surname and return an object with the name and the lastname;
+
+        function fullName(firstName, lastName){
+            return {firstName, lastName}
+        }
+        console.log(fullName("Morde","Yoiris"));
+
+        // 1) write a function that gets the price of an item and return the vat.
+        // 2) write it as regular function, anonymous founction and arrow function.
+
+        //regular
+        function getVat(itemPrice){
+            return itemPrice*0.17
+        }
+        console.log(getVat(450));
+
+        //anonymous
+        const getVat1 = function(itemPrice){
+            return itemPrice*0.17
+        }
+        console.log(getVat1(450));
+
+        //arrow
+        const getVat2 = (itemPrice) => {
+            return itemPrice*0.17
+        }
+        console.log(getVat2(450));
+    </script>
+</body>
+</html>
