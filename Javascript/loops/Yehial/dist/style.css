@@ -1,7 +1,7 @@
-p {
-  color: aqua;
+.first {
+  background: beige;
 }
 
-asd {
-  color: black;
+.second {
+  background-color: blue;
 }

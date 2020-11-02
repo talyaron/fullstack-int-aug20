@@ -5,10 +5,10 @@
 } 
 
 countNums(1000);*/
-debugger;
-var movies = [];
-const textBo1 = document.getElementById(textbox);
-const DOM1 = document.getElementById(uotput);
+
+let movies = [];
+const textBo1 = document.getElementById('textbox');
+const DOM1 = document.getElementById('uotput');
 
 function GetMovies() {
 

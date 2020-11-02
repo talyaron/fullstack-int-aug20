@@ -66,9 +66,9 @@ let objectCars=
 ]
 
 objectCars.forEach(element => {
-    htmlRoot+=`<p>The Brand:${element.type}</p> 
-               <p id="asd">The Model:${element.model}</p>
-               <p>The Color:${element.color}</p>`
+    htmlRoot+=`<p class='first'>The Brand:${element.type}</p> 
+               <p class='second'>The Model:${element.model}</p>
+               <p class='third' >The Color:${element.color}</p>`
 });
 
 
