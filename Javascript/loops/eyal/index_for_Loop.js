@@ -7,14 +7,19 @@
 countNums(1000);*/
 debugger;
 var movies = [];
-function Loopmovies() {
-    for (let i = 1; i < 4; i++) {
-        let movie = prompt("enter movie");
-        movies.push(movie);
-        movies.forEach(element => {
-            console.log(element);
-        })
-    }
+const textBo1 = document.getElementById(textbox);
+const DOM1 = document.getElementById(uotput);
+
+function GetMovies() {
+
+    movies.push(textBo1.innerText);
+
 }
 
-Loopmovies();
+
+function pintAllMovise(movies) {
+    movies.forEach(element => {
+        DOM1.innerText = `<p> ${element} <p>`
+    })
+
+}
