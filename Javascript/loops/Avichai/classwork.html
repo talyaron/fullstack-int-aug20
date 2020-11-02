@@ -14,9 +14,11 @@
     <script>
         const favFood = ['Shnizel', 'Pizza', 'Cerial', 'Steak', 'Chicken','Pasta']
         const food = document.getElementById("food")
+        let html = '';
 
         favFood.forEach((elm) =>{
-            food.innerHTML = `<li> ${elm}</li>`;
+            html += `<li>${elm}</li>`;
+            food.innerHTML = html;
         })
 
     </script>
