@@ -9,15 +9,15 @@
 countNums(1000);*/
 debugger;
 var movies = [];
+var textBo1 = document.getElementById(textbox);
+var DOM1 = document.getElementById(uotput);
 
-function Loopmovies() {
-  for (var i = 1; i < 4; i++) {
-    var movie = prompt("enter movie");
-    movies.push(movie);
-    movies.forEach(function (element) {
-      console.log(element);
-    });
-  }
+function GetMovies() {
+  movies.push(textBo1.innerText);
 }
 
-Loopmovies();
+function pintAllMovise(movies) {
+  movies.forEach(function (element) {
+    DOM1.innerText = '<p> $(element) <p>';
+  });
+}
