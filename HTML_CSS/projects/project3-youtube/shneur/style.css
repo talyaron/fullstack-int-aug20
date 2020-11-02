@@ -1,0 +1,56 @@
+.page2__card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  color: var(--menucolor);
+  text-align: left;
+  font-size: 13px;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+.page2__card:hover {
+  width: 110%;
+}
+.page2__card h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.page2__card-text {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.page2__card-icon {
+  background-color: #dae7ff;
+  width: 30px;
+  height: 30px;
+  color: rgb(0, 110, 201);
+  height: 30px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+/* page2__icon--heart:hover  */
+
+.page2__card-icon--heart:hover {
+  animation-name: heartbeatSlow;
+  animation-iteration-count: infinite;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes heartbeatSlow {
+  35%, 65% {
+    transform: scale(1.2);
+    color: red;
+  }
+}
+.material-icons {
+  color: #9899ff;
+  margin-left: 3px;
+  margin-top: 4px;
+}

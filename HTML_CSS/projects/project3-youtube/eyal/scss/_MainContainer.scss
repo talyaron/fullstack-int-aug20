@@ -1,0 +1,27 @@
+$MainContainerWidht:90.8%;
+$maincontainerMargin:(100%-$MainContainerWidht)/2;
+.MainContainer {
+    width: $MainContainerWidht;
+    /* height: 100%; */
+    background-color: #F9F9F9;
+
+    margin-top: 1%;
+    margin-left: $maincontainerMargin;
+    margin-right: $maincontainerMargin;
+
+    /* place in the main grid */
+    grid-row: 2;
+    grid-column: 2;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(20%,1fr));
+    /* grid-template-rows: repeat(auto-fill,minmax(269px,1fr)); */
+    row-gap: 10px;
+    column-gap: 1%;
+
+     
+    @import "VideoBox";
+
+   
+    
+}

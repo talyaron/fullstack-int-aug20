@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="dist/you.css">
+</head>
+
+<body>
+    <!-- top bar start -->
+    <div class=" top__bar">
+          <div class="pictore">
+            <img  alt="תמונת דמות" height="32" width="32" border-radius="180" src="me.png.jpg">
+          </div>
+          <div class="bell__icon">
+            <img src="data:image/png;base64,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" alt="">
+          </div>
+          <div class="menu__icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSa9Tcmtcd2TZrPKzg1RbDhklny5lzn8yk5Dw&usqp=CAU" alt="">
+          </div>
+          <div class="crate__icon">
+            <img src="https://cdn0.iconfinder.com/data/icons/device-video-camera/100/media-video-camera-plus-512.png" alt="">
+          </div>
+          <div class="serch__bottun">
+
+         </div>
+         <div class="serch__bar">
+
+         </div>
+    </div>
+    <!-- top bar end -->
+
+    <!-- firest__group__videos start -->
+    <div class="firest__group__videos">
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PmV6OQGxWzY" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+          <h1 class="title"></h1>
+          <div class="text">
+
+          </div>
+        </div>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/i4wGnXH4DOI" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+          <h1 class="title"></h1>
+          <div class="text">
+
+          </div>
+        </div>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/-FuJ5mOV6Vg" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+          <h1 class="title"></h1>
+          <div class="text">
+
+          </div>
+        </div>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/D8H1RNtka6s" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+          <h1 class="title"></h1>
+          <div class="text">
+
+          </div>
+        </div>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/QrCmkdy8Wzg" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+          <h1 class="title"></h1>
+          <div class="text">
+
+          </div>
+        </div>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/06HzV1NuoAg" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+          <h1 class="title"></h1>
+          <div class="text">
+
+          </div>
+        </div>
+    </div>
+<!-- firest__group__videos end -->
+
+<!-- secand__group__videos start -->
+        <div class="secand__group__videos">
+          <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9lzg_6BFgpI" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            <h1 class="title"></h1>
+            <div class="text">
+
+            </div>
+          </div>
+          <div class="video">
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GX7rJnVM-qg" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            <h1 class="title"></h1>
+            <div class="text">
+
+            </div>
+          </div>
+          <div class="video">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/DAl2pu76CUI" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <h1 class="title"></h1>
+             <div class="text">
+
+             </div>
+          </div>
+        </div>
+        <!-- secand__group__videos end -->
+
+        <!-- side__menu start -->
+        <div class="side__menu">
+          <div class="top__menu">
+            <div class="top__icon">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQfdC-tb65C7df-fi52MvhenmErZeQbgTbnkA&usqp=CAU" alt="">
+            </div>
+            <div class="top__menu__bar">
+              <img src="data:image/png;base64,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" alt="">
+            </div>
+          </div>
+          <div class="side__menu__1">
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+          </div>
+          <div class="midelle__menu">
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+          </div>
+          <div class="bottom__menu">
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+            <div class="text">
+
+            </div>
+          </div>
+        </div>
+        <!-- side__menu end -->
+</body>
+
+</html>
