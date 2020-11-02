@@ -30,3 +30,28 @@ function fullNameReturn(name,surname){
     return new UserID(name,surname);
 }
 console.log(fullNameReturn(userName,surname));
+
+
+//HW
+//1 Regular Function
+const vatCurrentValue = 0.17;
+const fullPriceOfSomeProduct = 300;
+
+function returnVat(fullPrice)
+{
+    return fullPrice*vatCurrentValue;
+}
+//2 Arrow Function
+vatOfSomeProduct = ()=>{
+
+    //you should pass the arguments from the function's arguments
+    return fullPriceOfSomeProduct*vatCurrentValue;
+}
+
+//3 Annonimus Function 
+vatOfProduct = function(){
+    //you should pass the arguments from the function's arguments
+    fullPriceOfSomeProduct*vatCurrentValue;
+}
+
+

@@ -1,6 +1,7 @@
 "use strict";
 
-debugger;
+// debugger;
+var theVat = 17;
 
 function getInputButton(i) {
   document.getElementById(i);
@@ -13,9 +14,8 @@ function getInputButton(i) {
 
   ;
 }
-
-var theVat = 17;
 /* הצג לחיצת לחצן */
+
 
 function setClearscrean() {
   document.getElementById("Clear");
@@ -27,6 +27,18 @@ function setClearscrean() {
 function setVat() {
   theVat = document.getElementById("screan").innerHTML;
   document.getElementById("screan").innerHTML = 'ערך המע"מ שונה ל ' + theVat + ' אחוז';
+  setTimeout(resetScreanAndShowVat, 1000);
+}
+
+function resetScreanAndShowVat() {
+  document.getElementById("screan").innerHTML = "0";
+  document.getElementById("displayVat").innerHTML = theVat + "%";
+}
+
+function getVat() {
+  // theVat =  document.getElementById("screan").innerHTML;
+  document.getElementById("displayVat").innerHTML = theVat;
+  console.log(theVat);
 }
 /* הוסף מע"מ */
 

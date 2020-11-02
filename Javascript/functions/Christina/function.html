@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+
+</head>
+
+<body>
+    <script>
+        // 1.regular function
+        function vat(regularfunction) {
+            return (regularfunction * 0.17);
+        }
+        const vatPrice = vat(100)
+        console.log(vatPrice);
+
+
+        // 2.anonymous function
+        let vats = function(anonymousfunction) {
+            console.log(0.17 * anonymousfunction);
+        };
+
+        vats(50)
+
+        // 3. arrow function
+        const vatarrow = (vatPrice) => {
+            return (0.17 * vatPrice)
+        }
+        console.log(vatarrow(17));
+    </script>
+
+</body>
+
+</html>
