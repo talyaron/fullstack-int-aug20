@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="family"></div>
+    <div id="phones"></div>
+
+
+
+
+
+    <script>
+        // let myFamily = ["SHNEUR ", "MENACHEM ", "SHMULI ", "MOISHI", 'Yotami'];
+
+        // let html = '';
+        // let family = document.getElementById("family");
+
+        // myFamily.forEach(familyMember => {
+
+        //     html += `<p>${familyMember}</p>`
+
+
+        // });
+        // console.log(html)
+        // family.innerHTML = html;
+
+        // jhfjjf
+
+
+        let devices = [{
+                brand: "apple",
+                model: "iphone12",
+                year: 2020,
+                price: 1000,
+                chargeInWatt: 15,
+                battary: 3800
+            },
+            {
+                brand: "Xiaomi",
+                model: "Redmi K30 Ultra",
+                year: 2020,
+                price: 300,
+                chargeInWatt: 33,
+                battary: 4500
+            },
+            {
+                brand: "Xiaomi",
+                model: "pocophone F1",
+                year: 2018,
+                price: 250,
+                chargeInWatt: 33,
+                battary: 4500
+            },
+            {
+                brand: "Samsung",
+                model: "galaxy s20 Ultra",
+                year: 2020,
+                price: 860,
+                chargeInWatt: 45,
+                battary: 5000
+            }
+        ];
+
+
+        // console.log(devices[1].brand)
+
+
+
+        // let html = '';
+        // let phones = document.getElementById("phones");
+
+        // devices.forEach(phoneType => {
+
+        //     html += `<p>${phoneType}</p>`
+
+
+        // });
+
+        // phones.innerHTML = html;
+
+
+        // for (let info in devices) {
+        //     console.log(devices[info])
+
+
+        // }
+
+        for(i = 0; i < devices.length; i++){
+            // console.log(devices[i].model)
+            if(devices[i].price < 400){
+            console.log("the " + devices[i].model + "from " + devices[i].brand + " is a very cheap phone")
+            }
+         
+
+
+
+        }
+    </script>
+</body>
+
+</html>
