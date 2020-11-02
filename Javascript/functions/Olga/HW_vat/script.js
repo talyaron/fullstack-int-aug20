@@ -1,21 +1,21 @@
-function calcVAT (price, vatRate){
-    return price/(100+vatRate)*vatRate
+function calcVAT(price, vatRate) {
+    return price / (100 + vatRate) * vatRate
 }
 let x = calcVAT(800, 17)
 console.log(x)
 
-const calcVAT1 = function(){
-    let price = 800
+const calcVAT1 = function () {
+    let price = 800 //Yous hould send the price form the function's arguments
     let vatRate = 17
-    VAT = price/(100+vatRate)*vatRate
+    VAT = price / (100 + vatRate) * vatRate
     return VAT
-    }
-    console.log(calcVAT1())
+}
+console.log(calcVAT1())
 
 
 
-const calcVAT2 = (price, vatRate) =>{
-    return price/(100+vatRate)*vatRate
+const calcVAT2 = (price, vatRate) => {
+    return price / (100 + vatRate) * vatRate
 }
 let y = calcVAT2(800, 17)
 console.log(y)
