@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        for(let i=0;i<11;i++){
+            console.log(i);
+        }
+
+        let p = 0
+        while(p<11){
+            console.log(p);
+            p++
+        }
+
+        const myMovies = ["Fight Club","Snatch","Prestige","The Dark Knight","Avengers"]
+
+        myMovies.forEach(elm => {
+            console.log(elm);
+        })
+
+        myMovies.map((elm, index)=> {
+            console.log(index, ":", elm)
+        });
+
+    </script>
+</body>
+</html>
