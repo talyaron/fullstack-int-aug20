@@ -32,6 +32,7 @@ function fullNameReturn(name,surname){
 console.log(fullNameReturn(userName,surname));
 
 
+<<<<<<< Updated upstream
 //HW
 //1 Regular Function
 const vatCurrentValue = 0.17;
@@ -55,3 +56,19 @@ vatOfProduct = function(){
 }
 
 
+=======
+// Ways to write functions 
+// regular
+function func1(x){
+    return x
+}
+// annoymous function
+const func2 = function(a,b){
+    return a*b;
+}
+// arrow function
+const multi2 = (a,b)=>{
+    return a*b;
+}
+
+>>>>>>> Stashed changes
