@@ -18,6 +18,6 @@ function GetMovies() {
 
 function pintAllMovise(movies) {
   movies.forEach(function (element) {
-    DOM1.innerText = '<p> $(element) <p>';
+    DOM1.innerText = "<p> ".concat(element, " <p>");
   });
 }
