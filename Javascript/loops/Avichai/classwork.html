@@ -6,18 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .wrapper{
+        text-align: center;
+        background-color: rgb(240, 240, 240);
+        box-shadow: 2px 2px 6px black;
+        width: 85%;
+        margin: auto;
+        margin-top: 70px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    
+    }
+    .wrapper h1{
+        margin-top: 9%;
+        border-radius: 10px;
+        padding: 15px;
+        height: 10%;
+        border: 1px solid rgb(204, 93, 204);
+        background-color: lightpink;
+    }
+    .wrapper ul {
+        list-style-type: none;
+        width: 70%;
+    }
+
+    .wrapper li {
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        border: 1px solid rgb(197, 197, 197);
+        border-radius: 20px;
+        background-color: cyan;
+        margin-top: 5px;
+    }
+</style>
 
 <body>
-    <ul id="food">
-     </ul>
+    <div class="wrapper">
+        <h1>My favorite food</h1>
+        <ul id="food">
+        </ul>
+    </div>
 
     <script>
-        const favFood = ['Shnizel', 'Pizza', 'Cerial', 'Steak', 'Chicken','Pasta']
+        const favFood = ['Shnizel', 'Pizza', 'Cerial', 'Steak', 'Chicken', 'Pasta']
         const food = document.getElementById("food")
+        let html = '';
 
-        favFood.forEach((elm) =>{
-            food.innerHTML = `<li> ${elm}</li>`;
+        favFood.forEach((elm) => {
+            html += `<li>${elm}</li>`;
         })
+
+        food.innerHTML = html;
 
     </script>
 </body>

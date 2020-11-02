@@ -35,8 +35,7 @@
 // for(let i of numbers){
 //     console.log(i);
 // }
-var rootElement = document.getElementById('root');
-var numbers = [123, 123, 5, 5, 6, 1, 3, 4, 56, 34, 8, 4, 55, 41, 2, 655, 4, 454];
+var htmlRoot = '';
 var objectCars = [{
   type: "Fiat",
   model: "2001",
@@ -55,5 +54,8 @@ var objectCars = [{
   color: "Black"
 }];
 objectCars.forEach(function (element) {
-  rootElement.innerHTML += "<p>The Brand:".concat(element.type, "</p> \n                            <p class=\"asd\">The Model:").concat(element.model, "</p>\n                            <p>The Color:").concat(element.color, "</p>");
+  htmlRoot += "<p>The Brand:".concat(element.type, "</p> \n               <p id=\"asd\">The Model:").concat(element.model, "</p>\n               <p>The Color:").concat(element.color, "</p>");
 });
+console.log(htmlRoot);
+var rootElement = document.getElementById('root');
+rootElement.innerHTML = htmlRoot;

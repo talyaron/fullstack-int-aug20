@@ -31,23 +31,45 @@
         //arrays
         let numbers = [13, 3, 6, 8, 97, 'dgdfg', true, { a: 3 }, 8856, 3, 2, 245];
 
-        let movies = ['movie 1', 'movie 2333333']
+        // let movies = ['movie 1', 'movie 2333333']
 
-        let moviesThatILove = ''
+        // let moviesThatILove = ''
 
-        movies.forEach(el => {  //callback function
-            if (el.length <= 7) {
-                moviesThatILove += `I like ${el}, `
-            }
+        // movies.forEach(el => {  //callback function
+        //     if (el.length <= 7) {
+        //         moviesThatILove += `I like ${el}, `
+        //     }
            
-        })
+        // })
 
-        console.log(moviesThatILove)
+        // console.log(moviesThatILove)
 
 
-        numbers.map((elm, index) => {
-            console.log(index, ':', elm)
-        })
+        // numbers.map((elm, index) => {
+        //     console.log(index, ':', elm)
+        // })
+
+        console.log('in.....')   //like map
+        for(let i in numbers){
+            console.log(`${i}: ${numbers[i]}`)
+        }
+
+        console.log('of.....')  //like forEach
+        for(let i of numbers){
+            console.log(i)    
+        }
+
+
+        let obj = {a:1, b:2, c:3, d:4};
+        console.log('obj ... in.....')
+        for( let i in obj){
+            console.log(`${i}: ${obj[i]}`)
+        }
+
+        
+
+
+
 
 
         //create while loop and for loop and count to 1000 (with consle.log())

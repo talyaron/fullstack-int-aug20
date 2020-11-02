@@ -1,20 +1,18 @@
-/* function countNums(countUntil){
-    for (let i=1; i<countUntil;i++){
-        console.log(i);
-    }
-} 
-
-countNums(1000);*/
-debugger;
+// debugger;
 var movies = [];
-function Loopmovies() {
-    for (let i = 1; i < 4; i++) {
-        let movie = prompt("enter movie");
-        movies.push(movie);
-        movies.forEach(element => {
-            console.log(element);
-        })
-    }
-}
 
-Loopmovies();
+const textBo1 = document.getElementById(textbox);
+const DOM1 = document.getElementById(uotput);
+
+function GetMovies() {
+    movies.push(textBo1.innerText);
+};
+
+
+function pintAllMovise() {
+
+    movies.forEach(element => {
+        DOM1.innerText += `<p> ${element} <p>`
+    });
+
+};
