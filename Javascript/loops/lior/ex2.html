@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="music"></div>
+<p></p>
+    <script>
+
+        const music = document.getElementById('music')
+
+        let mu = ['<p>bee gees</p>','<p>the bitels</p>','<p>pink floyed</p>','<p>sting</p>','<p>roxet</p>'];
+
+        mu.forEach(function(mu){
+            console.log(mu)
+        });
+
+        music.innerHTML = mu ;
+
+    </script>
+</body>
+</html>
