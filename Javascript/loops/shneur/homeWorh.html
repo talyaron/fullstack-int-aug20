@@ -55,21 +55,13 @@
         for (phoneType = 0; phoneType < devices.length; phoneType++) {
             // console.log(devices[phoneType].model)
             if (devices[phoneType].price < 400) {
-                console.log("the " + devices[phoneType].model + "from " + devices[phoneType].brand + " is a very cheap phone ")
-                html += "the " + devices[phoneType].model + "from " + devices[phoneType].brand + " is a very cheap phone "
+                // console.log("the " + devices[phoneType].model + "from " + devices[phoneType].brand + " is a very cheap phone ")
+                html += "<p>" + "the " + devices[phoneType].model + "from " + devices[phoneType].brand +
+                    " is a very cheap phone " + "</p>"
             }
         }
         console.log(html)
         phones.innerHTML = html;
-        
-
-        // devices.forEach(phoneType => {
-
-        //     html += `<p>${phoneType}</p>`
-
-
-        // });
-        
     </script>
 </body>
 
