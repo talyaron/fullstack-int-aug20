@@ -37,7 +37,23 @@
 // }
 var rootElement = document.getElementById('root');
 var numbers = [123, 123, 5, 5, 6, 1, 3, 4, 56, 34, 8, 4, 55, 41, 2, 655, 4, 454];
-var objectCars = [{}];
-numbers.forEach(function (element) {
-  rootElement.innerHTML += "<p>".concat(element, "</p>");
+var objectCars = [{
+  type: "Fiat",
+  model: "2001",
+  color: "white"
+}, {
+  type: "Volvo",
+  model: "2017",
+  color: "black"
+}, {
+  type: "BMW",
+  model: "2020",
+  color: "Green"
+}, {
+  type: "Opel",
+  model: "2019",
+  color: "Black"
+}];
+objectCars.forEach(function (element) {
+  rootElement.innerHTML += "<p>The Brand:".concat(element.type, "</p> \n                            <p class=\"asd\">The Model:").concat(element.model, "</p>\n                            <p>The Color:").concat(element.color, "</p>");
 });
