@@ -6,16 +6,16 @@
   <title>Document</title>
 </head>
 <body>
-  <h1 id='root'></h1>
+  <div id='root'></div>
   <script>
 
     const fruits = ['Apple','Banana','Blueberries','Cherries','Figs','Grapes','Mango']
-    const root = document.getElementById(root);
+    const root = document.getElementById('root');
 
-    for(i of fruits){
+    for(let i of fruits){
       console.log(i);
       // document.body.innerHTML('$(i)');
-      root.innerHTML('$(i)')
+      root.innerHTML=(`<h1>${i}</h1>`);
     }
   </script>
 </body>
