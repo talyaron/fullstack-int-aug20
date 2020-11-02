@@ -19,3 +19,7 @@ cars.forEach(function (el) {
 cars.map(function (elm, index) {
   console.log(index, ':', elm);
 });
+
+for (var _i2 in cars) {
+  console.log("".concat(_i2, ":").concat(cars[_i2]));
+}
