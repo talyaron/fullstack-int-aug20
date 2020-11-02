@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <div id="family"></div>
     <div id="phones"></div>
 
 
@@ -16,23 +15,6 @@
 
 
     <script>
-        // let myFamily = ["SHNEUR ", "MENACHEM ", "SHMULI ", "MOISHI", 'Yotami'];
-
-        // let html = '';
-        // let family = document.getElementById("family");
-
-        // myFamily.forEach(familyMember => {
-
-        //     html += `<p>${familyMember}</p>`
-
-
-        // });
-        // console.log(html)
-        // family.innerHTML = html;
-
-        // jhfjjf
-
-
         let devices = [{
                 brand: "apple",
                 model: "iphone12",
@@ -67,13 +49,19 @@
             }
         ];
 
+        let html = '';
+        let phones = document.getElementById("phones");
 
-        // console.log(devices[1].brand)
-
-
-
-        // let html = '';
-        // let phones = document.getElementById("phones");
+        for (phoneType = 0; phoneType < devices.length; phoneType++) {
+            // console.log(devices[phoneType].model)
+            if (devices[phoneType].price < 400) {
+                console.log("the " + devices[phoneType].model + "from " + devices[phoneType].brand + " is a very cheap phone ")
+                html += "the " + devices[phoneType].model + "from " + devices[phoneType].brand + " is a very cheap phone "
+            }
+        }
+        console.log(html)
+        phones.innerHTML = html;
+        
 
         // devices.forEach(phoneType => {
 
@@ -81,26 +69,7 @@
 
 
         // });
-
-        // phones.innerHTML = html;
-
-
-        // for (let info in devices) {
-        //     console.log(devices[info])
-
-
-        // }
-
-        for(i = 0; i < devices.length; i++){
-            // console.log(devices[i].model)
-            if(devices[i].price < 400){
-            console.log("the " + devices[i].model + "from " + devices[i].brand + " is a very cheap phone")
-            }
-         
-
-
-
-        }
+        
     </script>
 </body>
 
