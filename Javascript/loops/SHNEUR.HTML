@@ -5,32 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    p{
+        background-color: violet;
+        color:white;
+        border-radius: 10px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.584);
+        margin: 5px;
+        padding: 10px;
+    }
+</style>
 <body>
+    <div id="family"></div>
+
+
+
+
+
+
+
     <SCript>
 
-for(let f = 0;f<=1000;f++){
-    console.log(f)
-}
+// for(let f = 0;f<=1000;f++){
+//     console.log(f)
+// }
 
 
-let f=1
-while(f<=1000){
-    console.log(f);
+// let f=1
+// while(f<=1000){
+//     console.log(f);
 
-    f++
+//     f++
 
-}
+// }
 
-let movies = ["best movie","the movie", "la famila","katochke"];
-movies.forEach(element => {
-    console.log(element)  
+let myFamily = ["SHNEUR ","MENACHEM ", "SHMULI ","MOISHI", 'Yotami'];
+
+let html = '';
+let family = document.getElementById("family") ;
+
+myFamily.forEach(familyMember => {
+   
+    html += `<p>${familyMember}</p>`
+
+    
 });
+console.log(html)
+family.innerHTML = html;
 
-movies.map((element, index) =>{
-    console.log(element, index)  
+
+// movies.map((element, index) =>{
+//     console.log(element, index)  
 
 
-})
+// })
 
 
 
