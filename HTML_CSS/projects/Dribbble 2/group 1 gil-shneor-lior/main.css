@@ -373,7 +373,7 @@
         font-size: 22px;
         color: var(--menucolor);
     }
-   /* .page3_title__title>b :hover{
+   /* .page3_title__title>b {
          animation-name: title;
          animation-duration: 5s;
      }

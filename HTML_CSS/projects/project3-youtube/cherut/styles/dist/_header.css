@@ -1,0 +1,8 @@
+header {
+  background: white;
+  height: 3em;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+  padding: 1em 3em;
+}

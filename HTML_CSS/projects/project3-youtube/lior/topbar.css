@@ -1,0 +1,69 @@
+.pictore img {
+  height: 32px;
+  width: 32px;
+  border-radius: 80%;
+  position: relative;
+  left: 20px;
+  top: 20px;
+}
+
+.bell__icon img {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  left: 85px;
+  bottom: 15px;
+}
+
+.menu__icon img {
+  width: 32px;
+  height: 32px;
+  -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+  position: relative;
+  left: 150px;
+  bottom: 50px;
+}
+
+.crate__icon img {
+  width: 40px;
+  height: 40px;
+  -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+  position: relative;
+  left: 215px;
+  bottom: 87.5px;
+}
+
+.serch__bottun {
+  width: 5%;
+  height: 30%;
+  position: relative;
+  left: 420px;
+  bottom: 120px;
+}
+
+.serch__bottun img {
+  width: 50%;
+  height: 30%;
+}
+
+.serch__bar input {
+  width: 40%;
+  padding: 8px 10px;
+  position: relative;
+  left: 488px;
+  bottom: 162.5px;
+  text-align: right;
+}
+
+.serch__bar img {
+  -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+  width: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 152.5px;
+  right: 70px;
+}
+/*# sourceMappingURL=topbar.css.map */

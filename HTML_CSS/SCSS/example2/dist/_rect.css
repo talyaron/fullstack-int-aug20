@@ -1,0 +1,8 @@
+.rect {
+  width: 100px;
+  height: 100px;
+  background-color: greenyellow;
+}
+.rect p {
+  color: green;
+}

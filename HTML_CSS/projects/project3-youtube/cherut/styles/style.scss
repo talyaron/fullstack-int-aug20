@@ -1,0 +1,21 @@
+:root{
+  --clr-icons:(#606060);
+}
+
+@import 'header';
+@import 'sideMenu';
+@import 'main';
+
+
+
+ body{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+
+
+
+
+

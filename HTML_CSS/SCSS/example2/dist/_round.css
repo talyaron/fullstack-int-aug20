@@ -1,0 +1,9 @@
+.round {
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #dadada;
+}
+.round p {
+  color: grey;
+}
