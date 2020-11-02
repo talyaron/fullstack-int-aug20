@@ -7,17 +7,25 @@
     <title>Document</title>
 </head>
 <style>
-p{
-        background-color: rgb(130, 192, 88);
-        color:rgb(0, 0, 0);
+    #phones>div {
         border-radius: 10px;
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.584);
         margin: 15px;
         padding: 10px;
         font-size: 1.5em;
     }
-
+    
+    .cheap {
+        background-color: rgb(130, 192, 88);
+        color: rgb(0, 0, 0);
+    }
+    
+    .battary {
+        background-color: rgb(104, 95, 233);
+        color: rgb(114, 223, 92);
+    }
 </style>
+
 <body>
     <div id="phones"></div>
 
@@ -25,52 +33,55 @@ p{
 
 
 
+
     <script>
         let devices = [{
-                brand: "apple",
-                model: "iphone12",
-                year: 2020,
-                price: 1000,
-                chargeInWatt: 15,
-                battary: 3800
-            },
-            {
-                brand: "Xiaomi",
-                model: "Redmi K30 Ultra",
-                year: 2020,
-                price: 300,
-                chargeInWatt: 33,
-                battary: 4500
-            },
-            {
-                brand: "Xiaomi",
-                model: "pocophone F1",
-                year: 2018,
-                price: 250,
-                chargeInWatt: 33,
-                battary: 4500
-            },
-            {
-                brand: "Samsung",
-                model: "galaxy s20 Ultra",
-                year: 2020,
-                price: 860,
-                chargeInWatt: 45,
-                battary: 5000
-            }
-        ];
+            brand: "apple",
+            model: "iphone12",
+            year: 2020,
+            price: 1000,
+            chargeInWatt: 15,
+            battary: 3800
+        }, {
+            brand: "Xiaomi",
+            model: "Redmi K30 Ultra",
+            year: 2020,
+            price: 300,
+            chargeInWatt: 33,
+            battary: 4500
+        }, {
+            brand: "Xiaomi",
+            model: "pocophone F1",
+            year: 2018,
+            price: 250,
+            chargeInWatt: 33,
+            battary: 4500
+        }, {
+            brand: "Samsung",
+            model: "galaxy s20 Ultra",
+            year: 2020,
+            price: 860,
+            chargeInWatt: 45,
+            battary: 5000
+        }];
 
-        let html = '';
+        let html = "";
         let phones = document.getElementById("phones");
 
         for (phoneType = 0; phoneType < devices.length; phoneType++) {
-            console.log(devices[phoneType].model)
             if (devices[phoneType].price < 400) {
-                html += "<p>" + "the " + devices[phoneType].model + " from " + devices[phoneType].brand +
-                    " is a very cheap phone " + "</p>"
+                html += "<div class = 'cheap'>" + "the " + devices[phoneType].model + " from " + devices[phoneType].brand +
+                    " is a very cheap phone! " + "</div>"
+            }
+            if (devices[phoneType].battary > 4000) {
+                html += "<div class = 'battary'>" + "the " + devices[phoneType].battary + " mAh battary on the " + devices[phoneType].brand + " " + devices[phoneType].model +
+                    " is a beast! " + "</div>"
+            }
+            if (devices[phoneType].year < 2019) {
+                html += "<div class = 'year'>" + "the " + devices[phoneType].brand + " " + devices[phoneType].model +
+                    " is a bit old...! " + "</div>"
             }
         }
-        console.log(html)
         phones.innerHTML = html;
     </script>
 </body>
