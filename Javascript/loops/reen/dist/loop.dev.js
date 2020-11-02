@@ -1,13 +1,21 @@
 "use strict";
 
-for (var i = 0; i < 9; i++) {
-  console.log(i);
+for (var _i = 0; _i < 9; _i++) {
+  console.log(_i);
 }
 
-var numbers = [20, 25, 10, 4, 35, 153, 65];
-numbers.forEach(function (el) {
+var i = 0;
+console.log('while');
+
+while (i < 1001) {
+  console.log(i);
+  i++;
+}
+
+var cars = ["tesla", "bmw", "volvo", "citroen", "subaro", "toyota", "Renault"];
+cars.forEach(function (el) {
   console.log(el);
 });
-numbers.map(function (elm, index) {
+cars.map(function (elm, index) {
   console.log(index, ':', elm);
 });

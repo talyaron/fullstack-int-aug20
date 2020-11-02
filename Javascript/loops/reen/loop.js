@@ -1,10 +1,20 @@
 for(let i=0;i<9;i++){
     console.log(i)
 }
-let numbers = [20,25,10,4,35,153,65];
-numbers.forEach(function(el){
+
+let i=0
+console.log('while')
+while(i<1001){
+    console.log(i);
+    i++
+}
+
+
+
+let cars = ["tesla","bmw","volvo","citroen","subaro","toyota","Renault"];
+cars.forEach(function(el){
     console.log(el);
 })
-numbers.map((elm,index)=>{
+cars.map((elm,index)=>{
     console.log(index,':',elm)
 })
