@@ -18,3 +18,6 @@ cars.forEach(function(el){
 cars.map((elm,index)=>{
     console.log(index,':',elm)
 })
+for (let i in cars){
+    console.log(`${i}:${cars[i]}`)
+}
