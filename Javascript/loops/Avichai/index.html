@@ -11,14 +11,14 @@
 
         console.log('for')
 
-        for(let i=0;i<=1000;i++){
+        for(let i=0;i<=1000;i++){ //for loop
             console.log(i)
         }
 
         console.log('while')
         
-        let d = 0;
-        while(d<=1000){
+        let d = 0;  
+        while(d<=1000){ //while loop
             console.log(d);
             d++
         }
@@ -26,14 +26,28 @@
         console.log('array loop')
         let movies = ['Fast & Furious','The Hunger Games','The Godfather','American Pie', 'Black Panther','Forest Gump'];
 
-        movies.forEach(function(elmemnt){
-
+        //array loops 
+        movies.forEach(function(elmemnt){ // forEach
             console.log(elmemnt);
         })
 
-        movies.map((elmemnt, i)=> {
+        movies.map((elmemnt, i)=> { //map
             console.log(i, ':', elmemnt)
         })
+
+        for(let i in movies){ // like map
+            console.log(`${i}: ${movies[i]}`)
+        }
+        for(let i of movies){ // like forEach
+            console.log(i)
+        }
+
+        //object loops
+        let obj = {a:1, b:2, c:3, d:4};
+        for(let i in obj){
+
+            console.log(`${i}: ${obj[i]}`)
+        }
     </script>
 </body>
 </html>
