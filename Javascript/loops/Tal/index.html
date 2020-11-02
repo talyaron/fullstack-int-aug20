@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // for loop
+        for(let i = 3;i<9;i++){
+            //will happen 9  times
+            console.log(i);
+        }
+        // ....
+        
+        
+        let i=11;
+        console.log('while')
+        while (i<10){
+            console.log(i);
+            i++
+        }
+        
+
+        //loops for objects and arrays
+
+        //arrays
+        let numbers = [13,3,6,8,97,'dgdfg',true,{a:3},8856,3,2,245];
+
+        numbers.forEach(function(el){  //callback function
+            console.log(el);
+        })
+
+        numbers.map((elm, index)=>{
+            console.log(index,':' ,elm)
+        })
+
+
+        //create while loop and for loop and count to 1000 (with consle.log())
+        //create array with preferd movies
+        // loop thorough them whith map and forEach
+
+    </script>
+</body>
+</html>
