@@ -1,20 +1,17 @@
 "use strict";
 
-// debugger;
-var movies = [];
-var textBo1 = document.getElementById(textbox);
-var DOM1 = document.getElementById(uotput);
+debugger;
+var movies = []; // const textBo1 = document.getElementById(textbox);
+
+var DOM1 = document.getElementById("uotput");
+var textBox1 = document.getElementById("textbox");
 
 function GetMovies() {
-  movies.push(textBo1.innerText);
+  movies.push(textBox1.value); // console.log(textBox1.value);
 }
-
-;
 
 function pintAllMovise() {
   movies.forEach(function (element) {
-    DOM1.innerText += "<p> ".concat(element, " <p>");
+    DOM1.innerHTML += "<p> ".concat(element, " <p>");
   });
 }
-
-;
