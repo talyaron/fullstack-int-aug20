@@ -16,8 +16,12 @@ function GetMovies() {
   movies.push(textBo1.innerText);
 }
 
+;
+
 function pintAllMovise(movies) {
   movies.forEach(function (element) {
     DOM1.innerText = "<p> ".concat(element, " <p>");
   });
 }
+
+;
