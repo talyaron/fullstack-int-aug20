@@ -12,32 +12,52 @@
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.584);
         margin: 15px;
         padding: 10px;
-        font-size: 1.5em;
+        font-size: 1.4em;
+        font-family: sans-serif;
     }
     
-    .cheap {
+    p {
+        font-size: 1.6em;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+    
+    .good {
         background-color: rgb(130, 192, 88);
         color: rgb(0, 0, 0);
+    }
+    
+    .bad {
+        background-color: rgb(252, 6, 6);
+        color: rgb(228, 228, 228);
     }
     
     .battary {
         background-color: rgb(104, 95, 233);
         color: rgb(114, 223, 92);
     }
+    
+    .poorBattary {
+        background-color: rgb(252, 6, 6);
+        color: rgb(228, 228, 228);
+    }
+    
+    .new {
+        background-color: rgb(104, 95, 233);
+        color: rgb(114, 223, 92);
+    }
+    
+    .old {}
 </style>
 
 <body>
     <div id="phones"></div>
 
 
-
-
-
-
     <script>
         let devices = [{
             brand: "apple",
-            model: "iphone12",
+            model: "iphone 12",
             year: 2020,
             price: 1000,
             chargeInWatt: 15,
@@ -57,6 +77,13 @@
             chargeInWatt: 33,
             battary: 4500
         }, {
+            brand: "Xiaomi",
+            model: "K20",
+            year: 2018,
+            price: 200,
+            chargeInWatt: 30,
+            battary: 4000
+        }, {
             brand: "Samsung",
             model: "galaxy s20 Ultra",
             year: 2020,
@@ -70,19 +97,37 @@
 
         for (phoneType = 0; phoneType < devices.length; phoneType++) {
             if (devices[phoneType].price < 400) {
-                html += "<div class = 'cheap'>" + "the " + devices[phoneType].model + " from " + devices[phoneType].brand +
+                html += "<p>the " + devices[phoneType].model + " from " + devices[phoneType].brand + "</p><div class = 'good'>" + "the " + devices[phoneType].model + " from " + devices[phoneType].brand +
                     " is a very cheap phone! " + "</div>"
+            } else {
+                html += "<p>the " + devices[phoneType].model + " from " + devices[phoneType].brand + "</p><div class = 'bad'>" + "the " + devices[phoneType].model + " from " + devices[phoneType].brand +
+                    " is a very expensive phone! " + "</div>"
             }
             if (devices[phoneType].battary > 4000) {
-                html += "<div class = 'battary'>" + "the " + devices[phoneType].battary + " mAh battary on the " + devices[phoneType].brand + " " + devices[phoneType].model +
+                html += "<div class = 'good'>" + "the " + devices[phoneType].battary + " mAh battary on the " + devices[phoneType].brand + " " + devices[phoneType].model +
                     " is a beast! " + "</div>"
+            } else {
+                html += "<div class = 'bad'>" + "the " + devices[phoneType].battary + " mAh battary on the " + devices[phoneType].brand + " " + devices[phoneType].model +
+                    " is not a lot... " + "</div>"
+
             }
             if (devices[phoneType].year < 2019) {
-                html += "<div class = 'year'>" + "the " + devices[phoneType].brand + " " + devices[phoneType].model +
+                html += "<div class = 'bad'>" + "the " + devices[phoneType].brand + " " + devices[phoneType].model +
                     " is a bit old...! " + "</div>"
+            } else {
+                html += "<div class = 'good'>" + "the " + devices[phoneType].brand + " " + devices[phoneType].model +
+                    " is a brand new! " + "</div>"
             }
+            if (devices[phoneType].chargeInWatt > 25) {
+                html += "<div class = 'good'>" + "the charging rate on your " + devices[phoneType].brand + " is " + devices[phoneType].chargeInWatt +
+                    "W this is very nice! " + "</div>"
+            } else {
+                html += "<div class = 'bad'>" + "the charging rate on your " + devices[phoneType].brand + " is only " + devices[phoneType].chargeInWatt +
+                    "W! this is not cool! " + "</div>"
+
+            }
+            phones.innerHTML = html;
         }
-        phones.innerHTML = html;
     </script>
 </body>
 
