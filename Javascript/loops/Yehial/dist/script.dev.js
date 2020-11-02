@@ -59,13 +59,14 @@ objectCars.forEach(function (element) {
 });
 console.log(htmlRoot);
 var rootElement = document.getElementById('root');
+var rootElement2 = document.getElementById('root2');
 rootElement.innerHTML = htmlRoot;
 objectCars.forEach(function (element) {
   if (element.model > 2019) {
     htmlWithCondition += "<p class=\"top\">The Brand:".concat(element.type, "</p> \n                        <p class='middel'>The Model:").concat(element.model, "</p>\n                        <p class='bottom'>The Color:").concat(element.color, "</p>");
   }
 });
-rootElement.innerHTML = htmlWithCondition; //Conditions
+rootElement2.innerHTML = htmlWithCondition; //Conditions
 
 var x = 23;
 var y = 45;

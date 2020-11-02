@@ -67,26 +67,19 @@ let objectCars=
 ]
 
 objectCars.forEach(element => {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     htmlRoot+=`<p class="top">The Brand:${element.type}</p> 
                <p class='middel'>The Model:${element.model}</p>
                <p class='bottom'>The Color:${element.color}</p>`
-=======
-    htmlRoot+=`<p class='first'>The Brand:${element.type}</p> 
-               <p class='second'>The Model:${element.model}</p>
-               <p class='third' >The Color:${element.color}</p>`
->>>>>>> master
-=======
-    htmlRoot+=`<p class='first'>The Brand:${element.type}</p> 
-               <p class='second'>The Model:${element.model}</p>
-               <p class='third' >The Color:${element.color}</p>`
->>>>>>> master
+
+  
+
 });
 
 
 console.log(htmlRoot);
 let rootElement = document.getElementById('root');
+let rootElement2 = document.getElementById('root2');
 rootElement.innerHTML=htmlRoot;
    
 objectCars.forEach(element => {
@@ -96,7 +89,7 @@ objectCars.forEach(element => {
                         <p class='bottom'>The Color:${element.color}</p>`
    }
 });
-rootElement.innerHTML=htmlWithCondition;
+rootElement2.innerHTML=htmlWithCondition;
 
 //Conditions
 
