@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="food">
+     </ul>
+
+    <script>
+        const favFood = ['Shnizel', 'Pizza', 'Cerial', 'Steak', 'Chicken','Pasta']
+        const food = document.getElementById("food")
+        let html = '';
+
+        favFood.forEach((elm) =>{
+            html += `<li>${elm}</li>`;
+            food.innerHTML = html;
+        })
+
+    </script>
+</body>
+
+</html>
