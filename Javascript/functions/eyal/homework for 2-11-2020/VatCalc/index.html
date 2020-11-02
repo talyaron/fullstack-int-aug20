@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <div class="bigcontainer">
         <h1>מחשבון מע"מ</h1>
-        <P>אנא הכנס מחיר</P>
+        
     <div class="container">
         <div  id="screan" >0</div>
         <div class="keysContainer">
@@ -32,7 +32,10 @@
             <button id="addVatToPrice" onclick="addVatToPrice()">הוסף מע"מ </button>
             <button id="substractVatFromPrice" onclick="substractVatFromPrice()">הפחת מע"מ</button>
             <button id="getVPriceFromTotal" onclick="getVPriceFromTotal()">מצא מע"מ</button>
-
+            <div class="vatWindow">
+            <p>המע"מ הוא:</p>
+            <h1 id="displayVat" onload="getVat()">17%</h1>
+        </div>
         </div>
     </div>
 </div>
