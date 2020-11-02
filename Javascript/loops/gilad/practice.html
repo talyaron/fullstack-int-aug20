@@ -7,14 +7,18 @@
 </head>
 <body>
     <script>
-        for(let i=1;i<=1001;i++){
-            
-            if (i % 7 ==0) {
+        for(let i=0;i<1000;i++)
+        {
+            let j = i % 10;
+            let k = j% 10
+            if (i % 7 ==0|| j%7==0|| k%7==0) {
                 console.log('boom')
-  
-                         }
-                         else console.log(i)
+               
+            }
+            else console.log(i)
         }
+   
+      
        
         let movies = ['kill bill','matrix','pulp fiction'];
 
