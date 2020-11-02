@@ -36,13 +36,14 @@
 //     console.log(i);
 // }
 var htmlRoot = '';
+var htmlWithCondition = '';
 var objectCars = [{
   type: "Fiat",
   model: "2001",
   color: "white"
 }, {
   type: "Volvo",
-  model: "2017",
+  model: "2007",
   color: "black"
 }, {
   type: "BMW",
@@ -54,8 +55,24 @@ var objectCars = [{
   color: "Black"
 }];
 objectCars.forEach(function (element) {
-  htmlRoot += "<p>The Brand:".concat(element.type, "</p> \n               <p id=\"asd\">The Model:").concat(element.model, "</p>\n               <p>The Color:").concat(element.color, "</p>");
+  htmlRoot += "<p class=\"top\">The Brand:".concat(element.type, "</p> \n               <p class='middel'>The Model:").concat(element.model, "</p>\n               <p class='bottom'>The Color:").concat(element.color, "</p>");
 });
 console.log(htmlRoot);
 var rootElement = document.getElementById('root');
+var rootElement2 = document.getElementById('root2');
 rootElement.innerHTML = htmlRoot;
+objectCars.forEach(function (element) {
+  if (element.model > 2019) {
+    htmlWithCondition += "<p class=\"top\">The Brand:".concat(element.type, "</p> \n                        <p class='middel'>The Model:").concat(element.model, "</p>\n                        <p class='bottom'>The Color:").concat(element.color, "</p>");
+  }
+});
+rootElement2.innerHTML = htmlWithCondition; //Conditions
+
+var x = 23;
+var y = 45;
+
+if (x > y) {
+  console.log("".concat(x, " is bigger ").concat(y));
+} else {
+  console.log('asdasdasdasdasd');
+}

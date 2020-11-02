@@ -55,25 +55,50 @@
 
 
 let htmlRoot='';
+let htmlWithCondition='';
 let objectCars=
 [
 
     {type:"Fiat", model:"2001", color:"white"},
-    {type:"Volvo", model:"2017", color:"black"},
+    {type:"Volvo", model:"2007", color:"black"},
     {type:"BMW", model:"2020", color:"Green"},
     {type:"Opel", model:"2019", color:"Black"}
 
 ]
 
 objectCars.forEach(element => {
-    htmlRoot+=`<p>The Brand:${element.type}</p> 
-               <p id="asd">The Model:${element.model}</p>
-               <p>The Color:${element.color}</p>`
+
+    htmlRoot+=`<p class="top">The Brand:${element.type}</p> 
+               <p class='middel'>The Model:${element.model}</p>
+               <p class='bottom'>The Color:${element.color}</p>`
+
+  
+
 });
 
 
 console.log(htmlRoot);
 let rootElement = document.getElementById('root');
+let rootElement2 = document.getElementById('root2');
 rootElement.innerHTML=htmlRoot;
    
+objectCars.forEach(element => {
+    if(element.model > 2019){
+    htmlWithCondition+=`<p class="top">The Brand:${element.type}</p> 
+                        <p class='middel'>The Model:${element.model}</p>
+                        <p class='bottom'>The Color:${element.color}</p>`
+   }
+});
+rootElement2.innerHTML=htmlWithCondition;
 
+//Conditions
+
+let x=23;
+let y=45;
+
+if(x>y){
+    console.log(`${x} is bigger ${y}`);
+}
+else{
+    console.log('asdasdasdasdasd');
+}

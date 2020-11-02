@@ -5,6 +5,10 @@ var movies = [];
 const DOM1 = document.getElementById("uotput");
 const textBox1 = document.getElementById("textbox");
 
+let movies = [];
+const textBo1 = document.getElementById('textbox');
+const DOM1 = document.getElementById('uotput');
+
 function GetMovies() {
     movies.push(textBox1.value);
     // console.log(textBox1.value);
