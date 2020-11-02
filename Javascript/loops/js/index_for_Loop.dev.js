@@ -10,9 +10,9 @@ countNums(1000);*/
 debugger;
 var movies = [];
 
-function Loopmovies(movie) {
+function Loopmovies() {
   for (var i = 1; i < 4; i++) {
-    prompt("enter movie", movie);
+    var movie = prompt("enter movie");
     movies.push(movie);
     movies.forEach(function (element) {
       console.log(element);
