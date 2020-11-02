@@ -51,26 +51,55 @@
 //     console.log(i);
 // }
 
-let rootElement = document.getElementById('root');
 
-let numbers = [123,123,5,5,6,1,3,4,56,34,8,4,55,41,2,655,4,454];
+
+
+let htmlRoot='';
+let htmlWithCondition='';
 let objectCars=
 [
 
     {type:"Fiat", model:"2001", color:"white"},
-    {type:"Volvo", model:"2017", color:"black"},
+    {type:"Volvo", model:"2007", color:"black"},
     {type:"BMW", model:"2020", color:"Green"},
     {type:"Opel", model:"2019", color:"Black"}
 
 ]
 
 objectCars.forEach(element => {
-    rootElement.innerHTML+=`<p>The Brand:${element.type}</p> 
-                            <p class="asd">The Model:${element.model}</p>
-                            <p>The Color:${element.color}</p>`
+<<<<<<< HEAD
+    htmlRoot+=`<p class="top">The Brand:${element.type}</p> 
+               <p class='middel'>The Model:${element.model}</p>
+               <p class='bottom'>The Color:${element.color}</p>`
+=======
+    htmlRoot+=`<p class='first'>The Brand:${element.type}</p> 
+               <p class='second'>The Model:${element.model}</p>
+               <p class='third' >The Color:${element.color}</p>`
+>>>>>>> master
 });
 
 
-    
+console.log(htmlRoot);
+let rootElement = document.getElementById('root');
+rootElement.innerHTML=htmlRoot;
    
+objectCars.forEach(element => {
+    if(element.model > 2019){
+    htmlWithCondition+=`<p class="top">The Brand:${element.type}</p> 
+                        <p class='middel'>The Model:${element.model}</p>
+                        <p class='bottom'>The Color:${element.color}</p>`
+   }
+});
+rootElement.innerHTML=htmlWithCondition;
 
+//Conditions
+
+let x=23;
+let y=45;
+
+if(x>y){
+    console.log(`${x} is bigger ${y}`);
+}
+else{
+    console.log('asdasdasdasdasd');
+}

@@ -35,15 +35,15 @@
 // for(let i of numbers){
 //     console.log(i);
 // }
-var rootElement = document.getElementById('root');
-var numbers = [123, 123, 5, 5, 6, 1, 3, 4, 56, 34, 8, 4, 55, 41, 2, 655, 4, 454];
+var htmlRoot = '';
+var htmlWithCondition = '';
 var objectCars = [{
   type: "Fiat",
   model: "2001",
   color: "white"
 }, {
   type: "Volvo",
-  model: "2017",
+  model: "2007",
   color: "black"
 }, {
   type: "BMW",
@@ -55,5 +55,23 @@ var objectCars = [{
   color: "Black"
 }];
 objectCars.forEach(function (element) {
-  rootElement.innerHTML += "<p>The Brand:".concat(element.type, "</p> \n                            <p class=\"asd\">The Model:").concat(element.model, "</p>\n                            <p>The Color:").concat(element.color, "</p>");
+  htmlRoot += "<p class=\"top\">The Brand:".concat(element.type, "</p> \n               <p class='middel'>The Model:").concat(element.model, "</p>\n               <p class='bottom'>The Color:").concat(element.color, "</p>");
 });
+console.log(htmlRoot);
+var rootElement = document.getElementById('root');
+rootElement.innerHTML = htmlRoot;
+objectCars.forEach(function (element) {
+  if (element.model > 2019) {
+    htmlWithCondition += "<p class=\"top\">The Brand:".concat(element.type, "</p> \n                        <p class='middel'>The Model:").concat(element.model, "</p>\n                        <p class='bottom'>The Color:").concat(element.color, "</p>");
+  }
+});
+rootElement.innerHTML = htmlWithCondition; //Conditions
+
+var x = 23;
+var y = 45;
+
+if (x > y) {
+  console.log("".concat(x, " is bigger ").concat(y));
+} else {
+  console.log('asdasdasdasdasd');
+}
