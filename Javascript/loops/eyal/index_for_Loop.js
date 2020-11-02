@@ -16,10 +16,10 @@ function GetMovies() {
 };
 
 
-function pintAllMovise(movies) {
+function pintAllMovise() {
 
     movies.forEach(element => {
-        DOM1.innerText = `<p> ${element} <p>`
+        DOM1.innerText += `<p> ${element} <p>`
     });
 
 };

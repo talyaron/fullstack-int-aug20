@@ -18,9 +18,9 @@ function GetMovies() {
 
 ;
 
-function pintAllMovise(movies) {
+function pintAllMovise() {
   movies.forEach(function (element) {
-    DOM1.innerText = "<p> ".concat(element, " <p>");
+    DOM1.innerText += "<p> ".concat(element, " <p>");
   });
 }
 
