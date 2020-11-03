@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big {
+            color: green;
+        }
+        
+        .small {
+            color: red;
+        }
+        
+        p {
+            width: 50%;
+            margin: auto;
+            font-size: 2em;
+            font-weight: bold;
+            color: purple;
+            text-align: center;
+            padding: 1%;
+            background-color: rgb(149, 206, 174);
+            border: 2px solid grey;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const katya = {
+            name: 'Katya',
+            age: 27
+        }
+        const liora = {
+            name: 'Liora',
+            age: 30
+        }
+        const regina = {
+            name: 'Regina',
+            age: 25
+        }
+        const alex = {
+            name: 'Alex',
+            age: 18
+        }
+        const michael = {
+            name: 'Michael',
+            age: 5
+        }
+        const kosta = {
+            name: 'Kosta',
+            age: 10
+        }
+
+        const masha = {
+            name: 'Masha',
+            age: 20
+        }
+
+        let friend = [katya, liora, regina, alex, michael, kosta, masha];
+        const root = document.getElementById('root');
+
+        console.log(friend);
+
+        for (let i of friend) {
+            if (i.age > 20) {
+                root.innerHTML += (`<p class="big">${i.name} is big</p>`);
+            } else if (i.age < 20) {
+                root.innerHTML += (`<p class="small">${i.name} is small</p>`);
+            } else if (i.age == 20) {
+                root.innerHTML += (`<p>${i.name} is perfect</p>`);
+            }
+        }
+    </script>
+</body>
+
+</html>

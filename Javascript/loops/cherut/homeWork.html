@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
 <body>
-  <div id="root"></div>
-  <script>
- 
-    const cherut = {name: 'Cherut', age:22}
-    const yair = {name: 'Yair', age:20}
-    const eithan = {name: 'Eithan', age:18}
-    const yedidya = {name: 'Yedidya', age:15}
-    const haimi = {name: 'Haimi', age:11}
-    const roni = {name: 'Roni', age:9}
-    let myFamily = [cherut,yair,eithan,yedidya,haimi,roni];
-    const root = document.getElementById('root');
+    <div id="root"></div>
+    <script>
+        const cherut = {
+            name: 'Cherut',
+            age: 22
+        }
+        const ka = {
+            name: 'ka',
+            age: 23
+        }
+        const yair = {
+            name: 'Yair',
+            age: 20
+        }
+        const eithan = {
+            name: 'Eithan',
+            age: 18
+        }
+        const yedidya = {
+            name: 'Yedidya',
+            age: 15
+        }
+        const haimi = {
+            name: 'Haimi',
+            age: 11
+        }
+        const roni = {
+            name: 'Roni',
+            age: 9
+        }
+        let myFamily = [cherut, ka, yair, eithan, yedidya, haimi, roni];
+        const root = document.getElementById('root');
 
-    // console.log(myFamily);
+        // console.log(myFamily);
 
-    for(let i of myFamily){
-      if(i.age>18){
-        root.innerHTML += (`<h2>${i.name} is ${i.age} years old </h2>`);
-      }else if(i.age==18){
-        root.innerHTML += (`<h2>${i.name} is ${i.age} years old right now</h2>`);
-        root.innerHTML += ('the athers are below 18');
-      } else{
+        for (let i of myFamily) {
+            if (i.age > 18) {
+                root.innerHTML += (`<h2>${i.name} is ${i.age} years old </h2>`);
+            } else if (i.age == 18) {
+                root.innerHTML += (`<h2>${i.name} is ${i.age} years old right now</h2>`);
+                root.innerHTML += ('the athers are below 18');
+            } else {
 
-      }
-    }
-
-  </script>
+            }
+        }
+    </script>
 </body>
+
 </html>
