@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<div class="container">
+<body>
+    <div id="inputForm">
+    <label for="gender">שם הפרי:</label>
+    <input type="text" name="TheName" id="name" value="תפוז">
+    <label for="gender">סוג הפרי:</label>
+    <input type="text" name="TheGender" id="gender" value="הדר">
+    <label for="color">צבע הפרי:</label>
+    <input type="text" name="TheColor" id="color" value="כתום">
+    <label for="weight">משקל הפרי:</label>
+    <input type="text" name="TheWeight" id="weight" value="20">
+    <label for="Season">עונת הפרי:</label>
+    <input type="text" name="TheSeasonr" id="season" value="חורף">
+    <input type="button" value="הוסף" id="OKbutton" onclick="getfrut()" >
+    <input type="button" value="מצא את הפרי הכי בריא" id="BestFrut" onclick="printThebestfrut()" >
+    <script src="js/index.js"></script>
+</div>
+<div id="outputForm">
+
+</div>
+</div>
+</body>
+</html>
