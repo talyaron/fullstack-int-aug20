@@ -44,5 +44,5 @@ for (var _i = 0, _myChildren = myChildren; _i < _myChildren.length; _i++) {
   } else if (i.age == 6) {
     root.innerHTML += "<h2>".concat(i.name, " is ").concat(i.age, " years old right now</h2>");
     root.innerHTML += 'the athers are below 6';
-  } else {}
+  }
 }

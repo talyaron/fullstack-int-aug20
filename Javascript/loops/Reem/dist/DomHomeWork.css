@@ -5,13 +5,12 @@ body {
   padding: 10%;
 }
 body h2 {
-  margin-top: 10%;
-  font-size: 1.6em;
+  margin-top: 5%;
+  font-size: 1.3em;
   font-weight: bold;
   font-family: sans-serif;
   color: blueviolet;
   border-radius: 10px;
-  padding: 10px;
 }
 body h2:hover {
   color: #6bbe5a;

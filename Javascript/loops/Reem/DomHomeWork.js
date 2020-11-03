@@ -40,7 +40,5 @@ for (let i of myChildren) {
     } else if (i.age == 6) {
         root.innerHTML += (`<h2>${i.name} is ${i.age} years old right now</h2>`);
         root.innerHTML += ('the athers are below 6');
-    } else {
-
-    }
+    } 
 }
