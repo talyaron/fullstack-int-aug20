@@ -4,15 +4,29 @@ body {
   box-shadow: inset 2px 90px 110px rgba(0, 0, 0, 0.584);
   padding: 10%;
 }
+body H1 {
+  text-align: center;
+  background-color: chartreuse;
+}
 body h2 {
+  width: 350PX;
   margin-top: 5%;
   font-size: 1.3em;
   font-weight: bold;
   font-family: sans-serif;
-  color: blueviolet;
+  color: yellowgreen;
   border-radius: 10px;
+  text-align: center;
+  background-color: #4f4fa7;
+  display: grid;
+  grid-area: auto;
+}
+body h2 img {
+  width: 100px;
+  border-radius: 15px;
+  margin: 1%;
 }
 body h2:hover {
-  color: #6bbe5a;
+  color: #be5aa0;
   box-shadow: 2px 2px 6px rgba(161, 160, 160, 0.584);
 }
