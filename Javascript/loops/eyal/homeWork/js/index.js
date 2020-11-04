@@ -31,15 +31,17 @@ function getfrut() {
     return fruts;
 };
 
-function displayarray(fruts){ /* לא עובד לבדוק */
+function displayarray(fruts){ 
     const frutNameArray = [];
-    document.getElementById(Arryoutput).innerHTML = `<h1 id="outputFormHeder">לוח התוצאות</h1>`
+    const Arryoutput = document.getElementById("Arryoutput");
+    Arryoutput.innerHTML = `<h1>הפירות שהוזנו</h1>`;
+    
     fruts.forEach(obj=>{
         frutNameArray.push(obj.name);
     })
 
     frutNameArray.forEach(name=>{
-        document.getElementById(Arryoutput).innerHTML += `<p> ${name} </p>`
+        Arryoutput.innerHTML += `<p> ${name} </p>`;
     });
 
 }
@@ -158,7 +160,7 @@ return greanFroots;
 function printTheGreanFruts(){
     const outputFormHeder = document.getElementById("outputFormHeder");
     outputFormHeder.innerHTML = ` הירקות הירוקים הם`; 
-     
+    outputForm.innerHTML =`<h1 id="outputFormHeder">לוח התוצאות</h1>`;
     const greanFroots = findTheGrean(fruts);
     greanFroots.forEach(frut=>{
      outputForm.innerHTML += ` <p> ${frut.name} </p>`;
