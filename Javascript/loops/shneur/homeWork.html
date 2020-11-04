@@ -32,7 +32,7 @@
     
     p {
         margin-top: 20%;
-        font-size: 1.6em;
+        font-size: 1.6rem;
         font-weight: bold;
         font-family: sans-serif;
     }
@@ -54,16 +54,16 @@
 
     <script>
         let devices = [{
-            brand: "apple",
-            model: "iphone 12",
+            brand: "apple ",
+            model: "iphone 12 ",
             year: 2020,
             price: 800,
             chargeInWatt: 20,
             battary: 2815,
             screenRefresh: 60,
         }, {
-            brand: "Xiaomi",
-            model: "Redmi K30 Ultra",
+            brand: "Xiaomi ",
+            model: "Redmi K30 Ultra ",
             year: 2020,
             price: 300,
             chargeInWatt: 33,
@@ -72,7 +72,7 @@
 
         }, {
             brand: "Xiaomi",
-            model: "pocophone F1",
+            model: "pocophone F1 ",
             year: 2018,
             price: 250,
             chargeInWatt: 18,
@@ -80,7 +80,7 @@
             screenRefresh: 60,
 
         }, {
-            brand: "Xiaomi",
+            brand: "Xiaomi ",
             model: "K20",
             year: 2018,
             price: 200,
@@ -89,16 +89,7 @@
             screenRefresh: 60,
 
         }, {
-            brand: "LG",
-            model: "velvet",
-            year: 2018,
-            price: 500,
-            chargeInWatt: 30,
-            battary: 4500,
-            screenRefresh: 60,
-
-        }, {
-            brand: "Xiaomi",
+            brand: "Xiaomi ",
             model: "mi 10T ",
             year: 2020,
             price: 430,
@@ -107,8 +98,8 @@
             screenRefresh: 144,
 
         }, {
-            brand: "Samsung",
-            model: "galaxy s20 Ultra",
+            brand: "Samsung ",
+            model: "galaxy s20 Ultra ",
             year: 2020,
             price: 860,
             chargeInWatt: 45,
@@ -117,46 +108,46 @@
 
         }];
 
+
         let html = "";
         let phones = document.getElementById("phones");
 
+
         for (phoneType = 0; phoneType < devices.length; phoneType++) {
             if (devices[phoneType].price < 600) {
-                html += "<p>the " + devices[phoneType].model + " from " + devices[phoneType].brand + "</p><div class = 'good'>" + "the " + devices[phoneType].model + " from " + devices[phoneType].brand +
-                    " is a very cheap phone! </div>"
+                html += `<p>the ${devices[phoneType].model} from  ${devices[phoneType].brand} </p><div class = 'good'> the  ${devices[phoneType].model} from  ${devices[phoneType].brand}
+                    is a very cheap phone! </div>`
             } else {
-                html += "<p>the " + devices[phoneType].model + " from " + devices[phoneType].brand + "</p><div class = 'bad'>" + "the " + devices[phoneType].model + " from " + devices[phoneType].brand +
-                    " is a very expensive phone! </div>"
+                html += `<p>the ${devices[phoneType].model} from ${devices[phoneType].brand}</p><div class = 'bad'>the ${devices[phoneType].model}from ${devices[phoneType].brand}
+                    is a very expensive phone! </div>`
             }
-            if (devices[phoneType].battary > 4000) {
-                html += "<div class = 'good'>" + "the " + devices[phoneType].battary + " mAh battary on the " + devices[phoneType].brand + " " + devices[phoneType].model +
-                    " is a beast! " + "</div>"
+            if (devices[phoneType].battary > 1000) {
+                html += `<div class = 'good'>the${devices[phoneType].battary} mAh battary on the ${devices[phoneType].brand} ${devices[phoneType].model}
+                    is a beast!</div>`
             } else {
-                html += "<div class = 'bad'>" + "the " + devices[phoneType].battary + " mAh battary on the " + devices[phoneType].brand + " " + devices[phoneType].model +
-                    " is not a lot... " + "</div>"
+                html += `<div class = 'bad'>the ${devices[phoneType].battary} mAh battary on the ${devices[phoneType].brand} ${devices[phoneType].model} +
+                    is not a lot...</div>`
 
             }
             if (devices[phoneType].year < 2019) {
-                html += "<div class = 'bad'>" + "the " + devices[phoneType].model +
-                    " is a bit old...! " + "</div>"
+                html += `<div class = 'bad'>the ${devices[phoneType].model} is a bit old...! </div>`
             } else {
-                html += "<div class = 'good'>" + "the " + devices[phoneType].model +
-                    " is a brand new phone! " + "</div>"
+                html += `<div class = 'good'>"the ${devices[phoneType].model} is a brand new phone!</div>`
             }
             if (devices[phoneType].chargeInWatt > 25) {
-                html += "<div class = 'good'>" + "the charging rate on your " + devices[phoneType].brand + " is " + devices[phoneType].chargeInWatt +
-                    "W this is very nice! " + "</div>"
+                html += `<div class = 'good'>the charging rate on your ${devices[phoneType].brand}  is ${devices[phoneType].chargeInWatt}
+                    W this is very nice! </div>`
             } else {
-                html += "<div class = 'bad'>" + "the charging rate on your " + devices[phoneType].brand + " is only " + devices[phoneType].chargeInWatt +
-                    "W! this is not cool! " + "</div>"
+                html += `<div class = 'bad'> the charging rate on your ${devices[phoneType].brand} is only ${devices[phoneType].chargeInWatt}
+                    W! this is not cool!  </div>`
 
             }
             if (devices[phoneType].screenRefresh > 90) {
-                html += "<div class = 'good'>" + "the " + devices[phoneType].screenRefresh + " HRZ refresh rate screen of this " + devices[phoneType].brand + " " +
-                    " make the phone look so fast & smooth " + "</div>"
+                html += `<div class = 'good'>  the ${devices[phoneType].screenRefresh}   HRZ refresh rate screen of this  ${devices[phoneType].brand} 
+                     make the phone look so fast & smooth </div>`
             } else {
-                html += "<div class = 'bad'>" + "the " + devices[phoneType].screenRefresh + " HRZ refresh rate screen of this " + devices[phoneType].brand + " " +
-                    " is a little outdated... " + "</div>"
+                html += `<div class = 'bad'>the ${devices[phoneType].screenRefresh}  HRZ refresh rate screen of this  ${devices[phoneType].brand} 
+                    is a little outdated...</div>`
 
             }
             phones.innerHTML = html;
