@@ -34,6 +34,8 @@ body{
         display: flex;
         flex-direction: column;
         background:  linear-gradient( #9198e5,#e66465);
+        grid-row: 1 ;
+        grid-column: 1 ;
         h1{
             margin: auto;
         }
@@ -51,6 +53,15 @@ body{
                 line-height: 1.4;
             }
         }
+    }
+
+    #Arryoutput{
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        background:  linear-gradient( #9198e5,#e66465);
+        grid-row: 1 ;
+        grid-column: 2 ;
     }
 
     #outputForm{
