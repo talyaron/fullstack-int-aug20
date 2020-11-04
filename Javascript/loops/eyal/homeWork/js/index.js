@@ -113,14 +113,29 @@ function findAndprintTheBestFrut(fruts) {
 function printThebestfrut() {
 
     const outputForm = document.getElementById("outputForm");
-    outputForm.innerHTML = ` <p> הפרי עם הערך הגבוה ביותר הוא: ${findAndprintTheBestFrut(fruts)} `;
+    outputForm.innerHTML = ` <p> הפרי עם הערך הגבוה ביותר הוא: ${findAndprintTheBestFrut(fruts)} </p>`;
+}
+
+function findTheGrean(fruts){
+    const greanFroots =[];
+    fruts.forEach(frut=>{
+if (frut.color == "ירוק"){
+
+    greanFroots.push(frut)  
+}
+
+    }); 
+
+return greanFroots;
 }
 
 
-
-
-
-
+function printTheGreanFruts(){
+   const greanFroots = findTheGrean(fruts);
+   greanFroots.forEach(frut=>{
+    outputForm.innerHTML += ` <p> ${frut.name} </p>`;   
+   })
+}
 
 
 // console.log(fruts);
