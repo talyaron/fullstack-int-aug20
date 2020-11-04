@@ -1,29 +1,48 @@
 
-let fruts = [];
+    let fruts = [];
+    const namefild = document.getElementById('name');
+    const genderfild = document.getElementById('gender');
+    const colorfild = document.getElementById('color');
+    const weightfild = document.getElementById('weight');
+    const seasonfild = document.getElementById('season');
 
 function getfrut() {
-    const name = document.getElementById('name');
-    const gender = document.getElementById('gender');
-    const color = document.getElementById('color');
-    const weight = document.getElementById('weight');
-    const season = document.getElementById('season');
-
-    name.value = "";
-    gender.value = "";
-    color.value = "";
-    weight.value = "";
-    season.value = "";
+    const name = namefild.value;
+    const gender = genderfild.value;
+    const color = colorfild.value;
+    const weight = weightfild.value;
+    const season = seasonfild.value;
+ 
+    namefild.value ="";
+    genderfild.value="";
+    colorfild.value="";
+    weightfild.value="";
+    seasonfild.value="";
 
     let frut = {
-        name: name.value,
-        gender: gender.value,
-        color: color.value,
-        weight: weight.value,
-        season: season.value
+        name: name,
+        gender: gender,
+        color: color,
+        weight: weight,
+        season: season
     };
     fruts.push(frut);
+    displayarray(fruts);
     return fruts;
 };
+
+function displayarray(fruts){ /* לא עובד לבדוק */
+    const frutNameArray = [];
+    document.getElementById(Arryoutput).innerHTML = `<h1 id="outputFormHeder">לוח התוצאות</h1>`
+    fruts.forEach(obj=>{
+        frutNameArray.push(obj.name);
+    })
+
+    frutNameArray.forEach(name=>{
+        document.getElementById(Arryoutput).innerHTML += `<p> ${name} </p>`
+    });
+
+}
 
 function caloryValue(frut) {
     let seasonValue = 0;

@@ -1,30 +1,48 @@
 "use strict";
 
 var fruts = [];
+var namefild = document.getElementById('name');
+var genderfild = document.getElementById('gender');
+var colorfild = document.getElementById('color');
+var weightfild = document.getElementById('weight');
+var seasonfild = document.getElementById('season');
 
 function getfrut() {
-  var name = document.getElementById('name');
-  var gender = document.getElementById('gender');
-  var color = document.getElementById('color');
-  var weight = document.getElementById('weight');
-  var season = document.getElementById('season');
-  name.value = "";
-  gender.value = "";
-  color.value = "";
-  weight.value = "";
-  season.value = "";
+  var name = namefild.value;
+  var gender = genderfild.value;
+  var color = colorfild.value;
+  var weight = weightfild.value;
+  var season = seasonfild.value;
+  namefild.value = "";
+  genderfild.value = "";
+  colorfild.value = "";
+  weightfild.value = "";
+  seasonfild.value = "";
   var frut = {
-    name: name.value,
-    gender: gender.value,
-    color: color.value,
-    weight: weight.value,
-    season: season.value
+    name: name,
+    gender: gender,
+    color: color,
+    weight: weight,
+    season: season
   };
   fruts.push(frut);
+  displayarray(fruts);
   return fruts;
 }
 
 ;
+
+function displayarray(fruts) {
+  /* לא עובד לבדוק */
+  var frutNameArray = [];
+  document.getElementById(Arryoutput).innerHTML = "<h1 id=\"outputFormHeder\">\u05DC\u05D5\u05D7 \u05D4\u05EA\u05D5\u05E6\u05D0\u05D5\u05EA</h1>";
+  fruts.forEach(function (obj) {
+    frutNameArray.push(obj.name);
+  });
+  frutNameArray.forEach(function (name) {
+    document.getElementById(Arryoutput).innerHTML += "<p> ".concat(name, " </p>");
+  });
+}
 
 function caloryValue(frut) {
   var seasonValue = 0;
