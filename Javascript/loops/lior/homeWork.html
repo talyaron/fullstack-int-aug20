@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="searis"></div>
+
+    <script>
+
+       let searis = [{name:'battlestar galactica',year:'2004',seasions:'4',stars:'8.7',img:'https://upload.wikimedia.org/wikipedia/he/4/40/Battlestar_Galactica_intro.jpg'},{name:'firefly',year:'2002',seasions:'1',stars:'9',img:'https://d2e111jq13me73.cloudfront.net/sites/default/files/styles/product_image_aspect_switcher_170w/public/product-images/csm-tv/firefly.jpg?itok=wcSmcFHd'},{name:'Farscape',year:'1999',seasions:'4',stars:'8.3',img:'https://upload.wikimedia.org/wikipedia/en/5/50/Farscape_Logo.jpg'},{name:'Doctor Who',year:'2005',seasions:'12',stars:'8.6',img:'https://m.media-amazon.com/images/M/MV5BZWJhYjFmZDEtNTVlYy00NGExLWJhZWItNTAxODY5YTc3MDFmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg'},{name:'star trek',year:'1987',seasions:'7',stars:'8.6',img:'https://upload.wikimedia.org/wikipedia/he/b/bb/TNGopeninglogo.png'}];
+
+       const searis1 = document.getElementById('searis');
+       searis.forEach(function(searis2) {
+            console.log(searis2);
+        })
+         let i = '' ;
+          
+        for (let i of searis) {
+            if (i.year > 2000) {
+                searis.innerHTML += (`<p>${i.name} name :  ${i.year} year :  ${i.seasions} seasions :  ${i.stars} stars :  ${i.img} pic : </p>`);
+            } else if (i.stars >8.5 ) {
+                searis.innerHTML += (`<p>${i.name} name :  ${i.year} year :  ${i.seasions} seasions :  ${i.stars} stars :  ${i.img} pic : </p>`);
+                 (`not got the cut but diserved it`) ;
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>
+
