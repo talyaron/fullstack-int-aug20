@@ -3,17 +3,22 @@
 var fruts = [];
 
 function getfrut() {
-  var name = document.getElementById('name').value;
-  var gender = document.getElementById('gender').value;
-  var color = document.getElementById('color').value;
-  var weight = document.getElementById('weight').value;
-  var season = document.getElementById('season').value;
+  var name = document.getElementById('name');
+  var gender = document.getElementById('gender');
+  var color = document.getElementById('color');
+  var weight = document.getElementById('weight');
+  var season = document.getElementById('season');
+  name.value = "";
+  gender.value = "";
+  color.value = "";
+  weight.value = "";
+  season.value = "";
   var frut = {
-    name: name,
-    gender: gender,
-    color: color,
-    weight: weight,
-    season: season
+    name: name.value,
+    gender: gender.value,
+    color: color.value,
+    weight: weight.value,
+    season: season.value
   };
   fruts.push(frut);
   return fruts;
@@ -131,6 +136,8 @@ function findTheGrean(fruts) {
 }
 
 function printTheGreanFruts() {
+  var outputFormHeder = document.getElementById("outputFormHeder");
+  outputFormHeder.innerHTML = " \u05D4\u05D9\u05E8\u05E7\u05D5\u05EA \u05D4\u05D9\u05E8\u05D5\u05E7\u05D9\u05DD \u05D4\u05DD";
   var greanFroots = findTheGrean(fruts);
   greanFroots.forEach(function (frut) {
     outputForm.innerHTML += " <p> ".concat(frut.name, " </p>");

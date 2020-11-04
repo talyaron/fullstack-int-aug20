@@ -16,34 +16,37 @@
 
       
         <div id="inputForm">
+            <h1>הזנת נתוני הפרי</h1>
             <div class="line"> 
             <label for="gender">שם הפרי:</label>
-            <input type="text" name="TheName" id="name" value="תפוז">
+            <input type="text" name="TheName" id="name" placeholder="שם הפרי" >
              </div>
              <div class="line">
             <label for="gender">סוג הפרי:</label>
-            <input type="text" name="TheGender" id="gender" value="הדר">
+            <input type="text" name="TheGender" id="gender" placeholder="סוג הפרי" >
             </div>
             <div class="line">
             <label for="color">צבע הפרי:</label>
-            <input type="text" name="TheColor" id="color" value="כתום">
+            <input type="text" name="TheColor" id="color" placeholder="צבע הפרי" >
             </div>
             <div class="line">
             <label for="weight">משקל הפרי:</label>
-            <input type="text" name="TheWeight" id="weight" value="20">
+            <input type="text" name="TheWeight" id="weight" placeholder="משקל הפרי" >
             </div>
             <div class="line">
             <label for="Season">עונת הפרי:</label>
-            <input type="text" name="TheSeasonr" id="season" value="חורף">
+            <input type="text" name="TheSeasonr" id="season" placeholder="באיזו עונה גדל הפרי" >
             </div>
             <div class="line">
             <input type="button" value="הוסף" id="OKbutton" onclick="getfrut()" >
             <input type="button" value="מצא את הפרי הכי בריא" id="BestFrut" onclick="printThebestfrut()" >
             <input type="button" value="מצא את הפרות הירוקים" id="BestFrut" onclick="printTheGreanFruts()" >
              </div>
+
         </div>
 
         <div id="outputForm">
+          <h1 id="outputFormHeder">לוח התוצאות</h1>
 
         </div>
     </div>

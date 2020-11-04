@@ -2,18 +2,24 @@
 let fruts = [];
 
 function getfrut() {
-    const name = document.getElementById('name').value;
-    const gender = document.getElementById('gender').value;
-    const color = document.getElementById('color').value;
-    const weight = document.getElementById('weight').value;
-    const season = document.getElementById('season').value;
+    const name = document.getElementById('name');
+    const gender = document.getElementById('gender');
+    const color = document.getElementById('color');
+    const weight = document.getElementById('weight');
+    const season = document.getElementById('season');
+
+    name.value = "";
+    gender.value = "";
+    color.value = "";
+    weight.value = "";
+    season.value = "";
 
     let frut = {
-        name: name,
-        gender: gender,
-        color: color,
-        weight: weight,
-        season: season
+        name: name.value,
+        gender: gender.value,
+        color: color.value,
+        weight: weight.value,
+        season: season.value
     };
     fruts.push(frut);
     return fruts;
@@ -131,9 +137,14 @@ return greanFroots;
 
 
 function printTheGreanFruts(){
-   const greanFroots = findTheGrean(fruts);
-   greanFroots.forEach(frut=>{
-    outputForm.innerHTML += ` <p> ${frut.name} </p>`;   
+    const outputFormHeder = document.getElementById("outputFormHeder");
+    outputFormHeder.innerHTML = ` הירקות הירוקים הם`; 
+     
+    const greanFroots = findTheGrean(fruts);
+    greanFroots.forEach(frut=>{
+     outputForm.innerHTML += ` <p> ${frut.name} </p>`;
+    
+    
    })
 }
 
