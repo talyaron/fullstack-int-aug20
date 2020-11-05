@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        
+        position: relative;
+    }
+    #box {
+        height: 100px;
+        width: 100px;
+        background-color: aqua;
+        border: 1px solid black;
+
+    }
+
+    #box1 {
+        height: 100px;
+        width: 100px;
+        background-color: rgb(202, 22, 202);
+        border: 1px solid black;
+        position: absolute;
+        left: 40px;
+    }
+</style>
+
+<body>
+    <div ID="box"></div>
+    <div ID="box1" onclick="moveleft()" ondblclick="moveright()"></div>
+    <script>
+
+        function moveleft(){
+            event.target.style.transform = 'translate(20px)'; 
+        }
+        function moveright(){
+            event.target.style.transform = 'translate(-20px)'; 
+        }
+        const theDiv = document.querySelector('#box');
+
+        theDiv.addEventListener('click', function (event) {
+            event.target.style.transform = 'translate(20px)';
+        })
+
+        theDiv.addEventListener('dblclick', function (event) {
+            event.target.style.transform = 'translate(-20px)';
+        })
+        console.log(theDiv);
+    </script>
+</body>
+
+</html>

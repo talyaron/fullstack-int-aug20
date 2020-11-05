@@ -52,6 +52,17 @@
 // }
 
 
+// //Conditions
+
+// let x=23;
+// let y=45;
+
+// if(x>y){
+//     console.log(`${x} is bigger ${y}`);
+// }
+// else{
+//     console.log('asdasdasdasdasd');
+// }
 
 
 
@@ -84,10 +95,10 @@ objectCars.forEach(element => {
 console.log(htmlRoot);
 let rootElement = document.getElementById('root');
 let rootElement2 = document.getElementById('root2');
-rootElement.innerHTML=htmlRoot;
+//rootElement.innerHTML=htmlRoot;
    
 objectCars.forEach(element => {
-    if(element.model > 2019){
+    if(element.model > 2018){
     htmlWithCondition+=`<p class="top">The Brand:${element.type}</p> 
                         <p class='middel'>The Model:${element.model}</p>
                         <p class='bottom'>The Color:${element.color}</p>`
@@ -95,14 +106,3 @@ objectCars.forEach(element => {
 });
 rootElement2.innerHTML=htmlWithCondition;
 
-//Conditions
-
-let x=23;
-let y=45;
-
-if(x>y){
-    console.log(`${x} is bigger ${y}`);
-}
-else{
-    console.log('asdasdasdasdasd');
-}

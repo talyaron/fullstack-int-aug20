@@ -1,10 +1,10 @@
 
-    let fruts = [];
-    const namefild = document.getElementById('name');
-    const genderfild = document.getElementById('gender');
-    const colorfild = document.getElementById('color');
-    const weightfild = document.getElementById('weight');
-    const seasonfild = document.getElementById('season');
+let fruts = [];
+const namefild = document.getElementById('name');
+const genderfild = document.getElementById('gender');
+const colorfild = document.getElementById('color');
+const weightfild = document.getElementById('weight');
+const seasonfild = document.getElementById('season');
 
 function getfrut() {
     const name = namefild.value;
@@ -12,12 +12,12 @@ function getfrut() {
     const color = colorfild.value;
     const weight = weightfild.value;
     const season = seasonfild.value;
- 
-    namefild.value ="";
-    genderfild.value="";
-    colorfild.value="";
-    weightfild.value="";
-    seasonfild.value="";
+
+    namefild.value = "";
+    genderfild.value = "";
+    colorfild.value = "";
+    weightfild.value = "";
+    seasonfild.value = "";
 
     let frut = {
         name: name,
@@ -31,16 +31,16 @@ function getfrut() {
     return fruts;
 };
 
-function displayarray(fruts){ 
+function displayarray(fruts) {
     const frutNameArray = [];
     const Arryoutput = document.getElementById("Arryoutput");
     Arryoutput.innerHTML = `<h1>הפירות שהוזנו</h1>`;
-    
-    fruts.forEach(obj=>{
+
+    fruts.forEach(obj => {
         frutNameArray.push(obj.name);
     })
 
-    frutNameArray.forEach(name=>{
+    frutNameArray.forEach(name => {
         Arryoutput.innerHTML += `<p> ${name} </p>`;
     });
 
@@ -52,21 +52,21 @@ function caloryValue(frut) {
     let weightValue = 0;
 
     if (frut.season == "חורף") {
-         seasonValue = 0.3;
+        seasonValue = 0.3;
     } else {
         if (frut.season == "קיץ") {
-             seasonValue = 0.7;
+            seasonValue = 0.7;
         } else {
             if (frut.season == "אביב") {
-                 seasonValue = 0;
+                seasonValue = 0;
             } else {
                 if (frut.season == "סתיו") {
-                     seasonValue = 0;
+                    seasonValue = 0;
                 } else {
                     if (frut.season == "שנתי") {
-                         seasonValue = 0.4;
+                        seasonValue = 0.4;
                     } else {
-                         seasonValue = 0;
+                        seasonValue = 0;
                     }
                 }
             }
@@ -74,18 +74,18 @@ function caloryValue(frut) {
     }
 
     if (frut.color == "אדום") {
-         colorValue = 0.9;
+        colorValue = 0.9;
     } else {
         if (frut.color == "כתום") {
-             colorValue = 0.7;
+            colorValue = 0.7;
         } else {
             if (frut.color == "צהוב") {
-                 colorValue = 0.6;
+                colorValue = 0.6;
             } else {
                 if (frut.color == "ירוק") {
-                     colorValue = 0.2;
+                    colorValue = 0.2;
                 } else {
-                     colorValue = 0;
+                    colorValue = 0;
                 }
             }
         }
@@ -93,21 +93,21 @@ function caloryValue(frut) {
 
 
     if (frut.weight >= 1000) {
-         weightValue = 0.1;
+        weightValue = 0.1;
     } else {
         if (frut.weight >= 500) {
-             weightValue = 0.2;
+            weightValue = 0.2;
         } else {
             if (frut.weight >= 100) {
-                 weightValue = 0.8;
+                weightValue = 0.8;
             } else {
                 if (frut.weight >= 10) {
-                     weightValue = 0.6;
+                    weightValue = 0.6;
                 } else {
                     if (frut.weight == 0) {
-                         weightValue = 0;
+                        weightValue = 0;
                     } else {
-                         weightValue = 0;
+                        weightValue = 0;
                     }
                 }
             }
@@ -129,9 +129,7 @@ function findAndprintTheBestFrut(fruts) {
         calFrutArry.push(calfrut);
     });
     console.log(calFrutArry);
-    // calFrutArry.max.apply(calFrutArry, array.map(function(o) { return o.calval; }))
-    const max = Math.max.apply(Math,calFrutArry.map(function(t){return t.CALVAL}));
-    // const maxValFrutName = math.find.apply(math,calFrutArry.map(function(t){return t.name}));
+    const max = Math.max.apply(Math, calFrutArry.map(function (t) { return t.CALVAL }));
     const maxValFrutName = calFrutArry.find(o => o.CALVAL === max).name;
     console.log(maxValFrutName);
     return maxValFrutName;
@@ -143,31 +141,31 @@ function printThebestfrut() {
     outputForm.innerHTML = ` <p> הפרי עם הערך הגבוה ביותר הוא:</p> <p>${findAndprintTheBestFrut(fruts)}</p> <div id="imag"><img src="img/${findAndprintTheBestFrut(fruts)}.jpg" alt=""></div>`;
 }
 
-function findTheGrean(fruts){
-    const greanFroots =[];
-    fruts.forEach(frut=>{
-if (frut.color == "ירוק"){
+function findTheGrean(fruts) {
+    const greanFroots = [];
+    fruts.forEach(frut => {
+        if (frut.color == "ירוק") {
 
-    greanFroots.push(frut)  
+            greanFroots.push(frut)
+        }
+
+    });
+
+    return greanFroots;
 }
 
-    }); 
 
-return greanFroots;
-}
-
-
-function printTheGreanFruts(){
-    outputForm.innerHTML =`<h1 id="outputFormHeder">הפירות הירוקים הם:</h1>`;
+function printTheGreanFruts() {
+    outputForm.innerHTML = `<h1 id="outputFormHeder">הפירות הירוקים הם:</h1>`;
     const greanFroots = findTheGrean(fruts);
-    greanFroots.forEach(frut=>{
-     outputForm.innerHTML += ` <p> ${frut.name} </p> <div id="imag"><img src="img/${frut.name}.jpg" alt=""></div>`;
-    
-    
-   })
+    greanFroots.forEach(frut => {
+        outputForm.innerHTML += ` <p> ${frut.name} </p> <div id="imag"><img src="img/${frut.name}.jpg" alt=""></div>`;
+
+
+    })
 }
 
 
-// console.log(fruts);
+
 
 

@@ -125,12 +125,10 @@ function findAndprintTheBestFrut(fruts) {
     };
     calFrutArry.push(calfrut);
   });
-  console.log(calFrutArry); // calFrutArry.max.apply(calFrutArry, array.map(function(o) { return o.calval; }))
-
+  console.log(calFrutArry);
   var max = Math.max.apply(Math, calFrutArry.map(function (t) {
     return t.CALVAL;
-  })); // const maxValFrutName = math.find.apply(math,calFrutArry.map(function(t){return t.name}));
-
+  }));
   var maxValFrutName = calFrutArry.find(function (o) {
     return o.CALVAL === max;
   }).name;
@@ -159,4 +157,4 @@ function printTheGreanFruts() {
   greanFroots.forEach(function (frut) {
     outputForm.innerHTML += " <p> ".concat(frut.name, " </p> <div id=\"imag\"><img src=\"img/").concat(frut.name, ".jpg\" alt=\"\"></div>");
   });
-} // console.log(fruts);
+}
