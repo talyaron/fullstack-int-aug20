@@ -15,6 +15,7 @@ function headphones(brand,model,type, wireless, anc, waterproof,price) {
   
   headphonesArr = [qc35,xm4,qcEarbuds,wfxm3]
   const root = document.getElementById('root')
+  
   function filterPrice(){
       let html =`` 
   
