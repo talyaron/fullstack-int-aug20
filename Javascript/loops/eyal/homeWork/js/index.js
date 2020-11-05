@@ -140,7 +140,7 @@ function findAndprintTheBestFrut(fruts) {
 function printThebestfrut() {
 
     const outputForm = document.getElementById("outputForm");
-    outputForm.innerHTML = ` <p> הפרי עם הערך הגבוה ביותר הוא: ${findAndprintTheBestFrut(fruts)} </p>`;
+    outputForm.innerHTML = ` <p> הפרי עם הערך הגבוה ביותר הוא:</p> <p>${findAndprintTheBestFrut(fruts)}</p> <div id="imag"><img src="img/${findAndprintTheBestFrut(fruts)}.jpg" alt=""></div>`;
 }
 
 function findTheGrean(fruts){
@@ -161,7 +161,7 @@ function printTheGreanFruts(){
     outputForm.innerHTML =`<h1 id="outputFormHeder">הפירות הירוקים הם:</h1>`;
     const greanFroots = findTheGrean(fruts);
     greanFroots.forEach(frut=>{
-     outputForm.innerHTML += ` <p> ${frut.name} </p>`;
+     outputForm.innerHTML += ` <p> ${frut.name} </p> <div id="imag"><img src="img/${frut.name}.jpg" alt=""></div>`;
     
     
    })
