@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        transition: all 250ms;
+    }
+</style>
+
+<body>
+    <div id="theDiv" oncontextmenu="handleOnContextMenu(event)" onclick="handleClick(event)"></div>
+    <script>
+
+
+        const theDiv = document.querySelector('#theDiv');
+
+        theDiv.addEventListener('click', function (event) {
+            event.target.style.transform = 'rotate(20deg)'
+        })
+
+        theDiv.addEventListener('mouseleave', function (event) {
+            event.target.style.transform = 'rotate(0deg)'
+        })
+
+        function handleClick(event) {
+
+        }
+
+        function handleOnContextMenu(event) {
+            event.target.style.transform = 'scale(2) rotate(-20deg)';
+        }
+    </script>
+</body>
+
+</html>

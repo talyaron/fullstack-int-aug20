@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const drinks = [{name:`cola`, taste: 'good', healthy:false }, {name:`lemonde`, taste: 'good', healthy:true },{name:`orangeJuice`, taste: 'good', healthy:true },{name:`pepsi`, taste: 'good', healthy:false } ]
+      drinks.forEach(element => {
+          switch (element.healthy) {
+              case false: console.log(` ${element.name} is not healty`)
+              break;
+              case true:console.log(`${element.name} is healthy, but really you should stick to water`)
+              break;
+          }
+          
+          
+      });
+           
+    </script>
+</body>
+</html>
