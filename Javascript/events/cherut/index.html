@@ -11,6 +11,7 @@
     height: 200px;
     background-color: aqua;
     border-radius: 50%;
+    transition: all 1s;
   }
 </style>
 <body>
@@ -19,11 +20,16 @@
 
     function moveRight(event){
       event.target.style.marginLeft = '300px';
+      event.target.style.backgroundColor = 'blue';
     }
 
-    function moveLeft(event){
-      event.target.style.marginLeft = '0px';
-    }
+    const ball = document.querySelector('.ball');
+
+    ball.addEventListener('dblclick', function (event) {
+         event.target.style.marginLeft = '0px';
+      event.target.style.backgroundColor = 'aqua';
+        })
+
   </script>
 </body>
 </html>
