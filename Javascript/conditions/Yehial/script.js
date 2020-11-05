@@ -17,7 +17,11 @@ const drinks =
     },
     {
         name:'cola',
+<<<<<<< HEAD
         taste:'hhahahahahahah',
+=======
+        taste:'nice',
+>>>>>>> master
         caloris:200
     }
 ]
