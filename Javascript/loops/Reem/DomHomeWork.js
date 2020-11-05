@@ -44,7 +44,7 @@ const root = document.getElementById('root');
 console.log(myChildren);
 root.innerHTML+=(`<h1> MY CHILDREN`)
 for (let i of myChildren) {
-    if (i.age > 6) {
+    if (i.age > 0) {
         
         root.innerHTML += (`<h2>${i.imgsrc}${i.name} is ${i.age} years old  </h2>`);
     } else if (i.age == 6) {

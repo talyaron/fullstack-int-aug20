@@ -48,7 +48,7 @@ root.innerHTML += "<h1> MY CHILDREN";
 for (var _i = 0, _myChildren = myChildren; _i < _myChildren.length; _i++) {
   var i = _myChildren[_i];
 
-  if (i.age > 6) {
+  if (i.age > 0) {
     root.innerHTML += "<h2>".concat(i.imgsrc).concat(i.name, " is ").concat(i.age, " years old  </h2>");
   } else if (i.age == 6) {
     root.innerHTML += "<h2>".concat(i.imgsrc).concat(i.name, " is ").concat(i.age, " years old right now</h2>");
