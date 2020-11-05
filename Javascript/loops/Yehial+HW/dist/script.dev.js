@@ -72,7 +72,7 @@ var rootElement = document.getElementById('root');
 var rootElement2 = document.getElementById('root2'); //rootElement.innerHTML=htmlRoot;
 
 objectCars.forEach(function (element) {
-  if (element.model > 2005) {
+  if (element.model > 2018) {
     htmlWithCondition += "<p class=\"top\">The Brand:".concat(element.type, "</p> \n                        <p class='middel'>The Model:").concat(element.model, "</p>\n                        <p class='bottom'>The Color:").concat(element.color, "</p>");
   }
 });

@@ -98,7 +98,7 @@ let rootElement2 = document.getElementById('root2');
 //rootElement.innerHTML=htmlRoot;
    
 objectCars.forEach(element => {
-    if(element.model > 2005){
+    if(element.model > 2018){
     htmlWithCondition+=`<p class="top">The Brand:${element.type}</p> 
                         <p class='middel'>The Model:${element.model}</p>
                         <p class='bottom'>The Color:${element.color}</p>`
