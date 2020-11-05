@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            text-align: center;
+        }
+        .card{
+            margin: auto;
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 400px;
+            background-color: lightgray;
+        }
+        img{
+            width: 200px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+        h2{
+            text-decoration:underline;
+        }
+    </style>
+    <div class="card">
+        <h1 id="name"></h1>
+        <img id="avengerPic" src="" alt="avengerPic">
+        <h2>Weapon</h2>
+        <h3 id="weapon"></h3>
+        <h2>Origins</h2>
+        <p id="placeOfBirth"></p>
+        <h2>Skill Out Of 100:</h2>
+        <p id="skill"></p>
+    </div>
+    <script>
+
+        const myArray = [{name:"Thor",weapon:"Hammer",imgSrc:"https://upload.wikimedia.org/wikipedia/en/3/3c/Chris_Hemsworth_as_Thor.jpg",placeOfBirth:"Asgard", skill:90, canFly:true},{name:"Captain America",weapon:"Shield",imgSrc:"https://api.time.com/wp-content/uploads/2015/04/avengers-poster-06.jpg?w=800&quality=85",placeOfBirth:"New York",skill:86,canFly:false},{name:"Doctor Strange",weapon:"Cape",imgSrc:"https://images-na.ssl-images-amazon.com/images/I/91uZ3ycsLzL._SX300_.jpg",placeOfBirth:"New York",skill:95,canFly:true},{name:"SpiderMan",weapon:"Webs",imgSrc:"http://www.scififantasynetwork.com/wp-content/uploads/2018/12/SpidermanPS4DLC.jpg",placeOfBirth:"New York",skill:87,canFly:false}];
+
+        const avengerPic = document.getElementById("avengerPic");
+        const nameOfCharacter = document.getElementById("name");
+        const weapon = document.getElementById("weapon");
+        const placeOfBirth = document.getElementById("placeOfBirth");
+        const skill = document.getElementById("skill");
+
+        myArray.forEach(character => {
+            if(character.skill > 88 && character.canFly == true && character.placeOfBirth == "New York"){
+                const filteredCharacter = character;
+                avengerPic.setAttribute("src", filteredCharacter.imgSrc);
+                nameOfCharacter.innerHTML = filteredCharacter.name;
+                weapon.innerHTML = filteredCharacter.weapon;
+                placeOfBirth.innerHTML = filteredCharacter.placeOfBirth;
+                skill.innerHTML = filteredCharacter.skill;                
+            } 
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

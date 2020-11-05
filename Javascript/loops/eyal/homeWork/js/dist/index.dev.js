@@ -154,7 +154,9 @@ function findTheGrean(fruts) {
 }
 
 function printTheGreanFruts() {
-  outputForm.innerHTML = "<h1 id=\"outputFormHeder\">\u05D4\u05E4\u05D9\u05E8\u05D5\u05EA \u05D4\u05D9\u05E8\u05D5\u05E7\u05D9\u05DD \u05D4\u05DD:</h1>";
+  var outputFormHeder = document.getElementById("outputFormHeder");
+  outputFormHeder.innerHTML = " \u05D4\u05D9\u05E8\u05E7\u05D5\u05EA \u05D4\u05D9\u05E8\u05D5\u05E7\u05D9\u05DD \u05D4\u05DD";
+  outputForm.innerHTML = "<h1 id=\"outputFormHeder\">\u05DC\u05D5\u05D7 \u05D4\u05EA\u05D5\u05E6\u05D0\u05D5\u05EA</h1>";
   var greanFroots = findTheGrean(fruts);
   greanFroots.forEach(function (frut) {
     outputForm.innerHTML += " <p> ".concat(frut.name, " </p>");

@@ -1,12 +1,23 @@
 
-let fruts = [];
+    let fruts = [];
+    const namefild = document.getElementById('name');
+    const genderfild = document.getElementById('gender');
+    const colorfild = document.getElementById('color');
+    const weightfild = document.getElementById('weight');
+    const seasonfild = document.getElementById('season');
 
 function getfrut() {
-    const name = document.getElementById('name').value;
-    const gender = document.getElementById('gender').value;
-    const color = document.getElementById('color').value;
-    const weight = document.getElementById('weight').value;
-    const season = document.getElementById('season').value;
+    const name = namefild.value;
+    const gender = genderfild.value;
+    const color = colorfild.value;
+    const weight = weightfild.value;
+    const season = seasonfild.value;
+ 
+    namefild.value ="";
+    genderfild.value="";
+    colorfild.value="";
+    weightfild.value="";
+    seasonfild.value="";
 
     let frut = {
         name: name,
@@ -16,8 +27,24 @@ function getfrut() {
         season: season
     };
     fruts.push(frut);
+    displayarray(fruts);
     return fruts;
 };
+
+function displayarray(fruts){ 
+    const frutNameArray = [];
+    const Arryoutput = document.getElementById("Arryoutput");
+    Arryoutput.innerHTML = `<h1>הפירות שהוזנו</h1>`;
+    
+    fruts.forEach(obj=>{
+        frutNameArray.push(obj.name);
+    })
+
+    frutNameArray.forEach(name=>{
+        Arryoutput.innerHTML += `<p> ${name} </p>`;
+    });
+
+}
 
 function caloryValue(frut) {
     let seasonValue = 0;
@@ -113,14 +140,32 @@ function findAndprintTheBestFrut(fruts) {
 function printThebestfrut() {
 
     const outputForm = document.getElementById("outputForm");
-    outputForm.innerHTML = ` <p> הפרי עם הערך הגבוה ביותר הוא: ${findAndprintTheBestFrut(fruts)} `;
+    outputForm.innerHTML = ` <p> הפרי עם הערך הגבוה ביותר הוא: ${findAndprintTheBestFrut(fruts)} </p>`;
+}
+
+function findTheGrean(fruts){
+    const greanFroots =[];
+    fruts.forEach(frut=>{
+if (frut.color == "ירוק"){
+
+    greanFroots.push(frut)  
+}
+
+    }); 
+
+return greanFroots;
 }
 
 
-
-
-
-
+function printTheGreanFruts(){
+    outputForm.innerHTML =`<h1 id="outputFormHeder">הפירות הירוקים הם:</h1>`;
+    const greanFroots = findTheGrean(fruts);
+    greanFroots.forEach(frut=>{
+     outputForm.innerHTML += ` <p> ${frut.name} </p>`;
+    
+    
+   })
+}
 
 
 // console.log(fruts);
