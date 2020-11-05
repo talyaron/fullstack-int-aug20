@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .ball{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    border-radius: 50%;
+    transition: all 1s;
+  }
+</style>
+<body>
+  <div class="ball" onclick="moveRight(event)" ondblclick="moveLeft(event)"></div>
+  <script>
+
+    function moveRight(event){
+      event.target.style.marginLeft = '300px';
+      event.target.style.backgroundColor = 'blue';
+    }
+
+    const ball = document.querySelector('.ball');
+
+    ball.addEventListener('dblclick', function (event) {
+         event.target.style.marginLeft = '0px';
+      event.target.style.backgroundColor = 'aqua';
+        })
+
+  </script>
+</body>
+</html>
