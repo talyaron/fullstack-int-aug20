@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/homework.css">
+    <title>FC Barcelona</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper__left">
+            <h1>Players under 21</h1>
+            <div class="wrapper__players" id="under21">
+            </div>
+        </div>
+        <div class="wrapper__right">
+            <h1>Players 21 or more</h1>
+            <div class="wrapper__players" id="over21">
+
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+        let favSportsPlayers = [
+            { name: 'Sergiño Dest', age: 19, nationality: 'USA', team: 'FC Barcelona', sport: 'Soccer', img: "<img src='https://www.fcbarcelona.com/photo-resources/2020/10/08/5589c155-e2d1-4005-85a9-e431ad6d6316/mini_dest.jpg?width=1200&height=1950'>" },
+            { name: 'Trincão', age: 19, nationality: 'Portugal', team: 'FC Barcelona', sport: 'Soccer', img: "<img src='https://www.fcbarcelona.com/photo-resources/2020/10/13/9df02bca-db0d-470f-92c0-cc78ac56fa3e/mini_trincao.jpg?width=1200&height=1950'>" },
+            { name: 'Ansu Fati', age: 18, nationality: 'Spain', team: 'FC Barcelona', sport: 'Soccer', img: "<img src='https://www.fcbarcelona.com/photo-resources/2020/10/13/4b443f6b-09b6-480f-a1f5-5460928f64e0/mini_ansu.jpg?width=1200&height=1950'>" },
+            { name: 'Pedri', age: 17, nationality: 'Spain', team: 'FC Barcelona', sport: 'Soccer', img: "<img src='https://www.fcbarcelona.com/photo-resources/2020/10/13/c8dc7fbc-8cec-4d4c-98e6-1934bb316a55/mini_pedri.jpg?width=1200&height=1950'>" },
+            { name: 'Lionel Messi', age: 33, nationality: 'Argentina', team: 'FC Barcelona', sport: 'Soccer', img: "<img src='https://www.fcbarcelona.com/photo-resources/2020/10/08/bec036ad-0532-4288-b37d-69c59a10f23d/mini_messi.jpg?width=1200&height=1950'>" },
+            { name: 'Frenkie de Jong', age: 23, nationality: 'Netherlands', team: 'FC Barcelona', sport: 'Soccer', img: "<img src='https://www.fcbarcelona.com/photo-resources/2020/10/08/eb51e844-bfe3-4473-b95c-56b52bd63173/mini_de_jong.jpg?width=1200&height=1950'>" },
+            { name: 'Philippe Coutinho', age: 28, nationality: 'Brazil', team: 'FC Barcelona', sport: 'Soccer', img: "<img src='https://www.fcbarcelona.com/photo-resources/2020/10/13/abe2d000-8eeb-49de-8664-5668e3b4dc6d/mini_coutinho.jpg?width=1200&height=1950'>" },
+            { name: 'Riqui Puig', age: 21, nationality: 'Spain', team: 'FC Barcelona', sport: 'Soccer', img: "<img src='https://www.fcbarcelona.com/photo-resources/2020/10/13/5a30cebd-30e3-4e5d-962a-5459b288621a/mini_riqui.jpg?width=1200&height=1950'>" }
+        ]
+        const over21 = document.getElementById("over21")
+        const under21 = document.getElementById("under21")
+        let over21html = ''
+        let under21html = ''
+
+        favSportsPlayers.forEach((elm) => {
+            if (elm.age >= 21) {
+                console.log(elm.age)
+                over21html +=
+                    `<div class="playerBox">
+                    <p>Name: ${elm.name}</p>
+                    <p>Nationality: ${elm.nationality}</p>
+                    <p>Sports: ${elm.sport}</p>
+                    <p>Team: ${elm.team}</p>
+                    <p>Age: ${elm.age}</p>
+                    ${elm.img}
+                </div>`
+            }else{
+                under21html += `<div class="playerBox">
+                    <p>Name: ${elm.name}</p>
+                    <p>Nationality: ${elm.nationality}</p>
+                    <p>Sports: ${elm.sport}</p>
+                    <p>Team: ${elm.team}</p>
+                    <p>Age: ${elm.age}</p>
+                    ${elm.img}
+                </div>`
+            }
+        })
+
+        under21.innerHTML = under21html
+        over21.innerHTML = over21html
+
+
+
+    </script>
+</body>
+
+</html>

@@ -6,26 +6,55 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<div class="container">
-<body>
-    <div id="inputForm">
-    <label for="gender">שם הפרי:</label>
-    <input type="text" name="TheName" id="name" value="תפוז">
-    <label for="gender">סוג הפרי:</label>
-    <input type="text" name="TheGender" id="gender" value="הדר">
-    <label for="color">צבע הפרי:</label>
-    <input type="text" name="TheColor" id="color" value="כתום">
-    <label for="weight">משקל הפרי:</label>
-    <input type="text" name="TheWeight" id="weight" value="20">
-    <label for="Season">עונת הפרי:</label>
-    <input type="text" name="TheSeasonr" id="season" value="חורף">
-    <input type="button" value="הוסף" id="OKbutton" onclick="getfrut()" >
-    <input type="button" value="מצא את הפרי הכי בריא" id="BestFrut" onclick="printThebestfrut()" >
-    <script src="js/index.js"></script>
-</div>
-<div id="outputForm">
 
-</div>
-</div>
+<body>
+
+    <div class="heder">
+      <h1>הפרי הבריא</h1>
+    </div>
+      <div class="container">
+
+      
+        <div id="inputForm">
+            <h1>הזנת נתוני הפרי</h1>
+            <div class="line"> 
+            <label for="gender">שם הפרי:</label>
+            <input type="text" name="TheName" id="name" placeholder="שם הפרי" >
+             </div>
+             <div class="line">
+            <label for="gender">סוג הפרי:</label>
+            <input type="text" name="TheGender" id="gender" placeholder="סוג הפרי" >
+            </div>
+            <div class="line">
+            <label for="color">צבע הפרי:</label>
+            <input type="text" name="TheColor" id="color" placeholder="צבע הפרי" >
+            </div>
+            <div class="line">
+            <label for="weight">משקל הפרי:</label>
+            <input type="text" name="TheWeight" id="weight" placeholder="משקל הפרי" >
+            </div>
+            <div class="line">
+            <label for="Season">עונת הפרי:</label>
+            <input type="text" name="TheSeasonr" id="season" placeholder="באיזו עונה גדל הפרי" >
+            </div>
+            <div class="line">
+            <input type="button" value="הוסף" id="OKbutton" onclick="getfrut()" >
+            <input type="button" value="מצא את הפרי הכי בריא" id="BestFrut" onclick="printThebestfrut()" >
+            <input type="button" value="מצא את הפרות הירוקים" id="BestFrut" onclick="printTheGreanFruts()" >
+             </div>
+
+        </div>
+
+        <div id="Arryoutput">
+          <h1>הפירות שהוזנו</h1>
+        </div>
+
+        <div id="outputForm">
+          <h1 id="outputFormHeder">לוח התוצאות</h1>
+
+        </div>
+    </div>
+
+ <script src="js/index.js"></script>
 </body>
 </html>

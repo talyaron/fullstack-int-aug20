@@ -1,13 +1,23 @@
 "use strict";
 
 var fruts = [];
+var namefild = document.getElementById('name');
+var genderfild = document.getElementById('gender');
+var colorfild = document.getElementById('color');
+var weightfild = document.getElementById('weight');
+var seasonfild = document.getElementById('season');
 
 function getfrut() {
-  var name = document.getElementById('name').value;
-  var gender = document.getElementById('gender').value;
-  var color = document.getElementById('color').value;
-  var weight = document.getElementById('weight').value;
-  var season = document.getElementById('season').value;
+  var name = namefild.value;
+  var gender = genderfild.value;
+  var color = colorfild.value;
+  var weight = weightfild.value;
+  var season = seasonfild.value;
+  namefild.value = "";
+  genderfild.value = "";
+  colorfild.value = "";
+  weightfild.value = "";
+  seasonfild.value = "";
   var frut = {
     name: name,
     gender: gender,
@@ -16,10 +26,23 @@ function getfrut() {
     season: season
   };
   fruts.push(frut);
+  displayarray(fruts);
   return fruts;
 }
 
 ;
+
+function displayarray(fruts) {
+  var frutNameArray = [];
+  var Arryoutput = document.getElementById("Arryoutput");
+  Arryoutput.innerHTML = "<h1>\u05D4\u05E4\u05D9\u05E8\u05D5\u05EA \u05E9\u05D4\u05D5\u05D6\u05E0\u05D5</h1>";
+  fruts.forEach(function (obj) {
+    frutNameArray.push(obj.name);
+  });
+  frutNameArray.forEach(function (name) {
+    Arryoutput.innerHTML += "<p> ".concat(name, " </p>");
+  });
+}
 
 function caloryValue(frut) {
   var seasonValue = 0;
@@ -117,5 +140,23 @@ function findAndprintTheBestFrut(fruts) {
 
 function printThebestfrut() {
   var outputForm = document.getElementById("outputForm");
-  outputForm.innerHTML = " <p> \u05D4\u05E4\u05E8\u05D9 \u05E2\u05DD \u05D4\u05E2\u05E8\u05DA \u05D4\u05D2\u05D1\u05D5\u05D4 \u05D1\u05D9\u05D5\u05EA\u05E8 \u05D4\u05D5\u05D0: ".concat(findAndprintTheBestFrut(fruts), " ");
+  outputForm.innerHTML = " <p> \u05D4\u05E4\u05E8\u05D9 \u05E2\u05DD \u05D4\u05E2\u05E8\u05DA \u05D4\u05D2\u05D1\u05D5\u05D4 \u05D1\u05D9\u05D5\u05EA\u05E8 \u05D4\u05D5\u05D0: ".concat(findAndprintTheBestFrut(fruts), " </p>");
+}
+
+function findTheGrean(fruts) {
+  var greanFroots = [];
+  fruts.forEach(function (frut) {
+    if (frut.color == "ירוק") {
+      greanFroots.push(frut);
+    }
+  });
+  return greanFroots;
+}
+
+function printTheGreanFruts() {
+  outputForm.innerHTML = "<h1 id=\"outputFormHeder\">\u05D4\u05E4\u05D9\u05E8\u05D5\u05EA \u05D4\u05D9\u05E8\u05D5\u05E7\u05D9\u05DD \u05D4\u05DD:</h1>";
+  var greanFroots = findTheGrean(fruts);
+  greanFroots.forEach(function (frut) {
+    outputForm.innerHTML += " <p> ".concat(frut.name, " </p>");
+  });
 } // console.log(fruts);
