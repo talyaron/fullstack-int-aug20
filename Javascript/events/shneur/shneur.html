@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 150px;
+        height: 150px;
+        background-color: rgb(119, 110, 238);
+        transition: all 250ms;
+    }
+</style>
+
+<body>
+    <div id="theDiv" onclick="handleOnContextMenu(event)"> </div>
+    <script>
+
+
+
+        theDiv.addEventListener('dblclick', function (event) {
+            event.target.style.marginLeft = '0px'
+        })
+        theDiv.addEventListener('click', function (event) {
+            event.target.style.marginLeft = '300px'
+        })
+
+        function handleOnContextMenu(event) {
+            event.target.style.transform = 'scale(2) rotate(-20deg)';
+        }
+
+    
+
+
+
+       
+    </script>
+</body>
+
+</html>
