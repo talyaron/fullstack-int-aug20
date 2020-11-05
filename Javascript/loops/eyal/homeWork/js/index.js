@@ -158,9 +158,7 @@ return greanFroots;
 
 
 function printTheGreanFruts(){
-    const outputFormHeder = document.getElementById("outputFormHeder");
-    outputFormHeder.innerHTML = ` הירקות הירוקים הם`; 
-    outputForm.innerHTML =`<h1 id="outputFormHeder">לוח התוצאות</h1>`;
+    outputForm.innerHTML =`<h1 id="outputFormHeder">הפירות הירוקים הם:</h1>`;
     const greanFroots = findTheGrean(fruts);
     greanFroots.forEach(frut=>{
      outputForm.innerHTML += ` <p> ${frut.name} </p>`;
