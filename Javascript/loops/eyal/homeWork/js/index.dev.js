@@ -140,7 +140,7 @@ function findAndprintTheBestFrut(fruts) {
 
 function printThebestfrut() {
   var outputForm = document.getElementById("outputForm");
-  outputForm.innerHTML = " <p> \u05D4\u05E4\u05E8\u05D9 \u05E2\u05DD \u05D4\u05E2\u05E8\u05DA \u05D4\u05D2\u05D1\u05D5\u05D4 \u05D1\u05D9\u05D5\u05EA\u05E8 \u05D4\u05D5\u05D0: ".concat(findAndprintTheBestFrut(fruts), " </p>");
+  outputForm.innerHTML = " <p> \u05D4\u05E4\u05E8\u05D9 \u05E2\u05DD \u05D4\u05E2\u05E8\u05DA \u05D4\u05D2\u05D1\u05D5\u05D4 \u05D1\u05D9\u05D5\u05EA\u05E8 \u05D4\u05D5\u05D0:</p> <p>".concat(findAndprintTheBestFrut(fruts), "</p> <div id=\"imag\"><img src=\"img/").concat(findAndprintTheBestFrut(fruts), ".jpg\" alt=\"\"></div>");
 }
 
 function findTheGrean(fruts) {
@@ -157,6 +157,6 @@ function printTheGreanFruts() {
   outputForm.innerHTML = "<h1 id=\"outputFormHeder\">\u05D4\u05E4\u05D9\u05E8\u05D5\u05EA \u05D4\u05D9\u05E8\u05D5\u05E7\u05D9\u05DD \u05D4\u05DD:</h1>";
   var greanFroots = findTheGrean(fruts);
   greanFroots.forEach(function (frut) {
-    outputForm.innerHTML += " <p> ".concat(frut.name, " </p>");
+    outputForm.innerHTML += " <p> ".concat(frut.name, " </p> <div id=\"imag\"><img src=\"img/").concat(frut.name, ".jpg\" alt=\"\"></div>");
   });
 } // console.log(fruts);
