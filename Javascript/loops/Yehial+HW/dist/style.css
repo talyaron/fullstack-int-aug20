@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 .top {
+  background-color: darkgreen;
   font-size: 20px;
   color: black;
 }
@@ -13,20 +12,12 @@
 .botoom {
   font-size: 16px;
   color: coral;
-=======
+}
+
 .first {
   background: beige;
 }
 
 .second {
   background-color: blue;
->>>>>>> master
-=======
-.first {
-  background: beige;
-}
-
-.second {
-  background-color: blue;
->>>>>>> master
 }
