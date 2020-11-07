@@ -27,11 +27,12 @@
         position: absolute;
         left: 40px;
     }
+    
 </style>
 
 <body>
     <div ID="box"></div>
-    <div ID="box1" onclick="moveleft()" ondblclick="moveright()"></div>
+    <div ID="box1"  onclick="moveleft()" ondblclick="moveright()"></div>
     <script>
 
         function moveleft(){
@@ -49,7 +50,7 @@
         theDiv.addEventListener('dblclick', function (event) {
             event.target.style.transform = 'translate(-20px)';
         })
-        console.log(theDiv);
+        
     </script>
 </body>
 
