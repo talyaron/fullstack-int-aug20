@@ -21,6 +21,7 @@
     function moveRight(event){
       event.target.style.marginLeft = '300px';
       event.target.style.backgroundColor = 'blue';
+      event.target.textContent = 'blue';
     }
 
     const ball = document.querySelector('.ball');
@@ -28,6 +29,7 @@
     ball.addEventListener('dblclick', function (event) {
          event.target.style.marginLeft = '0px';
       event.target.style.backgroundColor = 'aqua';
+      event.target.textContent = 'aqua';
         })
 
   </script>
