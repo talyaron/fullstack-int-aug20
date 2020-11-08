@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <style>
-  .ball{
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
-    border-radius: 50%;
-    transition: all 1s;
-  }
+    body{
+        position: relative;
+    }
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        transition: all 250ms;
+        margin: auto;
+        position: absolute;
+        top: 500px;
+        left: 700px;
+    }
+    img{
+        margin: auto;
+       /*  width: 100px;
+        height: 100px; */
+        position: absolute;
+        top: 500px;
+        left: 755px;
+        transition: all 250ms;
+    }
 </style>
 <body>
-  <div class="ball" onclick="moveRight(event)" ondblclick="moveLeft(event)"></div>
-  <script>
+    <div id="box" >
+        
+    </div>
+<img id='Cloun' src="" alt="">
 
-    function moveRight(event){
-      event.target.style.marginLeft = '300px';
-      event.target.style.backgroundColor = 'blue';
-      event.target.textContent = 'blue';
-    }
+    <script>
 
-    const ball = document.querySelector('.ball');
 
-    ball.addEventListener('dblclick', function (event) {
-         event.target.style.marginLeft = '0px';
-      event.target.style.backgroundColor = 'aqua';
-      event.target.textContent = 'aqua';
-        })
+        
+        const Cloun = document.querySelector('#Cloun');
 
-  </script>
+        Cloun.addEventListener('click', function (event) {
+            console.log("Cloun clicked");
+            Cloun.style.width="0px";
+            Cloun.style.height="0px";
+            Cloun.src= "";
+        });
+
+        
+const box = document.querySelector('#box');
+ box.addEventListener('click', function (event1) {//box clicked
+            console.log("box clicked");
+        Cloun.style.width="100px";
+Cloun.style.height="100px";
+Cloun.style.transform = 'translate(0px,-200px)'; 
+Cloun.src= "http://www.irganim.com/images/itempics/189.jpg";   
+           
+            
+        });
+        
+
+
+       
+    </script>
 </body>
 </html>
