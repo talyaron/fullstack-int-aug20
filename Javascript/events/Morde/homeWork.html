@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    body{
+        text-align: center;
+    }
+
+    img{
+        width: 300px;
+        height: 300px;
+    }
+
+    h2{
+        font-family: 'Montserrat', sans-serif;
+    }
+</style>
+<div>
+    <h2>Click the box to get a surprise!</h2>
+    <img id="box" src="img/box.png" alt="box">
+</div>
+<div>
+    <h2>Drag Messi׳s Picture to see a joke!</h2>
+    <img src="img/messi.jpg" alt="messi" id="box1">
+</div>
+<div>
+    <h2>Hold any key while inside the box and see how we all really look</h2>
+    <input type="text" id="box2">
+</div>
+<div style="margin-top: 10px;">
+    <img src="img/study.jpg" alt="study" id="studyPic">
+</div>
+
+<script>
+
+const box = document.getElementById("box");
+const box1 = document.getElementById("box1");
+const box2 = document.getElementById("box2");
+const studyPic = document.getElementById("studyPic");
+
+
+box.addEventListener("click", event => {
+    event.target.src = "img/clownInBox.png";
+});
+
+box.addEventListener("mouseleave", event => {
+    event.target.src = "img/box.png";
+});
+
+box1.addEventListener("drag", event => {
+    event.target.src = "img/reubenOved.jpg";
+});
+
+box1.addEventListener("dragend", event => {
+    event.target.src = "img/messi.jpg";
+})
+
+box2.addEventListener("keydown", event => {
+    studyPic.setAttribute("src", "img/fatMan.jpg")
+});
+
+box2.addEventListener("keyup", event => {
+    studyPic.setAttribute("src", "img/study.jpg");
+})
+
+
+</script>
+</body>
+</html>
