@@ -5,6 +5,8 @@ body {
     background: linear-gradient(0deg, rgba(15, 167, 2, 1) 2%, rgba(97, 181, 88, 1) 17%, rgba(40, 137, 157, 1) 35%, rgba(9, 9, 121, 1) 82%);
 }
 
+.invisible{display: none;}
+.visible{display: block;}
 #box {
     display: none;
     width: 200px;

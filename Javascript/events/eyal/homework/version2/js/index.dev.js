@@ -59,7 +59,19 @@ planeButton.addEventListener('click', function (event1) {
   box.style.display = "none";
 });
 plane.addEventListener('dragstart', function dragStart(event2) {
-  /*  setTimeout(() => (this.className = 'invisible'), 0); */
+  var _this = this;
+
+  setTimeout(function () {
+    return _this.className = 'invisible';
+  }, 0);
+  var position = event2.target;
+  console.log(position.x);
+  plane.style.left = position.x + 'px';
+  plane.style.top = position.y + 'px';
+  console.log(plane.style.left);
+});
+plane.addEventListener('dragend', function dragStart(event2) {
+  this.className = 'visible';
   var position = event2.target;
   console.log(position.x);
   plane.style.left = position.x + 'px';
