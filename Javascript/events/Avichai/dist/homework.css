@@ -1,0 +1,19 @@
+.box {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+  transition: 1s;
+}
+.box img {
+  width: 70%;
+}
+.box #boximg {
+  z-index: 5;
+}
+.box #clown {
+  transition: all 250ms;
+  display: none;
+}

@@ -1,0 +1,22 @@
+.box {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+    transition: 1s;
+
+    img {
+        width: 70%;
+    }
+
+    #boximg {
+        z-index: 5;
+    }
+
+    #clown {
+        transition: all 250ms;
+        display: none;
+    }
+}

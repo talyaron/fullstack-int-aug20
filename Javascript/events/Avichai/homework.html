@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/homework.css">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="box">
+        <img id="clown" src="img/clown.png">
+        <img id='boximg' src="img/box.png">
+    </div>
+
+    <script>
+        const box = document.querySelector('.box')
+        const clown = document.querySelector('#clown')
+        const boximg = document.querySelector('#boximg')
+
+        box.addEventListener('click', event => {
+            clown.style.display = 'block';
+            boximg.src = 'img/openbox.png';
+
+        })
+        box.addEventListener('mouseleave', event=> {
+            clown.style.display = 'none';
+            // clown.src = ''
+            boximg.src = 'img/box.png'
+        });
+
+    </script>
+</body>
+
+</html>

@@ -10,20 +10,24 @@
     div {
         width: 100px;
         height: 100px;
+        position: relative;
+        left: 20px;
         background-color: tomato;
-        transition: all 250ms;
+        /* transition: all 250ms; */
     }
 </style>
 
 <body>
     <!-- create a div.... on click move right. on dblclick mone back to original place -->
-    <div id="theDiv" oncontextmenu="handleOnContextMenu(event)" onclick="handleClick(event)"></div>
+    <div id="theDiv" draggable="true" oncontextmenu="handleOnContextMenu(event)" onclick="handleClick(event)">Click Me!
+    </div>
     <script>
 
 
         const theDiv = document.querySelector('#theDiv');
 
         theDiv.addEventListener('click', function (event) {
+            console.log(event)
             event.target.style.transform = 'rotate(20deg)'
         })
 
@@ -31,12 +35,74 @@
             event.target.style.transform = 'rotate(0deg)'
         })
 
+        // theDiv.addEventListener('mouseover',handleOnmouseover)
+
         function handleClick(event) {
+
+        }
+
+
+        let x = 0, y = 0;
+      
+
+        let deltaX
+        let deltaY
+
+        //drag
+        theDiv.addEventListener('dragstart', event => {
+            console.log(event)
+            x = event.target.offsetLeft;
+            y = event.target.offsetTop;
+            let mouseX = event.x;
+            let mouseY = event.y;
+            deltaX = mouseX - x;
+            deltaY = mouseY - y;
+
+            // console.log(x, y, ' --- ', mouseX, mouseY, 'delta:', deltaX, deltaY)
+        })
+
+        theDiv.addEventListener('drag', event => {
+
+
+            // event.targ  t.style.display = 'none'
+            event.target.style.left = `${event.x-deltaX}px`;
+            event.target.style.top = `${event.y-deltaY}px`;
+        })
+
+        theDiv.addEventListener('dragend', event => {
+
+
+            // event.target.style.display = 'block'
+            event.target.style.left = `${event.x-deltaY}px`;
+            event.target.style.top = `${event.y-deltaY}px`;
+        })
+
+
+
+
+
+        function handleOnmouseover(event) {
+            console.dir(event.target)
+            const left = event.target.offsetLeft
+            const top = event.target.offsetTop
+
+            console.log(left, top)
+            event.target.style.left = `${left + reandomMove(10)}px`;
+            event.target.style.top = `${top + reandomMove(10)}px`;
+
+
+
+            event.target.innerText = `Click Me! x: ${left}px, y: ${top}px`
+
 
         }
 
         function handleOnContextMenu(event) {
             event.target.style.transform = 'scale(2) rotate(-20deg)';
+        }
+
+        function reandomMove(moveInEachStep) {
+            return (Math.random() * moveInEachStep * 2) - 0.5 * moveInEachStep;
         }
     </script>
 </body>
