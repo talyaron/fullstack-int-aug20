@@ -19,7 +19,7 @@
           transform: skewY(-20deg); */
 
             box.addEventListener('mouseleave', function (event) {
-                console.log("Cloun clicked");
+                console.log("Box leaved");
                 Cloun.style.transform = 'translate(0px,20px)';
                 /*  Cloun.src = ""; */
                 /* Cloun.style.width = "0px";
@@ -43,7 +43,7 @@
 
 
             plane.addEventListener('mouseleave', function (event) {
-                console.log("Cloun clicked");
+                console.log("Plane leaved");
                 Cloun.style.transform = 'translate(0px,20px)';
             });
 
@@ -62,3 +62,14 @@
             TopCover.style.display = "none";
             box.style.display = "none";
         });
+        plane.addEventListener('dragstart', function dragStart(event2){
+            
+          /*  setTimeout(() => (this.className = 'invisible'), 0); */
+            var position = event2.target;
+            console.log( position.x)
+            plane.style.left = position.x + 'px';
+            plane.style.top = position.y + 'px';
+            console.log( plane.style.left)
+        });
+
+        

@@ -21,7 +21,7 @@ box.addEventListener('click', function (event1) {
   transform: skewY(-20deg); */
 
   box.addEventListener('mouseleave', function (event) {
-    console.log("Cloun clicked");
+    console.log("Box leaved");
     Cloun.style.transform = 'translate(0px,20px)';
     /*  Cloun.src = ""; */
 
@@ -44,7 +44,7 @@ plane.addEventListener('click', function (event1) {
   TopCover.style.top = "460px";
   TopCover.style.transform = "skewY(-20deg)";
   plane.addEventListener('mouseleave', function (event) {
-    console.log("Cloun clicked");
+    console.log("Plane leaved");
     Cloun.style.transform = 'translate(0px,20px)';
   });
 });
@@ -57,4 +57,12 @@ planeButton.addEventListener('click', function (event1) {
   plane.style.display = "block";
   TopCover.style.display = "none";
   box.style.display = "none";
+});
+plane.addEventListener('dragstart', function dragStart(event2) {
+  /*  setTimeout(() => (this.className = 'invisible'), 0); */
+  var position = event2.target;
+  console.log(position.x);
+  plane.style.left = position.x + 'px';
+  plane.style.top = position.y + 'px';
+  console.log(plane.style.left);
 });
