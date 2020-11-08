@@ -1,59 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
-    body{
+    body {
         position: relative;
+        height: 1080px;
+        background: rgb(15,167,2);
+background: linear-gradient(0deg, rgba(15,167,2,1) 2%, rgba(97,181,88,1) 17%, rgba(40,137,157,1) 35%, rgba(9,9,121,1) 82%);     
     }
-    div {
+
+    #box {
         width: 200px;
         height: 200px;
         background-color: tomato;
-        transition: all 250ms;
+        
         margin: auto;
         position: absolute;
         top: 500px;
         left: 700px;
+        overflow: hidden;
     }
-    img{
+    #topCover{
+        width: 200px;
+        height: 15px;
+        background-color: yellow;
         margin: auto;
-       /*  width: 100px;
+        position: absolute;
+     /*    top: 460px;
+        transform: skewY(-20deg); */
+        top: 495px;
+        left: 700px;  
+        transition: all 250ms;
+        
+    }
+
+    #Cloun {
+        margin: auto;
+        /*  width: 100px;
         height: 100px; */
         position: absolute;
-        top: -100px;
-        left: 55px;
+        top: 550px;
+        left: 800px;
+        transition: all 250ms;
+        
     }
 </style>
-<body>
-    <div id="box" >
-        <img id='Cloun' src="" alt="">
-    </div>
 
+<body>
+    <img id='Cloun' src="" alt="">
+    <div id="box">
+
+    </div>
+    <div id="topCover">
+
+    </div>
+   
 
     <script>
 
 
-        const box = document.querySelector('#box');
+
         const Cloun = document.querySelector('#Cloun');
+        const TopCover = document.querySelector('#topCover');
 
-        box.addEventListener('click', function (event) {
-            console.log("click");
-            Cloun.style.width="100px";
-            Cloun.style.height="100px";
-            Cloun.src= "http://www.irganim.com/images/itempics/189.jpg";
+
+
+
+        const box = document.querySelector('#box');
+        box.addEventListener('click', function (event1) {//box clicked
+            console.log("box clicked");
+            Cloun.style.width = "100px";
+            Cloun.style.height = "100px";
+            Cloun.style.transform = 'translate(0px,-100px)';
+            Cloun.src = "clown.png";
+            TopCover.style.top =  "460px";
+            TopCover.style.transform =  "skewY(-20deg)";
+          /*   top: 460px;
+        transform: skewY(-20deg); */
+            
+            box.addEventListener('mouseleave', function (event) {
+                console.log("Cloun clicked");
+                Cloun.style.transform = 'translate(0px,50px)';
+               /*  Cloun.src = ""; */
+                /* Cloun.style.width = "0px";
+                Cloun.style.height = "0px"; */
+                TopCover.style.top =  "495px";
+            TopCover.style.transform =  "skewY(0deg)";
+            });
+
+            
         });
 
-        Cloun.addEventListener('click', function (event) {
-            console.log("click");
-            Cloun.style.width="0px";
-            Cloun.style.height="0px";
-            Cloun.src= "";
-        });
+
+
 
     </script>
 </body>
+
 </html>
