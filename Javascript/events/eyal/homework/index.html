@@ -10,94 +10,258 @@
     body {
         position: relative;
         height: 1080px;
-        background: rgb(15,167,2);
-background: linear-gradient(0deg, rgba(15,167,2,1) 2%, rgba(97,181,88,1) 17%, rgba(40,137,157,1) 35%, rgba(9,9,121,1) 82%);     
+        background: rgb(15, 167, 2);
+        background: linear-gradient(0deg, rgba(15, 167, 2, 1) 2%, rgba(97, 181, 88, 1) 17%, rgba(40, 137, 157, 1) 35%, rgba(9, 9, 121, 1) 82%);
     }
 
     #box {
+        display: none;
         width: 200px;
         height: 200px;
         background-color: tomato;
-        
+
         margin: auto;
         position: absolute;
         top: 500px;
         left: 700px;
-        overflow: hidden;
+        /*  overflow: hidden; */
     }
-    #topCover{
+
+    #plane {
+        position: absolute;
+        top: 440px;
+        left: 590px;
+    }
+
+    #topCover {
+        display: none;
         width: 200px;
         height: 15px;
         background-color: yellow;
         margin: auto;
         position: absolute;
-     /*    top: 460px;
-        transform: skewY(-20deg); */
         top: 495px;
-        left: 700px;  
+        left: 700px;
         transition: all 250ms;
-        
+
     }
 
     #Cloun {
         margin: auto;
-        /*  width: 100px;
-        height: 100px; */
         position: absolute;
         top: 550px;
         left: 800px;
         transition: all 250ms;
-        
+
+    }
+
+
+    #clouds {
+        padding: 100px 0;
+    }
+
+
+    .cloud {
+        width: 200px;
+        height: 60px;
+        background: #fff;
+        border-radius: 200px;
+        -moz-border-radius: 200px;
+        -webkit-border-radius: 200px;
+        position: relative;
+    }
+
+    .cloud:before,
+    .cloud:after {
+        content: '';
+        position: absolute;
+        background: #fff;
+        width: 100px;
+        height: 80px;
+        position: absolute;
+        top: -15px;
+        left: 10px;
+
+        border-radius: 100px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+    }
+
+    .cloud:after {
+        width: 120px;
+        height: 120px;
+        top: -55px;
+        left: auto;
+        right: 15px;
+    }
+
+
+    .x1 {
+        animation: moveclouds 15s linear infinite;
+    }
+
+
+    .x2 {
+        left: 100px;
+        top: 120px;
+        transform: scale(0.6);
+        opacity: 0.6;
+        animation: moveclouds 25s linear infinite;
+
+    }
+
+    .x3 {
+        left: 150px;
+        top: 100px;
+        transform: scale(0.8);
+        opacity: 0.8;
+        animation: moveclouds 20s linear infinite;
+    }
+
+    .x4 {
+        left: 100px;
+        top: 250px;
+        transform: scale(0.75);
+        opacity: 0.75;
+        animation: moveclouds 18s linear infinite;
+
+    }
+
+    .x5 {
+        left: 100px;
+        top: 150px;
+        transform: scale(0.8);
+        opacity: 0.8;
+        animation: moveclouds 20s linear infinite;
+
+    }
+
+    @keyframes moveclouds {
+        0% {
+            margin-left: 1000px;
+        }
+
+        100% {
+            margin-left: -1000px;
+        }
+    }
+
+    #selection {
+        position: relative;
+        display: flex;
+        top: 700px;
+        left: 20px;
+    }
+
+    #selection>div {
+        border: 2px solid black;
+        margin: 10px;
+    }
+
+    #selection h1 {
+        margin: 10px;
+
     }
 </style>
 
 <body>
+    <!-- <div id="clouds"> -->
+    <div class="cloud x1"></div>
+    <div class="cloud x2"></div>
+    <div class="cloud x3"></div>
+    <div class="cloud x4"></div>
+    <div class="cloud x5"></div>
+    <!--  </div> -->
+
     <img id='Cloun' src="" alt="">
+
     <div id="box">
 
     </div>
     <div id="topCover">
 
     </div>
-   
+    <img id="plane" src="cute-airplane.png" alt="">
+
+    <div id="selection">
+        <div class="box">
+            <h1>Box</h1>
+        </div>
+        <div class="plane">
+            <h1>Plane</h1>
+        </div>
+    </div>
 
     <script>
 
 
-
         const Cloun = document.querySelector('#Cloun');
         const TopCover = document.querySelector('#topCover');
-
-
-
-
         const box = document.querySelector('#box');
+        const boxButton = document.querySelector('.box');
+        const plane = document.querySelector('#plane');
+        const planeButton = document.querySelector('.plane');
+
+        /* ליצן מופיע בלחיצה על קופסא */
         box.addEventListener('click', function (event1) {//box clicked
             console.log("box clicked");
             Cloun.style.width = "100px";
             Cloun.style.height = "100px";
             Cloun.style.transform = 'translate(0px,-100px)';
             Cloun.src = "clown.png";
-            TopCover.style.top =  "460px";
-            TopCover.style.transform =  "skewY(-20deg)";
-          /*   top: 460px;
-        transform: skewY(-20deg); */
-            
+            TopCover.style.top = "460px";
+            TopCover.style.transform = "skewY(-20deg)";
+            /*   top: 460px;
+          transform: skewY(-20deg); */
+
             box.addEventListener('mouseleave', function (event) {
                 console.log("Cloun clicked");
-                Cloun.style.transform = 'translate(0px,50px)';
-               /*  Cloun.src = ""; */
+                Cloun.style.transform = 'translate(0px,20px)';
+                /*  Cloun.src = ""; */
                 /* Cloun.style.width = "0px";
                 Cloun.style.height = "0px"; */
-                TopCover.style.top =  "495px";
-            TopCover.style.transform =  "skewY(0deg)";
+                TopCover.style.top = "495px";
+                TopCover.style.transform = "skewY(0deg)";
             });
 
-            
         });
 
 
+        /* ליצן מופיע בלחיצה על מטוס */
+        plane.addEventListener('click', function (event1) {//plane clicked
+            console.log("box clicked");
+            Cloun.style.width = "100px";
+            Cloun.style.height = "100px";
+            Cloun.style.transform = 'translate(0px,-100px)';
+            Cloun.src = "clown.png";
+            TopCover.style.top = "460px";
+            TopCover.style.transform = "skewY(-20deg)";
 
+
+            plane.addEventListener('mouseleave', function (event) {
+                console.log("Cloun clicked");
+                Cloun.style.transform = 'translate(0px,20px)';
+            });
+
+        });
+
+
+        boxButton.addEventListener('click', function (event1) {
+            plane.style.display = "none";
+            TopCover.style.display = "block";
+            box.style.display = "block";
+
+        });
+
+        planeButton.addEventListener('click', function (event1) {
+            plane.style.display = "block";
+            TopCover.style.display = "none";
+            box.style.display = "none";
+        });
 
     </script>
 </body>
