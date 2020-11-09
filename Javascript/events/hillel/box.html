@@ -13,18 +13,26 @@ body{
     }
 </style>
 <body>
+    <div style="margin:800px auto;text-align: center;">
     <div class="boxbox">
         <img id="imgg" src="img/מתנה סגורה.png" >
-        <img id="imggf" src="img/ליצן.png" >
+        <img id="imggf" src="img/ליצן.png"  >
     </div>
+</div>
 <div class="box">
 <img id="img_balloon1" src="img/בלון כתום.png">
 <img id="img_balloon2" src="img/בלונים כחול ואדום.png">
 <img id="img_balloon3" src="img/בלון צהוב.png">
+
 </div>
 
 
     <script>
+
+
+
+
+
 
 const boxbox =document.querySelector('.boxbox')
 const imgg =document.querySelector('#imgg')
@@ -35,15 +43,28 @@ const img_balloon3 =document.querySelector('#img_balloon3')
 
 
 boxbox.addEventListener('click' ,function(event){
-imggf.style.display = 'block';
+//imggf.style.display = 'inline-block';
+imggf.style.transition='opacity 0.6s,right 2s'
+imggf.style.opacity = '1';
+imggf.style.right = '-50px';
+
 imgg.src="img/מתנה פתוחה.png";
+img_balloon1.style.transition='all ' + (Math.floor(Math.random() * 5) + 1) +'s'
+img_balloon2.style.transition='all ' + (Math.floor(Math.random() * 5) + 1) +'s'
+img_balloon3.style.transition='all ' + (Math.floor(Math.random() * 5) + 1) +'s'
+ 
+
 img_balloon1.style.marginTop = '400px'
 img_balloon2.style.marginTop = '380px'
 img_balloon3.style.marginTop = '350px'
 })
 
 boxbox.addEventListener('mouseleave', event=> {
-imggf.style.display = 'none';
+//imggf.style.display = 'none';
+imggf.style.transition=''
+imggf.style.opacity = '0';
+imggf.style.right = '0px';
+
 imgg.src = "img/מתנה סגורה.png";
 img_balloon1.style.marginTop = '0'
 img_balloon2.style.marginTop = '0'
