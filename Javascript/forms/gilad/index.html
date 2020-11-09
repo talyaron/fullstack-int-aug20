@@ -11,24 +11,25 @@
     x
     <input type="number" placeholder="enter 2st number" onchange="handleChange2(event)">
     <button id="calculate" > Calculate</button>
-    <div id="result">the result is</div>
+    <div id="result">the result is: <span id='resultSpan'></span></div>
 </body>
 <script>
     let num1 =0
     let num2 =0
     function handleChange1(e){
-        num1 = e.target.value
+        console.log(e)
+        num1 = e.target.valueAsNumber
         console.log(num1)
       
     }
     function handleChange2(e){
-        num2 = e.target.value
+        num2 = e.target.valueAsNumber
        console.log(num2)
     }
     const calculate = document.getElementById('calculate')
     calculate.addEventListener('click',(event)=>{
-        let x = num1 + num2
-        event.target.innerhtml = x
+        let x = num1 * num2
+        document.getElementById('resultSpan').innerText = x;
 
         
     })
