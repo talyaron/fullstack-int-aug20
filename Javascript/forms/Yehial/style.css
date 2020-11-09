@@ -1,0 +1,19 @@
+#testBox{
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+}
+
+input{
+    font-size: 2rem;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid blue;
+    text-align: center;
+}
+
+button{
+    width: 30px;
+    height: 30px;
+    
+}
