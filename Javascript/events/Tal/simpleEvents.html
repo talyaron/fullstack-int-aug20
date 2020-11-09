@@ -22,16 +22,14 @@
     <div id="theDiv" draggable="true" oncontextmenu="handleOnContextMenu(event)" onclick="handleClick(event)">Click Me!
     </div>
     <script>
-
-
         const theDiv = document.querySelector('#theDiv');
 
-        theDiv.addEventListener('click', function (event) {
+        theDiv.addEventListener('click', function(event) {
             console.log(event)
             event.target.style.transform = 'rotate(20deg)'
         })
 
-        theDiv.addEventListener('dbl', function (event) {
+        theDiv.addEventListener('dbl', function(event) {
             event.target.style.transform = 'rotate(0deg)'
         })
 
@@ -42,8 +40,9 @@
         }
 
 
-        let x = 0, y = 0;
-      
+        let x = 0,
+            y = 0;
+
 
         let deltaX
         let deltaY
