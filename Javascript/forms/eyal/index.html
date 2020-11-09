@@ -8,8 +8,8 @@
 </head>
 <style>
     .container {
-        width: 500px;
-        height: 500px;
+        width: 95vw;
+        height: 99vh;
         margin: auto;
         /*  border: 1px solid black; */
         padding: 20px;
@@ -40,7 +40,7 @@
 
     label {}
 
-    #output{
+    #output {
         margin-top: 20px;
         height: 300px;
         width: 500px;
@@ -52,38 +52,48 @@
 <body>
     <div class="container">
         <H1>Maching Prog</H1>
-        <form id="MachForm">
+        <form id="MachForm" onsubmit='start112(event)'>
 
             <label for="FullName">Name
-                <input type="text" name="FullName" id="FullName" placeholder="Enter Your Name"></label>
+                <input type="text" name="FullName" id="FullName" placeholder="Enter Your Name" required></label>
             <label for="kids">Do you Have Kids?
-                <input type="checkbox" name="" id="kids"></label>
+                <input type="checkbox" name="kids" id="kids"></label>
             <label for="Dog">Do you Have a Dog?
-                <input type="checkbox" name="" id="Dog"></label>
-            <input type="file" name="tt" id="picher">
-            <input ID="OKButton" type="button" value="OK" onclick="start(event)">
+                <input type="checkbox" name="Dog" id="Dog"></label>
+            <input type="file" name="file" id="picher">
+            <input ID="OKButton" type="submit" value="OK" >
         </form>
         <div id="output"></div>
     </div>
 
     <script>
-        const FullName =  document.getElementById("FullName");
-        const kids =  document.getElementById("kids");
-        const Dog =  document.getElementById("Dog");
-        const picher =  document.getElementById("picher");
-        const output =  document.getElementById("output");
-       
+       /*  const FullName = document.getElementById("FullName");
+        const kids = document.getElementById("kids");
+        const Dog = document.getElementById("Dog");
+        const picher = document.getElementById("picher");
+        const output = document.getElementById("output"); */
 
-        function start(event) {
-            if (FullName.value !== "" ){
-                output.innerHTML =`hellow ${FullName.value} how are you` ;
+
+        function start112(event) {
+            event.preventDefault();
+            console.log('test')
+
+            const FullName = e.target.children.FullName.value;
+            const kids = e.target.children.kids.checked;
+            const Dog = e.target.children.Dog.checked;
+            const kids = e.target.children.kids.checked;
+            // const picher = e.target.children.picher;
+
+
+            if (FullName !== "") {
+                output.innerHTML = `hellow ${FullName.value} how are you`;
             }
 
-            if ((FullName.value !== "" ) && (kids.checked)) {
-                output.innerHTML =`hellow ${FullName.value} how are you <br>
+            if ((FullName !== "") && (kids == true)) {
+                output.innerHTML = `hellow ${FullName.value} how are you <br>
                 i have a Kids to` ;
             }
-            
+
         }
 
     </script>
