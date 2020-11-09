@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,hight=device-hight, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        width: 500px;
+        height: 500px;
+        margin: auto;
+        /*  border: 1px solid black; */
+        padding: 20px;
+    }
+
+    h1 {
+        margin: auto;
+    }
+
+    #MachForm {
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    input {
+        margin: 10px;
+    }
+
+    #OKButton {
+        margin-top: 80px;
+        height: 60px;
+    }
+
+    label {}
+
+    #output{
+        margin-top: 20px;
+        height: 300px;
+        width: 500px;
+        border: 1px solid black;
+        padding: 40px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <H1>Maching Prog</H1>
+        <form id="MachForm">
+
+            <label for="FullName">Name
+                <input type="text" name="FullName" id="FullName" placeholder="Enter Your Name"></label>
+            <label for="kids">Do you Have Kids?
+                <input type="checkbox" name="" id="kids"></label>
+            <label for="Dog">Do you Have a Dog?
+                <input type="checkbox" name="" id="Dog"></label>
+            <input type="file" name="tt" id="picher">
+            <input ID="OKButton" type="button" value="OK" onclick="start(event)">
+        </form>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const FullName =  document.getElementById("FullName");
+        const kids =  document.getElementById("kids");
+        const Dog =  document.getElementById("Dog");
+        const picher =  document.getElementById("picher");
+        const output =  document.getElementById("output");
+       
+
+        function start(event) {
+            if (FullName.value !== "" ){
+                output.innerHTML =`hellow ${FullName.value} how are you` ;
+            }
+
+            if ((FullName.value !== "" ) && (kids.checked)) {
+                output.innerHTML =`hellow ${FullName.value} how are you <br>
+                i have a Kids to` ;
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>
