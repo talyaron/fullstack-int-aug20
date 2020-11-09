@@ -13,7 +13,7 @@
 
 <body>
     <div class="box">
-        <img id="clown" src="img/clown.png">
+        <img id="clown" src="img/clown.png"> 
         <img id='boximg' src="img/box.png">
     </div>
 
@@ -24,13 +24,13 @@
 
         box.addEventListener('click', event => {
             clown.style.display = 'block';
-            boximg.src = 'img/openbox.png';
+            boximg.src = 'img/openbox.png';  //קופסה פתוחה
 
         })
         box.addEventListener('mouseleave', event=> {
             clown.style.display = 'none';
             // clown.src = ''
-            boximg.src = 'img/box.png'
+            boximg.src = 'img/box.png' //קופסה סגורה
         });
 
     </script>

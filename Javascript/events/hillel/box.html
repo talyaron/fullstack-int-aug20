@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/box.css">
+</head>
+<style>
+body{
+    background-image: url(img/תמונת\ רקע.png);
+    margin: 0;
+    }
+</style>
+<body>
+    <div class="boxbox">
+        <img id="imgg" src="img/מתנה סגורה.png" >
+        <img id="imggf" src="img/ליצן.png" >
+    </div>
+<div class="box">
+<img id="img_balloon1" src="img/בלון כתום.png">
+<img id="img_balloon2" src="img/בלונים כחול ואדום.png">
+<img id="img_balloon3" src="img/בלון צהוב.png">
+</div>
+
+
+    <script>
+
+const boxbox =document.querySelector('.boxbox')
+const imgg =document.querySelector('#imgg')
+const imggf =document.querySelector('#imggf')
+const img_balloon1 =document.querySelector('#img_balloon1')
+const img_balloon2 =document.querySelector('#img_balloon2')
+const img_balloon3 =document.querySelector('#img_balloon3')
+
+
+boxbox.addEventListener('click' ,function(event){
+imggf.style.display = 'block';
+imgg.src="img/מתנה פתוחה.png";
+img_balloon1.style.marginTop = '400px'
+img_balloon2.style.marginTop = '380px'
+img_balloon3.style.marginTop = '350px'
+})
+
+boxbox.addEventListener('mouseleave', event=> {
+imggf.style.display = 'none';
+imgg.src = "img/מתנה סגורה.png";
+img_balloon1.style.marginTop = '0'
+img_balloon2.style.marginTop = '0'
+img_balloon3.style.marginTop = '0'
+});
+
+
+    </script>
+</body>
+</html>
