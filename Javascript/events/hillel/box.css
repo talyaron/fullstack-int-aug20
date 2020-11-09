@@ -1,0 +1,51 @@
+.boxbox {
+  margin: 800PX auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 700px;
+  height: 500px;
+}
+
+.boxbox #imggf {
+  display: none;
+  height: 250px;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.box #img_balloon1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 400px;
+  -webkit-transition: all 4s;
+  transition: all 4s;
+}
+
+.box #img_balloon2 {
+  position: absolute;
+  top: 0;
+  height: 400px;
+  -webkit-transition: all 2.5s;
+  transition: all 2.5s;
+}
+
+.box #img_balloon3 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 400px;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+}
+/*# sourceMappingURL=box.css.map */

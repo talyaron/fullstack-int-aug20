@@ -1,0 +1,21 @@
+#root {
+  background-color: pink;
+  font-weight: bolder;
+  border-radius: 50px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  padding: 50px;
+}
+
+img {
+  width: 270px;
+  height: 250px;
+}
+
+.Artists {
+  background-color: pink;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+/*# sourceMappingURL=homework.css.map */
