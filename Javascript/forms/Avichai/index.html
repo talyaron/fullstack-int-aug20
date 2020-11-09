@@ -13,13 +13,15 @@
         border: 1px solid black;
         margin: auto;
     }
-    input{
+
+    input {
         padding: 5px;
         margin: 15px;
     }
 </style>
 
 <body>
+
     <div class="wrapper">
         <input type='text' placeholder="Your Name" onchange="handleChange(event)" onkeyup="handleKeyUp(event)">
         <input type="color" onchange="handleChange(event)">
@@ -30,8 +32,15 @@
         <input type="time" onchange="handleChange(event)">
         <input type="date" onchange="handleChange(event)">
         <input type="datetime-local" onchange="handleChange(event)">
-        
+
     </div>
+
+    <form onsubmit="handleSubmit(event)">
+        <input type ="email" placeholder="Email" name="email" required>
+        <input type="text" placeholder="Username" name="username" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit">Submit</button>
+    </form>
 
 
     <script>
@@ -40,6 +49,16 @@
         }
         function handleKeyUp(e) {
             console.log(e.target.value)
+        }
+
+        function handleSubmit(e){
+            e.preventDefault();
+
+            console.log(e)
+            const email = e.target.children.email.value
+            const username = e.target.children.username.value
+            const password = e.target.children.password.value
+            console.log(`Email: ${email} Username: ${username} Password: ${password}`)
         }
     </script>
 </body>
