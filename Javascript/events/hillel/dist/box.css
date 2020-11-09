@@ -1,9 +1,9 @@
-.boxbox {
+.box {
   text-align: center;
   display: inline-block;
   position: relative;
 }
-.boxbox #imggf {
+.box #clown {
   position: absolute;
   bottom: 10px;
   opacity: 0;
@@ -12,22 +12,22 @@
   margin-bottom: 50px;
 }
 
-.box {
+.balloons {
   display: flex;
   justify-content: space-around;
 }
-.box #img_balloon1 {
+.balloons #img_balloon1 {
   position: absolute;
   right: 0;
   top: 0;
   height: 400px;
 }
-.box #img_balloon2 {
+.balloons #img_balloon2 {
   position: absolute;
   top: 0;
   height: 400px;
 }
-.box #img_balloon3 {
+.balloons #img_balloon3 {
   top: 0;
   left: 0;
   position: absolute;
