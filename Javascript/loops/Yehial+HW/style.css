@@ -1,0 +1,24 @@
+.top {
+  background-color: darkgreen;
+  font-size: 20px;
+  color: black;
+}
+
+.middel {
+  font-size: 16px;
+  color: brown;
+}
+
+.botoom {
+  font-size: 16px;
+  color: coral;
+}
+
+.first {
+  background: beige;
+}
+
+.second {
+  background-color: blue;
+}
+/*# sourceMappingURL=style.css.map */
