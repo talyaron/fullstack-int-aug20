@@ -1,0 +1,2 @@
+1) create input for colors. Get the color the user chooses and change the color of the document background.
+2) create a form with fields for the login screen (username, password). check if the user name and password equal tho password that you saved in javascript
