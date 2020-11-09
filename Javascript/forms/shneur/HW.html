@@ -7,15 +7,12 @@
     <title>Document</title>
 </head>
 <style>
-    body{
-        background-color: rgb(144, 194, 250);
-
-
-
-
+    body {
+        /* background-color: rgb(144, 194, 250); */
 
     }
-    input {
+
+    form>input {
         font-size: 1rem;
         padding: 20px;
         border: none;
@@ -32,7 +29,18 @@
     button {
         margin-top: 10px;
         border: none;
-        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: rgb(29, 80, 29);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    }
+    #colorbox{
+        margin-top: 10px;
+        border: none;
         height: 50px;
         border-radius: 10px;
         background-color: rgb(29, 80, 29);
@@ -45,6 +53,16 @@
 </style>
 
 <body>
+    <!-- colorSelection -->
+    <form onsubmit="handleSubmit(event)">
+        <input name="choosAColor" type="color" required>
+        <button type="submit"> choose background color </button>
+    </form>
+    <div id="colorbox"></div>
+
+
+
+
     <form onsubmit="handleSubmit(event)">
         <!-- inputs -->
         <input name="name" type="text" placeholder="enter your name" required>
@@ -65,16 +83,34 @@
         function handleSubmit(event) {
             event.preventDefault();
 
-            const name = event.target.children.name.value;
-            const familyname = event.target.children.familyname.value;
-            const age = event.target.children.age.value;
-            const birthday = event.target.children.birthday.value;
-            const cuntry = event.target.children.cuntry.value;
-            const city = event.target.children.city.value;
+            const choosAColor = event.target.children.choosAColor.value;
 
-
-            console.log(name, familyname, age, birthday, cuntry, city);
+            console.log(choosAColor);
         }
+
+        const choosAColor = event.target.children.choosAColor.value;
+        let colorbox = document.getElementById("colorbox")
+
+        colorbox.addEventListener('click', function (event) {
+            colorbox.style.backgroundColor = "choosAColor"
+
+        })
+
+
+
+        // function handleSubmit(event) {
+        //     event.preventDefault();
+
+        //     const name = event.target.children.name.value;
+        //     const familyname = event.target.children.familyname.value;
+        //     const age = event.target.children.age.value;
+        //     const birthday = event.target.children.birthday.value;
+        //     const cuntry = event.target.children.cuntry.value;
+        //     const city = event.target.children.city.value;
+
+
+        //     console.log(name, familyname, age, birthday, cuntry, city);
+        // }
     </script>
 
 
