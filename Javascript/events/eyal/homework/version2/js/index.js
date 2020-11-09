@@ -68,6 +68,7 @@ let deltaY
 plane.addEventListener('dragstart', event => {
     setTimeout(() => (this.className = 'invisible'), 0);
     var position = event.target;
+    console.log(position.getBoundingClientRect())
     x = position.offsetLeft;
     y = position.offsetTop;
     deltaX = event.x - x;
