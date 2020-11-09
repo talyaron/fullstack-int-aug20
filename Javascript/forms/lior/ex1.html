@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    input{
+        font-size: 1.5rem;
+    }
+</style>
+<body>
+
+    <input type="text" placeholder="your name" onchange="change(event)" onkeyup="key(event)">
+    <input type="week" placeholder="what week is now" onchange="week(event)">
+    <input type="email" placeholder="put email" onkeyup="mail(event)">
+
+    <script>    
+
+
+        function change(e) {
+            console.log(e);
+            console.log(e.target.value);
+        }
+
+        function key(e){
+            console.log(e);
+            console.log(e.key)
+        }
+
+        function week(e) {
+            console.log(e);
+            console.log(e.target.value);
+        }
+
+        function email(e) {
+            console.log(e.key)
+        }
+
+    </script>
+</body>
+</html>

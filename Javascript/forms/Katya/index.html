@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all {
+            width: 70%;
+            margin: auto;
+            background-color: aquamarine;
+        }
+        
+        .text {
+            padding-bottom: 2%;
+            font-weight: bold;
+            font-size: 3em;
+        }
+        
+        .how {
+            width: 20%;
+        }
+        
+        .date {
+            width: 10%;
+            margin-left: 3%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="text">Tell me somthing about you...</div>
+        <div>
+            <p><input type="text" placeholder="How are you?" class="how" onchange="handleChange(event)" onkeyup="handleKyeup(event)"></p>
+            <p>When your birthday? <input type="date" class="date" onchange="handleChange(event)" onkeyup="handleKyeup(event)"></p>
+        </div>
+
+        <script>
+            function handleChange(e) {
+                console.log(e.target.value)
+            }
+
+            function handleKyeup(e) {
+                console.log(e.key);
+            }
+        </script>
+</body>
+
+</html>
