@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+      
+
+       
+       #box {
+           width: 150px;
+           height: 150px;
+           margin-top: 0;
+          
+           
+           margin-left: 15%;
+           background-color: blue;
+           transform:al;
+       }
+   </style>
+      
+      <div id="clown" class="clown"> <img src="./images/clown.PNG" height="100px" alt="" style="margin-left: 18%;z-index:-1;;"></div>
+         <div id="box">  </div>
+        
+       
+    
+    
+       
+<script>
+const box = document.getElementById('box')
+box.addEventListener('click', function(event){
+    box.target.style = ' display: none;'
+})
+</script>
+</body>
+
+</html>
