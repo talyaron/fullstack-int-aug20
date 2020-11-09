@@ -13,25 +13,56 @@
 
 <body>
     <div class="box">
-        <img id="clown" src="img/clown.png"> 
+        <img id="clown" src="img/clown.png">
         <img id='boximg' src="img/box.png">
     </div>
+    <img class="missleLeft" src="img/missleLeft1.png">
 
     <script>
         const box = document.querySelector('.box')
         const clown = document.querySelector('#clown')
         const boximg = document.querySelector('#boximg')
+        const body = document.body
+        const missleLeft = document.querySelector('.missleLeft')
 
         box.addEventListener('click', event => {
-            clown.style.display = 'block';
-            boximg.src = 'img/openbox.png';  //קופסה פתוחה
+            clown.style.transform = 'translate(-15px, -20vh)'
+            clown.style.transition = '0.6s'
+            clown.style.width = '170px'
+            clown.src = 'img/clown.png'
+
+            boximg.src = 'img/openbox.png';
+
+            body.style.backgroundColor = 'rgb(181, 181, 247)'
+            body.style.transition = '1s'
+
+            missleLeft.style.width = '200px'
+            missleLeft.style.transform = 'translate(65vh, 20px)'
+            missleLeft.style.transition = '6s'
+
+            let boom = setTimeout(function () {
+                clown.src = 'img/boom1.png'
+                    clown.style.width = '300px'
+                    missleLeft.style.display = 'none'
+            }, 4000);
 
         })
-        box.addEventListener('mouseleave', event=> {
-            clown.style.display = 'none';
-            // clown.src = ''
-            boximg.src = 'img/box.png' //קופסה סגורה
+        box.addEventListener('mouseleave', event => {
+            boximg.src = 'img/box.png'
+
+            clown.style.transform = 'translate(1px, 1px)'
+            clown.style.transition = '0.8s'
+            clown.style.width = '10px'
+
+            body.style.transition = '1s'
+            body.style.backgroundColor = 'rgb(223, 178, 178)'
+
+            missleLeft.style.display = 'block'
+            missleLeft.style.width = '60px'
+            missleLeft.style.transform = 'translate(1px, 1px)'
+            missleLeft.style.transition = '0.2s'
         });
+
 
     </script>
 </body>

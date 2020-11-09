@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        position: relative;
+    }
+    div{
+        width: 300px;
+        height: 300px;
+        background-color: blueviolet;
+        transition: all 250ms;
+        margin: auto;
+        position: absolute;
+        top: 400px;
+        left: 700px;
+    }
+    img{
+        margin: auto;
+     
+        position: absolute;
+        top: 400px;
+        left: 755px;
+        transition: all 250ms;
+    }
+    
+    
+    
+    </style>
+
+<body>
+
+    <div id='box'  ></div>
+    <img id="clown" >
+    <script> 
+    
+    const clown = document.querySelector('#clown');
+
+    
+    // clown.addEventListener('click', function (event) {
+    //         console.log("Clown clicked");
+    //         clown.style.width="0px";
+    //         clown.style.height="0px";
+    //         clown.src= "";
+    //     });
+
+
+        // clown.addEventListener('dblclick', function (event) {
+        //     event.target.style.transform = 'translate(0px)'
+        //     event.target.style.backgroundcolor = 'black';
+        // })
+        const box = document.querySelector('#box');
+ box.addEventListener('click', function (event1) {
+            console.log("box clicked");
+       clown.style.width="200px";
+       clown.style.height="200px";
+       clown.style.transform = 'translate(0px,-300px)'; 
+       clown.src= "clown.jpg";   
+    //    box.addEventListener('mouseleave', function (event) {
+    //             console.log("clown clicked");
+    //            clown.style.transform = 'translate(0px,20px)';
+    //         });
+           
+            
+        });
+        
+
+       
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

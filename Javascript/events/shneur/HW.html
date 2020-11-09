@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: rgb(15, 167, 2);
+    }
+    
+    #box {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(2, 1, 1);
+        position: absolute;
+        top: 110px;
+        left: 200px;
+    }
+    
+    #Cloun {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 110px;
+        left: 200px;
+        transition: 300ms;
+
+    }
+</style>
+
+<body>
+
+    <img id='Cloun' src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR97rfN2bCeA19vT_P5EzHUPxZhsIl3fBtZiQ&usqp=CAU">
+
+    <div id="box"></div>
+
+    <script>
+        //   box.addEventListener('mouseover', event => {
+        //     x = event.target.offsetLeft;
+        //     y = event.target.offsetTop;
+        //     Cloun.style.transform = `translate(0px,${event.y+10}px)`
+        //     box.style.transform = `translate(0px,${event.x+100}px)`
+        // })
+      
+
+
+        box.addEventListener('click', event => {
+            Cloun.style.transform = 'translate(0px,-100px)';
+        })
+
+        box.addEventListener('mouseleave', event => {
+            Cloun.style.transform = 'translate(0px,20px)';
+        })
+
+      
+
+
+
+    </script>
+</body>
+
+</html>
