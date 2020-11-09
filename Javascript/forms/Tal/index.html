@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* input{
+        font-size: 2rem;
+        padding: 20px;
+        border:none;
+        border-bottom: 1px solid gray;
+    } */
+</style>
+<body>
+    <h1>Simple form events</h1>
+    <input type='text' placeholder="Your name" onchange="handleChange(event)" onkeyup="handleKyeup(event)">
+    <input type="month" >
+
+    <script>
+        function handleChange(e){
+            console.log(e);
+           
+            console.log(e.target.value)
+        }
+
+        function handleKyeup(e){
+            
+            console.log(e.key);
+            e.stopPropagation();
+            console.log(e);
+        }
+
+        document.addEventListener('keyup', handleKeyBoard); 
+
+        function handleKeyBoard(e){
+            console.log(e.key)
+        }
+    </script>
+</body>
+</html>
