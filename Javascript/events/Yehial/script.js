@@ -6,6 +6,7 @@ targetDiv.addEventListener('click',eventTest=>{
 });
 
 targetDiv.addEventListener('dblclick',eventTest=>{
-    console.log("dblclick");
+    console.log(eventTest);
     eventTest.target.style.margin = '300px';
+    eventTest.target.style.trsndform ;
 });

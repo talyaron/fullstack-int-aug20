@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+div>img {
+   width: 200px;
+   height: 200px;
+   margin-left: 600px;
+   margin-top: 200px;
+   transition: all 250ms;
+}
+    
+</style>
+<body>
+
+    <div id="box">
+        <img src="https://pngimg.com/uploads/box/box_PNG139.png" alt="" id="clown">
+    </div>
+
+    <script>
+
+        const clown = document.getElementById("clown");
+        const box = document.getElementById("box");
+
+        clown.addEventListener('click',function() {
+           if ( clown.src != "https://img.pikbest.com/common/element-white-1024x1024.png!/watermark/align/center/url/L29yaWdpbmFsX29yaWdpbl9waWMvMTkvMTIvMjcvMDkzMDFiZjI0MDFmZDczYTFmOGUwOWVlZmQ3ZDA1MWUucG5nIS9tYXgvOTAwL3Vuc2hhcnAvdHJ1ZS9xdWFsaXR5LzgwL2Zvcm1hdC9wbmc=/watermark/align/center/url/L2NvbW1vbi9sb2dvLnBuZyEvc2NhbGUvMjAwL2ZvcmNlL3RydWU="){
+                clown.src = "https://img.pikbest.com/common/element-white-1024x1024.png!/watermark/align/center/url/L29yaWdpbmFsX29yaWdpbl9waWMvMTkvMTIvMjcvMDkzMDFiZjI0MDFmZDczYTFmOGUwOWVlZmQ3ZDA1MWUucG5nIS9tYXgvOTAwL3Vuc2hhcnAvdHJ1ZS9xdWFsaXR5LzgwL2Zvcm1hdC9wbmc=/watermark/align/center/url/L2NvbW1vbi9sb2dvLnBuZyEvc2NhbGUvMjAwL2ZvcmNlL3RydWU=";}
+        })
+        
+        clown.addEventListener('mouseleave',function(){
+            if (clown.src !="https://pngimg.com/uploads/box/box_PNG139.png"){
+                clown.src="https://pngimg.com/uploads/box/box_PNG139.png"}   
+        })
+
+        clown.addEventListener('dblclick',function(){
+            if ( clown.src != "https://img.pikbest.com/common/element-white-1024x1024.png!/watermark/align/center/url/L29yaWdpbmFsX29yaWdpbl9waWMvMTkvMTIvMjcvMDkzMDFiZjI0MDFmZDczYTFmOGUwOWVlZmQ3ZDA1MWUucG5nIS9tYXgvOTAwL3Vuc2hhcnAvdHJ1ZS9xdWFsaXR5LzgwL2Zvcm1hdC9wbmc=/watermark/align/center/url/L2NvbW1vbi9sb2dvLnBuZyEvc2NhbGUvMjAwL2ZvcmNlL3RydWU="){
+                box.clown.target.style.transform = 'scale(2) rotate(40deg)';}
+            })
+
+       // clown.addEventListener('dblclick',function (){
+       //     if (clown.src !="https://img.pikbest.com/common/element-white-1024x1024.png!/watermark/align/center/url/L29yaWdpbmFsX29yaWdpbl9waWMvMTkvMTIvMjcvMDkzMDFiZjI0MDFmZDczYTFmOGUwOWVlZmQ3ZDA1MWUucG5nIS9tYXgvOTAwL3Vuc2hhcnAvdHJ1ZS9xdWFsaXR5LzgwL2Zvcm1hdC9wbmc=/watermark/align/center/url/L2NvbW1vbi9sb2dvLnBuZyEvc2NhbGUvMjAwL2ZvcmNlL3RydWU="){
+       //         clown.src="https://img.pikbest.com/common/element-white-1024x1024.png!/watermark/align/center/url/L29yaWdpbmFsX29yaWdpbl9waWMvMTkvMTIvMjcvMDkzMDFiZjI0MDFmZDczYTFmOGUwOWVlZmQ3ZDA1MWUucG5nIS9tYXgvOTAwL3Vuc2hhcnAvdHJ1ZS9xdWFsaXR5LzgwL2Zvcm1hdC9wbmc=/watermark/align/center/url/L2NvbW1vbi9sb2dvLnBuZyEvc2NhbGUvMjAwL2ZvcmNlL3RydWU=";}
+       //         clown*2;
+       // })
+
+    </script>
+    
+</body>
+</html>
+
+
