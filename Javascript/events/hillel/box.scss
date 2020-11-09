@@ -1,0 +1,42 @@
+
+    
+    .boxbox{
+        margin:800PX auto;
+            display: flex;
+            align-items: center;
+    width: 700px;
+    height: 500px;
+   
+
+        #imggf{
+            display: none;
+            height: 250px;
+    
+        }
+    }
+
+        .box{
+            display: flex;
+            justify-content: space-around;
+        
+        #img_balloon1{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 400px;
+            transition: all 4s;
+        }
+        #img_balloon2{
+            position: absolute;
+            top: 0;
+            height: 400px;
+            transition: all 2.5s;
+        }
+        #img_balloon3{
+            top: 0;
+            left: 0;
+            position: absolute;
+            height: 400px;
+            transition: all 3s;
+        }
+    }

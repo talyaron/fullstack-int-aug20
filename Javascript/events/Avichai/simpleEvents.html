@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #theDiv {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        position: relative;
+    }
+
+    .secondDiv {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        transition: all 200ms;
+        position: relative;
+    }
+</style>
+
+<body>
+    <div id="theDiv" oncontextmenu="handleOnContextMenu(event)" draggable="true"></div>
+    <div class="secondDiv" onclick="handleOnClick(event)"></div>
+
+    <Script>
+
+        // const secondDiv = document.querySelector('.secondDiv')
+        // function handleOnClick(event) {
+        //     event.target.style.transform = 'translate(500px)'
+        // }
+
+        // secondDiv.addEventListener('dblclick', event => {
+        //     event.target.style.transform = 'translate(0px)'
+        // })
+
+
+        // const theDiv = document.querySelector('#theDiv')
+
+        // theDiv.addEventListener('click', event => {
+        //     event.target.style.transform = 'rotate(20deg)'
+        // })
+        // theDiv.addEventListener('mouseleave', event => {
+        //     event.target.style.transform = 'rotate(0deg)'
+        // })
+        // function handleOnContextMenu(event) {
+        //     event.target.style.transform = 'scale(2) rotate(-20deg)'
+        // }
+
+        // theDiv.addEventListener('mouseover', event => {
+        //     console.dir(event.target)
+
+        //     const left = event.target.offsetLeft
+        //     const top = event.target.offsetTop
+
+        //     event.target.style.left = `${left + randomMove(25)}px`
+        //     event.target.style.top = `${top + randomMove(25)}px`
+
+
+        //     event.target.innerText = `ClickMe- x: ${left}px, y: ${top}px`
+        // })
+
+
+        // function randomMove(moveInEachStep) {
+        //     return (Math.random() * moveInEachStep * 2) - 0.5 * moveInEachStep
+        // }
+
+
+        theDiv.addEventListener('dragstart', event => {
+
+        })
+
+
+        theDiv.addEventListener('drag', event => {
+
+            event.target.style.display = 'none'
+
+
+        })
+        theDiv.addEventListener('dragend', event => {
+
+            event.target.style.display = 'block'
+            event.target.style.left = `${event.x}px`
+            event.target.style.top = `${event.y}px`
+
+        })
+
+
+
+
+
+    </Script>
+</body>
+
+</html>
