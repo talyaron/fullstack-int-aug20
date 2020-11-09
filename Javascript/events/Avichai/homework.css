@@ -1,0 +1,54 @@
+body {
+  background-color: #dfb2b2;
+  color: #b5b5f7;
+}
+
+.box {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  position: relative;
+  -webkit-transition: 1s;
+  transition: 1s;
+  top: 300px;
+}
+
+.box img {
+  width: 90%;
+}
+
+.box #boximg {
+  z-index: 5;
+}
+
+.box #clown {
+  display: block;
+  position: absolute;
+  bottom: 30%;
+  width: 60px;
+  margin-left: 25%;
+}
+
+.missleLeft {
+  display: inline;
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  width: 150px;
+  z-index: -1;
+}
+
+.missleRight {
+  border: 1px solid black;
+  display: inline;
+  position: absolute;
+  top: 10%;
+  right: 8%;
+  width: 1px;
+}
+/*# sourceMappingURL=homework.css.map */

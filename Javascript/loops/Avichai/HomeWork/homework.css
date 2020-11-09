@@ -1,0 +1,72 @@
+.wrapper {
+  border: 1px solid black;
+  width: 90%;
+  height: 80vh;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #7e9a9a;
+}
+
+.wrapper h1 {
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #2a6592;
+  color: white;
+}
+
+.wrapper .wrapper__players {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 5%;
+  width: 95%;
+  margin: auto;
+  margin-top: 9%;
+}
+
+.wrapper .wrapper__players .playerBox {
+  border: 1px solid black;
+  height: 25vh;
+  overflow: hidden;
+  background-color: #8ec3eb;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.wrapper .wrapper__players .playerBox:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .wrapper__players .playerBox p {
+  margin-left: 3%;
+  margin-top: 6%;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.wrapper .wrapper__players .playerBox img {
+  width: 40%;
+  float: right;
+  position: relative;
+  bottom: 100%;
+}
+
+.wrapper .wrapper__left {
+  border-left: 1px solid lightgray;
+  width: 50%;
+}
+
+.wrapper .wrapper__right {
+  border-left: 1px solid lightgray;
+  width: 50%;
+}
+/*# sourceMappingURL=homework.css.map */
