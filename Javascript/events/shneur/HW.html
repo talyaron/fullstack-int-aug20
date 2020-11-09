@@ -38,6 +38,15 @@
     <div id="box"></div>
 
     <script>
+        //   box.addEventListener('mouseover', event => {
+        //     x = event.target.offsetLeft;
+        //     y = event.target.offsetTop;
+        //     Cloun.style.transform = `translate(0px,${event.y+10}px)`
+        //     box.style.transform = `translate(0px,${event.x+100}px)`
+        // })
+      
+
+
         box.addEventListener('click', event => {
             Cloun.style.transform = 'translate(0px,-100px)';
         })
@@ -45,6 +54,11 @@
         box.addEventListener('mouseleave', event => {
             Cloun.style.transform = 'translate(0px,20px)';
         })
+
+      
+
+
+
     </script>
 </body>
 
