@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       
+
+    </style>
+    <form onsubmit="handleSubmit(event)">
+        <h1>creat your own box!!!!</h1>
+        <input type='color' placeholder="box color" name="color">
+        <input type="text" placeholder="write something" name="text">
+        <input type="number" name="height" placeholder="enter height">
+        <input type="number" name="width" placeholder="enter width" >
+        <button type="submit">submit</button>
+    </form>
+    <div id="box"><span id="span"></span></div>
+    <script>
+        function handleSubmit(e){
+            e.preventDefault();
+            document.getElementById('box').style.backgroundColor = `${e.target.children.color.value}`;
+            document.getElementById('box').style.width = `${e.target.children.width.valueAsNumber}px`;
+            document.getElementById('box').style.height = `${e.target.children.height.valueAsNumber}px`;
+            document.getElementById('span').innerText= e.target.children.text.value;
+            
+        }
+    </script>
+</body>
+</html>
