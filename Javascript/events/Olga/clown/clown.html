@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+</head>
+<body>
+    <img src="img/box.png" id="box">
+    <img src="img/clown.png" id="clown">
+    <audio src="evil-clown-laugh.mp3" autoplay="autoplay"></audio>
+
+    <style>
+        #box,
+        #clown{
+            
+            position: absolute;
+        }
+        #box{
+            margin: 500px 500px;
+            width: 450px;
+            z-index: 2;
+        }
+        #clown{
+            margin: 630px 700px;
+            width: 60px;
+            z-index: 1;
+        }
+    </style>
+    
+    <script src='clown.js'></script>
+</body>
+</html>
