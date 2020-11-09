@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +8,73 @@
     <link rel="stylesheet" href="dist/box.css">
 </head>
 <style>
-body{
-    background-image: url(img/תמונת\ רקע.png);
-    margin: 0;
+    body {
+        background-image: url(img/תמונת\ רקע.png);
+        margin: 0;
     }
 </style>
+
 <body>
-    <div class="boxbox">
-        <img id="imgg" src="img/מתנה סגורה.png" >
-        <img id="imggf" src="img/ליצן.png" >
+    <div style="margin:800px auto;text-align: center;">
+        <div class="box">
+            <img id="boxClose" src="img/מתנה סגורה.png">
+            <img id="clown" src="img/ליצן.png">
+        </div>
     </div>
-<div class="box">
-<img id="img_balloon1" src="img/בלון כתום.png">
-<img id="img_balloon2" src="img/בלונים כחול ואדום.png">
-<img id="img_balloon3" src="img/בלון צהוב.png">
-</div>
+    <div class="balloons">
+        <img id="img_balloon1" src="img/בלון כתום.png">
+        <img id="img_balloon2" src="img/בלונים כחול ואדום.png">
+        <img id="img_balloon3" src="img/בלון צהוב.png">
+
+    </div>
 
 
     <script>
 
-const boxbox =document.querySelector('.boxbox')
-const imgg =document.querySelector('#imgg')
-const imggf =document.querySelector('#imggf')
-const img_balloon1 =document.querySelector('#img_balloon1')
-const img_balloon2 =document.querySelector('#img_balloon2')
-const img_balloon3 =document.querySelector('#img_balloon3')
 
 
-boxbox.addEventListener('click' ,function(event){
-imggf.style.display = 'block';
-imgg.src="img/מתנה פתוחה.png";
-img_balloon1.style.marginTop = '400px'
-img_balloon2.style.marginTop = '380px'
-img_balloon3.style.marginTop = '350px'
-})
 
-boxbox.addEventListener('mouseleave', event=> {
-imggf.style.display = 'none';
-imgg.src = "img/מתנה סגורה.png";
-img_balloon1.style.marginTop = '0'
-img_balloon2.style.marginTop = '0'
-img_balloon3.style.marginTop = '0'
-});
+
+
+        const box = document.querySelector('.box')
+        const boxClose = document.querySelector('#boxClose')
+        const clown = document.querySelector('#clown')
+        const img_balloon1 = document.querySelector('#img_balloon1')
+        const img_balloon2 = document.querySelector('#img_balloon2')
+        const img_balloon3 = document.querySelector('#img_balloon3')
+
+
+        box.addEventListener('click', function (event) {
+            //clown.style.display = 'inline-block';
+            clown.style.transition = 'opacity 0.6s,right 2s'
+            clown.style.opacity = '1';
+            clown.style.right = "-50px";
+
+            boxClose.src = "img/מתנה פתוחה.png";
+            img_balloon1.style.transition = 'all ' + (Math.floor(Math.random() * 5) + 1) + 's'
+            img_balloon2.style.transition = 'all ' + (Math.floor(Math.random() * 5) + 1) + 's'
+            img_balloon3.style.transition = 'all ' + (Math.floor(Math.random() * 5) + 1) + 's'
+
+
+            img_balloon1.style.marginTop = '400px'
+            img_balloon2.style.marginTop = '380px'
+            img_balloon3.style.marginTop = '350px'
+        })
+
+        box.addEventListener('mouseleave', event => {
+            //clown.style.display = 'none';
+            clown.style.transition = ''
+            clown.style.opacity = '0';
+            clown.style.right = '0px';
+
+            boxClose.src = "img/מתנה סגורה.png";
+            img_balloon1.style.marginTop = '0'
+            img_balloon2.style.marginTop = '0'
+            img_balloon3.style.marginTop = '0'
+        });
 
 
     </script>
 </body>
+
 </html>

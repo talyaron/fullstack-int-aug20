@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:snow;
+    }
+
+    img{
+        position: relative;
+        top: 80px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<body>
+    <h2>Welcome to my Magic Site</h2>
+    <h3>please click on the box</h3>
+    <div id='theMagic'>
+        <img id = 'id_img' src = "https://images.cdn2.stockunlimited.net/clipart450/gift-box-with-ribbon_1934420.jpg" width="400px" height="400px"/>
+    </div>
+    <script>
+        const theMagic = document.querySelector('#id_img');
+
+
+        id_img.addEventListener('click', function(event){
+            event.target.src = "https://image.freepik.com/free-vector/cartoon-clown-jumping-out-box_29190-10.jpg" 
+            event.target.src.width = '400px'
+            event.target.src.height = '400px'
+            event.target.style.marginLeft= 'auto';
+            event.target.style.marginRight= 'auto';
+            event.target.style.position= 'relative';
+            event.target.style.top= '80px';
+
+        })
+
+        id_img.addEventListener('mouseleave', function(event){
+            event.target.src = "https://images.cdn2.stockunlimited.net/clipart450/gift-box-with-ribbon_1934420.jpg" 
+        })
+    </script>
+
+</body>
+</html>

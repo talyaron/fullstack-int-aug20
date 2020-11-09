@@ -17,8 +17,6 @@
         <img id='boximg' src="img/box.png">
     </div>
     <img class="missleLeft" src="img/missleLeft1.png">
-    <div class="missleRight"></div>
-    <p id="countdown"></p>
 
     <script>
         const box = document.querySelector('.box')
@@ -26,7 +24,6 @@
         const boximg = document.querySelector('#boximg')
         const body = document.body
         const missleLeft = document.querySelector('.missleLeft')
-        const missleRight = document.querySelector('.missleRight')
 
         box.addEventListener('click', event => {
             clown.style.transform = 'translate(-15px, -20vh)'
@@ -36,19 +33,16 @@
 
             boximg.src = 'img/openbox.png';
 
-            body.style.backgroundColor = 'rgb(181, 181, 247);'
+            body.style.backgroundColor = 'rgb(181, 181, 247)'
             body.style.transition = '1s'
 
             missleLeft.style.width = '200px'
             missleLeft.style.transform = 'translate(65vh, 20px)'
             missleLeft.style.transition = '6s'
 
-
-
             let boom = setTimeout(function () {
                 clown.src = 'img/boom1.png'
                     clown.style.width = '300px'
-                    clown.style.transform = 'rotate(180deg);'
                     missleLeft.style.display = 'none'
             }, 4000);
 

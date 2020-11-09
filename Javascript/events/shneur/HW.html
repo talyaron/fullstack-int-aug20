@@ -9,7 +9,6 @@
 <style>
     body {
         background: rgb(15, 167, 2);
-        transition: 300ms;
     }
     
     #box {
@@ -27,6 +26,8 @@
         position: absolute;
         top: 110px;
         left: 200px;
+        transition: 300ms;
+
     }
 </style>
 
@@ -37,6 +38,15 @@
     <div id="box"></div>
 
     <script>
+        //   box.addEventListener('mouseover', event => {
+        //     x = event.target.offsetLeft;
+        //     y = event.target.offsetTop;
+        //     Cloun.style.transform = `translate(0px,${event.y+10}px)`
+        //     box.style.transform = `translate(0px,${event.x+100}px)`
+        // })
+      
+
+
         box.addEventListener('click', event => {
             Cloun.style.transform = 'translate(0px,-100px)';
         })
@@ -44,6 +54,11 @@
         box.addEventListener('mouseleave', event => {
             Cloun.style.transform = 'translate(0px,20px)';
         })
+
+      
+
+
+
     </script>
 </body>
 
