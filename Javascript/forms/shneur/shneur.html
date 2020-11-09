@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        font-size: 2rem;
+        padding: 20px;
+        border:none;
+        border-bottom: 1px solid gray;
+    }
+</style>
+<body>
+    <h1>Simple form events</h1>
+    <input type='text' placeholder=" name" onchange="handleChange(event)" id="name">
+    <input type="month" >
+    <input type="tel">
+    <input type="week">
+
+
+    <script>
+        function handleChange(e){
+           
+            console.log(e.target.value)
+        }
+        
+
+        document.getElementById("name").addEventListener('change', handleChange => {
+            console.log(handleChange.target.value)
+        })
+    </script>
+</body>
+</html>
