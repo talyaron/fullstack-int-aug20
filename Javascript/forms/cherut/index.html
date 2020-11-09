@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  form{
+    width: 400px;
+    box-shadow: 1px 1px 3px gray;
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+    padding-bottom: 0px ;
+  }
+
+  label{
+    display: block;
+  }
+
+ input{
+    width: 80%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  #submit{
+    border-bottom: none;
+    cursor: pointer;
+  }
+
+</style>
+<body>
+
+  <form action="" onsubmit="myFunction(event)">
+    <h1>form</h1>
+    <input type="text" placeholder="Name" onchange="handleChange(event)">
+    <input type="password" placeholder="Password" onkeyup="handleKeyup(event)">
+    <input type="submit" name="" id="submit" >
+  </form>
+
+  <script>
+
+    function handleChange(e){
+        console.log(e.target.value)
+        console.log(e)
+    }
+
+    function handleKeyup(e){
+        console.log(e.target.value)
+    }
+
+
+    function myFunction(e){
+      e.preventDefault();
+       console.log(e.target[0].value,e.target[1].value )
+    }
+
+  </script>
+</body>
+</html>
