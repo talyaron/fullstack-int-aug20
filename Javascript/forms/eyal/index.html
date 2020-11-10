@@ -14,17 +14,18 @@
         /*  border: 1px solid black; */
         padding: 20px;
     }
-
-    h1 {
-        margin: auto;
+    
+   
+    h1{
+        margin:  20px 40% 20px 44%;
     }
-
     #MachForm {
         margin: auto;
-        width: 300px;
+        width: 400px;
         height: 300px;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(1fr , 5);
         border: 1px solid black;
         padding: 10px;
     }
@@ -36,12 +37,14 @@
     #OKButton {
         margin-top: 80px;
         height: 60px;
+        grid-row: 5;
+        grid-column: 1/3;
     }
 
     label {}
 
     #output {
-        margin-top: 20px;
+        margin: 20px auto;
         height: 300px;
         width: 500px;
         border: 1px solid black;
@@ -51,46 +54,49 @@
 
 <body>
     <div class="container">
+        <div class="thetitle">
         <H1>Maching Prog</H1>
+    </div>
         <form id="MachForm" onsubmit='start112(event)'>
 
-            <label for="FullName">Name
-                <input type="text" name="FullName" id="FullName" placeholder="Enter Your Name" required></label>
-            <label for="kids">Do you Have Kids?
-                <input type="checkbox" name="kids" id="kids"></label>
-            <label for="Dog">Do you Have a Dog?
-                <input type="checkbox" name="Dog" id="Dog"></label>
+            <label for="FullName">Name</label>
+                <input type="text" name="FullName" id="FullName" placeholder="Enter Your Name" required>
+            <label for="kids">Do you Have Kids?</label>
+                <input type="checkbox" name="kids" id="kids">
+            <label for="Dog">Do you Have a Dog?</label>
+                <input type="checkbox" name="Dog" id="Dog">
+                <label for="picher">Upload a Picher of you:</label>
             <input type="file" name="file" id="picher">
-            <input ID="OKButton" type="submit" value="OK" >
+            <input ID="OKButton" type="submit" value="OK">
         </form>
         <div id="output"></div>
     </div>
 
     <script>
-       /*  const FullName = document.getElementById("FullName");
-        const kids = document.getElementById("kids");
-        const Dog = document.getElementById("Dog");
-        const picher = document.getElementById("picher");
-        const output = document.getElementById("output"); */
+        /*  const FullName = document.getElementById("FullName");
+         const kids = document.getElementById("kids");
+         const Dog = document.getElementById("Dog");
+         const picher = document.getElementById("picher");
+         const output = document.getElementById("output"); */
 
 
         function start112(event) {
             event.preventDefault();
-            console.log('test')
+            console.log(event)
 
-            const FullName = e.target.children.FullName.value;
-            const kids = e.target.children.kids.checked;
-            const Dog = e.target.children.Dog.checked;
-            const kids = e.target.children.kids.checked;
+            const FullName = event.target.children.FullName.value;
+            const kids = event.target.children.kids.checked;
+            const Dog = event.target.children.Dog.checked;
+            //const kids = e.target.children.kids.checked;
             // const picher = e.target.children.picher;
 
 
             if (FullName !== "") {
-                output.innerHTML = `hellow ${FullName.value} how are you`;
+                output.innerHTML = `hellow ${FullName} how are you`;
             }
 
             if ((FullName !== "") && (kids == true)) {
-                output.innerHTML = `hellow ${FullName.value} how are you <br>
+                output.innerHTML = `hellow ${FullName} how are you <br>
                 i have a Kids to` ;
             }
 

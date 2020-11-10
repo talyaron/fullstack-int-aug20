@@ -5,24 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .wrapper {
+        padding: 20px;
+        width: 85%;
+        border: 1px solid black;
+        margin: auto;
+    }
+
+    input {
+        padding: 5px;
+        margin: 15px;
+    }
+</style>
+
 <body>
-    <h1>EVENTS</h1>
-    <input type="text" placeholder="name" onchange="handeleChange(event)" onkeypress="handeleKyepres(event)" name="" id="">
-    <input type="month">
-    <input type="datetime-local" name="" id="">
-    <input type="radio" name="" id="">
+
+    <div class="wrapper">
+        <input type='text' placeholder="Your Name" onchange="handleChange(event)" onkeyup="handleKeyUp(event)">
+        <input type="color" onchange="handleChange(event)">
+        <input type="password" placeholder="Password" onkeyup="handleKeyUp(event)">
+        <input type="range" onchange="handleChange(event)">
+        <input type="number" placeholder="Enter Age" onchange="handleChange(event)">
+        <input type="file" onchange="handleChange(event)">
+        <input type="time" onchange="handleChange(event)">
+        <input type="date" onchange="handleChange(event)">
+        <input type="datetime-local" onchange="handleChange(event)">
+
+    </div>
+
+    <form onsubmit="handleSubmit(event)">
+        <input type ="email" placeholder="Email" name="email" required>
+        <input type="text" placeholder="Username" name="username" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit">Submit</button>
+    </form>
+
 
 
     <script>
-function handeleChange(e){
-console.log(e)
-console.log(e.target.value)
-}
+        function handleChange(e) {
+            console.log(e.target.value)
+        }
+        function handleKeyUp(e) {
+            console.log(e.target.value)
+        }
 
-function handeleKyepres(e){
-    console.log(e.pres)
-console.log(e.target.value)
-}
+        function handleSubmit(e){
+            e.preventDefault();
+
+            console.log(e)
+            const email = e.target.children.email.value
+            const username = e.target.children.username.value
+            const password = e.target.children.password.value
+            console.log(`Email: ${email} Username: ${username} Password: ${password}`)
+        }
     </script>
 </body>
 </html>
