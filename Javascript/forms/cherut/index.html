@@ -42,8 +42,8 @@
 
   <form action="" onsubmit="myFunction(event)">
     <h1>form</h1>
-    <input type="text" placeholder="Name" onchange="handleChange(event)">
-    <input type="password" placeholder="Password" onkeyup="handleKeyup(event)">
+    <input type="text" name='Name' placeholder="Name" onchange="handleChange(event)">
+    <input type="password" name='Password' placeholder="Password" onkeyup="handleKeyup(event)">
     <input type="submit" name="" id="submit" >
   </form>
 
@@ -61,6 +61,7 @@
 
     function myFunction(e){
       e.preventDefault();
+      console.log(e);
        console.log(e.target[0].value,e.target[1].value )
     }
 
