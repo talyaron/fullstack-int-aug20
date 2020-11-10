@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h3></h3>
+  <input type="color" onchange="handlechange(event)">
+
+  <form action="" onsubmit="handleSub(event)">
+    <h1>form</h1>
+    <input type="text" name='Name' placeholder="Name" >
+    <input type="password" name='Password' placeholder="Password" >
+    <input type="submit" name="" id="submit" >
+  </form>
+  
+  
+  <script>
+
+    const correctUserName = 'cherut';
+    const correctPassword = 1234;
+
+    function handlechange(e){
+      const color = e.target.value;
+      document.body.style.backgroundColor = `${color}`;
+    }
+    
+    function handleSub(e){
+      e.preventDefault();
+      const usernName = e.target.children.Name.value;
+      const password = e.target.children.Password.value;
+      console.log(usernName, password);
+
+      if(usernName == correctUserName && password == correctPassword){
+        alert('ההתחברות בוצעה בהצלחה');
+      } else if(usernName == correctUserName && password !== correctPassword){
+        alert('הסיסמה אינה נכונה');
+      } else if(usernName !== correctUserName && password == correctPassword){
+        alert('שם המשתמש אינו נכון');
+      } else  {
+        alert('ההתחברות נכשלה');
+      }
+
+      
+
+     
+    }
+
+  </script>
+</body>
+</html>

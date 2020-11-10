@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        margin: auto;
+        width: max-content;
+        height: max-content;
+        padding: 1%;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+
+    .keypad {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .button {
+        width: 100px;
+        height: 100px;
+    }
+
+    #zirow {
+        grid-column: 1/3;
+        grid-row: 4;
+    }
+
+    #reset {
+        grid-column: 3;
+        grid-row: 4;
+    }
+
+    #loginform {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 5%;
+    }
+
+    #loginform>h1 {
+        margin: auto;
+    }
+
+    #screan {
+        display: none;
+    }
+
+    #userscrean {
+        margin: 10px 0 10px 0;
+        height: 50px;
+        padding: 10px;
+        background-color: rgba(17, 15, 15, 0.568);
+        color: white;
+    }
+
+    input {
+        margin-top: 5px;
+        line-height: 2;
+        border-radius: 5px;
+        padding-right: 5px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form id="loginform" onsubmit="submitForm(event)">
+            <h1>הכספת</h1>
+            <input type="text" name="screan" id="userscrean" placeholder="אנא הזן שם משתמש , סיסמא וקוד בן ארבעה ספרות">
+            <input type="text" name="userName" id="userName" placeholder="שם משתמש">
+            <input type="password" name="password" id="password" placeholder="סיסמא">
+            <input type="submit" value="OK">
+        </form>
+        <div id="keypadform" class="keypad">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button id="zirow">0</button>
+            <button id="reset" type="reset">Clear</button>
+        </div>
+        <div id="screan"></div>
+    </div>
+
+    <script>
+        const thecode = { name: "אייל", pass: "ברבאבה", keycod: "9051" };
+
+        const enter = document.onkeyup;
+        function enter(e) { if (e.which == 13) submitForm(event); }
+
+
+        function submitForm(event) {
+            const form = event.target.children;
+            event.preventDefault();
+            console.log(form.userName.value, form.password.value)
+        }
+    </script>
+</body>
+
+</html>
