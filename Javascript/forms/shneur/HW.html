@@ -7,10 +7,6 @@
     <title>Document</title>
 </head>
 <style>
-    body {
-        /* background-color: rgb(144, 194, 250); */
-    }
-    
     form>input {
         position: relative;
         left: 50vw;
@@ -52,75 +48,21 @@
 </style>
 
 <body>
-    <div class="flex">
-        <div id="colorbox"></div>
-        <form onsubmit="handleSubmit(event)">
-            <input name="color" type="color" required>
-            <button type="submit"> choose background color </button>
-        </form>
-    </div>
-
-
-
-
-
-    <!-- <form onsubmit="handleSubmit(event)"> -->
-    <!-- inputs -->
-    <!-- <input name="name" type="text" placeholder="enter your name" required>
-        <input name="familyname" type="text" placeholder="enter your family name" required>
-        <input name="age" type="number" placeholder="enter your age" required>
-        <input name="birthday" type="date" placeholder="enter your birth day" required>
-        <input name="cuntry" type="text" placeholder="enter your cuntry" required>
-        <input name="city" type="text" placeholder="enter your city" required>
-        <input name="color" type="color" placeholder="enter your color" required> -->
-
-
-    <!-- button -->
-    <!-- <button type="submit"> press here</button>
-
-    </form> -->
-
-    <!-- colorSelection -->
+    <div id="colorbox"></div>
+    <form onsubmit="changeColor()">
+        <input name="color" type="color" required>
+        <button type="submit"> choose background color </button>
+    </form>
 
 
 
     <script>
-        function handleSubmit(event) {
+        function changeColor() {
             event.preventDefault();
             const color = event.target.children.color.value;
             colorbox.style.backgroundColor = color
-
         }
-
-
-
-
-
-
-        // function handleSubmit(event) {
-        //     event.preventDefault();
-
-        //     const name = event.target.children.name.value;
-        //     const familyname = event.target.children.familyname.value;
-        //     const age = event.target.children.age.value;
-        //     const birthday = event.target.children.birthday.value;
-        //     const cuntry = event.target.children.cuntry.value;
-        //     const city = event.target.children.city.value;
-
-
-        //     console.log(name, familyname, age, birthday, cuntry, city);
-        // }
     </script>
-
-
-
-
-
-
-
-
-
-
 
 
 </body>
