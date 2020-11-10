@@ -75,10 +75,10 @@
             <input type="text" name="screan" id="userscrean" placeholder="אנא הזן שם משתמש , סיסמא וקוד בן ארבעה ספרות">
             <input type="text" name="userName" id="userName" placeholder="שם משתמש">
             <input type="password" name="password" id="password" placeholder="סיסמא">
-            <input type="submit" value="OK">
+            <input type="submit" value="OK" style="display: none;">
         </form>
         <div id="keypadform" class="keypad">
-            <button class="button">1</button>
+            <button ID="button1" class="button">1</button>
             <button class="button">2</button>
             <button class="button">3</button>
             <button class="button">4</button>
@@ -95,16 +95,38 @@
 
     <script>
         const thecode = { name: "אייל", pass: "ברבאבה", keycod: "9051" };
+        let passOK = false;
+        const userscrean = document.querySelector("#userscrean");
 
-        const enter = document.onkeyup;
-        function enter(e) { if (e.which == 13) submitForm(event); }
-
+      /*   function enter1(e) { 
+            document.addEventListener("submit",function (event) {
+                                console.log(event)
+                                
+            })};
+ */
 
         function submitForm(event) {
             const form = event.target.children;
             event.preventDefault();
             console.log(form.userName.value, form.password.value)
+            if ((form.userName.value == thecode.name) && (form.password.value == thecode.pass)) {
+                userscrean.value = "password OK, enter Code";
+                passOK = true;
+              //  console.log(passOK)
+            }else{
+                userscrean.value = "password Not OK";
+            }
         }
+
+
+        document.addEventListener("keyup",function (event) {
+                                console.log(event)
+
+                                document.getElementById("button1").focus();
+                                document.getElementById("button1").;
+
+                                
+            })
     </script>
 </body>
 
