@@ -9,9 +9,8 @@
 <style>
     body {
         /* background-color: rgb(144, 194, 250); */
-
     }
-
+    
     form>input {
         font-size: 1rem;
         padding: 20px;
@@ -25,7 +24,7 @@
         border-radius: 10px;
         box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     }
-
+    
     button {
         margin-top: 10px;
         border: none;
@@ -38,7 +37,8 @@
         color: rgb(255, 255, 255);
         box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     }
-    #colorbox{
+    
+    #colorbox {
         margin-top: 10px;
         border: none;
         height: 50px;
@@ -90,8 +90,8 @@
 
         const choosAColor = event.target.children.choosAColor.value;
         let colorbox = document.getElementById("colorbox")
-        
-        colorbox.addEventListener('click', function (event) {
+
+        colorbox.addEventListener('click', function(event) {
             colorbox.style.backgroundColor = choosAColor
 
         })
