@@ -130,6 +130,7 @@
             if ((form.userName.value == thecode.name) && (form.password.value == thecode.pass)) {
                 userscrean.value = "password OK, enter Code";
                 passOK = true;
+                setTimeout(function(){ clearScreen(); }, 1000);
                 //  console.log(passOK)
             } else {
                 userscrean.value = "password Not OK";
