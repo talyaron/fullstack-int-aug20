@@ -7,29 +7,42 @@
     <title>Document</title>
 </head>
 <style>
+    body {
+        margin: 0;
+    }
+    
+    #backColor {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        padding: 10px 0px;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 80vw;
+        margin: 30px auto;
+    }
+    
     form>input {
-        position: relative;
-        left: 50vw;
+        border-bottom: solid rgb(88, 175, 175);
         font-size: 1rem;
         padding: 20px;
         border: none;
-        border-bottom: 1px solid gray;
-        position: relative;
-        width: 200px;
-        margin-top: 10px;
-        background-color: rgb(248, 223, 190);
+        background-color: rgba(0, 0, 0, 0.158);
         border-radius: 10px;
-        box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        outline: none;
+        box-shadow: 0 3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        transition: all 250ms;
     }
     
     button {
-        position: absolute;
-        margin-top: 10px;
-        left: 10vw;
         border: none;
-        height: 50px;
+        height: 35px;
         border-radius: 10px;
-        background-color: rgb(29, 80, 29);
+        background-color: rgba(102, 102, 102, 0.623);
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-weight: bold;
         font-size: 20px;
@@ -37,30 +50,79 @@
         box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     }
     
-    #colorbox {
-        position: absolute;
-        margin-left: -5%;
-        margin-top: -5%;
-        height: 120%;
-        width: 110%;
-        background-color: rgb(18, 0, 177)
+    input:hover {
+        padding: 5%;
+    }
+    
+    #choosColor {
+        width: auto;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: none;
+        margin: none;
+        padding: none;
+        border: black;
     }
 </style>
 
 <body>
-    <div id="colorbox"></div>
-    <form onsubmit="changeColor()">
-        <input name="color" type="color" required>
-        <button type="submit"> choose background color </button>
-    </form>
+
+    <div id="backColor">
+        <form onsubmit="handleSubmit()">
+
+            <input name="myName" type="text" placeholder="enter your name" required>
+            <input name="familyname" type="text" placeholder="enter your family name" required>
+            <input name="age" type="number" placeholder="enter your age" required>
+            <input name="birthday" type="date" placeholder="enter your birth day">
+            <input name="cuntry" type="text" placeholder="enter your cuntry">
+            <input name="city" type="text" placeholder="enter your city">
 
 
+            <button type="submit"> press here</button>
+
+        </form>
+
+        <form onsubmit="changeColor()">
+            <input id="choosColor" name="color" type="color" required>
+            <button type="submit"> choose background color </button>
+        </form>
+    </div>
 
     <script>
-        function changeColor() {
+        const realName = "shneur";
+        const realFamilyname = "greenberg";
+        const realAge = 24;
+        const realBirthday = 03 / 09 / 1996;
+        const realCuntry = "israel"
+        const realCity = "kriat arba"
+
+
+        handleSubmit = () => {
+            event.preventDefault();
+            const myName = event.target.children.myName.value;
+            const familyname = event.target.children.familyname.value;
+            const age = event.target.children.age.value;
+            const birthday = event.target.children.birthday.value;
+            const cuntry = event.target.children.cuntry.value;
+            const city = event.target.children.city.value;
+
+            if (realName == myName, realFamilyname == familyname, realAge == age) {
+                alert("name is corect!")
+            } else {
+                alert("worng user!")
+            }
+
+            console.log(myName, familyname, age, birthday, cuntry, city);
+            console.log(event.target.children.myName.value);
+
+
+        }
+
+
+        changeColor = () => {
             event.preventDefault();
             const color = event.target.children.color.value;
-            colorbox.style.backgroundColor = color
+            backColor.style.backgroundColor = color
         }
     </script>
 
