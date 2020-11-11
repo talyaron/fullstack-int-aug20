@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    body{
+        text-align: center;
+    }
+
+    .submitBtn{
+        margin-top: 20px;
+    }
+
+    input{
+        margin: 20px;
+    }
+
+
+</style>
+
+
+<body>
+    <input type="color" name="color" id="inputColor">
+
+    <form onsubmit="handleSubmit(event)">
+        <h1>Log in</h1>
+        <div>
+            <input type="text" name="username" id="username" placeholder="Username" required>
+        </div>
+        <div>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+        </div>
+        <div>
+            <button class="submitBtn" type="submit">Log Me In!</button>
+        </div>
+    </form>
+
+
+
+
+    <script>
+        const inputColor = document.getElementById("inputColor");
+        const body = document.body;
+
+        inputColor.addEventListener("blur", event => {
+            const pickedColor = inputColor.value;
+            body.setAttribute("style","background-color:" + pickedColor);
+        });
+
+        const myUsername = "morde123";
+        const myPassword = "Password123";
+
+        function handleSubmit(e){
+            e.preventDefault();
+            
+            const givenUsername = e.target.children[1].children.username.value;
+            const givenPassword = e.target.children[2].children.password.value;
+
+            if(givenUsername === myUsername && givenPassword === myPassword){
+                alert("It׳s good to see you Morde, Have a great day!")
+            }else{
+                alert("I׳m sorry but you are not Morde, Please check your credentials.")
+            }
+        }
+
+
+    </script>
+</body>
+</html>
