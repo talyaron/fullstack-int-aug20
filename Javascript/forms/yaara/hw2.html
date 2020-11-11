@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: white;
+    }
+</style>
+<body>
+
+    <p onchange="onChangeBackgroundColor(event)">
+        <input type="color" name="changeColor"/>
+    </p>
+
+    <form onsubmit="handlesubmit(event)" ">
+        <input type="text" placeholder="User Name" name="username" />
+        <input type="password" placeholder="password" name="password" />
+        <input type="submit">
+    </form>
+
+    <script>
+
+function onChangeBackgroundColor(e){
+
+
+const color = e.target.value;
+document.body.style.backgroundColor = color;
+
+}
+
+        const SaveUserName = 'moshe';
+        const SavePassword = '123456';
+
+        function handlesubmit(e){
+            e.preventDefault();
+            console.log(e)
+
+
+            const username = e.target.children.username.value;
+            const password = e.target.children.password.value;
+
+            
+         if (username === SaveUserName && SavePassword === password){
+         alert("ok");}
+         else{
+             alert("Please try again");
+         }
+
+        }
+    </script>
+</body>
+</html>
