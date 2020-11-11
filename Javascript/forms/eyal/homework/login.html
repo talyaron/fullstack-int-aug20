@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <style>
+    @font-face {
+        font-family: "radioland";
+        src: url("radioland.ttf") format("truetype");
+
+    }
+
     .container {
         margin: auto;
         width: max-content;
@@ -14,13 +20,16 @@
         padding: 1%;
         border: 1px solid black;
         border-radius: 10px;
+
     }
+
 
 
     .keypad {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 1fr);
+        /* display: none; */
     }
 
     .button {
@@ -50,6 +59,9 @@
 
     #screan {
         display: none;
+        /* position: absolute; */
+        width: 300px;
+        height: 400px;
     }
 
     #userscrean {
@@ -58,6 +70,7 @@
         padding: 10px;
         background-color: rgba(17, 15, 15, 0.568);
         color: white;
+        font-family: 'radioland';
     }
 
     input {
@@ -66,44 +79,54 @@
         border-radius: 5px;
         padding-right: 5px;
     }
+
+    .clicked {
+        background-color: #CCE4F7;
+        border-color: #0B5C9E;
+    }
 </style>
 
 <body>
     <div class="container">
         <form id="loginform" onsubmit="submitForm(event)">
             <h1>הכספת</h1>
-            <input type="text" name="screan" id="userscrean" placeholder="אנא הזן שם משתמש , סיסמא וקוד בן ארבעה ספרות">
+            <!-- <input type="t ext"  name="screan" id="userscrean" placeholder="אנא הזן שם משתמש , סיסמא וקוד בן ארבעה ספרות"> -->
+            <textarea Readonly="true" dir="LTR" rows="2" name="screan" id="userscrean"
+                placeholder="Enter UserName & Pass Next Enter Code "></textarea>
             <input type="text" name="userName" id="userName" placeholder="שם משתמש">
             <input type="password" name="password" id="password" placeholder="סיסמא">
             <input type="submit" value="OK" style="display: none;">
         </form>
         <div id="keypadform" class="keypad">
-            <button ID="button1" class="button">1</button>
-            <button class="button">2</button>
-            <button class="button">3</button>
-            <button class="button">4</button>
-            <button class="button">5</button>
-            <button class="button">6</button>
-            <button class="button">7</button>
-            <button class="button">8</button>
-            <button class="button">9</button>
-            <button id="zirow">0</button>
-            <button id="reset" type="reset">Clear</button>
+            <button ID="button1" class="button" onclick="buttonclick(event.key)">1</button>
+            <button ID="button2" class="button" onclick="buttonclick(event.key)">2</button>
+            <button ID="button3" class="button" onclick="buttonclick(event.key)">3</button>
+            <button ID="button4" class="button" onclick="buttonclick(event.key)">4</button>
+            <button ID="button5" class="button" onclick="buttonclick(event.key)">5</button>
+            <button ID="button6" class="button" onclick="buttonclick(event.key)">6</button>
+            <button ID="button7" class="button" onclick="buttonclick(event.key)">7</button>
+            <button ID="button8" class="button" onclick="buttonclick(event.key)">8</button>
+            <button ID="button9" class="button" onclick="buttonclick(event.key)">9</button>
+            <button id="zirow" onclick="buttonclick(event.key)">0</button>
+            <button id="reset" type="reset" onclick="clearScreen()">Clear</button>
         </div>
-        <div id="screan"></div>
+
+        <img id="screan" src="tr.jpg" alt="">
+
     </div>
 
     <script>
         const thecode = { name: "אייל", pass: "ברבאבה", keycod: "9051" };
         let passOK = false;
         const userscrean = document.querySelector("#userscrean");
+        const passEnterd = [];
 
-      /*   function enter1(e) { 
-            document.addEventListener("submit",function (event) {
-                                console.log(event)
-                                
-            })};
- */
+        /*   function enter1(e) { 
+              document.addEventListener("submit",function (event) {
+                                  console.log(event)
+                                  
+              })};
+   */
 
         function submitForm(event) {
             const form = event.target.children;
@@ -112,21 +135,106 @@
             if ((form.userName.value == thecode.name) && (form.password.value == thecode.pass)) {
                 userscrean.value = "password OK, enter Code";
                 passOK = true;
-              //  console.log(passOK)
-            }else{
+                setTimeout(function () { clearScreen(); }, 2000);
+                //  console.log(passOK)
+            } else {
                 userscrean.value = "password Not OK";
             }
         }
 
 
-        document.addEventListener("keyup",function (event) {
-                                console.log(event)
+        document.addEventListener("keyup", function (event) {
+            console.log(event.key)
 
-                                document.getElementById("button1").focus();
-                                document.getElementById("button1").;
+            // document.getElementById("button1").focus();
+            /*  document.getElementById("button1").; */
 
-                                
-            })
+            switch (event.key) {
+                case "0":
+                    document.getElementById("zirow").focus();
+                    buttonclick(event.key);
+                    break;
+                case "1":
+                    document.getElementById("button1").focus();
+                    buttonclick(event.key);
+                    break;
+
+                case "2":
+                    document.getElementById("button2").focus();
+                    buttonclick(event.key);
+                    break;
+                case "3":
+                    document.getElementById("button3").focus();
+                    buttonclick(event.key);
+                    break;
+
+                case "4":
+                    document.getElementById("button4").focus();
+                    buttonclick(event.key);
+                    break;
+                case "5":
+                    document.getElementById("button5").focus();
+                    buttonclick(event.key);
+                    break;
+
+                case "6":
+                    document.getElementById("button6").focus();
+                    buttonclick(event.key);
+                    break;
+                case "7":
+                    document.getElementById("button7").focus();
+                    buttonclick(event.key);
+                    break;
+
+                case "8":
+                    document.getElementById("button8").focus();
+                    buttonclick(event.key);
+                    break;
+                case "9":
+                    document.getElementById("button9").focus();
+                    buttonclick(event.key);
+                    break;
+
+                case ".":
+                    document.getElementById("reset").focus();
+                    clearScreen();
+                    /* userscrean.style = "font-size=6px" */
+                    userscrean.value = "Enter UserName & Pass Next Enter Code.";
+                    break;
+            }
+
+        })
+
+        function buttonclick(key) {
+            document.getElementById("button" + key).classList.add('clicked');
+            setTimeout(() => {
+                document.getElementById("button" + key).classList.remove('clicked');
+            }, 100);
+            if (passOK == true) {
+                /*  clearScreen(); */
+                userscrean.value += "-";
+                passEnterd.push(key)
+
+
+                if (userscrean.value.length == 4) {
+
+                    userscrean.value = "testOK";
+                    document.querySelector("#keypadform").style.display = "none";
+
+                    document.querySelector("#screan").style.display = "block";
+                }
+            } else {
+                console.log(document.querySelector("#screan").style);
+                document.querySelector("#screan").style.background = "red";
+            }
+            /*  userscrean.value += "-"; */
+        }
+
+
+
+        function clearScreen() {
+            userscrean.value = "";
+        }
     </script>
 </body>
 
