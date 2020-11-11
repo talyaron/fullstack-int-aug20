@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <input type="color" placeholder="what is your favorit color" onchange="color(event)" name="color1">
+    <input type="color" onchange="color(event)" >
 
     
 
@@ -17,12 +17,10 @@
 
         function color(e){
 
-            console.log(e);
+            const color = e.target.value
 
-            document.getElementsByName('color1').style.backgroundColor = 'e.target.value';
+            document.body.style.backgroundColor = `${color}`;
         }
-
-        const color1 = e.target.value
 
     </script>
 </body>

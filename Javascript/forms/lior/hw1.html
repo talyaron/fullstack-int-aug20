@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" onsubmit="enter(event)">
+        <input type="text" placeholder="name" name="name">
+        <input type="password" placeholder="password" name="password">
+        <input type="submit" id="submit">
+        <h1 id="root"></h1>
+    </form>
+
+    <script>
+        const corectname = 'lior';
+        const corectpassword = '1111';
+
+        function enter(e){
+            e.preventDefault();
+
+            if (e.target.name.value == corectname && e.target.password.avlue == corectpassword){
+               document.getElementById('root').innerText = 'good' 
+            }
+            else {
+               document.getElementById('root').innerText = 'bad'
+            }
+            console.log(e)
+}
+    </script>
+</body>
+</html>
