@@ -9,18 +9,23 @@
     <style>
         #white{
             color: white;
+        
         }
+       
     </style>
+    
     <div>
-        <p>chose the background color</p>
-        <p id="white"> username = gilad , password = 42</p>
-        <input type="color" name="background" id="color" onchange="handleChange(event)">
+        <span>choose the background color</span>
+       
+        <input type="color" name="background" id="color" oninput="handleChange(event)">
+        
     </div>
     <div>
 
     </div>
-    <div>
-        <p>Logg in using your user name and password</p>
+    <div id="loggin">
+        <h2>Loggin using your user name and password </h2>
+        <span id="white">  username = gilad , password = 42</span>
    <form onsubmit="handleCreateUser(event)">
     <input type="text" placeholder="User Name" id="userName">
     <label for="userName"> Enter Username</label>
