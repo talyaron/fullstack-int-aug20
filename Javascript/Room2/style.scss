@@ -31,26 +31,30 @@
 .lowerBox {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    overflow-x: scroll;
     position: relative;
     top: 200px;
 
     #blue {
+        min-width: 100px;
         width: 100px;
         height: 100px;
         background-color: blue;
     }
     #orange {
+        min-width: 100px;
         width: 100px;
         height: 100px;
         background-color: orange;
     }
     #gray {
+        min-width: 100px;
         width: 100px;
         height: 100px;
         background-color: gray;
     }
     #green {
+        min-width: 100px;
         width: 100px;
         height: 100px;
         background-color: green;
