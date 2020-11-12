@@ -141,10 +141,13 @@
                 userscrean.value = "password Not OK";
             }
         }
-
+        document.addEventListener("keydown", function (event) {
+            console.log(event.key)
+            document.getElementById("button" + event.key).classList.add('clicked');
+        })
 
         document.addEventListener("keyup", function (event) {
-            console.log(event.key)
+           
 
             // document.getElementById("button1").focus();
             /*  document.getElementById("button1").; */
@@ -206,10 +209,10 @@
         })
 
         function buttonclick(key) {
-            document.getElementById("button" + key).classList.add('clicked');
-            setTimeout(() => {
+           
+           
                 document.getElementById("button" + key).classList.remove('clicked');
-            }, 100);
+           
             if (passOK == true) {
                 /*  clearScreen(); */
                 userscrean.value += "-";
