@@ -11,7 +11,7 @@ function addElementToTheScrollBar(e){
     let elemetsMainBox =  document.getElementById('addedElements');
     console.dir(elemetsMainBox);
     
-    elemetsMainBox.innerHTML+=theElement;
+    const elemetsMainBox =target.children.theElement.value;
 
     
 }
