@@ -25,10 +25,6 @@ function handleSub(e) {
 
     if (usernName == myUserName && password == myPassword) {
         alert('Login successfully');
-    } else if (usernName == myUserName && password !== myPassword) {
-        alert('The password is incorrect');
-    } else if (usernName !== myUserName && password == myPassword) {
-        alert('Username is incorrect');
     } else {
         alert('Login failed');
     }
