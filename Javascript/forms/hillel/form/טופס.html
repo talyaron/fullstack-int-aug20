@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="boxcard">
+        <div id="card">
+            <form onsubmit='saveinformation(event)'>
+                <input name="name" class="text" type="text" placeholder="שם:" autofocus>
+                <input name="Family" class="text" type="text" placeholder="משפחה:">
+                <input name="id" class="text" type="text" placeholder='תעודת זהות:'>
+                <!-- <input name="Date_of_birth" class="text" type="date" placeholder='תאריך לידה:'> -->
+                <input name="Mobile_Phone" class="text" type="text" placeholder='טלפון נייד:'>
+                <input name="password" class="text" type="password" placeholder="*סיסמה:" required>
+                <button name='password' class="button" type="submit">שליחה</button>
+            </form>
+            <form onsubmit='savecolor()'>
+                <button class="divcolor"><img class="imgcolor" src="img/מברשת.png" alt=""></button>
+                <input class="divcolor" type="color" name="color">
+            </form>
+
+            <form onsubmit='buttonn1()'>
+                <button class="divcolord" id="block">
+                    <img id="img" src="img/ירח.png">
+                </button>
+            </form>
+            <form onsubmit='buttonn2()'>
+                <button class="divcolord" id="none">
+                    <img id="sun" src="img/שמש.png">
+                </button>
+            </form>
+
+            <!-- <form onsubmit='buttonn3()'>
+                <button class="divtranslet" id="translet">
+                    <img class="imgngish" src="img/נגישות.png" alt="">
+                </button>
+            </form> -->
+        </div>
+    </div>
+
+    <script>
+        // function buttonn3() {
+//     event.preventDefault();
+//     document.html.style.fontSize = "25px"
+// }
+
+function savecolor() {
+    event.preventDefault();
+    const color = event.target.children.color.value
+    card.style.backgroundColor = color
+
+}
+
+function buttonn1() {
+    event.preventDefault();
+    // card.style.backgroundColor = 'rgba(255, 183, 183, 0.335)'
+    // card.style.boxShadow = 'none'
+    none.style.display = 'block'
+    block.style.display = 'none'
+    boxcard.style.color = 'black'
+    boxcard.style.backgroundImage = " url(img/כוכבים.jpg)"
+
+}
+
+function buttonn2() {
+    event.preventDefault();
+    // box.style.backgroundColor = "rgb(255, 213, 213)"
+    card.style.boxShadow =
+        "inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3)"
+    none.style.display = 'none'
+    block.style.display = 'block'
+    boxcard.style.color = 'rgb(126, 126, 126)'
+    boxcard.style.backgroundImage = "url(img/רקע.jpg)"
+}
+
+
+
+const myname = 'hillel'
+const myfamily = 'arouas'
+const myid = 123456789
+const myDate_of_birth = 11 / 11 / 1111
+const myMobile_Phone = 12345
+const mypassword = "javascript"
+
+function saveinformation(event) {
+    event.preventDefault();
+    const password = event.target.children.password.value;
+
+    if (password == mypassword) {
+        alert("הסיסמה נכונה ☻")
+    } else {
+        alert("סיסמה שגויה נסה שנית")
+    }
+}
+    </script>
+</body>
+
+</html>
