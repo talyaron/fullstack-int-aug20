@@ -1,0 +1,3 @@
+function addElementToTheScrollBar(e){
+
+}
