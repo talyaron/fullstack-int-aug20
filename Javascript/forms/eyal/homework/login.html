@@ -20,9 +20,10 @@
         padding: 1%;
         border: 1px solid black;
         border-radius: 10px;
-        box-shadow: 7px 10px 5px -1px rgba(0,0,0,0.8);
+        box-shadow: 7px 10px 5px -1px rgba(0, 0, 0, 0.8);
         background-color: rgba(203, 203, 219, 0.322);
         transition: all 250ms;
+        position: relative;
     }
 
 
@@ -37,7 +38,7 @@
     .button {
         width: 100px;
         height: 100px;
-       
+
     }
 
     #button0 {
@@ -50,6 +51,18 @@
         grid-row: 4;
     }
 
+    .cover {
+        margin: 0px 0פס 5px 0px;
+        width: 96%;
+        height: 100px;
+        background-color: blue;
+        box-shadow: inset 3px 3px 3px -1px rgba(0, 0, 0, 0.55);
+        position: absolute;
+        top: 125px;
+        transition: all 250ms;
+        display: none;
+    }
+
     #loginform {
         display: grid;
         /* flex-direction: column; */
@@ -60,7 +73,8 @@
         border: 1px solid black;
         padding: 10px;
         margin-bottom: 5px;
-        box-shadow: inset 6px 6px 6px -1px rgba(0,0,0,0.55);
+        box-shadow: inset 6px 6px 6px -1px rgba(0, 0, 0, 0.55);
+        /*  display: none; */
     }
 
     #userName {
@@ -89,26 +103,27 @@
         color: blue;
     }
 
-    #screan { /* תמונת האוצר */
+    #screan {
+        /* תמונת האוצר */
         display: none;
         width: 300px;
         height: 400px;
-        
+
     }
 
     #userscrean {
-       
+
         height: 50px;
         padding: 10px;
-        background-color: rgba(17, 15, 15, 0.568);       
+        background-color: rgba(17, 15, 15, 0.568);
         color: white;
         font-family: 'radioland';
         width: 95%;
     }
 
-    .userscreanFrame{
+    .userscreanFrame {
         /* background-color: rgba(17, 15, 15, 0.568); */
-        box-shadow: inset 6px 6px 6px -1px rgba(0,0,0,0.55);
+        box-shadow: inset 6px 6px 6px -1px rgba(0, 0, 0, 0.55);
         padding: 4px 0px 0px 4px;
         border: 1px solid black;
         display: flex;
@@ -133,18 +148,19 @@
             <h1>הכספת</h1>
             <!-- <input type="t ext"  name="screan" id="userscrean" placeholder="אנא הזן שם משתמש , סיסמא וקוד בן ארבעה ספרות"> -->
             <div class="userscreanFrame">
-            <textarea Readonly="true" dir="LTR" rows="2" name="screan" id="userscrean"
-                placeholder="Enter UserName & Pass Next Enter Code "></textarea>
+                <textarea Readonly="true" dir="LTR" rows="2" name="screan" id="userscrean"
+                    placeholder="Enter UserName & Pass Next Enter Code "></textarea>
             </div>
         </div>
-        <div class="cover">
-            
-        </div>
+
         <form id="loginform" onsubmit="submitForm(event)">
             <input type="text" name="userName" id="userName" placeholder="שם משתמש">
             <input type="password" name="password" id="password" placeholder="סיסמא">
             <input type="submit" id="buttonOK" value="OK">
         </form>
+        <div id="cover" class="cover">
+
+        </div>
         <div id="keypadform" class="keypad">
             <button ID="button1" class="button" onclick="buttonclick(event.key)">1</button>
             <button ID="button2" class="button" onclick="buttonclick(event.key)">2</button>
@@ -278,6 +294,13 @@
         function clearScreen() {
             userscrean.value = "";
         }
+
+
+        const cover = document.getElementsByID("cover")
+
+        cover.addEventListener('click', function (event) {
+            cover.style.transform = 'translate(0px,20px)';
+        });
     </script>
 </body>
 
