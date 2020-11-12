@@ -59,9 +59,9 @@
 
     #screan {
         display: none;
-       /* position: absolute; */
-       width: 300px; 
-      height: 400px;
+        /* position: absolute; */
+        width: 300px;
+        height: 400px;
     }
 
     #userscrean {
@@ -78,6 +78,11 @@
         line-height: 2;
         border-radius: 5px;
         padding-right: 5px;
+    }
+
+    .clicked {
+        background-color: #CCE4F7;
+        border-color: #0B5C9E;
     }
 </style>
 
@@ -103,11 +108,11 @@
             <button ID="button8" class="button" onclick="buttonclick(event.key)">8</button>
             <button ID="button9" class="button" onclick="buttonclick(event.key)">9</button>
             <button id="zirow" onclick="buttonclick(event.key)">0</button>
-            <button id="reset" type="reset" onclick="clearScreen()" >Clear</button>
+            <button id="reset" type="reset" onclick="clearScreen()">Clear</button>
         </div>
-       
-            <img id="screan" src="tr.jpg" alt="">
-      
+
+        <img id="screan" src="tr.jpg" alt="">
+
     </div>
 
     <script>
@@ -130,6 +135,7 @@
             if ((form.userName.value == thecode.name) && (form.password.value == thecode.pass)) {
                 userscrean.value = "password OK, enter Code";
                 passOK = true;
+                setTimeout(function () { clearScreen(); }, 2000);
                 //  console.log(passOK)
             } else {
                 userscrean.value = "password Not OK";
@@ -200,22 +206,28 @@
         })
 
         function buttonclick(key) {
+            document.getElementById("button" + key).classList.add('clicked');
+            setTimeout(() => {
+                document.getElementById("button" + key).classList.remove('clicked');
+            }, 100);
             if (passOK == true) {
-               /*  clearScreen(); */
+                /*  clearScreen(); */
                 userscrean.value += "-";
                 passEnterd.push(key)
-                if (userscrean.value.length == 4){
-                   
+
+
+                if (userscrean.value.length == 4) {
+
                     userscrean.value = "testOK";
                     document.querySelector("#keypadform").style.display = "none";
-                    document.querySelector("#screan").style.display = "block";
-                   
 
+                    document.querySelector("#screan").style.display = "block";
                 }
-                
-                
+            } else {
+                console.log(document.querySelector("#screan").style);
+                document.querySelector("#screan").style.background = "red";
             }
-           /*  userscrean.value += "-"; */
+            /*  userscrean.value += "-"; */
         }
 
 
