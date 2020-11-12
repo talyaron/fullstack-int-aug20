@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <style>
     body {
         margin: 0;
     }
-    
+
     #backColor {
         width: 100vw;
         height: 100vh;
         background-color: rgb(255, 255, 255);
         padding: 10px 0px;
     }
-    
+
     form {
         display: flex;
         flex-direction: column;
@@ -25,7 +26,7 @@
         max-width: 80vw;
         margin: 30px auto;
     }
-    
+
     form>input {
         border-bottom: solid rgb(88, 175, 175);
         font-size: 1rem;
@@ -37,7 +38,7 @@
         box-shadow: 0 3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
         transition: all 250ms;
     }
-    
+
     button {
         border: none;
         height: 35px;
@@ -49,11 +50,11 @@
         color: rgb(255, 255, 255);
         box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     }
-    
+
     input:hover {
-        padding: 5%;
+        padding: 3%;
     }
-    
+
     #choosColor {
         width: auto;
         height: 50px;
@@ -68,7 +69,7 @@
 <body>
 
     <div id="backColor">
-        <form onsubmit="handleSubmit()">
+        <form onsubmit="handleSubmit()" class="animate__animated animate__slideInDown">
 
             <input name="myName" type="text" placeholder="enter your name" required>
             <input name="familyname" type="text" placeholder="enter your family name" required>
@@ -82,7 +83,7 @@
 
         </form>
 
-        <form onsubmit="changeColor()">
+        <form onsubmit="changeColor()" class="animate__animated animate__slideInDown">
             <input id="choosColor" name="color" type="color" required>
             <button type="submit"> choose background color </button>
         </form>
