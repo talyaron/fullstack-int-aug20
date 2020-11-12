@@ -13,4 +13,7 @@ function handleSubmit(e) {
   }
 }
 
-function handleClick(e) {}
+function handleClick(e) {
+  var body = document.querySelector('body');
+  body.style.backgroundColor = e.target.value;
+}
