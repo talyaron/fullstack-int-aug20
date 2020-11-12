@@ -23,7 +23,7 @@ function userNameAndPasswordCheck(event){
         
         const tag=document.getElementById("userInterFace");
         tag.innerHTML='';
-        tag.innerHTML+='--------Access Grnted-----------';
+        tag.innerHTML+='--------Access Granted-----------';
         console.log(tag)
     }
     else{

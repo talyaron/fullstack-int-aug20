@@ -21,7 +21,7 @@ function userNameAndPasswordCheck(event) {
   if (rightPassword == userPassword && rightUserName == userNameInput) {
     var tag = document.getElementById("userInterFace");
     tag.innerHTML = '';
-    tag.innerHTML += '--------Access Grnted-----------';
+    tag.innerHTML += '--------Access Granted-----------';
     console.log(tag);
   } else {
     var _tag = document.getElementById("userInterFace");
