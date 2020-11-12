@@ -9,8 +9,9 @@ function handleSubmitMessage(e){
 
     messages.push(message);
 
+    if(message.length>0){
     document.querySelector('#messagesWrapper').innerHTML+=htmlMessage(message);
-    e.target.reset();
+    e.target.reset();}
     
 }
 
