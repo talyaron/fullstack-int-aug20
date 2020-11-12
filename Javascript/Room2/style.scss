@@ -1,3 +1,58 @@
-body{
-    
+.wrapper {
+
+    display: flex;
+    justify-content: center;
+
+    .orange {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+    }
+
+    .gray {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .green {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+    }
+
+    .blue {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }
+}
+
+.lowerBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: 200px;
+
+    #blue {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }
+    #orange {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+    }
+    #gray {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+    #green {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+    }
 }
