@@ -11,11 +11,11 @@
     <input type="color" name="colorSelector" id="colorSelector1">
 
     <script>
-        const theDiv = document.querySelector('#colorSelector1');
+        const theColorPicer = document.querySelector('#colorSelector1');
 
-        theDiv.addEventListener('change', function (event) {
+        theColorPicer.addEventListener('change', function (event) {
                                 console.log(event)
-                                document.querySelector('body').style.backgroundColor = theDiv.value;
+                                document.body.style.backgroundColor = theColorPicer.value;
                                                           }
                                 )
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #white{
+            color: white;
+        
+        }
+       
+    </style>
+    
+    <div>
+        <span>choose the background color</span>
+       
+        <input type="color" name="background" id="color" oninput="handleChange(event)">
+        
+    </div>
+    <div>
+
+    </div>
+    <div id="loggin">
+        <h2>Loggin using your user name and password </h2>
+        <span id="white">  username = gilad , password = 42</span>
+   <form onsubmit="handleCreateUser(event)">
+    <input type="text" placeholder="User Name" id="userName">
+    <label for="userName"> Enter Username</label>
+    <input type="password" name="passWord" id="passWord" placeholder="PassWord">
+    <label for="passWord">Enter Password</label>
+    <button type="submit">Submit</button>
+    </div>
+   <div id="root"></div>
+
+
+   </form>
+   <script>
+       let user = 'gilad';
+       let password = 42;
+       function handleChange(event){
+           document.body.style.backgroundColor = event.target.value
+       }
+       function handleCreateUser(event){
+           event.preventDefault();
+           if(event.target.userName.value == user && event.target.passWord.value ==password ){
+               document.getElementById('root').innerText = 'loggin succesfull'
+           }
+           else{
+            document.getElementById('root').innerText = 'wrong username or password'
+
+           }
+           
+           
+           
+       }
+
+ 
+
+   </script>
+   
+    
+</body>
+</html>
