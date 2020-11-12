@@ -27,7 +27,7 @@
         margin: 30px auto;
     }
 
-    form>input {
+    input {
         border-bottom: solid rgb(88, 175, 175);
         font-size: 1rem;
         padding: 20px;
@@ -38,8 +38,13 @@
         box-shadow: 0 3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
         transition: all 250ms;
     }
+    input:hover {
+        padding: 3%;
+    }
 
     button {
+        outline: none;
+        transition: all 250ms;
         border: none;
         height: 35px;
         border-radius: 10px;
@@ -50,10 +55,11 @@
         color: rgb(255, 255, 255);
         box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     }
-
-    input:hover {
-        padding: 3%;
+    button:hover {
+        opacity: 80%;
     }
+
+
 
     #choosColor {
         width: auto;
