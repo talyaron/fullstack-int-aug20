@@ -20,7 +20,9 @@
         padding: 1%;
         border: 1px solid black;
         border-radius: 10px;
-
+        box-shadow: 7px 10px 5px -1px rgba(0,0,0,0.8);
+        background-color: rgba(203, 203, 219, 0.322);
+        transition: all 250ms;
     }
 
 
@@ -35,9 +37,10 @@
     .button {
         width: 100px;
         height: 100px;
+       
     }
 
-    #zirow {
+    #button0 {
         grid-column: 1/3;
         grid-row: 4;
     }
@@ -48,29 +51,67 @@
     }
 
     #loginform {
+        display: grid;
+        /* flex-direction: column; */
+        padding-bottom: 5%;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 4fr 1fr;
+        column-gap: 5px;
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 5px;
+        box-shadow: inset 6px 6px 6px -1px rgba(0,0,0,0.55);
+    }
+
+    #userName {
+        grid-row: 1;
+        grid-column: 1/3;
+    }
+
+    #password {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    #buttonOK {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .hedcontainer {
         display: flex;
         flex-direction: column;
-        padding-bottom: 5%;
+        /* padding-bottom: 5%;   */
     }
 
-    #loginform>h1 {
+    .hedcontainer>h1 {
         margin: auto;
+        color: blue;
     }
 
-    #screan {
+    #screan { /* תמונת האוצר */
         display: none;
-        /* position: absolute; */
         width: 300px;
         height: 400px;
+        
     }
 
     #userscrean {
-        margin: 10px 0 10px 0;
+       
         height: 50px;
         padding: 10px;
-        background-color: rgba(17, 15, 15, 0.568);
+        background-color: rgba(17, 15, 15, 0.568);       
         color: white;
         font-family: 'radioland';
+        width: 95%;
+    }
+
+    .userscreanFrame{
+        /* background-color: rgba(17, 15, 15, 0.568); */
+        box-shadow: inset 6px 6px 6px -1px rgba(0,0,0,0.55);
+        padding: 4px 0px 0px 4px;
+        border: 1px solid black;
+        display: flex;
     }
 
     input {
@@ -88,14 +129,21 @@
 
 <body>
     <div class="container">
-        <form id="loginform" onsubmit="submitForm(event)">
+        <div class="hedcontainer">
             <h1>הכספת</h1>
             <!-- <input type="t ext"  name="screan" id="userscrean" placeholder="אנא הזן שם משתמש , סיסמא וקוד בן ארבעה ספרות"> -->
+            <div class="userscreanFrame">
             <textarea Readonly="true" dir="LTR" rows="2" name="screan" id="userscrean"
                 placeholder="Enter UserName & Pass Next Enter Code "></textarea>
+            </div>
+        </div>
+        <div class="cover">
+            
+        </div>
+        <form id="loginform" onsubmit="submitForm(event)">
             <input type="text" name="userName" id="userName" placeholder="שם משתמש">
             <input type="password" name="password" id="password" placeholder="סיסמא">
-            <input type="submit" value="OK" style="display: none;">
+            <input type="submit" id="buttonOK" value="OK">
         </form>
         <div id="keypadform" class="keypad">
             <button ID="button1" class="button" onclick="buttonclick(event.key)">1</button>
@@ -107,7 +155,7 @@
             <button ID="button7" class="button" onclick="buttonclick(event.key)">7</button>
             <button ID="button8" class="button" onclick="buttonclick(event.key)">8</button>
             <button ID="button9" class="button" onclick="buttonclick(event.key)">9</button>
-            <button id="zirow" onclick="buttonclick(event.key)">0</button>
+            <button id="button0" onclick="buttonclick(event.key)">0</button>
             <button id="reset" type="reset" onclick="clearScreen()">Clear</button>
         </div>
 
@@ -116,17 +164,11 @@
     </div>
 
     <script>
-        const thecode = { name: "אייל", pass: "ברבאבה", keycod: "9051" };
+        const thecode = { name: "אייל", pass: "ברבאבה", keycod: "9,0,5,1" };
         let passOK = false;
         const userscrean = document.querySelector("#userscrean");
         const passEnterd = [];
 
-        /*   function enter1(e) { 
-              document.addEventListener("submit",function (event) {
-                                  console.log(event)
-                                  
-              })};
-   */
 
         function submitForm(event) {
             const form = event.target.children;
@@ -135,63 +177,66 @@
             if ((form.userName.value == thecode.name) && (form.password.value == thecode.pass)) {
                 userscrean.value = "password OK, enter Code";
                 passOK = true;
-                setTimeout(function () { clearScreen(); }, 2000);
-                //  console.log(passOK)
+                setTimeout(function () { clearScreen(); }, 1500);
+                userscrean.focus();
             } else {
                 userscrean.value = "password Not OK";
             }
         }
 
 
-        document.addEventListener("keyup", function (event) {
+        document.addEventListener("keydown", function (event) {
             console.log(event.key)
+            document.getElementById("button" + event.key).classList.add('clicked');
+        })
 
-            // document.getElementById("button1").focus();
-            /*  document.getElementById("button1").; */
+        document.addEventListener("keyup", function (event) {
+
 
             switch (event.key) {
                 case "0":
-                    document.getElementById("zirow").focus();
+                    // document.getElementById("button0").focus();
                     buttonclick(event.key);
+                    console.log(event.key);
                     break;
                 case "1":
-                    document.getElementById("button1").focus();
+                    // document.getElementById("button1").focus();
                     buttonclick(event.key);
                     break;
 
                 case "2":
-                    document.getElementById("button2").focus();
+                    // document.getElementById("button2").focus();
                     buttonclick(event.key);
                     break;
                 case "3":
-                    document.getElementById("button3").focus();
+                    //  document.getElementById("button3").focus();
                     buttonclick(event.key);
                     break;
 
                 case "4":
-                    document.getElementById("button4").focus();
+                    // document.getElementById("button4").focus();
                     buttonclick(event.key);
                     break;
                 case "5":
-                    document.getElementById("button5").focus();
+                    // document.getElementById("button5").focus();
                     buttonclick(event.key);
                     break;
 
                 case "6":
-                    document.getElementById("button6").focus();
+                    // document.getElementById("button6").focus();
                     buttonclick(event.key);
                     break;
                 case "7":
-                    document.getElementById("button7").focus();
+                    //document.getElementById("button7").focus();
                     buttonclick(event.key);
                     break;
 
                 case "8":
-                    document.getElementById("button8").focus();
+                    //  document.getElementById("button8").focus();
                     buttonclick(event.key);
                     break;
                 case "9":
-                    document.getElementById("button9").focus();
+                    // document.getElementById("button9").focus();
                     buttonclick(event.key);
                     break;
 
@@ -206,28 +251,26 @@
         })
 
         function buttonclick(key) {
-            document.getElementById("button" + key).classList.add('clicked');
-            setTimeout(() => {
-                document.getElementById("button" + key).classList.remove('clicked');
-            }, 100);
+
+
+            document.getElementById("button" + key).classList.remove('clicked');
+
             if (passOK == true) {
-                /*  clearScreen(); */
                 userscrean.value += "-";
                 passEnterd.push(key)
-
-
-                if (userscrean.value.length == 4) {
-
-                    userscrean.value = "testOK";
+                let x = passEnterd.toString();
+                if (x == thecode.keycod) {
+                    userscrean.value = "           Welcom";
                     document.querySelector("#keypadform").style.display = "none";
 
                     document.querySelector("#screan").style.display = "block";
                 }
+
             } else {
                 console.log(document.querySelector("#screan").style);
                 document.querySelector("#screan").style.background = "red";
             }
-            /*  userscrean.value += "-"; */
+
         }
 
 

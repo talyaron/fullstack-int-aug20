@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="leftScreen">
+            <form>
+                <p class="textEdition" id="mainAboutYou">About you</p>
+
+                <p class="textEdition" id="mainColor">Choose your favorite color: <input type="color" onchange="colorChange(event)"></p>
+
+                <p class="textEdition" id="mainDate">When is your birthday? <input type="date" onchange="chosenDate(event)"></p>
+
+                <p class="textEdition" id="mainText">What are your hobbies? <input type="text" id="inp" onchange="hobbyText(event)"><button onclick="but()">ADD</button></p>
+
+            </form>
+
+            <form class="form" onsubmit="handleSub(event)">
+                <p class="textEdition pEdition">Log in:</p>
+                <input type="text" name='Name' placeholder="Name">
+                <input type="password" name='Password' placeholder="Password">
+                <input type="submit" name="" id="submit">
+            </form>
+        </div>
+
+        <div class="rightScreen ">
+            <p><br></p>
+            <p class="textEdition" id="mainColorLove"></p>
+            <p class="textEdition" id="mainDateChosen"></p>
+            <p class="textEdition" id="mainTextText"></p>
+        </div>
+    </div>
+    <script src="script.js "></script>
+
+</body>
+
+</html>
