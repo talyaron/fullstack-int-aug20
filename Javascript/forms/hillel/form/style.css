@@ -1,0 +1,131 @@
+html {
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: rgba(255, 227, 227, 0.753);
+
+}
+
+#boxcard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 2s;
+    color: rgb(126, 126, 126);
+    background-image: url(img/רקע.jpg);
+
+    /* color: white; */
+}
+
+#card {
+    position: relative;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 250px;
+    text-align: center;
+    margin: 150px auto;
+    background-color: var(--background);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    transition: box-shadow, background-color 1s;
+
+}
+
+#img {
+    width: 50px;
+}
+
+#sun {
+    width: 50px;
+}
+
+.divcolord {
+    background-color: rgba(245, 245, 220, 0);
+    position: absolute;
+    border: 0px;
+    top: 0px;
+    left: 0px;
+    outline: none;
+}
+
+.text {
+    margin-top: 45px;
+    padding: 5px;
+    border: 0;
+    border-bottom: solid 2px rgba(93, 93, 93, 0.486);
+    direction: rtl;
+    font-size: 1rem;
+    outline: none;
+    font-family: 'Rubik', sans-serif;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--color);
+    /* text-shadow: 1px 1px 0px white; */
+}
+
+.button {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    outline: none;
+    padding: 10px 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    border: 2px rgba(255, 255, 255, 0) solid;
+    color: var(--color);
+    background-color: rgba(214, 174, 174, 0.376);
+}
+
+.button:hover {
+    border: 2px rgb(255, 255, 255) solid;
+    background-color: rgba(131, 111, 111, 0.459);
+    transition: all 0.2s;
+}
+
+.imgcolor {
+    width: 40px;
+}
+
+.divcolor {
+    max-width: 250px;
+    font-size: 1rem;
+    font-family: 'Rubik', sans-serif;
+    width: 90%;
+    background-color: rgba(240, 27, 27, 0);
+    color: var(--color);
+    text-shadow: 1px 1px 1px 4px black;
+    margin: auto;
+    outline: none;
+    border: 0px;
+    margin-bottom: 12px;
+    text-decoration: underline;
+    white-space: nowrap;
+
+}
+
+
+#none {
+    display: none;
+
+}
+
+.divtranslet {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    font-family: 'Rubik', sans-serif;
+    outline: none;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.imgngish {
+    width: 45px;
+}

@@ -7,16 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="testBox"></div>
-    <div>
-    <h1>Name And Surname</h1>
-    <input type="text" id="inpurName" placeholder="Your Name" onchange="handleInputName(event)" >
-    <input type="text" id="inputSurname" placeholder="Surname" onchange="handleInputSurname(event)">
-    <button id="addUser" onclick="addUserFunc()"></button>
+    <div class="mainDiv" id="mainDiv">
+
     </div>
 
+    <!-- Color Change HW -->
+    <form>
+    <input type="text" id="inputColorFromUser" placeholder="Enter The Color">
+    <button id="colorChangButton" onclick="colorChangeFunc(event)">Change</button>
+    </form>
 
-    <script src="script.js"></script>
+    <!-- User name and password check -->
 
+    <form>
+        <div id="userInterFace"></div>
+        <input type="text" id="userNameInput" placeholder="User Name">
+        <input type="text" id="userPassword" placeholder="Password">
+        <button type="submit" onclick="userNameAndPasswordCheck(event)">Check</button>
+    </form>
+    <script src="script.js">Check</script>
 </body>
 </html>

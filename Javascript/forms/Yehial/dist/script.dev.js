@@ -1,32 +1,33 @@
 "use strict";
 
-// let testEventDiv =document.getElementById("testBox");
-// console.log(testEventDiv);
-// let config='width:800px;height:800px;';
-// testEventDiv.addEventListener('click',(event)=>{
-//     console.log(event);
-//     event.target.style=config;
-// })
-//Forms
-var boxHtml = document.getElementById('testBox');
-console.log(boxHtml);
-var test = '';
-var nameInputFromUser = document.getElementById("inputName");
-var surnameInputFormUser = document.getElementById("inputSurname");
+var theBox = document.getElementById("mainDiv");
+console.log(theBox);
 
-function handleInputName(e) {
-  // console.log(e.target.value);
-  test += e.target.value + ' ';
-  console.log(test);
+function colorChangeFunc(event) {
+  event.preventDefault();
+  var color = document.getElementById("inputColorFromUser").value;
+  colorConfig = color;
+  theBox.style.background = "".concat(color);
 }
 
-function handleInputSurname(e) {
-  test += e.target.value;
-  console.log(test);
-}
+var rightUserName = 'Yehial';
+var rightPassword = '145236';
 
-function addUserFunc() {
-  console.log(test);
-  boxHtml.innerHTML += "<div>".concat(test, "</div>");
-  test = '';
+function userNameAndPasswordCheck(event) {
+  event.preventDefault();
+  var userNameInput = document.getElementById("userNameInput").value;
+  var userPassword = document.getElementById("userPassword").value;
+
+  if (rightPassword == userPassword && rightUserName == userNameInput) {
+    var tag = document.getElementById("userInterFace");
+    tag.innerHTML = '';
+    tag.innerHTML += '--------Access Granted-----------';
+    console.log(tag);
+  } else {
+    var _tag = document.getElementById("userInterFace");
+
+    _tag.innerHTML = '';
+    _tag.innerHTML += '--------Access Denied-----------';
+    console.log('no');
+  }
 }
