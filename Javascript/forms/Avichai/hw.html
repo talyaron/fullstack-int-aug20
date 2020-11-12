@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="color" name="color" oninput="hadnleInput(event)">
+
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Username" name="Username" required>
+        <input type="password" placeholder="Password" name="Password" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+
+<script>
+
+    let body = document.body
+
+    function hadnleInput(e){
+        console.log(e.target.value)
+        let color = e.target.value
+        body.style.backgroundColor = color
+    }
+
+    function handleSubmit(e){
+        e.preventDefault();
+
+        let myusername = "Avichai"
+        let mypassword = "123456789"
+
+        const username = e.target.children.Username.value
+        const password = e.target.children.Password.value
+
+
+        if(username == myusername && password == mypassword){
+            alert("Login successful")
+        }else if(username == myusername && password !== mypassword){
+            alert("Password is wrong")
+        }else if(username !==myusername && password ==mypassword){
+            alert("Username is wrong")
+        }
+        else{
+            alert("Username and password is wrong!")
+        }
+    }
+
+</script>
+</html>
