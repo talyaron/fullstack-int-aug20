@@ -1,12 +1,14 @@
 "use strict";
 
-var Box = document.querySelectorall(".Box");
-var BoxWrapperOUTput = document.querySelectorall("#BoxWrapperOUTput");
+var ColorBox = document.querySelector("#ColorBox1");
+var BoxWrapperOUTput = document.querySelector("#BoxWrapperOUTput");
 
 function creatBox() {
-  BoxWrapperOUTput.innethtml += "<div class=\"box\"></div>";
+  BoxWrapperOUTput.style.innethtml += "<div class=\"Box\"></div>";
+  console.log(BoxWrapperOUTput);
 }
 
-box.addEventListener('click', function (event) {
+ColorBox.addEventListener('click', function (event) {
   creatBox();
+  console.log("OK");
 });
