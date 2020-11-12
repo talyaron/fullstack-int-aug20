@@ -1,0 +1,31 @@
+body {
+  background-color: blue;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.textEdition {
+  margin-left: 5%;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.form {
+  margin: 0 0 5% 5%;
+}
+
+.pEdition {
+  font-size: 1.8em;
+}
+
+#mainAboutYou {
+  font-size: 2.5em;
+  text-align: center;
+  margin: 3%;
+}
