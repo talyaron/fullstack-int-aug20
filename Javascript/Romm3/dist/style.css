@@ -28,3 +28,9 @@
 #box4 {
   background-color: #ffd000;
 }
+
+#addedElements {
+  width: 100%;
+  height: 200px;
+  background-color: blue;
+}
