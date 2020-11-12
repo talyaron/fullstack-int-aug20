@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+<body>
+    <div class="app">
+        <header>Whatsapp</header>
+        <div id="messagesWrapper">
+
+        </div>
+        <form class="inputText"  onsubmit='handleSubmitMessage(event)'>
+            <textarea name="message" onkeyup='handleTextArea(event)'></textarea>
+            <button type="submit" id='submitButton'>Send</button>
+        </form>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
