@@ -22,6 +22,7 @@
         border-radius: 10px;
         box-shadow: 7px 10px 5px -1px rgba(0,0,0,0.8);
         background-color: rgba(203, 203, 219, 0.322);
+        transition: all 250ms;
     }
 
 
@@ -36,6 +37,7 @@
     .button {
         width: 100px;
         height: 100px;
+       
     }
 
     #button0 {
@@ -87,21 +89,29 @@
         color: blue;
     }
 
-    #screan {
+    #screan { /* תמונת האוצר */
         display: none;
-        /* position: absolute; */
         width: 300px;
         height: 400px;
         
     }
 
     #userscrean {
-        margin: 10px 0 10px 0;
+       
         height: 50px;
         padding: 10px;
-        background-color: rgba(17, 15, 15, 0.568);
+        background-color: rgba(17, 15, 15, 0.568);       
         color: white;
         font-family: 'radioland';
+        width: 95%;
+    }
+
+    .userscreanFrame{
+        /* background-color: rgba(17, 15, 15, 0.568); */
+        box-shadow: inset 6px 6px 6px -1px rgba(0,0,0,0.55);
+        padding: 4px 0px 0px 4px;
+        border: 1px solid black;
+        display: flex;
     }
 
     input {
@@ -122,8 +132,13 @@
         <div class="hedcontainer">
             <h1>הכספת</h1>
             <!-- <input type="t ext"  name="screan" id="userscrean" placeholder="אנא הזן שם משתמש , סיסמא וקוד בן ארבעה ספרות"> -->
+            <div class="userscreanFrame">
             <textarea Readonly="true" dir="LTR" rows="2" name="screan" id="userscrean"
                 placeholder="Enter UserName & Pass Next Enter Code "></textarea>
+            </div>
+        </div>
+        <div class="cover">
+            
         </div>
         <form id="loginform" onsubmit="submitForm(event)">
             <input type="text" name="userName" id="userName" placeholder="שם משתמש">

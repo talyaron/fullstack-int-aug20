@@ -1,38 +1,36 @@
-// let testEventDiv =document.getElementById("testBox");
-// console.log(testEventDiv);
-// let config='width:800px;height:800px;';
-
-// testEventDiv.addEventListener('click',(event)=>{
-//     console.log(event);
-//     event.target.style=config;
-// })
+const theBox = document.getElementById("mainDiv");
+console.log(theBox);
 
 
-//Forms
-let boxHtml =document.getElementById('testBox');
-console.log(boxHtml);
-let test='';
+function colorChangeFunc(event){
+    event.preventDefault();
+    const color = document.getElementById("inputColorFromUser").value;
+    colorConfig=color;
+    theBox.style.background=`${color}`;
+}
 
-let nameInputFromUser = document.getElementById("inputName");
-let surnameInputFormUser = document.getElementById("inputSurname");
 
-function handleInputName(e){
+const rightUserName = 'Yehial';
+const rightPassword = '145236';
+
+function userNameAndPasswordCheck(event){
+    event.preventDefault();
+    const userNameInput = document.getElementById("userNameInput").value;
+    const userPassword = document.getElementById("userPassword").value;
     
-    // console.log(e.target.value);
-    test+=(e.target.value +' ');
-    console.log(test);
 
+    if(rightPassword == userPassword &&  rightUserName == userNameInput){
+        
+        const tag=document.getElementById("userInterFace");
+        tag.innerHTML='';
+        tag.innerHTML+='--------Access Grnted-----------';
+        console.log(tag)
+    }
+    else{
+        const tag=document.getElementById("userInterFace");
+        tag.innerHTML='';
+        tag.innerHTML+='--------Access Denied-----------';
+        console.log('no');
+    }
 }
 
-function handleInputSurname(e){
-    test+=(e.target.value);
-    console.log(test);
-}
-
-function addUserFunc(){
-
-    console.log(test);
-    boxHtml.innerHTML+=`<div>${test}</div>`;
-    test='';
-
-}
