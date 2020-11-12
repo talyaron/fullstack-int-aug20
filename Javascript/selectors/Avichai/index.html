@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="somethhing" class="someClass"></div>
+    <div class="someClass"></div>
+    <div class="someClass"></div>
+    <div class="someClass"></div>
+    <div class="someClass"></div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe adipisci labore exercitationem suscipit aspernatur! Optio ea quis illum incidunt esse nobis vitae necessitatibus non quo! Alias assumenda sed accusamus quas.</p>
+    <input type="text" name="name">
+    <div class="someOtherClass"></div>
+    <div class="someOtherClass"></div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe adipisci labore exercitationem suscipit aspernatur! Optio ea quis illum incidunt esse nobis vitae necessitatibus non quo! Alias assumenda sed accusamus quas.</p>
+
+    <script>
+        let body = document.body
+        body.style.backgroundColor = "lightyellow"
+        let ps = document.getElementsByTagName('p')
+        console.dir(ps)
+
+        let ps2 = document.querySelectorAll('p')
+        console.dir(ps2)
+
+        ps2.forEach(p=>{
+            p.style.color = 'pink'
+        })
+
+        ps2[0].style.backgroundColor = 'red'
+        ps2[1].style.backgroundColor = 'blue'
+
+        
+    </script>
+</body>
+</html>
