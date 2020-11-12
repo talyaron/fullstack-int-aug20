@@ -1,0 +1,30 @@
+.elemets {
+  width: 700px;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  background-color: aqua;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+#box1 {
+  background-color: #8400ff;
+}
+
+#box2 {
+  background-color: red;
+}
+
+#box3 {
+  background-color: lime;
+}
+
+#box4 {
+  background-color: #ffd000;
+}

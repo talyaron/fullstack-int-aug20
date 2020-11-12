@@ -22,17 +22,26 @@
         border-radius: 10px;
         box-shadow: 7px 10px 5px -1px rgba(0, 0, 0, 0.8);
         background-color: rgba(203, 203, 219, 0.322);
-        transition: all 250ms;
+        /* transition: all 250ms; */
         position: relative;
     }
 
 
+    #userscrean {
+
+        height: 50px;
+        padding: 10px;
+        background-color: rgba(17, 15, 15, 0.568);
+        color: white;
+        font-family: 'radioland';
+        width: 95%;
+    }
 
     .keypad {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 1fr);
-        /* display: none; */
+
     }
 
     .button {
@@ -59,8 +68,8 @@
         box-shadow: inset 3px 3px 3px -1px rgba(0, 0, 0, 0.55);
         position: absolute;
         top: 125px;
-        transition: all 250ms;
-        display: none;
+        transition: all 5000ms;
+        /* display: none; */
     }
 
     #loginform {
@@ -111,15 +120,6 @@
 
     }
 
-    #userscrean {
-
-        height: 50px;
-        padding: 10px;
-        background-color: rgba(17, 15, 15, 0.568);
-        color: white;
-        font-family: 'radioland';
-        width: 95%;
-    }
 
     .userscreanFrame {
         /* background-color: rgba(17, 15, 15, 0.568); */
@@ -158,9 +158,11 @@
             <input type="password" name="password" id="password" placeholder="סיסמא">
             <input type="submit" id="buttonOK" value="OK">
         </form>
+
         <div id="cover" class="cover">
 
         </div>
+
         <div id="keypadform" class="keypad">
             <button ID="button1" class="button" onclick="buttonclick(event.key)">1</button>
             <button ID="button2" class="button" onclick="buttonclick(event.key)">2</button>
@@ -296,10 +298,11 @@
         }
 
 
-        const cover = document.getElementsByID("cover")
+        const cover = document.querySelector("#cover");
 
         cover.addEventListener('click', function (event) {
-            cover.style.transform = 'translate(0px,20px)';
+            console.log("ok")
+            cover.style.transform = 'translate(0px,-100px)';
         });
     </script>
 </body>
