@@ -8,8 +8,11 @@ function handleSubmitMessage(e) {
   var message = e.target.children.message.value;
   console.log(message);
   messages.push(message);
-  document.querySelector('#messagesWrapper').innerHTML += htmlMessage(message);
-  e.target.reset();
+
+  if (message.length > 0) {
+    document.querySelector('#messagesWrapper').innerHTML += htmlMessage(message);
+    e.target.reset();
+  }
 }
 
 function htmlMessage(message) {
