@@ -45,6 +45,7 @@ function saveinformation(event) {
     event.preventDefault();
     const password = event.target.children.password.value;
 
+    // היית צריך לבדוק שגם שם המתשמש מתאים
     if (password == mypassword) {
         alert("הסיסמה נכונה ☻")
     } else {
