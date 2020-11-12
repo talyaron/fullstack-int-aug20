@@ -12,4 +12,10 @@ function handleSubmit(e) {
         alert('the password is uncorrect')
 
     }
+
+}
+
+
+function handleClick(e) {
+
 }
