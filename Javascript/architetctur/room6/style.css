@@ -29,10 +29,14 @@
   background-color: yellow;
 }
 .BoxWrapperOUTput {
-  overflow-x: auto;
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+
+ 
   border: 1px solid black;
   padding: 10px;
-  display: flex;
+ 
   margin: auto;
   width: 900px;
   height: 240px;
