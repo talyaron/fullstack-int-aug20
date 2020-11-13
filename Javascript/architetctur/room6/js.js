@@ -1,14 +1,9 @@
-const ColorBox = document.querySelector("#ColorBox1");
-const BoxWrapperOUTput = document.querySelector("#BoxWrapperOUTput");
+const ColorBox = document.querySelectorAll(".Box");
+const BoxWrapperOUTput = document.querySelector('.BoxWrapperOUTput');
 
+ColorBox.forEach(element => {
+    element.addEventListener('click',function (event) {
+        BoxWrapperOUTput.innerHTML += `<div class="Box" id="${element.id}"></div>`;
+    })
+});
 
-function creatBox(){
-    BoxWrapperOUTput.style.innethtml += `<div class="Box"></div>`;
-    console.log(BoxWrapperOUTput);
-}
-
-
-ColorBox.addEventListener('click',function (event) {
-    creatBox();
-    console.log("OK");
-})
