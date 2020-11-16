@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let myGagets = [{
+                title: "pc",
+                price: 700
+            },
+            {
+                title: "phone",
+                price: 360
+            },
+            {
+                title: "watch",
+                price: 30
+            },
+            {
+                title: "projector",
+                price: 300
+            }
+        ]
+
+        myGagets = myGagets.sort((a, b) => {
+            return a.price - b.price
+        })
+        console.log(myGagets)
+
+        let Gagets = [{
+                title: "pc",
+                price: 700
+            },
+            {
+                title: "phone",
+                price: 360
+            },
+            {
+                title: "watch",
+                price: 30
+            },
+            {
+                title: "projector",
+                price: 300
+            }
+        ]
+
+        Gagets = Gagets.filter(Gagets => Gagets.price > 100).sort((a, b) =>  a.price - b.price)
+
+        console.log(Gagets)
+          
+
+        
+    </script>
+</body>
+
+</html>
