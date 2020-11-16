@@ -8,17 +8,29 @@
 <body>
     <script>
 
+<<<<<<< Updated upstream
         const prodacts = [ {price:15,name:'balon'} ,
         {price: 50 ,name:'prodact1'},
         {price: 10 ,name:'prodact2'},
         {price: 35 ,name:'prodact3'},
         {price: 100 ,name:'prodact4'}               
+=======
+        const prodacts = [ {price:'15',name:'balon'} ,
+        {price:'50',name:'cup'},
+        {price:'10',name:'eraser'},
+        {price:'35',name:'daery'},
+        {price:'100',name:'shert'}               
+>>>>>>> Stashed changes
     ]
 
     prodacts.sort((a,b)=>a.price-b.price)
     console.log(prodacts);
 
+<<<<<<< Updated upstream
     const newProdacts = prodacts.filter(prodact=>prodact.price<20)
+=======
+    const newProdacts = prodacts.filter(price=>prodacts.price<20)
+>>>>>>> Stashed changes
     console.log(newProdacts);
     </script>
 </body>
