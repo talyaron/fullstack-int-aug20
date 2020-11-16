@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let product =[{name:'cake',price:15},{name:'bike',price:50},{name:'tv',price:18},{name:'headphones',price:13},{name:'pc',price:68},{name:'car',price:80}]
+    let products =product.filter(product => product.price <20).sort((a,b) => a.price - b.price) 
+    console.log(products)
+</script>
+</html>
