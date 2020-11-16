@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        myLove = [{
+            name: 'sleep',
+            price: 20
+        }, {
+            name: 'walk',
+            price: 50
+        }, {
+            name: 'games',
+            price: 40
+        }, {
+            name: 'eat',
+            price: 100
+        }]
+
+        myLove.sort((a, b) => a.price - b.price)
+        console.log(myLove)
+
+        let newMyLove = myLove.filter(love => love.price < 20)
+        console.log(newMyLove);
+    </script>
+</body>
+
+</html>
