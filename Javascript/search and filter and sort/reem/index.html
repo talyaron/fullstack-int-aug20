@@ -16,13 +16,11 @@
         })
         console.log(products)
 
-        let numbers = [1,5,3,8,2,90,100]
-        numbers = numbers.sort((a,b)=>a-b);
-        console.log(numbers)
+        let lowPriceProducts = products.filter(product=>product.price<=100)
+        console.log(lowPriceProducts)
 
-        let names = ['+', '*'];
-        names = names.sort()
-        console.log(names)
+
+       
     </script>
 </body>
 </body>
