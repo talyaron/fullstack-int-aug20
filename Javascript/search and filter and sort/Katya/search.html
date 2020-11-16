@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .searchBox {
+            width: 80%;
+            margin: auto;
+        }
+        
+        .searchBox__search {
+            margin: 5%;
+        }
+        
+        p {
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 60%;
+            padding: 1%;
+        }
+        
+        button {
+            padding: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="searchBox">
+            <div class="searchBox__search">
+                <p>Lets see what you need</p>
+                <input type="text" placeholder="What you searching for?" onkeyup='handleSearch(event)'>
+                <button type="button">Search</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const books = [{
+            name: ' שיחות על תורת המשחקים',
+            year: 2008
+        }, {
+            name: 'על הדברים החשובים באמת',
+            year: 2009
+        }, {
+            name: 'אינסוף - המסע שאינו נגמר',
+            year: 2010
+        }, {
+            name: 'קהלת - הפילוסוף המקראי',
+            year: 2011
+        }, {
+            name: 'אהבה זה כל הספר',
+            year: 2014
+        }, {
+            name: 'אני חושב משמע אני טועה',
+            year: 2015
+        }, {
+            name: 'זיכרון ילדות יפה במיוחד',
+            year: 2017
+        }]
+
+        function handleSearch(e) {
+            let searchTerm = e.target.value
+            let regSearchTerm = new RegExp(searchTerm, 'g');
+
+            if (regSearchTerm.test(name)) {
+                console.log('term existe')
+            } else {
+                console.log("term dosn't exist")
+            }
+        }
+    </script>
+</body>
+
+</html>
