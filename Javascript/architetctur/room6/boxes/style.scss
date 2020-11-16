@@ -1,0 +1,32 @@
+.boxes{
+  margin: auto;
+  display: flex;
+}
+
+.box1 ,.box2 ,.box3 ,.box4{
+  min-height: 100px;
+  min-width: 100px;
+  cursor: pointer;
+  margin: 1px;
+}
+
+.box1{
+  background-color: rebeccapurple;
+}
+
+.box2{
+  background-color: rgb(51, 116, 153);
+}
+
+.box3{
+  background-color: rgb(153, 51, 139);
+}
+
+.box4{
+  background-color: rgb(182, 157, 206);
+}
+
+.output{
+  display: flex;
+  overflow-x: auto;
+}

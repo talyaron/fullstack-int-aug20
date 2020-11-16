@@ -11,9 +11,13 @@ function addElementToTheScrollBar(e){
     let elemetsMainBox =  document.getElementById('addedElements');
     console.dir(elemetsMainBox);
     
+<<<<<<< HEAD:Javascript/Romm3/script.js
     theElement.forEach(element => {
         elemetsMainBox.innerHTML+=`<div data-set=${theElement.dataset.color}"></div>`;
     });
+=======
+    const elemetsMainBox =target.children.theElement.value;
+>>>>>>> master:Javascript/architetctur/Romm3/script.js
 
     
 }
