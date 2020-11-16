@@ -7,10 +7,21 @@
 </head>
 <body>
     <script>
+        let products = [{ product: 'KEYSION LED USB', price: 10 }, {product: 'ThundeaL TD60 מיני מקרן נייד WiFi ', price: 210 }, { product: 'Wireless Wifi Repeater Wifi Range Extender Router ', price: 40 }, { product: 'Mini Wireless Bluetooth 5.0 TWS Earphones IPX7', price: 35 }, { product: 'Most powerful XHP70.2 led flashlight', price: 120 }, ]
+
+        products = products.sort((a, b) => {
+            console.log('a:',a)
+            console.log('b:',b)
+            return a.price - b.price
+        })
+        console.log(products)
+
+        let lowPriceProducts = products.filter(product=>product.price<=100)
+        console.log(lowPriceProducts)
 
 
-
-
+       
     </script>
+</body>
 </body>
 </html>
