@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const prodacts = [ {price:15,name:'balon'} ,
+        {price: 50 ,name:'prodact1'},
+        {price: 10 ,name:'prodact2'},
+        {price: 35 ,name:'prodact3'},
+        {price: 100 ,name:'prodact4'}               
+    ]
+
+    prodacts.sort((a,b)=>a.price-b.price)
+    console.log(prodacts);
+
+    const newProdacts = prodacts.filter(prodact=>prodact.price<20)
+    console.log(newProdacts);
+    </script>
+</body>
+</html>
