@@ -1,0 +1,37 @@
+.boxes {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box1, .box2, .box3, .box4 {
+  min-height: 100px;
+  min-width: 100px;
+  cursor: pointer;
+  margin: 1px;
+}
+
+.box1 {
+  background-color: rebeccapurple;
+}
+
+.box2 {
+  background-color: #337499;
+}
+
+.box3 {
+  background-color: #99338b;
+}
+
+.box4 {
+  background-color: #b69dce;
+}
+
+.output {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+}
+/*# sourceMappingURL=style.css.map */

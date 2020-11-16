@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form gil hw</title>
+</head>
+<body>
+   <input type="color" onchange="handlechange(event)"> 
+
+
+   <form onsubmit="handleSubmit(event)">
+    <h1>form</h1>
+    <input type="text" placeholder="Username" name="username" required>
+    <input type="password" placeholder="Password" name="password" required>
+    <button type="submit">connect</button>
+</form>
+
+   <script>
+      function handlechange(e){
+      console.log(e);
+      const color = e.target.value;
+      document.body.style.backgroundColor = `${color}`;
+    }
+const correctUsername = "gilisaac";
+const correctPassword = 3312 ;
+
+    function handleSubmit(e){ 
+        e.preventDefault();
+         console.log(e);
+  
+      const Username = e.target.children.username.value;
+      const Password = e.target.children.password.value;
+      console.log(Username, Password);
+
+      if(Username==correctUsername && Password==correctPassword){
+          alert('access allowed');
+        }
+
+else if( Username==correctUsername && Password !== correctPassword ){
+    alert( 'access not allowed');
+}
+else if( Username !== correctUsername && Password == correctPassword ){
+    alert( 'the usename is not corret');}
+      else{alert('Login Failed')}
+   
+    }
+   </script>
+</body>
+</html>
