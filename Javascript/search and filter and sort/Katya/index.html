@@ -11,7 +11,7 @@
     <script>
         myLove = [{
             name: 'sleep',
-            price: 20
+            price: 10
         }, {
             name: 'walk',
             price: 50
@@ -26,7 +26,7 @@
         myLove.sort((a, b) => a.price - b.price)
         console.log(myLove)
 
-        let newMyLove = myLove.filter(love => love.price < 20)
+        let newMyLove = myLove.filter(love => love.price <= 20)
         console.log(newMyLove);
     </script>
 </body>
