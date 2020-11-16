@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+<body>
+    <script>
+        let books = [{ title: 'book1', year: '1990' }, { title: 'book2', year: '1999' }, { title: 'book3', year: '2000' }, { title: 'book4', year: '2010' }, { title: 'book5', year: '2020' },]
+        let newBooks = books.filter(book=>book.year>=1999)
+        console.log(newBooks)
+    </script>
+</body>
+</html>
