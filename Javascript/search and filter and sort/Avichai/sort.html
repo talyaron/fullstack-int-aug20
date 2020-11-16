@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>123333</title>
+    <title>sort</title>
 </head>
 
 <body>
@@ -12,22 +12,18 @@
 
         let books = [{ title: 'book1', year: '1990' }, { title: 'book2', year: '1980' }, { title: 'book3', year: '2000' }, { title: 'book4', year: '2010' }, { title: 'book5', year: '2020' },]
 
-        books = books.sort((a, b) => {
-            console.log('a:',a)
-            console.log('b:',b)
-            return a.year - b.year
-        })
+        books.sort((a, b) => a.year - b.year)
         console.log(books)
 
-        let numbers = [1,5,3,8,2,90,100,300]
-        numbers = numbers.sort((a,b)=>a-b)
+        let numbers = [1, 5, 3, 8, 2, 90, 100, 300]
+        numbers.sort((a, b) => a - b)
         console.log(numbers)
 
-        let names = ['aa','az','as','at','ab']
-        names = names.sort()
+        let names = ['aa', 'az', 'as', 'at', 'ab']
+        names.sort()
         console.log(names)
 
-        
+
     </script>
 </body>
 
