@@ -1,0 +1,56 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.wrapper .orange {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
+.wrapper .gray {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+}
+.wrapper .green {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+.wrapper .blue {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.lowerBox {
+  display: flex;
+  justify-content: center;
+  overflow-x: scroll;
+  position: relative;
+  top: 200px;
+}
+.lowerBox #blue {
+  min-width: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.lowerBox #orange {
+  min-width: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
+.lowerBox #gray {
+  min-width: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+}
+.lowerBox #green {
+  min-width: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}

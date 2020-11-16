@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.orange {
+  min-width: 50px;
+  height: 50px;
+  background-color: orange;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.blue {
+  min-width: 50px;
+  height: 50px;
+  background-color: blue;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.yellow {
+  min-width: 50px;
+  height: 50px;
+  background-color: yellow;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.red {
+  min-width: 50px;
+  height: 50px;
+  background-color: red;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.newDiv {
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  max-width: 500px;
+  margin: 20px auto auto auto;
+}
