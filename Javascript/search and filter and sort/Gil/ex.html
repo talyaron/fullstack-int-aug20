@@ -7,9 +7,11 @@
 </head>
 <body>
     <script>
-let prodact=[{name:'banana', price:20}, {name:'apple', price:10000}, {name:'mango', price:23}, {name:'orange', price:24} ,{name:'kiwi', price:19}]
+let prodact=[{name:'banana', price:12}, {name:'apple', price:10000}, {name:'mango', price:23}, {name:'orange', price:24} ,{name:'kiwi', price:19}]
 console.log(prodact.sort((a,b) => a.price - b.price))
 
+let lowerProdact = prodact.filter(prodact => prodact.price < 20).sort((a,b) => a.price - b.price)
+console.log(lowerProdact)
 
     </script>
 </body>
