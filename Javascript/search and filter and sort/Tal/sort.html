@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let books = [{ title: 'book4', year: 2000 }, { title: 'book3', year: 1990 }, { title: 'book1', year: 1970 }, { title: 'book2', year: 1980 }, { title: 'book5', year: 2010 }, ]
+
+        books.sort((a, b) => { if(a.title< b.title) return -1;})
+        console.log(books)
+
+        let numbers = [1,5,3,8,2,90,100]
+        numbers.sort((a,b)=>a-b);
+        console.log(numbers)
+
+        let names = ['+', '*'];
+        names.sort()
+        console.log(names)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="name" onkeyup='handleSearch(event)'>
+    <script>
+        let searchTerm = /shne/g  //method 1
+        let searchTerm2 = new RegExp('sg','g') //method 2
+
+        let text = 'abcd shneur srsdgsdg  dsgsggssd fe wekjr qlwkjrlqwkjrlkqwjrkqwjr'
+        console.log(searchTerm2.test(text))
+        console.log(text.match(searchTerm2));
+
+        function handleSearch(e){
+            let searchTerm = e.target.value
+            let regSearchTerm = new RegExp(searchTerm,'g');
+
+            if(regSearchTerm.test(text)){
+                console.log('term existe')
+            } else {
+                console.log("term dosn't exist")
+            }
+        }
+    </script>
+</body>
+</html>
