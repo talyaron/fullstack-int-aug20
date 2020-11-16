@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" onkeyup="handleKeyUp(event)">
+  <script>
+
+    let books = [
+                { title: 'reem', year: 2000 },
+                { title: 'olga', year: 1990 },
+                { title: 'cherut', year: 1970 },
+                { title: 'avichai', year: 1980 },
+                { title: 'tal', year: 2010 },
+                { title: 'mordy', year: 2002 },
+                { title: 'shneur', year: 2008 },
+            ]
+
+          
+
+           function handleKeyUp(e){
+             let inputValue = e.target.value;
+             let searchTerm = new RegExp(inputValue,'g');
+
+            books.forEach(elm=>{
+              console.log(searchTerm.test(elm.title)) 
+            })
+              
+            
+
+           }
+
+  </script>
+</body>
+</html>
