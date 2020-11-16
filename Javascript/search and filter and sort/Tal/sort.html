@@ -11,19 +11,15 @@
     <script>
         let books = [{ title: 'book4', year: 2000 }, { title: 'book3', year: 1990 }, { title: 'book1', year: 1970 }, { title: 'book2', year: 1980 }, { title: 'book5', year: 2010 }, ]
 
-        books = books.sort((a, b) => {
-            console.log('a:',a)
-            console.log('b:',b)
-            return a.year - b.year
-        })
+        books.sort((a, b) => { if(a.title< b.title) return -1;})
         console.log(books)
 
         let numbers = [1,5,3,8,2,90,100]
-        numbers = numbers.sort((a,b)=>a-b);
+        numbers.sort((a,b)=>a-b);
         console.log(numbers)
 
         let names = ['+', '*'];
-        names = names.sort()
+        names.sort()
         console.log(names)
     </script>
 </body>
