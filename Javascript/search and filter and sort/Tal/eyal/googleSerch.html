@@ -11,11 +11,45 @@
 </style>
 
 <body>
-    <input type="search" name="serchBox" id="serchBox">
+    <input type="search" name="serchBox" id="serchBox"  onkeyup="handleSearch(event)">
     <div id ="resulets"></div>
 
     
     <script>
+        const booksArray = 
+        [{BookName:"herry potter 1",Year:"2001"},
+        {BookName:"herry potter 2",Year:"1999"},
+        {BookName:"herry potter 3",Year:"2014"},
+        {BookName:"herry potter 4",Year:"1978"},
+        {BookName:"herry potter 119",Year:"2200"},
+        {BookName:"imposibole mishopn",Year:"1"},
+        {BookName:"imposibole brack",Year:"2"},
+        {BookName:"imposibole cack",Year:"3"},
+        {BookName:"mishopn black",Year:"4"},
+        {BookName:"code black",Year:"5"},
+        {BookName:"imposibole rooms",Year:"6"}    
+    ];
+        /* let searchTerm2 = new RegExp(booksArray,'g'); */
+        let resultSearchTerm =[];
+
+        function handleSearch(e){
+            let searchTerm = e.target.value;
+            
+            booksArray.forEach(element => {
+                let regSearchTerm = new RegExp(searchTerm,'g');
+
+                if(regSearchTerm.exec(element.BookName)){
+                resultSearchTerm.push(element)
+                console.log(resultSearchTerm)
+            }   
+            })
+            
+           /*  if(regSearchTerm.test(booksArray)){
+                resultSearchTerm.push()
+            } else {
+                console.log("term dosn't exist")
+            } */
+        }
     </script>
 </body>
 
