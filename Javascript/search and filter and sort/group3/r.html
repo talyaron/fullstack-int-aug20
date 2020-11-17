@@ -15,7 +15,7 @@
 
     let books = [
       { title: 'reem', year: 2000 },
-      { title: 'olga', year: 1990 },
+      { title: 'olga', year: 2020 },
       { title: 'cherut', year: 1970 },
       { title: 'avichai', year: 1980 },
       { title: 'tal', year: 2010 },
@@ -24,6 +24,9 @@
       { title: 'tal', year: 2010 },
       { title: 'chel', year: 2002 },
       { title: 'ofer', year: 2008 },
+      { title: 'zx', year: 2020 },
+      { title: 'ראם', year: 1980 },
+      { title: 'reem', year: 1980 },
     ]
 
 
@@ -33,7 +36,7 @@
       let results = document.querySelector('.results');
       let result = [];
       
-      if (e.which<=90 && e.which>=48)
+      if (e.which<=90 && e.which>=48 || e.which==8)
      
 
       books.forEach(book => {
@@ -48,6 +51,8 @@
         for (i=0;i<result.length;i++){
         // let row = `<p>${result[i].title}</p>`;
         results.innerHTML +=`<p>${result[i].title}</p>`;
+        result.sort((a, b) => { if(a.year< b.year) return -1;})
+        
         }
 
       
@@ -55,10 +60,11 @@
       if(inputValue==''){
         results.innerHTML =``;
       }
+   
       
     }
 
-
+    
 
   </script>
 </body>
