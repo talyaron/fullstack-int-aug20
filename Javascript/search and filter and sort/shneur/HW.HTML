@@ -6,36 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #result {
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.584);
+        width: 50vw;
+        margin-left: 20vw;
+    }
+
+    .singelResult {
+        border-radius: 10px;
+        margin: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        color: blue;
+    }
+
+    .singelResult:hover {
+        background-color: rgb(247, 255, 204);
+    }
+
+    input {
+        margin-top: 20vw;
+        width: 50vw;
+        height: 30px;
+        position: relative;
+        margin-left: 20vw;
+        padding: 5px;
+        border-radius: 50px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.584);
+        border: none;
+        outline: none;
+    }
+</style>
 
 <body>
-    <div></div>
-
-
+    <input type="text" onkeyup="handleSearch(event)">
+    <div id="result">
+        <div id="singelResult"></div>
+    </div>
 
     <script>
+        let myGagets = [{
+                title: "pc",
+                price: 700
+            },
+            {
+                title: "phone",
+                price: 360
+            },
+            {
+                title: "watch",
+                price: 30
+            },
+            {
+                title: "projector",
+                price: 300
+            }
+        ]
+
+        let result = document.getElementById("result");
+
         function handleSearch(e) {
-
-            let searchTerm - e.target.value;
-
-            let regSearchTerm = new RegExp(searchTerm, 'g');
-            let rebiv = document.getElementById("resultDiv");
+            let search = e.target.value;
+            let testSearch = new RegExp(search, 'g');
             let html = "";
-
-            products.forEach(element => {
-
-                if (regSearchTerm.test(element productName)) {
-
-                    console.log(reDiv);
-
-                    console.log(element.productName);
-                    html += `<div class = "singelResult">${event.products.value}</div>  `
-
+            myGagets.forEach(element => {
+                if (testSearch.test(element.title)) {
+                    html += `<div class = "singelResult">${element.title}</div>`
                 }
-                else{
-                    // co
-                }
-
-            });
+            })
+            result.innerHTML = html;
+        }
     </script>
 </body>
 
