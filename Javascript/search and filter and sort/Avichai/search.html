@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type='text' placeholder='name' onkeyup="handleSearch(event)">
+    <script>
+
+        let searchTerm = /abc/g
+        let searchTerm2 = new RegExp('abc', 'g')
+
+        let text = 'abacdefghijklmabcnopqrstuvwxyzdsbahdbabsdhsabdhsabcabc'
+
+        function handleSearch(e) {
+            let searchTerm = e.target.value
+            let regSearchTerm = new RegExp(searchTerm, 'g');
+
+            if (regSearchTerm.test(text)) {
+                console.log('it has')
+
+            } else {
+                console.log('not found')
+            }
+
+        }
+    </script>
+</body>
+
+</html>
