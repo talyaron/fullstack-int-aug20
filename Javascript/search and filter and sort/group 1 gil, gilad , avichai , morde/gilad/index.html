@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #root{
+   
+        }
+        #insert{
+            background-color: aqua;
+            margin-top:1px;
+            width: 15%;
+            
+        
+    </style>
+ 
+    <input type="text" name="" id="search" placeholder="search" onkeyup="handlekeyup(event)">
+    <div id="root"></div>
+    
+    
+    <script>
+        let books = [{name:'nameoftheWind',year:2006},{name:'wisemansfear',year:2010},{name:'doorsofstone',year:'NA'}]
+        function handlekeyup(e){
+            e.target.value = '';
+            let search = e.target.value
+            for (i=0;i<books.length;i++){
+                let regSearch = new RegExp(search,'g')
+                if(regSearch.test(books[i].name))
+               {console.log(books[i])}
+               document.getElementById('root').innerHTML += `<div id="insert">${books[i].name} </div> `
+               
+                
+
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
