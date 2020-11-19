@@ -9,6 +9,20 @@
 
 <body>
     <style>
+<<<<<<< HEAD
+        #root{
+   
+        }
+        #insert{
+            background-color: aqua;
+            margin-top:1px;
+            width: 15%;
+            
+        
+    </style>
+ 
+    <input type="text" name="" id="search" placeholder="search" onkeyup="handlekeyup(event)">
+=======
         .insert:hover {
             color: blue;
 
@@ -26,9 +40,30 @@
         }
     </style>
     <input type="text" id="search" placeholder="search" onkeyup="handlekeyup(event)">
+>>>>>>> master
     <div id="root"></div>
-
+    
+    
     <script>
+<<<<<<< HEAD
+        let books = [{name:'nameoftheWind',year:2006},{name:'wisemansfear',year:2010},{name:'doorsofstone',year:'NA'}]
+        function handlekeyup(e){
+            e.target.value = '';
+            let search = e.target.value
+            for (i=0;i<books.length;i++){
+                let regSearch = new RegExp(search,'g')
+                if(regSearch.test(books[i].name))
+               {console.log(books[i])}
+               document.getElementById('root').innerHTML += `<div id="insert">${books[i].name} </div> `
+               
+                
+
+            }
+
+        }
+
+
+=======
 
         const books = [{ name: 'doors of stone', year: 2022 }, { name: 'wise mans fears', year: 2010 }, { name: 'the name of the wind', year: 2006 }]
         books.sort((a, b) => a.year - b.year);
@@ -53,6 +88,7 @@
 
         }
 
+>>>>>>> master
     </script>
 </body>
 
