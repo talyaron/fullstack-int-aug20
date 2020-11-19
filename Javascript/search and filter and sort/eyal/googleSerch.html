@@ -47,39 +47,12 @@
         <div id="resulets"></div>
     </div>
 
-    <ul>
-        <li
-            class="product type-product post-22363 status-publish instock product_cat-188 has-post-thumbnail taxable shipping-taxable product-type-simple">
 
-            <div class="top-product-section">
-
-                                    <span class="image-wrapper">
-                        <img src="http://www.hazvi.testsite.co.il/wp-content/uploads/2020/10/Group-93-4.jpg"
-                            class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy"
-                            srcset="http://www.hazvi.testsite.co.il/wp-content/uploads/2020/10/Group-93-4.jpg 300w, http://www.hazvi.testsite.co.il/wp-content/uploads/2020/10/Group-93-4-150x150.jpg 150w, http://www.hazvi.testsite.co.il/wp-content/uploads/2020/10/Group-93-4-12x12.jpg 12w, http://www.hazvi.testsite.co.il/wp-content/uploads/2020/10/Group-93-4-100x100.jpg 100w"
-                            sizes="(max-width: 300px) 100vw, 300px" width="300" height="300"> </span>
-               
-
-
-            </div>
-
-            <div class="product_info_box">
-                
-                <a href="http://www.hazvi.testsite.co.il/product/%d7%90%d7%a6%d7%91%d7%a2%d7%95%d7%aa-%d7%95%d7%a0%d7%99%d7%9c-%d7%a2%d7%9c%d7%99%d7%9d/"
-                    class="product-category">
-                    <span class="product-title">אצבעות וניל עלים</span>
-
-
-                </a>
-            </div>
-
-        </li>
-    </ul>
 
 
     <script>
         const booksArray =
-            [{ BookName: "herry potter 4", Year: "2014" },
+            [{ BookName: "herry potter 4", Year: 2014 },
             { BookName: "herry potter 2", Year: "1999" },
             { BookName: "herry potter 3", Year: "2001" },
             { BookName: "herry potter 1", Year: "1978" },
@@ -99,16 +72,20 @@
             let resultSearchTerm = [];
             let searchTerm = e.target.value;
             let regSearchTerm = new RegExp(searchTerm, 'g');
-            booksArray.forEach(element => {
 
-                if (regSearchTerm.exec(element.bookName)) {
-                    resultSearchTerm.push(element)
+            booksArray.forEach(element => {
+                console.log(element.BookName, searchTerm)
+                if (regSearchTerm.test(element.BookName)) {
+                    resultSearchTerm.push(element);
+                   
                 }
             })
 
+            console.log(resultSearchTerm)
+
             resultSearchTerm = resultSearchTerm.sort((a, b) => a.Year - b.Year);
             resultSearchTerm.forEach(book => {
-                document.querySelector('#resulets').innerHTML += `<p>${book.BookName}</p>`;
+                document.querySelector('#resulets').innerHTML += `<p>${book.BookName}, ${book.Year}</p>`;
 
             })
 
