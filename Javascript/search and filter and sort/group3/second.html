@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" onkeyup="handleKeyUp(event)">
+  <div class="results"></div>
+  <script>
+
+
+    let books = [
+      { title: 'reem', year: 2000 },
+      { title: 'olga', year: 1990 },
+      { title: 'cherut', year: 1970 },
+      { title: 'avichai', year: 1980 },
+      { title: 'tal', year: 2010 },
+      { title: 'mordy', year: 2002 },
+      { title: 'shneur', year: 2008 },
+      { title: 'tal', year: 2010 },
+      { title: 'chel', year: 2002 },
+      { title: 'ofer', year: 2008 },
+    ]
+
+
+    function handleKeyUp(e) {
+      let inputValue = e.target.value;
+      let searchTerm = new RegExp(inputValue, 'g');
+      let results = document.querySelector('.results');
+      let result = [];
+
+     
+
+      books.forEach(book => {
+        
+        if (searchTerm.test(book.title) == true) {
+          // console.log(book)
+          result.push(book);
+          // console.log(result)
+        }
+
+        results.innerHTML = '';
+        for (i=0;i<result.length;i++){
+        // let row = `<p>${result[i].title}</p>`;
+        results.innerHTML +=`<p>${result[i].title}</p>`;
+        }
+
+      
+      })
+      if(inputValue==''){
+        results.innerHTML =``;
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>
