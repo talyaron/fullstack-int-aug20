@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+.container{
+    width: 60%;
+    margin:100px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 1px 1px 2px rgb(48, 48, 48);
+    overflow: hidden;
+}
+.container input{
+    border:none;
+    font-size: 30px;
+    color: rgb(58, 58, 58);
+padding: 12px;
+    width: 100%;
+    border-radius: 12px;
+}
+.suggestions{
+border-top: 2px solid #999;
+
+}
+.suggestions > div{
+    padding: 15px;
+    font-size: 20px;
+    color: black;
+    border-top: 1px solid rgb(41, 40, 40);
+}
+.suggestions > div:hover{
+    color: white;
+    background-color: rgb(0, 96, 151);
+}
+    </style>
+<div class="container">
+    <input type="text" class="searchInput" placeholder="Search..">
+    <div class="suggestions">
+    </div>
+
+
+    </div>        
+</div>
+    <script>
+let books =[{name:'book1' , year:1990},{name:'audio-book1' , year:1995},{name:'book2', year:2000},{name:'book3' , year: 2015},{name:"audio-book2" , year:2011},{name:'audio-book3', year:1931} ] 
+
+
+let searchInput = document.querySelector('.searchInput');       // returns the first element 
+let suggestionsPanel = document.querySelector('.suggestions');
+
+
+searchInput.addEventListener('keyup', function(){              // called the faction when the event get target
+    let input= searchInput.value;             
+    suggestionsPanel.innerHTML= '';
+    
+   let suggestions =books.filter(function(book){             // filter 
+        return book.name.startsWith(input);                     //return the suggesting 
+        suggestions = books.sort(function(a,b){ return a-b});
+    });
+    
+    suggestions.forEach (function(suggested){
+        let div= document.createElement('div');
+        div.innerHTML= suggested.name;                      // print to html
+        suggestionsPanel.appendChild(div);                  //append the element "child " of the panel
+    })
+    if(input == ''){                                        // clean the suggestionPanel after you delete all the leatters 
+        suggestionsPanel.innerHTML= '';
+         }
+})
+
+    </script>
+</body>
+</html>
