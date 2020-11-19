@@ -12,4 +12,82 @@ const products=[
         store:'moshe and co.',
         isdn:'drytertyertyerh'
     },
+    {
+        category:'mobile',
+        price:5500,
+        inStoreSince:2020-09-22,
+        brand:'Iphone',
+        model:'iPhone 12 Pro',
+        recommendations:85,
+        image:'https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg',
+        description:"very high end mobile phone",
+        name:'iPhone 12 Pro',
+        store:'Apple',
+        isdn:'SNJ28DN1900SMC89S82'
+    },
+    {
+        category:'fashion',
+        price:2000,
+        inStoreSince:'2020-04-05',
+        brand:'GUCCI',
+        model:'Ace Sneakers',
+        recommendations:85,
+        image:'https://cache.net-a-porter.com/images/products/1009127/1009127_in_920_q80.jpg',
+        description:"nice shoes",
+        name:'GUCCI Ace Sneakers',
+        store:'net a porter',
+        isdn:'ASMJDKK29CM10DCM22'
+    },
+    {
+        category:'electricity',
+        price:'Number',
+        inStoreSince:2019-02-22,
+        brand:'Electra',
+        model:'ELECTRA 5100',
+        recommendations:92,
+        image:'https://www.payngo.co.il/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/6/5600-1_1.jpg',
+        description:"good washer",
+        name:'Electra ELECTRA 5100',
+        store:'electra',
+        isdn:'SDMKMKS929321CSSDQSDZXX'
+    },
+    {
+        category:'fashion',
+        price:50,
+        inStoreSince:"2020.07.10",
+        brand:'nike',
+        model:'total90',
+        recommendations:40,
+        image:'https://www.shopcleats.me/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/n/i/nike-total-90-laser-se-fg-remake-boots-white-yello-black-6.jpg',
+        description:"beautiful shoe that does the job!",
+        name:'total90',
+        store:'sports naharya',
+        isdn:'afyuagsuy'
+    },
+    {
+        category:'cars',
+        price: 140000,
+        inStoreSince:'2020.01.09',
+        brand:'hyundai',
+        model:'veloster',
+        recommendations: 80,
+        image:'https://editorial.pxcrush.net/carsales/general/editorial/2020-veloster-turbo-premium-11.jpg?width=1024&height=683&aspect=pad',
+        description:"georgeus car, dying to have it",
+        name:'veloster',
+        store:'almog motors',
+        isdn:'uhfjalsbdjqwhd'
+    },
+    {
+        category:'mobile',
+        price: 1200,
+        inStoreSince:'2020.02.05',
+        brand:'google',
+        model:'pixel 5',
+        recommendations: 30,
+        image:'https://i.gadgets360cdn.com/products/large/Pixel-5-DB-369x800-1601538019.jpg?downsize=*:420&output-quality=80',
+        description:"solid and reliable mobile phone",
+        name:'pixel 5',
+        store:'omer phone',
+        isdn:'asdwdqwddqwdqw'
+    }
 ]
