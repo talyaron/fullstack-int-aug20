@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[name=name]{
+        color:red
+    }
+</style>
+<body>
+    <div id="stam" class="stamClass"></div>
+    <div class="stamClass"></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam accusamus expedita blanditiis est magnam maiores?
+        Magni aspernatur beatae fugiat praesentium similique error harum odit, officia earum nostrum impedit esse cum.
+    </p>
+    <div class="stamClass"></div>
+    <div class="stamClass"></div>
+    <div class="stamClass"></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam accusamus expedita blanditiis est magnam maiores?
+        Magni aspernatur beatae fugiat praesentium similique error harum odit, officia earum nostrum impedit esse cum.
+    </p>
+    <input type='text' name='name'>
+    <input type='text' name='name2' data-id='2'>
+    <input type='text' name='name3'>
+
+    <div class="stam2Class"></div>
+    <div class="stam2Class"></div>
+    <script>
+        let body = document.body
+        document.body.style.backgroundColor = 'pink';
+        let ps = document.getElementsByTagName('p')
+        console.dir(ps)
+
+        
+
+        let ps2 = document.querySelectorAll('p')
+        console.dir(ps2)
+        ps2.forEach(p=>{
+            p.style.color = 'yellow'
+        })
+
+        ps2[1].style.fontSize = '1.4rem';
+
+        let p1 = document.querySelector('p')
+        console.dir(p1)
+
+
+        let input1 = document.querySelector('input[name=name]');
+
+
+        input1.value = 'gotcha!!!'
+        let input2 = document.querySelectorAll('[data-id="2"]');
+        input2.forEach(input=>{
+            input.value = 'Gotcha!!'
+        })
+        input2[1].style.padding = '2rem';
+        console.dir(input1);
+        console.dir(input2)
+    </script>
+</body>
+
+</html>
