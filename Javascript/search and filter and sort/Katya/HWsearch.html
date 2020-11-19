@@ -88,13 +88,13 @@
             year: 2004
         }]
 
+        books.sort((a, b) => a.year - b.year)
+
         function resetResults() {
             document.getElementById('results').innerHTML = ''; // reset
         }
 
-        // function searchFor(name) {
-        //     document.getElementById('search').innerHTML = name; // reset
-        // }
+
 
         function handleSearch(e) {
             let searchTerm = e.target.value;
@@ -108,7 +108,7 @@
                 books.forEach(obj => {
                     if (regSearchTerm.test(obj.name)) {
                         results.push(obj);
-                    } else if (regSearchTerm.test(obj.year)){
+                    } else if (regSearchTerm.test(obj.year)) {
                         results.push(obj);
                     }
                 });
@@ -123,7 +123,6 @@
                 resetResults();
             }
         }
-
     </script>
 </body>
 
