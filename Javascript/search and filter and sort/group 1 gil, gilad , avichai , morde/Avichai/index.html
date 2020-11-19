@@ -17,10 +17,18 @@
 
     <script>
         const books = [
-            { name: 'book', year: 2020 }, { name: 'book2', year: 1994 }, { name: 'book3', year: 2001 }, { name: 'book4', year: 2012 }, { name: 'book5', year: 2006 }
+            { name: 'book', year: 2020 },
+             { name: 'book2', year: 1994 }, 
+             { name: 'book3', year: 2001 }, 
+             { name: 'book4', year: 2012 }, 
+             { name: 'book5', year: 2006 }
         ]
         const movies = [
-            { name: 'movie', year: 2040 }, { name: 'movie11', year: 1911 }, { name: 'movie2', year: 1940 }, { name: 'movie5', year: 1980 }, { name: 'movie40', year: 2006 }
+            { name: 'movie', year: 2040 },
+             { name: 'movie11', year: 1911 },
+              { name: 'movie2', year: 1940 }, 
+              { name: 'movie5', year: 1980 },
+               { name: 'movie40', year: 2006 }
         ]
 
         books.sort((a, b) => a.year - b.year)
@@ -38,6 +46,7 @@
             myDiv.style.display = "none"
             myDiv.innerHTML = ""
 
+            
             for (i = 0; i < books.length; i++) {
 
                 let regSearchTerm = new RegExp(searchTerm, 'gi');
