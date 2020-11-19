@@ -27,7 +27,7 @@
         margin-left: 35%;
     }
 
-    #serchBox {
+    #searchBox {
         width: 80%;
         height: 20px;
         margin-left: 10%;
@@ -36,7 +36,7 @@
         box-shadow: 2PX 2PX 2PX black;
     }
 
-    #resulets {
+    #results {
         display: flex;
         width: 78%;
         flex-direction: column;
@@ -53,8 +53,8 @@
 <body>
     <div id="searchContainer">
         <h1>BOOKLE</h1>
-        <input type="search" name="serchBox" id="serchBox" onkeyup="handleSearch(event)">
-        <div id="resulets"></div>
+        <input type="search" name="searchBox" id="searchBox" onkeyup="handleSearch(event)">
+        <div id="results"></div>
     </div>
 
     
@@ -76,7 +76,7 @@
 
 
         function handleSearch(e) {
-            document.querySelector('#resulets').innerHTML = ``;
+            document.querySelector('#results').innerHTML = ``;
             let resultSearchTerm = [];
             let searchTerm = e.target.value;
             let regSearchTerm = new RegExp(searchTerm, 'g');
@@ -89,7 +89,7 @@
 
             resultSearchTerm = resultSearchTerm.sort((a, b) => a.Year - b.Year);
             resultSearchTerm.forEach(book => {
-                document.querySelector('#resulets').innerHTML += `<p>${book.BookName}</p>`;
+                document.querySelector('#results').innerHTML += `<p>${book.BookName}</p>`;
 
             })
 
