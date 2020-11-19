@@ -44,7 +44,7 @@
                 if (regSearchTerm.test()) {
 
 
-                } else if (regSearchTerm.test(books[i].name,books[i].year)) {
+                } else if (regSearchTerm.test(books[i].name)) {
                     searchedBooks.push(books[i].name)
                     myDiv.style.display = "flex"
                     myDiv.innerHTML += `<a href="https://www.google.com/search?q=${searchedBooks[i]}" id='test'>${searchedBooks[i]}  <span>${books[i].year}</span></a>`
