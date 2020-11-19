@@ -63,9 +63,9 @@
             let searchTerm = e.target.value;
             let regSearchTerm = new RegExp(searchTerm, 'g');
             books.forEach(element => {
-
-                if (regSearchTerm.test(e.name)) {
-                    resultSearchTerm.push(e)
+                console.log(searchTerm, element.name)
+                if (regSearchTerm.test(element.name)) {
+                    resultSearchTerm.push(element)
                 }
                 console.log(resulets);
                 console.log(books);
