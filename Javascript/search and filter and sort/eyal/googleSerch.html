@@ -7,7 +7,11 @@
     <title>Document</title>
 </head>
 <style>
+    body{
+      background-color: antiquewhite;  
+    }
     #searchContainer {
+        background-color:white;
         border-radius: 10px;
         width: 30%;
         height: 400px;
@@ -15,6 +19,7 @@
         margin: auto;
         position: relative;
         top: 100px;
+        box-shadow: 2PX 2PX 2PX black;
 
     }
 
@@ -22,29 +27,34 @@
         margin-left: 35%;
     }
 
-    #serchBox {
-        width: 400px;
+    #searchBox {
+        width: 80%;
         height: 20px;
-        margin-left: 15%;
+        margin-left: 10%;
+        margin-right: 10%;
         padding: 15px;
+        box-shadow: 2PX 2PX 2PX black;
     }
 
-    #resulets {
+    #results {
         display: flex;
+        width: 78%;
         flex-direction: column;
-        margin-left: 15%;
+        margin-left: 10%;
+        margin-right: 10%;
         background-color: white;
         border: 1px solid black;
-        width: 400px;
         border-radius: 0 0 10px 10px;
+        padding-left: 1%;
+        box-shadow: 2PX 2PX 2PX black;
     }
 </style>
 
 <body>
     <div id="searchContainer">
         <h1>BOOKLE</h1>
-        <input type="search" name="serchBox" id="serchBox" onkeyup="handleSearch(event)">
-        <div id="resulets"></div>
+        <input type="search" name="searchBox" id="searchBox" onkeyup="handleSearch(event)">
+        <div id="results"></div>
     </div>
 
 
@@ -53,6 +63,7 @@
     <script>
         const booksArray =
             [{ BookName: "herry potter 4", Year: 2014 },
+<<<<<<< HEAD
             { BookName: "herry potter 2", Year: "1999" },
             { BookName: "herry potter 3", Year: "2001" },
             { BookName: "herry potter 1", Year: "1978" },
@@ -63,21 +74,38 @@
             { BookName: "mishopn black", Year: "4" },
             { BookName: "code black", Year: "5" },
             { BookName: "imposibole rooms", Year: "6" }
+=======
+            { BookName: "herry potter 2", Year: 1999 },
+            { BookName: "herry potter 3", Year: 2001 },
+            { BookName: "herry potter 1", Year: 1978 },
+            { BookName: "herry potter 119", Year: 2200 },
+            { BookName: "imposibole mishopn", Year: 1 },
+            { BookName: "imposibole brack", Year: 2 },
+            { BookName: "imposibole cack", Year: 3 },
+            { BookName: "mishopn black", Year: 4 },
+            { BookName: "code black", Year: 5 },
+            { BookName: "imposibole rooms", Year: 6 }
+>>>>>>> master
             ];
         /* let searchTerm2 = new RegExp(booksArray,'g'); */
 
 
         function handleSearch(e) {
-            document.querySelector('#resulets').innerHTML = ``;
+            document.querySelector('#results').innerHTML = ``;
             let resultSearchTerm = [];
             let searchTerm = e.target.value;
             let regSearchTerm = new RegExp(searchTerm, 'g');
 
+<<<<<<< HEAD
             booksArray.forEach(element => {
                 console.log(element.BookName, searchTerm)
                 if (regSearchTerm.test(element.BookName)) {
                     resultSearchTerm.push(element);
                    
+=======
+                if (regSearchTerm.test(element.BookName)) {
+                    resultSearchTerm.push(element)
+>>>>>>> master
                 }
             })
 
@@ -85,7 +113,11 @@
 
             resultSearchTerm = resultSearchTerm.sort((a, b) => a.Year - b.Year);
             resultSearchTerm.forEach(book => {
+<<<<<<< HEAD
                 document.querySelector('#resulets').innerHTML += `<p>${book.BookName}, ${book.Year}</p>`;
+=======
+                document.querySelector('#results').innerHTML += `<p>${book.BookName}</p>`;
+>>>>>>> master
 
             })
 
