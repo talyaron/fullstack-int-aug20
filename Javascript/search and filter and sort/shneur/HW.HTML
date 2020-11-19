@@ -15,7 +15,7 @@
         margin-left: 20vw;
     }
 
-    .singelResult {
+    .oneResult {
         border-radius: 10px;
         margin: 5px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,7 +23,7 @@
         color: blue;
     }
 
-    .singelResult:hover {
+    .oneResult:hover {
         background-color: rgb(247, 255, 204);
     }
 
@@ -44,7 +44,7 @@
 <body>
     <input type="text" onkeyup="handleSearch(event)">
     <div id="result">
-        <div id="singelResult"></div>
+        <div id="oneResult"></div>
     </div>
 
     <script>
@@ -63,20 +63,35 @@
             {
                 title: "projector",
                 price: 300
+            },
+            {
+                title: "paojector",
+                price: 300
+            },
+            {
+                title: "ptojector",
+                price: 300
             }
+            
         ]
 
         let result = document.getElementById("result");
+        myGagets.sort((a, b) =>  a.title - b.title);
+
 
         function handleSearch(e) {
             let search = e.target.value;
             let testSearch = new RegExp(search, 'g');
             let html = "";
             myGagets.forEach(element => {
+
                 if (testSearch.test(element.title)) {
-                    html += `<div class = "singelResult">${element.title}</div>`
+
+                    html += `<div class = "oneResult">${element.title}</div>`
                 }
             })
+            myGagets.sort((a, b) =>  a.title - b.title);
+
             result.innerHTML = html;
         }
     </script>
