@@ -10,8 +10,8 @@
     name:'i5-10500k',
     store:'intel store',
     isdn:'123hnbjh123'
-}]
-[{
+},
+{
     category:'computers',
     price:'9200',
     inStoreSince:'2018-11-15',
@@ -23,8 +23,8 @@
     name:'i5-9600k',
     store:'intel store',
     isdn:'123hnbjh123'
-}]
-[{
+},
+{
     category:'computers',
     price:'2500',
     inStoreSince:'2020-11-15',
