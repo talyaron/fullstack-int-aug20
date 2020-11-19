@@ -49,9 +49,8 @@
             
             for (i = 0; i < books.length; i++) {
 
-                let regSearchTerm = new RegExp(searchTerm, 'gi');
+                let regSearchTerm = new RegExp(searchTerm, 'g');
                 if (regSearchTerm.test()) {
-
 
                 } else if (regSearchTerm.test(books[i].name)) {
                     searchedBooks.push(books[i].name)
@@ -64,8 +63,7 @@
                     myDiv.innerHTML += `<a href="https://www.google.com/search?q=${searchedMovies[i]}" id='test'>${searchedMovies[i]}  <span>${movies[i].year}</span></a>`
                 }
                 else {
-                    myDiv.style.display = "none"
-                    myDiv.innerHTML = ""
+                    myDiv.innerHTML += ""
                 }
             }
             
