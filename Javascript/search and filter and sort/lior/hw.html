@@ -64,16 +64,17 @@
             let regSearchTerm = new RegExp(searchTerm, 'g');
             books.forEach(element => {
 
-                if (regSearchTerm.exec(element.Name)) {
-                    resultSearchTerm.push(element)
+                if (regSearchTerm.exec(e.name)) {
+                    resultSearchTerm.push(e)
                 }
                 console.log(resulets);
                 console.log(books);
             })
 
-            resultSearchTerm = resultSearchTerm.sort((a, b) => a.Year - b.Year);
-            resultSearchTerm.forEach(book => {
-            document.querySelector('#resulets').innerHTML += `<p>${book.Name}</p>`;
+            resultSearchTerm = resultSearchTerm.sort((a, b) => a.year - b.year);
+            resultSearchTerm.forEach(books => {
+            document.querySelector('#resulets').innerHTML += `<p>${books.name}</p>`;
+            console.log(books.name)
 
             })
 
