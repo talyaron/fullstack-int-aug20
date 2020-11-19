@@ -1,0 +1,66 @@
+.wrapper {
+    width: 50%;
+    height: 50vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 200px;
+
+    img {
+        width: 31%;
+        margin-bottom: 2%;
+        align-self: center;
+    }
+
+    input {
+        width: 65%;
+        align-self: center;
+        height: 5.4%;
+        border: 1px solid lightgray;
+        border-radius: 50px;
+        outline: 0;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    input:hover {
+        box-shadow: 1px 1px 1px 1px lightgray;
+    }
+
+    #searchedBooks {
+        display: none;
+        flex-direction: column;
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 2% auto 0 auto;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 5px 5px 5px 5px lightgray;
+        border-radius: 30px;
+        padding: 10px;
+
+        #test:hover {
+            background-color: rgb(233, 233, 233);
+        }
+        a:link {
+            text-decoration: none;
+          }
+          a:visited {
+            text-decoration: none;
+          }
+        #test {
+            color: black;
+            width: 95%;
+            border-radius: 10px;
+            padding: 5px;
+            margin: auto;
+            text-decoration: none;
+
+            span {
+                float: right;
+            }
+        }
+    }
+}
