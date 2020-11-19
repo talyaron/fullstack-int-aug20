@@ -1,15 +1,21 @@
 body {
   text-align: center;
-  background-color: teal;
+  background-color: #f5ba1c;
 }
 body input {
   margin-top: 100px;
   width: 300px;
   height: 30px;
+  border-radius: 10px;
+  border: gray 1px solid;
 }
 body #filteredBooks {
   color: black;
   background-color: white;
   width: 300px;
   margin: auto;
+}
+body img {
+  width: 500px;
+  border-radius: 50%;
 }
