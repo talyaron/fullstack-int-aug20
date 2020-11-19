@@ -33,10 +33,14 @@ let booksArray = [
     }
 ]
 
+booksArray.sort((a,b) => a.year - b.year);
+
 const filteredBooks = [];
+
 
 const myInput = document.querySelector("#myInput");
 let myDiv = document.querySelector("#filteredBooks");
+
 
 function handleKeyUp(e){
     const searchTerm = e.target.value;
@@ -47,7 +51,6 @@ function handleKeyUp(e){
 
         if(regSearchTerm.test(booksArray[i].name)){
             filteredBooks.push(booksArray[i]);
-            // filteredBooks.sort((a,b) => a.year - b.year);
             myDiv.innerHTML += `<div>${filteredBooks[i].name}</div>`
         }
 
