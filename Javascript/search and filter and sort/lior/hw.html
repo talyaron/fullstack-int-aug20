@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +36,6 @@
         width: 400px;
         border-radius: 0 0 10px 10px;
     }
-
 </style>
 
 <body>
@@ -48,24 +48,24 @@
 
     <script>
 
-        const books = [{name:"Where's Spot?",year:1980},
-        {name:"A Promised Land",year:2020},
-        {name:"Heroes' Feast (Dungeons and Dragons) : The Official D and D Cookbook",year:1980},
-        {name:"Harry Potter and the Philosopher's Stone",year:1997},
-        {name:"1984",year:1949},
-        {name:"Ready Player one",year:2011},
-        {name:"the monk who sold his ferrari",year:1996}
-    ]
+        const books = [{ name: "Where's Spot?", year: 1980 },
+        { name: "A Promised Land", year: 2020 },
+        { name: "Heroes' Feast (Dungeons and Dragons) : The Official D and D Cookbook", year: 1980 },
+        { name: "Harry Potter and the Philosopher's Stone", year: 1997 },
+        { name: "1984", year: 1949 },
+        { name: "Ready Player one", year: 2011 },
+        { name: "the monk who sold his ferrari", year: 1996 }
+        ]
 
-    function handleSearch(e) {
+        function handleSearch(e) {
             document.querySelector('#resulets').innerHTML = ``;
             let resultSearchTerm = [];
             let searchTerm = e.target.value;
             let regSearchTerm = new RegExp(searchTerm, 'g');
             books.forEach(element => {
-
-                if (regSearchTerm.exec(e.name)) {
-                    resultSearchTerm.push(e)
+                console.log(searchTerm, element.name)
+                if (regSearchTerm.test(element.name)) {
+                    resultSearchTerm.push(element)
                 }
                 console.log(resulets);
                 console.log(books);
@@ -73,12 +73,13 @@
 
             resultSearchTerm = resultSearchTerm.sort((a, b) => a.year - b.year);
             resultSearchTerm.forEach(books => {
-            document.querySelector('#resulets').innerHTML += `<p>${books.name}</p>`;
-            console.log(books.name)
+                document.querySelector('#resulets').innerHTML += `<p>${books.name}</p>`;
+                console.log(books.name)
 
             })
 
         }
     </script>
 </body>
+
 </html>

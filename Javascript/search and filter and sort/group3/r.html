@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Javascript/search and filter and sort/group3/r.html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,4 +71,86 @@
   </script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="input">
+    <input type="text" onkeyup="handleKeyUp(event)">
+    <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+      </path>
+    </svg>
+  </div>
+
+  <div class="results"></div>
+  <script>
+
+
+    let books = [
+      { title: 'reem', year: 2000 },
+      { title: 'ream', year: 2020 },
+      { title: 'cherut', year: 1970 },
+      { title: 'room', year: 1980 },
+      { title: 'tal', year: 2010 },
+      { title: 'mordy', year: 2002 },
+      { title: 'shneur', year: 2008 },
+      { title: 'tal', year: 2010 },
+      { title: 'chel', year: 2002 },
+      { title: 'ofer', year: 2008 },
+      { title: 'zx', year: 2020 },
+      { title: 'ראם', year: 1980 },
+      { title: 'reem', year: 1980 },
+    ]
+
+
+    function handleKeyUp(e) {
+      let inputValue = e.target.value;
+      let searchTerm = new RegExp(inputValue, 'g');
+      let results = document.querySelector('.results');
+      let result = [];
+
+      if (e.which <= 90 && e.which >= 48 || e.which == 8)
+
+
+        books.forEach(book => {
+
+          if (searchTerm.test(book.title) == true) {
+            // console.log(book)
+            result.push(book);
+            console.log(result)
+          }
+
+          results.innerHTML = '';
+          for (i = 0; i < result.length; i++) {
+            // let row = `<p>${result[i].title}</p>`;
+            results.innerHTML += `<p>${result[i].title}  ${result[i].year}</p>`;
+            result.sort((a, b) => { if (a.title < b.title) return -1; })
+
+          }
+
+
+        })
+      if (inputValue == '') {
+        results.innerHTML = ``;
+      }
+
+
+    }
+
+
+
+  </script>
+</body>
+
+>>>>>>> master:Javascript/search and filter and sort/group3/homeWork.html
 </html>
