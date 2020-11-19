@@ -27,7 +27,7 @@ const products=[
     },
     {
         category:'electricity',
-        price:'Number',
+        price:850,
         inStoreSince:2019-02-22,
         brand:'Electra',
         model:'ELECTRA 5100',
