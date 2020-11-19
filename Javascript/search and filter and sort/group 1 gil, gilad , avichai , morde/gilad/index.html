@@ -7,49 +7,39 @@
 </head>
 <body>
     <style>
-        :hover>#root{
-           color: blue;
-            
-        }
         #root{
-            margin-top: 1%;
+   
         }
-        .insert{
+        #insert{
+            background-color: aqua;
+            margin-top:1px;
+            width: 15%;
             
-            border: solid 1px black;
-            width: 16%;
-            
-        }
-    </style>
-    <input type="text"  id="search" placeholder="search" onkeyup="handlekeyup(event)">
-    <div id="root"></div>
-
-    <script>
-        const books = [{name:'doors of stone', year:2022},{name:'wise mans fears', year:2010}, {name:'the name of the wind', year:2006}]
-        function handlekeyup(e)
-        { 
-        const searchArr = [];
-        const search = e.target.value;
-        document.getElementById('root').innerHTML = ''
-        regSearch = new RegExp(search,'g');
-          for(i=0; i<books.length; i++)
-          {
-            if (regSearch.test(books[i].name))
-            {
-                searchArr.push(books[i].name)
-            }
-          }
-          for(i=0; i<searchArr.length; i++)
-             {
-                 document.getElementById('root').innerHTML+= `<div class="insert">${searchArr[i]}</div>`
-
-             }
-             if(e.target.value==''){
-                document.getElementById('root').innerHTML = '';}
-               
         
+    </style>
+ 
+    <input type="text" name="" id="search" placeholder="search" onkeyup="handlekeyup(event)">
+    <div id="root"></div>
+    
+    
+    <script>
+        let books = [{name:'nameoftheWind',year:2006},{name:'wisemansfear',year:2010},{name:'doorsofstone',year:'NA'}]
+        function handlekeyup(e){
+            e.target.value = '';
+            let search = e.target.value
+            for (i=0;i<books.length;i++){
+                let regSearch = new RegExp(search,'g')
+                if(regSearch.test(books[i].name))
+               {console.log(books[i])}
+               document.getElementById('root').innerHTML += `<div id="insert">${books[i].name} </div> `
+               
+                
+
+            }
+
         }
-       
+
+
     </script>
 </body>
 </html>

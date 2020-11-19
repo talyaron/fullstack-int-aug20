@@ -101,20 +101,9 @@
             let regSearchTerm = new RegExp(searchTerm, 'g');
             booksArray.forEach(element => {
 
-<<<<<<< Updated upstream
                 if (regSearchTerm.exec(element.bookName)) {
-=======
-<<<<<<< Updated upstream
-                if (regSearchTerm.exec(element.BookName)) {
->>>>>>> Stashed changes
                     resultSearchTerm.push(element)
                 }
-=======
-                if(regSearchTerm.test(element.BookName)){
-                resultSearchTerm.push(element)
-                console.log(resultSearchTerm)
-            }   
->>>>>>> Stashed changes
             })
 
             resultSearchTerm = resultSearchTerm.sort((a, b) => a.Year - b.Year);
