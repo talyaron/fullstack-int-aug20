@@ -74,6 +74,18 @@
         }, {
             name: 'זיכרון ילדות יפה במיוחד',
             year: 2017
+        }, {
+            name: 'סוד הזיכרון המצוין',
+            year: 1999
+        }, {
+            name: 'סוד המוח היהודי',
+            year: 2002
+        }, {
+            name: 'חמש מתנות למוח',
+            year: 2013
+        }, {
+            name: 'האיש העשיר בירושלים',
+            year: 2004
         }]
 
         function resetResults() {
@@ -96,6 +108,8 @@
                 books.forEach(obj => {
                     if (regSearchTerm.test(obj.name)) {
                         results.push(obj);
+                    } else if (regSearchTerm.test(obj.year)){
+                        results.push(obj);
                     }
                 });
 
@@ -109,6 +123,7 @@
                 resetResults();
             }
         }
+
     </script>
 </body>
 
