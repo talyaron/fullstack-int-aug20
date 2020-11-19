@@ -28,6 +28,12 @@
         button {
             padding: 1%;
         }
+        
+        .paragraff {
+            border: 1px solid black;
+            border-radius: 30px;
+            padding: 3%;
+        }
     </style>
 </head>
 
@@ -36,8 +42,13 @@
         <div class="searchBox">
             <div class="searchBox__search">
                 <p>Lets see what you need</p>
-                <input type="text" placeholder="What you searching for?" onkeyup='handleSearch(event)'>
+                <input type="text" id="search" placeholder="What you searching for?" onkeyup='handleSearch(event)'>
                 <button type="button">Search</button>
+
+
+                <div id="results">
+
+                </div>
             </div>
         </div>
     </div>
@@ -63,18 +74,56 @@
         }, {
             name: 'זיכרון ילדות יפה במיוחד',
             year: 2017
+        }, {
+            name: 'סוד הזיכרון המצוין',
+            year: 1999
+        }, {
+            name: 'סוד המוח היהודי',
+            year: 2002
+        }, {
+            name: 'חמש מתנות למוח',
+            year: 2013
+        }, {
+            name: 'האיש העשיר בירושלים',
+            year: 2004
         }]
 
-        function handleSearch(e) {
-            let searchTerm = e.target.value
-            let regSearchTerm = new RegExp(searchTerm, 'g');
+        function resetResults() {
+            document.getElementById('results').innerHTML = ''; // reset
+        }
 
-            if (regSearchTerm.test(name)) {
-                console.log('term existe')
+        // function searchFor(name) {
+        //     document.getElementById('search').innerHTML = name; // reset
+        // }
+
+        function handleSearch(e) {
+            let searchTerm = e.target.value;
+
+            if (searchTerm.length > 0) {
+                // if input text length is bigger than 0
+
+                let regSearchTerm = new RegExp(searchTerm, 'g');
+                let results = [];
+
+                books.forEach(obj => {
+                    if (regSearchTerm.test(obj.name)) {
+                        results.push(obj);
+                    } else if (regSearchTerm.test(obj.year)){
+                        results.push(obj);
+                    }
+                });
+
+                resetResults();
+
+                results.forEach(obj => {
+                    document.getElementById('results').innerHTML += `<p class="paragraff"> ${obj.name} : ${obj.year} </p>`
+                })
+
             } else {
-                console.log("term dosn't exist")
+                resetResults();
             }
         }
+
     </script>
 </body>
 
