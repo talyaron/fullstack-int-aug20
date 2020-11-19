@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <title>Google</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        <input type='text' onkeyup="handleKeyUp(event)">
+        <div id='searchedBooks'></div>
+    </div>
+
+    <script>
+        const books = [
+            { name: 'book', year: 2020 }, { name: 'book2', year: 1994 }, { name: 'book3', year: 2001 }, { name: 'book4', year: 2012 }, { name: 'book5', year: 2006 }
+        ]
+        const movies = [
+            { name: 'movie', year: 2040 }, { name: 'movie11', year: 1911 }, { name: 'movie2', year: 1940 }, { name: 'movie5', year: 1980 }, { name: 'movie40', year: 2006 }
+        ]
+
+        books.sort((a, b) => a.year - b.year)
+        movies.sort((a, b) => a.year - b.year)
+
+
+        const searchedBooks = []
+        const searchedMovies = []
+        let myDiv = document.querySelector('#searchedBooks')
+
+
+        function handleKeyUp(e) {
+            let searchTerm = e.target.value
+
+            myDiv.style.display = "none"
+            myDiv.innerHTML = ""
+
+            for (i = 0; i < books.length; i++) {
+
+                let regSearchTerm = new RegExp(searchTerm, 'gi');
+                if (regSearchTerm.test()) {
+
+                } else if (regSearchTerm.test(books[i].name)) {
+                    searchedBooks.push(books[i].name)
+                    myDiv.style.display = "flex"
+                    myDiv.innerHTML += `<a href="https://www.google.com/search?q=${searchedBooks[i]}" id='test'>${searchedBooks[i]}  <span>${books[i].year}</span></a>`
+                } else if
+                    (regSearchTerm.test(movies[i].name)) {
+                    searchedMovies.push(movies[i].name)
+                    myDiv.style.display = "flex"
+                    myDiv.innerHTML += `<a href="https://www.google.com/search?q=${searchedMovies[i]}" id='test'>${searchedMovies[i]}  <span>${movies[i].year}</span></a>`
+                }
+                else {
+                    myDiv.style.display = "none"
+                    myDiv.innerHTML = ""
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

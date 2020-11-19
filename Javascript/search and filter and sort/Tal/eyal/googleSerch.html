@@ -101,7 +101,7 @@
             let regSearchTerm = new RegExp(searchTerm, 'g');
             booksArray.forEach(element => {
 
-                if (regSearchTerm.exec(element.BookName)) {
+                if (regSearchTerm.exec(element.bookName)) {
                     resultSearchTerm.push(element)
                 }
             })
