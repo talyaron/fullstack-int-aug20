@@ -1,0 +1,26 @@
+{
+  category:'fashion',
+  price:120,
+  inStoreSince:'2020-03-23',
+  brand:'vans',
+  model:'m',
+  recommendations:90,
+  image:'String',
+  description:'https://img.zap.co.il/pics/0/0/8/1/56721800b.gif',
+  name:'blue Tshirt',
+  store:'BikeCafe',
+  isdn:'cbkcbkw'
+},
+{
+  category:'fashion',
+  price:1189,
+  inStoreSince:'2020-07-27',
+  brand:'bose',
+  model:'Frames Alto',
+  recommendations:10,
+  image:'https://img.zap.co.il/pics/3/3/2/5/52765233b.gif',
+  description:"Unisex sunglasses",
+  name:'sunglasses',
+  store:'נbug',
+  isdn:'bdfbbd'
+},
