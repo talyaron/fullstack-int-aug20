@@ -1,6 +1,6 @@
 {
     category:'fashion',
-    price:50,
+    price:450,
     inStoreSince:"2020.07.10",
     brand:'nike',
     model:'total90',
