@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <form>
-        <input type='text' placeholder="חיפוש מוצר" />
+    <form onsubmit='handleSearch(event)'>
+        <input type='text' placeholder="חיפוש מוצר" name='search'/>
         <input type='submit' value="חיפוש" />
     </form>
     <div id="root"></div>
     
-    <script src="products.js"></script>
+    <script src="products.js"></script> 
     <script src="search.js"></script>
     <script src="createCategories.js"></script>
     <script src="sortProducts.js"></script>
