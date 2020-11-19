@@ -1,15 +1,15 @@
 const products=[
     {
-        category:'String',
-        price:'Number',
-        inStoreSince:'Number',
-        brand:'String',
-        model:'String',
-        recommendations:'Number',
+        category:'cars',
+        price:120000,
+        inStoreSince:'2020-01-23',
+        brand:'Hyundai',
+        model:'i10',
+        recommendations:20,
         image:'String',
-        description:"String",
-        name:'String',
-        store:'String',
-        isdn:'String'
+        description:"achala auto",
+        name:'i10',
+        store:'moshe and co.',
+        isdn:'drytertyertyerh'
     },
 ]

@@ -8,6 +8,6 @@
     image:'String',
     description:"achala auto",
     name:'i10',
-    store:'moshe ean co.',
+    store:'moshe and co.',
     isdn:'drytertyertyerh'
 },
