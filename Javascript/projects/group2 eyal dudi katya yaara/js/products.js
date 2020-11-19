@@ -15,7 +15,7 @@ const products = [
     {
         category: 'mobile',
         price: 5500,
-        inStoreSince: 2020 - 09 - 22,
+        inStoreSince: '2020-09-22',
         brand: 'Iphone',
         model: 'iPhone 12 Pro',
         recommendations: 85,
@@ -41,7 +41,7 @@ const products = [
     {
         category: 'electricity',
         price: 'Number',
-        inStoreSince: 2019 - 02 - 22,
+        inStoreSince: '2019-02-22',
         brand: 'Electra',
         model: 'ELECTRA 5100',
         recommendations: 92,
@@ -54,7 +54,7 @@ const products = [
     {
         category: 'fashion',
         price: 50,
-        inStoreSince: "2020.07.10",
+        inStoreSince: "2020-07-10",
         brand: 'nike',
         model: 'total90',
         recommendations: 40,
@@ -67,7 +67,7 @@ const products = [
     {
         category: 'cars',
         price: 140000,
-        inStoreSince: '2020.01.09',
+        inStoreSince: '2020-01-09',
         brand: 'hyundai',
         model: 'veloster',
         recommendations: 80,
@@ -80,7 +80,7 @@ const products = [
     {
         category: 'mobile',
         price: 1200,
-        inStoreSince: '2020.02.05',
+        inStoreSince: '2020-02-05',
         brand: 'google',
         model: 'pixel 5',
         recommendations: 30,
@@ -148,7 +148,7 @@ const products = [
         category: 'mobile',
         price: 3500,
         inStoreSince: '2020-01-23',
-        brand: 'appale',
+        brand: 'apple',
         model: 'iphone 11',
         recommendations: 35,
         image: 'data:image/jpeg;base64,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HKCJWEEc6+bnB3o40z2l68XKJ/ujuntlF46H7xnxT2a78s9k66Pmg7axeNi+8Z8U9nvfJPY12/mhHbaLxsX3jPio9nvfJPY12vmg7bReOi+8Z8VHs975J7Gu180dztrF46L7xnxT2e98s9k67XWO6RdOLx0X3jPip2F75J7Sa7fWO6e2UPjofvGfFPZ7vyz2k12+sd2Nbrv2SFhfLaIWgCvftc48TWipJ4gtLeBvXJypontkzrv2qIzmqGgXuWl91LuOtLWuETA1rQRUiFpGQ8bhUcsgX19ixGDwsW+M/wC5eFduba7q+H+n0jYYSyJjDna0YW1v+mq7rdOmiKejnqnOc19XQICAgICAgICAgICDBt1gwzhsOBIBSpFWvbwXD8d5c9/Dxd38JXorml57rPMMhiJ42PY5v9RBXmVYG5HCO37uiLtKnFy+Jl5o/wAyr7Fc+Wf0/wCp2tPVBhk8VLzM/MnsVzpP6G1p6seewPcMsUvMz8yrOAu9J/RO2p6tSvh3No7ZIZnWd7Znd/I3FDGccjC4VP8AMC066rtszibcZTTnDGrZ1b83j9x1niR638JyunbXP8c94U00/Mdx1niR679VTtbn+Oe8Gmn5juOs8UPXfqptrnyT3g009UjccZ4oc8w/3k21z5J7waaeqTuNM8U37Uv6yba5/jnvBpp6qe46zxQ9d+qm2ufJPeDTT1O44zxQ9d+qm1uf457waaep3HWeJHrv1U2tz/HPeDTT1XItxphI+bDRrGET/VMQPslNrdnhR3lGVPV0K8+8qzXOZgxMANcInvi5/Cc6nyjnpkAFcgU02qpq11znP6QTVGWVLaFuoICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg//Z',
@@ -250,10 +250,10 @@ const products = [
         isdn: 'ah sheli bahsheli'
     },
     {
-        category: 'Fasion',
+        category: 'Fashion',
         price: 32,
         inStoreSince: '7-2-92',
-        brand: 'gachhi',
+        brand: 'galcha',
         model: 'pants',
         recommendations: 0912,
         image: "https://cdn1.jolicloset.com/imgr/full/2019/08/140404-1/orange-silk-gucci-pants.jpg",
@@ -263,7 +263,7 @@ const products = [
         isdn: 'ah sheli bahsheli'
     },
     {
-        category: 'Fasion',
+        category: 'Fashion',
         price: 69420,
         inStoreSince: '7-2-52',
         brand: 'shalom',
@@ -276,7 +276,7 @@ const products = [
         isdn: 'ah sheli bahsheli'
     },
     {
-        category: 'earphones',
+        category: 'mobile',
         price: 526,
         inStoreSince: '2020-01-01',
         brand: 'Apple',
@@ -289,7 +289,7 @@ const products = [
         isdn: 'zxmvbc869xcv'
     },
     {
-        category: 'earphones',
+        category: 'mobile',
         price: 540,
         inStoreSince: '2020-05-01',
         brand: 'Apple',
@@ -302,7 +302,7 @@ const products = [
         isdn: 'dh34ycxbxb'
     },
     {
-        category: 'earphones',
+        category: 'mobile',
         price: 575,
         inStoreSince: '2020-01-01',
         brand: 'Apple',
@@ -316,7 +316,7 @@ const products = [
     },
 
     {
-        category: 'Electric explains',
+        category: 'electricity',
         price: 375,
         inStoreSince: '2020-01-03',
         brand: 'Samsung',
@@ -329,7 +329,7 @@ const products = [
         isdn: 'zxmvbc8639xcv'
     },
     {
-        category: 'Electric explains',
+        category: 'electricity',
         price: 428,
         inStoreSince: '2019-01-01',
         brand: 'Samsung',
@@ -342,7 +342,7 @@ const products = [
         isdn: 'zxmvbc8629xcv'
     },
     {
-        category: 'Electric explains',
+        category: 'electricity',
         price: 429,
         inStoreSince: '2020-04-01',
         brand: 'Samsung',
