@@ -16,6 +16,7 @@ function searchProducts(searchTerm) {
   products.forEach(function (product) {
     if (regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model)) {
       results.push(product);
+      console.log(results);
     }
   });
   return results;
