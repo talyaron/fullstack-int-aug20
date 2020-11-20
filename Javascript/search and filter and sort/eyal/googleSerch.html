@@ -27,7 +27,7 @@
         margin-left: 35%;
     }
 
-    #serchBox {
+    #searchBox {
         width: 80%;
         height: 20px;
         margin-left: 10%;
@@ -36,7 +36,7 @@
         box-shadow: 2PX 2PX 2PX black;
     }
 
-    #resulets {
+    #results {
         display: flex;
         width: 78%;
         flex-direction: column;
@@ -53,14 +53,17 @@
 <body>
     <div id="searchContainer">
         <h1>BOOKLE</h1>
-        <input type="search" name="serchBox" id="serchBox" onkeyup="handleSearch(event)">
-        <div id="resulets"></div>
+        <input type="search" name="searchBox" id="searchBox" onkeyup="handleSearch(event)">
+        <div id="results"></div>
     </div>
 
-    
+
+
+
     <script>
         const booksArray =
             [{ BookName: "herry potter 4", Year: 2014 },
+
             { BookName: "herry potter 2", Year: 1999 },
             { BookName: "herry potter 3", Year: 2001 },
             { BookName: "herry potter 1", Year: 1978 },
@@ -71,25 +74,33 @@
             { BookName: "mishopn black", Year: 4 },
             { BookName: "code black", Year: 5 },
             { BookName: "imposibole rooms", Year: 6 }
+
             ];
         /* let searchTerm2 = new RegExp(booksArray,'g'); */
 
 
         function handleSearch(e) {
-            document.querySelector('#resulets').innerHTML = ``;
+            document.querySelector('#results').innerHTML = ``;
             let resultSearchTerm = [];
             let searchTerm = e.target.value;
             let regSearchTerm = new RegExp(searchTerm, 'g');
-            booksArray.forEach(element => {
 
+
+            booksArray.forEach(element => {
+                console.log(element.BookName, searchTerm)
                 if (regSearchTerm.test(element.BookName)) {
                     resultSearchTerm.push(element)
+
                 }
             })
 
+            console.log(resultSearchTerm)
+
             resultSearchTerm = resultSearchTerm.sort((a, b) => a.Year - b.Year);
             resultSearchTerm.forEach(book => {
-                document.querySelector('#resulets').innerHTML += `<p>${book.BookName}</p>`;
+
+                document.querySelector('#results').innerHTML += `<p>${book.BookName}</p>`;
+
 
             })
 
