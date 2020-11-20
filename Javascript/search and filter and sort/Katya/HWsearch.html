@@ -106,12 +106,12 @@
                 let results = [];
 
                 books.forEach(obj => {
-                    if (regSearchTerm.test(obj.name)) {
+                    if (regSearchTerm.test(obj.name) || regSearchTerm.test(obj.year)) {
                         results.push(obj);
-                    } else if (regSearchTerm.test(obj.year)) {
-                        results.push(obj);
-                    }
+                    } 
                 });
+
+                console.log(results)
 
                 resetResults();
 
