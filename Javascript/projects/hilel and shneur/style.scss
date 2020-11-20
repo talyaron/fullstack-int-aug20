@@ -1,0 +1,92 @@
+body {
+    background-color: rgb(235, 235, 235);
+}
+
+.box {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+
+
+    .cotert {
+        background-color: rgb(105, 105, 105);
+        text-align: center;
+        border-radius: 10px 10px 10px 10px;
+
+        form {
+            position: relative;
+            width: 400px;
+            margin: auto;
+
+
+            input[type='text'] {
+                border-radius: 20px;
+                outline: none;
+                border: 0;
+                font-size: 25px;
+                text-align: center;
+                padding: 5px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                font-weight: 600;
+            }
+
+            button {
+                background: 0;
+                padding: 10px;
+                border: 0;
+                outline: none;
+                position: absolute;
+                right: 40px;
+                top: 8px;
+
+                img {
+                    width: 25px;
+                }
+            }
+        }
+    }
+
+    #root {
+        border: blanchedalmond solid 1px;
+
+
+        a {
+            text-decoration: none;
+            color: rgb(42, 42, 42);
+
+            .card {
+
+
+
+
+                p {
+                    background-color: white;
+                    padding: 20px 40px;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    margin: 5px;
+                    border-bottom: 10px;
+                    margin-top: 10px;
+                    box-shadow: 1px 1px 2px 3px rgba(128, 128, 128, 0.281);
+                    transition: all 250ms;
+
+
+
+                }
+
+                p:hover {
+                    background-color: rgba(93, 45, 0, 0.144);
+                }
+            }
+        }
+    }
+
+    .core {
+        display: none;
+        background-color: rgb(105, 105, 105);
+        height: 40px;
+        border-radius: 0px 0px 10px 10px;
+    }
+}
