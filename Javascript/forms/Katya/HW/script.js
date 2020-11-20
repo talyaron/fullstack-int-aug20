@@ -9,13 +9,18 @@ function colorChange(e) {
 
 function chosenDate(e) {
     const dateB = e.target.value;
-    document.getElementById('mainDateChosen').innerHTML = "Your birthday is " + `${dateB}`;
+    document.getElementById('mainDateChosen').innerHTML = `Your birthday is ${dateB}`;
 }
 
-function hobbyText(e) {
-    const textvalue = e.target.value;
-    document.getElementById('mainTextText').innerHTML = "Your hobbies is " + `${textvalue}`;
+function but() {
+    const x = document.getElementById('inp').value;
+    document.getElementById('mainTextText').innerHTML = "youre hobbies are " + x;
 }
+
+// function hobbyText(e) {
+//     const textvalue = e.target.value;
+//     document.getElementById('mainTextText').innerHTML = "Your hobbies is " + `${textvalue}`;
+// }
 
 function handleSub(e) {
     e.preventDefault();
@@ -33,7 +38,7 @@ function handleSub(e) {
 
 
 
-// function but() {
-//     const x = document.getElementById('inp').value;
-//     document.getElementById('mainTextText').innerHTML = "youre hobbies are " + x;
-// }
+function but() {
+    const x = document.getElementById('inp').value;
+    document.getElementById('mainTextText').innerText = "youre hobbies are " + x;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .searchBox {
+            width: 80%;
+            margin: auto;
+        }
+        
+        .searchBox__search {
+            margin: 5%;
+        }
+        
+        p {
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 60%;
+            padding: 1%;
+        }
+        
+        button {
+            padding: 1%;
+        }
+        
+        .paragraff {
+            border: 1px solid black;
+            border-radius: 30px;
+            padding: 3%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="searchBox">
+            <div class="searchBox__search">
+                <p>Lets see what you need</p>
+                <input type="text" id="search" placeholder="What you searching for?" onkeyup='handleSearch(event)'>
+                <button type="button">Search</button>
+
+
+                <div id="results">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const books = [{
+            name: ' שיחות על תורת המשחקים',
+            year: 2008
+        }, {
+            name: 'על הדברים החשובים באמת',
+            year: 2009
+        }, {
+            name: 'אינסוף - המסע שאינו נגמר',
+            year: 2010
+        }, {
+            name: 'קהלת - הפילוסוף המקראי',
+            year: 2011
+        }, {
+            name: 'אהבה זה כל הספר',
+            year: 2014
+        }, {
+            name: 'אני חושב משמע אני טועה',
+            year: 2015
+        }, {
+            name: 'זיכרון ילדות יפה במיוחד',
+            year: 2017
+        }, {
+            name: 'סוד הזיכרון המצוין',
+            year: 1999
+        }, {
+            name: 'סוד המוח היהודי',
+            year: 2002
+        }, {
+            name: 'חמש מתנות למוח',
+            year: 2013
+        }, {
+            name: 'האיש העשיר בירושלים',
+            year: 2004
+        }]
+
+        books.sort((a, b) => a.year - b.year)
+
+        function resetResults() {
+            document.getElementById('results').innerHTML = ''; // reset
+        }
+
+        function handleSearch(e) {
+            let searchTerm = e.target.value;
+
+            if (searchTerm.length > 0) {
+                // if input text length is bigger than 0
+
+                let regSearchTerm = new RegExp(searchTerm, 'g');
+                let results = [];
+
+                books.forEach(obj => {
+                    if (regSearchTerm.test(obj.name)) {
+                        results.push(obj);
+                    } else if (regSearchTerm.test(obj.year)) {
+                        results.push(obj);
+                    }
+                });
+
+                resetResults();
+
+                results.forEach(obj => {
+                    document.getElementById('results').innerHTML += `<p class="paragraff"> ${obj.name} : ${obj.year} </p>`
+                })
+
+            } else {
+                resetResults();
+            }
+        }
+    </script>
+</body>
+
+</html>

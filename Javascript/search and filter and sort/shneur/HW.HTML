@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #result {
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.584);
+        width: 50vw;
+        margin-left: 20vw;
+    }
+
+    .oneResult {
+        border-radius: 10px;
+        margin: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        color: blue;
+    }
+
+    .oneResult:hover {
+        background-color: rgb(247, 255, 204);
+    }
+
+    input {
+        margin-top: 20vw;
+        width: 50vw;
+        height: 30px;
+        position: relative;
+        margin-left: 20vw;
+        padding: 5px;
+        border-radius: 50px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.584);
+        border: none;
+        outline: none;
+    }
+</style>
+
+<body>
+    <input type="text" onkeyup="handleSearch(event)">
+    <div id="result">
+        <div id="oneResult"></div>
+    </div>
+
+    <script>
+        let myGagets = [{
+                title: "pc",
+                price: 700
+            },
+            {
+                title: "phone",
+                price: 360
+            },
+            {
+                title: "watch",
+                price: 30
+            },
+            {
+                title: "projector",
+                price: 300
+            },
+            {
+                title: "paojector",
+                price: 300
+            },
+            {
+                title: "ptojector",
+                price: 300
+            }
+            
+        ]
+
+        let result = document.getElementById("result");
+        myGagets.sort((a, b) =>  a.title - b.title);
+
+
+        function handleSearch(e) {
+            let search = e.target.value;
+            let testSearch = new RegExp(search, 'g');
+            let html = "";
+            myGagets.forEach(element => {
+
+                if (testSearch.test(element.title)) {
+<<<<<<< HEAD
+
+                    html += `<div class = "oneResult">${element.title}</div>`
+=======
+                    html += `<div class = "singelResult">${element.title}, ${element.price} NIS</div>`
+>>>>>>> master
+                }
+            })
+            myGagets.sort((a, b) =>  a.title - b.title);
+
+            result.innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" onkeyup="handleKeyUp(event)">
+  <div class="results"></div>
+  <script>
+
+
+    let books = [
+      { title: 'reem', year: 2000 },
+      { title: 'olga', year: 1990 },
+      { title: 'cherut', year: 1970 },
+      { title: 'avichai', year: 1980 },
+      { title: 'tal', year: 2010 },
+      { title: 'mordy', year: 2002 },
+      { title: 'shneur', year: 2008 },
+    ]
+
+
+    function handleKeyUp(e) {
+      let inputValue = e.target.value;
+      let searchTerm = new RegExp(inputValue, 'g');
+      let bookName = '';
+     
+
+      books.forEach(elm => {
+        let result = [];
+        let testTerm = searchTerm.test(elm.title)
+        if (testTerm == true) {
+
+          // bookName = elm.title
+          // document.querySelector('.results').innerHTML += `<p>${elm.title}</p>`;
+          result.push(elm);
+        
+                //  console.log(result);
+          // document.querySelector('.results').innerHTML += `<p>${result[0].title}</p>`;
+
+
+
+          // console.log(elm.title);
+          //  
+        }
+        document.querySelector('.results').innerHTML = '';
+        
+        for (i=0;i<result.length;i++){
+     
+        // console.log(result)
+        // console.log(result[i].title)
+        let row = `<p>${result[i].title}</p>`;
+        
+        document.querySelector('.results').innerHTML +=row;
+      }
+
+        // console.log(result);
+      })
+
+      
+          //  console.log(result);
+
+   
+
+      // result.forEach(book=>{
+      //   console.log(book.title)
+      //   document.querySelector('.results').innerHTML = `<p>${book.title}</p>`;
+      // })
+
+      
+    
+    }
+
+
+
+  </script>
+</body>
+
+</html>
