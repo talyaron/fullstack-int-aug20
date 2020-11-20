@@ -7,16 +7,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="dist/hw.css">
     <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;1,400;1,500&family=Rubik:ital,wght@0,500;0,600;1,400;1,500&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;1,400;1,500&family=Rubik:ital,wght@0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="searchBox">
-    <form onsubmit='handleSearch(event)'>
-        <input type='text' placeholder="חיפוש מוצר" name='search' value="cars"/>
-        <button type='submit'><img src="https://img.icons8.com/material-outlined/384/000000/search.png"/></button>
-    </form>
-</div>
+        <form onsubmit='handleSearch(event)'>
+            <input type='text' placeholder="חיפוש מוצר" name='search' value="cars" />
+            <button type='submit'><img src="https://img.icons8.com/material-outlined/384/000000/search.png" /></button>
+        </form>
+    </div>
     <div id="root"></div>
 
 
@@ -73,7 +74,19 @@
                 name: 'k30 ultra',
                 store: 'hemilton',
                 isdn: 'dr173rtyerh'
-            }
+            }, {
+                category: 'computers',
+                price: 5000,
+                inStoreSince: '2024-01-1',
+                brand: 'dell',
+                model: 'alfa',
+                recommendations: 50,
+                image: 'data:image/jpeg;base64,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',
+                description: " no tuch screen and pen include 2in1",
+                name: 'dell alfa nimi chromebook',
+                store: 'amazon',
+                isdn: 'dryte167rh'
+            },
         ]
 
         function handleSearch(e) {
@@ -102,17 +115,25 @@
 
             return results;
         }
+
+
         // תוצאות
         function renderSearchResults(results) {
-            const root = document.getElementById('root');
+            const root = document.getElementById('root').innerHTML = ""; 
+            /* INNER HTML משמש למחיקה של מה שהיה לפני זה*/
 
-            let html = '';
             results.forEach(i => {
-                html += `<div class="allresults"><p>Product name: ${i.name}</p>, Product Model: ${i.model}, Price: ${i.price}</div>`
+                document.getElementById('root').innerHTML +=
+                    `<div class="allresults"><div class="Product">
+                    Product name: ${i.name},
+                     Product Model: ${i.model},
+                     Price: ${i.price}
+                     </div></div>`
             })
-
-            root.innerHTML = html;
         }
+
+        // כפתור לחיצה על תוצאות הפניה למוצר
+   
     </script>
 </body>
 

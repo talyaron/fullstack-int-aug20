@@ -1,9 +1,6 @@
-html, body {
+body {
   margin: 0;
   padding: 0;
-}
-
-body {
   background-color: rgba(255, 255, 177, 0.63);
 }
 
@@ -14,7 +11,7 @@ body {
   margin: auto;
   border-radius: 20px;
 }
-.searchBox input[name=search] {
+.searchBox input {
   background: none;
   padding: 10px;
   text-align: center;
@@ -37,6 +34,7 @@ body {
 
 .allresults {
   border-radius: 10px;
+<<<<<<< HEAD
   border: 2px solid black;
   margin: 10px;
   width: 100%;
@@ -48,4 +46,22 @@ body {
   border-radius: 10px;
   font-size: 20px;
   margin-top: 0;
+=======
+  margin: auto;
+  width: 60vw;
+  background-color: white;
+  box-shadow: #a09f9f 12px 12px 12px;
+  transition: all 250ms;
+}
+.allresults :hover {
+  background-color: #80cbce;
+  transition: all 250ms;
+}
+.allresults .Product {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 40px;
+  width: 100%;
+  margin-top: 10px;
+>>>>>>> master
 }
