@@ -1,9 +1,49 @@
-body {
-  background-color: #8d8d20;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-p {
-  background-color: white;
+body {
+  background-color: rgba(255, 255, 177, 0.63);
+}
+
+.searchBox {
+  text-align: center;
+  background-color: blanchedalmond;
+  width: 300px;
+  margin: auto;
+  border-radius: 20px;
+}
+.searchBox input[name=search] {
+  background: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Rubik", sans-serif;
+  outline: none;
+  border: 0;
+}
+.searchBox button {
+  background: none;
+  font-family: "Rubik", sans-serif;
+  outline: none;
+  border: 0;
+}
+.searchBox button img {
+  width: 20px;
+}
+
+.allresults {
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 10px;
+  width: 100%;
+  min-width: 650px;
+}
+.allresults p {
+  background-color: rgba(103, 126, 0, 0.671);
   padding: 10px;
   border-radius: 10px;
+  font-size: 40px;
+  width: 100%;
 }

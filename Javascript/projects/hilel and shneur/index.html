@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="dist/hw.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;1,400;1,500&family=Rubik:ital,wght@0,500;0,600;1,400;1,500&display=swap"
+    rel="stylesheet">
 </head>
 <body>
+    <div class="searchBox">
     <form onsubmit='handleSearch(event)'>
-        <input type='text' placeholder="חיפוש מוצר" name='search' />
-        <input type='submit' value="חיפוש" />
+        <input type='text' placeholder="חיפוש מוצר" name='search' value="cars"/>
+        <button type='submit'><img src="https://img.icons8.com/material-outlined/384/000000/search.png"/></button>
     </form>
+</div>
     <div id="root"></div>
 
 
@@ -103,7 +108,7 @@
 
             let html = '';
             results.forEach(i => {
-                html += `<p>Product name: ${i.name}, Product Model: ${i.model}, Price: ${i.price}</p>`
+                html += `<div class="allresults"><p>Product name: ${i.name}</p>, Product Model: ${i.model}, Price: ${i.price}</div>`
             })
 
             root.innerHTML = html;
