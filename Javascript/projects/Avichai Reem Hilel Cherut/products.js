@@ -1,6 +1,6 @@
 const products = [
     {
-        category: 'cars',
+        category: 'Cars',
         price: 120000,
         inStoreSince: '2020-01-23',
         brand: 'Hyundai',
