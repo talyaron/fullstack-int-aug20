@@ -1,9 +1,87 @@
-body{
-    background-color: blue;
-}
 
+#form{
+    width: 30%;
+#SearchBar{
+    border-radius: 10px;
+    padding-left: 10px;
+    width: 80%;
+}
+#SearchButton{
+    border-radius: 20px; 
+    padding: 0px 20px 5px 20px; 
+}
+}
+#root{
+  
+    margin: auto;
+    width: 40%;
+    background-color: rgba(104, 101, 101, 0.356);
+    z-index: 2;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+   
 p{
+    margin: auto;
     background-color: white;
     padding: 10px;
     border-radius: 10px;
+    width: 97%;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 3px 3px 3px ;
+}
+
+}
+
+.Center {
+       
+    display: grid;
+    place-items: center;
+   
+}
+
+#BodyContainer{
+    position: fixed;
+    top: 13%;
+    left: 24%;
+    z-index: -1;
+    margin: auto;
+  /*   width: 75%; */
+    min-height: 800px;
+    background-color: #EFEFEF;
+   /*  display: grid; */
+    max-width: 1024px;
+    /* margin: 0 auto; */
+    display: flex;
+    flex-wrap: wrap;
+
+    .card{
+        margin: 0.5%;
+        flex-grow:1;
+        padding: .3rem;
+        box-shadow: 3px 3px 6px;
+
+        &:hover{
+            box-shadow: 1px 1px 1px;
+           
+        }
+
+        .card-img{
+            display: block;
+            min-width: 90%;
+            height: 16rem;
+            object-fit: cover; 
+            
+    }
+    .card-title{
+        background-color: darkcyan;
+        border-radius: 10px;
+        box-shadow: 3px 3px 6px;
+    }
+
+}
+
+
+
 }

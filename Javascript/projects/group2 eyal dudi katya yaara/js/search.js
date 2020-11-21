@@ -23,12 +23,14 @@ function searchProducts(searchTerm) {
 }
 
 function renderSearchResults(results){
+   
     const root=document.getElementById('root');
 
     let html = '';
     results.forEach(product=>{
+        console.log('results');
         html += `<p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</p>`
     })
-
+    root.style = "display:block"
     root.innerHTML = html;
 }
