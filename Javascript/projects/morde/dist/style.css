@@ -1,0 +1,205 @@
+body {
+  background-color: #f4f4f2;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+}
+body .searchBar {
+  width: 500px;
+  border-radius: 8px;
+  border: 1px solid;
+  height: 20px;
+}
+body .searchBar::placeholder {
+  text-align: center;
+}
+body .searchBtn {
+  width: 80px;
+  border: 1px solid black;
+  background-color: #fbf6f0;
+  border-radius: 8px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+body .searchBtn:hover {
+  animation: vibrate-1 0.3s linear infinite both;
+}
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+body #createdCategories {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 40px;
+}
+body #createdCategories .categoryTitle {
+  font-size: 20px;
+}
+body #createdCategories .categoryTitle:hover {
+  animation: bounce-top 0.9s both;
+}
+@-webkit-keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+    transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+    transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+    transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  25%, 55%, 75%, 87% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+body #createdCategories .categoryPic {
+  margin-top: 30px;
+  width: 350px;
+  border-radius: 50%;
+}
+body #createdCategories .productPic {
+  width: 400px;
+}
+body #searchResults {
+  border: 1px solid black;
+  width: 480px;
+  position: fixed;
+  left: 438px;
+  background-color: white;
+}
+body #searchResults .productFound:hover {
+  background-color: gainsboro;
+}
+body #createdCategoryPage .clickableName, body #sortedProducts .clickableName, body #filteredProducts .clickableName {
+  border-radius: 8px;
+  border: 1px solid;
+  width: 30%;
+  margin: auto;
+}
+body #createdCategoryPage .clickableName:hover, body #sortedProducts .clickableName:hover, body #filteredProducts .clickableName:hover {
+  animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate-reverse both;
+}
+@-webkit-keyframes flip-horizontal-bottom {
+  0% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+  }
+}
+body #createdCategoryPage p, body #sortedProducts p, body #filteredProducts p {
+  text-decoration: underline;
+}
+body #createdCategoryPage hr, body #sortedProducts hr, body #filteredProducts hr {
+  width: 30%;
+  border: 1px solid;
+}
+body #createdCategoryPage .buttonsClass, body #sortedProducts .buttonsClass, body #filteredProducts .buttonsClass {
+  margin-top: 30px;
+}
+body #createdCategoryPage .buttonsClass .btnClass, body #sortedProducts .buttonsClass .btnClass, body #filteredProducts .buttonsClass .btnClass {
+  background-color: #fbf6f0;
+  font-family: "Noto Sans JP", sans-serif;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+body #createdCategoryPage .buttonsClass .btnClass:hover, body #sortedProducts .buttonsClass .btnClass:hover, body #filteredProducts .buttonsClass .btnClass:hover {
+  animation: vibrate-1 0.3s linear infinite both;
+}
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+body #createdCategoryPage .productPic, body #sortedProducts .productPic, body #filteredProducts .productPic {
+  margin-top: 20px;
+  width: 120px;
+}
+body #createdProductPage p, body #createdCategories p {
+  text-decoration: underline;
+}
+body #createdProductPage .productPic, body #createdCategories .productPic {
+  margin-top: 30px;
+  width: 450px;
+}

@@ -1,0 +1,26 @@
+body {
+  background-color: blue;
+}
+
+p {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+form {
+  margin-left: 30%;
+  margin-top: 7%;
+  position: relative;
+}
+form input[type=text] {
+  height: 50px;
+  width: 70%;
+  font-size: 25px;
+  text-align: right;
+}
+form input[type=submit] {
+  height: 55px;
+  width: 10%;
+  font-size: 120%;
+}
