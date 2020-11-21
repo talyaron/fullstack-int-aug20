@@ -25,7 +25,16 @@ function renderSearchResults(results) {
   var root = document.getElementById('root');
   var html = '';
   results.forEach(function (product) {
-    html += "<div class=\"productList\"><img src=".concat(product.image, "><p class=\"productList__p\">Product name: <b>").concat(product.name, "</b>, Product Model: <b>").concat(product.model, "</b>, Price: <b>").concat(product.price, " </b></p></div>");
+    html += "<div class=\"productList\"><img src=".concat(product.image, "><p class=\"productList__p\">Product name: <b>").concat(product.name, "</b><br> Product Model: <b>").concat(product.model, "</b><br> Price: <b>").concat(product.price, " </b><br> Since: <b>").concat(product.inStoreSince, "</b> </p></div>");
   });
   root.innerHTML = html;
-}
+} // function sortByPrice(results){
+//     const root=document.getElementById('root');
+//     let html = '';
+//     results.sort((a,b) => a.price-b.price)
+//     console.log(results)
+// } 
+// function sortByPrice() {
+//     products.sort((a, b) => a.price - b.price)
+//     console.log(products)
+// }

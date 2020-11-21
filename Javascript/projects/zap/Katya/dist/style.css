@@ -65,15 +65,15 @@ a {
 .productList {
   border: 1px solid black;
   padding: 2%;
-  width: 80%;
-  margin: 0.5% 0 0.5% 8%;
+  width: 60%;
+  margin: 0.5% 0 0.5% 20%;
   height: 10vh;
   display: flex;
   flex-direction: row;
 }
 .productList__p {
   position: relative;
-  top: 1.5vh;
+  top: -1.5vh;
   left: 2vw;
 }
 
@@ -85,6 +85,7 @@ h2 {
 }
 
 img {
-  width: 10%;
+  width: 15%;
   height: 100%;
+  padding-left: 10%;
 }

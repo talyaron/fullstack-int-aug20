@@ -1,3 +1,4 @@
+
 function handleSearch(e) {
     e.preventDefault();
     
@@ -27,8 +28,20 @@ function renderSearchResults(results){
 
     let html = '';
     results.forEach(product=>{
-        html += `<div class="productList"><img src=${product.image}><p class="productList__p">Product name: <b>${product.name}</b>, Product Model: <b>${product.model}</b>, Price: <b>${product.price} </b></p></div>`
+        html += `<div class="productList"><img src=${product.image}><p class="productList__p">Product name: <b>${product.name}</b><br> Product Model: <b>${product.model}</b><br> Price: <b>${product.price} </b><br> Since: <b>${product.inStoreSince}</b> </p></div>`
     })
 
     root.innerHTML = html;
 }
+
+// function sortByPrice(results){
+//     const root=document.getElementById('root');
+
+//     let html = '';
+//     results.sort((a,b) => a.price-b.price)
+//     console.log(results)
+// } 
+// function sortByPrice() {
+//     products.sort((a, b) => a.price - b.price)
+//     console.log(products)
+// }
