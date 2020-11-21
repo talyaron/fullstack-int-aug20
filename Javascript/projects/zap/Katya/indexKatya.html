@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="mainLogo">SearchPage</div>
+        <div class="mainWelcome">Welcome to our page</div>
+
+        <form onsubmit='handleSearch(event)'>
+            <input type="text" placeholder="What you searching for?" name='search' class="input" />
+            <input type='submit' value="Search" />
+        </form>
+
+        <div class="mainMenu">
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Our product</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="product">
+        <div id="root"></div>
+        <h2>We have all what you need</h2>
+    </div>
+
+    <script src="productsKatya.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
