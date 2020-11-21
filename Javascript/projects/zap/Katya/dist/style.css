@@ -1,0 +1,91 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: #cecbcb;
+  position: relative;
+  height: 20vh;
+  margin: 0;
+  padding: 0;
+}
+.mainLogo {
+  background-color: white;
+  font-size: 1.5em;
+  text-align: center;
+  width: 8%;
+  padding: 0.5%;
+  position: relative;
+  top: 5.5vh;
+  left: 3vw;
+  border: 1px solid black;
+}
+.mainWelcome {
+  position: relative;
+  top: -2vh;
+  left: 20vw;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+form {
+  width: 90%;
+  position: relative;
+  top: -1vh;
+  left: 20vw;
+}
+
+.input {
+  width: 60%;
+}
+
+ul {
+  list-style: none;
+  margin-left: 60%;
+}
+
+li {
+  float: left;
+  padding: 0 5% 0 5%;
+  font-weight: bold;
+  color: #183857;
+}
+
+a {
+  text-decoration: none;
+}
+
+.product {
+  width: 80%;
+  margin: auto;
+  background-color: #e9e4e4;
+}
+.productList {
+  border: 1px solid black;
+  padding: 2%;
+  width: 60%;
+  margin: 0.5% 0 0.5% 20%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+}
+.productList__p {
+  position: relative;
+  top: -1.5vh;
+  left: 2vw;
+}
+
+h2 {
+  color: #ff6600;
+  text-shadow: 0px 0px 5px #efff63;
+  text-align: center;
+  position: relative;
+}
+
+img {
+  width: 15%;
+  height: 100%;
+  padding-left: 10%;
+}

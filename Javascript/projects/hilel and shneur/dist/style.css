@@ -1,0 +1,70 @@
+body {
+  background-color: #ebebeb;
+}
+
+.box {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Open Sans", sans-serif;
+}
+.box .cotert {
+  background-color: dimgray;
+  text-align: center;
+  border-radius: 10px 10px 10px 10px;
+}
+.box .cotert form {
+  position: relative;
+  width: 400px;
+  margin: auto;
+}
+.box .cotert form input[type=text] {
+  border-radius: 20px;
+  outline: none;
+  border: 0;
+  font-size: 25px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.box .cotert form button {
+  background: 0;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  position: absolute;
+  right: 40px;
+  top: 8px;
+}
+.box .cotert form button img {
+  width: 25px;
+}
+.box #root {
+  border: blanchedalmond solid 1px;
+}
+.box #root a {
+  text-decoration: none;
+  color: #2a2a2a;
+}
+.box #root a .card p {
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin: 5px;
+  border-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: 1px 1px 2px 3px rgba(128, 128, 128, 0.281);
+  transition: all 250ms;
+}
+.box #root a .card p:hover {
+  background-color: rgba(93, 45, 0, 0.144);
+}
+.box .core {
+  display: none;
+  background-color: dimgray;
+  height: 40px;
+  border-radius: 0px 0px 10px 10px;
+}

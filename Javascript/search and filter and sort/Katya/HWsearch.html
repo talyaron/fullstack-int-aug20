@@ -94,8 +94,6 @@
             document.getElementById('results').innerHTML = ''; // reset
         }
 
-
-
         function handleSearch(e) {
             let searchTerm = e.target.value;
 
@@ -106,12 +104,12 @@
                 let results = [];
 
                 books.forEach(obj => {
-                    if (regSearchTerm.test(obj.name)) {
+                    if (regSearchTerm.test(obj.name) || regSearchTerm.test(obj.year)) {
                         results.push(obj);
-                    } else if (regSearchTerm.test(obj.year)) {
-                        results.push(obj);
-                    }
+                    } 
                 });
+
+                console.log(results)
 
                 resetResults();
 
