@@ -14,11 +14,11 @@ function searchProducts(searchTerm) {
     const regSearch = new RegExp(searchTerm, 'g')
     products.forEach(product => {
       if( regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model) ){
-        results.push(product);
-      } 
-    })
+        results.push(product)
+      }
 
-    
+     
+    })
     return results;
 }
 
