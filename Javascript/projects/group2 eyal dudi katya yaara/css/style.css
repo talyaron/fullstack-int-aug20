@@ -41,21 +41,17 @@
   top: 13%;
   left: 24%;
   z-index: -1;
-  margin: auto;
-  /*   width: 75%; */
   min-height: 800px;
   background-color: #EFEFEF;
-  /*  display: grid; */
   max-width: 1024px;
-  /* margin: 0 auto; */
   display: flex;
   flex-wrap: wrap;
 }
 #BodyContainer .card {
-  margin: 0.5%;
+  margin: 0.7%;
   flex-grow: 1;
   padding: 0.3rem;
-  box-shadow: 3px 3px 6px;
+  box-shadow: 8px 8px 8px 2px rgba(0, 0, 0, 0.68);
 }
 #BodyContainer .card:hover {
   box-shadow: 1px 1px 1px;
