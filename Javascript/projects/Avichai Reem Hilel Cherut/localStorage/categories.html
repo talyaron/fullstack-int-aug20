@@ -55,7 +55,7 @@
           currentCategory.push(product);
 
 
-          root2.innerHTML += `<p>Product category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}</p><a>`
+          root2.innerHTML += `<p class='option'>Product category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}</p><a>`
 
 
           if (stam.indexOf(product.brand) == -1) {
@@ -78,13 +78,21 @@
   currentCategory.forEach(product =>{
       
       if(chosenFilter == product.brand){ 
-          root2.innerHTML += `<p>Product brand: ${product.brand}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
+          root2.innerHTML += `<p class='option'>Product brand: ${product.brand}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
        
           // filterButtons.innerHTML += `<button >${product.brand}</button>`;
       }
   })
 
 });
+
+    // var options = document.getElementsByTagName("P");
+    let options = (document.querySelectorAll(".option"))
+    options.forEach(option =>{
+      option.addEventListener('click', e =>{
+        console.log(e)
+      })
+    })
 
     
 
