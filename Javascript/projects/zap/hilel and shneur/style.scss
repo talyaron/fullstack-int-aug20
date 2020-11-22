@@ -20,7 +20,7 @@ body {
             margin: auto;
 
 
-            input[type='text'] {
+            input {
                 border-radius: 20px;
                 outline: none;
                 border: 0;
@@ -85,7 +85,7 @@ body {
 
     .core {
         display: none;
-        background-color: rgb(105, 105, 105);
+        background-color: rgb(230, 0, 0);
         height: 40px;
         border-radius: 0px 0px 10px 10px;
     }

@@ -3,7 +3,7 @@ function handleSearch(e) {
 
     const searchTerm = e.target.children.search.value;
 
-    if (searchTerm.length > 2) {
+    if (searchTerm.length > 1) {
         const results = searchProducts(searchTerm);
         renderSearchResults(results);
 

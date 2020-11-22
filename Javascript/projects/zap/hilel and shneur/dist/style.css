@@ -18,7 +18,7 @@ body {
   width: 400px;
   margin: auto;
 }
-.box .cotert form input[type=text] {
+.box .cotert form input {
   border-radius: 20px;
   outline: none;
   border: 0;
@@ -64,7 +64,7 @@ body {
 }
 .box .core {
   display: none;
-  background-color: dimgray;
+  background-color: #e60000;
   height: 40px;
   border-radius: 0px 0px 10px 10px;
 }
