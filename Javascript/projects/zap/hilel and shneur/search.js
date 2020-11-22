@@ -90,17 +90,36 @@ openCtegory = (e) => {
         }
     })
     console.log(prodctfilter)
-    console.log(results)
 
     let showprodctfilter = "";
 
     for (i = 0; i < results.length; i++) {
-        showprodctfilter += `<div class="showprodctfilter"${results[i]}>${results[i]}</div>`
-        document.querySelector("#showprodctfilter").innerHTML = results[i];
+        showprodctfilter += `<div class="showprodctfilter">${results[i].name} from ${results[i].brand}</div>`
+        document.querySelector("#showprodctfilter").innerHTML = showprodctfilter;
     }
+      // מתגים לשינוי מחיר
+    const pris = document.querySelector(".pris")
+    const divcolor = document.querySelector(".divcolor")
+    if (divcolor.style.marginLeft == '0px') {
+        divcolor.style.marginLeft = "22px"
+    } else {
+        pris.style.backgroundColor = "rgb(180, 180, 180)"
+        divcolor.style.marginLeft = "0px"
+    }
+  
 
+    pris.addEventListener("click", function (event) {
+        if (divcolor.style.marginLeft == '0px') {
+            pris.style.backgroundColor = "rgb(0, 90, 173)"
+            divcolor.style.marginLeft = "23px"
+            results = results.sort((a, b) => {
+                return a.price - b.price
+            })
+            console.log(results)
 
-
-
-
+        } else {
+            pris.style.backgroundColor = "rgb(180, 180, 180)"
+            divcolor.style.marginLeft = "0px"
+        }
+    })
 }

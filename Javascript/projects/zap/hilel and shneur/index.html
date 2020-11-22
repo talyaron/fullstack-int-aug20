@@ -24,8 +24,8 @@
                 <img src="img/חיפוש.png" />
             </button>
         </form>
-        <div class="img">
-            <img1 src="img/zapnewlogo.png" alt="">
+        <div class="imgg">
+            <img src="img/zapnewlogo.png" alt="">
         </div>
     </div>
     <div class="cotertbotton">
@@ -36,7 +36,7 @@
                     <div class="divcolor"></div>
                 </div>
             </div>
-            <div class="divh">
+            <!-- <div class="divh">
                 סינון לפי מחיר
                 <div class="pris">
                     <div class="divcolor"></div>
@@ -47,7 +47,7 @@
                 <div class="pris">
                     <div class="divcolor"></div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="box">
@@ -59,20 +59,7 @@
     <div id="showprodctfilter"></div>
     <script src="products.js"></script>
     <script src="search.js"></script>
-    <script>
-        const pris = document.querySelector(".pris")
-        const divcolor = document.querySelector(".divcolor")
-        pris.addEventListener("click", function (event) {
-            if (divcolor.style.marginLeft == '0px') {
-                pris.style.backgroundColor = "rgb(0, 90, 173)"
-                divcolor.style.marginLeft = "23px"
-
-            } else {
-                pris.style.backgroundColor = "rgb(180, 180, 180)"
-                divcolor.style.marginLeft = "0px"
-            }
-        })
-    </script>
+  
 </body>
 
 </html>
