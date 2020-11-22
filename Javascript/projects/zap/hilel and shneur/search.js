@@ -90,26 +90,21 @@ function hiderezolt(event) {
 }
 
 
-// נסיון
+// נסיון מוצלח
 
 function openCtegory(event) {
     const prodctfilter = event.target.innerText
-    console.log(prodctfilter)
+    // console.log(prodctfilter)
     let results = []
     const regSearch = new RegExp(prodctfilter, 'g')
-    // prodctfilter.search()
     products.forEach(product => {
         if (regSearch.test(product.category) ) {
             results.push(product);
            
         }
     })
-
-  
+    console.log(prodctfilter)
     console.log(results)
-
-    return results;
-
 }
 
 
