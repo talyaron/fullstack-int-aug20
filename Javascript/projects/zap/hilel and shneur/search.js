@@ -44,6 +44,7 @@ function renderSearchResults(results) {
 
 // הצגת קטוגוריות
 let textCategory = "";
+
 function showCategory(event) {
     for (i = 0; i < ProductsFiltered.length; i++) {
         textCategory += `<div class="category"value="${ProductsFiltered[i]}" onclick="openCtegory(event)">${ProductsFiltered[i]}</div>`
@@ -51,6 +52,7 @@ function showCategory(event) {
     }
 
 }
+
 function openCtegory(event) {
     const prodctfilter = event.target.innerText
     console.log(prodctfilter)
@@ -87,5 +89,25 @@ function hiderezolt(event) {
     }
 }
 
+
+// נסיון
+
+function openCtegory(event) {
+    const prodctfilter = event.target.innerText
+    console.log(prodctfilter)
+    let results = []
+    const regSearch = new RegExp(prodctfilter, 'g')
+    // prodctfilter.search()
+    products.forEach(product => {
+        if (regSearch.test(product.category) ) {
+            results.push(product);
+           
+        }
+    })
+  
+
+    return results;
+
+}
 
 
