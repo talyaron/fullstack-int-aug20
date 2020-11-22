@@ -26,9 +26,11 @@ function searchProducts(searchTerm) {
 
 function renderSearchResults(results) {
   var root = document.getElementById('root');
+  filterButtons.innerHTML = '';
   var html = '';
   results.forEach(function (product) {
     html += "<p>Product name: ".concat(product.name, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, "</p>");
+    filterButtons.innerHTML += "<button id='".concat(product.brand, "'>").concat(product.brand, "</button>");
   });
   root.innerHTML = html;
 }
