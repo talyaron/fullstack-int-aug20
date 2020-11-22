@@ -25,40 +25,31 @@ function handleClick(e) {
     productName = e.target.value
     filterButtons.innerHTML = '';
     root.innerHTML = ""
+    let stam = []
     products.forEach(product =>{
         if(productName == product.category){
             console.log (product.category)
             currentCategory.push(product);
             root.innerHTML += `<p>Product Category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
             // filterButtons.innerHTML = '';
-            filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+            
+ 
+         
+
+            if (stam.indexOf(product.brand) == -1) {
+                stam.push(product.brand)
+                console.log(stam)
+                filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+            }
+            
+            
         }  
     })
 
-    let afterFilter =[]
+    
 
-    filterButtons.addEventListener('click', e => {
-        let chosenFilter = (e.composedPath()[0].id)
-        currentCategory.forEach(product =>{
-
-            
-
-            if(chosenFilter == product.brand){
-                // console.log (product.category)
-                // currentCategory.pop(product);
-                // afterFilter.push(product);
-                // if(afterFilter.indexOf(product.brand) == -1){
-                    
-                // }
-            
-                root.innerHTML =''
-                root.innerHTML += `<p>Product brand: ${product.brand}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
-             
-                // filterButtons.innerHTML += `<button >${product.brand}</button>`;
-            }
-        })
-
-      });
+    
+  
 
 
     // for (i = 0; i < products.length; i++) {

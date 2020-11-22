@@ -26,7 +26,7 @@ const products = [
         isdn: 'drytertyertyerh'
     },
     {
-        category: 'mobile',
+        category: 'Mobile',
         price: 5500,
         inStoreSince: 2020 - 09 - 22,
         brand: 'Iphone',
@@ -91,7 +91,7 @@ const products = [
         isdn: 'afyuagsuy'
     },
     {
-        category: 'cars',
+        category: 'Cars',
         price: 140000,
         inStoreSince: '2020.01.09',
         brand: 'hyundai',
@@ -104,7 +104,7 @@ const products = [
         isdn: 'uhfjalsbdjqwhd'
     },
     {
-        category: 'mobile',
+        category: 'Mobile',
         price: 1200,
         inStoreSince: '2020.02.05',
         brand: 'google',
@@ -171,7 +171,7 @@ const products = [
     },
 
     {
-        category: 'mobile',
+        category: 'Mobile',
         price: 3500,
         inStoreSince: '2020-01-23',
         brand: 'appale',
@@ -211,7 +211,7 @@ const products = [
         isdn: 'drytertyertyerh'
     },
     {
-        category: 'cars',
+        category: 'Cars',
         price: 118000,
         inStoreSince: '2018-01-1',
         brand: 'tesla',
@@ -224,7 +224,7 @@ const products = [
         isdn: '15hhbvy1'
     },
     {
-        category: 'cars',
+        category: 'Cars',
         price: 250000,
         inStoreSince: '2015-01-1',
         brand: 'tesla',
@@ -250,7 +250,7 @@ const products = [
         isdn: 'drytertyerh'
     },
     {
-        category: 'mobile',
+        category: 'Mobile',
         price: 1170,
         inStoreSince: '2020-02-01',
         brand: 'xioumi',
