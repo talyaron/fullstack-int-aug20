@@ -11,17 +11,19 @@
 <body>
 
 
-    <form onsubmit='handleSearch(event)' action="categories.html">
+    <form onsubmit='handleSearch(event)'>
         <input type='text' placeholder="חיפוש מוצר" name='search' />
         <input type='submit' value="חיפוש" />
-
-        <select onclick="handleClick(event)" id="categoryBox" name="Category">
-        </select>
-
-        <div id="model"></div>
     </form>
 
+    <select onclick="handleClick(event)" id="categoryBox" name="Category"></select>
     
+    <button onclick="handlePrice(event)">Price</button>
+    <button onclick="handleRecommend(event)">Recommendations</button>
+
+    <div id="model"></div>
+    <div id="root"></div>
+    <div id="filterButtons"></div>
     <script src="products.js"></script>
     <script src="search.js"></script>
     <script src="createCategories.js"></script>

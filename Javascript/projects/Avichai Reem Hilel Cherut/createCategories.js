@@ -30,7 +30,8 @@ function handleClick(e) {
         if(productName == product.category){
             console.log (product.category)
             currentCategory.push(product);
-            root.innerHTML += `<p>Product Category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
+            root.innerHTML += `<a href="https://www.noknok.co.il/items/3046324"><p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p><a>`
+            // root.innerHTML += `<p>Product Category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
             // filterButtons.innerHTML = '';
             
  
@@ -46,10 +47,26 @@ function handleClick(e) {
         }  
     })
 
-    
+    let afterFilter =[]
 
-    
-  
+    filterButtons.addEventListener('click', e => {
+        let chosenFilter = (e.composedPath()[0].id)
+        console.log(e.composedPath()[0].id)
+        root.innerHTML =''
+        currentCategory.forEach(product =>{
+            
+            if(chosenFilter == product.brand){ 
+                root.innerHTML += `<p class="product">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p>`
+             
+                // filterButtons.innerHTML += `<button >${product.brand}</button>`;
+            }
+        })
+      
+      });
+    //   let product = document.querySelectorAll(".product")
+    //   product.addEventListener('click', e=> {
+    //       console.log(e)
+    //   })
 
 
     // for (i = 0; i < products.length; i++) {

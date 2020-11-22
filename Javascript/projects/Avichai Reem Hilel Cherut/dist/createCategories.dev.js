@@ -26,30 +26,36 @@ function handleClick(e) {
   productName = e.target.value;
   filterButtons.innerHTML = '';
   root.innerHTML = "";
+  var stam = [];
   products.forEach(function (product) {
     if (productName == product.category) {
       console.log(product.category);
       currentCategory.push(product);
-      root.innerHTML += "<p>Product Category: ".concat(product.category, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, ", Recommendations: ").concat(product.recommendations, "</p>"); // filterButtons.innerHTML = '';
+      root.innerHTML += "<a href=\"https://www.noknok.co.il/items/3046324\"><p>Product name: ".concat(product.name, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, "<img src=\"").concat(product.image, "\"></p><a>"); // root.innerHTML += `<p>Product Category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
+      // filterButtons.innerHTML = '';
 
-      filterButtons.innerHTML += "<button id='".concat(product.brand, "'>").concat(product.brand, "</button>");
+      if (stam.indexOf(product.brand) == -1) {
+        stam.push(product.brand);
+        console.log(stam);
+        filterButtons.innerHTML += "<button id='".concat(product.brand, "'>").concat(product.brand, "</button>");
+      }
     }
   });
   var afterFilter = [];
   filterButtons.addEventListener('click', function (e) {
     var chosenFilter = e.composedPath()[0].id;
+    console.log(e.composedPath()[0].id);
+    root.innerHTML = '';
     currentCategory.forEach(function (product) {
       if (chosenFilter == product.brand) {
-        // console.log (product.category)
-        // currentCategory.pop(product);
-        // afterFilter.push(product);
-        // if(afterFilter.indexOf(product.brand) == -1){
-        // }
-        root.innerHTML = '';
-        root.innerHTML += "<p>Product brand: ".concat(product.brand, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, ", Recommendations: ").concat(product.recommendations, "</p>"); // filterButtons.innerHTML += `<button >${product.brand}</button>`;
+        root.innerHTML += "<p class=\"product\">Product name: ".concat(product.name, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, "<img src=\"").concat(product.image, "\"></p>"); // filterButtons.innerHTML += `<button >${product.brand}</button>`;
       }
     });
-  }); // for (i = 0; i < products.length; i++) {
+  }); //   let product = document.querySelectorAll(".product")
+  //   product.addEventListener('click', e=> {
+  //       console.log(e)
+  //   })
+  // for (i = 0; i < products.length; i++) {
   //     if (productName == products[i].category) {
   //         root.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
   //     }

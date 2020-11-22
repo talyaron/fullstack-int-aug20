@@ -6,6 +6,10 @@ function handleSearch(e) {
         const results = searchProducts(searchTerm);
         renderSearchResults(results);
     }
+    if(searchTerm.length<1){
+        root.innerHTML = ""
+        filterButtons.innerHTML = ""
+    }
 }
 
 let results = []
@@ -27,8 +31,8 @@ function renderSearchResults(results) {
     filterButtons.innerHTML = '';
     let html = '';
     results.forEach(product => {
-        html += `<p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</p>`
-        filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+        html += `<a href="https://www.noknok.co.il/items/3046324"><p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p><a>`
+        
     })
 
     root.innerHTML = html;

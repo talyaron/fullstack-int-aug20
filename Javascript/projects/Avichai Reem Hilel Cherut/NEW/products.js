@@ -1,6 +1,6 @@
 const products = [
     {
-        category: 'Cars',
+        category: 'cars',
         price: 120000,
         inStoreSince: '2020-01-23',
         brand: 'Hyundai',
@@ -9,19 +9,6 @@ const products = [
         image: 'String',
         description: "achala auto",
         name: 'i10',
-        store: 'moshe and co.',
-        isdn: 'drytertyertyerh'
-    },
-    {
-        category: 'Cars',
-        price: 120000,
-        inStoreSince: '2020-01-23',
-        brand: 'Hyundai',
-        model: 'i10',
-        recommendations: 20,
-        image: 'String',
-        description: "achala auto",
-        name: '10',
         store: 'moshe and co.',
         isdn: 'drytertyertyerh'
     },
@@ -41,19 +28,6 @@ const products = [
     {
         category: 'fashion',
         price: 2000,
-        inStoreSince: '2020-04-05',
-        brand: 'GUCCI',
-        model: 'Ace Sneakers',
-        recommendations: 85,
-        image: 'https://cache.net-a-porter.com/images/products/1009127/1009127_in_920_q80.jpg',
-        description: "nice shoes",
-        name: 'GUCCI Ace Sneakers',
-        store: 'net a porter',
-        isdn: 'ASMJDKK29CM10DCM22'
-    },
-    {
-        category: 'fashion',
-        price: 2500,
         inStoreSince: '2020-04-05',
         brand: 'GUCCI',
         model: 'Ace Sneakers',
@@ -329,19 +303,6 @@ const products = [
     },
     {
         category: 'earphones',
-        price: 575,
-        inStoreSince: '2020-01-01',
-        brand: 'Apple',
-        model: 'AirPods 2',
-        recommendations: '34',
-        image: 'https://img.zap.co.il/pics/0/2/2/6/43436220c.gif',
-        description: "Micro 23 Litters",
-        name: 'String',
-        store: 'Game Storm',
-        isdn: 'zx1mvbc869xcv'
-    },
-    {
-        category: 'אפל',
         price: 575,
         inStoreSince: '2020-01-01',
         brand: 'Apple',
