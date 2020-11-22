@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>main</title>
+</head>
+
+<body>
+
+  <form onsubmit='handleSearch(event)'>
+    <input type='text' placeholder="חיפוש מוצר" name='search' />
+    <input type='submit' value="חיפוש" />
+  </form>
+  <select onclick="handleClick(event)" id="categoryBox" name="Category"></select>
+
+  <div id="root"></div>
+
+
+
+
+  <!-- <input id='input' type="text" name="serialNumber" /> -->
+
+  <!-- <script src="second.js"></script> -->
+  <script src="products.js"></script>
+  <script src="search.js"></script>
+  <script src="createCategories.js"></script>
+  
+  <!-- <script>
+    document.querySelector('#input').addEventListener('keyup', e => {
+      console.log(e.key);
+      let data = localStorage.setItem('item', e.key);
+      // my(data);
+
+    });
+
+
+
+  </script> -->
+  <!-- <script src="second.js"></script> -->
+</body>
+
+</html>

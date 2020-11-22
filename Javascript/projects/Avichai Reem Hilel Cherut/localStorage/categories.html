@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>categories</title>
+</head>
+
+<body>
+
+  <h1 class="title"></h1>
+  <h3>you can sort them by:</h3>
+  <button onclick="handlePrice(event)">Price</button>
+  <button onclick="handleRecommend(event)">Recommendations</button>
+  
+  <h3>or filter the resoults by your favorite brand:</h3>
+  <div id="filterButtons"></div>
+
+  <div id="root2"></div>
+  
+
+  <script src="products.js"></script>
+
+  <script>
+    var chosenCategory = localStorage.getItem("chosenCategory");
+    console.log(chosenCategory)
+    console.log('גם זה')
+
+    let title = document.querySelector(".title")
+    title.innerHTML = `the cosen category is ${chosenCategory}`
+
+
+    // let category = document.querySelectorAll('.category')
+
+    const root2 = document.getElementById('root2');
+    // let html1 = ""
+    // let productName = ""
+    let filterButtons = document.querySelector("#filterButtons")
+
+    let currentCategory = [];
+
+    // function handleClick(e) {
+      // productName = e.target.value
+
+      // localStorage.setItem("chosenCategory", productName);
+      // console.log(localStorage)
+      // console.log(productName)
+      filterButtons.innerHTML = '';
+      root2.innerHTML = ""
+      let stam = []
+      products.forEach(product => {
+        if (chosenCategory == product.category) {
+          console.log(product.category)
+          currentCategory.push(product);
+
+
+          root2.innerHTML += `<p>Product category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}</p><a>`
+
+
+          if (stam.indexOf(product.brand) == -1) {
+            stam.push(product.brand)
+            console.log(stam)
+            filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+          }
+
+
+
+        }
+      })
+
+      let afterFilter = []
+
+      filterButtons.addEventListener('click', e => {
+  let chosenFilter = (e.composedPath()[0].id)
+  console.log(e.composedPath()[0].id)
+  root2.innerHTML =''
+  currentCategory.forEach(product =>{
+      
+      if(chosenFilter == product.brand){ 
+          root2.innerHTML += `<p>Product brand: ${product.brand}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
+       
+          // filterButtons.innerHTML += `<button >${product.brand}</button>`;
+      }
+  })
+
+});
+
+    
+
+  </script>
+    <script src="sortProducts.js"></script>
+</body>
+
+</html>
