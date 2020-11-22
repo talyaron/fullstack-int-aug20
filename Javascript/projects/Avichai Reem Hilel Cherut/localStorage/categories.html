@@ -88,9 +88,12 @@
 
     // var options = document.getElementsByTagName("P");
     let options = (document.querySelectorAll(".option"))
+    
     options.forEach(option =>{
       option.addEventListener('click', e =>{
-        console.log(e)
+        option.style.color = 'red';
+        option.style.curser = 'pointer';
+        console.log(e.target)
       })
     })
 
