@@ -75,7 +75,7 @@ function renderBlocksCategoris(categoris) {
   BodyContainer.innerHTML = NewBodyContainer;
 }
 
-function startrendernav() {
+function StartRenderCategoris() {
   let categoris = OrderTheCategorys();
   uniqcategory =  removeDuplicateObjectFromArray(products, 'category');
   renderNavCategoris(categoris);
