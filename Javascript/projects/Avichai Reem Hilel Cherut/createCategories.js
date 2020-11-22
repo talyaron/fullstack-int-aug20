@@ -14,8 +14,7 @@ for (i = 0; i < filter.length; i++) {
 categoryBox.innerHTML = html
 let category = document.querySelectorAll('.category')
 
-
-let test = document.querySelector("#test")
+const root=document.getElementById('root');
 let html1 = ""
 let productName = ""
 let filterButtons = document.querySelector("#filterButtons")
@@ -25,14 +24,26 @@ let currentCategory = [];
 function handleClick(e) {
     productName = e.target.value
     filterButtons.innerHTML = '';
-    test.innerHTML = ""
+    root.innerHTML = ""
+    let stam = []
     products.forEach(product =>{
         if(productName == product.category){
             console.log (product.category)
             currentCategory.push(product);
-            test.innerHTML += `<p>Product Category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
+            root.innerHTML += `<a href="https://www.noknok.co.il/items/3046324"><p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p><a>`
+            // root.innerHTML += `<p>Product Category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
             // filterButtons.innerHTML = '';
-            filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+            
+ 
+         
+
+            if (stam.indexOf(product.brand) == -1) {
+                stam.push(product.brand)
+                console.log(stam)
+                filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+            }
+            
+            
         }  
     })
 
@@ -40,31 +51,27 @@ function handleClick(e) {
 
     filterButtons.addEventListener('click', e => {
         let chosenFilter = (e.composedPath()[0].id)
+        console.log(e.composedPath()[0].id)
+        root.innerHTML =''
         currentCategory.forEach(product =>{
-
             
-
-            if(chosenFilter == product.brand){
-                // console.log (product.category)
-                // currentCategory.pop(product);
-                // afterFilter.push(product);
-                // if(afterFilter.indexOf(product.brand) == -1){
-                    
-                // }
-            
-                test.innerHTML =''
-                test.innerHTML += `<p>Product brand: ${product.brand}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
+            if(chosenFilter == product.brand){ 
+                root.innerHTML += `<p class="product">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p>`
              
                 // filterButtons.innerHTML += `<button >${product.brand}</button>`;
             }
         })
-
+      
       });
+    //   let product = document.querySelectorAll(".product")
+    //   product.addEventListener('click', e=> {
+    //       console.log(e)
+    //   })
 
 
     // for (i = 0; i < products.length; i++) {
     //     if (productName == products[i].category) {
-    //         test.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
+    //         root.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
             
     //     }
     // }
@@ -73,10 +80,10 @@ function handleClick(e) {
 
 // function handlePrice(e) {
 //     products.sort((a, b) => a.price - b.price)
-//     test.innerHTML = ""
+//     root.innerHTML = ""
 //     for (i = 0; i < products.length; i++) {
 //         if (productName == products[i].category) {
-//             test.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
+//             root.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
 
 //         }
 //     }
@@ -84,10 +91,10 @@ function handleClick(e) {
 
 // function handleRecommend(e) {
 //     products.sort((a, b) => a.recommendations - b.recommendations)
-//     test.innerHTML = ""
+//     root.innerHTML = ""
 //     for (i = 0; i < products.length; i++) {
 //         if (productName == products[i].category) {
-//             test.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
+//             root.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
 //         }
 //     }
 // }

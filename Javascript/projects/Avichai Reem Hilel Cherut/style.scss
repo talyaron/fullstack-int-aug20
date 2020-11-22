@@ -1,11 +1,17 @@
-body{
-}
+body {}
 
-p{
+p {
     padding: 10px;
     border-radius: 10px;
 }
-#test{
 
+#test {}
 
+#root {
+    border: 1px solid black;
+    width: 35%;
+    margin: auto;
+    img {
+        width: 100%;
+    }
 }

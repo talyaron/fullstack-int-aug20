@@ -30,11 +30,11 @@ const categoriesArray = [
     }
 ]
 
-function categories() {
-    let html = '' 
-    for (var i = 0; i < categoriesArray.length; i++) {
-        document.createElement(categoriesArray[i]);
-        html += categoriesArray
-    }
+html=''
 
-}
+categoriesArray.forEach(function(c){
+    let category = document.getElementById('categoriesName');
+    let image = document.getElementById('categoriesPic');
+image.src=categoriesArray.image
+console.log(category,image)
+})

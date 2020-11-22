@@ -16,46 +16,69 @@ for (i = 0; i < filter.length; i++) {
 
 categoryBox.innerHTML = html;
 var category = document.querySelectorAll('.category');
-var test = document.querySelector("#test");
+var root = document.getElementById('root');
 var html1 = "";
 var productName = "";
+var filterButtons = document.querySelector("#filterButtons");
+var currentCategory = [];
 
 function handleClick(e) {
   productName = e.target.value;
-  test.innerHTML = "";
+  filterButtons.innerHTML = '';
+  root.innerHTML = "";
+  var stam = [];
+  products.forEach(function (product) {
+    if (productName == product.category) {
+      console.log(product.category);
+      currentCategory.push(product);
+      root.innerHTML += "<a href=\"https://www.noknok.co.il/items/3046324\"><p>Product name: ".concat(product.name, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, "<img src=\"").concat(product.image, "\"></p><a>"); // root.innerHTML += `<p>Product Category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
+      // filterButtons.innerHTML = '';
 
-  for (i = 0; i < products.length; i++) {
-    if (productName == products[i].category) {
-      test.innerHTML += "<p>Product name: ".concat(products[i].category, ", Product Model: ").concat(products[i].model, ", Price: ").concat(products[i].price, "</p>");
+      if (stam.indexOf(product.brand) == -1) {
+        stam.push(product.brand);
+        console.log(stam);
+        filterButtons.innerHTML += "<button id='".concat(product.brand, "'>").concat(product.brand, "</button>");
+      }
     }
-  }
-}
-
-function handlePrice(e) {
-  products.sort(function (a, b) {
-    return a.price - b.price;
   });
-  test.innerHTML = "";
-
-  for (i = 0; i < products.length; i++) {
-    if (productName == products[i].category) {
-      test.innerHTML += "<p>Product name: ".concat(products[i].category, ", Product Model: ").concat(products[i].model, ", Price: ").concat(products[i].price, "</p>");
-    }
-  }
-}
-
-function handleRecommend(e) {
-  products.sort(function (a, b) {
-    return a.recommendations - b.recommendations;
-  });
-  test.innerHTML = "";
-
-  for (i = 0; i < products.length; i++) {
-    if (productName == products[i].category) {
-      test.innerHTML += "<p>Product name: ".concat(products[i].category, ", Product Model: ").concat(products[i].model, ", Price: ").concat(products[i].price, "</p>");
-    }
-  }
-} // filter.forEach(product => {
+  var afterFilter = [];
+  filterButtons.addEventListener('click', function (e) {
+    var chosenFilter = e.composedPath()[0].id;
+    console.log(e.composedPath()[0].id);
+    root.innerHTML = '';
+    currentCategory.forEach(function (product) {
+      if (chosenFilter == product.brand) {
+        root.innerHTML += "<p class=\"product\">Product name: ".concat(product.name, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, "<img src=\"").concat(product.image, "\"></p>"); // filterButtons.innerHTML += `<button >${product.brand}</button>`;
+      }
+    });
+  }); //   let product = document.querySelectorAll(".product")
+  //   product.addEventListener('click', e=> {
+  //       console.log(e)
+  //   })
+  // for (i = 0; i < products.length; i++) {
+  //     if (productName == products[i].category) {
+  //         root.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
+  //     }
+  // }
+} // function handlePrice(e) {
+//     products.sort((a, b) => a.price - b.price)
+//     root.innerHTML = ""
+//     for (i = 0; i < products.length; i++) {
+//         if (productName == products[i].category) {
+//             root.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
+//         }
+//     }
+// }
+// function handleRecommend(e) {
+//     products.sort((a, b) => a.recommendations - b.recommendations)
+//     root.innerHTML = ""
+//     for (i = 0; i < products.length; i++) {
+//         if (productName == products[i].category) {
+//             root.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
+//         }
+//     }
+// }
+// filter.forEach(product => {
 //     if (filter.indexOf(product.category) == -1) {
 //         filter.push(product.category)
 //     }
