@@ -25,7 +25,11 @@ body {
   position: relative;
   width: 400px;
 }
+<<<<<<< HEAD
 .cotert form input[type=text] {
+=======
+.box .cotert form input {
+>>>>>>> master
   border-radius: 20px;
   outline: none;
   border: 0;
@@ -112,6 +116,7 @@ body {
 }
 .box .core {
   display: none;
+<<<<<<< HEAD
   background-color: rgba(105, 105, 105, 0.102);
   height: 20px;
 }
@@ -124,6 +129,10 @@ body {
   font-weight: 600;
   font-size: 20px;
   border: 15px solid rgba(105, 105, 105, 0.102);
+=======
+  background-color: #e60000;
+  height: 40px;
+>>>>>>> master
   border-radius: 0px 0px 10px 10px;
   margin: 0;
 }
