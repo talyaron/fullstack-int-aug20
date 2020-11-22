@@ -1,8 +1,8 @@
 function handleSearch(e) {
     e.preventDefault();
-    
+
     const searchTerm = e.target.children.search.value;
-    if(searchTerm.length>2){
+    if (searchTerm.length > 2) {
         const results = searchProducts(searchTerm);
         renderSearchResults(results);
     }
@@ -13,21 +13,22 @@ function searchProducts(searchTerm) {
     results = []
     const regSearch = new RegExp(searchTerm, 'g')
     products.forEach(product => {
-      if( regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model) ){
-        results.push(product);
-      } 
+        if (regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model)) {
+            results.push(product);
+        }
     })
 
-    
+
     return results;
 }
 
-function renderSearchResults(results){
-    const root=document.getElementById('root');
-
+function renderSearchResults(results) {
+    const root = document.getElementById('root');
+    filterButtons.innerHTML = '';
     let html = '';
-    results.forEach(product=>{
+    results.forEach(product => {
         html += `<p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</p>`
+        filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
     })
 
     root.innerHTML = html;
