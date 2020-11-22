@@ -10,13 +10,16 @@ body {
     display: flex;
     justify-content: center;
 
-    .accessibility, .imglogoo{
+    .accessibility,
+    .imglogo {
         height: 50px;
         margin-top: 15px;
         margin-left: 10px;
     }
-    .imgg {
+
+    .img1 {
         width: 150px;
+        margin-top: 5px;
 
 
         img {
@@ -29,10 +32,9 @@ body {
     form {
         position: relative;
         width: 400px;
-        // margin: auto;
 
 
-        input[type='text'] {
+        input {
             border-radius: 20px;
             outline: none;
             border: 0;
@@ -58,47 +60,51 @@ body {
         }
     }
 }
-.cotertbotton{
+
+.cotertbotton {
     background-color: #3a3f40;
-    border-top:black solid 1px;
+    border-top: black solid 1px;
     text-align: center;
 
-.cotertbuton {
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    width: 800px;
-    margin: auto;
-
-
-    .divh{
+    .cotertbuton {
+        height: 40px;
         display: flex;
-        align-items: center;
-        font-size: 20px;
-        font-weight: 600;
-        color: rgba(219, 219, 219, 0.801);
-
-    .pris {
-        background-color: rgb(180, 180, 180);
-        width: 40px;
-        height: 18px;
-        border-radius: 20px;
-        border: 2px solid grey;
-        transition: all 1s;
+        justify-content: space-between;
+        width: 800px;
         margin: auto;
-        margin-left: 5px;
+
+
+        .divh {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(219, 219, 219, 0.801);
+
+            .pris {
+                background-color: rgb(180, 180, 180);
+                width: 40px;
+                height: 18px;
+                border-radius: 20px;
+                border: 2px solid grey;
+                transition: all 1s;
+                margin: auto;
+                margin-left: 5px;
+            }
+
+            .divcolor {
+                background-color: white;
+                width: 17px;
+                height: 18px;
+                border-radius: 50%;
+                transition: all 500ms;
+                margin-left: 0px;
+            }
+        }
+
     }
+}
 
-    .divcolor {
-        background-color: white;
-        width: 17px;
-        height: 18px;
-        border-radius: 50%;
-        transition: all 500ms;
-        margin-left: 0px;
-    }}
-
-}}
 .box {
     width: 100%;
     max-width: 1100px;
@@ -107,7 +113,6 @@ body {
 
 
     #root {
-        // border: rgba(255, 255, 255, 0) solid 1px;
 
 
         a {
@@ -155,10 +160,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 20px;
-    border: 15px solid rgba(105, 105, 105, 0.102);
-
     border-radius: 0px 0px 10px 10px;
     margin: 0;
+    
 }
 
 .category {
@@ -168,9 +172,6 @@ body {
     height: 160px;
     border-radius: 10px;
     margin: 15px;
-    transition: all 250ms;
-
-
 
 
     img {
@@ -180,8 +181,11 @@ body {
 }
 
 .category:hover {
+    animation: both ;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
     box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.301), -4px -4px 5px rgba(121, 121, 121, 0.301);
-    // box-shadow: 3px 3px 3px  red, 3px -3px -3px red;
+    text-align: center;
 }
 
 .div {
