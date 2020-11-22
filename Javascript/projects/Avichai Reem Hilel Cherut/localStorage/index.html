@@ -13,7 +13,14 @@
     <input type='text' placeholder="חיפוש מוצר" name='search' />
     <input type='submit' value="חיפוש" />
   </form>
-  <select onclick="handleClick(event)" id="categoryBox" name="Category"></select>
+
+
+  <form onsubmit="handleClickCategories(event)">
+    <select onclick="handleClick(event)" data-td="category" id="categoryBox" name="Category">
+      <option value="starter" selected>Pick Category </option>
+    </select>
+    <input type='submit' value="Search by Category" />
+  </form>
 
   <div id="root"></div>
 
@@ -26,7 +33,7 @@
   <script src="products.js"></script>
   <script src="search.js"></script>
   <script src="createCategories.js"></script>
-  
+
   <!-- <script>
     document.querySelector('#input').addEventListener('keyup', e => {
       console.log(e.key);

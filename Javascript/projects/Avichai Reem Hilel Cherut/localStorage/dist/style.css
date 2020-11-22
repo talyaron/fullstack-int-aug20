@@ -3,11 +3,12 @@ p {
   border-radius: 10px;
 }
 
-#root {
+.anotherRoot {
   border: 1px solid black;
   width: 35%;
   margin: auto;
 }
-#root img {
-  width: 100%;
+.anotherRoot img {
+  width: 85%;
+  height: 500px;
 }

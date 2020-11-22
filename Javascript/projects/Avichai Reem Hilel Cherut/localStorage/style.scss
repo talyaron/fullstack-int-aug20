@@ -1,17 +1,19 @@
-body {}
+
 
 p {
     padding: 10px;
     border-radius: 10px;
 }
 
-#test {}
 
-#root {
+.anotherRoot {
     border: 1px solid black;
     width: 35%;
     margin: auto;
     img {
-        width: 100%;
+        width: 85%;
+        height: 500px;
+
+        
     }
 }
