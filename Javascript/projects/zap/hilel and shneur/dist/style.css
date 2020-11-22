@@ -12,16 +12,13 @@ body {
 .cotert .accessibility,
 .cotert .imglogo {
   height: 50px;
-  margin-top: 15px;
   margin-left: 10px;
 }
 .cotert .img1 {
   width: 150px;
-  margin-top: 5px;
 }
 .cotert .img1 img {
   width: 120px;
-  margin-top: 15px;
 }
 .cotert form {
   position: relative;
@@ -160,4 +157,19 @@ body {
   font-weight: 600;
   font-size: 20px;
   margin: 10px auto 10px;
+}
+
+#showprodctfilter {
+  border: solid black;
+  padding: 10px;
+  border-radius: 20%;
+}
+
+.showprodctfilter {
+  background-color: rgba(255, 248, 239, 0.404);
+  padding: 10px;
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  margin: 15px;
 }

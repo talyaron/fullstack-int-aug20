@@ -44,10 +44,9 @@ renderSearchResults = (results) => {
 
 // הצגת קטוגוריות
 let textCategory = "";
-
 showCategory = (event) => {
     for (i = 0; i < ProductsFiltered.length; i++) {
-        textCategory += `<div class="category"value="${ProductsFiltered[i]}" onclick="openCtegory(event)">${ProductsFiltered[i]}</div>`
+        textCategory += `<div class="category"value="${ProductsFiltered[i]}" onclick="openCtegory(event)" >${ProductsFiltered[i]}</div>`
         document.querySelector("#category").innerHTML = textCategory;
     }
 
@@ -92,4 +91,16 @@ openCtegory = (e) => {
     })
     console.log(prodctfilter)
     console.log(results)
+
+    let showprodctfilter = "";
+
+    for (i = 0; i < results.length; i++) {
+        showprodctfilter += `<div class="showprodctfilter"${results[i]}>${results[i]}</div>`
+        document.querySelector("#showprodctfilter").innerHTML = results[i];
+    }
+
+
+
+
+
 }
