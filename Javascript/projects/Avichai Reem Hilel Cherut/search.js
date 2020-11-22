@@ -8,8 +8,9 @@ function handleSearch(e) {
     }
 }
 
+let results = []
 function searchProducts(searchTerm) {
-    const results = []
+    results = []
     const regSearch = new RegExp(searchTerm, 'g')
     products.forEach(product => {
       if( regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model) ){
