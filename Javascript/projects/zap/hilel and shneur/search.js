@@ -53,15 +53,15 @@ function showCategory(event) {
 
 }
 
-function openCtegory(event) {
-    const prodctfilter = event.target.innerText
-    console.log(prodctfilter)
-    console.log(event)
-    products.forEach(function (event) {
-        console.log(event.category)
-        // html+= `<div onclick="${}"></div>`
-    })
-}
+// function openCtegory(event) {
+//     const prodctfilter = event.target.innerText
+//     console.log(prodctfilter)
+//     console.log(event)
+//     products.forEach(function (event) {
+//         console.log(event.category)
+//         // html+= `<div onclick="${}"></div>`
+//     })
+// }
 // console.log(products.name)
 
 const core = document.querySelector(".core")
@@ -79,7 +79,7 @@ function hil() {
 
 let roothtml = ""
 
-function hiderezolt(event) {
+ hiderezolt = (event) => {
     const input = event.target.value;
     if (input.length < 1) {
         root.innerHTML = roothtml
@@ -92,19 +92,15 @@ function hiderezolt(event) {
 
 // נסיון מוצלח
 
-function openCtegory(event) {
-    const prodctfilter = event.target.innerText
-    // console.log(prodctfilter)
+openCtegory = (e) => {
     let results = []
+    const prodctfilter = e.target.innerText
     const regSearch = new RegExp(prodctfilter, 'g')
     products.forEach(product => {
-        if (regSearch.test(product.category) ) {
+        if (regSearch.test(product.category)) {
             results.push(product);
-           
         }
     })
     console.log(prodctfilter)
     console.log(results)
 }
-
-
