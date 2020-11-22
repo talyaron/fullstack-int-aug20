@@ -104,7 +104,9 @@ function openCtegory(event) {
            
         }
     })
+
   
+    console.log(results)
 
     return results;
 
