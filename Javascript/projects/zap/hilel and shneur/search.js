@@ -10,7 +10,7 @@ products.forEach(product => {
 
 
 // חיפוש + קריאה לפונקציות התוצאה
-function handleSearch(e) {
+handleSearch = (e) => {
     e.preventDefault();
     const searchTerm = e.target.children.search.value;
     if (searchTerm.length > 2) {
@@ -20,7 +20,7 @@ function handleSearch(e) {
 }
 
 // תנאי החיפוש
-function searchProducts(searchTerm) {
+searchProducts = (searchTerm) => {
     let results = []
     const regSearch = new RegExp(searchTerm, 'g')
     products.forEach(product => {
@@ -33,7 +33,7 @@ function searchProducts(searchTerm) {
 }
 
 // מעביר תוצאות ל html
-function renderSearchResults(results) {
+renderSearchResults = (results) => {
     const root = document.getElementById('root');
     let html = '';
     results.forEach(product => {
@@ -45,7 +45,7 @@ function renderSearchResults(results) {
 // הצגת קטוגוריות
 let textCategory = "";
 
-function showCategory(event) {
+showCategory = (event) => {
     for (i = 0; i < ProductsFiltered.length; i++) {
         textCategory += `<div class="category"value="${ProductsFiltered[i]}" onclick="openCtegory(event)">${ProductsFiltered[i]}</div>`
         document.querySelector("#category").innerHTML = textCategory;
@@ -53,24 +53,13 @@ function showCategory(event) {
 
 }
 
-// function openCtegory(event) {
-//     const prodctfilter = event.target.innerText
-//     console.log(prodctfilter)
-//     console.log(event)
-//     products.forEach(function (event) {
-//         console.log(event.category)
-//         // html+= `<div onclick="${}"></div>`
-//     })
-// }
-// console.log(products.name)
-
 const core = document.querySelector(".core")
 const button = document.querySelector("#button")
 const cotert = document.querySelector(".cotert")
 const root = document.querySelector("#root")
 const div = document.querySelector(".div")
 
-function hil() {
+hil = () => {
     core.style.display = "block"
     cotert.style.borderRadius = "10px 10px 0px 0px"
     root.style.border = '15px solid rgba(105, 105, 105, 0.102)'
@@ -79,7 +68,7 @@ function hil() {
 
 let roothtml = ""
 
- hiderezolt = (event) => {
+hideresults = (event) => {
     const input = event.target.value;
     if (input.length < 1) {
         root.innerHTML = roothtml
