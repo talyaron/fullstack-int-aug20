@@ -24,20 +24,43 @@ let currentCategory = [];
 
 function handleClick(e) {
     productName = e.target.value
-
+    filterButtons.innerHTML = '';
     test.innerHTML = ""
     products.forEach(product =>{
         if(productName == product.category){
             console.log (product.category)
             currentCategory.push(product);
             test.innerHTML += `<p>Product Category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
-            filterButtons.innerHTML += `<button onclick="handleFilter(event)">${product.brand}</button>`;
+            // filterButtons.innerHTML = '';
+            filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
         }  
     })
 
-    function handleFilter(event){
-        console.log('handleFilter(event)')
-    }
+    let afterFilter =[]
+
+    filterButtons.addEventListener('click', e => {
+        let chosenFilter = (e.composedPath()[0].id)
+        currentCategory.forEach(product =>{
+
+            
+
+            if(chosenFilter == product.brand){
+                // console.log (product.category)
+                // currentCategory.pop(product);
+                // afterFilter.push(product);
+                // if(afterFilter.indexOf(product.brand) == -1){
+                    
+                // }
+            
+                test.innerHTML =''
+                test.innerHTML += `<p>Product brand: ${product.brand}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
+             
+                // filterButtons.innerHTML += `<button >${product.brand}</button>`;
+            }
+        })
+
+      });
+
 
     // for (i = 0; i < products.length; i++) {
     //     if (productName == products[i].category) {
