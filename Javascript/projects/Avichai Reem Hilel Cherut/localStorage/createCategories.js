@@ -35,6 +35,7 @@ function handleClick(e) {
     console.log(productName)
 
     // location.replace("categories.html")
+    
 
     // filterButtons.innerHTML = '';
     root.innerHTML = ""
@@ -57,9 +58,10 @@ function handleClick(e) {
                 // filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
             }
 
-           
+            // window.open('categories.html')
             
         }  
+        
     })
 
     let afterFilter =[]
