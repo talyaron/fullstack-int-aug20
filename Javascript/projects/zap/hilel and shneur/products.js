@@ -453,17 +453,17 @@ const products = [
         store: 'intel store',
         isdn: '123hnbjh123'
     },
-    {
-        category: 'computers',
-        price: '2500',
-        inStoreSince: '2020-11-15',
-        brand: 'intel',
-        model: 'i7-10700',
-        recommendations: 1250,
-        image: 'https://www.ivory.co.il/catalog.php?id=33230&gclid=CjwKCAiAzNj9BRBDEiwAPsL0d3qN_Ve4XIDukSOQ9Cn3uj7klWHELEGslk8Tp-Si42aGpPZAwbZa4BoCqD8QAvD_BwE',
-        description: "8 cores, 12 threads",
-        name: 'i7-10700',
-        store: 'intel store',
-        isdn: '123hnbjh123'
-    }
+    // {
+    //     category: 'computers',
+    //     price: '2500',
+    //     inStoreSince: '2020-11-15',
+    //     brand: 'intel',
+    //     model: 'i7-10700',
+    //     recommendations: 1250,
+    //     image: 'https://www.ivory.co.il/catalog.php?id=33230&gclid=CjwKCAiAzNj9BRBDEiwAPsL0d3qN_Ve4XIDukSOQ9Cn3uj7klWHELEGslk8Tp-Si42aGpPZAwbZa4BoCqD8QAvD_BwE',
+    //     description: "8 cores, 12 threads",
+    //     name: 'i7-10700',
+    //     store: 'intel store',
+    //     isdn: '123hnbjh123'
+    // }
 ]
