@@ -488,29 +488,34 @@ const products = [
   },
 ];
 
-function RenderProductScreen(product) {
+function RenderProductScreen() {  /* product */
   const BodyContainer = document.getElementById('BodyContainer');
 
-  const card = `<div class="card text-center">
-      <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>`;
+  const card = `<!-- ProductSection -->
+  <div id="productPaige">
+<div class="card text-center">
+<div class="card-header">
+  <ul class="nav nav-tabs card-header-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" onclick="RenderMainTab()">Main</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled " onclick="RenderPitchersTab()">Pitchers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled " onclick="RenderSpecificationsTab()">Specifications</a>
+    </li>
+  </ul>
+</div>
+<div class="card-body">
+  <img src="https://www.bestmobile.co.il/media/catalog/product/2/0/2031.png" alt=""> <!-- ProductPitcher -->
+  <h5 class="card-title">Computers Asus I5</h5> <!-- PRODUCKTNAME + Model -->
+  <p class="card-text">laptop Asus I5 16G</p>
+  <p class="card-text " style="font-size:2rem">450$</p> <!-- price -->
+</div>
+</div>
+</div>
+<!--END ProductSection --> `;
 
   BodyContainer.innerHTML = card;
 }

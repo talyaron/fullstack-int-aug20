@@ -1,3 +1,8 @@
+/* position: fixed;  */
+body {
+  overflow: hidden;
+}
+
 #form {
   width: 30%;
 }
@@ -12,6 +17,7 @@
 }
 
 #root {
+  position: fixed;
   margin: auto;
   width: 40%;
   background-color: rgba(104, 101, 101, 0.356);
@@ -36,8 +42,14 @@
   place-items: center;
 }
 
-#BodyContainer {
-  position: fixed;
+/* style="overflow-y: scroll; min-height: 900px; " */
+#bigcontainer {
+  overflow-y: scroll;
+  min-height: 900px;
+}
+#bigcontainer #BodyContainer {
+  /*  position: fixed; */
+  margin: auto;
   top: 13%;
   left: 24%;
   z-index: -1;
@@ -47,22 +59,22 @@
   display: flex;
   flex-wrap: wrap;
 }
-#BodyContainer .card {
+#bigcontainer #BodyContainer .card {
   margin: 0.7%;
   flex-grow: 1;
   padding: 0.3rem;
   box-shadow: 8px 8px 8px 2px rgba(0, 0, 0, 0.68);
 }
-#BodyContainer .card:hover {
+#bigcontainer #BodyContainer .card:active {
   box-shadow: 1px 1px 1px;
 }
-#BodyContainer .card .card-img {
+#bigcontainer #BodyContainer .card .card-img {
   display: block;
   min-width: 90%;
   height: 16rem;
   object-fit: cover;
 }
-#BodyContainer .card .card-title {
+#bigcontainer #BodyContainer .card .card-title {
   background-color: darkcyan;
   border-radius: 10px;
   box-shadow: 3px 3px 6px;

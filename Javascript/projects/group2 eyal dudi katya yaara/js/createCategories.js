@@ -1,33 +1,33 @@
-function OrderTheCategorys() {
-  const categorys = [];
-  let OrderdCategorys = [];
+function OrderTheCategories() {
+  const categories = [];
+  let OrderedCategories = [];
   products.forEach((product) => {
-    categorys.push(product.category);
+    categories.push(product.category);
   });
   try {
-    categorys.forEach((c) => {
-      if (!OrderdCategorys.includes(c.toUpperCase())) {
-        OrderdCategorys.push(c.toUpperCase());
+    categories.forEach((c) => {
+      if (!OrderedCategories.includes(c.toUpperCase())) {
+        OrderedCategories.push(c.toUpperCase());
       }
     });
   } catch (e) {
-    categorys.forEach((c) => {
-      if (!OrderdCategorys.includes(c)) {
-        OrderdCategorys.push(c);
+    categories.forEach((c) => {
+      if (!OrderedCategories.includes(c)) {
+        OrderedCategories.push(c);
       }
     });
   }
-  OrderdCategorys = OrderdCategorys.sort();
-  return OrderdCategorys;
+  OrderedCategories = OrderedCategories.sort();
+  return OrderedCategories;
 }
 /* Render NavBar */
 
-function renderNavCategoris(categoris) {
- /*  console.log('renderNavCategoris function called'); */
+function renderNavCategories(Categories) {
+  /*  console.log('renderNavCategories function called'); */
   const Nav = document.getElementById('UlNavBar');
 
   let ul = '';
-  categoris.forEach((category) => {
+  Categories.forEach((category) => {
     // ul += `<li class="nav-item "><a class="nav-link" href="#">${category}</a></li>`
     ul += `<li class="nav-item "><a class="nav-link" href="#">${category}</a></li>`;
   });
@@ -36,34 +36,34 @@ function renderNavCategoris(categoris) {
 }
 
 function removeDuplicateObjectFromArray(array, key) {
-    let check = {};
-    let res = [];
-    for(let i=0; i<array.length; i++) {
-        if(!check[array[i][key]]){
-            check[array[i][key]] = true;
-            res.push(array[i]);
-        }
+  let check = {};
+  let res = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!check[array[i][key]]) {
+      check[array[i][key]] = true;
+      res.push(array[i]);
     }
-    return res;
+  }
+  return res;
 }
 
 function getProductPic(category) {
- return uniqcategory.filter(product=>product.category.toUpperCase() == category );
-  
+  return uniqcategory.filter(product => product.category.toUpperCase() == category);
+
 }
 
 
-   
- 
 
-function renderBlocksCategoris(categoris) {
+
+
+function renderBlocksCategories(Categories) {
   const BodyContainer = document.getElementById('BodyContainer');
   let NewBodyContainer = '';
 
-  categoris.forEach((category) => {
+  Categories.forEach((category) => {
     let categoryProducts = getProductPic(category);
-   /*  console.log(categoryProducts[0]); */
-    const card = `<div class="card bg-dark text-black">
+    /*  console.log(categoryProducts[0]); */
+    const card = `<div class="card bg-dark text-black" onclick="RenderProductsInCategory('${category}')">
                   <img src="${categoryProducts[0].image}" class="card-img" alt="${category}">
                   <div class="card-img-overlay">
                   <h3 class="card-title text-center">${category}</h3>
@@ -75,10 +75,10 @@ function renderBlocksCategoris(categoris) {
   BodyContainer.innerHTML = NewBodyContainer;
 }
 
-function StartRenderCategoris() {
-  let categoris = OrderTheCategorys();
-  uniqcategory =  removeDuplicateObjectFromArray(products, 'category');
-  renderNavCategoris(categoris);
-  renderBlocksCategoris(categoris);
-  
+function StartRenderCategories() {
+  let Categories = OrderTheCategories();
+  uniqcategory = removeDuplicateObjectFromArray(products, 'category');
+  renderNavCategories(Categories);
+  renderBlocksCategories(Categories);
+
 }
