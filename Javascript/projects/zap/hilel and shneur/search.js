@@ -13,12 +13,7 @@ products.forEach(product => {
 function handleSearch(e) {
     e.preventDefault();
     const searchTerm = e.target.children.search.value;
-<<<<<<< HEAD
     if (searchTerm.length > 2) {
-=======
-
-    if (searchTerm.length > 1) {
->>>>>>> master
         const results = searchProducts(searchTerm);
         renderSearchResults(results);
     }
