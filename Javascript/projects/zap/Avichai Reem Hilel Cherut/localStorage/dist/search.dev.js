@@ -9,10 +9,7 @@ function handleSearch(e) {
 
   }
 
-  if (searchTerm.length < 1) {
-    root.innerHTML = "";
-    filterButtons.innerHTML = "";
-  }
+  if (searchTerm.length < 1) {}
 }
 
 var results = [];

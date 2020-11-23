@@ -7,8 +7,6 @@ function handleSearch(e) {
         // renderSearchResults(results);
     }
     if(searchTerm.length<1){
-        root.innerHTML = ""
-        filterButtons.innerHTML = ""
     }
 }
 

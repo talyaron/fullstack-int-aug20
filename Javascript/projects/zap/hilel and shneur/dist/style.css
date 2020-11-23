@@ -13,18 +13,18 @@ body {
 .cotert .imglogo {
   height: 50px;
   margin-left: 10px;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 .cotert .imgg {
   width: 150px;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 .cotert .imgg img {
   width: 120px;
 }
 .cotert form {
   position: relative;
-  width: 400px;
+  width: 350px;
   margin: 10px;
 }
 .cotert form input {
@@ -43,7 +43,7 @@ body {
   border: 0;
   outline: none;
   position: absolute;
-  right: 40px;
+  right: 20px;
   top: 18px;
 }
 .cotert form button img {
@@ -54,6 +54,7 @@ body {
   background-color: #3a3f40;
   border-top: black solid 1px;
   text-align: center;
+  display: none;
 }
 .cotertbotton .cotertbuton {
   height: 40px;
@@ -119,9 +120,6 @@ body {
 }
 
 #category {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 20px;
@@ -132,29 +130,39 @@ body {
 .category {
   background-color: rgba(255, 248, 239, 0.404);
   padding: 10px;
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  height: 100px;
   border-radius: 10px;
-  margin: 15px;
+  box-sizing: border-box;
+  margin-top: 15px;
 }
 .category img {
   width: 100%;
   height: 80%;
 }
+.category p {
+  width: 80%;
+  margin: auto;
+}
+
+.category:hover p {
+  animation: example1 2s forwards;
+}
 
 .category:hover {
   box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.301), -4px -4px 5px rgba(121, 121, 121, 0.301);
-  animation-name: example1;
-  animation-duration: 4s;
 }
 
 @keyframes example1 {
+  0% {
+    width: 80%;
+  }
   100% {
-    text-align: center;
+    width: 5%;
   }
 }
 .div {
-  background-color: rgba(157, 255, 173, 0.349);
+  background-color: rgba(95, 95, 95, 0.349);
   border: 2px solid #b9b9b9;
   width: 150px;
   text-align: center;
@@ -168,41 +176,74 @@ body {
 #showprodctfilter {
   display: flex;
   flex-wrap: wrap;
-  border: solid black;
   padding: 10px;
   border-radius: 20px;
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .showprodctfilter {
-  background-color: rgba(255, 219, 173, 0.404);
-  padding: 10px;
-  width: 160px;
-  height: 160px;
-  border-radius: 10px;
+  background-color: rgba(95, 95, 95, 0.349);
+  border: 5px solid #554c4c;
+  padding: 50px;
   margin: 15px;
-  border-radius: 10%;
+  border-radius: 20px;
   margin: auto;
   margin-top: 3%;
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  font-size: 25px;
 }
 
 .showprodctfilter:hover {
   box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.301), -4px -4px 5px rgba(121, 121, 121, 0.301);
-  animation-name: example;
-  animation: ease-in-out;
-  animation-duration: 4s;
 }
 
-@keyframes example {
-  0% {
-    background-color: #fff2f2;
-    left: 0px;
-    top: 0px;
-  }
-  100% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }
+.card {
+  width: 50%;
+  height: 50px;
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+  display: none;
+}
+.card .divimg {
+  width: 50px;
+  right: 5px;
+  top: 5px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+}
+.card .displayproducts {
+  background-color: #b1b1b1;
+  border: 5px solid #554c4c;
+  width: 50%;
+  max-width: 750px;
+  height: 1000px;
+  margin: 150px auto;
+  border-radius: 20px;
+  position: fixed;
+  top: -10px;
+  left: auto;
+}
+
+.prod {
+  padding: 10px;
+  text-align: center;
+}
+.prod .text1 {
+  font-size: 50px;
+  font-weight: 800;
+  padding: 10px;
+}
+.prod .text2 {
+  font-size: 30px;
+  padding: 10px;
+}
+.prod .text5 img {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 20px;
+  max-width: 500px;
 }

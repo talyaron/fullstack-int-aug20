@@ -7,7 +7,6 @@ function handleSearch(e) {
         const results = searchProducts(searchTerm);
         renderSearchResults(results);
     }
-    
 }
 
 function searchProducts(searchTerm) {
@@ -15,8 +14,11 @@ function searchProducts(searchTerm) {
     const regSearch = new RegExp(searchTerm, 'g')
     products.forEach(product => {
       if( regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model) ){
-        results.push(product);
-      } 
+        results.push(product)
+        console.log(results);
+      }
+
+     
     })
 
     
@@ -28,9 +30,8 @@ function renderSearchResults(results){
 
     let html = '';
     results.forEach(product=>{
-        html += `<p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</p>`
+        html += `<div id="searchInsert">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</div>`
     })
 
     root.innerHTML = html;
 }
-
