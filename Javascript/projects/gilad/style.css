@@ -1,0 +1,36 @@
+#searchBar{
+    background-color: gray;
+    ;
+  display: inline-block;
+  text-align: center;
+   
+   margin-top: 1%;
+   padding-top: 1%;
+   padding-bottom: 1%;
+   width: 100%;
+}
+#createCategories{
+    text-align: center;
+    margin-top: 1%;
+
+}
+#createCategories>button{
+    background-color: blueviolet;
+    margin-left: 1%;
+    color: cornsilk;
+
+}
+:hover#mobile{
+    background-color: cyan;
+    color: darkblue;
+}
+:hover#computers{
+    background-color: cyan;
+    color: darkblue;
+}
+:hover#electricity{
+    background-color: cyan;
+    color: darkblue;
+}
+
+
