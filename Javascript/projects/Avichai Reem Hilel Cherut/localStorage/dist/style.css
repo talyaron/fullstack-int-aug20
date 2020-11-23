@@ -139,8 +139,9 @@ body .ads img {
   text-decoration: none;
   border-radius: 0.7em;
   align-self: center;
-  background-color: blue;
+  background-color: #5889f3;
   outline: 0;
+  color: white;
 }
 
 .title {
@@ -179,4 +180,25 @@ body .ads img {
 .product {
   width: 50%;
   margin: auto;
+}
+
+.productInfoCard {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  box-shadow: 1px 1px 3px black;
+  margin: auto;
+  margin-top: 2em;
+  padding: 0.5em;
+  background-color: white;
+}
+.productInfoCard .img {
+  width: 50%;
+  margin-right: 1em;
+}
+.productInfoCard h1 {
+  color: #17007e;
+}
+.productInfoCard .info {
+  direction: ltr;
 }
