@@ -8,7 +8,7 @@ function handleSearch(e) {
     
     const searchTerm = e.target.children.search.value;
 
-    if(searchTerm.length>2){
+    if(searchTerm !== Number){
         const results = searchProducts(searchTerm);
         renderSearchResults(results);
     }
