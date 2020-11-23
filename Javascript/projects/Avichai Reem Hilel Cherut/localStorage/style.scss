@@ -179,8 +179,9 @@ body {
         text-decoration: none;
         border-radius: 0.7em;
         align-self: center;
-        background-color: blue;
+        background-color: rgb(88, 137, 243);
         outline: 0;
+        color: white;
     }
 }
 
@@ -229,4 +230,28 @@ body {
 .product{
     width: 50%;
     margin: auto;
+  
+   
+}
+
+.productInfoCard{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    box-shadow: 1px 1px 3px black;
+    margin: auto;
+    margin-top: 2em;
+    padding: .5em;
+    background-color: white;
+    .img{
+        width: 50%;
+        margin-right: 1em;
+    }
+    h1{
+        color: rgb(23, 0, 126);
+       
+    }
+    .info{
+        direction: ltr;
+    }
 }

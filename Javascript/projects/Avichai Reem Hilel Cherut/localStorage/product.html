@@ -18,23 +18,60 @@
         </form>
       </div>
 
-    <div class="product">
-        <h1>NAME</h1>
-        <div></div>
-        <div></div>
-
+    <div class="productInfoCard">
+        
+        <div class="info">
+            <h1 class="name"></h1>
+            <h1 class="description"></h1>
+            <h2 class="recommendations"></h2>
+            <h2 class="price"></h2>
+            <p class="brand"></p>
+            <p class="model"></p>
+            <p class="inStoreSince"></p>
+        </div>
+        
+        <div class="img"></div>
     </div>
+
     <script src="products.js"></script>
     <script>
+
         let product = localStorage.getItem("productImg")
-        console.log(product)
+    
+           
+       let img = document.querySelector('.img')
+    //    let info = document.querySelector('.info')
+       let name = document.querySelector('.name')
+       let description = document.querySelector('.description')
+       let recommendations = document.querySelector('.recommendations')
+       let price = document.querySelector('.price')
+       let brand = document.querySelector('.brand')
+       let model = document.querySelector('.model')
+       let inStoreSince = document.querySelector('.inStoreSince')
+
         const productRender = document.querySelector(".product")
         products.forEach(element => {
             if (product == element.image) {
                 console.log("123")
-                console.log(element)
+                console.log(element.image)
+                img.innerHTML = `<img src='${element.image}' style='width:100%; height:400px' >`;
+                name.innerHTML = `${element.name}`;
+                description.innerHTML = ` description: ${element.description}`;
+                recommendations.innerHTML = `recommendations: ${element.recommendations}`;
+                price.innerHTML = `price: ${element.price}`;
+                brand.innerHTML = `brand: ${element.brand}`;
+                model.innerHTML = `model: ${element.model}`;
+                inStoreSince.innerHTML = `inStoreSince: ${element.inStoreSince}`;
+                
             }
         });
+     
+
+    //    img.innerHTML(product.image);
+      
+     
+
+       
     </script>
 </body>
 
