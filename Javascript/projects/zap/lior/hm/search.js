@@ -2,10 +2,12 @@ function handleSearch(e) {
     e.preventDefault();
     
     const searchTerm = e.target.children.search.value;
+
     if(searchTerm.length>2){
         const results = searchProducts(searchTerm);
         renderSearchResults(results);
     }
+    
 }
 
 function searchProducts(searchTerm) {
@@ -31,3 +33,4 @@ function renderSearchResults(results){
 
     root.innerHTML = html;
 }
+

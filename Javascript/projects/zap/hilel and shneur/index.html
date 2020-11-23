@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/ico" href="img/לוגו אתר.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My zap</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,300;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+
+<body>
+
+    <div class="cotert">
+        <img class="imglogo" src="img/4 לוגואים.jpg" alt="">
+        <img class="accessibility" src="img/נגישות.png" alt="">
+        <form onsubmit='handleSearch(event)'>
+            <input type='text' placeholder="אני רוצה לקנות" name='search' onkeyup='hideresults(event)' />
+            <button type='submit' id="button">
+                <img src="img/חיפוש.png" />
+            </button>
+        </form>
+        <div class="imgg">
+            <img src="img/zapnewlogo.png" alt="">
+        </div>
+    </div>
+    <div class="cotertbotton">
+        <div class="cotertbuton">
+            <div class="divh">
+                סינון לפי מחיר
+                <div class="pris">
+                    <div class="divcolor"></div>
+                </div>
+            </div>
+            <!-- <div class="divh">
+                סינון לפי מחיר
+                <div class="pris">
+                    <div class="divcolor"></div>
+                </div>
+            </div>
+            <div class="divh">
+                סינון לפי מחיר
+                <div class="pris">
+                    <div class="divcolor"></div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="box">
+        <div id="root"></div>
+        <div class="core"></div>
+        <div class="div" onclick="showCategory(event)">הצגת מוצרים</div>
+        <div id="category"></div>
+    </div>
+    <div id="showprodctfilter"></div>
+    <div class="card">
+    <div class="displayproducts">
+        <img class="divimg" onclick="clickxx()" src="img/x.png"/>
+        <div class="v"></div>
+    </div>
+</div>
+    <script src="products.js"></script>
+    <script src="search.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dist/style.css">
+  <title>sherchResult</title>
+</head>
+
+<body>
+  <div class="topNav">
+    <form onsubmit='handleSearch(event)'>
+      <a href="index.html"><img src="https://img.zap.co.il/imgs/newui/zapnewlogo.png"></a>
+      <input type='text' placeholder="אני רוצה לקנות" name='search' />
+      <input type='submit' value="חיפוש" />
+
+    </form>
+  </div>
+
+  <div class="filter">
+
+    <h3>סנן לפי ברנד</h3>
+    <div id="filterButtons"></div>
+  </div>
+  <h1 class="title">תוצאות החיפוש</h1>
+  <div id="root2"></div>
+
+  <script src="products.js"></script>
+  <script src="search.js"></script>
+  <script>
+
+    var chosenCategory = localStorage.getItem("chosenCategory");
+    console.log(chosenCategory)
+
+    var results1 = JSON.parse(localStorage.getItem("results"));
+    var filter = JSON.parse(localStorage.getItem("filter"));
+
+
+    let title = document.querySelector(".title")
+
+
+    const root2 = document.getElementById('root2');
+    let filterButtons = document.querySelector("#filterButtons")
+
+    let currentCategory = [];
+
+    filterButtons.innerHTML = '';
+    root2.innerHTML = ""
+    let stam = []
+    results1.forEach(product => {
+      console.log(product.category)
+      currentCategory.push(product);
+      root2.innerHTML += `<p class="product option"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}, המלצות: ${product.recommendations}</p>`
+
+
+      if (stam.indexOf(product.brand) == -1) {
+        stam.push(product.brand)
+        console.log(stam)
+        filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+      }
+    })
+
+    let afterFilter = []
+
+    filterButtons.addEventListener('click', e => {
+      let chosenFilter = (e.composedPath()[0].id)
+      console.log(e.composedPath()[0].id)
+      root2.innerHTML = ''
+      currentCategory.forEach(product => {
+
+        if (chosenFilter == product.brand) {
+          root2.innerHTML += `<p class="product option"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}, המלצות: ${product.recommendations}</p>`
+
+        }
+      })
+
+    });
+
+    let options = (document.querySelectorAll(".option"))
+
+    options.forEach(option => {
+      option.addEventListener('click', e => {
+        option.style.color = 'red';
+        option.style.curser = 'pointer';
+        let productImg = e.target.children[0].currentSrc
+        localStorage.setItem("productImg", productImg);
+        console.log(e.target.children[0].currentSrc)
+        window.location.href = "product.html"
+      })
+    })
+
+
+    // // let myItem = localStorage.getItem('i10');
+
+    // let anotherRoot = document.querySelector('.anotherRoot');
+
+
+
+    // var results1 = JSON.parse(localStorage.getItem("results"));
+    // console.log(results1)
+
+
+    // // anotherRoot.innerHTML= `<h1>${myItem}</h1>`
+
+    // // function renderSearchResults(results) {
+    // console.log('עןבד')
+
+    // var filter = JSON.parse(localStorage.getItem("filter"));
+    // // console.log(JSON.parse(localStorage.stam))
+    // // var cherut = localStorage.getItem("cherut");
+    // console.log(filter)
+    // console.log('גם זה')
+    // // const root = document.getElementById('root');
+    // // filterButtons.innerHTML = '';
+    // let html = '';
+    // results1.forEach(product => {
+    //   html += `<p class="product option"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
+    // })
+
+    // anotherRoot.innerHTML = html;
+
+
+    // let options = (document.querySelectorAll(".option"))
+
+    // options.forEach(option => {
+    //   option.addEventListener('click', e => {
+    //     option.style.color = 'red';
+    //     option.style.curser = 'pointer';
+    //     let productImg = e.target.children[0].currentSrc
+    //     localStorage.setItem("productImg", productImg);
+    //     console.log(e.target.children[0].currentSrc)
+    //     window.location.href = "product.html"
+    //   })
+    // })
+    // // }
+
+  </script>
+</body>
+
+</html>

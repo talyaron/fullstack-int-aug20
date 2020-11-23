@@ -25,7 +25,9 @@ function renderSearchResults(results) {
   var root = document.getElementById('root');
   var html = '';
   results.forEach(function (product) {
+    console.log('results');
     html += "<p>Product name: ".concat(product.name, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, "</p>");
   });
+  root.style = "display:block";
   root.innerHTML = html;
 }

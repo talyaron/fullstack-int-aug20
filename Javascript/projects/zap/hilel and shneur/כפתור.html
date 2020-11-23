@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .div {
+        background-color: rgb(180, 180, 180);
+        width: 40px;
+        height: 18px;
+        border-radius: 20px;
+        border: 2px solid grey;
+        transition: all 1s;
+        margin: auto;
+    }
+
+    .divcolor {
+        background-color: white;
+        width: 17px;
+        height: 18px;
+        border-radius: 50%;
+        transition: all 500ms;
+        margin-left: 0px;
+    }
+</style>
+
+<body>
+    <div class="div">
+        <div class="divcolor"></div>
+    </div>
+
+    <script>
+        const div = document.querySelector(".div")
+        const divcolor = document.querySelector(".divcolor")
+        div.addEventListener("click", function (event) {
+            if (divcolor.style.marginLeft=='0px'){
+                div.style.backgroundColor = "rgb(0, 90, 173)"
+                divcolor.style.marginLeft = "23px"
+
+            } else {
+                div.style.backgroundColor = "rgb(180, 180, 180)"
+                divcolor.style.marginLeft = "0px"
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
