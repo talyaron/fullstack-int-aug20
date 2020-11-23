@@ -37,16 +37,18 @@ renderSearchResults = (results) => {
     const root = document.getElementById('root');
     let html = '';
     results.forEach(product => {
-        html += `<a href="${product.Link}"><div class="card"><p>Product name:${product.name}</br> Product Model: ${product.model}</br> Price: ${product.price}</p></div></a>`
+        html += `<div class="card"><p>Product name:${product.name}</br> Product Model: ${product.model}</br> Price: ${product.price}</p></div>  <div id="showprodctfilter"></div>`
+        html += `<div id="category"></div>`
     })
     root.innerHTML = html;
 }
 
 // הצגת קטוגוריות
-let textCategory = "";
+
 showCategory = (event) => {
+    let textCategory = "";
     for (i = 0; i < ProductsFiltered.length; i++) {
-        textCategory += `<div class="category"value="${ProductsFiltered[i]}" onclick="openCtegory(event)" >${ProductsFiltered[i]}</div>`
+        textCategory += `<div class="category"value="${ProductsFiltered[i]}" onclick="openCtegory(event)" ><p>${ProductsFiltered[i]}</p></div>`
         document.querySelector("#category").innerHTML = textCategory;
     }
 
@@ -94,27 +96,27 @@ openCtegory = (e) => {
     let showprodctfilter = "";
 
     for (i = 0; i < results.length; i++) {
-        showprodctfilter += `<div class="showprodctfilter">${results[i].name} from ${results[i].brand} price -${results[i].price}</div>`
+        showprodctfilter += `<div class="showprodctfilter" onclick="displayProductsFun(event)">${results[i].name}</div>` // from ${results[i].brand} price ${results[i].price}
         document.querySelector("#showprodctfilter").innerHTML = showprodctfilter;
     }
-    scroll(0, 1000)
+    // scroll(0, 1000)
     // מתגים לשינוי מחיר
-    const pris = document.querySelector(".pris")
-    const divcolor = document.querySelector(".divcolor")
+    // const pris = document.querySelector(".pris")
+    // const divcolor = document.querySelector(".divcolor")
 
-    if (divcolor.style.marginLeft == '0px') {
-        divcolor.style.marginLeft = "22px"
-    } else {
-        pris.style.backgroundColor = "rgb(180, 180, 180)"
-        divcolor.style.marginLeft = "0px"
-    }
+    // if (divcolor.style.marginLeft == '0px') {
+    //     divcolor.style.marginLeft = "22px"
+    // } else {
+    //     pris.style.backgroundColor = "rgb(180, 180, 180)"
+    //     divcolor.style.marginLeft = "0px"
+    // }
 
 
     pris.addEventListener("click", function (event) {
         if (divcolor.style.marginLeft == '0px') {
             pris.style.backgroundColor = "rgb(0, 90, 173)"
             divcolor.style.marginLeft = "23px"
-            scroll(0, 1000)
+            // scroll(0, 1000)
 
             results = results.sort((a, b) => {
                 return a.price - b.price
@@ -126,4 +128,35 @@ openCtegory = (e) => {
             divcolor.style.marginLeft = "0px"
         }
     })
+}
+const card=document.querySelector(".card")
+// const displayproducts = document.querySelector(".displayproducts")
+
+displayProductsFun = (e) => {
+    let productsInfo = []
+    const prodctfilter = e.target.innerText
+    const regSearch = new RegExp(prodctfilter, 'g')
+    let hk=""
+    products.forEach(product => {
+       
+        if (regSearch.test(product.name)) {
+            productsInfo.push(product);
+            card.style.display="block"
+           
+            
+         
+                hk += `<div class="prod"><div class="text1"><b>name: </b>${product.name}</div><div class="text2"><b>brand: </b>${product.brand}</div><div class="text2"><b>category: </b>${product.category}</div><div class="text2"><b>description: </b>${product.description}</div><div class="text5"><img src="${product.image}"></div><div class="text2"><b>inStoreSince: </b>${product.inStoreSince}</div><div class="text2"><b>isdn: </b>${product.isdn}</div><div class="text2"><b>model: </b>${product.model}</div><div class="text2"><b>name: </b>${product.name}</div><div class="text2"><b>price: </b>${product.price}</div><div class="text2"><b>recommendations:</b>${product.recommendations}</div><div class="text2"><b>store: </b>${product.store}</div></div>`
+         
+            }
+            document.querySelector(".v").innerHTML = hk;
+            console.log(productsInfo)
+        
+        
+        // console.log(productsInfo)
+
+    })
+    
+}
+function clickxx(){
+    card.style.display="none"
 }

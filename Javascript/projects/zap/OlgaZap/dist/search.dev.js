@@ -30,18 +30,38 @@ var root = document.getElementById('root');
 
 function renderSearchResults(results) {
   var html = '';
-  html += "<button onclick=handleSortClick()>Sort by price</button>";
+  var btnsSortFilter = '';
+  btnsSortFilter += "<span>Sort by:<button id=\"btnSortPrice\" type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" type=\"submit\">rating</button></span>";
   results.forEach(function (product) {
     html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
   });
-  root.innerHTML = html;
+  root.innerHTML = btnsSortFilter + html;
+  var btnSortPrice = document.getElementById('btnSortPrice');
+  var btnSortRating = document.getElementById('btnSortRating');
+  btnSortPrice.addEventListener('click', function (event1) {
+    html = '';
+    results.sort(function (a, b) {
+      if (a.price < b.price) return -1;
+    });
+    console.log(results);
+    results.forEach(function (product) {
+      html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
+    });
+    root.innerHTML = btnsSortFilter + html;
+  });
+  btnSortRating.addEventListener('click', function (event2) {
+    console.log('click');
+    html = '';
+    results.sort(function (a, b) {
+      if (a.recommendations < b.recommendations) return -1;
+    });
+    console.log(results);
+    results.forEach(function (product) {
+      html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
+    });
+    root.innerHTML = btnsSortFilter + html;
+  });
 }
-/*function handleSortClick(results){
-
-  results.sort((a, b) => { if(a.price< b.price) return -1;})
-  
-}*/
-
 
 function handleClick(e) {
   products.forEach(function (elm) {
