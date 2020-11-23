@@ -1,28 +1,228 @@
+body {
+    direction: rtl;
+    background-color: rgb(233, 233, 233);
+    font-family: Arial, Helvetica, sans-serif;
 
+    header {
+        width: 100%;
+        border: 1px solid black;
+
+        .topNav {
+            width: 100%;
+            height: 4.5em;
+            margin: auto;
+            background-color: rgb(78, 78, 78);
+            text-align: center;
+            padding-top: 0.8em;
+
+            img {
+                vertical-align: middle;
+                margin-left: 0.3em;
+            }
+
+            input[type=text] {
+                width: 50%;
+
+                border-radius: 0.7em;
+                outline: 0;
+                align-self: center;
+                padding: 0.7rem;
+
+            }
+
+            input[type=submit] {
+                height: 2.4rem;
+                text-decoration: none;
+                border-radius: 0.7em;
+                align-self: center;
+                background-color: blue;
+                outline: 0;
+            }
+        }
+    }
+
+    .ads {
+        width: 50%;
+        margin: auto;
+        margin-top: 1em;
+        display: grid;
+        grid-gap: 12px;
+        direction: ltr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            'a a b news'
+            'c d d news'
+            'e e f news'
+            'g h i news';
+
+
+        .news {
+            grid-area: news;
+
+            .title {
+                background-color: rgb(37, 37, 218);;
+                color: white;
+            }
+
+            div {
+                direction: rtl;
+                background-color: white;
+                margin-right: 5px;
+                padding: 0.5em;
+                margin: 0.25em;
+                font-size: 15px;
+
+                p {
+                    color: blue;
+                    direction: rtl;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+
+        #a {
+            grid-area: a;
+        }
+
+        #b {
+            grid-area: b;
+        }
+
+        #c {
+            grid-area: c;
+        }
+
+        #d {
+            grid-area: d;
+        }
+
+        #e {
+            grid-area: e;
+        }
+
+        #f {
+            grid-area: f;
+        }
+
+        #g {
+            grid-area: g;
+        }
+
+        #h {
+            grid-area: h;
+        }
+
+        #i {
+            grid-area: i;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .category {}
+
+}
 
 // search.html
 .anotherRoot {
-    border: 1px solid black;
-    width: 35%;
+    width: 50%;
     margin: auto;
-    img {
-        width: 85%;
-        height: 500px;
 
-        
+    .product {
+        width: 100%;
+        height: 8em;
+        border: 1px solid black;
+        background-color: white;
+        text-align: center;
+        line-height: 3.5em;
+
+        // display: flex;
+        // flex-direction: row-reverse;
+        // justify-content: space-between;
+        img {
+            float: right;
+            width: 30%;
+            height: 100%;
+            object-fit: contain;
+        }
     }
 }
+
+.topNav {
+    width: 100%;
+    height: 4.5em;
+    margin: auto;
+    background-color: rgb(78, 78, 78);
+    text-align: center;
+    padding-top: 0.8em;
+
+    img {
+        vertical-align: middle;
+        margin-left: 0.3em;
+    }
+
+    input[type=text] {
+        width: 50%;
+        font-size: 16px;
+        border-radius: 0.7em;
+        outline: 0;
+        align-self: center;
+        padding: 0.7rem;
+
+    }
+
+    input[type=submit] {
+        height: 2.4rem;
+        text-decoration: none;
+        border-radius: 0.7em;
+        align-self: center;
+        background-color: blue;
+        outline: 0;
+    }
+}
+
+.title {
+    text-align: center;
+}
+
 
 
 // categores.html
 #root2 {
-    border: 1px solid black;
-    width: 35%;
+    width: 50%;
     margin: auto;
-    img {
-        width: 85%;
-        height: 500px;
 
-        
+    .product {
+        width: 100%;
+        height: 8em;
+        background-color: white;
+        text-align: center;
+        line-height: 3.5em;
+
+        // display: flex;
+        // flex-direction: row-reverse;
+        // justify-content: space-between;
+        img {
+            float: right;
+            width: 30%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+.filter {
+
+    width: 50%;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+
+    button{
+        padding: 1em;
+        margin: 0.5em;
     }
 }

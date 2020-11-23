@@ -5,18 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dist/style.css">
-  <title>categories</title>
+  <title>Categories</title>
 </head>
 
 <body>
+  <div class="topNav">
+    <form onsubmit='handleSearch(event)'>
+      <a href="index.html"><img src="https://img.zap.co.il/imgs/newui/zapnewlogo.png"></a>
+      <input type='text' placeholder="אני רוצה לקנות" name='search' />
+      <input type='submit' value="חיפוש" />
 
-  <h1 class="title"></h1>
-  <h3>you can sort them by:</h3>
-  <button onclick="handlePrice(event)">Price</button>
-  <button onclick="handleRecommend(event)">Recommendations</button>
+    </form>
+  </div>
 
-  <h3>or filter the resoults by your favorite brand:</h3>
-  <div id="filterButtons"></div>
+  <div class="filter">
+    <h1 class="title"></h1>
+    <h3>אפשר לסנן לפי:</h3>
+    <button onclick="handlePrice(event)">Price</button>
+    <button onclick="handleRecommend(event)">Recommendations</button>
+
+    <h3>סנן לפי ברנד</h3>
+    <div id="filterButtons"></div>
+  </div>
 
   <div id="root2"></div>
 
@@ -29,7 +39,7 @@
     console.log('גם זה')
 
     let title = document.querySelector(".title")
-    title.innerHTML = `the cosen category is ${chosenCategory}`
+    title.innerHTML = `The chosen category: ${chosenCategory}`
 
 
     // let category = document.querySelectorAll('.category')
@@ -56,7 +66,7 @@
         currentCategory.push(product);
 
 
-        root2.innerHTML += `<p>Product name: ${product.name},Product category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p>`
+        root2.innerHTML += `<p class="product"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
 
 
         if (stam.indexOf(product.brand) == -1) {
@@ -79,7 +89,7 @@
       currentCategory.forEach(product => {
 
         if (chosenFilter == product.brand) {
-          root2.innerHTML += `<p>Product name: ${product.name},Product category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p>`
+          root2.innerHTML += `<p class="product"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
 
           // filterButtons.innerHTML += `<button >${product.brand}</button>`;
         }
