@@ -37,7 +37,7 @@ renderSearchResults = (results) => {
     const root = document.getElementById('root');
     let html = '';
     results.forEach(product => {
-        html += `<a href=""><div class="card"><p>Product name:${product.name}</br> Product Model: ${product.model}</br> Price: ${product.price}</p></div>  <div id="showprodctfilter"></div></a>`
+        html += `<div class="card"><p>Product name:${product.name}</br> Product Model: ${product.model}</br> Price: ${product.price}</p></div>  <div id="showprodctfilter"></div>`
         html += `<div id="category"></div>`
     })
     root.innerHTML = html;
@@ -101,15 +101,15 @@ openCtegory = (e) => {
     }
     // scroll(0, 1000)
     // מתגים לשינוי מחיר
-    const pris = document.querySelector(".pris")
-    const divcolor = document.querySelector(".divcolor")
+    // const pris = document.querySelector(".pris")
+    // const divcolor = document.querySelector(".divcolor")
 
-    if (divcolor.style.marginLeft == '0px') {
-        divcolor.style.marginLeft = "22px"
-    } else {
-        pris.style.backgroundColor = "rgb(180, 180, 180)"
-        divcolor.style.marginLeft = "0px"
-    }
+    // if (divcolor.style.marginLeft == '0px') {
+    //     divcolor.style.marginLeft = "22px"
+    // } else {
+    //     pris.style.backgroundColor = "rgb(180, 180, 180)"
+    //     divcolor.style.marginLeft = "0px"
+    // }
 
 
     pris.addEventListener("click", function (event) {

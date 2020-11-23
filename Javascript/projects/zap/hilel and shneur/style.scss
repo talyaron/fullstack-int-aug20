@@ -64,6 +64,7 @@ body {
     background-color: #3a3f40;
     border-top: black solid 1px;
     text-align: center;
+    display: none;
 
     .cotertbuton {
         height: 40px;
@@ -307,8 +308,10 @@ body {
 
     .text5 {
         img {
-            height: 300px;
+            width: 100%;
+            max-height: 300px;
             border-radius: 20px;
+            max-width: 500px;
         }
     }
 }

@@ -37,7 +37,7 @@ renderSearchResults = function renderSearchResults(results) {
   var root = document.getElementById('root');
   var html = '';
   results.forEach(function (product) {
-    html += "<a href=\"\"><div class=\"card\"><p>Product name:".concat(product.name, "</br> Product Model: ").concat(product.model, "</br> Price: ").concat(product.price, "</p></div>  <div id=\"showprodctfilter\"></div></a>");
+    html += "<div class=\"card\"><p>Product name:".concat(product.name, "</br> Product Model: ").concat(product.model, "</br> Price: ").concat(product.price, "</p></div>  <div id=\"showprodctfilter\"></div>");
     html += "<div id=\"category\"></div>";
   });
   root.innerHTML = html;
@@ -97,17 +97,15 @@ openCtegory = function openCtegory(e) {
     document.querySelector("#showprodctfilter").innerHTML = showprodctfilter;
   } // scroll(0, 1000)
   // מתגים לשינוי מחיר
+  // const pris = document.querySelector(".pris")
+  // const divcolor = document.querySelector(".divcolor")
+  // if (divcolor.style.marginLeft == '0px') {
+  //     divcolor.style.marginLeft = "22px"
+  // } else {
+  //     pris.style.backgroundColor = "rgb(180, 180, 180)"
+  //     divcolor.style.marginLeft = "0px"
+  // }
 
-
-  var pris = document.querySelector(".pris");
-  var divcolor = document.querySelector(".divcolor");
-
-  if (divcolor.style.marginLeft == '0px') {
-    divcolor.style.marginLeft = "22px";
-  } else {
-    pris.style.backgroundColor = "rgb(180, 180, 180)";
-    divcolor.style.marginLeft = "0px";
-  }
 
   pris.addEventListener("click", function (event) {
     if (divcolor.style.marginLeft == '0px') {
