@@ -1,37 +1,37 @@
 "use strict";
 
-function OrderTheCategorys() {
-  var categorys = [];
-  var OrderdCategorys = [];
+function OrderTheCategories() {
+  var categories = [];
+  var OrderedCategories = [];
   products.forEach(function (product) {
-    categorys.push(product.category);
+    categories.push(product.category);
   });
 
   try {
-    categorys.forEach(function (c) {
-      if (!OrderdCategorys.includes(c.toUpperCase())) {
-        OrderdCategorys.push(c.toUpperCase());
+    categories.forEach(function (c) {
+      if (!OrderedCategories.includes(c.toUpperCase())) {
+        OrderedCategories.push(c.toUpperCase());
       }
     });
   } catch (e) {
-    categorys.forEach(function (c) {
-      if (!OrderdCategorys.includes(c)) {
-        OrderdCategorys.push(c);
+    categories.forEach(function (c) {
+      if (!OrderedCategories.includes(c)) {
+        OrderedCategories.push(c);
       }
     });
   }
 
-  OrderdCategorys = OrderdCategorys.sort();
-  return OrderdCategorys;
+  OrderedCategories = OrderedCategories.sort();
+  return OrderedCategories;
 }
 /* Render NavBar */
 
 
-function renderNavCategoris(categoris) {
-  /*  console.log('renderNavCategoris function called'); */
+function renderNavCategories(Categories) {
+  /*  console.log('renderNavCategories function called'); */
   var Nav = document.getElementById('UlNavBar');
   var ul = '';
-  categoris.forEach(function (category) {
+  Categories.forEach(function (category) {
     // ul += `<li class="nav-item "><a class="nav-link" href="#">${category}</a></li>`
     ul += "<li class=\"nav-item \"><a class=\"nav-link\" href=\"#\">".concat(category, "</a></li>");
   });
@@ -58,22 +58,22 @@ function getProductPic(category) {
   });
 }
 
-function renderBlocksCategoris(categoris) {
+function renderBlocksCategories(Categories) {
   var BodyContainer = document.getElementById('BodyContainer');
   var NewBodyContainer = '';
-  categoris.forEach(function (category) {
+  Categories.forEach(function (category) {
     var categoryProducts = getProductPic(category);
     /*  console.log(categoryProducts[0]); */
 
-    var card = "<div class=\"card bg-dark text-black\">\n                  <img src=\"".concat(categoryProducts[0].image, "\" class=\"card-img\" alt=\"").concat(category, "\">\n                  <div class=\"card-img-overlay\">\n                  <h3 class=\"card-title text-center\">").concat(category, "</h3>\n                  </div>\n                  </div>");
+    var card = "<div class=\"card bg-dark text-black \" onclick=\"RenderProductsInCategory('".concat(category, "')\">\n                  <img src=\"").concat(categoryProducts[0].image, "\" class=\"card-img\" alt=\"").concat(category, "\">\n                  <div class=\"card-img-overlay \">\n                  <h3 class=\"card-title text-center \">").concat(category, "</h3>\n                  </div>\n                  </div>");
     NewBodyContainer += card;
   });
   BodyContainer.innerHTML = NewBodyContainer;
 }
 
-function StartRenderCategoris() {
-  var categoris = OrderTheCategorys();
+function StartRenderCategories() {
+  var Categories = OrderTheCategories();
   uniqcategory = removeDuplicateObjectFromArray(products, 'category');
-  renderNavCategoris(categoris);
-  renderBlocksCategoris(categoris);
+  renderNavCategories(Categories);
+  renderBlocksCategories(Categories);
 }

@@ -63,10 +63,10 @@ function renderBlocksCategories(Categories) {
   Categories.forEach((category) => {
     let categoryProducts = getProductPic(category);
     /*  console.log(categoryProducts[0]); */
-    const card = `<div class="card bg-dark text-black" onclick="RenderProductsInCategory('${category}')">
+    const card = `<div class="card bg-dark text-black " onclick="RenderProductsInCategory('${category}')">
                   <img src="${categoryProducts[0].image}" class="card-img" alt="${category}">
-                  <div class="card-img-overlay">
-                  <h3 class="card-title text-center">${category}</h3>
+                  <div class="card-img-overlay ">
+                  <h3 class="card-title text-center ">${category}</h3>
                   </div>
                   </div>`;
     NewBodyContainer += card;

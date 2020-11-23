@@ -45,7 +45,7 @@ body {
 /* style="overflow-y: scroll; min-height: 900px; " */
 #bigcontainer {
   overflow-y: scroll;
-  min-height: 900px;
+  height: 800px;
 }
 #bigcontainer #BodyContainer {
   /*  position: fixed; */
