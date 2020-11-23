@@ -30,11 +30,18 @@ var root = document.getElementById('root');
 
 function renderSearchResults(results) {
   var html = '';
+  html += "<button onclick=handleSortClick()>Sort by price</button>";
   results.forEach(function (product) {
     html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
   });
   root.innerHTML = html;
 }
+/*function handleSortClick(results){
+
+  results.sort((a, b) => { if(a.price< b.price) return -1;})
+  
+}*/
+
 
 function handleClick(e) {
   products.forEach(function (elm) {
