@@ -19,25 +19,29 @@ categoryBox.innerHTML += html
 
 
 let category = document.querySelectorAll('.category')
-
 const root = document.getElementById('root');
 let html1 = ""
 let productName = ""
 let filterButtons = document.querySelector("#filterButtons")
 
 let currentCategory = [];
+
 function handleClickCategories(e) {
+
     e.preventDefault();
-    window.open("categories.html")
+    if (chosenCategory != "default") {
+        window.location.href = "categories.html";
+    }
 }
+
 function handleClick(e) {
 
 
-    productName = e.target.value
+    chosenCategory = e.target.value
 
-    localStorage.setItem("chosenCategory", productName);
+    localStorage.setItem("chosenCategory", chosenCategory);
     console.log(localStorage)
-    console.log(productName)
+    console.log(chosenCategory)
     // location.replace("categories.html")
 
 
@@ -45,7 +49,7 @@ function handleClick(e) {
     root.innerHTML = ""
     let stam = []
     products.forEach(product => {
-        if (productName == product.category) {
+        if (chosenCategory == product.category) {
             console.log(product.category)
             currentCategory.push(product);
 

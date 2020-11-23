@@ -1,14 +1,19 @@
-p {
-  padding: 10px;
-  border-radius: 10px;
-}
-
 .anotherRoot {
   border: 1px solid black;
   width: 35%;
   margin: auto;
 }
 .anotherRoot img {
+  width: 85%;
+  height: 500px;
+}
+
+#root2 {
+  border: 1px solid black;
+  width: 35%;
+  margin: auto;
+}
+#root2 img {
   width: 85%;
   height: 500px;
 }
