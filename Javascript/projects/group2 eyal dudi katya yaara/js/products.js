@@ -11,9 +11,8 @@ const products = [
     image:
       'https://www.subaru-global.com/ebrochure/XV/2019my/EN/exterior/assets/FHI/MY19/XV/EN/Exterior/mp4-svg-360/exterior_360/d_exterior_360_01_01.jpg?43d1fdab5753f55134ca114abf2cd33a',
     description: 'achala auto',
-    name: 'i10',
     store: 'moshe and co.',
-    isdn: 'drytertyertyerh',
+    isdn: '1',
   },
   {
     category: 'mobile',
@@ -25,9 +24,8 @@ const products = [
     image:
       'https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg',
     description: 'very high end mobile phone',
-    name: 'iPhone 12 Pro',
     store: 'Apple',
-    isdn: 'SNJ28DN1900SMC89S82',
+    isdn: '2',
   },
   {
     category: 'fashion',
@@ -39,9 +37,8 @@ const products = [
     image:
       'https://cache.net-a-porter.com/images/products/1009127/1009127_in_920_q80.jpg',
     description: 'nice shoes',
-    name: 'GUCCI Ace Sneakers',
     store: 'net a porter',
-    isdn: 'ASMJDKK29CM10DCM22',
+    isdn: '3',
   },
   {
     category: 'electricity',
@@ -53,9 +50,8 @@ const products = [
     image:
       'https://www.payngo.co.il/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/6/5600-1_1.jpg',
     description: 'good washer',
-    name: 'Electra ELECTRA 5100',
     store: 'electra',
-    isdn: 'SDMKMKS929321CSSDQSDZXX',
+    isdn: '4',
   },
   {
     category: 'fashion',
@@ -67,9 +63,8 @@ const products = [
     image:
       'https://www.shopcleats.me/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/n/i/nike-total-90-laser-se-fg-remake-boots-white-yello-black-6.jpg',
     description: 'beautiful shoe that does the job!',
-    name: 'total90',
     store: 'sports naharya',
-    isdn: 'afyuagsuy',
+    isdn: '5',
   },
   {
     category: 'cars',
@@ -81,9 +76,8 @@ const products = [
     image:
       'https://editorial.pxcrush.net/carsales/general/editorial/2020-veloster-turbo-premium-11.jpg?width=1024&height=683&aspect=pad',
     description: 'georgeus car, dying to have it',
-    name: 'veloster',
     store: 'almog motors',
-    isdn: 'uhfjalsbdjqwhd',
+    isdn: '6',
   },
   {
     category: 'mobile',
@@ -95,22 +89,8 @@ const products = [
     image:
       'https://i.gadgets360cdn.com/products/large/Pixel-5-DB-369x800-1601538019.jpg?downsize=*:420&output-quality=80',
     description: 'solid and reliable mobile phone',
-    name: 'pixel 5',
     store: 'omer phone',
-    isdn: 'asdwdqwddqwdqw',
-  },
-  {
-    category: 'fashion',
-    price: 120,
-    inStoreSince: '2020-03-23',
-    brand: 'vans',
-    model: 'm',
-    recommendations: 90,
-    image: 'String',
-    description: 'https://img.zap.co.il/pics/0/0/8/1/56721800b.gif',
-    name: 'blue Tshirt',
-    store: 'BikeCafe',
-    isdn: 'cbkcbkw',
+    isdn: '7',
   },
   {
     category: 'fashion',
@@ -121,22 +101,20 @@ const products = [
     recommendations: 10,
     image: 'https://img.zap.co.il/pics/3/3/2/5/52765233b.gif',
     description: 'Unisex sunglasses',
-    name: 'sunglasses',
     store: 'נbug',
-    isdn: 'bdfbbd',
+    isdn: '8',
   },
   {
     category: 'electricity',
     price: 1750,
     inStoreSince: '2020-01-23',
-    brand: 'lg',
-    model: 'tv 55 inch',
+    brand: 'LG',
+    model: 'OLED55CXPVA 4K',
     recommendations: 10,
-    image: '',
+    image: 'https://img.zap.co.il/pics/9/4/0/2/55692049c.gif',
     description: 'tv for home',
-    name: 'lg tv 55 inch',
     store: 'alam',
-    isdn: 'dfdfxf',
+    isdn: '9',
   },
 
   {
@@ -146,12 +124,10 @@ const products = [
     brand: 'hp',
     model: 'leptop 14 inch',
     recommendations: 50,
-    image:
-      'https://img.zap.co.il/dealsImages/943/7/943-637403856539846510_1341289c.jpg',
+    image: 'https://img.zap.co.il/dealsImages/943/7/943-637403856539846510_1341289c.jpg',
     description: 'computer for home and work',
-    name: 'hp laptop 14 inch',
     store: 'bag',
-    isdn: 'jpijhkjg',
+    isdn: '10',
   },
 
   {
@@ -161,11 +137,10 @@ const products = [
     brand: 'apple',
     model: 'iphone 11',
     recommendations: 35,
-    image: '',
+    image: 'https://img.zap.co.il/pics/3/3/2/9/52789233c.gif',
     description: 'good phone',
-    name: 'iphone 11',
     store: 'apple store',
-    isdn: 'johoij',
+    isdn: '11',
   },
   {
     category: 'computers',
@@ -176,9 +151,8 @@ const products = [
     recommendations: 138,
     image: 'https://www.bestmobile.co.il/media/catalog/product/2/0/2031.png',
     description: 'achala computer',
-    name: '11.6" L203NA-FD126TS 4G',
     store: 'BestMobil',
-    isdn: 'drytertyertyerh',
+    isdn: '12',
   },
 
   {
@@ -190,61 +164,56 @@ const products = [
     recommendations: 38,
     image: 'https://img.zap.co.il/pics/5/1/9/1/58201915c.gif',
     description: 'achala computer',
-    name: '11.6" L203NA-FD126TS 4G',
     store: 'Pc-Online',
-    isdn: 'drytertyertyerh',
+    isdn: '13',
   },
   {
     category: 'cars',
     price: 118000,
     inStoreSince: '2018-01-1',
     brand: 'tesla',
-    model: '3',
+    model: 'model 3 - electric',
     recommendations: 100,
-    image: '',
+    image: 'https://static.dezeen.com/uploads/2017/07/tesla-model-3-design_dezeen_hero-1-852x479.jpg',
     description: 'the best sadan in the market',
-    name: 'tesla model 3 - electric ',
     store: 'tesla.com',
-    isdn: '15hhbvy1',
+    isdn: '14',
   },
   {
     category: 'cars',
     price: 250000,
     inStoreSince: '2015-01-1',
     brand: 'tesla',
-    model: 'S',
+    model: 'model S - electric',
     recommendations: 100,
-    image: '',
+    image: 'https://www.driving.co.uk/s3/st-driving-prod/uploads/2019/05/2019-Tesla-Model-3-Performance-USA-spec-01.jpg',
     description: 'the best primium sadan in the market',
-    name: 'tesla model S - electric ',
     store: 'tesla.com',
-    isdn: '15hhbvy1',
+    isdn: '15',
   },
   {
     category: 'computers',
     price: 2300,
     inStoreSince: '2020-01-1',
-    brand: 'lenovo',
+    brand: 'Lenovo',
     model: 'flex 5',
     recommendations: 70,
-    image: '',
+    image: 'https://img.zap.co.il/pics/9/2/5/7/56387529c.gif',
     description: 'tuch screen and pen include 2in1',
-    name: 'flex 5',
     store: 'best buy',
-    isdn: 'drytertyerh',
+    isdn: '16',
   },
   {
     category: 'mobile',
     price: 1170,
     inStoreSince: '2020-02-01',
-    brand: 'xioumi',
+    brand: 'xiaomi',
     model: 'k30 ultra',
     recommendations: 80,
-    image: '',
+    image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Funite4buy.com%2Freview%2FReview-Xiaomi-Redmi-K30-Ultra%2F&psig=AOvVaw3cxuEImTB4tMPHI18eVe8R&ust=1606203960448000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCKo5aWmO0CFQAAAAAdAAAAABAF',
     description: 'best phone',
-    name: 'k30 ultra',
     store: 'hemilton',
-    isdn: 'dr173rtyerh',
+    isdn: '17',
   },
   {
     category: 'FASHION',
@@ -253,27 +222,22 @@ const products = [
     brand: 'bilabol',
     model: 'shirt',
     recommendations: 200,
-    image:
-      'https://ae01.alicdn.com/kf/U997bf8243284402ea3107859f9dfb240z/T-shirt-BILLABONG-Gold-Coast-Tee.jpg',
+    image: 'https://ae01.alicdn.com/kf/U997bf8243284402ea3107859f9dfb240z/T-shirt-BILLABONG-Gold-Coast-Tee.jpg',
     description: 'best t-shirt',
-    name: 'holza',
     store: 'bilaspong',
-    isdn: 'ah sheli bahsheli',
+    isdn: '18',
   },
-  {
+  /* {
     category: 'Fashion',
     price: 32,
     inStoreSince: '7-2-92',
     brand: 'galcha',
     model: 'pants',
     recommendations: 0912,
-    image:
-      'https://cdn1.jolicloset.com/imgr/full/2019/08/140404-1/orange-silk-gucci-pants.jpg',
-    description: 'gucci gang',
-    name: 'pants',
+    image: 'https://cdn1.jolicloset.com/imgr/full/2019/08/140404-1/orange-silk-gucci-pants.jpg',
     store: 'bug',
-    isdn: 'ah sheli bahsheli',
-  },
+    isdn: '19',
+  }, */
   {
     category: 'Fashion',
     price: 69420,
@@ -281,38 +245,34 @@ const products = [
     brand: 'shalom',
     model: 'socks',
     recommendations: 99,
-    image:
-      'https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1539362705/557012_3K227_9764_001_100_0000_Light-Baby-GG-socks.jpg',
+    image: 'https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1539362705/557012_3K227_9764_001_100_0000_Light-Baby-GG-socks.jpg',
     description: 'lol',
-    name: 'socks',
     store: 'supersal',
-    isdn: 'ah sheli bahsheli',
+    isdn: '20',
   },
   {
-    category: 'mobile',
-    price: 526,
+    category: 'earphones',
+    price: 5261,
     inStoreSince: '2020-01-01',
     brand: 'Apple',
     model: 'AirPods 2',
     recommendations: '34',
     image: 'https://img.zap.co.il/pics/9/4/2/1/49811249b.gif',
     description: 'Wireless earphones from Apple',
-    name: 'String',
     store: 'SCOPE Digital',
-    isdn: 'zxmvbc869xcv',
+    isdn: '21',
   },
   {
-    category: 'mobile',
-    price: 540,
+    category: 'earphones',
+    price: 5402,
     inStoreSince: '2020-05-01',
     brand: 'Apple',
     model: 'AirPods 2',
     recommendations: '34',
     image: 'https://img.zap.co.il/pics/9/4/2/1/49811249b.gif',
     description: 'Wireless earphones from Apple',
-    name: 'String',
     store: 'MobileLand',
-    isdn: 'dh34ycxbxb',
+    isdn: '22',
   },
   {
     category: 'Vacuum cleaners',
@@ -323,22 +283,20 @@ const products = [
     recommendations: 1250,
     image: 'https://img.zap.co.il/pics/0/1/7/8/47368710b.gif',
     description: '8 cores, 12 threads',
-    name: 'V12 Daison Vacuum cleaner',
     store: 'Daison',
-    isdn: '123hsnbjh123',
+    isdn: '23',
   },
   {
-    category: 'mobile',
-    price: 575,
+    category: 'earphones',
+    price: 5753,
     inStoreSince: '2020-01-01',
     brand: 'Apple',
     model: 'AirPods 2',
     recommendations: '34',
     image: 'https://img.zap.co.il/pics/0/2/2/6/43436220c.gif',
     description: 'Micro 23 Litters',
-    name: 'String',
     store: 'Game Storm',
-    isdn: 'zx1mvbc869xcv',
+    isdn: '24',
   },
 
   {
@@ -350,9 +308,8 @@ const products = [
     recommendations: '24',
     image: 'https://img.zap.co.il/pics/0/2/2/6/43436220c.gif',
     description: 'Micro 23 Litters',
-    name: 'String',
     store: 'Game Storm',
-    isdn: 'zxmvbc8639xcv',
+    isdn: '25',
   },
   {
     category: 'electricity',
@@ -363,9 +320,8 @@ const products = [
     recommendations: '38',
     image: 'https://img.zap.co.il/pics/0/2/2/6/43436220c.gif',
     description: 'Micro 23 Litters',
-    name: 'String',
     store: 'Game Storm',
-    isdn: 'zxmvbc8629xcv',
+    isdn: '26',
   },
   {
     category: 'electricity',
@@ -376,51 +332,47 @@ const products = [
     recommendations: '14',
     image: 'https://img.zap.co.il/pics/9/4/2/1/49811249b.gif',
     description: 'WMicro 23 Litters',
-    name: 'String',
     store: 'Game Storm',
-    isdn: 'z5xmvbc869xcv',
+    isdn: '27',
   },
   {
     category: 'earphones',
-    price: 526,
+    price: 5264,
     inStoreSince: '2020-01-01',
     brand: 'Apple',
     model: 'AirPods 2',
     recommendations: '34',
     image: 'https://img.zap.co.il/pics/9/4/2/1/49811249b.gif',
     description: 'Wireless earphones from Apple',
-    name: 'String',
     store: 'SCOPE Digital',
-    isdn: 'zxmvbc869xcv',
+    isdn: '28',
   },
   {
     category: 'earphones',
-    price: 540,
+    price: 5405,
     inStoreSince: '2020-05-01',
     brand: 'Apple',
     model: 'AirPods 2',
     recommendations: '34',
     image: 'https://img.zap.co.il/pics/9/4/2/1/49811249b.gif',
     description: 'Wireless earphones from Apple',
-    name: 'String',
     store: 'MobileLand',
-    isdn: 'dh34ycxbxb',
+    isdn: '29',
   },
   {
     category: 'earphones',
-    price: 575,
+    price: 5756,
     inStoreSince: '2020-01-01',
     brand: 'Apple',
     model: 'AirPods 2',
     recommendations: '34',
-    image: 'https://img.zap.co.il/pics/0/2/2/6/43436220c.gif',
+    image: '',
     description: 'Micro 23 Litters',
-    name: 'String',
     store: 'Game Storm',
-    isdn: 'zx1mvbc869xcv',
+    isdn: '30',
   },
   {
-    category: 'Electric explains',
+    category: 'electricity',
     price: 375,
     inStoreSince: '2020-01-03',
     brand: 'Samsung',
@@ -428,12 +380,11 @@ const products = [
     recommendations: '24',
     image: 'https://img.zap.co.il/pics/0/2/2/6/43436220c.gif',
     description: 'Micro 23 Litters',
-    name: 'String',
     store: 'Game Storm',
-    isdn: 'zxmvbc8639xcv',
+    isdn: '31',
   },
   {
-    category: 'Electric explains',
+    category: 'electricity',
     price: 428,
     inStoreSince: '2019-01-01',
     brand: 'Samsung',
@@ -441,12 +392,11 @@ const products = [
     recommendations: '38',
     image: 'https://img.zap.co.il/pics/0/2/2/6/43436220c.gif',
     description: 'Micro 23 Litters',
-    name: 'String',
     store: 'Game Storm',
-    isdn: 'zxmvbc8629xcv',
+    isdn: '32',
   },
   {
-    category: 'Electric explains',
+    category: 'electricity',
     price: 429,
     inStoreSince: '2020-04-01',
     brand: 'Samsung',
@@ -454,9 +404,8 @@ const products = [
     recommendations: '14',
     image: 'https://img.zap.co.il/pics/9/4/2/1/49811249b.gif',
     description: 'WMicro 23 Litters',
-    name: 'String',
     store: 'Game Storm',
-    isdn: 'z5xmvbc869xcv',
+    isdn: '33',
   },
   {
     category: 'Computers',
@@ -465,12 +414,10 @@ const products = [
     brand: 'intel',
     model: 'i5-10500',
     recommendations: 4560,
-    image:
-      'https://www.google.com/search?q=intel+i510500&sxsrf=ALeKk01KkzNz98WQzXxXq_-yO4lE_navbg:1605806351722&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjulLDpjo_tAhVmWxUIHdyrB8cQ_AUoAXoECAcQAw&biw=2133&bih=1041#imgrc=JrlB0DCZvXzrjM',
+    image: 'https://img.zap.co.il/pics/3/8/4/6/55976483b.gif',
     description: '6 cores, 12 threads',
-    name: 'i5-10500k',
     store: 'intel store',
-    isdn: '123hnbjh123',
+    isdn: '34',
   },
   {
     category: 'computers',
@@ -479,22 +426,27 @@ const products = [
     brand: 'intel',
     model: 'i5-9600k',
     recommendations: 12780,
-    image:
-      'https://www.ebay.com/i/333303102982?mkevt=1&siteid=1&mkcid=2&mkrid=711-153320-877651-5&source_name=google&mktype=pla_ssc&campaignid=11227688602&groupid=109637828346&targeted=pla-293946777986&MT_ID=&adpos=&device=c&googleloc=20514&itemid=333303102982&merchantid=116792603&geo_id=100&gclid=CjwKCAiAzNj9BRBDEiwAPsL0d4An78lLBihzNR7N5F-lWGUg4555cYx463oazuAupZLp9teM46ptLBoC_GwQAvD_BwE',
+    image: 'https://img.zap.co.il/pics/7/2/8/5/58655827b.gif',
     description: '6 cores, 6 threads',
-    name: 'i5-9600k',
     store: 'intel store',
-    isdn: '123hnbjh123',
+    isdn: '35',
   },
 ];
 
-function RenderProductScreen() {  /* product */
-  const BodyContainer = document.getElementById('BodyContainer');
+function FilterProductsById(products, id) {
+  /*  return products.isdn == id; */
+  let ProductsByid = products.filter(filtered => filtered.isdn == id);
+  console.log(`this is the id: ${ProductsByid}`);
+  return ProductsByid;
+}
 
-  const card = `<!-- ProductSection -->
+function RenderProductScreen(id) {
+  const BodyContainer = document.getElementById('BodyContainer');
+  const product = FilterProductsById(products, id);
+  const card = `
   <div id="productPaige">
-<div class="card text-center">
-<div class="card-header">
+  <div class="card text-center">
+  <div class="card-header">
   <ul class="nav nav-tabs card-header-tabs">
     <li class="nav-item">
       <a class="nav-link active" onclick="RenderMainTab()">Main</a>
@@ -506,12 +458,12 @@ function RenderProductScreen() {  /* product */
       <a class="nav-link disabled " onclick="RenderSpecificationsTab()">Specifications</a>
     </li>
   </ul>
-</div>
-<div class="card-body">
-  <img src="https://www.bestmobile.co.il/media/catalog/product/2/0/2031.png" alt=""> <!-- ProductPitcher -->
-  <h5 class="card-title">Computers Asus I5</h5> <!-- PRODUCKTNAME + Model -->
-  <p class="card-text">laptop Asus I5 16G</p>
-  <p class="card-text " style="font-size:2rem">450$</p> <!-- price -->
+ </div>
+ <div class="card-body">
+  <img src="${product[0].image}" style="width: 100%;" alt=""> <!-- ProductPitcher -->
+  <h5 class="card-title">${product[0].model}</h5> <!-- PRODUCKTNAME + Model -->
+  <p class="card-text">${product[0].brand} ${product[0].model} ${product[0].description}</p>
+  <p class="card-text " style="font-size:2rem">${product[0].price} $</p> <!-- price -->
 </div>
 </div>
 </div>
