@@ -25,7 +25,15 @@ function renderSearchResults(results) {
   var root = document.getElementById('root');
   var html = '';
   results.forEach(function (product) {
-    html += "<p>Product name: ".concat(product.name, ", Product Model: ").concat(product.model, ", Price: ").concat(product.price, "</p>");
+    console.log('results');
+    html += "<p onclick=\" resultClick('".concat(product.isdn, "')\">Product Model: ").concat(product.model, ", Price: ").concat(product.price, "</p>");
   });
+  root.style = "display:block";
   root.innerHTML = html;
+}
+
+function resultClick(id) {
+  var root = document.getElementById('root');
+  RenderProductScreen(id);
+  root.style = "display:none";
 }

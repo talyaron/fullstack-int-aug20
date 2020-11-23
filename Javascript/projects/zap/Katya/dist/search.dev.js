@@ -1,5 +1,9 @@
 "use strict";
 
+products.sort(function (a, b) {
+  return a.price - b.price;
+});
+
 function handleSearch(e) {
   e.preventDefault();
   var searchTerm = e.target.children.search.value;
@@ -28,7 +32,23 @@ function renderSearchResults(results) {
     html += "<div class=\"productList\"><img src=".concat(product.image, "><p class=\"productList__p\">Product name: <b>").concat(product.name, "</b><br> Product Model: <b>").concat(product.model, "</b><br> Price: <b>").concat(product.price, " </b><br> Since: <b>").concat(product.inStoreSince, "</b> </p></div>");
   });
   root.innerHTML = html;
+<<<<<<< HEAD
 } // function sortByPrice(results){
+=======
+} // function seeAll(results) {
+//     results.forEach(product => {
+//         document.getElementById('allProducts').innerHTML = results
+//     })
+// };
+// document.getElementById('allProducts').innerHTML = products
+// console.log(products)}
+// const allProducts = document.getElementById('allProducts');
+//     let html = "";
+// html += products
+// allProducts.innerHTML =  products;
+// }
+// function sortByPrice(results){
+>>>>>>> master
 //     const root=document.getElementById('root');
 //     let html = '';
 //     results.sort((a,b) => a.price-b.price)

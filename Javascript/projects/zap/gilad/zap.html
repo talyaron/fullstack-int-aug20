@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="searchBar">
+        <form onsubmit='handleSearch(event)'>
+            <input type='text' placeholder="חיפוש מוצר" name='search'/>
+            <input type='submit' value="חיפוש" />
+        </form>
+    </div>
+    
+    <div id="createCategories">
+        <button id="mobile" onclick="handleclick(event)"> mobile</button> 
+        <button id="computers"  onclick="handleclick(event)">computers</button> 
+        <button id="'electricity" onclick="handleclick(event)">electricity</button> 
+        <button id="'cars" onclick="handleclick(event)">cars</button> 
+        <button id="'fashion" onclick="handleclick(event)">fashion</button> 
+        
+    </div>
+    <div id="root"></div>
+    <script src="products.js"></script> 
+    <script src="search.js"></script>
+    <script src="createCategories.js"></script>
+    <script src="sortProducts.js"></script>
+    <script src="filterProducts.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="dist/style.css">
+    <title>Document</title>
+</head>
+<body onload="createCategories()">
+    <form onsubmit='handleSearch(event)'>
+        <input class="searchBtn" type='submit' value="Go!" />
+        <input class="searchBar" type='text' placeholder="Look For Your Product" name='search'>
+    </form>
+
+    <div id="searchResults" style="display: none;"></div>
+
+    <div id="createdCategories"></div>
+
+    <div id="createdCategoryPage"></div>
+
+    <div id="sortedProducts"></div>
+
+    <div id="filteredProducts"></div>
+
+    <div id="createdProductPage"></div>
+
+
+
+    <script src="products.js"></script> 
+    <script src="search.js"></script>
+    <script src="createCategories.js"></script>
+    <script src="sortProducts.js"></script>
+    <script src="filterProducts.js"></script>
+</body>
+</html>
