@@ -4,21 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>categories</title>
+  <link rel="stylesheet" href="dist/style.css">
+  <title>Categories</title>
 </head>
 
 <body>
+  <div class="topNav">
+    <form onsubmit='handleSearch(event)'>
+      <a href="index.html"><img src="https://img.zap.co.il/imgs/newui/zapnewlogo.png"></a>
+      <input type='text' placeholder="אני רוצה לקנות" name='search' />
+      <input type='submit' value="חיפוש" />
 
-  <h1 class="title"></h1>
-  <h3>you can sort them by:</h3>
-  <button onclick="handlePrice(event)">Price</button>
-  <button onclick="handleRecommend(event)">Recommendations</button>
-  
-  <h3>or filter the resoults by your favorite brand:</h3>
-  <div id="filterButtons"></div>
+    </form>
+  </div>
+
+  <div class="filter">
+    <h1 class="title"></h1>
+    <h3>אפשר לסנן לפי:</h3>
+    <button onclick="handlePrice(event)">Price</button>
+    <button onclick="handleRecommend(event)">Recommendations</button>
+
+    <h3>סנן לפי ברנד</h3>
+    <div id="filterButtons"></div>
+  </div>
 
   <div id="root2"></div>
-  
+
 
   <script src="products.js"></script>
 
@@ -28,7 +39,7 @@
     console.log('גם זה')
 
     let title = document.querySelector(".title")
-    title.innerHTML = `the cosen category is ${chosenCategory}`
+    title.innerHTML = `The chosen category: ${chosenCategory}`
 
 
     // let category = document.querySelectorAll('.category')
@@ -41,66 +52,68 @@
     let currentCategory = [];
 
     // function handleClick(e) {
-      // productName = e.target.value
+    // productName = e.target.value
 
-      // localStorage.setItem("chosenCategory", productName);
-      // console.log(localStorage)
-      // console.log(productName)
-      filterButtons.innerHTML = '';
-      root2.innerHTML = ""
-      let stam = []
-      products.forEach(product => {
-        if (chosenCategory == product.category) {
-          console.log(product.category)
-          currentCategory.push(product);
-
-
-          root2.innerHTML += `<p class='option'>Product category: ${product.category}, Product Model: ${product.model}, Price: ${product.price}</p><a>`
+    // localStorage.setItem("chosenCategory", productName);
+    // console.log(localStorage)
+    // console.log(productName)
+    filterButtons.innerHTML = '';
+    root2.innerHTML = ""
+    let stam = []
+    products.forEach(product => {
+      if (chosenCategory == product.category) {
+        console.log(product.category)
+        currentCategory.push(product);
 
 
-          if (stam.indexOf(product.brand) == -1) {
-            stam.push(product.brand)
-            console.log(stam)
-            filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
-          }
+        root2.innerHTML += `<p class="product option"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
+
+
+        if (stam.indexOf(product.brand) == -1) {
+          stam.push(product.brand)
+          console.log(stam)
+          filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+        }
 
 
 
+      }
+    })
+
+    let afterFilter = []
+
+    filterButtons.addEventListener('click', e => {
+      let chosenFilter = (e.composedPath()[0].id)
+      console.log(e.composedPath()[0].id)
+      root2.innerHTML = ''
+      currentCategory.forEach(product => {
+
+        if (chosenFilter == product.brand) {
+          root2.innerHTML += `<p class="product option"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
+
+          // filterButtons.innerHTML += `<button >${product.brand}</button>`;
         }
       })
 
-      let afterFilter = []
-
-      filterButtons.addEventListener('click', e => {
-  let chosenFilter = (e.composedPath()[0].id)
-  console.log(e.composedPath()[0].id)
-  root2.innerHTML =''
-  currentCategory.forEach(product =>{
-      
-      if(chosenFilter == product.brand){ 
-          root2.innerHTML += `<p class='option'>Product brand: ${product.brand}, Product Model: ${product.model}, Price: ${product.price}, Recommendations: ${product.recommendations}</p>`
-       
-          // filterButtons.innerHTML += `<button >${product.brand}</button>`;
-      }
-  })
-
-});
+    });
 
     // var options = document.getElementsByTagName("P");
     let options = (document.querySelectorAll(".option"))
-    
-    options.forEach(option =>{
-      option.addEventListener('click', e =>{
+
+    options.forEach(option => {
+      option.addEventListener('click', e => {
         option.style.color = 'red';
         option.style.curser = 'pointer';
-        console.log(e.target)
+        let productImg = e.target.children[0].currentSrc
+        localStorage.setItem("productImg", productImg);
+        console.log(e.target.children[0].currentSrc)
+        window.location.href = "product.html"
       })
     })
 
-    
 
   </script>
-    <script src="sortProducts.js"></script>
+  <script src="sortProducts.js"></script>
 </body>
 
 </html>

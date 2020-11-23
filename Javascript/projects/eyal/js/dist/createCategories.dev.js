@@ -65,7 +65,7 @@ function renderBlocksCategories(Categories) {
     var categoryProducts = getProductPic(category);
     /*  console.log(categoryProducts[0]); */
 
-    var card = "<div class=\"card bg-dark text-black\" onclick=\"RenderProductsInCategory('".concat(category, "')\">\n                  <img src=\"").concat(categoryProducts[0].image, "\" class=\"card-img\" alt=\"").concat(category, "\">\n                  <div class=\"card-img-overlay\">\n                  <h3 class=\"card-title text-center\">").concat(category, "</h3>\n                  </div>\n                  </div>");
+    var card = "<div class=\"card bg-dark text-black \" onclick=\"RenderProductsInCategory('".concat(category, "')\">\n                  <img src=\"").concat(categoryProducts[0].image, "\" class=\"card-img\" alt=\"").concat(category, "\">\n                  <div class=\"card-img-overlay \">\n                  <h3 class=\"card-title text-center \">").concat(category, "</h3>\n                  </div>\n                  </div>");
     NewBodyContainer += card;
   });
   BodyContainer.innerHTML = NewBodyContainer;

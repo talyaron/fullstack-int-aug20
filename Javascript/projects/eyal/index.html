@@ -1,3 +1,12 @@
+                                                        <!-- flow chart -->
+<!--    --------         -----------           ------------         ------------          ------------             -->
+<!--    |       |        | create   |          | filter by |        | filter by |         |           |            -->
+<!--    | index |    =>  |categories|   =>     |  brands   |  =>    |  brands & |  =>     |  single   |            -->
+<!--    |       |        |          |          |           |        |categories |         | product   |            -->
+<!--     --------          -----------          ------------         ------------          ------------            -->
+                                                          <!--  -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +28,7 @@
                     
                     <input id ="SearchButton" type='submit' value="Search" />
                 </form>
-            <a class="navbar-brand " href="#">
+            <a class="navbar-brand " href="index.html">
               <img src="https://img.zap.co.il/imgs/newui/zapnewlogo.png" width="100" height="40" alt="zap" loading="lazy">
             </a>
            
@@ -42,10 +51,12 @@
 
         
         </header>
-<div id="root" style="display: none;"></div>
- <div id="bigcontainer">
+
+<div id="root" class="container" style="display: none;"></div>
+
+ <div id="bigcontainer" >
    
-    <div id="BodyContainer" >
+    <div id="BodyContainer" class="container">
 
     </div>
 
@@ -60,6 +71,7 @@
     <script src="js/createCategories.js"></script>
     <script src="js/sortProducts.js"></script>
     <script src="js/filterProducts.js"></script>
+    <script src="js/filterByBrands.js"></script>
 
 
     

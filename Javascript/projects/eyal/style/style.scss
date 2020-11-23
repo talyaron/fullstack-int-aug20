@@ -28,6 +28,7 @@
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 5px;
+    left: 30%;
    
 p{
     margin: auto;
@@ -38,6 +39,7 @@ p{
     border: 1px solid black;
     text-align: center;
     box-shadow: 3px 3px 3px ;
+    
 }
 
 }
@@ -50,19 +52,18 @@ p{
 /* style="overflow-y: scroll; min-height: 900px; " */
 #bigcontainer{
     overflow-y: scroll; 
-    min-height: 900px;
+    height: 800px;
 #BodyContainer{
-   /*  position: fixed; */
-
    margin: auto;
     top: 13%;
     left: 24%;
     z-index: -1;
-    min-height: 800px;
+    /* min-height: 800px; */
     background-color: #EFEFEF;
     max-width: 1024px;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom:1%;
 
     .card{
         margin: 0.7%;

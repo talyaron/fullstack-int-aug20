@@ -1,20 +1,21 @@
 function handlePrice(e) {
-    products.sort((a, b) => a.price - b.price)
-    root2.innerHTML = ""
-    for (i = 0; i < products.length; i++) {
-        if (chosenCategory == products[i].category) {
-          root2.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
-  
-        }
+  products.sort((a, b) => a.price - b.price)
+  root2.innerHTML = ""
+  for (i = 0; i < products.length; i++) {
+    if (chosenCategory == products[i].category) {
+      root2.innerHTML += `<p class="product"><img src="${products[i].image}"> שם מוצר: ${products[i].name}<br> מודל: ${products[i].model}, מחיר: ${products[i].price}</p>`
+      
+
     }
   }
-  
-  function handleRecommend(e) {
-    products.sort((a, b) => a.recommendations - b.recommendations)
-    root2.innerHTML = ""
-    for (i = 0; i < products.length; i++) {
-        if (chosenCategory == products[i].category) {
-          root2.innerHTML += `<p>Product name: ${products[i].category}, Product Model: ${products[i].model}, Price: ${products[i].price}, Recommendations: ${products[i].recommendations}</p>`
-        }
+}
+
+function handleRecommend(e) {
+  products.sort((a, b) => a.recommendations - b.recommendations)
+  root2.innerHTML = ""
+  for (i = 0; i < products.length; i++) {
+    if (chosenCategory == products[i].category) {
+      root2.innerHTML += `<p class="product"><img src="${products[i].image}"> שם מוצר: ${products[i].name}<br> מודל: ${products[i].model}, מחיר: ${products[i].price}</p>`
     }
   }
+}

@@ -4,18 +4,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dist/style.css">
   <title>main</title>
 </head>
 
 <body>
 
-  <form onsubmit='handleSearch(event)'>
-    <input type='text' placeholder="חיפוש מוצר" name='search' />
-    <input type='submit' value="חיפוש" />
-  </form>
-  <select onclick="handleClick(event)" id="categoryBox" name="Category"></select>
+  <header>
 
-  <div id="root"></div>
+    <div class="topNav">
+      <form onsubmit='handleSearch(event)'>
+        <a href="index.html"><img src="https://img.zap.co.il/imgs/newui/zapnewlogo.png"></a>
+
+        <input type='text' placeholder="אני רוצה לקנות" name='search' />
+        <input type='submit' value="חיפוש" />
+
+      </form>
+    </div>
+
+    <form class="category" onsubmit="handleClickCategories(event)">
+      <select onclick="handleClick(event)" data-td="category" id="categoryBox" name="Category">
+        <option value="default" selected>Pick Category </option>
+      </select>
+      <input type='submit' value="Search by Category" />
+    </form>
+  </header>
+
+  <div class="ads">
+
+    <div class="news">
+      <div class="title">כותרת</div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+      <div>
+        <p>123</p>Lorem ipsum dolor sit amefficia.
+      </div>
+
+
+    </div>
+    <img id="a" src="https://img.zap.co.il/MainPage/CubesImages/CNCPKCNCPK325026739CNCPK9902683.jpg">
+    <img id="b" src="https://img.zap.co.il/MainPage/CubesImages/3Y21E133Y21E503Y21E673719590561.jpg">
+    <img id="c" src="https://img.zap.co.il/MainPage/CubesImages/OH05E1OH05E2502675044121622.jpg">
+    <img id="d" src="https://img.zap.co.il/MainPage/CubesImages/NHY5A13250267NHY5A66615289NHY5A.jpg">
+    <img id="e" src="https://img.zap.co.il/MainPage/CubesImages/0B0IG132502708586172343.jpg">
+    <img id="f" src="https://img.zap.co.il/MainPage/CubesImages/MNVUI132502679754590496.jpg">
+    <img id="g" src="https://img.zap.co.il/MainPage/CubesImages/RPLJ3132502711976777976.jpg">
+    <img id="h" src="https://img.zap.co.il/MainPage/CubesImages/7GPZR132502709023652796.jpg">
+    <img id="i" src="https://img.zap.co.il/MainPage/CubesImages/EBPWU132502707284590568.jpg">
+
+  </div>
 
 
 
@@ -26,7 +85,7 @@
   <script src="products.js"></script>
   <script src="search.js"></script>
   <script src="createCategories.js"></script>
-  
+
   <!-- <script>
     document.querySelector('#input').addEventListener('keyup', e => {
       console.log(e.key);
@@ -41,4 +100,4 @@
   <!-- <script src="second.js"></script> -->
 </body>
 
-</html>
+</html>h

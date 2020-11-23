@@ -15,7 +15,7 @@ function handleSearch(e) {
 let results = []
 function searchProducts(searchTerm) {
     results = []
-    const regSearch = new RegExp(searchTerm, 'g')
+    const regSearch = new RegExp(searchTerm, 'gi')
     products.forEach(product => {
         if (regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model)) {
             results.push(product);
@@ -24,8 +24,8 @@ function searchProducts(searchTerm) {
 
     console.log(results)
     localStorage.setItem("results", JSON.stringify(results));
-    // window.location.href = "search.html"
-    window.open('search.html')
+    window.location.href = "search.html"
+    // window.open('search.html')
     // location.replace("search.html")
     return results;
 

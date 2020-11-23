@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="topNav">
+        <form onsubmit='handleSearch(event)'>
+          <a href="index.html"><img src="https://img.zap.co.il/imgs/newui/zapnewlogo.png"></a>
+          <input type='text' placeholder="אני רוצה לקנות" name='search' />
+          <input type='submit' value="חיפוש" />
+    
+        </form>
+      </div>
+
+    <div class="product">
+        <h1>NAME</h1>
+        <div></div>
+        <div></div>
+
+    </div>
+    <script src="products.js"></script>
+    <script>
+        let product = localStorage.getItem("productImg")
+        console.log(product)
+        const productRender = document.querySelector(".product")
+        products.forEach(element => {
+            if (product == element.image) {
+                console.log("123")
+                console.log(element)
+            }
+        });
+    </script>
+</body>
+
+</html>

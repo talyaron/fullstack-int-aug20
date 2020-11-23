@@ -9,23 +9,25 @@ body {
   display: flex;
   justify-content: center;
 }
-.cotert .accessibility, .cotert .imglogoo {
+.cotert .accessibility,
+.cotert .imglogo {
   height: 50px;
-  margin-top: 15px;
   margin-left: 10px;
+  margin-top: 15px;
 }
 .cotert .imgg {
   width: 150px;
+  margin-top: 15px;
 }
 .cotert .imgg img {
   width: 120px;
-  margin-top: 15px;
 }
 .cotert form {
   position: relative;
   width: 400px;
+  margin: 10px;
 }
-.cotert form input[type=text] {
+.cotert form input {
   border-radius: 20px;
   outline: none;
   border: 0;
@@ -123,7 +125,6 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 20px;
-  border: 15px solid rgba(105, 105, 105, 0.102);
   border-radius: 0px 0px 10px 10px;
   margin: 0;
 }
@@ -135,7 +136,6 @@ body {
   height: 160px;
   border-radius: 10px;
   margin: 15px;
-  transition: all 250ms;
 }
 .category img {
   width: 100%;
@@ -144,8 +144,15 @@ body {
 
 .category:hover {
   box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.301), -4px -4px 5px rgba(121, 121, 121, 0.301);
+  animation-name: example1;
+  animation-duration: 4s;
 }
 
+@keyframes example1 {
+  100% {
+    text-align: center;
+  }
+}
 .div {
   background-color: rgba(157, 255, 173, 0.349);
   border: 2px solid #b9b9b9;
@@ -156,4 +163,46 @@ body {
   font-weight: 600;
   font-size: 20px;
   margin: 10px auto 10px;
+}
+
+#showprodctfilter {
+  display: flex;
+  flex-wrap: wrap;
+  border: solid black;
+  padding: 10px;
+  border-radius: 20px;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.showprodctfilter {
+  background-color: rgba(255, 219, 173, 0.404);
+  padding: 10px;
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  margin: 15px;
+  border-radius: 10%;
+  margin: auto;
+  margin-top: 3%;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.showprodctfilter:hover {
+  box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.301), -4px -4px 5px rgba(121, 121, 121, 0.301);
+  animation-name: example;
+  animation: ease-in-out;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0% {
+    background-color: #fff2f2;
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
 }
