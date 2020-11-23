@@ -1,6 +1,9 @@
 
+<<<<<<< HEAD
+=======
 products.sort((a, b) => a.price - b.price)
 
+>>>>>>> master
 function handleSearch(e) {
     e.preventDefault();
 
@@ -29,13 +32,19 @@ function renderSearchResults(results) {
     const root = document.getElementById('root');
 
     let html = '';
+<<<<<<< HEAD
+    results.forEach(product=>{
+=======
     results.forEach(product => {
+>>>>>>> master
         html += `<div class="productList"><img src=${product.image}><p class="productList__p">Product name: <b>${product.name}</b><br> Product Model: <b>${product.model}</b><br> Price: <b>${product.price} </b><br> Since: <b>${product.inStoreSince}</b> </p></div>`
     })
 
     root.innerHTML = html;
 }
 
+<<<<<<< HEAD
+=======
 // function seeAll(results) {
 //     results.forEach(product => {
 //         document.getElementById('allProducts').innerHTML = results
@@ -55,6 +64,7 @@ function renderSearchResults(results) {
 
 // }
 
+>>>>>>> master
 // function sortByPrice(results){
 //     const root=document.getElementById('root');
 
