@@ -30,6 +30,7 @@ body {
     form {
         position: relative;
         width: 400px;
+        margin: 10px;
 
 
         input {
@@ -170,8 +171,7 @@ body {
     height: 160px;
     border-radius: 10px;
     margin: 15px;
-
-
+    
 
     img {
         width: 100%;
@@ -180,12 +180,22 @@ body {
 }
 
 .category:hover {
-    animation: both;
-    animation-duration: 500ms;
-    animation-timing-function: ease-in-out;
     box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.301), -4px -4px 5px rgba(121, 121, 121, 0.301);
-    text-align: center;
+    animation-name: example1;
+    animation-duration: 4s;
+}
 
+@keyframes example1 {
+    0% {
+  
+    }
+
+ 
+
+    100% {
+        text-align: center;
+
+    }
 }
 
 .div {
@@ -202,18 +212,48 @@ body {
 }
 
 #showprodctfilter {
+    display: flex;
+    flex-wrap: wrap;
     border: solid black;
     padding: 10px;
-    border-radius: 20%;
-
+    border-radius: 20px;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
 }
 
 .showprodctfilter {
-    background-color: rgba(255, 248, 239, 0.404);
+    background-color: rgba(255, 219, 173, 0.404);
     padding: 10px;
     width: 160px;
     height: 160px;
     border-radius: 10px;
     margin: 15px;
+    border-radius: 10%;
+    margin: auto;
+    margin-top: 3%;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+
+.showprodctfilter:hover {
+    box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.301), -4px -4px 5px rgba(121, 121, 121, 0.301);
+    animation-name: example;
+    animation: ease-in-out;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    0% {
+        background-color: rgb(255, 242, 242);
+        left: 0px;
+        top: 0px;
+    }
+
+ 
+
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
 }

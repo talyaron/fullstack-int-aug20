@@ -88,11 +88,36 @@ openCtegory = function openCtegory(e) {
     }
   });
   console.log(prodctfilter);
-  console.log(results);
   var showprodctfilter = "";
 
   for (i = 0; i < results.length; i++) {
-    showprodctfilter += "<div class=\"showprodctfilter\"".concat(results[i], ">").concat(results[i], "</div>");
-    document.querySelector("#showprodctfilter").innerHTML = results[i];
+    showprodctfilter += "<div class=\"showprodctfilter\">".concat(results[i].name, " from ").concat(results[i].brand, " price -").concat(results[i].price, "</div>");
+    document.querySelector("#showprodctfilter").innerHTML = showprodctfilter;
   }
+
+  scroll(0, 5000); // מתגים לשינוי מחיר
+
+  var pris = document.querySelector(".pris");
+  var divcolor = document.querySelector(".divcolor");
+
+  if (divcolor.style.marginLeft == '0px') {
+    divcolor.style.marginLeft = "22px";
+  } else {
+    pris.style.backgroundColor = "rgb(180, 180, 180)";
+    divcolor.style.marginLeft = "0px";
+  }
+
+  pris.addEventListener("click", function (event) {
+    if (divcolor.style.marginLeft == '0px') {
+      pris.style.backgroundColor = "rgb(0, 90, 173)";
+      divcolor.style.marginLeft = "23px";
+      results = results.sort(function (a, b) {
+        return a.price - b.price;
+      });
+      console.log(results);
+    } else {
+      pris.style.backgroundColor = "rgb(180, 180, 180)";
+      divcolor.style.marginLeft = "0px";
+    }
+  });
 };
