@@ -66,7 +66,7 @@
         currentCategory.push(product);
 
 
-        root2.innerHTML += `<p class="product"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
+        root2.innerHTML += `<p class="product option"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
 
 
         if (stam.indexOf(product.brand) == -1) {
@@ -89,7 +89,7 @@
       currentCategory.forEach(product => {
 
         if (chosenFilter == product.brand) {
-          root2.innerHTML += `<p class="product"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
+          root2.innerHTML += `<p class="product option"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
 
           // filterButtons.innerHTML += `<button >${product.brand}</button>`;
         }
@@ -104,10 +104,12 @@
       option.addEventListener('click', e => {
         option.style.color = 'red';
         option.style.curser = 'pointer';
-        console.log(e.target)
+        let productImg = e.target.children[0].currentSrc
+        localStorage.setItem("productImg", productImg);
+        console.log(e.target.children[0].currentSrc)
+        window.location.href = "product.html"
       })
     })
-
 
 
   </script>

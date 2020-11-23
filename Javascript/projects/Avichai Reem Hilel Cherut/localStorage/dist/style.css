@@ -175,3 +175,8 @@ body .ads img {
   padding: 1em;
   margin: 0.5em;
 }
+
+.product {
+  width: 50%;
+  margin: auto;
+}

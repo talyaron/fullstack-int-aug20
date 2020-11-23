@@ -48,11 +48,23 @@
     // filterButtons.innerHTML = '';
     let html = '';
     results.forEach(product => {
-      html += `<p class="product"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
+      html += `<p class="product option"><img src="${product.image}"> שם מוצר: ${product.name}<br> מודל: ${product.model}, מחיר: ${product.price}</p>`
 
     })
 
     anotherRoot.innerHTML = html;
+    let options = (document.querySelectorAll(".option"))
+
+options.forEach(option => {
+  option.addEventListener('click', e => {
+    option.style.color = 'red';
+    option.style.curser = 'pointer';
+    console.log(e.target.currentSrc)
+    let productImg = e.target.currentSrc
+    localStorage.setItem("productImg", productImg);
+    window.location.href = "product.html"
+  })
+})
     // }
 
   </script>
