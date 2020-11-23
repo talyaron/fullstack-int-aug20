@@ -14,10 +14,6 @@ for (i = 0; i < filter.length; i++) {
 console.log(html)
 categoryBox.innerHTML += html
 
-// localStorage.setItem("filter", JSON.stringify(filter));
-// console.log(localStorage)
-
-
 let category = document.querySelectorAll('.category')
 const root = document.getElementById('root');
 let html1 = ""
@@ -42,10 +38,7 @@ function handleClick(e) {
     localStorage.setItem("chosenCategory", chosenCategory);
     console.log(localStorage)
     console.log(chosenCategory)
-    // location.replace("categories.html")
 
-
-    // filterButtons.innerHTML = '';
     root.innerHTML = ""
     let stam = []
     products.forEach(product => {
@@ -53,33 +46,15 @@ function handleClick(e) {
             console.log(product.category)
             currentCategory.push(product);
 
-
-            // root.innerHTML += `<a href="https://www.noknok.co.il/items/3046324"><p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p><a>`
-
             if (stam.indexOf(product.brand) == -1) {
                 stam.push(product.brand)
                 console.log(stam)
-                // filterButtons.innerHTML += `<button id='${product.brand}'>${product.brand}</button>`;
+            
             }
         }
 
     })
 
     let afterFilter = []
-
-    // filterButtons.addEventListener('click', e => {
-    //     let chosenFilter = (e.composedPath()[0].id)
-    //     console.log(e.composedPath()[0].id)
-    //     root.innerHTML =''
-    //     currentCategory.forEach(product =>{
-
-    //         if(chosenFilter == product.brand){ 
-    //             root.innerHTML += `<p class="product">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}<img src="${product.image}"></p>`
-
-    //         }
-    //     })
-
-    //   });
-
 }
 

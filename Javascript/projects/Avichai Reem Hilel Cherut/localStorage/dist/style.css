@@ -180,6 +180,7 @@ body .ads img {
 .product {
   width: 50%;
   margin: auto;
+  margin-bottom: 0.5em;
 }
 
 .productInfoCard {
