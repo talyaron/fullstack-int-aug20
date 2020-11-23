@@ -29,28 +29,44 @@
 // }
 function handleclick(e) {
 
+    document.getElementById(`root`).innerHTML = '';
     switch (e.target.innerHTML) {
         case 'mobile':
-            console.log('mobile')
+            products.forEach(product => {
+                if (product.category == 'mobile') {
+                    document.getElementById(`root`).innerHTML += `<div id="searchInsert">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</div>`
+                }
+            })
 
             break;
         case 'computers':
-            document.getElementById(`root`).innerHTML = ''
-            console.log('computers')
+
             products.forEach(product => {
-                if (product == 'computers') {
-                    document.getElementById(`root`).innerHTML += `<div id="searchInsert">Product name: ${products.name}, Product Model: ${products.model}, Price: ${products.price}</div>`
+                if (product.category == 'computers') {
+                    document.getElementById(`root`).innerHTML += `<div id="searchInsert">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</div>`
                 }
             })
             break;
         case 'electricity':
-            console.log('electricity')
+            products.forEach(product => {
+                if (product.category == 'electricity') {
+                    document.getElementById(`root`).innerHTML += `<div id="searchInsert">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</div>`
+                }
+            })
             break;
         case 'cars':
-            console.log('cars')
+            products.forEach(product => {
+                if (product.category == 'cars') {
+                    document.getElementById(`root`).innerHTML += `<div id="searchInsert">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</div>`
+                }
+            })
             break;
-        case 'computers':
-            console.log('fashion')
+        case 'fashion':
+            products.forEach(product => {
+                if (product.category == 'fashion') {
+                    document.getElementById(`root`).innerHTML += `<div id="searchInsert">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</div>`
+                }
+            })
             break;
         default:
 
