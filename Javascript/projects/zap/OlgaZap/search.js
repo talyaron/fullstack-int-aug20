@@ -31,15 +31,23 @@ const root=document.getElementById('root');
 function renderSearchResults(results){
    
     let html = '';
-    
+    html += `<button onclick=handleSortClick()>Sort by price</button>`
    
     results.forEach(product=>{
         html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
     })
-
+    
     root.innerHTML = html;
+    
        
 }
+
+/*function handleSortClick(results){
+
+  results.sort((a, b) => { if(a.price< b.price) return -1;})
+  
+}*/
+
 function handleClick(e){
     products.forEach(elm=>{
         if(e.target.id !== elm.isdn){
@@ -53,6 +61,8 @@ function handleClick(e){
     
     
 }
+
+
 
 
 
