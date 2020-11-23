@@ -31,22 +31,43 @@ const root=document.getElementById('root');
 function renderSearchResults(results){
    
     let html = '';
-    html += `<button onclick=handleSortClick()>Sort by price</button>`
-   
+    let btnsSortFilter = ''
+    btnsSortFilter += `<span>Sort by:<button id="btnSortPrice" type="submit"> price</button>
+    <button id="btnSortRating" type="submit">rating</button></span>`
     results.forEach(product=>{
         html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
     })
     
-    root.innerHTML = html;
-    
        
+    root.innerHTML = btnsSortFilter + html;
+    const btnSortPrice = document.getElementById('btnSortPrice')
+    const btnSortRating = document.getElementById('btnSortRating')
+
+btnSortPrice.addEventListener('click', event1=>{
+  html=''
+  results.sort((a, b) => { if(a.price< b.price) return -1;})
+  console.log(results)
+  results.forEach(product=>{
+    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
+})
+  root.innerHTML = btnsSortFilter + html;
+  
+  
+})
+btnSortRating.addEventListener('click', event2=>{
+  console.log('click')
+  html=''
+  results.sort((a, b) => { if(a.recommendations< b.recommendations) return -1;})
+  console.log(results)
+  results.forEach(product=>{
+    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
+})
+  root.innerHTML = btnsSortFilter + html;
+  
+  
+})     
 }
 
-/*function handleSortClick(results){
-
-  results.sort((a, b) => { if(a.price< b.price) return -1;})
-  
-}*/
 
 function handleClick(e){
     products.forEach(elm=>{
