@@ -29,8 +29,14 @@ function renderSearchResults(results){
     let html = '';
     results.forEach(product=>{
         console.log('results');
-        html += `<p>Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</p>`
+        html += `<p onclick=" resultClick('${product.isdn}')">Product Model: ${product.model}, Price: ${product.price}</p>`
     })
     root.style = "display:block"
     root.innerHTML = html;
+}
+
+function resultClick(id){
+    const root=document.getElementById('root');
+    RenderProductScreen(id);
+    root.style = "display:none"
 }

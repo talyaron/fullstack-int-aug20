@@ -25,6 +25,7 @@ body {
   border-radius: 10px;
   padding-top: 10px;
   padding-bottom: 5px;
+  left: 30%;
 }
 #root p {
   margin: auto;
