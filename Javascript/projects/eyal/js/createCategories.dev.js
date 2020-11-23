@@ -28,12 +28,10 @@ function OrderTheCategories() {
 
 
 function renderNavCategories(Categories) {
-  /*  console.log('renderNavCategories function called'); */
   var Nav = document.getElementById('UlNavBar');
   var ul = '';
   Categories.forEach(function (category) {
-    // ul += `<li class="nav-item "><a class="nav-link" href="#">${category}</a></li>`
-    ul += "<li class=\"nav-item \"><a class=\"nav-link\" href=\"#\">".concat(category, "</a></li>");
+    ul += "<li class=\"nav-item \"><a class=\"nav-link\" style=\"cursor:pointer\" onclick=\"RenderBrandsCategory('".concat(category, "')\">").concat(category, "</a></li>");
   });
   Nav.innerHTML = ul;
 }
@@ -63,12 +61,11 @@ function renderBlocksCategories(Categories) {
   var NewBodyContainer = '';
   Categories.forEach(function (category) {
     var categoryProducts = getProductPic(category);
-    /*  console.log(categoryProducts[0]); */
-
-    var card = "<div class=\"card bg-dark text-black\" onclick=\"RenderProductsInCategory('".concat(category, "')\">\n                  <img src=\"").concat(categoryProducts[0].image, "\" class=\"card-img\" alt=\"").concat(category, "\">\n                  <div class=\"card-img-overlay\">\n                  <h3 class=\"card-title text-center\">").concat(category, "</h3>\n                  </div>\n                  </div>");
+    var card = "<div style=\"border-radius: 10px;\" class=\"card bg-dark text-black \" onclick=\"RenderBrandsCategory('".concat(category, "')\">\n                  <img src=\"").concat(categoryProducts[0].image, "\" class=\"card-img\" style=\"width: auto;\" alt=\"").concat(category, "\">\n                  <h3 class=\"card-title text-center  \" style=\"margin-bottom: 0px; margin-top: 3px;\">").concat(category, "</h3>\n                  </div>");
     NewBodyContainer += card;
   });
   BodyContainer.innerHTML = NewBodyContainer;
+  BodyContainer.style = "display: flex; flex-wrap: wrap";
 }
 
 function StartRenderCategories() {

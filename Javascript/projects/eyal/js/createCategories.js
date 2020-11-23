@@ -23,13 +23,10 @@ function OrderTheCategories() {
 /* Render NavBar */
 
 function renderNavCategories(Categories) {
-  /*  console.log('renderNavCategories function called'); */
   const Nav = document.getElementById('UlNavBar');
-
   let ul = '';
   Categories.forEach((category) => {
-    // ul += `<li class="nav-item "><a class="nav-link" href="#">${category}</a></li>`
-    ul += `<li class="nav-item "><a class="nav-link" href="#">${category}</a></li>`;
+     ul += `<li class="nav-item "><a class="nav-link" style="cursor:pointer" onclick="RenderBrandsCategory('${category}')">${category}</a></li>`;
   });
 
   Nav.innerHTML = ul;
@@ -49,30 +46,21 @@ function removeDuplicateObjectFromArray(array, key) {
 
 function getProductPic(category) {
   return uniqcategory.filter(product => product.category.toUpperCase() == category);
-
 }
-
-
-
-
 
 function renderBlocksCategories(Categories) {
   const BodyContainer = document.getElementById('BodyContainer');
   let NewBodyContainer = '';
-
   Categories.forEach((category) => {
     let categoryProducts = getProductPic(category);
-    /*  console.log(categoryProducts[0]); */
-    const card = `<div class="card bg-dark text-black " onclick="RenderProductsInCategory('${category}')">
-                  <img src="${categoryProducts[0].image}" class="card-img" alt="${category}">
-                  <div class="card-img-overlay ">
-                  <h3 class="card-title text-center ">${category}</h3>
-                  </div>
+    const card = `<div style="border-radius: 10px;" class="card bg-dark text-black " onclick="RenderBrandsCategory('${category}')">
+                  <img src="${categoryProducts[0].image}" class="card-img" style="width: auto;" alt="${category}">
+                  <h3 class="card-title text-center  " style="margin-bottom: 0px; margin-top: 3px;">${category}</h3>
                   </div>`;
     NewBodyContainer += card;
-  });
-
+  })
   BodyContainer.innerHTML = NewBodyContainer;
+  BodyContainer.style = "display: flex; flex-wrap: wrap";
 }
 
 function StartRenderCategories() {
