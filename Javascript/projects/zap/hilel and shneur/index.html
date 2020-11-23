@@ -16,10 +16,10 @@
 <body>
 
     <div class="cotert">
-        <img class="imglogoo" src="img/4 לוגואים.jpg" alt="">
+        <img class="imglogo" src="img/4 לוגואים.jpg" alt="">
         <img class="accessibility" src="img/נגישות.png" alt="">
         <form onsubmit='handleSearch(event)'>
-            <input type='text' placeholder="אני רוצה לקנות" name='search' onkeyup="hiderezolt(event)" />
+            <input type='text' placeholder="אני רוצה לקנות" name='search' onkeyup='hideresults(event)' />
             <button type='submit' id="button">
                 <img src="img/חיפוש.png" />
             </button>
@@ -36,7 +36,7 @@
                     <div class="divcolor"></div>
                 </div>
             </div>
-            <div class="divh">
+            <!-- <div class="divh">
                 סינון לפי מחיר
                 <div class="pris">
                     <div class="divcolor"></div>
@@ -47,7 +47,7 @@
                 <div class="pris">
                     <div class="divcolor"></div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="box">
@@ -56,22 +56,10 @@
         <div class="div" onclick="showCategory(event)">הצגת מוצרים</div>
         <div id="category"></div>
     </div>
+    <div id="showprodctfilter"></div>
     <script src="products.js"></script>
     <script src="search.js"></script>
-    <script>
-        const pris = document.querySelector(".pris")
-        const divcolor = document.querySelector(".divcolor")
-        pris.addEventListener("click", function (event) {
-            if (divcolor.style.marginLeft == '0px') {
-                pris.style.backgroundColor = "rgb(0, 90, 173)"
-                divcolor.style.marginLeft = "23px"
-
-            } else {
-                pris.style.backgroundColor = "rgb(180, 180, 180)"
-                divcolor.style.marginLeft = "0px"
-            }
-        })
-    </script>
+  
 </body>
 
 </html>
