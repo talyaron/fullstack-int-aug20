@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit='handleSubmit(event)'>
+        <input type='text' name='name'>
+        <input type='submit' value='Send'>
+    </form>
+    <script>
+
+        function handleSubmit(e){
+            e.preventDefault()
+            const name = e.target.children.name.value;
+
+            sessionStorage.setItem('name', name);
+
+            window.location.href = 'page.html';
+        }
+       localStorage.setItem('user','tal');
+       sessionStorage.setItem('user2','tal2')
+       let a = {a:1, b:2, c:3}
+       
+       localStorage.setItem('obj',JSON.stringify(a))
+
+       let b = localStorage.getItem('obj')
+       b = JSON.parse(b);
+       console.log(b)
+    </script>
+    
+</body>
+</html>
