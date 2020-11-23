@@ -33,3 +33,4 @@ function renderSearchResults(results){
 
     root.innerHTML = html;
 }
+
