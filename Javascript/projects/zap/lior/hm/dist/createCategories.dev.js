@@ -25,7 +25,7 @@ function rendercategoris(filterarray) {
   var rendercategoris = document.getElementById("categoriesName");
   var html = '';
   filterarray.forEach(function (category) {
-    html += "<div>".concat(category, "</div>\n        <div><img src=></div>");
+    html += "<div>".concat(category, "</div>\n        <div><img src=\"img/").concat(category, ".jpg\"></div>");
   });
   rendercategoris.innerHTML = html;
 }

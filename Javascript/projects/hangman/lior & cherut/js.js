@@ -31,3 +31,28 @@ for (var i = 0; i < chosenWord.length; i++) {
 }
 letters.innerHTML = html2;
 
+let buttons = document.querySelectorAll('.button');
+buttons.forEach(button=>{
+  let clickLater= button.dataset.sign
+  button.addEventListener('click',filterLeter => {
+    //let searchTerm = clickLater.target.value
+  let regSearchTerm = new RegExp(clickLater,'g');
+  if(regSearchTerm.test(chosenWord)){
+    console.log('yes')
+} else {
+    console.log("no")}
+  })
+  //console.log(button.dataset.sign)
+})
+
+
+//function filterLeter (clickLater){
+  //let searchTerm = clickLater.target.value
+ // let regSearchTerm = new RegExp(clickLater,'g');
+  //if(regSearchTerm.test(chosenWord)){
+//console.log('no')
+//} else {
+//    console.log("yes")
+//}
+//}
+

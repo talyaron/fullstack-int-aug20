@@ -24,7 +24,7 @@ function rendercategoris(filterarray){
     let html=''
     filterarray.forEach(category=>{
         html+=`<div>${category}</div>
-        <div><img src=></div>`
+        <div><img src="img/${category}.jpg"></div>`
     })
     rendercategoris.innerHTML=html;
 }
