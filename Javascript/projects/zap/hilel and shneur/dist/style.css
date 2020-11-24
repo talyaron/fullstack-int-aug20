@@ -99,7 +99,7 @@ body {
   text-decoration: none;
   color: #2a2a2a;
 }
-.box #root a .card p {
+.box #root a .card1 p {
   background-color: white;
   padding: 20px 40px;
   border-radius: 10px;
@@ -110,7 +110,7 @@ body {
   box-shadow: 1px 1px 2px 3px rgba(128, 128, 128, 0.281);
   transition: all 250ms;
 }
-.box #root a .card p:hover {
+.box #root a .card1 p:hover {
   background-color: rgba(93, 45, 0, 0.144);
 }
 .box .core {

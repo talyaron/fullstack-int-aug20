@@ -32,6 +32,9 @@ function renderSearchResults(results) {
     html += "<div class=\"productList\"><img src=".concat(product.image, "><p class=\"productList__p\">Product name: <b>").concat(product.name, "</b><br> Product Model: <b>").concat(product.model, "</b><br> Price: <b>").concat(product.price, " </b><br> Since: <b>").concat(product.inStoreSince, "</b> </p></div>");
   });
   root.innerHTML = html;
+<<<<<<< HEAD
+} // function sortByPrice(results){
+=======
 } // function seeAll(results) {
 //     results.forEach(product => {
 //         document.getElementById('allProducts').innerHTML = results
@@ -45,6 +48,7 @@ function renderSearchResults(results) {
 // allProducts.innerHTML =  products;
 // }
 // function sortByPrice(results){
+>>>>>>> master
 //     const root=document.getElementById('root');
 //     let html = '';
 //     results.sort((a,b) => a.price-b.price)
