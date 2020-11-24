@@ -1,5 +1,6 @@
 body{
-    
+    text-align: center;
+
     #hiddenLetters{
         display: flex;
         width: 500px;
@@ -23,11 +24,56 @@ body{
     #lettersArray{
         text-align: center;
         margin-top: 50px;
-        
+
         .clickableLetter{
             height: 30px;
             width: 30px;
             margin: 3px
         }
+    }
+
+    .hangmanPic{
+        margin-top: 50px;
+    }
+
+    .div0{
+        height: 50px;
+        width: 350px;
+        background-color: gray;
+        position: fixed;
+        left: 450px;
+        bottom: 320px;
+    }
+    .div1{
+        height: 50px;
+        width: 350px;
+        background-color: gray;
+        position: fixed;
+        left: 450px;
+        bottom: 270px;
+    }
+    .div2{
+        height: 50px;
+        width: 350px;
+        background-color: gray;
+        position: fixed;
+        left: 450px;
+        bottom: 220px; 
+    }
+    .div3{
+        height: 50px;
+        width: 350px;
+        background-color: gray;
+        position: fixed;
+        left: 450px;
+        bottom: 170px;
+    }
+    .div4{
+        height: 100px;
+        width: 350px;
+        background-color: gray;
+        position: fixed;
+        left: 450px;
+        bottom: 70px;
     }
 }
