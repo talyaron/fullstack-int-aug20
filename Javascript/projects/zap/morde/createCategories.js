@@ -15,7 +15,7 @@ function removeDuplicates(arr){
         }
     });
     renderCategories(filteredCategoriesArray);
-
+    
  
 }
 
