@@ -30,8 +30,23 @@ function renderSearchResults(results){
 
     let html = '';
     results.forEach(product=>{
-        html += `<div id="searchInsert">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</div>`
+        html += `<div id="searchInsert"> onclick="handleInsertclick(event)" data-id="${product.name}" <p> Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price}</p> </div>`
     })
 
     root.innerHTML = html;
 }
+function handleInsertclick(e){
+    let root = document.getElementById('root') ;
+    root.innerHTML ='';
+    let x = ""
+     products.forEach(product=>{
+         if(product.name == e.target.dataset.id)
+         {
+             x+=`<img style="height: 150px;" src="${product.image}">`
+             x +=  `<div id="searchInsertObject" data-id="${product.name}"  onclick="handleInsertclick(event)">Product name: ${product.name}, Product Model: ${product.model}, Price: ${product.price},</div>`
+           
+         }
+         root.innerHTML =x;
+ 
+     })
+ }
