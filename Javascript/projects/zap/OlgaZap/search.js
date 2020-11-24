@@ -33,8 +33,13 @@ function renderSearchResults(results){
     let html = '';
     let btnsSortFilter = ''
 <<<<<<< HEAD
+<<<<<<< HEAD
     btnsSortFilter += `<span>Sort by:<button onclick=SortPrice() id="btnSortPrice" type="submit"> price</button>
     <button id="btnSortRating" onclick=SortRating() type="submit">rating</button></span>`
+=======
+    btnsSortFilter += `<span>Sort by:<button id="btnSortPrice" type="submit"> price</button>
+    <button id="btnSortRating" type="submit">rating</button></span>`
+>>>>>>> parent of 290bce8... cont
 =======
     btnsSortFilter += `<span>Sort by:<button id="btnSortPrice" type="submit"> price</button>
     <button id="btnSortRating" type="submit">rating</button></span>`
@@ -66,7 +71,11 @@ btnSortRating.addEventListener('click', event2=>{
   console.log(results)
   results.forEach(product=>{
 <<<<<<< HEAD
+<<<<<<< HEAD
   html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
+=======
+    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
+>>>>>>> parent of 290bce8... cont
 =======
     html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
 >>>>>>> parent of 290bce8... cont
