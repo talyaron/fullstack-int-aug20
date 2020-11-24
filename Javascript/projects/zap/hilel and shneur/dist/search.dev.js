@@ -29,6 +29,7 @@ searchProducts = function searchProducts(searchTerm) {
       hil();
     }
   });
+  console.log(results);
   return results;
 }; // מעביר תוצאות ל html
 
@@ -37,7 +38,7 @@ renderSearchResults = function renderSearchResults(results) {
   var root = document.getElementById('root');
   var html = '';
   results.forEach(function (product) {
-    html += "<div class=\"card\"><p>Product name:".concat(product.name, "</br> Product Model: ").concat(product.model, "</br> Price: ").concat(product.price, "</p></div>  <div id=\"showprodctfilter\"></div>");
+    html += "<div class=\"card1\"><p>Product name:".concat(product.name, "</br> Product Model: ").concat(product.model, "</br> Price: ").concat(product.price, "</p></div>  <div id=\"showprodctfilter\"></div>");
     html += "<div id=\"category\"></div>";
   });
   root.innerHTML = html;
@@ -95,23 +96,25 @@ openCtegory = function openCtegory(e) {
     showprodctfilter += "<div class=\"showprodctfilter\" onclick=\"displayProductsFun(event)\">".concat(results[i].name, "</div>"); // from ${results[i].brand} price ${results[i].price}
 
     document.querySelector("#showprodctfilter").innerHTML = showprodctfilter;
-  } // scroll(0, 1000)
-  // מתגים לשינוי מחיר
-  // const pris = document.querySelector(".pris")
-  // const divcolor = document.querySelector(".divcolor")
-  // if (divcolor.style.marginLeft == '0px') {
-  //     divcolor.style.marginLeft = "22px"
-  // } else {
-  //     pris.style.backgroundColor = "rgb(180, 180, 180)"
-  //     divcolor.style.marginLeft = "0px"
-  // }
+  }
 
+  scroll(0, 1000); // מתגים לשינוי מחיר
+
+  var pris = document.querySelector(".pris");
+  var divcolor = document.querySelector(".divcolor");
+
+  if (divcolor.style.marginLeft == '0px') {
+    divcolor.style.marginLeft = "22px";
+  } else {
+    pris.style.backgroundColor = "rgb(180, 180, 180)";
+    divcolor.style.marginLeft = "0px";
+  }
 
   pris.addEventListener("click", function (event) {
     if (divcolor.style.marginLeft == '0px') {
       pris.style.backgroundColor = "rgb(0, 90, 173)";
-      divcolor.style.marginLeft = "23px"; // scroll(0, 1000)
-
+      divcolor.style.marginLeft = "23px";
+      scroll(0, 1000);
       results = results.sort(function (a, b) {
         return a.price - b.price;
       });
@@ -123,7 +126,8 @@ openCtegory = function openCtegory(e) {
   });
 };
 
-var card = document.querySelector(".card"); // const displayproducts = document.querySelector(".displayproducts")
+var card = document.querySelector(".card");
+var displayproducts = document.querySelector(".displayproducts");
 
 displayProductsFun = function displayProductsFun(e) {
   var productsInfo = [];

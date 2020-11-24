@@ -14,7 +14,8 @@ function removeDuplicates(arr){
             filteredCategoriesArray.sort((a, b) => { if(a< b) return -1;})
         }
     });
-    return renderCategories(filteredCategoriesArray);
+    renderCategories(filteredCategoriesArray);
+
  
 }
 

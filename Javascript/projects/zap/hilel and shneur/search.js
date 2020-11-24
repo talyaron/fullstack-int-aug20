@@ -28,8 +28,13 @@ searchProducts = (searchTerm) => {
             results.push(product);
             hil();
         }
+      
+       
     })
-    return results;
+   
+    console.log(results)
+ 
+    return(results)
 }
 
 // מעביר תוצאות ל html
@@ -37,7 +42,7 @@ renderSearchResults = (results) => {
     const root = document.getElementById('root');
     let html = '';
     results.forEach(product => {
-        html += `<div class="card"><p>Product name:${product.name}</br> Product Model: ${product.model}</br> Price: ${product.price}</p></div>  <div id="showprodctfilter"></div>`
+        html += `<div class="card1"><p>Product name:${product.name}</br> Product Model: ${product.model}</br> Price: ${product.price}</p></div>  <div id="showprodctfilter"></div>`
         html += `<div id="category"></div>`
     })
     root.innerHTML = html;
@@ -99,24 +104,25 @@ openCtegory = (e) => {
         showprodctfilter += `<div class="showprodctfilter" onclick="displayProductsFun(event)">${results[i].name}</div>` // from ${results[i].brand} price ${results[i].price}
         document.querySelector("#showprodctfilter").innerHTML = showprodctfilter;
     }
-    // scroll(0, 1000)
+    
+    scroll(0, 1000)
     // מתגים לשינוי מחיר
-    // const pris = document.querySelector(".pris")
-    // const divcolor = document.querySelector(".divcolor")
+    const pris = document.querySelector(".pris")
+    const divcolor = document.querySelector(".divcolor")
 
-    // if (divcolor.style.marginLeft == '0px') {
-    //     divcolor.style.marginLeft = "22px"
-    // } else {
-    //     pris.style.backgroundColor = "rgb(180, 180, 180)"
-    //     divcolor.style.marginLeft = "0px"
-    // }
+    if (divcolor.style.marginLeft == '0px') {
+        divcolor.style.marginLeft = "22px"
+    } else {
+        pris.style.backgroundColor = "rgb(180, 180, 180)"
+        divcolor.style.marginLeft = "0px"
+    }
 
 
     pris.addEventListener("click", function (event) {
         if (divcolor.style.marginLeft == '0px') {
             pris.style.backgroundColor = "rgb(0, 90, 173)"
             divcolor.style.marginLeft = "23px"
-            // scroll(0, 1000)
+            scroll(0, 1000)
 
             results = results.sort((a, b) => {
                 return a.price - b.price
@@ -130,7 +136,7 @@ openCtegory = (e) => {
     })
 }
 const card=document.querySelector(".card")
-// const displayproducts = document.querySelector(".displayproducts")
+const displayproducts = document.querySelector(".displayproducts")
 
 displayProductsFun = (e) => {
     let productsInfo = []

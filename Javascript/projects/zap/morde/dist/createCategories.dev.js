@@ -18,7 +18,7 @@ function removeDuplicates(arr) {
       });
     }
   });
-  return renderCategories(filteredCategoriesArray);
+  renderCategories(filteredCategoriesArray);
 }
 
 String.prototype.capitalize = function () {
