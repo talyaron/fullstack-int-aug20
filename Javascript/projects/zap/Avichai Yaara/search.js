@@ -8,8 +8,9 @@ function handleSearch(e) {
         renderSearchResults(results);
     }
 }
+let results = []
 function searchProducts(searchTerm){
-    const results = []
+    results = []
     const regSearch = new RegExp(searchTerm, 'gi')
     products.forEach(product =>{
         if(regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model)){
@@ -22,8 +23,9 @@ function searchProducts(searchTerm){
 function renderSearchResults(results){
     const products = document.querySelector("#products")
     let html = ''
+    var index = -1
     results.forEach(product=>{
-        html += `<p onclick="handleShowProduct(event)">Product name: ${product.name}, 
+        html += `<p data-td="${index+=1}" onclick="handleShowProduct(event)">Product name: ${product.name}, 
         Product Model: ${product.model}, Product Price: ${product.price}<img src="${product.image}">`
     })
 
