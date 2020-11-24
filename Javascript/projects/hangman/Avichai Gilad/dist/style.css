@@ -1,0 +1,8 @@
+body button {
+  margin: 5px;
+  padding: 5px;
+  display: none;
+}
+body #newGame {
+  display: block;
+}
