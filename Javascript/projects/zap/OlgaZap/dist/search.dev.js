@@ -31,7 +31,7 @@ var root = document.getElementById('root');
 function renderSearchResults(results) {
   var html = '';
   var btnsSortFilter = '';
-  btnsSortFilter += "<span>Sort by:<button id=\"btnSortPrice\" type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" type=\"submit\">rating</button></span>";
+  btnsSortFilter += "<span>Sort by:<button onclick=SortPrice() id=\"btnSortPrice\" type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" onclick=SortRating() type=\"submit\">rating</button></span>";
   results.forEach(function (product) {
     html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
   });
