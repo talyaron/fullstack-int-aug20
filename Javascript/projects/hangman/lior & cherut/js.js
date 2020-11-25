@@ -90,7 +90,7 @@ buttons.forEach(button=>{
     console.log("no");
     no = document.createElement("audio");
     no.src = ("no.mp3");
-    no.play();
+    // no.play();
     no.volume = 0.03;
 
     buttons.forEach(button =>{
