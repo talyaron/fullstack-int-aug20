@@ -1,19 +1,21 @@
 "use strict";
 
+var results = [];
+
 function handleSearch(e) {
   e.preventDefault();
   var searchTerm = e.target.children.search.value;
   console.log(searchTerm);
 
   if (searchTerm.length >= 2) {
-    var results = searchProducts(searchTerm);
-    renderSearchResults(results);
+    var _results = searchProducts(searchTerm);
+
+    renderSearchResults(_results);
     /*console.log(results)*/
   }
 }
 
 function searchProducts(searchTerm) {
-  var results = [];
   var regSearch = new RegExp(searchTerm, 'g');
   products.forEach(function (product) {
     if (regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model)) {
@@ -26,41 +28,41 @@ function searchProducts(searchTerm) {
   return results;
 }
 
+debugger;
 var root = document.getElementById('root');
 
 function renderSearchResults(results) {
   var html = '';
   var btnsSortFilter = '';
-  btnsSortFilter += "<span>Sort by:<button onclick=SortPrice() id=\"btnSortPrice\" type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" onclick=SortRating() type=\"submit\">rating</button></span>";
+  btnsSortFilter += "<span>Sort by:<button id=\"btnSortPrice\" onclick=\"SortPrice()\" type=\"submit\"> price</button>\n    <button onclick=\"SortRating()\" id=\"btnSortc\" type=\"submit\">rating</button></span>";
   results.forEach(function (product) {
     html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
   });
-  root.innerHTML = btnsSortFilter + html;
-  var btnSortPrice = document.getElementById('btnSortPrice');
-  var btnSortRating = document.getElementById('btnSortRating');
-  btnSortPrice.addEventListener('click', function (event1) {
-    html = '';
-    results.sort(function (a, b) {
-      if (a.price < b.price) return -1;
-    });
-    console.log(results);
-    results.forEach(function (product) {
-      html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
-    });
-    root.innerHTML = btnsSortFilter + html;
+  root.innerHTML = "<div>".concat(btnsSortFilter, "</div>  <div>").concat(html, "</div>");
+}
+
+function SortPrice() {
+  var html = '';
+  results.sort(function (a, b) {
+    if (a.price < b.price) return -1;
   });
-  btnSortRating.addEventListener('click', function (event2) {
-    console.log('click');
-    html = '';
-    results.sort(function (a, b) {
-      if (a.recommendations < b.recommendations) return -1;
-    });
-    console.log(results);
-    results.forEach(function (product) {
-      html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
-    });
-    root.innerHTML = btnsSortFilter + html;
+  console.log(results);
+  results.forEach(function (product) {
+    html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
   });
+  renderSearchResults(results);
+}
+
+function SortRating() {
+  var html = '';
+  results.sort(function (a, b) {
+    if (a.recommendations < b.recommendations) return -1;
+  });
+  console.log(results);
+  results.forEach(function (product) {
+    html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
+  });
+  renderSearchResults(results);
 }
 
 function handleClick(e) {

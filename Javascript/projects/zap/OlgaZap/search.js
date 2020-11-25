@@ -1,5 +1,4 @@
 let results = [];
-
 function handleSearch(e) {
   e.preventDefault();
 
@@ -7,7 +6,7 @@ function handleSearch(e) {
   console.log(searchTerm)
 
   if (searchTerm.length >= 2) {
-    results = searchProducts(searchTerm);
+    const results = searchProducts(searchTerm);
     renderSearchResults(results);
     /*console.log(results)*/
 
@@ -16,7 +15,6 @@ function handleSearch(e) {
 }
 
 function searchProducts(searchTerm) {
-  results = []
   const regSearch = new RegExp(searchTerm, 'g')
   products.forEach(product => {
     if (regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(product.model)) {
@@ -28,23 +26,47 @@ function searchProducts(searchTerm) {
   /*console.log(results)*/
   return results;
 }
-
+debugger;
 const root = document.getElementById('root');
+
 function renderSearchResults(results) {
 
   let html = '';
-  let btnsSortFilter = ''
-  btnsSortFilter += `<span>Sort by:<button id="btnSortPrice" onclick='sortPrice(event)' type="submit"> price</button>
-    <button id="btnSortRating" type="submit" onclick='sortRating(event)'>rating</button></span>`
+  let btnsSortFilter = '';
+  btnsSortFilter += `<span>Sort by:<button id="btnSortPrice" onclick="SortPrice()" type="submit"> price</button>
+    <button onclick="SortRating()" id="btnSortc" type="submit">rating</button></span>`
   results.forEach(product => {
     html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
   })
 
 
-  root.innerHTML = btnsSortFilter + html;
+  root.innerHTML = `<div>${btnsSortFilter}</div>  <div>${html}</div>`;
+
+
+  
+}
+
+function SortPrice() {
+   let html = '';
+  results.sort((a, b) => { if (a.price < b.price) return -1; })
+  console.log(results)
+  results.forEach(product => {
+    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
+  })
+  renderSearchResults(results);
 
 }
 
+function SortRating() {
+  let html = '';
+  results.sort((a, b) => { if (a.recommendations < b.recommendations) return -1; })
+  console.log(results)
+  results.forEach(product => {
+    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
+  })
+  renderSearchResults(results);
+
+}
 
 function handleClick(e) {
   products.forEach(elm => {
@@ -56,34 +78,6 @@ function handleClick(e) {
       root.innerHTML = container
     }
   })
-
-
-}
-
-const btnSortPrice = document.getElementById('btnSortPrice')
-const btnSortRating = document.getElementById('btnSortRating')
-
-function sortPrice() {
-  console.log('btnSortPrice')
-  html = ''
-  results.sort((a, b) => { if (a.price < b.price) return -1; })
-  console.log(results)
-  results.forEach(product => {
-    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
-  })
-  renderSearchResults(results)
-
-
-}
-function sortRating() {
-  console.log('btnSortRating')
-  html = ''
-  results.sort((a, b) => { if (a.recommendations < b.recommendations) return -1; })
-  console.log(results)
-  results.forEach(product => {
-    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
-  })
-  renderSearchResults(results)
 
 
 }
