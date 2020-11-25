@@ -1,65 +1,93 @@
-const words = "hello test"
-
-let clickedLetter = ""
-let strikes = 3
+const words = ["helo", "work pls", "testing", "helo twice", "yelo"]
+const lettersArray = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"]
+const root = document.querySelector("#root")
+const lettersDom = document.getElementById("letters")
+const strikesDom = document.getElementById("strikes")
+let chosenWordArray = []
+let strikes = 6
 let counter = 0
-let root = document.querySelector("#root")
 
-function createArray() {
-    let clickedLetterArray = []
-    for (i = 0; i < words.length; i++) {
-        if (words.charAt(i) != " ") {
-            clickedLetterArray.push(" _ ")
+function handleNewGame() {
+    const random = Math.floor(Math.random() * words.length);
+    chosenWord = words[random]
+
+    strikes = 6
+    strikesDom.innerHTML = `You have ${strikes} strikes left`
+
+    document.getElementById("hangman").innerHTML = `<img src="img/6.jpeg">`
+
+    let html = ""
+    console.log(chosenWord)
+    document.getElementById("newGame").style.display = "none"
+    chosenWordArray = []
+
+    for (i = 0; i < chosenWord.length; i++) {
+        if (chosenWord.charAt(i) != " ") {
+            chosenWordArray.push("_")
         } else {
-            clickedLetterArray.push("-")
+            chosenWordArray.push("-")
         }
     }
-    return clickedLetterArray
+    chosenWordArray.forEach(letter => {
+        html += ` ${letter} `
+    })
+
+    root.innerHTML = html
+    console.log(chosenWordArray)
 }
-let arr = createArray()
+
+function renderLetters() {
+    lettersDom.innerHTML = ""
+    lettersArray.forEach(letter => {
+        lettersDom.innerHTML += `<button id="buttonLetter" data-letter="${letter}" onclick="handleLetterClick(event)" style="grid-area: ${letter}">${letter}</button>`
+    })
+}
 
 function handleLetterClick(e) {
-
-    // get letter clicked
-    clickedLetter = e.target.dataset.letter
+    const clickedLetter = e.target.dataset.letter
     console.log(clickedLetter)
-
-    const letterCheck = new RegExp(clickedLetter, 'gi')
-
-    for (i = 0; i < arr.length; i++) {
-        if (letterCheck.test(words.charAt(i))) {
+    const regLetter = new RegExp(clickedLetter, 'gi')
+    root.innerHTML = ""
+    html = ""
+    e.target.style.backgroundColor = "red"
+    e.target.style.pointerEvents = "none"
+    for (i = 0; i < chosenWordArray.length; i++) {
+        if (regLetter.test(chosenWord.charAt(i))) {
             console.log("found")
-            arr.splice(i, 1, `${clickedLetter}`)
+            chosenWordArray.splice(i, 1, `${clickedLetter}`)
         } else {
             counter++
         }
     }
-    let html = ""
-    arr.forEach(e => {
-        html += `${e}`
+    chosenWordArray.forEach(letter => {
+        html += ` ${letter} `
     })
     root.innerHTML = html
 
-    if (counter == arr.length) {
-        strikes--
-        counter = 0
-    } else {
-        counter = 0
-    }
-    if (strikes == 0) {
-        root.innerHTML = "Gaameee over! Loser"
-        for (i = 1; i < 27; i++) {
-            document.querySelector(`#button${i}`).style.display = "none"
-        }
-        document.querySelector("#newGame").style.display = "block"
 
+    if (counter == chosenWordArray.length) {
+        strikes--
+        strikesDom.innerHTML = `You have ${strikes} strikes left`
+        document.getElementById("hangman").innerHTML = `<img src="img/${strikes}.jpeg">`
     }
-}
-function newGame() {
-    strikes = 3
-    for (i = 1; i < 27; i++) {
-        document.querySelector(`#button${i}`).style.display = "inline"
+    counter = 0
+
+    if (strikes == 0) {
+        lettersDom.innerHTML = ""
+        root.innerHTML = "You Lost"
+        strikesDom.innerHTML = ""
+        document.getElementById("newGame").style.display = "block"
     }
-    createArray()
-    root.innerHTML = `${arr}`
+    let victoryCondition = chosenWordArray.length
+    chosenWordArray.forEach(letter => {
+        if (letter != "_") {
+            victoryCondition--
+        }
+    })
+    if (victoryCondition == 0) {
+        lettersDom.innerHTML = ""
+        root.innerHTML = "You won"
+        document.getElementById("newGame").style.display = "block"
+        console.log("you won")
+    }
 }
