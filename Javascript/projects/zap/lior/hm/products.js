@@ -26,7 +26,7 @@ const products = [
         isdn: 'SNJ28DN1900SMC89S82'
     },
     {
-        category: 'fashion',
+        category: 'fasion',
         price: 2000,
         inStoreSince: '2020-04-05',
         brand: 'GUCCI',
@@ -52,7 +52,7 @@ const products = [
         isdn: 'SDMKMKS929321CSSDQSDZXX'
     },
     {
-        category: 'fashion',
+        category: 'fasion',
         price: 50,
         inStoreSince: "2020.07.10",
         brand: 'nike',
@@ -91,7 +91,7 @@ const products = [
         isdn: 'asdwdqwddqwdqw'
     },
     {
-        category: 'fashion',
+        category: 'fasion',
         price: 120,
         inStoreSince: '2020-03-23',
         brand: 'vans',
@@ -237,7 +237,7 @@ const products = [
         isdn: 'dr173rtyerh'
     },
     {
-        category: 'Fasion',
+        category: 'fasion',
         price: 100,
         inStoreSince: '20-11-20',
         brand: 'bilabol',
@@ -250,7 +250,7 @@ const products = [
         isdn: 'ah sheli bahsheli'
     },
     {
-        category: 'Fasion',
+        category: 'fasion',
         price: 32,
         inStoreSince: '7-2-92',
         brand: 'gachhi',
