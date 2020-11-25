@@ -37,11 +37,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-right: 4em;
+  padding-right: 7vw;
 }
 #root #letters {
   padding: 1em;
-  padding-right: 4em;
+  padding-right: 7vw;
   width: 50%;
   position: absolute;
   right: 0px;
@@ -63,13 +63,13 @@ body {
 #root #myCanvas {
   position: absolute;
   top: 8vw;
-  left: 10vw;
+  left: 7vw;
   background-color: rgba(0, 0, 0, 0.164);
   border-radius: 2em;
 }
 #root .reset {
   position: relative;
-  left: 65.8%;
+  left: 63.3%;
   top: 82vh;
   padding: 1em;
   background-color: rgba(0, 0, 0, 0.808);
