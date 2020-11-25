@@ -20,26 +20,39 @@
     color: cornsilk;
 
 }
-:hover#mobile{
+:hover#mobile,#computers:hover,#electricity:hover,#cars:hover,#fashion:hover{
     background-color: cyan;
     color: darkblue;
-}
-:hover#computers{
-    background-color: cyan;
-    color: darkblue;
-}
-:hover#electricity{
-    background-color: cyan;
-    color: darkblue;
-}
-:hover#cars{
-    background-color: cyan;
-    color: darkblue;
-}
-:hover#fashion{
-    background-color: cyan;
-    color: darkblue;
+
 }
 
+#root{
+    
+    text-align: center;
+    
+  
+}
+p{
+    width: 50%;
+   transform: translate();
+   
+   margin-left: 30%;
+}
+#searchInsert,#searchInsertObject{
+    
+    border: solid 1px black;
+    margin-top: 1%;
+    width: 50%;
+    border-radius: 10vw;
+   margin: auto;
+
+    
+
+}
+#searchInsert:hover{
+    background-color: blue;
+    color: cornsilk;
+    transition: all 300ms;
+}
 
 
