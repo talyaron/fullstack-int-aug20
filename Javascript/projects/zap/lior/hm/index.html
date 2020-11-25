@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="dist/stylelior.css">
 </head>
-<body>
+<body onload="cratecategorey()">
 
     <form onsubmit='handleSearch(event)'>
         <input type='text' placeholder="חיפוש מוצר" name='search'/>
@@ -16,7 +16,6 @@
    <div id="root"></div>
 
   <div id="categoriesName"></div>
-  <div id="categoriesPic"></div>
 
         <script src="products.js"></script> 
         <script src="search.js"></script>
