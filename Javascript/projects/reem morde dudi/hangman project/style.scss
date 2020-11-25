@@ -33,47 +33,56 @@ body{
     }
 
     .hangmanPic{
-        margin-top: 50px;
+        margin-top: 55px;
     }
+#coverPic{
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    height: 320px;
+    width: 350px;
+     left: 75vh;
+  margin-top:23px;
 
     .div0{
         height: 50px;
         width: 350px;
-        background-color: gray;
-        position: fixed;
-        left: 450px;
-        bottom: 320px;
+        background-color: white;
+        position:fixed;
+        left: 75vh;
+        top: 27vh;
     }
     .div1{
         height: 50px;
         width: 350px;
-        background-color: gray;
+        background-color: white;
         position: fixed;
-        left: 450px;
-        bottom: 270px;
+        left: 75vh;
+        top: 32vh;
     }
     .div2{
         height: 50px;
         width: 350px;
-        background-color: gray;
+        background-color: white;
         position: fixed;
-        left: 450px;
-        bottom: 220px; 
+        left: 75vh;
+        top: 37vh;
     }
     .div3{
         height: 50px;
         width: 350px;
-        background-color: gray;
+        background-color: white;
         position: fixed;
-        left: 450px;
-        bottom: 170px;
+        left: 75vh;
+        top: 42vh;
     }
     .div4{
-        height: 100px;
+        height: 120px;
         width: 350px;
-        background-color: gray;
+        background-color: white;
         position: fixed;
-        left: 450px;
-        bottom: 70px;
+        left: 75vh;
+        top: 47vh;
     }
+}
 }
