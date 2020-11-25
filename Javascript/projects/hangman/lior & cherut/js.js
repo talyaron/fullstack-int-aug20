@@ -19,7 +19,7 @@ let html = '';
 alfabeta.forEach(sign =>{
    html += `<button class='button' data-sign="${sign}">${sign}</button>`;
 })
-root.innerHTML += html;
+root.innerHTML +=`<div id='buttons'>${html}</div>` ;
 
 console.log(chosenWord)
 var c = document.getElementById("myCanvas");
@@ -37,7 +37,7 @@ for (var i = 0; i < chosenWord.length; i++) {
 letters.innerHTML = html2;
 
 let fanctions = [click1, click2, click3, click4, click5, click6, click7, click8, click9]
-let nam = -1;
+let nam = 0;
 let winner = 0;
 
 let buttons = document.querySelectorAll('.button');
@@ -75,11 +75,11 @@ buttons.forEach(button=>{
       }
     })
     
-    if(nam<8){
-      
-      nam++;
+    if(nam<=8){
       fanctions[nam]();
-    }else{
+      nam++;
+      
+    }else {
       alert('game over')
     }
     
