@@ -3,10 +3,9 @@ function renderCategories(){
     const BodyContainer = document.querySelector('.categorysContainer');
     let NewBodyContainer = '';
       categories.forEach((category) => {
-        const word = `<h1>${category.category}</h1>`;
+        const word = `<h1 onclick="oncategoryclick(event)"> ${category.category}</h1>`;
       NewBodyContainer += word;
     })
     BodyContainer.innerHTML = NewBodyContainer;
 }
 
-render
