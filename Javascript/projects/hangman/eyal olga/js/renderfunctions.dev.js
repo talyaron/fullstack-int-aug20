@@ -1,11 +1,12 @@
-const keys = document.querySelectorAll(".keyscontainer h1");
-keys.forEach(key => {
+"use strict";
+
+var keys = document.querySelectorAll(".keyscontainer h1");
+keys.forEach(function (key) {
   key.addEventListener("click", function () {
     checkForMach(key.innerHTML);
     /* console.log(key.innerHTML) */
   });
-})
-
+});
 
 function renderCategories() {
   creatCategoriesArray();
@@ -17,25 +18,27 @@ function renderCategories() {
   });
   BodyContainer.innerHTML = NewBodyContainer;
 }
-let word = {};
+
+var word = {};
+
 function renderwordscrean() {
   /* get word from local */
-  let wordsContainer = document.querySelector('#wordsContainer');
-  let b = sessionStorage.getItem('rendomWordObj');
+  var wordsContainer = document.querySelector('#wordsContainer');
+  var b = sessionStorage.getItem('rendomWordObj');
   b = JSON.parse(b);
   wordsContainer.innerHTML = '';
   word = b.word;
   console.log(word);
 
   for (var i = 0; i < word.length; i++) {
-    wordsContainer.innerHTML += `<h1 id="letter${i}"></h1>`;
+    wordsContainer.innerHTML += "<h1 id=\"letter".concat(i, "\"></h1>");
   }
 }
 
 function checkForMach(key) {
   for (var i = 0; i < word.length; i++) {
     if (word[i].toUpperCase() == key) {
-      let letter = document.querySelector(`#letter${i}`)
+      var letter = document.querySelector("#letter".concat(i));
       letter.innerHTML = key;
     }
   }

@@ -42,7 +42,7 @@ var words = [{
   tip: ""
 }, {
   category: "kids games",
-  word: "",
+  word: "ttg",
   tip: ""
 }, {
   category: "corona",

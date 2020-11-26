@@ -7,18 +7,84 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<style>
+    .screen {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
 
+    }
 
-<body>
+    .imagContainer {
+        grid-row: 1;
+        grid-column: 1;
+        position: relative;
+        border: 10px solid black;
+    }
+#hammer{
+    width: 30%;
+    position: absolute;
+    left: 60%;
+    top: 5%;
+    transform: rotate(-45deg);
+    transition: all 250ms;
+}
+
+/* .hammerdown{
+    left: 65%;
+    top: 13%;
+    transform: rotate(-70deg);
+    transition: all 250ms;
+} */
+
+.persondown{
+
+}
+#person{
+    width: 50%;
+    position: absolute;
+    left: 15%;
+    top: 32%;
+    z-index: -1;
+}
+    #wordsContainer {
+        grid-row: 1;
+        grid-column: 2;
+       /*  padding: 10%; */
+        margin: 45% 5% 45% 5%;
+        display: flex;
+        flex-wrap: wrap; 
+       
+    }
+    #wordsContainer h1{
+        font-size: 2vw;
+    padding: 2%;
+    border-bottom: 1px solid black;
+   margin-left: 0.5%;
+   margin-right: 0.5%;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 2vw;
+    
+    }
+</style>
+
+<body onload="renderwordscrean()">
     <div class="container">
         <div class="screen">
-
+            <div id="wordsContainer">
+                
+            </div>
+            <div class="imagContainer hammerdown">
+                <img id="hammer" class="hammerdown" src="img/hammer.png" alt="">
+                <img id="person" src="img/person.png" alt="">
+            </div>
         </div>
         <!-- keybord -->
         <div class="leterscontainer">
             <div class="keyscontainer">
                 <div class="rowA">
-                    <h1>Q</h1>
+                    <h1 >Q</h1>
                     <h1>W</h1>
                     <h1>E</h1>
                     <h1>R</h1>
@@ -38,7 +104,7 @@
                     <h1>H</h1>
                     <h1>J</h1>
                     <h1>K</h1>
-                    <h1>L</h1>                    
+                    <h1>L</h1>
                 </div>
                 <div class="rowC">
                     <h1>Z</h1>
@@ -47,15 +113,18 @@
                     <h1>V</h1>
                     <h1>B</h1>
                     <h1>N</h1>
-                    <h1>M</h1>                                      
+                    <h1>M</h1>
                 </div>
-                
+
 
             </div>
 
         </div>
 
     </div>
+    <script src="js/data.js"></script>
+    <script src="js/filterfunctions.js"></script>
+    <script src="js/renderfunctions.js"></script>
 </body>
 
 </html>

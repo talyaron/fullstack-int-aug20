@@ -51,7 +51,7 @@ const words = [
 },
 {
     category:"kids games",
-    word:"",
+    word:"ttg",
     tip:""
 },
 {

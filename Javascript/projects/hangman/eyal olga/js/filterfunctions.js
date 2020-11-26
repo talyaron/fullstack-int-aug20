@@ -1,3 +1,5 @@
+let rendomWord ='';
+
 function removeDuplicateObjectFromArray(array, key) {
   let check = {};
   let res = [];
@@ -20,16 +22,41 @@ function filterWordsBySelectedCategory(categiry) {  /* יצירת מערך מי�
 }
 
 
-function getRendomWordByCategory(categorisArray){  /* הכנסת מערך מילים והחזרת מילה רנדומאלית */
+function getrendomWordByCategory(categorisArray,lastWord){  /* הכנסת מערך מילים והחזרת מילה רנדומאלית */
   let arraylenth = categorisArray.length;
   let  randomWord = categorisArray[Math.floor(Math.random() * arraylenth)];
-  return randomWord;
+  if (randomWord != '' ){
+    return randomWord;
+  }else{
+    let  randomWord = categorisArray[Math.floor(Math.random() * arraylenth)]; 
+    if (randomWord != lastWord ){
+      return randomWord;
+    }else{
+      let  randomWord = categorisArray[Math.floor(Math.random() * arraylenth)]; 
+      if (randomWord != lastWord ){
+        return randomWord;
+      }else{
+        let  randomWord = categorisArray[Math.floor(Math.random() * arraylenth)]; 
+        if (randomWord != lastWord ){
+          return randomWord;
+        }else{
+          let  randomWord = categorisArray[Math.floor(Math.random() * arraylenth)]; 
+          return randomWord;
+        }
+      } 
+    }
+  }
+  
 }
 
 
+
 function oncategoryclick(event){
+  let lastWord = rendomWord;
   console.log(event);
   let categoryword = event.target.innerHTML;
 let filterwords = filterWordsBySelectedCategory(categoryword);
-console.log(filterwords);
+rendomWord = getrendomWordByCategory(filterwords,lastWord);
+sessionStorage.setItem('rendomWordObj',JSON.stringify(rendomWord));
+window.open('app.html',"_self");
 };
