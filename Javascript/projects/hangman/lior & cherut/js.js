@@ -19,7 +19,7 @@ let html = '';
 alfabeta.forEach(sign =>{
    html += `<button class='button' data-sign="${sign}">${sign}</button>`;
 })
-root.innerHTML += html;
+root.innerHTML +=`<div id='buttons'>${html}</div>` ;
 
 console.log(chosenWord)
 var c = document.getElementById("myCanvas");
@@ -37,30 +37,50 @@ for (var i = 0; i < chosenWord.length; i++) {
 letters.innerHTML = html2;
 
 let fanctions = [click1, click2, click3, click4, click5, click6, click7, click8, click9]
-let nam = -1;
+let nam = 0;
 let winner = 0;
+let gameover;
+let win;
+let yes;
+let no;
+
+
 
 let buttons = document.querySelectorAll('.button');
 buttons.forEach(button=>{
   let clickLater= button.dataset.sign
   button.addEventListener('click',filterLeter => {
+
     //let searchTerm = clickLater.target.value
   let regSearchTerm = new RegExp(clickLater,'g');
   if(regSearchTerm.test(chosenWord)){
     let corectLetter = document.querySelectorAll(`.${clickLater}`);
     corectLetter.forEach(elm =>{
     elm.innerHTML = `<h1>${clickLater}</h1>`
-    
+
+    yes = document.createElement("audio");
+    yes.src = ("yes.mp3");
+      console.log(yes);
+      yes.play();
+      yes.volume = 0.2;
+
 
       buttons.forEach(button =>{
         if(button.dataset.sign == clickLater ){
-          button.style.display = 'none';
+          // button.style.display = 'none';
+          button.style.visibility = 'hidden';
+         
         }
       })
 
       winner++;
     if(winner == chosenWord.length){
       console.log('you win')
+      root.innerHTML += '<h1 id="win">you win!!</h1>';
+      win = document.createElement("audio");
+      win.src = ("win.mp3");
+      console.log(win);
+      win.play();
     }
     
     })
@@ -68,33 +88,39 @@ buttons.forEach(button=>{
 
   } else{
     console.log("no");
-    console.log(nam)
+    no = document.createElement("audio");
+    no.src = ("no.mp3");
+    // no.play();
+    no.volume = 0.03;
+
     buttons.forEach(button =>{
       if(button.dataset.sign == clickLater ){
-        button.style.display = 'none';
+        // button.style.display = 'none';
+        button.style.visibility = 'hidden';
       }
     })
     
-    if(nam<8){
-      
-      nam++;
+    if(nam<=8){
+      console.log(nam)
       fanctions[nam]();
-    }else{
-      alert('game over')
+      nam++;
+      
+    }else if(nam==9){
+
+      gameover = document.createElement("audio");
+      gameover.src = ("gameover.mp3");
+      console.log(gameover);
+      gameover.play();
+      gameover.volume = 0.5;
+
+      root.innerHTML += '<h1 id="lose">you lose :(</h1>';
+  
+      
+ 
+      
     }
     
   }
-
-  chosenWord
-  
-  // {
-  //   console.log("no");
-  //   function () { 
-  //     fanctions[0](); 
-  //   }
-  
-  // }
-    
 
   })
  
@@ -202,6 +228,8 @@ function click8() {
 
 
 function click9() {
+ 
+
   ctx.beginPath();
   ctx.arc(190, 95, 5, 0, 2 * Math.PI);
   ctx.stroke();
@@ -224,5 +252,7 @@ function click9() {
  //  c.style.backgroundColor = 'red';
   c.style.animation = 'shake 0.5s';
   c.style.animatioIiterationCount = 'infinite';
+
+
 }
 
