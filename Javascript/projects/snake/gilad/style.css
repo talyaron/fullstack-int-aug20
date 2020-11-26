@@ -1,0 +1,18 @@
+#gridContainer{
+    display: grid;
+    grid-template-areas: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
+    
+    max-width: 36%;
+   
+}
+
+#gridContainer > div{
+  
+  
+  border: solid 1px black;
+  width: 3px;
+  height: 3px;
+  
+  
+ 
+}
