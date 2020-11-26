@@ -15,8 +15,6 @@
         border-radius: 30px;
         padding: 10px;
         box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.884), -4px -4px 5px rgba(121, 121, 121, 0.89);
-
-
     }
 
     .upperSection {
@@ -36,8 +34,6 @@
         flex-wrap: wrap;
         gap: 10px;
         direction: rtl;
-
-
     }
 
     .theSetences {
@@ -61,10 +57,9 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-
     }
 
-    .ot {
+    .letter {
         background-color: rgb(88, 207, 40);
         padding: 10px;
         margin: auto;
@@ -75,12 +70,9 @@
         transition: all 250ms;
     }
 
-    .ot:hover {
+    .letter:hover {
         background-color: rgba(87, 207, 40, 0.253);
         box-shadow: none;
-
-
-
     }
 </style>
 
@@ -90,13 +82,10 @@
             <div class="hangman"></div>
             <div class="theSetences"></div>
         </div>
-        <div class="keybord">
-        </div>
-
-
+        <div class="keybord"> </div>
     </div>
     <script>
-        const Setenceses = [
+        const sentences = [
             "we are going to win this game",
             "this game is easy pisy",
             "we are grate programars",
@@ -105,123 +94,52 @@
             "we are the best group evevr"
         ]
 
-        // let results = []
-        //     const regSearch = new RegExp(searchTerm, 'g')
-        //     products.forEach(product => {
-        //         if (regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(
-        //                 product.model)) {
-        //             results.push(product);
-        //         }
-        //     })
-        const ary = [
-            "A",
-            'B',
-            'C',
-            'D',
-            'E',
-            'H',
-            'F',
-            'G',
-            'H',
-            'I',
-            'J',
-            'K',
-            'L',
-            'M',
-            'N',
-            'O',
-            'P',
-            'Q',
-            'R',
-            'S',
-            'T',
-            'U',
-            'V',
-            'W',
-            'X',
-            'Y',
-            'Z'
+        const letters = [
+            "A", 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
         ]
-const keybord = document.querySelector(".keybord")
-ary.forEach(function(event){
-    keybord.innerHTML +=`<div class="ot" onclick="theSelection(event)">${event}</div>`
-})
+
+        const keybord = document.querySelector(".keybord")
+        letters.forEach((letter) => {
+            keybord.innerHTML += `<div class="letter" onclick="theSelection(event)">${letter}</div>`
+        })
 
         // בוחר משפט רנדומלי
         i = Math.floor(Math.random() * 6);
-        theCoosenSetences = Setenceses[i]
-        console.log(theCoosenSetences)
+        theCoosenSentences = sentences[i]
+        console.log(theCoosenSentences)
+
+
+        // הצהרות
+        let Attempts = 10
+        let letter = document.querySelectorAll(".letter")
 
         theSelection = (e) => {
-            // מוצא את האות שנלחצה
-            const selectedOt = e.target.innerText
-            console.log(selectedOt)
-            let Selection = ""
+            let letter = document.querySelector(".letter")
+            const selectedLetter = e.target.innerText
+            let letterInTheSentences = new RegExp(selectedLetter, 'gi')
+
+            if (letterInTheSentences.test(theCoosenSentences)) {
+                console.log("תשובה נכונה...")
+                letter.style.backgroundColor = "blue"
+
+                addLetter = () => {
+                    console.log("addLetter...")
 
 
-            if (selectedOt == "א") {
-                Selection = "yes"
-
-            } else {
-                Selection = "noooo"
-
-            }
-            buttonColor()
-            addBodyPart()
-            disableButton()
-            addLetter()
-            console.log(Selection)
-
-            return (Selection)
-
-        }
-
-
-
-
-
-        buttonColor = (color) => {
-
-            let ot = document.querySelector(".ot")
-            let y = false
-
-            if (y = true) {
-                ot.style.backgroundColor = "blue"
-
-
+                }
 
             } else {
-                ot.style.backgroundColor = "red"
-
-
-
+                console.log("טעות...")
+                Attempts--
+                letter.style.backgroundColor = "red"
+                addBodyPart = () => {
+                    console.log("addBodyPart...")
+                }
             }
 
-
-        }
-
-        addBodyPart = () => {
-            if (Selection = true) {
-
-            } else {
-
-            }
-
-
-        }
-
-        disableButton = () => {
-
-
-        }
-
-        addLetter = () => {
-            if (Selection = true) {
-
-            } else {
-
-            }
-
+            checkSelection = 0
+            e.target.style.pointerEvents = "none"
 
         }
     </script>
