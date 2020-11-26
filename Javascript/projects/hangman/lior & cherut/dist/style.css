@@ -1,47 +1,100 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(74, 182, 150, 0.37);
+}
+
 #root {
+  font-family: Arial, Helvetica, sans-serif;
   position: relative;
   width: 100%;
   height: 100%;
 }
 #root .button {
-  margin: 10px;
+  margin: 0.5em;
   padding: 5px;
-  height: 35px;
-  width: 35px;
+  height: 2em;
+  width: 2em;
+  border: none;
+  box-shadow: 2px 2px 6px gray;
+  background-color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3f3f3f;
+  outline: none;
+  border-radius: 0.2em;
 }
 #root .button:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
 #root #buttons {
+  padding: 1em;
   width: 50%;
   position: absolute;
-  right: 200px;
-  top: 350px;
+  right: 0px;
+  top: 37vh;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding-right: 7vw;
 }
 #root #letters {
-  width: 30%;
+  padding: 1em;
+  padding-right: 7vw;
+  width: 50%;
   position: absolute;
-  right: 400px;
-  top: 50px;
+  right: 0px;
+  bottom: -30vh;
   display: flex;
-  margin: auto;
+  justify-content: center;
+  text-align: center;
 }
 #root #letters div {
-  border-bottom: black 1px solid;
-  margin: 10px;
-  width: 35px;
+  border-bottom: black 2px solid;
+  box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.4);
+  margin: 0.7em;
+  width: 3em;
+  font-size: 1.5em;
+}
+#root #letters div h1 {
+  margin: 0px;
 }
 #root #myCanvas {
   position: absolute;
-  top: 20px;
-  left: 30px;
+  top: 8vw;
+  left: 7vw;
+  background-color: rgba(0, 0, 0, 0.164);
+  border-radius: 2em;
 }
 #root .reset {
   position: relative;
-  left: 1000px;
-  top: 500px;
+  left: 63.3%;
+  top: 82vh;
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.808);
+  color: white;
+  border-radius: 1em;
+  outline: 0;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+#root .reset:hover {
+  transform: scale(1.1);
+}
+#root #win {
+  position: absolute;
+  left: 63%;
+  top: 55%;
+  font-size: 3em;
+  color: #27d118;
+}
+#root #lose {
+  position: absolute;
+  left: 63%;
+  top: 55%;
+  font-size: 3em;
+  color: red;
 }
 
 @keyframes shake {
