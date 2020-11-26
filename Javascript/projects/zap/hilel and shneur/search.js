@@ -78,7 +78,7 @@ hideresults = (event) => {
     const input = event.target.value;
     if (input.length < 1) {
         root.innerHTML = roothtml
-        core.style.display = "none"
+        // core.style.display = "none"
         cotert.style.borderRadius = "10px 10px 0px 0px"
         root.style.border = '0px solid  rgba(255, 255, 255, 0)'
     }

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bigBox {
+        margin: 50px auto;
+        width: 90vw;
+        height: 90vw;
+        background-color: burlywood;
+        border-radius: 30px;
+        padding: 10px;
+        box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.884), -4px -4px 5px rgba(121, 121, 121, 0.89);
+    }
+
+    .upperSection {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%%;
+
+    }
+
+    .hangman {
+        border-radius: 10px;
+        background-color: rgb(255, 16, 16);
+        padding: 10px;
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        direction: rtl;
+    }
+
+    .theSetences {
+        border-radius: 10px;
+        background-color: rgb(68, 16, 255);
+        padding: 10px;
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        direction: rtl;
+    }
+
+    .keybord {
+        border-radius: 10px;
+        background-color: rgb(206, 206, 206);
+        padding: 10px;
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .letter {
+        background-color: rgb(88, 207, 40);
+        padding: 10px;
+        margin: auto;
+        border-radius: 5px;
+        box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.884), -4px -4px 5px rgba(121, 121, 121, 0.89);
+        font-size: larger;
+        font-weight: bold;
+        transition: all 250ms;
+    }
+
+    .letter:hover {
+        background-color: rgba(87, 207, 40, 0.253);
+        box-shadow: none;
+    }
+</style>
+
+<body>
+    <div class="bigBox">
+        <div class="upperSection">
+            <div class="hangman"></div>
+            <div class="theSetences"></div>
+        </div>
+        <div class="keybord"> </div>
+    </div>
+    <script>
+        const sentences = [
+            "we are going to win this game",
+            "this game is easy pisy",
+            "we are grate programars",
+            "you neale this one",
+            "congrates to you you own",
+            "we are the best group evevr"
+        ]
+
+        const letters = [
+            "A", 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+        ]
+
+        const keybord = document.querySelector(".keybord")
+        letters.forEach((letter) => {
+            keybord.innerHTML += `<div class="letter" onclick="theSelection(event)">${letter}</div>`
+        })
+
+        // בוחר משפט רנדומלי
+        i = Math.floor(Math.random() * 6);
+        theCoosenSentences = sentences[i]
+        console.log(theCoosenSentences)
+
+
+        // הצהרות
+        let Attempts = 10
+        let letter = document.querySelectorAll(".letter")
+
+        theSelection = (e) => {
+            let letter = document.querySelector(".letter")
+            const selectedLetter = e.target.innerText
+            let letterInTheSentences = new RegExp(selectedLetter, 'gi')
+
+            if (letterInTheSentences.test(theCoosenSentences)) {
+                console.log("תשובה נכונה...")
+                letter.style.backgroundColor = "blue"
+
+                addLetter = () => {
+                    console.log("addLetter...")
+
+
+                }
+
+            } else {
+                console.log("טעות...")
+                Attempts--
+                letter.style.backgroundColor = "red"
+                addBodyPart = () => {
+                    console.log("addBodyPart...")
+                }
+            }
+
+            checkSelection = 0
+            e.target.style.pointerEvents = "none"
+
+        }
+    </script>
+
+</body>
+
+</html>
