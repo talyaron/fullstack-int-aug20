@@ -27,6 +27,10 @@ letters.innerHTML = html2;
 var fanctions = [click1, click2, click3, click4, click5, click6, click7, click8, click9];
 var nam = 0;
 var winner = 0;
+var gameover;
+var win;
+var yes;
+var no;
 var buttons = document.querySelectorAll('.button');
 buttons.forEach(function (button) {
   var clickLater = button.dataset.sign;
@@ -38,40 +42,54 @@ buttons.forEach(function (button) {
       var corectLetter = document.querySelectorAll(".".concat(clickLater));
       corectLetter.forEach(function (elm) {
         elm.innerHTML = "<h1>".concat(clickLater, "</h1>");
+        yes = document.createElement("audio");
+        yes.src = "yes.mp3";
+        console.log(yes);
+        yes.play();
+        yes.volume = 0.2;
         buttons.forEach(function (button) {
           if (button.dataset.sign == clickLater) {
-            button.style.display = 'none';
+            // button.style.display = 'none';
+            button.style.visibility = 'hidden';
           }
         });
         winner++;
 
         if (winner == chosenWord.length) {
           console.log('you win');
+          root.innerHTML += '<h1 id="win">you win!!</h1>';
+          win = document.createElement("audio");
+          win.src = "win.mp3";
+          console.log(win);
+          win.play();
         }
       });
     } else {
       console.log("no");
-      console.log(nam);
+      no = document.createElement("audio");
+      no.src = "no.mp3";
+      no.play();
+      no.volume = 0.03;
       buttons.forEach(function (button) {
         if (button.dataset.sign == clickLater) {
-          button.style.display = 'none';
+          // button.style.display = 'none';
+          button.style.visibility = 'hidden';
         }
       });
 
       if (nam <= 8) {
+        console.log(nam);
         fanctions[nam]();
         nam++;
-      } else {
-        alert('game over');
+      } else if (nam == 9) {
+        gameover = document.createElement("audio");
+        gameover.src = "gameover.mp3";
+        console.log(gameover);
+        gameover.play();
+        gameover.volume = 0.5;
+        root.innerHTML += '<h1 id="lose">you lose :(</h1>';
       }
     }
-
-    chosenWord; // {
-    //   console.log("no");
-    //   function () { 
-    //     fanctions[0](); 
-    //   }
-    // }
   });
 });
 

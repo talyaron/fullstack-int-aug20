@@ -55,9 +55,12 @@ function handleLetterClick(e) {
         if (regLetter.test(chosenWord.charAt(i))) {
             console.log("found")
             chosenWordArray.splice(i, 1, `${clickedLetter}`)
+            console.log(chosenWordArray)
+
         } else {
             counter++
         }
+        console.log(chosenWordArray)
     }
     chosenWordArray.forEach(letter => {
         html += ` ${letter} `
