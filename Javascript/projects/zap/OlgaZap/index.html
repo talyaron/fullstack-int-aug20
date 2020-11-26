@@ -14,6 +14,22 @@
         <input id='inText' type='text' placeholder="חיפוש מוצר" name='search'/>
         <input type='submit' value="חיפוש" />
     </form>
+
+<div id="categories">
+<div id="electricity" type="submit" onclick="handleClickCategories(event)">electricity</div>
+<div id="cars" type="submit" onclick="handleClickCategories(event)">cars</div>
+<div id="computers" type="submit" onclick="handleClickCategories(event)">computers</div>
+<div id="mobile" type="submit" onclick="handleClickCategories(event)">mobile</div> 
+<div id="fashion" type="submit" onclick="handleClickCategories(event)">fashion</div>
+</div>
+<!-- const categories = ['electricity', 'cars', 'computers', 'mobile', 'fashion'] -->
+
+<div id="filterBy">
+    <div>Filter by model <div id="filterByModel"></div></div>
+    <div>Filter by brand <div id="filterByBrand"></div></div>
+    
+</div>
+
     <div id="root"></div>
 </div>
     
