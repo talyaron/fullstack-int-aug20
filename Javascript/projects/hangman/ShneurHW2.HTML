@@ -13,14 +13,20 @@
         height: 90vw;
         background-color: burlywood;
         border-radius: 30px;
+        padding: 10px;
         box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.884), -4px -4px 5px rgba(121, 121, 121, 0.89);
 
 
     }
-    .upperSection{
-        
+
+    .upperSection {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%%;
+
     }
-    .hangman{
+
+    .hangman {
         border-radius: 10px;
         background-color: rgb(255, 16, 16);
         padding: 10px;
@@ -55,7 +61,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        direction: rtl;
 
     }
 
@@ -81,110 +86,114 @@
 
 <body>
     <div class="bigBox">
-        <div class="hangman"></div>
-        <div class="theSetences"></div>
+        <div class="upperSection">
+            <div class="hangman"></div>
+            <div class="theSetences"></div>
+        </div>
         <div class="keybord">
-            <div class="ot">א</div>
-            <div class="ot">ב</div>
-            <div class="ot">ג</div>
-            <div class="ot">ד</div>
-            <div class="ot">ה</div>
-            <div class="ot">ו</div>
-            <div class="ot">ז</div>
-            <div class="ot">ח</div>
-            <div class="ot">ט</div>
-            <div class="ot">י</div>
-            <div class="ot">כ</div>
-            <div class="ot">ך</div>
-            <div class="ot">ל</div>
-            <div class="ot">מ</div>
-            <div class="ot">ם</div>
-            <div class="ot">נ</div>
-            <div class="ot">ן</div>
-            <div class="ot">ס</div>
-            <div class="ot">ע</div>
-            <div class="ot">פ</div>
-            <div class="ot">ף</div>
-            <div class="ot">צ</div>
-            <div class="ot">ץ</div>
-            <div class="ot">ק</div>
-            <div class="ot">ר</div>
-            <div class="ot">ש</div>
-            <div class="ot">ת</div>
         </div>
 
 
     </div>
     <script>
-        theSetences = [{
-            Setences1: "we are the best group evevr"
-        }, {
-            Setences2: "we are going to win this game"
-        }, {
-            Setences3: "this game is easy pisy"
-        }, {
-            Setences4: "we are grate programars"
-        }, {
-            Setences5: "you neale this one"
-        }, {
-            Setences6: "congrates to you you own"
-        }, ]
+        const Setenceses = [
+            "we are going to win this game",
+            "this game is easy pisy",
+            "we are grate programars",
+            "you neale this one",
+            "congrates to you you own",
+            "we are the best group evevr"
+        ]
+
         // let results = []
         //     const regSearch = new RegExp(searchTerm, 'g')
         //     products.forEach(product => {
         //         if (regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(
         //                 product.model)) {
         //             results.push(product);
-        //             hil();
         //         }
-
-
         //     })
+        const ary = [
+            "A",
+            'B',
+            'C',
+            'D',
+            'E',
+            'H',
+            'F',
+            'G',
+            'H',
+            'I',
+            'J',
+            'K',
+            'L',
+            'M',
+            'N',
+            'O',
+            'P',
+            'Q',
+            'R',
+            'S',
+            'T',
+            'U',
+            'V',
+            'W',
+            'X',
+            'Y',
+            'Z'
+        ]
+const keybord = document.querySelector(".keybord")
+ary.forEach(function(event){
+    keybord.innerHTML +=`<div class="ot" onclick="theSelection(event)">${event}</div>`
+})
 
-        theCoosenSetences = () => {
+        // בוחר משפט רנדומלי
+        i = Math.floor(Math.random() * 6);
+        theCoosenSetences = Setenceses[i]
+        console.log(theCoosenSetences)
+
+        theSelection = (e) => {
+            // מוצא את האות שנלחצה
+            const selectedOt = e.target.innerText
+            console.log(selectedOt)
+            let Selection = ""
 
 
-        }
-
-
-
-
-        theSelection = (Selection) => {
-            let theCoosenLetter = e.target.innerText
-            const regSearch = new RegExp(searchTerm, 'g')
-            products.forEach(product => {
-                if (regSearch.test(product.name) || regSearch.test(product.category) || regSearch.test(
-                        product.model)) {
-                    results.push(product);
-                    hil();
-                }
-
-
-            })
-
-
-
-            if (theCoosenLetter == ) {
-                Selection = true
+            if (selectedOt == "א") {
+                Selection = "yes"
 
             } else {
-                Selection = false
+                Selection = "noooo"
 
             }
             buttonColor()
             addBodyPart()
             disableButton()
             addLetter()
+            console.log(Selection)
+
             return (Selection)
 
         }
 
 
 
-        buttonColor = () => {
-            if (Selection = true) {
+
+
+        buttonColor = (color) => {
+
+            let ot = document.querySelector(".ot")
+            let y = false
+
+            if (y = true) {
+                ot.style.backgroundColor = "blue"
+
+
 
             } else {
+                ot.style.backgroundColor = "red"
+
+
 
             }
 

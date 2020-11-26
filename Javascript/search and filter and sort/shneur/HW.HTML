@@ -86,12 +86,8 @@
             myGagets.forEach(element => {
 
                 if (testSearch.test(element.title)) {
-<<<<<<< HEAD
 
                     html += `<div class = "oneResult">${element.title}</div>`
-=======
-                    html += `<div class = "singelResult">${element.title}, ${element.price} NIS</div>`
->>>>>>> master
                 }
             })
             myGagets.sort((a, b) =>  a.title - b.title);
