@@ -68,3 +68,4 @@ const words = [
 ];
 
 let categories = [];
+
