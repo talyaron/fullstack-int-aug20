@@ -10,7 +10,7 @@
     .bigBox {
         margin: 50px auto;
         width: 90vw;
-        height: 90vw;
+        height: 70vw;
         background-color: burlywood;
         border-radius: 30px;
         padding: 10px;
@@ -21,10 +21,15 @@
         display: flex;
         flex-wrap: wrap;
         width: 90%%;
+        height: 50%;
+        border: solid black;
+
 
     }
 
     .hangman {
+        width: 30%;
+        height: 90%;
         border-radius: 10px;
         background-color: rgb(255, 16, 16);
         padding: 10px;
@@ -36,22 +41,26 @@
         direction: rtl;
     }
 
-    .theSetences {
+    #theSetences {
+        width: 60%;
+        height: 90%;
         border-radius: 10px;
         background-color: rgb(68, 16, 255);
         padding: 10px;
-        max-width: 80%;
         margin: auto;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        direction: rtl;
+        color: rgba(68, 16, 255, 0);
+        font-size: 50px;
+        user-select: none;
     }
 
     .keybord {
         border-radius: 10px;
         background-color: rgb(206, 206, 206);
         padding: 10px;
+        max-height: 40%;
         max-width: 80%;
         margin: auto;
         display: flex;
@@ -80,7 +89,7 @@
     <div class="bigBox">
         <div class="upperSection">
             <div class="hangman"></div>
-            <div class="theSetences"></div>
+            <div id="theSetences"></div>
         </div>
         <div class="keybord"> </div>
     </div>
@@ -95,10 +104,11 @@
         ]
 
         const letters = [
-            "A", 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+            "a", 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'y'
         ]
 
+        // מכין דיב לכל אות
         const keybord = document.querySelector(".keybord")
         letters.forEach((letter) => {
             keybord.innerHTML += `<div class="letter" onclick="theSelection(event)">${letter}</div>`
@@ -109,32 +119,49 @@
         theCoosenSentences = sentences[i]
         console.log(theCoosenSentences)
 
+        const theSetences = document.getElementById("theSetences")
 
         // הצהרות
-        let Attempts = 10
+        let Attempts = 6
         let letter = document.querySelectorAll(".letter")
+        theSetences.innerHTML += `<p>${theCoosenSentences}</p>`
 
+        let ar = []
+        theSetences.innerHTML =''
         theSelection = (e) => {
-            let letter = document.querySelector(".letter")
-            const selectedLetter = e.target.innerText
-            let letterInTheSentences = new RegExp(selectedLetter, 'gi')
+            // הצהרות
 
+            const selectedLetter = e.target.innerText
+            const letterInTheSentences = new RegExp(selectedLetter, 'gi')
+           
             if (letterInTheSentences.test(theCoosenSentences)) {
                 console.log("תשובה נכונה...")
-                letter.style.backgroundColor = "blue"
 
-                addLetter = () => {
-                    console.log("addLetter...")
+                // letter.target.style.backgroundColor = "blue"
+
+                for (m = 0; m < theCoosenSentences.length; m++) {
+
+                    let hhh = theCoosenSentences.charAt(m)
+                    if (hhh == selectedLetter) {
+                        console.log(hhh)
+                        ar.push(hhh)
+                        ar.forEach(function(event){
+                        theSetences.innerHTML += event
+                        theSetences.style.color = "red"
+                    })
 
 
+
+                    }
                 }
 
             } else {
                 console.log("טעות...")
                 Attempts--
-                letter.style.backgroundColor = "red"
+                // event.letter.style.backgroundColor = "red"
                 addBodyPart = () => {
-                    console.log("addBodyPart...")
+                    document.querySelector("hangman").innerHTML = `<img src="hangMan-Img/${Attempts}.png">`
+
                 }
             }
 
