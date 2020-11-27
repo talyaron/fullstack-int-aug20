@@ -1,7 +1,8 @@
 "use strict";
 
 function getAge(year) {
-  var x = new Date();
-  var y = x.getFullYear();
+  var y = new Date().getFullYear();
   return y - year;
 }
+
+console.log(getAge(1991));
