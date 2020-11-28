@@ -1,12 +1,33 @@
 "use strict";
 
 var keys = document.querySelectorAll(".keyscontainer h1");
+var wordsContainer = document.querySelector('#wordsContainer');
+var maxNumberofStraiks = 3;
+var Straiks = 1;
 keys.forEach(function (key) {
   key.addEventListener("click", function () {
-    checkForMach(key.innerHTML);
-    /* console.log(key.innerHTML) */
+    /* checkForMach2(key,word); */
+    console.log(key.innerHTML);
+
+    if (checkStraiks(Straiks)) {
+      if (checkForMach(key.innerHTML == false)) {
+        Straiks++;
+        console.log(Straiks);
+      }
+    }
   });
 });
+
+function checkStraiks(Straiks) {
+  if (Straiks <= maxNumberofStraiks) {
+    console.log("in te game");
+    return true;
+  } else {
+    console.log("game over");
+    wordsContainer.innerHTML = '<h1>Game Over</h1>';
+    return false;
+  }
+}
 
 function renderCategories() {
   creatCategoriesArray();
@@ -23,7 +44,6 @@ var word = {};
 
 function renderwordscrean() {
   /* get word from local */
-  var wordsContainer = document.querySelector('#wordsContainer');
   var b = sessionStorage.getItem('rendomWordObj');
   b = JSON.parse(b);
   wordsContainer.innerHTML = '';
@@ -36,10 +56,31 @@ function renderwordscrean() {
 }
 
 function checkForMach(key) {
+  firstCall = false;
+
   for (var i = 0; i < word.length; i++) {
     if (word[i].toUpperCase() == key) {
       var letter = document.querySelector("#letter".concat(i));
       letter.innerHTML = key;
+    } else {
+      return "no mach";
+    }
+  }
+}
+
+function checkForMach2(key, word) {
+  var counter = 0;
+  var regSearch = new RegExp(key.toUpperCase, 'gi');
+
+  for (i = 0; i < word.length; i++) {
+    if (regSearch.test(word.charAt(i))) {
+      console.log("found");
+      /*  chosenWordArray.splice(i, 1, `${clickedLetter}`) */
+
+      var letter = document.querySelector("#letter".concat(i));
+      letter.innerHTML = key;
+    } else {
+      counter++;
     }
   }
 }

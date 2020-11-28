@@ -1,27 +1,32 @@
 const keys = document.querySelectorAll(".keyscontainer h1");
 const wordsContainer = document.querySelector('#wordsContainer');
-const maxNumberofStraiks =3;
-let Straiks = 0;
+const maxNumberofStraiks = 3;
+let Straiks = 1;
+
+
 keys.forEach(key => {
   key.addEventListener("click", function () {
-   if(checkStraiks(Straiks)){ 
-    if (checkForMach(key.innerHTML == false)) { 
-      Straiks++;
+    /* checkForMach2(key,word); */
+    console.log(key.innerHTML);
+    if (checkStraiks(Straiks)) {
+      if (checkForMach(key.innerHTML == false)) {
+
+        Straiks++;
+        console.log(Straiks);
+      }
     }
-  }
-    /* console.log(key.innerHTML) */
   });
 })
 
-function checkStraiks(Straiks){
-if (Straiks <= maxNumberofStraiks){
-console.log("in te game")
-return true;
-}else{
-  console.log("game over");
-  wordsContainer.innerHTML = '<h1>Game Over</h1>'
-  return false;
-}
+function checkStraiks(Straiks) {
+  if (Straiks <= maxNumberofStraiks) {
+    console.log("in te game")
+    return true;
+  } else {
+    console.log("game over");
+    wordsContainer.innerHTML = '<h1>Game Over</h1>'
+    return false;
+  }
 }
 
 function renderCategories() {
@@ -35,9 +40,11 @@ function renderCategories() {
   BodyContainer.innerHTML = NewBodyContainer;
 }
 let word = {};
+
+
 function renderwordscrean() {
   /* get word from local */
-  
+
   let b = sessionStorage.getItem('rendomWordObj');
   b = JSON.parse(b);
   wordsContainer.innerHTML = '';
@@ -50,13 +57,28 @@ function renderwordscrean() {
 }
 
 function checkForMach(key) {
-   firstCall = false;
+  firstCall = false;
   for (var i = 0; i < word.length; i++) {
     if (word[i].toUpperCase() == key) {
       let letter = document.querySelector(`#letter${i}`)
       letter.innerHTML = key;
-    } else{
+    } else {
       return "no mach";
     }
   }
+}
+
+function checkForMach2(key,word){
+  let counter = 0;
+  const regSearch = new RegExp(key.toUpperCase, 'gi')
+   for (i = 0; i < word.length; i++) {
+    if (regSearch.test(word.charAt(i))) {
+        console.log("found")
+       /*  chosenWordArray.splice(i, 1, `${clickedLetter}`) */
+        let letter = document.querySelector(`#letter${i}`)
+        letter.innerHTML = key;
+    } else {
+        counter++
+    }
+}
 }
