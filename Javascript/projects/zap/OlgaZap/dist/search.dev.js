@@ -28,23 +28,33 @@ function searchProducts(searchTerm) {
 
 var html = '';
 var root = document.getElementById('root');
+var filterByModel = document.getElementById('filterByModel');
+var filterByBrand = document.getElementById('filterByBrand');
+var btnsSort = '';
+var filterResModel = '';
+var filterResBrand = '';
 
 function renderSearchResults(results) {
-  var filterResModel = '';
-  var filterResBrand = '';
-  var btnsSort = '';
-  btnsSort += "<span>Sort by:<button id=\"btnSortPrice\" onclick='sortPrice(event)' type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" type=\"submit\" onclick='sortRating(event)'>rating</button></span> \n      ";
+  filterResModel = '';
+  filterResBrand = '';
+  btnsSort = '';
+  html = '';
+  btnsSort += "<span>Sort by:<button id=\"btnSortPrice\" onclick='sortPrice(event)' type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" type=\"submit\" onclick='sortRating(event)'>rating</button></span>";
   results.forEach(function (product) {
-    filterResModel += " <div><li id=\"btnResModel\" style=\"min-width:50px; min-height:50px\" onclick='filterModel(event)'>".concat(product.model, "</li>\n        </div>");
-    filterResBrand += " <div><li id=\"btnResBrand\" type=\"submit\" style=\"min-width: 50px; min-height: 50px\"  onclick='filterBrand(event)'>".concat(product.brand, "</li></div>");
+    filterResModel += " <div><li id=\"btnResModel\" style=\"min-width:25px; min-height:25px\" onclick='filterModel(event)'>".concat(product.model, "</li>\n        </div>");
+    filterResBrand += " <div><li id=\"btnResBrand\" style=\"min-width: 25px; min-height: 25px\"  onclick='filterBrand(event)'>".concat(product.brand, "</li></div>");
   });
   results.forEach(function (product) {
     html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
   });
-  root.innerHTML = btnsSort + filterResModel + filterResBrand + html;
+  filterByModel.innerHTML = filterResModel;
+  filterByBrand.innerHTML = filterResBrand;
+  root.innerHTML = btnsSort + html;
 }
 
 function handleClick(e) {
+  filterResModel = '';
+  filterResBrand = '';
   products.forEach(function (elm) {
     if (e.target.id !== elm.isdn) {
       console.log('false');
@@ -55,70 +65,3 @@ function handleClick(e) {
     }
   });
 }
-
-var btnSortPrice = document.getElementById('btnSortPrice');
-var btnSortRating = document.getElementById('btnSortRating');
-
-function sortPrice() {
-  console.log('btnSortPrice');
-  html = '';
-  results.sort(function (a, b) {
-    if (a.price < b.price) return -1;
-  });
-  console.log(results);
-  results.forEach(function (product) {
-    html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
-  });
-  renderSearchResults(results);
-}
-
-function sortRating() {
-  console.log('btnSortRating');
-  html = '';
-  results.sort(function (a, b) {
-    if (a.recommendations < b.recommendations) return -1;
-  });
-  console.log(results);
-  results.forEach(function (product) {
-    html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
-  });
-  renderSearchResults(results);
-}
-
-var btnResModel = document.getElementById('btnResModel');
-var btnResBrand = document.getElementById('btnResBrand');
-
-function filterModel(e) {
-  console.log('btnResModel');
-  html = '';
-  results.filter(function (result) {
-    if (e.target.textContent == result.model) {
-      html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
-      root.innerHTML = html;
-    }
-  });
-  /*results.forEach(product => {
-    if(e.target.model !==product.model){
-      console.log('false')
-    }else{
-      html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
-      root.innerHTML = html
-    }
-    
-  })*/
-}
-/*function filterModel() {
-  console.log('btnSortRating')
-  html = ''
-  results.filter(result => result.model)
-  console.log(results)
-  results.forEach(product => {
-    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
-  })
-  renderSearchResults(results)
-}*/
-
-/*let newBooks = books[0].filter(book => book.year > 1999).sort((a, b) => a.year - b.year)
-        console.log(newBooks);
-
-        console.log((() => 'bla bla')())*/
