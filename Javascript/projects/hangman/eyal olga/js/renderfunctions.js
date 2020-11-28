@@ -1,11 +1,28 @@
 const keys = document.querySelectorAll(".keyscontainer h1");
+const wordsContainer = document.querySelector('#wordsContainer');
+const maxNumberofStraiks =3;
+let Straiks = 0;
 keys.forEach(key => {
   key.addEventListener("click", function () {
-    checkForMach(key.innerHTML);
+   if(checkStraiks(Straiks)){ 
+    if (checkForMach(key.innerHTML == false)) { 
+      Straiks++;
+    }
+  }
     /* console.log(key.innerHTML) */
   });
 })
 
+function checkStraiks(Straiks){
+if (Straiks <= maxNumberofStraiks){
+console.log("in te game")
+return true;
+}else{
+  console.log("game over");
+  wordsContainer.innerHTML = '<h1>Game Over</h1>'
+  return false;
+}
+}
 
 function renderCategories() {
   creatCategoriesArray();
@@ -20,7 +37,7 @@ function renderCategories() {
 let word = {};
 function renderwordscrean() {
   /* get word from local */
-  let wordsContainer = document.querySelector('#wordsContainer');
+  
   let b = sessionStorage.getItem('rendomWordObj');
   b = JSON.parse(b);
   wordsContainer.innerHTML = '';
@@ -33,10 +50,13 @@ function renderwordscrean() {
 }
 
 function checkForMach(key) {
+   firstCall = false;
   for (var i = 0; i < word.length; i++) {
     if (word[i].toUpperCase() == key) {
       let letter = document.querySelector(`#letter${i}`)
       letter.innerHTML = key;
+    } else{
+      return "no mach";
     }
   }
 }
