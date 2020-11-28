@@ -1,10 +1,12 @@
 body{
-    
+    text-align: center;
+
     #hiddenLetters{
         display: flex;
         width: 500px;
         margin: auto;
         margin-top: 50px;
+
         .hiddenLetter{
             background-color: gray;
             height: 30px;
@@ -22,10 +24,55 @@ body{
     #lettersArray{
         text-align: center;
         margin-top: 50px;
+
         .clickableLetter{
             height: 30px;
             width: 30px;
             margin: 3px
         }
     }
+
+    .hangmanPic{
+        margin-top: 55px;
+        margin: auto;
+    }
+#coverPic{
+    // display: flex;
+    // justify-content: center;
+    margin: auto;
+    height: 320px;
+    width: 350px;
+    margin-top: 23px;
+
+    .div0{
+        height: 50px;
+        width: 350px;
+        background-color: gray;
+        // display: flex;
+    }
+    .div1{
+        height: 50px;
+        width: 350px;
+        background-color: gray;
+
+    }
+    .div2{
+        height: 50px;
+        width: 350px;
+        background-color: gray;
+
+    }
+    .div3{
+        height: 50px;
+        width: 350px;
+        background-color: white;
+
+    }
+    .div4{
+        height: 120px;
+        width: 350px;
+        background-color: gray;
+
+    }
+}
 }
