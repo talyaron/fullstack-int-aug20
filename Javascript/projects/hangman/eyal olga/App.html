@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 <style>
     .screen {
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1.5fr;
 
     }
 
@@ -25,7 +28,7 @@
     width: 30%;
     position: absolute;
     left: 60%;
-    top: 5%;
+    top: 25%;
     transform: rotate(-45deg);
     transition: all 250ms;
 }
@@ -44,7 +47,7 @@
     width: 50%;
     position: absolute;
     left: 15%;
-    top: 32%;
+    top: 46%;
     z-index: -1;
 }
     #TextContainer {
@@ -61,13 +64,14 @@
     }
     #TextContainer h1{
         font-size: 2vw;
-    padding: 2%;
+    padding: 1%;
     border-bottom: 1px solid black;
    margin-left: 5px;
    margin-right: 5px;
     border-radius: 5px;
     cursor: pointer;
     min-width: 2vw;
+    height: 30px;
    
 
       }
@@ -77,11 +81,14 @@
     align-self: start;
 }
 #TextBody{
+   
     grid-row: 2;
     grid-column: 1;
     display: flex;
-    justify-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    width: 100%;
     
 }
 
@@ -96,7 +103,7 @@
     <div class="container">
         <div class="screen">
             <div id="TextContainer">
-                <div id="TextHeader"><p>test test</p></div>
+                <div id="TextHeader"><p></p></div>
                 <div id="TextBody" ></div>
             </div>
             <div id="mediacontainer "class="imagContainer hammerdown">

@@ -1,9 +1,15 @@
 const keys = document.querySelectorAll(".keyscontainer h1");
 const TextBody = document.querySelector('#TextBody');
-const maxNumberofStraiks = 3;
+const TextHeader = document.querySelector(`#TextHeader`)
+const maxNumberofStraiks = 6;
 let word = {};
 let Straiks = 0;
+TextHeader.innerHTML="";
 
+for (let i=0 ; i < maxNumberofStraiks; i++ ){
+
+  TextHeader.innerHTML += `<span class="material-icons">favorite</span>`;
+}
 
 keys.forEach(key => {
   key.addEventListener("click", function () {
@@ -48,13 +54,32 @@ function checkForMach(key) {
 }
 
 function starGuessing(key){
+  TextHeader.innerHTML = '';
+ 
   console.log(`the connent staricks: ${Straiks}`);
   if (checkForMach(key)== false){
     Straiks++; 
+    let livesLeft = maxNumberofStraiks - Straiks;
+for (let i=0 ; i < livesLeft; i++ ){
+
+  TextHeader.innerHTML += `<span class="material-icons">favorite</span>`;
+}
+    
     console.log(Straiks);
   } ;
   if (Straiks >= maxNumberofStraiks) {
     console.log('game over');
+    TextBody.innerHTML='';
+    TextBody.innerHTML += `<h1>G</h1>`;
+    TextBody.innerHTML += `<h1>A</h1>`;
+    TextBody.innerHTML += `<h1>M</h1>`;
+    TextBody.innerHTML += `<h1>E</h1>`;
+    TextBody.innerHTML += `<h1> </h1>`;
+    TextBody.innerHTML += `<h1>O</h1>`;
+    TextBody.innerHTML += `<h1>V</h1>`;
+    TextBody.innerHTML += `<h1>E</h1>`;
+    TextBody.innerHTML += `<h1>R</h1>`;
+    
   }
 
 }

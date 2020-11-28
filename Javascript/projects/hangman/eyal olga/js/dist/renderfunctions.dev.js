@@ -2,9 +2,16 @@
 
 var keys = document.querySelectorAll(".keyscontainer h1");
 var TextBody = document.querySelector('#TextBody');
-var maxNumberofStraiks = 3;
+var TextHeader = document.querySelector("#TextHeader");
+var maxNumberofStraiks = 6;
 var word = {};
 var Straiks = 0;
+TextHeader.innerHTML = "";
+
+for (var i = 0; i < maxNumberofStraiks; i++) {
+  TextHeader.innerHTML += "<span class=\"material-icons\">favorite</span>";
+}
+
 keys.forEach(function (key) {
   key.addEventListener("click", function () {
     starGuessing(key.innerHTML);
@@ -25,12 +32,12 @@ function checkStraiks(Straiks) {
 function checkForMach(key) {
   var resolte = false;
 
-  for (var i = 0; i < word.length; i++) {
-    console.log("word:".concat(word[i].toUpperCase(), ", key:").concat(key.toUpperCase()));
-    console.log(word[i].toUpperCase() === key.toUpperCase());
+  for (var _i = 0; _i < word.length; _i++) {
+    console.log("word:".concat(word[_i].toUpperCase(), ", key:").concat(key.toUpperCase()));
+    console.log(word[_i].toUpperCase() === key.toUpperCase());
 
-    if (word[i].toUpperCase() === key.toUpperCase()) {
-      var letter = document.querySelector("#letter".concat(i));
+    if (word[_i].toUpperCase() === key.toUpperCase()) {
+      var letter = document.querySelector("#letter".concat(_i));
       letter.innerHTML = key;
       resolte = true;
     }
@@ -40,10 +47,17 @@ function checkForMach(key) {
 }
 
 function starGuessing(key) {
+  TextHeader.innerHTML = '';
   console.log("the connent staricks: ".concat(Straiks));
 
   if (checkForMach(key) == false) {
     Straiks++;
+    var livesLeft = maxNumberofStraiks - Straiks;
+
+    for (var _i2 = 0; _i2 < livesLeft; _i2++) {
+      TextHeader.innerHTML += "<span class=\"material-icons\">favorite</span>";
+    }
+
     console.log(Straiks);
   }
 
@@ -51,6 +65,16 @@ function starGuessing(key) {
 
   if (Straiks >= maxNumberofStraiks) {
     console.log('game over');
+    TextBody.innerHTML = '';
+    TextBody.innerHTML += "<h1>G</h1>";
+    TextBody.innerHTML += "<h1>A</h1>";
+    TextBody.innerHTML += "<h1>M</h1>";
+    TextBody.innerHTML += "<h1>E</h1>";
+    TextBody.innerHTML += "<h1> </h1>";
+    TextBody.innerHTML += "<h1>O</h1>";
+    TextBody.innerHTML += "<h1>V</h1>";
+    TextBody.innerHTML += "<h1>E</h1>";
+    TextBody.innerHTML += "<h1>R</h1>";
   }
 }
 /*---------------------- renders ------------------*/
