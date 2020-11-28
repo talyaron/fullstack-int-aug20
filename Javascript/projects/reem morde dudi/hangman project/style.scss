@@ -37,6 +37,8 @@ body{
         margin: auto;
     }
 #coverPic{
+    // display: flex;
+    // justify-content: center;
     margin: auto;
     height: 320px;
     width: 350px;
@@ -46,7 +48,7 @@ body{
         height: 50px;
         width: 350px;
         background-color: gray;
-        display: flex;
+        // display: flex;
     }
     .div1{
         height: 50px;
