@@ -1,18 +1,13 @@
 "use strict";
 
 var keys = document.querySelectorAll(".keyscontainer h1");
-var wordsContainer = document.querySelector('#wordsContainer');
+var TextBody = document.querySelector('#TextBody');
 var maxNumberofStraiks = 3;
+var word = {};
 var Straiks = 0;
 keys.forEach(function (key) {
   key.addEventListener("click", function () {
-    if (checkStraiks(Straiks)) {
-      if (checkForMach(key.innerHTML == false)) {
-        Straiks++;
-      }
-    }
-    /* console.log(key.innerHTML) */
-
+    starGuessing(key.innerHTML);
   });
 });
 
@@ -22,8 +17,55 @@ function checkStraiks(Straiks) {
     return true;
   } else {
     console.log("game over");
-    wordsContainer.innerHTML = '<h1>Game Over</h1>';
+    TextBody.innerHTML = '<h1>Game Over</h1>';
     return false;
+  }
+}
+
+function checkForMach(key) {
+  var resolte = false;
+
+  for (var i = 0; i < word.length; i++) {
+    console.log("word:".concat(word[i].toUpperCase(), ", key:").concat(key.toUpperCase()));
+    console.log(word[i].toUpperCase() === key.toUpperCase());
+
+    if (word[i].toUpperCase() === key.toUpperCase()) {
+      var letter = document.querySelector("#letter".concat(i));
+      letter.innerHTML = key;
+      resolte = true;
+    }
+  }
+
+  return resolte;
+}
+
+function starGuessing(key) {
+  console.log("the connent staricks: ".concat(Straiks));
+
+  if (checkForMach(key) == false) {
+    Straiks++;
+    console.log(Straiks);
+  }
+
+  ;
+
+  if (Straiks >= maxNumberofStraiks) {
+    console.log('game over');
+  }
+}
+/*---------------------- renders ------------------*/
+
+
+function renderwordscrean() {
+  /* get word from local */
+  var b = sessionStorage.getItem('rendomWordObj');
+  b = JSON.parse(b);
+  TextBody.innerHTML = '';
+  word = b.word;
+  console.log(word);
+
+  for (var i = 0; i < word.length; i++) {
+    TextBody.innerHTML += "<h1 id=\"letter".concat(i, "\"></h1>");
   }
 }
 
@@ -36,32 +78,4 @@ function renderCategories() {
     NewBodyContainer += word;
   });
   BodyContainer.innerHTML = NewBodyContainer;
-}
-
-var word = {};
-
-function renderwordscrean() {
-  /* get word from local */
-  var b = sessionStorage.getItem('rendomWordObj');
-  b = JSON.parse(b);
-  wordsContainer.innerHTML = '';
-  word = b.word;
-  console.log(word);
-
-  for (var i = 0; i < word.length; i++) {
-    wordsContainer.innerHTML += "<h1 id=\"letter".concat(i, "\"></h1>");
-  }
-}
-
-function checkForMach(key) {
-  firstCall = false;
-
-  for (var i = 0; i < word.length; i++) {
-    if (word[i].toUpperCase() == key) {
-      var letter = document.querySelector("#letter".concat(i));
-      letter.innerHTML = key;
-    } else {
-      return "no mach";
-    }
-  }
 }

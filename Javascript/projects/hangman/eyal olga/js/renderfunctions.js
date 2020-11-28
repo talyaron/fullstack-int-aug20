@@ -1,20 +1,14 @@
 const keys = document.querySelectorAll(".keyscontainer h1");
-const wordsContainer = document.querySelector('#wordsContainer');
+const TextBody = document.querySelector('#TextBody');
 const maxNumberofStraiks = 3;
-let Straiks = 1;
+let word = {};
+let Straiks = 0;
 
 
 keys.forEach(key => {
   key.addEventListener("click", function () {
-    /* checkForMach2(key,word); */
-    console.log(key.innerHTML);
-    if (checkStraiks(Straiks)) {
-      if (checkForMach(key.innerHTML == false)) {
-
-        Straiks++;
-        console.log(Straiks);
-      }
-    }
+   
+    starGuessing(key.innerHTML);    
   });
 })
 
@@ -24,8 +18,61 @@ function checkStraiks(Straiks) {
     return true;
   } else {
     console.log("game over");
-    wordsContainer.innerHTML = '<h1>Game Over</h1>'
+    TextBody.innerHTML = '<h1>Game Over</h1>'
     return false;
+  }
+}
+
+
+
+
+
+
+
+function checkForMach(key) {
+  let resolte = false; 
+   for (let i = 0; i < word.length; i++) {
+
+     console.log(`word:${(word[i].toUpperCase())}, key:${(key.toUpperCase())}`)
+     console.log(word[i].toUpperCase() === key.toUpperCase());
+     
+    if (word[i].toUpperCase() === key.toUpperCase()) {
+      let letter = document.querySelector(`#letter${i}`)
+      letter.innerHTML = key;
+      resolte = true;
+    } 
+
+  }
+
+  return resolte;
+}
+
+function starGuessing(key){
+  console.log(`the connent staricks: ${Straiks}`);
+  if (checkForMach(key)== false){
+    Straiks++; 
+    console.log(Straiks);
+  } ;
+  if (Straiks >= maxNumberofStraiks) {
+    console.log('game over');
+  }
+
+}
+
+
+/*---------------------- renders ------------------*/
+
+
+function renderwordscrean() {
+  /* get word from local */
+  let b = sessionStorage.getItem('rendomWordObj');
+  b = JSON.parse(b);
+  TextBody.innerHTML = '';
+  word = b.word;
+  console.log(word);
+
+  for (var i = 0; i < word.length; i++) {
+    TextBody.innerHTML += `<h1 id="letter${i}"></h1>`;
   }
 }
 
@@ -38,47 +85,4 @@ function renderCategories() {
     NewBodyContainer += word;
   });
   BodyContainer.innerHTML = NewBodyContainer;
-}
-let word = {};
-
-
-function renderwordscrean() {
-  /* get word from local */
-
-  let b = sessionStorage.getItem('rendomWordObj');
-  b = JSON.parse(b);
-  wordsContainer.innerHTML = '';
-  word = b.word;
-  console.log(word);
-
-  for (var i = 0; i < word.length; i++) {
-    wordsContainer.innerHTML += `<h1 id="letter${i}"></h1>`;
-  }
-}
-
-function checkForMach(key) {
-  firstCall = false;
-  for (var i = 0; i < word.length; i++) {
-    if (word[i].toUpperCase() == key) {
-      let letter = document.querySelector(`#letter${i}`)
-      letter.innerHTML = key;
-    } else {
-      return "no mach";
-    }
-  }
-}
-
-function checkForMach2(key,word){
-  let counter = 0;
-  const regSearch = new RegExp(key.toUpperCase, 'gi')
-   for (i = 0; i < word.length; i++) {
-    if (regSearch.test(word.charAt(i))) {
-        console.log("found")
-       /*  chosenWordArray.splice(i, 1, `${clickedLetter}`) */
-        let letter = document.querySelector(`#letter${i}`)
-        letter.innerHTML = key;
-    } else {
-        counter++
-    }
-}
 }

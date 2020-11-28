@@ -47,35 +47,59 @@
     top: 32%;
     z-index: -1;
 }
-    #wordsContainer {
+    #TextContainer {
         grid-row: 1;
         grid-column: 2;
        /*  padding: 10%; */
-        margin: 45% 5% 45% 5%;
-        display: flex;
-        flex-wrap: wrap; 
+       /*  margin: 45% 5% 45% 5%; */
+        /* display: flex;
+        flex-wrap: wrap;  */
+        display: grid;
+        grid-template-rows: 1fr 6fr;
+        grid-template-columns: 1fr;
        
     }
-    #wordsContainer h1{
+    #TextContainer h1{
         font-size: 2vw;
     padding: 2%;
     border-bottom: 1px solid black;
-   margin-left: 0.5%;
-   margin-right: 0.5%;
+   margin-left: 5px;
+   margin-right: 5px;
     border-radius: 5px;
     cursor: pointer;
     min-width: 2vw;
+   
+
+      }
+#TextHeader{
+    grid-row: 1;
+    grid-column: 1;
+    align-self: start;
+}
+#TextBody{
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    justify-self: center;
+    align-items: center;
     
-    }
+}
+
+.Center {
+    display: grid;
+    place-items: center;
+}
+
 </style>
 
 <body onload="renderwordscrean()">   <!-- renderfunctions.js -->
     <div class="container">
         <div class="screen">
-            <div id="wordsContainer">
-                
+            <div id="TextContainer">
+                <div id="TextHeader"><p>test test</p></div>
+                <div id="TextBody" ></div>
             </div>
-            <div class="imagContainer hammerdown">
+            <div id="mediacontainer "class="imagContainer hammerdown">
                 <img id="hammer" class="hammerdown" src="img/hammer.png" alt="">
                 <img id="person" src="img/person.png" alt="">
             </div>
