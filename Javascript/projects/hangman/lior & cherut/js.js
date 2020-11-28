@@ -100,20 +100,27 @@ buttons.forEach(button=>{
       }
     })
     
-    if(nam<=8){
+    if(nam<=7){
       console.log(nam)
       fanctions[nam]();
       nam++;
       
-    }else if(nam==9){
-
+    }else if(nam==8){
+      fanctions[nam]();
       gameover = document.createElement("audio");
       gameover.src = ("gameover.mp3");
       console.log(gameover);
       gameover.play();
       gameover.volume = 0.5;
 
-      root.innerHTML += '<h1 id="lose">you lose :(</h1>';
+
+      // letters.innerHTML += `<h1 id="lose">you lose :(</h1>`;
+      roots.innerHTML += `<h1 id="lose">you lose :(</h1>`;
+
+      // ctx.beginPath();
+      // ctx.arc(190, 95, 5, 0, 2 * Math.PI);
+      // ctx.stroke();
+      // ctx.fill();
   
       
  
@@ -127,6 +134,8 @@ buttons.forEach(button=>{
 })
 
 
+// letters.innerHTML += `<h1 id="lose">you lose :(</h1>`;
+// root.innerHTML += '<h1 id="win">you win!!</h1>';
 
 function click1() {
   ctx.beginPath();
@@ -229,7 +238,8 @@ function click8() {
 
 function click9() {
  
-
+  // root.innerHTML += '<h1 id="lose">you lose :(</h1>';
+  console.log('מוות')
   ctx.beginPath();
   ctx.arc(190, 95, 5, 0, 2 * Math.PI);
   ctx.stroke();

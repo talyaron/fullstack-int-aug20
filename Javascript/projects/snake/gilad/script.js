@@ -35,7 +35,7 @@ function findSnakePosition(){
 //     let position = findSnakePosition();
 //     console.log(position)
 //     for (j = position[1]; j < 80; j++) {
-//         // setTimeout(goSide(j), 1000)
+//         // setTimeout(()=>{goSidej(j)}, 1000)
 //         document.getElementById(`pixel${i},${j}`).style.backgroundColor = 'red'
 //         console.log('i moved right ')
 
