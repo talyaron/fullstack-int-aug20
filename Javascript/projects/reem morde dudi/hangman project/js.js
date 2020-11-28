@@ -13,8 +13,7 @@ const lettersArray = [
 
 let splittedWordArray = [];
 
-
-
+let counter = 0
 
 function randomWordGenerator(){
     const randomNumber = Math.floor(Math.random(wordsArray.length)*wordsArray.length);
@@ -34,20 +33,44 @@ function renderLetters(){
     })
 }
 
+
+
 function handleClickedLetter(e){
     const clickedLetter = e.target.innerHTML;
-    const letterIndexes = [];
+    const indexOfClickeLetter = lettersArray.indexOf(clickedLetter)
+    const regExp = new RegExp(clickedLetter,"g");
+    if(regExp.test(splittedWordArray)){
+        const lettersArray = document.getElementById("lettersArray");
+        lettersArray.removeChild(lettersArray.childNodes[indexOfClickeLetter])
+        const letterIndexes = [];
     for(var index = randomWord.indexOf(clickedLetter);index>=0;index= randomWord.indexOf(clickedLetter,index+1)){
         letterIndexes.push(index);
-        console.log(letterIndexes)
     }
     letterIndexes.forEach(index => {
         const hiddenLetters = document.getElementById("hiddenLetters");
         hiddenLetters.children[index].innerHTML = clickedLetter;
         hiddenLetters.children[index].setAttribute("class","showLetter")
-    })  
-    
+    })
+    }else{
+        const coverPic = document.getElementById("coverPic");
+        coverPic.children[counter].setAttribute("style","display:none;")
+        counter ++;
+        if(counter >= 5){
+            alert("Game over, Please Refresh to play again!")
+        }
+    } 
+
+    //Check if the word was guessed or not..
+    const x = document.querySelectorAll('.showLetter').length;
+    const y = splittedWordArray.length;
+    if(x == y){
+        alert("Congartulation! You have guessed the word! Refresh to try another!")
+    }
+
+
 }
+
+
 
 
 
