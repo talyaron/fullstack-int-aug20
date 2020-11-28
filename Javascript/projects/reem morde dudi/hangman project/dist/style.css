@@ -29,53 +29,37 @@ body #lettersArray .clickableLetter {
 }
 body .hangmanPic {
   margin-top: 55px;
+  margin: auto;
 }
 body #coverPic {
-  display: flex;
-  justify-content: center;
-  position: absolute;
+  margin: auto;
   height: 320px;
   width: 350px;
-  left: 75vh;
   margin-top: 23px;
 }
 body #coverPic .div0 {
   height: 50px;
   width: 350px;
   background-color: gray;
-  position: fixed;
-  left: 75vh;
-  top: 27vh;
+  display: flex;
 }
 body #coverPic .div1 {
   height: 50px;
   width: 350px;
   background-color: gray;
-  position: fixed;
-  left: 75vh;
-  top: 32vh;
 }
 body #coverPic .div2 {
   height: 50px;
   width: 350px;
   background-color: gray;
-  position: fixed;
-  left: 75vh;
-  top: 37vh;
 }
 body #coverPic .div3 {
   height: 50px;
   width: 350px;
   background-color: white;
-  position: fixed;
-  left: 75vh;
-  top: 42vh;
 }
 body #coverPic .div4 {
   height: 120px;
   width: 350px;
   background-color: gray;
-  position: fixed;
-  left: 75vh;
-  top: 47vh;
 }

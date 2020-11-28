@@ -25,14 +25,9 @@ function renderLetters() {
 
 function handleClickedLetter(e) {
   var clickedLetter = e.target.innerHTML;
-  var indexOfClickeLetter = lettersArray.indexOf(clickedLetter);
   var regExp = new RegExp(clickedLetter, "g");
 
   if (regExp.test(splittedWordArray)) {
-    var _lettersArray = document.getElementById("lettersArray");
-
-    _lettersArray.removeChild(_lettersArray.childNodes[indexOfClickeLetter]);
-
     var letterIndexes = [];
 
     for (var index = randomWord.indexOf(clickedLetter); index >= 0; index = randomWord.indexOf(clickedLetter, index + 1)) {
@@ -59,6 +54,6 @@ function handleClickedLetter(e) {
   var y = splittedWordArray.length;
 
   if (x == y) {
-    alert("Congartulation! You have guessed the word! Refresh to try another!");
+    alert("Congartulations! You have guessed the word! Refresh to try another!");
   }
 }
