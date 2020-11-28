@@ -33,8 +33,6 @@ function renderLetters(){
     })
 }
 
-
-
 function handleClickedLetter(e){
     const clickedLetter = e.target.innerHTML;
     const indexOfClickeLetter = lettersArray.indexOf(clickedLetter)
