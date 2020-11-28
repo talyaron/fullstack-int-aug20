@@ -43,7 +43,7 @@ let gameover;
 let win;
 let yes;
 let no;
-
+let winlose = document.querySelector('#winlose');
 
 
 let buttons = document.querySelectorAll('.button');
@@ -67,7 +67,6 @@ buttons.forEach(button=>{
 
       buttons.forEach(button =>{
         if(button.dataset.sign == clickLater ){
-          // button.style.display = 'none';
           button.style.visibility = 'hidden';
          
         }
@@ -76,11 +75,15 @@ buttons.forEach(button=>{
       winner++;
     if(winner == chosenWord.length){
       console.log('you win')
-      root.innerHTML += '<h1 id="win">you win!!</h1>';
+      winlose.innerHTML += '<h1 id="win">you win!!</h1>';
       win = document.createElement("audio");
       win.src = ("win.mp3");
       console.log(win);
       win.play();
+
+      buttons.forEach(button =>{
+        button.disabled = true;
+    })
     }
     
     })
@@ -112,17 +115,13 @@ buttons.forEach(button=>{
       console.log(gameover);
       gameover.play();
       gameover.volume = 0.5;
+     
+      winlose.innerHTML += `<h1 id="lose">you lose :(</h1>`;
 
-
-      // letters.innerHTML += `<h1 id="lose">you lose :(</h1>`;
-      roots.innerHTML += `<h1 id="lose">you lose :(</h1>`;
-
-      // ctx.beginPath();
-      // ctx.arc(190, 95, 5, 0, 2 * Math.PI);
-      // ctx.stroke();
-      // ctx.fill();
+      buttons.forEach(button =>{
+          button.disabled = true;
+      })
   
-      
  
       
     }
@@ -132,10 +131,6 @@ buttons.forEach(button=>{
   })
  
 })
-
-
-// letters.innerHTML += `<h1 id="lose">you lose :(</h1>`;
-// root.innerHTML += '<h1 id="win">you win!!</h1>';
 
 function click1() {
   ctx.beginPath();
