@@ -42,7 +42,7 @@ body #coverPic {
 body #coverPic .div0 {
   height: 50px;
   width: 350px;
-  background-color: white;
+  background-color: gray;
   position: fixed;
   left: 75vh;
   top: 27vh;
@@ -50,7 +50,7 @@ body #coverPic .div0 {
 body #coverPic .div1 {
   height: 50px;
   width: 350px;
-  background-color: white;
+  background-color: gray;
   position: fixed;
   left: 75vh;
   top: 32vh;
@@ -58,7 +58,7 @@ body #coverPic .div1 {
 body #coverPic .div2 {
   height: 50px;
   width: 350px;
-  background-color: white;
+  background-color: gray;
   position: fixed;
   left: 75vh;
   top: 37vh;
@@ -74,7 +74,7 @@ body #coverPic .div3 {
 body #coverPic .div4 {
   height: 120px;
   width: 350px;
-  background-color: white;
+  background-color: gray;
   position: fixed;
   left: 75vh;
   top: 47vh;

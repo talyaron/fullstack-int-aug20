@@ -25,14 +25,18 @@ function renderLetters() {
 
 function handleClickedLetter(e) {
   var clickedLetter = e.target.innerHTML;
+  var indexOfClickeLetter = lettersArray.indexOf(clickedLetter);
   var regExp = new RegExp(clickedLetter, "g");
 
   if (regExp.test(splittedWordArray)) {
+    var _lettersArray = document.getElementById("lettersArray");
+
+    _lettersArray.removeChild(_lettersArray.childNodes[indexOfClickeLetter]);
+
     var letterIndexes = [];
 
     for (var index = randomWord.indexOf(clickedLetter); index >= 0; index = randomWord.indexOf(clickedLetter, index + 1)) {
       letterIndexes.push(index);
-      console.log(letterIndexes);
     }
 
     letterIndexes.forEach(function (index) {
@@ -46,7 +50,15 @@ function handleClickedLetter(e) {
     counter++;
 
     if (counter >= 5) {
-      console.log("Game over");
+      alert("Game over, Please Refresh to play again!");
     }
+  } //Check if the word was guessed or not..
+
+
+  var x = document.querySelectorAll('.showLetter').length;
+  var y = splittedWordArray.length;
+
+  if (x == y) {
+    alert("Congartulation! You have guessed the word! Refresh to try another!");
   }
 }
