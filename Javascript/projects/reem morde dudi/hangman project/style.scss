@@ -34,55 +34,43 @@ body{
 
     .hangmanPic{
         margin-top: 55px;
+        margin: auto;
     }
 #coverPic{
-    display: flex;
-    justify-content: center;
-    position:absolute;
+    margin: auto;
     height: 320px;
     width: 350px;
-     left: 75vh;
-  margin-top:23px;
+    margin-top: 23px;
 
     .div0{
         height: 50px;
         width: 350px;
         background-color: gray;
-        position:fixed;
-        left: 75vh;
-        top: 27vh;
+        display: flex;
     }
     .div1{
         height: 50px;
         width: 350px;
         background-color: gray;
-        position: fixed;
-        left: 75vh;
-        top: 32vh;
+
     }
     .div2{
         height: 50px;
         width: 350px;
         background-color: gray;
-        position: fixed;
-        left: 75vh;
-        top: 37vh;
+
     }
     .div3{
         height: 50px;
         width: 350px;
         background-color: white;
-        position: fixed;
-        left: 75vh;
-        top: 42vh;
+
     }
     .div4{
         height: 120px;
         width: 350px;
         background-color: gray;
-        position: fixed;
-        left: 75vh;
-        top: 47vh;
+
     }
 }
 }
