@@ -40,7 +40,7 @@ function handleClickedLetter(e) {
       hiddenLetters.children[index].setAttribute("class", "showLetter");
     });
   } else {
-    var coverPic = document.getElementById("coverPic");
+    var coverPic = document.getElementById("coverPic1");
     coverPic.children[counter].setAttribute("style", "display:none;");
     counter++;
 

@@ -31,34 +31,41 @@ body .hangmanPic {
   margin-top: 55px;
   margin: auto;
 }
-body #coverPic {
+body #coverPic2 {
+  position: relative;
   margin: auto;
+  width: 700px;
   height: 320px;
-  width: 350px;
+}
+body #coverPic1 {
+  top: 0;
+  position: absolute;
+  height: 320px;
+  width: 700px;
   margin-top: 23px;
 }
-body #coverPic .div0 {
+body .div4 {
   height: 50px;
-  width: 350px;
-  background-color: gray;
-}
-body #coverPic .div1 {
-  height: 50px;
-  width: 350px;
-  background-color: gray;
-}
-body #coverPic .div2 {
-  height: 50px;
-  width: 350px;
-  background-color: gray;
-}
-body #coverPic .div3 {
-  height: 50px;
-  width: 350px;
+  width: 700px;
   background-color: white;
 }
-body #coverPic .div4 {
+body .div3 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div2 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div1 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div0 {
   height: 120px;
-  width: 350px;
-  background-color: gray;
+  width: 700px;
+  background-color: white;
 }
