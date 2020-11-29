@@ -1,0 +1,57 @@
+body{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url(/img/bg.jfif);
+}
+
+.btnLetter, #wordSpot, #categories{
+    text-transform: uppercase;
+    
+    font-weight: bold;
+}
+
+#wordSpot{
+    letter-spacing: 5px;
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+#categories{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.btnLetter{
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.btnReset{
+    margin-top: 20px;
+    padding: 5px;
+    font-weight: bold;
+}
+#lettersBox{
+    width: 70%;
+    margin: auto;
+}
+.wrapper{
+    background-color: #fff;
+    width: 600px;
+    margin: auto;
+    opacity: 80%;
+    border-radius: 10px;
+  }
+  .textTitle, .currentPlay, #titleCategory, #categories, #lose, #won{
+      color: white;
+  }
+  #lose,#won{
+      font-size: 30px;
+    font-weight: bold;
+  } 
+  #titleCategory{
+      padding-top: 5px;
+  }
+  
