@@ -4,28 +4,28 @@ var btnResModel = document.getElementById('btnResModel');
 var btnResBrand = document.getElementById('btnResBrand');
 
 function filterModel(e) {
-  console.log('btnResModel');
+  console.log('filterModel');
   html = '';
   filterResModel = '';
   filterResBrand = '';
-  results.filter(function (result) {
-    if (e.target.textContent == result.model) {
-      console.log(result);
-      html += "<p id=\"".concat(result.isdn, "\" onclick=handleClick(event)>Product name: ").concat(result.name, " </br> Product Model: ").concat(result.model, " </br> Price: ").concat(result.price, "</p>");
+  results.filter(function (product) {
+    if (e.target.textContent == product.model) {
+      console.log(product);
+      html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
     }
   });
   root.innerHTML = html;
 }
 
 function filterBrand(e) {
-  console.log(e.target);
+  console.log('filterBrand');
   html = '';
   filterResModel = '';
   filterResBrand = '';
-  results.filter(function (result) {
-    if (e.target.textContent == result.brand) {
-      console.log(result);
-      html += "<p id=\"".concat(result.isdn, "\" onclick=handleClick(event)>Product name: ").concat(result.name, " </br> Product Model: ").concat(result.model, " </br> Price: ").concat(result.price, "</p>");
+  results.filter(function (product) {
+    if (e.target.textContent == product.brand) {
+      console.log(product);
+      html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
     }
   });
   root.innerHTML = html;
