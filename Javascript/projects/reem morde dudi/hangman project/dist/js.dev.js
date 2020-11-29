@@ -44,7 +44,7 @@ function handleClickedLetter(e) {
     coverPic.children[counter].setAttribute("style", "display:none;");
     counter++;
 
-    if (counter >= 5) {
+    if (counter >= 6) {
       alert("Game over, Please Refresh to play again!");
     }
   } //Check if the word was guessed or not..
