@@ -12,7 +12,11 @@ function handleClickCategories(e) {
   filterBy.innerHTML = containerFilter;
   var filterByModel = document.getElementById('filterByModel');
   var filterByBrand = document.getElementById('filterByBrand');
+  btnsSort += "<span>Sort by:<button id=\"btnSortPrice\" onclick='sortPrice(event)' type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" type=\"submit\" onclick='sortRating(event)'>rating</button></span>";
   products.forEach(function (product) {
+    sortPrice();
+    renderSearchResults(results);
+
     if (e.toElement.id == product.category) {
       html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
       filterResModel += " <div><li id=\"btnResModel\" style=\"min-width:25px; min-height:25px\" onclick='filterModel(event)'>".concat(product.model, "</li>\n        </div>");
@@ -21,7 +25,7 @@ function handleClickCategories(e) {
       console.log(results);
     }
 
-    root.innerHTML = html;
+    root.innerHTML = btnsSort + html;
     filterByBrand.innerHTML = filterResBrand;
     filterByModel.innerHTML = filterResModel;
   });
