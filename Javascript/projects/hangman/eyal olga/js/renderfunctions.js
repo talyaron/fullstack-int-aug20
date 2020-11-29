@@ -1,6 +1,8 @@
 const keys = document.querySelectorAll(".keyscontainer h1");
 const TextBody = document.querySelector('#TextBody');
-const TextHeader = document.querySelector(`#TextHeader`)
+const TextHeader = document.querySelector(`#TextHeader`);
+const hammer = document.querySelector(`#hammer`);
+const person = document.querySelector(`#person`);
 const maxNumberofStraiks = 6;
 let word = {};
 let Straiks = 0;
@@ -8,7 +10,7 @@ TextHeader.innerHTML="";
 
 for (let i=0 ; i < maxNumberofStraiks; i++ ){
 
-  TextHeader.innerHTML += `<span class="material-icons">favorite</span>`;
+  TextHeader.innerHTML += `<span class="material-icons" style="color: red;">favorite</span>`;
 }
 
 keys.forEach(key => {
@@ -29,43 +31,39 @@ function checkStraiks(Straiks) {
   }
 }
 
-
-
-
-
-
-
 function checkForMach(key) {
-  let resolte = false; 
+  /* hammer.classList.remove('hammerdown'); */
+  
+  let resolute = false; 
    for (let i = 0; i < word.length; i++) {
-
-     console.log(`word:${(word[i].toUpperCase())}, key:${(key.toUpperCase())}`)
-     console.log(word[i].toUpperCase() === key.toUpperCase());
-     
+         
     if (word[i].toUpperCase() === key.toUpperCase()) {
       let letter = document.querySelector(`#letter${i}`)
-      letter.innerHTML = key;
-      resolte = true;
+      let livesLeft = maxNumberofStraiks - Straiks;
+      letter.innerHTML = key;  /* הצגת האות במקום הנכון */
+      resolute = true;
+      
     } 
-
+    
   }
+  
 
-  return resolte;
+  return resolute;
 }
 
 function starGuessing(key){
-  TextHeader.innerHTML = '';
- 
-  console.log(`the connent staricks: ${Straiks}`);
   if (checkForMach(key)== false){
+    TextHeader.innerHTML = '';
+    hammer.classList.remove('hammerdown');
     Straiks++; 
     let livesLeft = maxNumberofStraiks - Straiks;
 for (let i=0 ; i < livesLeft; i++ ){
 
-  TextHeader.innerHTML += `<span class="material-icons">favorite</span>`;
-}
-    
-    console.log(Straiks);
+  TextHeader.innerHTML += `<span class="material-icons" style="color: red;">favorite</span>`;
+  /* יש להוסיף כאן קלאס אנימציה */
+  hammer.className = 'hammerdown';
+  }
+
   } ;
   if (Straiks >= maxNumberofStraiks) {
     console.log('game over');
@@ -81,6 +79,7 @@ for (let i=0 ; i < livesLeft; i++ ){
     TextBody.innerHTML += `<h1>R</h1>`;
     
   }
+  
 
 }
 

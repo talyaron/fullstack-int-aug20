@@ -1,172 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-  </head>
-  <style>
-    .screen {
-      display: grid;
-      grid-template-rows: 1fr;
-      grid-template-columns: 1fr 1.5fr;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css" />
 
-    .imagContainer {
-      grid-row: 1;
-      grid-column: 1;
-      position: relative;
-      border: 10px solid black;
-    }
-    #hammer {
-      width: 30%;
-      position: absolute;
-      left: 60%;
-      top: 30%;
-      /* transform: rotate(-60deg); */
-      /* transition: all 550ms; */
-      animation-name: hammerfall;
-      animation-duration: 3s;
-    }
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+<style>
+  .screen {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1.5fr;
+  }
 
-    /* .hammerdown{
-    left: 65%;
-    top: 13%;
-    transform: rotate(-70deg);
-    transition: all 250ms;
-} */
+  .imagContainer {
+    grid-row: 1;
+    grid-column: 1;
+    position: relative;
+    border: 10px solid black;
+  }
 
-    .persondown {
-    }
-    #person {
-      width: 50%;
-      position: absolute;
-      left: 15%;
-      top: 46%;
-      z-index: -1;
-    }
-    #TextContainer {
-      grid-row: 1;
-      grid-column: 2;
-      /*  padding: 10%; */
-      /*  margin: 45% 5% 45% 5%; */
-      /* display: flex;
+  #hammer {
+    width: 30%;
+    position: absolute;
+    left: 60%;
+    top: 30%;
+    /* transform: rotate(-60deg); */
+    /* transition: all 550ms; */
+
+  }
+
+  .hammerdown {
+    animation-name: hammerfall;
+    animation-duration: 3s;
+  }
+
+  .persondown {}
+
+  #person {
+    width: 50%;
+    position: absolute;
+    left: 15%;
+    top: 46%;
+    z-index: -1;
+  }
+
+  #TextContainer {
+    grid-row: 1;
+    grid-column: 2;
+    /*  padding: 10%; */
+    /*  margin: 45% 5% 45% 5%; */
+    /* display: flex;
         flex-wrap: wrap;  */
-      display: grid;
-      grid-template-rows: 1fr 6fr;
-      grid-template-columns: 1fr;
-    }
-    #TextContainer h1 {
-      font-size: 2vw;
-      padding: 1%;
-      border-bottom: 1px solid black;
-      margin-left: 5px;
-      margin-right: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      min-width: 2vw;
-      height: 30px;
-    }
-    #TextHeader {
-      grid-row: 1;
-      grid-column: 1;
-      align-self: start;
-    }
-    #TextBody {
-      grid-row: 2;
-      grid-column: 1;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: 1fr;
+  }
+
+  #TextContainer h1 {
+    font-size: 2vw;
+    padding: 1%;
+    border-bottom: 1px solid black;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 2vw;
+    height: 30px;
+  }
+
+  #TextHeader {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: start;
+  }
+
+  #TextBody {
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Center {
+    display: grid;
+    place-items: center;
+  }
+
+  @keyframes hammerfall {
+    0% {
+      transform: rotate(45deg);
+      transform: rotate(-60deg);
+      top: 30%;
+
     }
 
-    .Center {
-      display: grid;
-      place-items: center;
+    10% {
+      /*  animation-timing-function: ease-in; */
+      /*    translate: -20px -20px; */
+      transform: rotate(-60deg);
+      top: 25%;
+
     }
 
-    @keyframes hammerfall {
-      0% {
-        transform: rotate(45deg);
-        transform: rotate(-60deg);
-        top: 30%;
-        
-      }
-
-      10% {
-       /*  animation-timing-function: ease-in; */
-        /*    translate: -20px -20px; */
-        transform: rotate(-60deg);
-        top: 25%;
-       
-      }
-
-      20% {
-      }
+    20% {
+      /* transform: rotate(45deg);
+      left: 60%;
+      top: 30%; */
     }
-  </style>
+  }
+</style>
 
-  <body onload="renderwordscrean()">
-    <!-- renderfunctions.js -->
-    <div class="container">
-      <div class="screen">
-        <div id="TextContainer">
-          <div id="TextHeader"><p></p></div>
-          <div id="TextBody"></div>
+<body onload="renderwordscrean()">
+  <!-- renderfunctions.js -->
+  <div class="container">
+    <div class="screen">
+      <div id="TextContainer">
+        <div id="TextHeader">
+          <p></p>
         </div>
-        <div id="mediacontainer " class="imagContainer hammerdown">
-          <img id="hammer" class="hammerdown" src="img/hammer.png" alt="" />
-          <img id="person" src="img/person.png" alt="" />
-        </div>
+        <div id="TextBody"></div>
       </div>
-      <!-- keybord -->
-      <div class="leterscontainer">
-        <div class="keyscontainer">
-          <div class="rowA">
-            <h1>Q</h1>
-            <h1>W</h1>
-            <h1>E</h1>
-            <h1>R</h1>
-            <h1>T</h1>
-            <h1>Y</h1>
-            <h1>U</h1>
-            <h1>I</h1>
-            <h1>O</h1>
-            <h1>P</h1>
-          </div>
-          <div class="rowB">
-            <h1>A</h1>
-            <h1>S</h1>
-            <h1>D</h1>
-            <h1>F</h1>
-            <h1>G</h1>
-            <h1>H</h1>
-            <h1>J</h1>
-            <h1>K</h1>
-            <h1>L</h1>
-          </div>
-          <div class="rowC">
-            <h1>Z</h1>
-            <h1>X</h1>
-            <h1>C</h1>
-            <h1>V</h1>
-            <h1>B</h1>
-            <h1>N</h1>
-            <h1>M</h1>
-          </div>
+      <div id="mediacontainer " class="imagContainer ">
+        <img id="hammer" class="hammer" src="img/hammer.png" alt="" />
+        <img id="person" src="img/person.png" alt="" />
+      </div>
+    </div>
+    <!-- keybord -->
+    <div class="leterscontainer">
+      <div class="keyscontainer">
+        <div class="rowA">
+          <h1>Q</h1>
+          <h1>W</h1>
+          <h1>E</h1>
+          <h1>R</h1>
+          <h1>T</h1>
+          <h1>Y</h1>
+          <h1>U</h1>
+          <h1>I</h1>
+          <h1>O</h1>
+          <h1>P</h1>
+        </div>
+        <div class="rowB">
+          <h1>A</h1>
+          <h1>S</h1>
+          <h1>D</h1>
+          <h1>F</h1>
+          <h1>G</h1>
+          <h1>H</h1>
+          <h1>J</h1>
+          <h1>K</h1>
+          <h1>L</h1>
+        </div>
+        <div class="rowC">
+          <h1>Z</h1>
+          <h1>X</h1>
+          <h1>C</h1>
+          <h1>V</h1>
+          <h1>B</h1>
+          <h1>N</h1>
+          <h1>M</h1>
         </div>
       </div>
     </div>
-    <script src="js/data.js"></script>
-    <script src="js/filterfunctions.js"></script>
-    <script src="js/renderfunctions.js"></script>
-  </body>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/filterfunctions.js"></script>
+  <script src="js/renderfunctions.js"></script>
+</body>
+
 </html>
