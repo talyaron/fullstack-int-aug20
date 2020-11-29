@@ -47,10 +47,10 @@ function handleClickedLetter(e){
         hiddenLetters.children[index].setAttribute("class","showLetter")
     })
     }else{
-        const coverPic = document.getElementById("coverPic");
+        const coverPic = document.getElementById("coverPic1");
         coverPic.children[counter].setAttribute("style","display:none;")
         counter ++;
-        if(counter >= 5){
+        if(counter >= 6){
             alert("Game over, Please Refresh to play again!")
         }
     } 
