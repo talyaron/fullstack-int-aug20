@@ -1,7 +1,21 @@
+<<<<<<< HEAD
+function renderCategories(){
+    creatCategoriesArray();
+    const BodyContainer = document.querySelector('.categorysContainer');
+    let NewBodyContainer = '';
+      categories.forEach((category) => {
+        const word = `<h1>${category.category}</h1>`;
+      NewBodyContainer += word;
+    })
+    BodyContainer.innerHTML = NewBodyContainer;
+}
+
+render
+=======
 const keys = document.querySelectorAll(".keyscontainer h1");
 const TextBody = document.querySelector('#TextBody');
 const TextHeader = document.querySelector(`#TextHeader`);
-const hammer = document.querySelector(`#hammer`);
+const hammer = document.getElementById(`hammer`);
 const person = document.querySelector(`#person`);
 const maxNumberofStraiks = 6;
 let word = {};
@@ -32,7 +46,7 @@ function checkStraiks(Straiks) {
 }
 
 function checkForMach(key) {
-  /* hammer.classList.remove('hammerdown'); */
+  
   
   let resolute = false; 
    for (let i = 0; i < word.length; i++) {
@@ -54,17 +68,23 @@ function checkForMach(key) {
 function starGuessing(key){
   if (checkForMach(key)== false){
     TextHeader.innerHTML = '';
-    hammer.classList.remove('hammerdown');
+    
     Straiks++; 
     let livesLeft = maxNumberofStraiks - Straiks;
 for (let i=0 ; i < livesLeft; i++ ){
 
   TextHeader.innerHTML += `<span class="material-icons" style="color: red;">favorite</span>`;
   /* יש להוסיף כאן קלאס אנימציה */
-  hammer.className = 'hammerdown';
-  }
+  hammer.animate({
+    transform:['rotate(0deg)','rotate(-60deg)'],
+    transform:['rotate(-60deg)','rotate(0deg)']
+  },300);
+  person.animate({
+    transform:['translate(0px, 12%)']
+  },300);
 
-  } ;
+
+  }};
   if (Straiks >= maxNumberofStraiks) {
     console.log('game over');
     TextBody.innerHTML='';
@@ -110,3 +130,4 @@ function renderCategories() {
   });
   BodyContainer.innerHTML = NewBodyContainer;
 }
+>>>>>>> eyal

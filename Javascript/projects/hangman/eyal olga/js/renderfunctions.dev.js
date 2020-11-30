@@ -1,9 +1,11 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var keys = document.querySelectorAll(".keyscontainer h1");
 var TextBody = document.querySelector('#TextBody');
 var TextHeader = document.querySelector("#TextHeader");
-var hammer = document.querySelector("#hammer");
+var hammer = document.getElementById("hammer");
 var person = document.querySelector("#person");
 var maxNumberofStraiks = 6;
 var word = {};
@@ -32,7 +34,6 @@ function checkStraiks(Straiks) {
 }
 
 function checkForMach(key) {
-  /* hammer.classList.remove('hammerdown'); */
   var resolute = false;
 
   for (var _i = 0; _i < word.length; _i++) {
@@ -52,7 +53,6 @@ function checkForMach(key) {
 function starGuessing(key) {
   if (checkForMach(key) == false) {
     TextHeader.innerHTML = '';
-    hammer.classList.remove('hammerdown');
     Straiks++;
     var livesLeft = maxNumberofStraiks - Straiks;
 
@@ -60,7 +60,12 @@ function starGuessing(key) {
       TextHeader.innerHTML += "<span class=\"material-icons\" style=\"color: red;\">favorite</span>";
       /* יש להוסיף כאן קלאס אנימציה */
 
-      hammer.className = 'hammerdown';
+      hammer.animate(_defineProperty({
+        transform: ['rotate(0deg)', 'rotate(-60deg)']
+      }, "transform", ['rotate(-60deg)', 'rotate(0deg)']), 300);
+      person.animate({
+        transform: ['translate(0px, 12%)']
+      }, 300);
     }
   }
 

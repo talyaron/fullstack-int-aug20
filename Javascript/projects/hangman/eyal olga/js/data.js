@@ -51,7 +51,11 @@ const words = [
 },
 {
     category:"kids games",
+<<<<<<< HEAD
+    word:"",
+=======
     word:"ttg",
+>>>>>>> eyal
     tip:""
 },
 {
@@ -67,5 +71,9 @@ const words = [
 
 ];
 
+<<<<<<< HEAD
+let categories = [];
+=======
 let categories = [];
 
+>>>>>>> eyal

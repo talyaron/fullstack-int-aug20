@@ -1,0 +1,17 @@
+{
+  "name": "hm",
+  "version": "1.0.0",
+  "description": "lior",
+  "main": "lior.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lior biton",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "dayjs": "^1.9.6",
+    "yargs": "^16.1.1"
+  },
+  "devDependencies": {}
+}
