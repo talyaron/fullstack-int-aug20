@@ -44,8 +44,8 @@ function renderSearchResults(results) {
   html = ''
   containerFilter = ''
 
-  containerFilter = `<div>Filter by model <div id="filterByModel"></div></div>
-  <div>Filter by brand <div id="filterByBrand"></div></div>`
+  containerFilter = `<div class='filter'>Filter by model <br><br><div id="filterByModel"></div></div>
+  <div class='filter'>Filter by brand <br><br><div id="filterByBrand"></div></div>`
 
   filterBy.innerHTML = containerFilter
 
@@ -53,7 +53,7 @@ const filterByModel = document.getElementById('filterByModel')
 const filterByBrand = document.getElementById('filterByBrand')
 
 
-  btnsSort += `<span>Sort by:<button id="btnSortPrice" onclick='sortPrice(event)' type="submit"> price</button>
+  btnsSort += `<span id='sortBy'>Sort by:<button id="btnSortPrice" onclick='sortPrice(event)' type="submit"> price</button>
     <button id="btnSortRating" type="submit" onclick='sortRating(event)'>rating</button></span>` 
       
 
@@ -64,7 +64,7 @@ const filterByBrand = document.getElementById('filterByBrand')
   })
 
   results.forEach(product => {
-    html += `<p id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
+    html += `<p class='product' id="${product.isdn}" onclick=handleClick(event)>Product name: ${product.name} </br> Product Model: ${product.model} </br> Price: ${product.price}</p>`
   })
 
   filterByModel.innerHTML = filterResModel
@@ -82,7 +82,7 @@ function handleClick(e) {
       console.log('false')
     } else {
       let container = ''
-      container += `<h3>${elm.name}</h3>` + `<img src="${elm.image}">` + `<div>Price: ${elm.price}</br>Model: ${elm.model}</br>Brand: ${elm.brand}</br>Recommendations: ${elm.recommendations}</br>Description: ${elm.description}</br>Store:${elm.store}</div>`
+      container += `<div class='containerProuct'><h3 id='nameProduct'>${elm.name}</h3>` + `<img src="${elm.image}">` + `<div id='price'>Price: ${elm.price}</br>Model: ${elm.model}</br>Brand: ${elm.brand}</br>Recommendations: ${elm.recommendations}</br>Description: ${elm.description}</br>Store:${elm.store}</div></div>`
       root.innerHTML = container
     }
   })

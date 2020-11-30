@@ -28,8 +28,8 @@ function searchProducts(searchTerm) {
 
 var html = '';
 var root = document.getElementById('root');
-var filterByModel = document.getElementById('filterByModel');
-var filterByBrand = document.getElementById('filterByBrand');
+var filterBy = document.getElementById('filterBy');
+var containerFilter = '';
 var btnsSort = '';
 var filterResModel = '';
 var filterResBrand = '';
@@ -39,13 +39,18 @@ function renderSearchResults(results) {
   filterResBrand = '';
   btnsSort = '';
   html = '';
-  btnsSort += "<span>Sort by:<button id=\"btnSortPrice\" onclick='sortPrice(event)' type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" type=\"submit\" onclick='sortRating(event)'>rating</button></span>";
+  containerFilter = '';
+  containerFilter = "<div class='filter'>Filter by model <br><br><div id=\"filterByModel\"></div></div>\n  <div class='filter'>Filter by brand <br><br><div id=\"filterByBrand\"></div></div>";
+  filterBy.innerHTML = containerFilter;
+  var filterByModel = document.getElementById('filterByModel');
+  var filterByBrand = document.getElementById('filterByBrand');
+  btnsSort += "<span id='sortBy'>Sort by:<button id=\"btnSortPrice\" onclick='sortPrice(event)' type=\"submit\"> price</button>\n    <button id=\"btnSortRating\" type=\"submit\" onclick='sortRating(event)'>rating</button></span>";
   results.forEach(function (product) {
     filterResModel += " <div><li id=\"btnResModel\" style=\"min-width:25px; min-height:25px\" onclick='filterModel(event)'>".concat(product.model, "</li>\n        </div>");
     filterResBrand += " <div><li id=\"btnResBrand\" style=\"min-width: 25px; min-height: 25px\"  onclick='filterBrand(event)'>".concat(product.brand, "</li></div>");
   });
   results.forEach(function (product) {
-    html += "<p id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
+    html += "<p class='product' id=\"".concat(product.isdn, "\" onclick=handleClick(event)>Product name: ").concat(product.name, " </br> Product Model: ").concat(product.model, " </br> Price: ").concat(product.price, "</p>");
   });
   filterByModel.innerHTML = filterResModel;
   filterByBrand.innerHTML = filterResBrand;
@@ -60,7 +65,7 @@ function handleClick(e) {
       console.log('false');
     } else {
       var container = '';
-      container += "<h3>".concat(elm.name, "</h3>") + "<img src=\"".concat(elm.image, "\">") + "<div>Price: ".concat(elm.price, "</br>Model: ").concat(elm.model, "</br>Brand: ").concat(elm.brand, "</br>Recommendations: ").concat(elm.recommendations, "</br>Description: ").concat(elm.description, "</br>Store:").concat(elm.store, "</div>");
+      container += "<div class='containerProuct'><h3 id='nameProduct'>".concat(elm.name, "</h3>") + "<img src=\"".concat(elm.image, "\">") + "<div id='price'>Price: ".concat(elm.price, "</br>Model: ").concat(elm.model, "</br>Brand: ").concat(elm.brand, "</br>Recommendations: ").concat(elm.recommendations, "</br>Description: ").concat(elm.description, "</br>Store:").concat(elm.store, "</div></div>");
       root.innerHTML = container;
     }
   });
