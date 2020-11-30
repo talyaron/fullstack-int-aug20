@@ -4,37 +4,42 @@ const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv
 
-let m = 1, d = 1, y = 2000, a = 1;
 
-console.log(argv)
+let a = argv.a
+let b = argv.b
 
-if (argv.a) {
-    a = argv.a
+
+function minus(a, b) {
+    return a - b
 }
-if (argv.m) {
-    m = argv.m
+function plus(a, b) {
+    return a + b
 }
-if (argv.y) {
-    d = argv.d
+function multi(a, b) {
+    return a * b
 }
-if (argv.y) {
-    y = argv.y
+function divide(a, b) {
+    return a / b
 }
-let x = dayjs(`${m}-${d}-${y}`).add(a, 'year').format('DD/MM/YYYY')
 
+let chosenSign = argv._[0]
 
-const love = []
-const hate = []
-
-if (argv.h) {
-    for (i = 0; i < argv._.length; i++) {
-        hate.push(argv._[i])
+if (argv.a && argv.b) {
+    switch (chosenSign) {
+        case "-":
+            console.log(minus(a, b))
+            break;
+        case "+":
+            console.log(plus(a, b))
+            break;
+        case "*":
+            console.log(multi(a, b))
+            break;
+        case "/":
+            console.log(divide(a, b))
+            break;
+        default: console.log("Define A + B and chose math action \nExample: -a 1 + -b 1")
     }
-    console.log(hate)
-}
-if (argv.l) {
-    for (i = 0; i < argv._.length; i++) {
-        love.push(argv._[i])
-    }
-    console.log(love)
+} else {
+    console.log("Define A + B and chose math action \nExample: -a 1 + -b 1")
 }
