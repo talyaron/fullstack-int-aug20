@@ -3,6 +3,7 @@
 var wordsArray = ["faboulus", "interactive", "gorgeous", "spectecular", "javascript"];
 var lettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var splittedWordArray = [];
+var counter = 0;
 
 function randomWordGenerator() {
   var randomNumber = Math.floor(Math.random(wordsArray.length) * wordsArray.length);
@@ -24,16 +25,35 @@ function renderLetters() {
 
 function handleClickedLetter(e) {
   var clickedLetter = e.target.innerHTML;
-  var letterIndexes = [];
+  var regExp = new RegExp(clickedLetter, "g");
 
-  for (var index = randomWord.indexOf(clickedLetter); index >= 0; index = randomWord.indexOf(clickedLetter, index + 1)) {
-    letterIndexes.push(index);
-    console.log(letterIndexes);
+  if (regExp.test(splittedWordArray)) {
+    var letterIndexes = [];
+
+    for (var index = randomWord.indexOf(clickedLetter); index >= 0; index = randomWord.indexOf(clickedLetter, index + 1)) {
+      letterIndexes.push(index);
+    }
+
+    letterIndexes.forEach(function (index) {
+      var hiddenLetters = document.getElementById("hiddenLetters");
+      hiddenLetters.children[index].innerHTML = clickedLetter;
+      hiddenLetters.children[index].setAttribute("class", "showLetter");
+    });
+  } else {
+    var coverPic = document.getElementById("coverPic1");
+    coverPic.children[counter].setAttribute("style", "display:none;");
+    counter++;
+
+    if (counter >= 6) {
+      alert("Game over, Please Refresh to play again!");
+    }
+  } //Check if the word was guessed or not..
+
+
+  var x = document.querySelectorAll('.showLetter').length;
+  var y = splittedWordArray.length;
+
+  if (x == y) {
+    alert("Congartulations! You have guessed the word! Refresh to try another!");
   }
-
-  letterIndexes.forEach(function (index) {
-    var hiddenLetters = document.getElementById("hiddenLetters");
-    hiddenLetters.children[index].innerHTML = clickedLetter;
-    hiddenLetters.children[index].setAttribute("class", "showLetter");
-  });
 }
