@@ -60,7 +60,7 @@ function starGuessing(key){
 for (let i=0 ; i < livesLeft; i++ ){
 
   TextHeader.innerHTML += `<span class="material-icons" style="color: red;">favorite</span>`;
-  /* יש להוסיף כאן קלאס אנימציה */
+  
   hammer.animate({
     transform:['rotate(0deg)','rotate(-60deg)'],
     transform:['rotate(-60deg)','rotate(0deg)']
