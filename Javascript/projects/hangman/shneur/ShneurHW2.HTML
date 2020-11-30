@@ -51,9 +51,9 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        color: rgba(68, 16, 255, 0);
+        color: rgba(171, 255, 16, 0.849);
         font-size: 50px;
-        user-select: none;
+        /* user-select: none; */
     }
 
     .keybord {
@@ -126,14 +126,13 @@
         let letter = document.querySelectorAll(".letter")
         theSetences.innerHTML += `<p>${theCoosenSentences}</p>`
 
-        let ar = []
-        theSetences.innerHTML =''
+        theSetences.innerHTML = ''
         theSelection = (e) => {
             // הצהרות
 
             const selectedLetter = e.target.innerText
             const letterInTheSentences = new RegExp(selectedLetter, 'gi')
-           
+
             if (letterInTheSentences.test(theCoosenSentences)) {
                 console.log("תשובה נכונה...")
 
@@ -144,29 +143,28 @@
                     let hhh = theCoosenSentences.charAt(m)
                     if (hhh == selectedLetter) {
                         console.log(hhh)
-                        ar.push(hhh)
-                        ar.forEach(function(event){
-                        theSetences.innerHTML += event
+
                         theSetences.style.color = "red"
-                    })
-
-
-
                     }
-                }
 
-            } else {
-                console.log("טעות...")
-                Attempts--
-                // event.letter.style.backgroundColor = "red"
-                addBodyPart = () => {
-                    document.querySelector("hangman").innerHTML = `<img src="hangMan-Img/${Attempts}.png">`
+
 
                 }
             }
 
-            checkSelection = 0
-            e.target.style.pointerEvents = "none"
+        }
+        else {
+            console.log("טעות...")
+            Attempts--
+            // event.letter.style.backgroundColor = "red"
+            addBodyPart = () => {
+                document.querySelector("hangman").innerHTML = `<img src="hangMan-Img/${Attempts}.png">`
+
+            }
+        }
+
+        checkSelection = 0
+        e.target.style.pointerEvents = "none"
 
         }
     </script>
