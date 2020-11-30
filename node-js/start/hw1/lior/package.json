@@ -1,16 +1,16 @@
 {
   "name": "lior",
   "version": "1.0.0",
-  "description": "lior",
+  "description": "",
   "main": "lior.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "lior biton",
-  "license": "ISC",
   "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.9.6",
+    "mathjs": "^8.0.1",
     "yargs": "^16.1.1"
   }
 }
