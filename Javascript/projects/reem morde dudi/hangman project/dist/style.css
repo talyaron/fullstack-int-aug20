@@ -1,3 +1,6 @@
+body {
+  text-align: center;
+}
 body #hiddenLetters {
   display: flex;
   width: 500px;
@@ -23,4 +26,51 @@ body #lettersArray .clickableLetter {
   height: 30px;
   width: 30px;
   margin: 3px;
+}
+body .hangmanPic {
+  margin-top: 55px;
+  margin: auto;
+}
+body #coverPic2 {
+  position: relative;
+  margin: auto;
+  width: 700px;
+  height: 320px;
+}
+body #coverPic1 {
+  top: 0;
+  position: absolute;
+  height: 320px;
+  width: 700px;
+  margin-top: 23px;
+}
+body .div5 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div4 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div3 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div2 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div1 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div0 {
+  height: 70px;
+  width: 700px;
+  background-color: white;
 }
