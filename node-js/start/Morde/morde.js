@@ -1,5 +1,5 @@
 const yargs = require('yargs/yargs')
-const { hideBin } = require('../start/Morde/node_modules/yargs/helpers');
+const { hideBin } = require('yargs/helpers');
 const { number } = require('yargs');
 const argv = yargs(hideBin(process.argv)).argv
 
