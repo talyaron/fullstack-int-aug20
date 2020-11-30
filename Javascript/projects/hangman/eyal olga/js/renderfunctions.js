@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+function renderCategories(){
+    creatCategoriesArray();
+    const BodyContainer = document.querySelector('.categorysContainer');
+    let NewBodyContainer = '';
+      categories.forEach((category) => {
+        const word = `<h1>${category.category}</h1>`;
+      NewBodyContainer += word;
+    })
+    BodyContainer.innerHTML = NewBodyContainer;
+}
+
+render
+=======
 const keys = document.querySelectorAll(".keyscontainer h1");
 const TextBody = document.querySelector('#TextBody');
 const TextHeader = document.querySelector(`#TextHeader`);
@@ -116,3 +130,4 @@ function renderCategories() {
   });
   BodyContainer.innerHTML = NewBodyContainer;
 }
+>>>>>>> eyal

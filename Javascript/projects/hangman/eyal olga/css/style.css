@@ -42,7 +42,10 @@ display: flex;
 }
 
 .leterscontainer{
+<<<<<<< HEAD
+=======
     background-color: white;
+>>>>>>> eyal
     margin: auto;
     grid-row: 2;
     grid-column: 2;
@@ -81,4 +84,8 @@ box-shadow: 0px 0px 2px;
 .rowC{
     display: flex;
     margin-left: 19%;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> eyal

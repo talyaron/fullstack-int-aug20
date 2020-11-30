@@ -35,6 +35,7 @@ function renderLetters(){
 
 function handleClickedLetter(e){
     const clickedLetter = e.target.innerHTML;
+    const letterClicked = e.target;
     const regExp = new RegExp(clickedLetter,"g");
     if(regExp.test(splittedWordArray)){
         const letterIndexes = [];
@@ -45,21 +46,32 @@ function handleClickedLetter(e){
         const hiddenLetters = document.getElementById("hiddenLetters");
         hiddenLetters.children[index].innerHTML = clickedLetter;
         hiddenLetters.children[index].setAttribute("class","showLetter")
+        letterClicked.setAttribute("style","background-color:green");
+        letterClicked.style.pointerEvents = "none"
     })
     }else{
+        letterClicked.setAttribute("style","background-color:red")
+        letterClicked.style.pointerEvents = "none"
         const coverPic = document.getElementById("coverPic1");
-        coverPic.children[counter].setAttribute("style","display:none;")
+        coverPic.children[counter].setAttribute("style","display:none")
         counter ++;
-        if(counter >= 6){
-            alert("Game over, Please Refresh to play again!")
+        if(counter >= 5){
+            Swal.fire({
+                icon:'error',
+                title: 'Sorry, 5 mistakes and you are out!',
+                text:'Refresh to play again!'
+            })
         }
     } 
 
-    //Check if the word was guessed or not..
     const x = document.querySelectorAll('.showLetter').length;
     const y = splittedWordArray.length;
     if(x == y){
-        alert("Congartulations! You have guessed the word! Refresh to try another!")
+        Swal.fire({
+            icon:'success',
+            title:'Congratulations!',
+            text:'Think you are good? Refresh to try another word'
+        })
     }
 
 
