@@ -5,15 +5,11 @@ const argv = yargs(hideBin(process.argv)).argv;
 const hatearray = ['vilence','eggplant','higts'];
 const lovearray = ['movis','tv shows','books']
 
-let h = hatearray;
-let l = lovearray;
-
 if(argv.h){
-    h = argv.h
+    console.log(hatearray)
 }
 
 if(argv.l){
-    l = argv.l
+    console.log(lovearray)
 }
 
-console.log(argv.h)
