@@ -1,17 +1,16 @@
 {
-  "name": "Katya",
+  "name": "avichai",
   "version": "1.0.0",
   "description": "",
-  "main": "HW.js",
-  "dependencies": {
-    "dayjs": "^1.9.6",
-    "yargs": "^16.1.1"
-  },
-  "devDependencies": {},
+  "main": "avichai.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.9.6",
+    "yargs": "^16.1.1"
+  }
 }
