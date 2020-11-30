@@ -9,13 +9,20 @@ const { multiply } = require('mathjs')
 //     add
 //   } from 'mathjs'
 
-  let a=8 , b=84 , c=458;
+let a = 8, b = 84, c = 458;
 
-if(argv.x){
-    math.add(a,b,c)
+if(argv.a){
+  console.log(argv.a)
+  a = argv.a
 }
 
-if(argv.y){
-    math.multiply(a,b,c)
+
+
+if (argv.x) {
+  console.log(add(a, b, c))
+}
+
+if (argv.y) {
+  console.log(multiply(a, b, c))
 }
 console.log(argv.x)
