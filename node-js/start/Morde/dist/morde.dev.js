@@ -2,7 +2,7 @@
 
 var yargs = require('yargs/yargs');
 
-var _require = require('../start/Morde/node_modules/yargs/helpers'),
+var _require = require('yargs/helpers'),
     hideBin = _require.hideBin;
 
 var _require2 = require('yargs'),
