@@ -3,6 +3,8 @@ const {
     hideBin
 } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv
+const ccxt = require ('ccxt');
+
 
 let num1 = argv.n1
 let num2 = argv.n2
