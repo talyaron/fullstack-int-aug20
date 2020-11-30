@@ -35,11 +35,8 @@ function renderLetters(){
 
 function handleClickedLetter(e){
     const clickedLetter = e.target.innerHTML;
-    const indexOfClickeLetter = lettersArray.indexOf(clickedLetter)
     const regExp = new RegExp(clickedLetter,"g");
     if(regExp.test(splittedWordArray)){
-        const lettersArray = document.getElementById("lettersArray");
-        lettersArray.removeChild(lettersArray.childNodes[indexOfClickeLetter])
         const letterIndexes = [];
     for(var index = randomWord.indexOf(clickedLetter);index>=0;index= randomWord.indexOf(clickedLetter,index+1)){
         letterIndexes.push(index);
@@ -50,19 +47,26 @@ function handleClickedLetter(e){
         hiddenLetters.children[index].setAttribute("class","showLetter")
     })
     }else{
-        const coverPic = document.getElementById("coverPic");
+        const coverPic = document.getElementById("coverPic1");
         coverPic.children[counter].setAttribute("style","display:none;")
         counter ++;
         if(counter >= 5){
-            alert("Game over, Please Refresh to play again!")
+            Swal.fire({
+                icon:'error',
+                title: 'Sorry, 5 mistakes and you are out!',
+                text:'Refresh to play again!'
+            })
         }
     } 
 
-    //Check if the word was guessed or not..
     const x = document.querySelectorAll('.showLetter').length;
     const y = splittedWordArray.length;
     if(x == y){
-        alert("Congartulation! You have guessed the word! Refresh to try another!")
+        Swal.fire({
+            icon:'success',
+            title:'Congratulations!',
+            text:'Think you are good? Refresh to try another word'
+        })
     }
 
 
