@@ -1,0 +1,15 @@
+{
+  "name": "morde",
+  "version": "1.0.0",
+  "main": "morde.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "yargs": "^16.1.1"
+  }
+}

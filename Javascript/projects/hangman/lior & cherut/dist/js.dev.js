@@ -31,6 +31,7 @@ var gameover;
 var win;
 var yes;
 var no;
+var winlose = document.querySelector('#winlose');
 var buttons = document.querySelectorAll('.button');
 buttons.forEach(function (button) {
   var clickLater = button.dataset.sign;
@@ -49,7 +50,6 @@ buttons.forEach(function (button) {
         yes.volume = 0.2;
         buttons.forEach(function (button) {
           if (button.dataset.sign == clickLater) {
-            // button.style.display = 'none';
             button.style.visibility = 'hidden';
           }
         });
@@ -57,18 +57,21 @@ buttons.forEach(function (button) {
 
         if (winner == chosenWord.length) {
           console.log('you win');
-          root.innerHTML += '<h1 id="win">you win!!</h1>';
+          winlose.innerHTML += '<h1 id="win">you win!!</h1>';
           win = document.createElement("audio");
           win.src = "win.mp3";
           console.log(win);
           win.play();
+          buttons.forEach(function (button) {
+            button.disabled = true;
+          });
         }
       });
     } else {
       console.log("no");
       no = document.createElement("audio");
-      no.src = "no.mp3";
-      no.play();
+      no.src = "no.mp3"; // no.play();
+
       no.volume = 0.03;
       buttons.forEach(function (button) {
         if (button.dataset.sign == clickLater) {
@@ -77,17 +80,21 @@ buttons.forEach(function (button) {
         }
       });
 
-      if (nam <= 8) {
+      if (nam <= 7) {
         console.log(nam);
         fanctions[nam]();
         nam++;
-      } else if (nam == 9) {
+      } else if (nam == 8) {
+        fanctions[nam]();
         gameover = document.createElement("audio");
         gameover.src = "gameover.mp3";
         console.log(gameover);
         gameover.play();
         gameover.volume = 0.5;
-        root.innerHTML += '<h1 id="lose">you lose :(</h1>';
+        winlose.innerHTML += "<h1 id=\"lose\">you lose :(</h1>";
+        buttons.forEach(function (button) {
+          button.disabled = true;
+        });
       }
     }
   });
@@ -182,6 +189,8 @@ function click8() {
 }
 
 function click9() {
+  // root.innerHTML += '<h1 id="lose">you lose :(</h1>';
+  console.log('מוות');
   ctx.beginPath();
   ctx.arc(190, 95, 5, 0, 2 * Math.PI);
   ctx.stroke();
