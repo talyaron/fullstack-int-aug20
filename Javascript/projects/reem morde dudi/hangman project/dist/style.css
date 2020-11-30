@@ -29,53 +29,48 @@ body #lettersArray .clickableLetter {
 }
 body .hangmanPic {
   margin-top: 55px;
+  margin: auto;
 }
-body #coverPic {
-  display: flex;
-  justify-content: center;
+body #coverPic2 {
+  position: relative;
+  margin: auto;
+  width: 700px;
+  height: 320px;
+}
+body #coverPic1 {
+  top: 0;
   position: absolute;
   height: 320px;
-  width: 350px;
-  left: 75vh;
+  width: 700px;
   margin-top: 23px;
 }
-body #coverPic .div0 {
+body .div5 {
   height: 50px;
-  width: 350px;
-  background-color: gray;
-  position: fixed;
-  left: 75vh;
-  top: 27vh;
-}
-body #coverPic .div1 {
-  height: 50px;
-  width: 350px;
-  background-color: gray;
-  position: fixed;
-  left: 75vh;
-  top: 32vh;
-}
-body #coverPic .div2 {
-  height: 50px;
-  width: 350px;
-  background-color: gray;
-  position: fixed;
-  left: 75vh;
-  top: 37vh;
-}
-body #coverPic .div3 {
-  height: 50px;
-  width: 350px;
+  width: 700px;
   background-color: white;
-  position: fixed;
-  left: 75vh;
-  top: 42vh;
 }
-body #coverPic .div4 {
-  height: 120px;
-  width: 350px;
-  background-color: gray;
-  position: fixed;
-  left: 75vh;
-  top: 47vh;
+body .div4 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div3 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div2 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div1 {
+  height: 50px;
+  width: 700px;
+  background-color: white;
+}
+body .div0 {
+  height: 70px;
+  width: 700px;
+  background-color: white;
 }

@@ -34,55 +34,61 @@ body{
 
     .hangmanPic{
         margin-top: 55px;
+        margin: auto;
+        
     }
-#coverPic{
-    display: flex;
-    justify-content: center;
-    position:absolute;
+    #coverPic2{
+        position: relative;
+        margin: auto;
+        width: 700px;
+        height: 320px;
+    }
+#coverPic1{
+  top:0 ;
+  
+    position: absolute;
+   
     height: 320px;
-    width: 350px;
-     left: 75vh;
-  margin-top:23px;
-
-    .div0{
+    width: 700px;
+    margin-top: 23px;
+}
+.div5{
+        
+       
+    height: 50px;
+    width: 700px;
+    background-color: white;
+   
+}
+    .div4{
+        
+       
         height: 50px;
-        width: 350px;
-        background-color: gray;
-        position:fixed;
-        left: 75vh;
-        top: 27vh;
-    }
-    .div1{
-        height: 50px;
-        width: 350px;
-        background-color: gray;
-        position: fixed;
-        left: 75vh;
-        top: 32vh;
-    }
-    .div2{
-        height: 50px;
-        width: 350px;
-        background-color: gray;
-        position: fixed;
-        left: 75vh;
-        top: 37vh;
+        width: 700px;
+        background-color: white;
+       
     }
     .div3{
         height: 50px;
-        width: 350px;
+        width: 700px;
         background-color: white;
-        position: fixed;
-        left: 75vh;
-        top: 42vh;
+
     }
-    .div4{
-        height: 120px;
-        width: 350px;
-        background-color: gray;
-        position: fixed;
-        left: 75vh;
-        top: 47vh;
+    .div2{
+        height: 50px;
+        width: 700px;
+        background-color: white;
+
     }
-}
+    .div1{
+        height: 50px;
+        width: 700px;
+        background-color: white;
+
+    }
+    .div0{
+        height: 70px;
+        width: 700px;
+        background-color: white;
+    }
 }

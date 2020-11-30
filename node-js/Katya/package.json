@@ -1,17 +1,15 @@
 {
-  "name": "olga",
+  "name": "Katya",
   "version": "1.0.0",
   "description": "",
-  "main": "Olga.js",
+  "main": "katya.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "^C"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "package": "^1.0.1"
+    "dayjs": "^1.9.6"
   }
 }
