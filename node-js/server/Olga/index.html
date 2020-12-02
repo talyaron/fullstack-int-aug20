@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    
 </head>
-<style>
-    body{
-        background: yellow;
-    }
-</style>
 <body>
-    <h1>Whhhooo!</h1>
-    <script src="function.js"></script>
+    <div class="container">
+        <h1 class="textTitle">Hangman</h1>
+        <div class="currentPlay">Wrong Guesses: <span id='mistakes'>0</span> of <span id='lastMistake'></span></div>
+        <div class="text-center">
+         <div id='titleCategory'>Category: <div id="categories"></div></div>
+         <div class="wrapper">
+          <img id='hImg' src="img/0.png" style="width: 500px;">
+          <p id="wordSpot"></p>
+        </div>
+          <div id="lettersBox"></div>
+          <button class="btnReset" onClick="reset()">NEW GAME</button>
+        </div> 
+      </div>
+
+    <script src='script.js'></script>
 </body>
 </html>
