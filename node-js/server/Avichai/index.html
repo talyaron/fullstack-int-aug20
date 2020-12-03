@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <title>Hangman v0.1</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <button id="newGame" onclick="renderLetters(), handleNewGame()">Start Game</button>
+        <div class="gameInfo">
+            <div id="strikes"></div>
+            <div id="root"></div>
+        </div>
+
+        <div class="lowerWrapper">
+            <div id="hangman">
+                <img src="img/6.jpeg">
+            </div>
+            <div class="letters">
+                <div id="letters"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
