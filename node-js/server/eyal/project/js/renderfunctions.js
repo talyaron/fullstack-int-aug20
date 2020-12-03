@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-function renderCategories(){
-    creatCategoriesArray();
-    const BodyContainer = document.querySelector('.categorysContainer');
-    let NewBodyContainer = '';
-      categories.forEach((category) => {
-        const word = `<h1>${category.category}</h1>`;
-      NewBodyContainer += word;
-    })
-    BodyContainer.innerHTML = NewBodyContainer;
-}
-
-render
-=======
 const keys = document.querySelectorAll(".keyscontainer h1");
 const TextBody = document.querySelector('#TextBody');
 const TextHeader = document.querySelector(`#TextHeader`);
@@ -74,7 +60,7 @@ function starGuessing(key){
 for (let i=0 ; i < livesLeft; i++ ){
 
   TextHeader.innerHTML += `<span class="material-icons" style="color: red;">favorite</span>`;
-  
+  /* יש להוסיף כאן קלאס אנימציה */
   hammer.animate({
     transform:['rotate(0deg)','rotate(-60deg)'],
     transform:['rotate(-60deg)','rotate(0deg)']
@@ -130,4 +116,3 @@ function renderCategories() {
   });
   BodyContainer.innerHTML = NewBodyContainer;
 }
->>>>>>> eyal
