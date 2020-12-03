@@ -4,11 +4,10 @@ let count = 1
 //create a server object:
 http.createServer((req, res) => {
 
-    console.log(`${count++}) ${req.url}`);
+    
 
     if (req.url === '/') {
 
-        console.log('1......')
         fs.readFile('index.html', 'utf-8', (err, data) => {
 
             res.writeHead(200, { 'Content-Type': 'text/html' })
@@ -18,7 +17,7 @@ http.createServer((req, res) => {
     } else if (req.url === '/style.css') {
 
 
-        console.log('2......')
+       
         fs.readFile('style.css', 'utf-8', (err, data) => {
             res.writeHead(200, { 'Content-Type': 'text/css' })
             res.write(data); //write a response to the client
