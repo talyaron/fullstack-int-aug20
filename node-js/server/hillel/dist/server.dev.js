@@ -5,7 +5,11 @@ var http = require('http');
 var fs = require('fs');
 
 http.createServer(function (req, res) {
+  console.log(req.url);
+  console.log(req.url.split('/')[1].split('.')[1]);
+
   if (req.url === '/') {
+    console.log('main');
     fs.readFile('WhatsApp.html', 'utf-8', function (err, data) {
       res.writeHead(200, {
         'Content-Type': 'text/html'
@@ -31,4 +35,6 @@ http.createServer(function (req, res) {
       res.end();
     });
   }
-}).listen(8080, function () {});
+}).listen(8080, function () {
+  console.log('server listen on port 8080');
+});
