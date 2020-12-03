@@ -58,6 +58,8 @@ function starGuessing(key) {
 
     for (var _i2 = 0; _i2 < livesLeft; _i2++) {
       TextHeader.innerHTML += "<span class=\"material-icons\" style=\"color: red;\">favorite</span>";
+      /* יש להוסיף כאן קלאס אנימציה */
+
       hammer.animate(_defineProperty({
         transform: ['rotate(0deg)', 'rotate(-60deg)']
       }, "transform", ['rotate(-60deg)', 'rotate(0deg)']), 300);
