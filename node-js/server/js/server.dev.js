@@ -10,10 +10,6 @@ http.createServer((req, res) => {
     console.log('server listen on port 8080')
 });
  */
-var imgPath = 'project\img';
-var csspath = 'project\css';
-var jspath = 'project\js';
-
 var http = require('http');
 
 var fs = require('fs');
@@ -32,10 +28,10 @@ function load(path, type, req, res) {
       break;
 
     case 'js':
-      typeText = "{'content-type': 'text/script'}";
+      typeText = "{'content-type': 'text/javascript'}";
       break;
 
-    case 'img':
+    case 'png' || 'ico':
       typeText = "{'content-type': 'image/ico'}";
       break;
 
@@ -43,13 +39,13 @@ function load(path, type, req, res) {
       typeText = "";
   }
 
-  if (type != "img") {
+  if (type != "png") {
     fs.readFile(path, 'utf-8', function (error, data) {
       res.writeHead(200, typeText);
       res.write(data);
       res.end();
     });
-  } else if (type === "img") {
+  } else if (type === "png" || "ico") {
     var img = fs.readFileSync(path);
     res.writeHead(200, typeText);
     res.end(img, 'binary');
@@ -57,23 +53,15 @@ function load(path, type, req, res) {
 }
 
 function getSuffix(url) {
-  for (i = 0; i < url.length; i++) {
-    if (url[i] === '.') {
-      var _Suffix = url[i + 1] + url[i + 2] + url[i + 3];
-    } else {
-      return '/';
-    }
-  }
-
-  return Suffix;
+  var fileExtension = url.split('.').pop();
+  return fileExtension;
 }
 
 http.createServer(function (req, res) {
-  console.log(req.url);
+  /* console.log(req.url) */
   var url = req.url;
   var Suffix = getSuffix(url);
   var fileName = url.split('\\').pop().split('/').pop();
-  console.log(fileName);
 
   if (req.url === '/') {
     fs.readFile('project/index.html', 'utf-8', function (error, data) {
@@ -83,44 +71,9 @@ http.createServer(function (req, res) {
       res.write(data);
       res.end();
     });
-  }
+  } else load("project".concat(url), Suffix, req, res);
 
-  load(url.slice(1), Suffix, req, res);
+  console.log("project".concat(url), Suffix);
 }).listen(8080, function () {
   console.log('server listen on port 8080');
-}); // if (req.url === Suffix) {
-//     fs.readFile('project/index.html', 'utf-8', (error, data) => {
-//         res.writeHead(200, {'content-type': 'text/html'})
-//         res.write(data);
-//         res.end();
-//     })
-// } else if (req.url === `/${path}`) {
-//     res.writeHead(200, {'content-type': 'text/css'})
-//     fs.readFile('project/css/style.css', 'utf-8', (error, data) => {
-//         res.write(data);
-//         res.end();
-//     })
-// } else if (req.url === '/img/hangman.png') {
-//    /*  res.writeHead(200, {'content-type': 'text/css'}) */
-//     const img = fs.readFileSync('project/img/hangman.png');
-//         res.writeHead(200, {'content-type': 'image/ico'})
-//         res.end(img,'binary');
-// }else if (req.url === '/js/data.js') {
-//     /*  res.writeHead(200, {'content-type': 'text/css'}) */
-//      fs.readFile('project/js/data.js', 'utf-8', (error, data) => {
-//          res.write(data);
-//          res.end();
-//      })
-//  }else if (req.url === '/js/filterfunctions.js') {
-//     /*  res.writeHead(200, {'content-type': 'text/css'}) */
-//      fs.readFile('project/js/filterfunctions.js', 'utf-8', (error, data) => {
-//          res.write(data);
-//          res.end();
-//      })
-//  } else if (req.url === '/js/renderfunctions.js') {
-//     /*  res.writeHead(200, {'content-type': 'text/css'}) */
-//      fs.readFile('project/js/renderfunctions.js', 'utf-8', (error, data) => {
-//          res.write(data);
-//          res.end();
-//      })
-//  }
+});
