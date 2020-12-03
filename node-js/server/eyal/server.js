@@ -12,7 +12,7 @@ http.createServer((req, res) => {
 
 const http = require('http');
 const fs = require('fs');
-
+        
 function load(path, type, req, res) {
     /* 'project/index.html' */
     let typeText;
