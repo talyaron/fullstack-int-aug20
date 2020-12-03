@@ -1,1 +1,1 @@
-console.log('hellow this is a function and it works!!!!!')
+console.log('hello this is a function and it works!!!!!')
