@@ -21,12 +21,6 @@ http.createServer(function (req, res) {
       res.write(data);
       res.end();
     });
-  } else if (req.url === '/favicon.ico') {
-    var img = fs.readFileSync('/favicon.ico');
-    res.writeHead(200, {
-      'Content-Type': 'image/ico'
-    });
-    res.end(img, 'binary');
   } else {
     fs.readFile("404page.html", 'utf-8', function (err, data) {
       res.writeHead(404, {

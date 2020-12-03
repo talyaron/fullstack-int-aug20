@@ -21,15 +21,9 @@ http.createServer((req, res) => {
             res.write(data);
             res.end();
         })
-    } else if (req.url === '/favicon.ico') {
-
-        const img = fs.readFileSync('/favicon.ico');
-        res.writeHead(200, {
-            'Content-Type': 'image/ico'
-        });
-        res.end(img, 'binary');
-
-    } else {
+    } 
+ 
+     else {
         fs.readFile("404page.html", 'utf-8', (err, data) => {
             res.writeHead(404, {
                 "content-type": "text/html"
