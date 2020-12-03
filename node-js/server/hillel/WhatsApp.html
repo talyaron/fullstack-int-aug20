@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/ico" href="https://img.icons8.com/color/2x/whatsapp.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My WhatsApp</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;1,400;1,500&family=Rubik:ital,wght@0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&family=Rubik:ital,wght@0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="dist/WhatsApp.css">
+</head>
+
+<body>
+    <div class="box">
+        <img class="img" src="img/whatsapp.png" alt="">
+        <div class="text">הזן מספר טלפון והתחל להתכתב </div>
+        <div id="shgia">הזן מספר בין 10 ספרות</div>
+        <form onsubmit='button()'>
+            <input name="kidomet" id="inpot" onchange="" placeholder="קידומת" value="972" onkeyup="funckidomet(event)">
+            <input name="Mobile_Phone" placeholder='- מספר טלפון -' id="inputext" type="tel" onkeyup="funcPhone(event)">
+            <textarea name="kidometd" id="inpotd" placeholder='- הזן טקסט -'></textarea></br>
+            <button>התחל צ'אט</button>
+        </form>
+    </div>
+    <script src="WhatsApp.js"></script>
+</body>
+
+</html>
