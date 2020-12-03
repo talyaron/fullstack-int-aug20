@@ -12,7 +12,7 @@ http.createServer((req, res) => {
         }
 
         else  if (req.url === '/dist/style.css') {
-            fs.readFile('/dist/style.css', 'utf-8', (err, data) => {
+            fs.readFile('dist/style.css', 'utf-8', (err, data) => {
                 res.writeHead(200, { 'Content-Type': 'text/css' })
                 res.write(data);
                 res.end();
@@ -21,7 +21,7 @@ http.createServer((req, res) => {
 
         else if (req.url === '/js.js') {
 
-            fs.readFile('/js.js', 'utf-8', (err, data) => {
+            fs.readFile('js.js', 'utf-8', (err, data) => {
                 res.writeHead(200, { 'Content-Type': 'text/javascript' })
                 res.write(data); //write a response to the client
                 res.end(); //end the response
