@@ -16,7 +16,7 @@ http.createServer(function (req, res) {
       res.end();
     });
   } else if (req.url === '/dist/style.css') {
-    fs.readFile('/dist/style.css', 'utf-8', function (err, data) {
+    fs.readFile('dist/style.css', 'utf-8', function (err, data) {
       res.writeHead(200, {
         'Content-Type': 'text/css'
       });
@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
       res.end();
     });
   } else if (req.url === '/js.js') {
-    fs.readFile('/js.js', 'utf-8', function (err, data) {
+    fs.readFile('js.js', 'utf-8', function (err, data) {
       res.writeHead(200, {
         'Content-Type': 'text/javascript'
       });
