@@ -1,0 +1,140 @@
+body {
+    background-color: rgba(218, 255, 217, 0.466);
+
+}
+
+.box {
+    width: 100%;
+    max-width: 600px;
+    min-width: 250px;
+    height: 520px;
+    margin: 250px auto;
+    text-align: center;
+    border-radius: 20px;
+    background-image: url(img/רקע.jpg);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
+
+}
+
+#inpotd {
+    width: 54%;
+    padding: 7px;
+    height: 25px;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid rgba(58, 58, 58, 0.452);
+    background: none;
+    font-size: 20px;
+    margin-top: 10px;
+    overflow: auto;
+    font-family: 'Rubik', sans-serif;
+    resize: none;
+    overflow: hidden;
+    direction: rtl;
+    text-align: center;
+}
+
+#inpot {
+    width: 10%;
+    padding: 7px;
+    height: 25px;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid rgba(58, 58, 58, 0.452);
+    background: none;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+#inputext {
+    width: 40%;
+    padding: 7px;
+    height: 25px;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid rgba(58, 58, 58, 0.452);
+    background: none;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+
+#inpot:focus,
+#inpotd:focus,
+#inputext:focus {
+    border-bottom: 2px solid rgba(0, 82, 4, 0.596);
+    transition: border 200ms;
+}
+
+
+button {
+    background-color: rgba(218, 216, 216, 0.452);
+    border: 2px solid rgba(143, 143, 143, 0.287);
+    outline: none;
+    padding: 10px 80px;
+    border-radius: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+button:active {
+    background-color: rgba(129, 129, 129, 0.486);
+    transition: all 0.1ms;
+    border: 2px solid rgba(0, 82, 4, 0.596);
+}
+
+.img {
+    width: 250px;
+}
+
+.text {
+    padding: 10px 20px;
+    font-size: 22px;
+    text-shadow: 2px 2px 5px rgb(221, 255, 207);
+    font-family: 'Rubik', sans-serif;
+    color: rgba(0, 0, 0, 0.596);
+    position: relative;
+
+}
+
+@media only screen and (max-width: 402px) {
+    body {
+        background-image: url(img/רקע.jpg);
+    }
+
+    .box {
+        box-shadow: none;
+        height: 450px;
+        margin-top: 60px;
+    }
+
+    #inpot {
+        width: 15%;
+    }
+
+    #inputext {
+        width: 50%;
+    }
+
+    button {
+        margin-top: 15px;
+
+    }
+}
+
+#shgia {
+    font-size: 20px;
+    color: rgba(0, 82, 4, 0.596);
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 10px;
+    height: 30px;
+    transition: color 350ms;
+
+}

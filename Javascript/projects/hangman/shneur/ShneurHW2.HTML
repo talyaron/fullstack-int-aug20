@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bigBox {
+        margin: 50px auto;
+        width: 90vw;
+        height: 70vw;
+        background-color: burlywood;
+        border-radius: 30px;
+        padding: 10px;
+        box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.884), -4px -4px 5px rgba(121, 121, 121, 0.89);
+    }
+
+    .upperSection {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%%;
+        height: 50%;
+        border: solid black;
+
+
+    }
+
+    .hangman {
+        width: 30%;
+        height: 90%;
+        border-radius: 10px;
+        background-color: rgb(255, 16, 16);
+        padding: 10px;
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        direction: rtl;
+    }
+
+    #theSetences {
+        width: 60%;
+        height: 90%;
+        border-radius: 10px;
+        background-color: rgb(68, 16, 255);
+        padding: 10px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        color: rgba(171, 255, 16, 0.849);
+        font-size: 50px;
+        /* user-select: none; */
+    }
+
+    .keybord {
+        border-radius: 10px;
+        background-color: rgb(206, 206, 206);
+        padding: 10px;
+        max-height: 40%;
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .letter {
+        background-color: rgb(88, 207, 40);
+        padding: 10px;
+        margin: auto;
+        border-radius: 5px;
+        box-shadow: 4px 4px 5px rgba(121, 121, 121, 0.884), -4px -4px 5px rgba(121, 121, 121, 0.89);
+        font-size: larger;
+        font-weight: bold;
+        transition: all 250ms;
+    }
+
+    .letter:hover {
+        background-color: rgba(87, 207, 40, 0.253);
+        box-shadow: none;
+    }
+</style>
+
+<body>
+    <div class="bigBox">
+        <div class="upperSection">
+            <div class="hangman"></div>
+            <div id="theSetences"></div>
+        </div>
+        <div class="keybord"> </div>
+    </div>
+    <script>
+        const sentences = [
+            "we are going to win this game",
+            "this game is easy pisy",
+            "we are grate programars",
+            "you neale this one",
+            "congrates to you you own",
+            "we are the best group evevr"
+        ]
+
+        const letters = [
+            "a", 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'y'
+        ]
+
+        // מכין דיב לכל אות
+        const keybord = document.querySelector(".keybord")
+        letters.forEach((letter) => {
+            keybord.innerHTML += `<div class="letter" onclick="theSelection(event)">${letter}</div>`
+        })
+
+        // בוחר משפט רנדומלי
+        i = Math.floor(Math.random() * 6);
+        theCoosenSentences = sentences[i]
+        console.log(theCoosenSentences)
+
+        const theSetences = document.getElementById("theSetences")
+
+        // הצהרות
+        let Attempts = 6
+        let letter = document.querySelectorAll(".letter")
+        theSetences.innerHTML += `<p>${theCoosenSentences}</p>`
+
+        theSetences.innerHTML = ''
+        theSelection = (e) => {
+            // הצהרות
+
+            const selectedLetter = e.target.innerText
+            const letterInTheSentences = new RegExp(selectedLetter, 'gi')
+
+            if (letterInTheSentences.test(theCoosenSentences)) {
+                console.log("תשובה נכונה...")
+
+                // letter.target.style.backgroundColor = "blue"
+
+                for (m = 0; m < theCoosenSentences.length; m++) {
+
+                    let hhh = theCoosenSentences.charAt(m)
+                    if (hhh == selectedLetter) {
+                        console.log(hhh)
+
+                        theSetences.style.color = "red"
+                    }
+
+
+
+                }
+            }
+
+        }
+        else {
+            console.log("טעות...")
+            Attempts--
+            // event.letter.style.backgroundColor = "red"
+            addBodyPart = () => {
+                document.querySelector("hangman").innerHTML = `<img src="hangMan-Img/${Attempts}.png">`
+
+            }
+        }
+
+        checkSelection = 0
+        e.target.style.pointerEvents = "none"
+
+        }
+    </script>
+
+</body>
+
+</html>
