@@ -8,5 +8,5 @@ setInterval(() => {
         .then(data => {
             document.getElementById('root').innerText = `I have ${data.numberOfDogs} dogs`
         })
-}, 5000)
+}, 1000)
 
