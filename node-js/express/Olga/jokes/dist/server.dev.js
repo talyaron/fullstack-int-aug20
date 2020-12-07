@@ -16,7 +16,7 @@ app.get('/randomJoke', function (req, res) {
     joke: joke
   });
 });
-var port = 3000;
+var port = 8080;
 app.listen(port, function () {
-  console.log('listen on port 3000');
+  console.log('listen on port 8080');
 });
