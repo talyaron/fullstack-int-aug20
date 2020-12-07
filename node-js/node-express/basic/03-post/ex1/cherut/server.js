@@ -7,20 +7,20 @@ app.use(bodyParser.json()) //return req.body = body (from client)
 
 app.use(express.static('public'))
 
-// const users = [
-//   'cherut',
-//    'lior'
-// ];
-
 const users = [
-  {userName : 'cherut'},
-  {userName : 'lior'},
-  {userName : 'adam'},
-  {userName : 'roni'},
-  {userName : 'tomer'},
-  {userName : 'shir'},
-  {userName : 'חרות'}
+  'cherut',
+   'lior'
 ];
+
+// const users = [
+//   {userName : 'cherut'},
+//   {userName : 'lior'},
+//   {userName : 'adam'},
+//   {userName : 'roni'},
+//   {userName : 'tomer'},
+//   {userName : 'shir'},
+//   {userName : 'חרות'}
+// ];
 
 
 
