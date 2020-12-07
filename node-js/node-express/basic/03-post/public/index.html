@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hi, lets send somthing to the server</h1>
+    <input type='text' onkeyup='handleSendText(event)' />
+    <div id="root"></div>
+    <script>
+        function handleSendText(e) {
+            let value = e.target.value;
+
+            fetch('/send-text', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({value})
+            }).then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                document.getElementById('root').innerText= data.body
+
+            })
+        }
+    </script>
+</body>
+
+</html>
