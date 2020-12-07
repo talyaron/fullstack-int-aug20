@@ -4,7 +4,7 @@ app.use(express.static('public'))
 
 let PrevRand = ''
 
-app.get('/hillel-arouas', (req, res) => {
+app.get('/bdicha', (req, res) => {
     const Bdihot = [
         "כשלתימנים יש עור יבש הם מורחים קרם לחוח?"
         , "אם קנגורו בוגר עדיין גר אצל אמא שלו, הוא משלם לה דמי כיס ?"
