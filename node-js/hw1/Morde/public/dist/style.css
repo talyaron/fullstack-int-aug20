@@ -1,0 +1,20 @@
+body {
+  text-align: center;
+  background-color: aliceblue;
+}
+body h1 {
+  font-size: 40px;
+  margin-bottom: 100px;
+}
+body #root {
+  border: 5px solid black;
+  border-radius: 8px;
+  height: 200px;
+  width: 300px;
+  margin: auto;
+}
+body #root .createdDiv {
+  padding: 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "fullstack-int-aug20",
+  "version": "1.0.0",
+  "description": "new somthing I made in the local repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talyaron/fullstack-int-aug20.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talyaron/fullstack-int-aug20/issues"
+  },
+  "homepage": "https://github.com/talyaron/fullstack-int-aug20#readme"
+}
