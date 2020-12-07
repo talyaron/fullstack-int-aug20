@@ -1,0 +1,32 @@
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.box {
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 100px auto;
+    text-align: center;
+    background-color: burlywood;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+/* button{
+    background: none;
+    border: 5px solid rgb(204, 204, 204);
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 20px;
+}
+button:hover{
+background-color: rgb(133, 133, 133);
+} */
+#text {
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+
+}
