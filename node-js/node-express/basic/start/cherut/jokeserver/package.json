@@ -1,5 +1,5 @@
 {
-  "name": "03-post",
+  "name": "jokeserver",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "one-liner-joke": "^1.2.0"
   }
 }

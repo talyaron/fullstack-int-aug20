@@ -1,0 +1,47 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgba(244, 165, 96, 0.534);
+  
+}
+
+#root{
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 41vh;
+  line-height: 5vh;
+  padding: 0px 5vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3{
+
+  text-align: center;
+  position: relative;
+  top: 200px;
+}
+
+button{
+  margin-top: 20em;
+  padding: 1em;
+  display: block;
+  margin: auto;
+  outline: none;
+  border: none;
+  color:black ;
+  background-color: white;
+  position: absolute;
+  bottom: 30vh;
+  left: 45vw;
+  font-weight: bold;
+
+  &:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
