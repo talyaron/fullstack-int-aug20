@@ -1,0 +1,9 @@
+h1 {
+    color: blue;
+    text-shadow: 1px 1px 1px grey;
+}
+
+img {
+    width: 30%;
+    height: 30%;
+}
