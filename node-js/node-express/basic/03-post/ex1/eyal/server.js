@@ -9,11 +9,17 @@ app.use(bodyParser.json());
 app.use(express.static('public'))
 
 app.post('/send_user_information', (req, res) => {
+
     console.log(req.body);
     res.send({
        /*  ok:true,  */
-        body: req.body.value
+        USER: req.body.UserID,
+        Pass: req.body.Pass
+
     });
+
+   
+
 })
 
 const port = process.env.PORT || 3000;
