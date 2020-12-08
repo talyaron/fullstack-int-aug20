@@ -23,11 +23,12 @@ app.get('/jokesa', (req, res) => {
     i = Math.floor(Math.random() * 6);
     Choosenjoke = jokes[i]
     console.log(Choosenjoke)
+    document.getElementById('box').innerHTML = `<h1>you have loged to this website ${Choosenjoke} seconds ago</h1>`
 
     res.send({
         jokes
     })
-    timeSinceRefresh++
+
 })
 
 

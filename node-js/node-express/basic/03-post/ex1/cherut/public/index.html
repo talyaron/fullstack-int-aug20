@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  h1{
+    text-align: center;
+  }
+
+  input{
+    outline: none;
+    padding: 1em;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+</style>
+<body>
+
+  <h1>Enter a username and press Enter to check if it exists on the server</h1>
+  <input type="text" onkeyup="handleCheckUser(event)">
+  <div id="root"></div>
+
+  <script src="js.js"></script>
+</body>
+</html>
