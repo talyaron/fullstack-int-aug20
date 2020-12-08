@@ -27,8 +27,8 @@ app.get('/randomJoke',(req, res)=>{
 })
 
 
-const port = 3000
+const port = 8080
 app.listen(port, () => {
-    console.log('listen on port 3000')
+    console.log('listen on port 8080')
 
 })

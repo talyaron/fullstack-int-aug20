@@ -6,16 +6,16 @@ var app = express();
 app.use(express["static"]('public'));
 var timeSinceRefresh = 1;
 app.use(function (req, res, next) {
-  console.log("you have loged to this website ".concat(timeSinceRefresh, " seconds ago"));
   next();
 });
-app.get('/timeSinceRefresh', function (req, res) {
+var jokes = ["we are going to win this game", "this game is easy pisy", "we are grate programars", "you neale this one", "congrates to you you own", "we are the best group evevr"];
+app.get('/jokesa', function (req, res) {
+  i = Math.floor(Math.random() * 6);
+  Choosenjoke = jokes[i];
+  console.log(Choosenjoke);
+  document.getElementById('box').innerHTML = "<h1>you have loged to this website ".concat(Choosenjoke, " seconds ago</h1>");
   res.send({
-    timeSinceRefresh: timeSinceRefresh
+    jokes: jokes
   });
-  timeSinceRefresh++;
 });
-var port = 3000;
-app.listen(port, function () {
-  console.log("you have loged to this website ".concat(timeSinceRefresh, " seconds ago"));
-});
+app.listen(3000);
