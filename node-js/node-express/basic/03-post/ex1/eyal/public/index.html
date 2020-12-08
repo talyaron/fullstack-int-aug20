@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>passEnterd</title>
+</head>
+
+<body>
+    <form onsubmit='handleSendText(event)'>
+        <input type="text" name="UserID" id="UserID">
+        <input type="password" name="Pass" id="Pass">
+        <input type="submit">
+    </form>
+
+    <script>
+    const thePass = document.getElementById("Pass");
+    const UserID = document.getElementById("UserID");
+    const userpass = thePass.
+    const UserDetlis = {UserID: UserID.value , Pass:userpass};
+       
+        function handleSendText(e) {
+            event.preventDefault();
+            fetch('/send_user_information', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({UserDetlis})
+            }).then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                // document.getElementById('root').innerText= data.body
+
+            })
+        }
+    </script>
+</body>
+
+</html>
