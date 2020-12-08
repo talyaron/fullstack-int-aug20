@@ -1,0 +1,29 @@
+.main {
+    width: 80%;
+    margin: auto;
+    background-color: rgba(12, 189, 243, 0.787);
+    height: 70vh;
+}
+
+p {
+    padding-left: 30%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    color: blue;
+    font-size: 3.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+img {
+    margin-left: 40%;
+    border: 2px solid grey;
+    margin-bottom: 1%;
+}
+
+#root {
+    border: 2px solid grey;
+    width: 80%;
+    margin: auto;
+    height: 20vh;
+}
