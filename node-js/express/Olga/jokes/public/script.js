@@ -6,4 +6,4 @@ setInterval(() => {
             document.getElementById('container').innerHTML = `<h1>${data.joke}</h1>`
             console.log(data.joke)
         })
-}, 8000)
+}, 5000)
