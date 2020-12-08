@@ -1,0 +1,22 @@
+body {
+    background-image: url(https://images.wallpaperscraft.ru/image/ulybka_schaste_shar_125063_1920x1080.jpg);
+    /* background-repeat: no-repeat; */
+}
+
+p {
+    color: white;
+    margin-left: 55%;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#root {
+    background-color: white;
+    width: 40%;
+    margin-left: 50%;
+}
+
+.one {
+    font-size: 2rem;
+    padding: 1%;
+}
