@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>I am main index </h1>
+    <h2><a href='index33.html'>Index 33</a></h2>
+    <button onclick="getNumber()">Get Number</button>
+    <div id="root"></div>
+    <script>
+
+        function getNumber() {
+            fetch('/get-random-number')
+                .then(r => r.json()) //crude response
+                .then(data => {
+                   document.getElementById('root').innerText = data.number;
+                })
+        }
+
+    </script>
+</body>
+
+</html>
