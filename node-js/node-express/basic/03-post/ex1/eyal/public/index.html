@@ -6,32 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>passEnterd</title>
 </head>
-
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin: auto;
+    }
+</style>
 <body>
-    <form onsubmit='handleSendText(event)'>
-        <input type="text" name="UserID" id="UserID">
-        <input type="password" name="Pass" id="Pass">
+    <form onsubmit='handlesubmit(event)'>
+        <input type="text" id="UserID">
+        <input type="password"  id="Password">
         <input type="submit">
     </form>
 
     <script>
-    const thePass = document.getElementById("Pass");
-    const UserID = document.getElementById("UserID");
-    const userpass = thePass.
-    const UserDetlis = {UserID: UserID.value , Pass:userpass};
-       
-        function handleSendText(e) {
+         
+        function handlesubmit(e) {
             event.preventDefault();
+            const UserID = e.target.UserID.value;
+            const mypass = e.target.Password.value;
+            const UserDetlis = {UserID, mypass}
+            
             fetch('/send_user_information', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({UserDetlis})
+                body: JSON.stringify(UserDetlis)
             }).then(res=>res.json())
             .then(data=>{
                 console.log(data)
                 // document.getElementById('root').innerText= data.body
 
             })
+            console.log(UserDetlis);
         }
     </script>
 </body>

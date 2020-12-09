@@ -1,0 +1,22 @@
+
+
+#container{
+    font-size: 22px;
+    width: 500px;
+    height: 300px;
+    border: 10px solid rgb(72, 72, 189);
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: auto;
+    padding: 30px;
+    margin-top: 80px;
+    background-color: #fff;
+    opacity: 85%;
+
+}
+body{
+    background-image: url('/img/joke.jpg');
+    background-size: 20%;
+}
+
