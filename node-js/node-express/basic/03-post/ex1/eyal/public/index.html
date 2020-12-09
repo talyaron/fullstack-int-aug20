@@ -16,10 +16,13 @@
 </style>
 <body>
     <form onsubmit='handlesubmit(event)'>
+        <label for="UserID">user name</label>
         <input type="text" id="UserID">
+        <label for="password">password</label>
         <input type="password"  id="Password">
         <input type="submit">
     </form>
+    <div id="main"></div>
 
     <script>
          
@@ -35,11 +38,18 @@
                 body: JSON.stringify(UserDetlis)
             }).then(res=>res.json())
             .then(data=>{
+                if (data.ok){
+
+                document.getElementById('main').innerHTML = '<h1>ok</h1>'
+                }else   {
+                    document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'
+                }
+
                 console.log(data)
                 // document.getElementById('root').innerText= data.body
 
             })
-            console.log(UserDetlis);
+           /*  console.log(UserDetlis); */
         }
     </script>
 </body>
