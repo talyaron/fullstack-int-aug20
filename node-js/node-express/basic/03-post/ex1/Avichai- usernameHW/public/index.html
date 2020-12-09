@@ -6,17 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .wrapper{
+        width: 85%;
+        height: 50vh;
+        margin: auto;
+        margin-top: 5%;
+        box-shadow: 10px 10px 5px #aaaaaa;
+        border: 1px solid #BFBFBF;
+
+        text-align: center;
+    }
+    #root {
+        font-size: 30px;
+    }
+</style>
 
 <body>
-    <h1>Hi we are sending data to server</h1>
+    <div class="wrapper">
+        <h1>Homework username</h1>
+        <h3>Each time you type a username it is added to an array of users. If username is found in array then failed.
+            if not then it is added to the array.</h3>
 
-    <form onsubmit="handleSubmit(event)">
-        <input name='username' type='text' placeholder="USERNAME">
-        <input name='password' type='password' placeholder="PASSWORD">
-        <button type="submit">Submit</button>
-    </form>
+        <form onsubmit="handleSubmit(event)">
+            <input name='username' type='text' placeholder="Username" required>
+            <input name='password' type='password' placeholder="Password">
+            <button type="submit">Submit</button>
+        </form>
 
-    <div id="root"></div>
+        <div id="root"></div>
+    </div>
 
     <script>
         function handleSubmit(e) {
@@ -33,7 +52,6 @@
             }).then(res => res.json())
                 .then(data => {
                     if (data.success == false) {
-                        console.log('bad')
                         document.getElementById('root').innerText = `Sorry the username '${data.username}' is already taken \n Please pick a new one.`
                         document.body.style.backgroundColor = 'red'
                     } else if (data.success == true) {
