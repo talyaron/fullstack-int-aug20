@@ -7,4 +7,4 @@ setInterval(() => {
             document.getElementById('root').innerHTML = `${data.randjock}`
             console.log(data);
         })
-}, 1000)
+}, 5000)
