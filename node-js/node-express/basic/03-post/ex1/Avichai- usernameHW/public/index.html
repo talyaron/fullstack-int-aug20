@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hi we are sending data to server</h1>
+
+    <form onsubmit="handleSubmit(event)">
+        <input name='username' type='text' placeholder="USERNAME">
+        <input name='password' type='password' placeholder="PASSWORD">
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="root"></div>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault()
+            const username = e.target.children.username.value
+            const password = e.target.children.password.value
+
+            fetch('/send-user-data', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username, password: password })
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.success == false) {
+                        console.log('bad')
+                        document.getElementById('root').innerText = `Sorry the username '${data.username}' is already taken \n Please pick a new one.`
+                        document.body.style.backgroundColor = 'red'
+                    } else if (data.success == true) {
+                        document.getElementById('root').innerText = `Username: ${data.username} \n Password: ${data.password}`
+                        document.body.style.backgroundColor = 'lightblue'
+                    }
+                })
+        }
+
+        // function handleSendText(e) {
+        //     let value = e.target.value
+        //     console.log(value)
+
+        //     fetch('/send-text', {
+        //         method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({ value })
+        //     }).then(res => res.json())
+        //         .then(data => {
+        //             console.log(data)
+        //         })
+        // }
+    </script>
+</body>
+
+</html>

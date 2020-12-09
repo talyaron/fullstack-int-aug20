@@ -7,7 +7,7 @@ app.use(express.static('public')) // all static files, that client get.
 app.get('/get-random-number', (req, res) => { // when CLIENT asks for get-random-number SERVER sends this block code.
     const randomNum = Math.floor(Math.random() * 10);
     // console.log(randomNum)
-    res.send({ randomNum })
+    res.send({ number:randomNum })
 })
 
 const port = process.env.port || 3000;
