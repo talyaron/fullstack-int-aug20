@@ -26,18 +26,18 @@ const users = [
 
 app.post('/check-user',(req, res)=>{  ///on client post
     
-  let nameFromCliant = req.body.nameToCheck
-  console.log(nameFromCliant);
+  let nameFromClient = req.body.nameToCheck
+  console.log(nameFromClient);
 
-  if(users.includes(nameFromCliant)){
+  if(users.includes(nameFromClient)){
     res.send({
       k:true, 
-      body: nameFromCliant
+      body: nameFromClient
     });
   }else{
     res.send({
       k:false, 
-      body: nameFromCliant
+      body: nameFromClient
     });
   }
 })
