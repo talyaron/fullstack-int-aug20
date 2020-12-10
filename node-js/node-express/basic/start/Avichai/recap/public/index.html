@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="handleOnClick()">Get Random number</button>
+    <div id="root"></div>
+    <script>
+
+        function handleOnClick() {
+            return fetch('/get-random-number')
+                .then(response => response.json()) // crude response
+                .then(data => {
+                    console.log(data)
+                    document.getElementById('root').innerText = `${data.number}`
+                })
+        }
+        // fetch('/get-random-number')
+        //     .then(response => response.json()) // crude response
+        //     .then(data => {
+        //         console.log(data.randomNum)
+        //     })
+    </script>
+</body>
+
+</html>
