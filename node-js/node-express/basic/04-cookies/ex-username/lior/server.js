@@ -14,15 +14,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-use.post("/getusername"), (req,res) =>{
-    const usernameGiven = req.body.username;
+app.post("/getusername", (req,res) =>{
+    const yourename = req.body.username;
   const { cookie } = req.cookies;
   if (cookie !== yourename) {
     res.cookie("yourename", yourename, {
       maxAge: 200000000,
       httpOnly: true,
     });
-}
+})
 
 const port = process.env.PORT || 3000;
 
