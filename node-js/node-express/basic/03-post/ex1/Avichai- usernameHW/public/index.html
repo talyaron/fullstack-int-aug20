@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        width: 85%;
+        height: 50vh;
+        margin: auto;
+        margin-top: 5%;
+        box-shadow: 10px 10px 5px #aaaaaa;
+        border: 1px solid #BFBFBF;
+
+        text-align: center;
+    }
+    #root {
+        font-size: 30px;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <h1>Homework username</h1>
+        <h3>Each time you type a username it is added to an array of users. If username is found in array then failed.
+            if not then it is added to the array.</h3>
+
+        <form onsubmit="handleSubmit(event)">
+            <input name='username' type='text' placeholder="Username" required>
+            <input name='password' type='password' placeholder="Password">
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="root"></div>
+    </div>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault()
+            const username = e.target.children.username.value
+            const password = e.target.children.password.value
+
+            fetch('/send-user-data', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username, password: password })
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.success == false) {
+                        document.getElementById('root').innerText = `Sorry the username '${data.username}' is already taken \n Please pick a new one.`
+                        document.body.style.backgroundColor = 'red'
+                    } else if (data.success == true) {
+                        document.getElementById('root').innerText = `Username: ${data.username} \n Password: ${data.password}`
+                        document.body.style.backgroundColor = 'lightblue'
+                    }
+                })
+        }
+
+        // function handleSendText(e) {
+        //     let value = e.target.value
+        //     console.log(value)
+
+        //     fetch('/send-text', {
+        //         method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({ value })
+        //     }).then(res => res.json())
+        //         .then(data => {
+        //             console.log(data)
+        //         })
+        // }
+    </script>
+</body>
+
+</html>
