@@ -22,6 +22,7 @@ app.post("/getusername", (req,res) =>{
       maxAge: 200000000,
       httpOnly: true,
     });
+}
 })
 
 const port = process.env.PORT || 3000;
