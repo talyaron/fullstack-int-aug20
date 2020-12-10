@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="put user name">
+
+    <script>
+
+let user = e.target.username.value;
+
+        fetch('/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            }).then(res => res.json())
+                .then(data => {
+                    console.log(data)}
+                    // if(data.ok){
+                    //  console.log(data.ok)
+                    //  document.body.style.backgroundColor = 'green'
+                    //  document.getElementById('root').innerHTML =  `Welcome  ${data.user} `
+                    // }
+                    // else{
+                    //     console.log(data.ok)
+                    //     document.body.style.backgroundColor = 'red'
+                    //     document.getElementById('root').innerHTML =  ` The username or password are inncorrect. please enter try agian `
+                    // }
+    </script>
+    
+</body>
+</html>
