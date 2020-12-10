@@ -8,13 +8,19 @@
 <body>
     <style>
         body{
-            text-align: center;
+            /* text-align: center;
+             */
         }
+        
     </style>
     <form action="/login" method="POST">
-        <div><input type="text" name="username" id=""></div>
-        <div><input type="password" name="password" id=""></div>
-        <div></div><button type="submit">Log me in</button></div>
-    </form>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      
+    <!-- <script src="js.js"></script> -->
 </body>
 </html>

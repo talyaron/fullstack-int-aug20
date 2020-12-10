@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express["static"]('public'));
 var users = ['reem', 'morit', 'rivka', 'nehonya'];
-app.post('/userName', function (req, res) {
+app.post("/login", function (req, res) {
   var username = req.body.username;
   var regExp = new RegExp(username, "g");
 
