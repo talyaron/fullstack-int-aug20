@@ -27,9 +27,9 @@
         function handlesubmit(e) {
             event.preventDefault()
 
-            let username = e.target.username.value;
+            let user = e.target.username.value;
             let password = e.target.password.value;
-            let auth = { username, password }
+            let auth = { user, password }
 
 
 
@@ -42,13 +42,13 @@
             }).then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    if(data.k){
-                     console.log(data.k)
+                    if(data.ok){
+                     console.log(data.ok)
                      document.body.style.backgroundColor = 'green'
                      document.getElementById('root').innerHTML =  `Welcome  ${data.user} `
                     }
                     else{
-                        console.log(data.k)
+                        console.log(data.ok)
                         document.body.style.backgroundColor = 'red'
                         document.getElementById('root').innerHTML =  ` The username or password are inncorrect. please enter try agian `
                     }

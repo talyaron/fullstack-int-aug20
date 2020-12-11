@@ -8,12 +8,23 @@
 </head>
 
 <body>
+    <button onclick="handleOnClick()">Get Random number</button>
+    <div id="root"></div>
     <script>
-        fetch('/get-random-number')
-            .then(response => response.json()) // crude response
-            .then(data => {
-                console.log(data)
-            })
+
+        function handleOnClick() {
+            return fetch('/get-random-number')
+                .then(response => response.json()) // crude response
+                .then(data => {
+                    console.log(data)
+                    document.getElementById('root').innerText = `${data.number}`
+                })
+        }
+        // fetch('/get-random-number')
+        //     .then(response => response.json()) // crude response
+        //     .then(data => {
+        //         console.log(data.randomNum)
+        //     })
     </script>
 </body>
 
