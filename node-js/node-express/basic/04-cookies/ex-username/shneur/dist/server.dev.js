@@ -9,6 +9,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
 app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(express["static"]('public'));
 app.post('/user_information', function (req, res) {
   var mycookie = req.cookies.mycookie;
   res.cookie("yourName", req.body.userName, {
@@ -17,7 +19,7 @@ app.post('/user_information', function (req, res) {
   res.send({
     ok: true
   });
-  console.log(req.body.userName);
+  console.log(req.body);
 });
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
