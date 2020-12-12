@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="hendleOnSubmit(event)">
+        <input id="name" type="text">
+        <button>submit</button>
+
+
+    </form>
+    <script>
+        hendleOnSubmit = (e) => {
+            event.preventDefault()
+            userName = e.target.name.value
+            console.log(userName)
+
+            fetch('/user_information', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({userName})
+                }).then(res => res.json())
+                .then(data => {})
+
+        }
+    </script>
+
+</body>
+
+</html>

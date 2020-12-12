@@ -1,0 +1,25 @@
+"use strict";
+
+var express = require('express');
+
+var app = express();
+
+var bodyParser = require('body-parser');
+
+var cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+app.post('/user_information', function (req, res) {
+  var mycookie = req.cookies.mycookie;
+  res.cookie("yourName", req.body.userName, {
+    maxAge: 5000000
+  });
+  res.send({
+    ok: true
+  });
+  console.log(req.body.userName);
+});
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log("listen on port ".concat(port));
+});

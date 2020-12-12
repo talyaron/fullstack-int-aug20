@@ -4,40 +4,40 @@ const  bodyParser = require('body-parser');
 
 
 app.use(bodyParser.json()) //return req.body = body (from client)
-
 app.use(express.static('public'))
 
 const users = [
-  'cherut',
-   'lior'
+  {userName : 'cherut', password : 'ch'},
+  {userName : 'lior', password : 'li'},
+  {userName : 'adam', password : 'ad'},
+  {userName : 'roni', password : 'ro'},
+  {userName : 'tomer', password : 'to'},
+  {userName : 'shir', password : 'sh'},
+  {userName : 'חרות', password : 'ות'}
 ];
-
-// const users = [
-//   {userName : 'cherut'},
-//   {userName : 'lior'},
-//   {userName : 'adam'},
-//   {userName : 'roni'},
-//   {userName : 'tomer'},
-//   {userName : 'shir'},
-//   {userName : 'חרות'}
-// ];
-
-
 
 app.post('/check-user',(req, res)=>{  ///on client post
     
-  let nameFromClient = req.body.nameToCheck
-  console.log(nameFromClient);
+  let nameFromCliant = req.body.nameToCheck
+  let passFromCliant = req.body.passwordToCheck
 
-  if(users.includes(nameFromClient)){
+  let found = false;
+
+  users.forEach(user =>{
+    if(user.userName == nameFromCliant && user.password == passFromCliant){
+       found = true;
+    }
+  })
+
+  if(found== true){
     res.send({
-      k:true, 
-      body: nameFromClient
+      ok:true, 
+      body: nameFromCliant
     });
   }else{
     res.send({
-      k:false, 
-      body: nameFromClient
+      ok:false, 
+      body: nameFromCliant
     });
   }
 })
