@@ -16,8 +16,6 @@ function handleSubmit(e) {
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
-    console.log(data); // let root = document.querySelector('root')
-    // root.innerHTML+=`${user}`
+    console.log(data);
   });
-  document.cookie;
 }

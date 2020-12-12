@@ -1,8 +1,10 @@
 function handleSubmit(e) {
     e.preventDefault();
 
-    const user = e.target.children.user.value;
+    const user = e.target.value;
 
+    let root = document.querySelector('.root');
+  root.innerText += `${user}`;
     fetch('/send-user', {
         method: 'POST',
         headers: {
@@ -13,8 +15,8 @@ function handleSubmit(e) {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            let root = document.querySelector('root')
-            root.innerHTML+=`${user}`
+            // let root = document.querySelector('root')
+            // root.innerHTML+=`${user}`
         })
 document.cookie
 }
