@@ -10,7 +10,7 @@ app.use(express.static('public'))
 
 app.post('/user_information', (req, res) => {
 
-    const {mycookie} = req.cookies;
+    // const {mycookie} = req.cookies;
 
     res.cookie("yourName", req.body.userName, {maxAge: 5000000} )
     res.send({

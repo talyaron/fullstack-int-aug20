@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express["static"]('public'));
 app.post('/user_information', function (req, res) {
-  var mycookie = req.cookies.mycookie;
+  // const {mycookie} = req.cookies;
   res.cookie("yourName", req.body.userName, {
     maxAge: 5000000
   });
