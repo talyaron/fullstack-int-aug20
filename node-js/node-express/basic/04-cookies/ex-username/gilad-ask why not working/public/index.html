@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="handlesubmit(event)">
+        <input type="text" placeholder="enter username" id="username">
+        <input type="submit">
+    </form>
+    <div id="root"> </div>
+    <script>
+        function handlesubmit(e){
+            event.preventDefault()
+            let user = e.target.username.value;
+            
+
+            fetch('/username', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({user})
+            }).then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    
+                    
+                   document.getElementById('root').innerHTML = `Hello ${data.user}`
+                    
+
+                })
+
+           
+        }
+    </script>
+
+</body>
+</html>
