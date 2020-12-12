@@ -3,23 +3,43 @@
 var express = require('express');
 
 var app = express();
+
+var bodyParser = require('body-Parser');
+
+app.use(bodyParser.json());
 app.use(express["static"]('public'));
-var useres = [{
-  name: 'lior',
-  code: '1111'
+var login = [{
+  username: 'lior',
+  password: '1111'
 }, {
-  name: 'moran',
-  code: '2222'
+  username: 'moran',
+  password: '2222'
 }, {
-  name: 'gilad',
-  code: '3333'
+  username: 'cherut',
+  password: '3333'
 }, {
-  name: 'cherut',
-  code: '4444'
-}, {
-  name: 'olga',
-  code: '5555'
+  username: 'tal',
+  password: '4444'
 }];
+var user = login.map(function (a) {
+  return a.username;
+});
+var pass = login.map(function (a) {
+  return a.password;
+});
+app.post('/send_login_information', function (req, res) {
+  console.log('sending to the claient: ' + req.body);
+
+  if (req.body.UserID == user && req.body.password == Pass) {
+    res.send({
+      ok: true
+    });
+  } else {
+    res.send({
+      ok: false
+    });
+  }
+});
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("listen on port ".concat(port));
