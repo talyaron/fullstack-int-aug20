@@ -18,15 +18,26 @@ const users = [
 
 app.post('/check-user',(req, res)=>{  ///on client post
     
+  let nameFromCliant = req.body.nameToCheck
   let passFromCliant = req.body.passwordToCheck
 
   let found = false;
+
+  users.forEach(user =>{
+    if(user.userName == nameFromCliant && user.password == passFromCliant){
+       found = true;
+    }
+  })
+
+  if(found== true){
     res.send({
       ok:true, 
+      body: nameFromCliant
     });
   }else{
     res.send({
       ok:false, 
+      body: nameFromCliant
     });
   }
 })

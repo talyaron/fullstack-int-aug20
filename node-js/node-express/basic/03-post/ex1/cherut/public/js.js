@@ -22,7 +22,7 @@ function handleCheckUser(e){
         }else {
           document.body.style.backgroundColor = ' rgba(255, 121, 121, 0.644)';
           root.innerHTML = `<h1>The user "${nameToCheck}" is not exists on the server</h1>`;
-          e.target.value = '';
+          // e.target.value = '';
         }
     })
   
