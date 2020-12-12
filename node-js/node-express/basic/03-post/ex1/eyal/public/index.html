@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>passEnterd</title>
+</head>
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin: auto;
+    }
+</style>
+<body>
+    <form onsubmit='handlesubmit(event)'>
+        <label for="UserID">user name</label>
+        <input type="text" id="UserID">
+        <label for="password">password</label>
+        <input type="password"  id="Password">
+        <input type="submit">
+    </form>
+    <div id="main"></div>
+
+    <script>
+         
+        function handlesubmit(e) {
+            event.preventDefault();
+            const UserID = e.target.UserID.value;
+            const mypass = e.target.Password.value;
+            const UserDetlis = {UserID, mypass}
+            
+            fetch('/send_user_information', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(UserDetlis)
+            }).then(res=>res.json())
+            .then(data=>{
+                if (data.ok){
+
+                document.getElementById('main').innerHTML = '<h1>ok</h1>'
+                }else   {
+                    document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'
+                }
+
+                console.log(data)
+                // document.getElementById('root').innerText= data.body
+
+            })
+           /*  console.log(UserDetlis); */
+        }
+    </script>
+</body>
+
+</html>

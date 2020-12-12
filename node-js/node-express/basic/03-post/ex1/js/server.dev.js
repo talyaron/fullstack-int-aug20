@@ -3,36 +3,25 @@
 var express = require('express');
 
 var app = express();
+var UserDitles = {
+  UserID: "eyal",
+  Pass: "123"
+};
 
 var bodyParser = require('body-Parser');
 
 app.use(bodyParser.json());
 app.use(express["static"]('public'));
-var login = [{
-  username: 'lior',
-  password: '1111'
-}, {
-  username: 'moran',
-  password: '2222'
-}, {
-  username: 'cherut',
-  password: '3333'
-}, {
-  username: 'tal',
-  password: '4444'
-}];
-var user = login.map(function (a) {
-  return a.username;
-});
-var pass = login.map(function (a) {
-  return a.password;
-});
-app.post('/send_login_information', function (req, res) {
+app.post('/send_user_information', function (req, res) {
   console.log('sending to the claient: ' + req.body);
 
-  if (req.body.UserID == user && req.body.password == Pass) {
+  if (req.body.UserID == UserDitles.UserID && req.body.mypass == UserDitles.Pass) {
     res.send({
       ok: true
+      /*  ,USER: req.body.UserID,
+       Pass: req.body.mypass,
+       userdb: UserDitles.UserID */
+
     });
   } else {
     res.send({

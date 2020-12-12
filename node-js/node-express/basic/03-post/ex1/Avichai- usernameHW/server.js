@@ -9,11 +9,13 @@ app.use(express.static('public'))
 
 app.post('/send-user-data', (req, res) => { //when client posts.
 
-    if (users.includes(req.body.username)) {
-        res.send({ success: false, username: req.body.username })
+    const clientUsername = req.body.username
+    const clientPassword = req.body.password
+    if (users.includes(clientUsername)) {
+        res.send({ success: false, username: clientUsername })
     } else {
-        res.send({ username: req.body.username, password: req.body.password, success: true })
-        users.push(req.body.username)
+        res.send({ username: clientUsername, password: clientPassword, success: true })
+        users.push(clientUsername)
         console.log(users)
     }
 })
