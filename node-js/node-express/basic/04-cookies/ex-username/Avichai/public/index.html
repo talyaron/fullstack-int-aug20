@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="handleSubmit(event)">
+        <input name='username' type='text' placeholder="Username" required>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault()
+            const username = e.target.children.username.value
+
+            fetch('/get-data', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username })
+            }).then(res => res.json())
+                .then(data => {
+                    console.log(data.cookie)
+                })
+        }
+    </script>
+</body>
+
+</html>
