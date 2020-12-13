@@ -1,5 +1,7 @@
 function handleSubmit(e) {
+
   e.preventDefault();
+
   const user = e.target.value;
 
   let root = document.querySelector('.root');
@@ -15,8 +17,8 @@ function handleSubmit(e) {
       .then(res => res.json())
       .then(data => {
           console.log(data)
-          
-          
+          let arr = data.arr;
+          console.log(arr)
       })
 
 }
