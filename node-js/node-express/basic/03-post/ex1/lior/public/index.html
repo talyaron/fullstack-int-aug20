@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>enter name</h1>
-    <input type='text' onkeyup='handleSendName(event)' />
-    <h2>enter code</h2>
-    <input type='text' onkeyup='handleSendCode(event)' />
+    <form onsubmit='handleSubmit(e)'>
+        <input type='text' placeholder="username" name='username'>
+        <input type="password" placeholder="password" name='password'>
+        <button type="submit">Submit</button>
+    </form>
 
     <script>
 
-        function handleSendText(e) {
+        function handlesubmit(e) {
+            event.preventDefault();
+            const UserID = e.target.username.value;
+            const pass = e.target.Password.value;
+            const UserDetlis = { UserID, pass }
+            
+
+            fetch('/send_login_information', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(UserDetlis)
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.ok) {
+                        document.getElementById('root').innerText = `please enter`
+                        document.body.style.backgroundColor = 'green'
+
+                    } else {
+                        document.getElementById('root').innerText = `wroong username or password `
+                        document.body.style.backgroundColor = 'red'
+                    }
+
+                    console.log(data)
+
+
+                })
+
         }
+
     </script>
-    
 </body>
+
 </html>
