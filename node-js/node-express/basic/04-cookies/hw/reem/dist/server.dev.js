@@ -12,7 +12,9 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 var user = [];
 app.post('/send-user', function (req, res) {
-  var user = req.body.user;
+  user.push(req.body.user);
+  console.log(user); // const {user} = req.body;
+
   res.cookie('user', user, {
     maxAge: 5000000,
     httpOnly: true
