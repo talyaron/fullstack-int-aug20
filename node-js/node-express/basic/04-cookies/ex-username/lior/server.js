@@ -21,9 +21,15 @@ app.post("/getusername", (req,res) =>{
     res.cookie("yourename", yourename, {
       maxAge: 200000000,
       httpOnly: true,
+<<<<<<< Updated upstream
     });
 }
 })
+=======
+});
+  }
+
+>>>>>>> Stashed changes
 
 const port = process.env.PORT || 3000;
 
