@@ -4,7 +4,7 @@ function handleSubmit(e) {
     const user = e.target.value;
 
     let root = document.querySelector('.root');
-  root.innerText += `${user}`;
+  root.innerHTML += `<h1>${user}</h1>`;
     fetch('/send-user', {
         method: 'POST',
         headers: {
@@ -17,6 +17,7 @@ function handleSubmit(e) {
             console.log(data)
             let arr = data.arr;
             console.log(arr)
+            // document.querySelector('root').innerHTML = `<p>${data.json_str    }</p>`;
             // let root = document.querySelector('root')
             // root.innerHTML+=`${user}`
         })
