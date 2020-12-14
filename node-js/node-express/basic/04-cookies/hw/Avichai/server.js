@@ -28,7 +28,7 @@ app.post('/send-button', (req, res) => {
     if (!IFollowYou) {
         clickedButtonsArray = []
         cookie = false
-    }else{
+    } else {
         cookie = true
     }
     clickedButtonsArray.push(clickedButton)
@@ -40,7 +40,6 @@ app.post('/send-button', (req, res) => {
 
     res.send({ IFollowYou, cookie })
 })
-
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
