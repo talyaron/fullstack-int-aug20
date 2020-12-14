@@ -25,7 +25,7 @@ app.post('/send-user',(req, res)=>{
     let json_str = JSON.stringify(user);
 
     
-    res.cookie('user', json_str, { maxAge: 50000000, httpOnly: true });
+    res.cookie('user', json_str, { maxAge: 50000000, httpOnly: false });
 
     let json_perse = req.cookies.user;
     let arr = JSON.parse(json_perse);
