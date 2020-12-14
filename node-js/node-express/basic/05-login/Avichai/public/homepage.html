@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nice</title>
+</head>
+
+<body onload="getUsername(event)">
+    <div id="root"></div>
+
+    <script>
+        function getUsername(e) {
+            fetch('/get-username')
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById('root').innerHTML = `Hello ${data.saveUsername}, Welcome to special area`
+                })
+        }
+        setInterval(function () {
+            fetch('/check-valid')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.validate) {
+                        console.log('ur good')
+                    } else {
+                        window.location.replace('index.html')
+                    }
+                })
+        }, 3000);
+    </script>
+</body>
+
+</html>
