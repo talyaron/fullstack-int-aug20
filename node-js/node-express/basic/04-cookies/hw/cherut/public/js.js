@@ -5,7 +5,8 @@ function handleSubmit(e) {
   const user = e.target.value;
 
   let root = document.querySelector('.root');
-  root.innerText += `${user}`;
+  let root1 = document.querySelector('.root1');
+  root.innerText += `${user},`;
 
   fetch('/send-user', {
       method: 'POST',
@@ -19,6 +20,7 @@ function handleSubmit(e) {
           console.log(data)
           let arr = data.arr;
           console.log(arr)
+          root1.innerHTML = `${arr},`;
       })
 
 }

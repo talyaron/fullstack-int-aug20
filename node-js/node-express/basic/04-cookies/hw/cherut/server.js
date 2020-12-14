@@ -17,6 +17,8 @@ const user = [];
 //     next();
 // });
 
+
+
 app.post('/send-user',(req, res)=>{
 
     // {user:['cherut', 'or']}
@@ -25,13 +27,12 @@ app.post('/send-user',(req, res)=>{
     let json_str = JSON.stringify(user);
 
     
-    res.cookie('user', json_str, { maxAge: 50000000, httpOnly: false });
+    res.cookie('user', json_str, { maxAge: 50000000 });
 
     let json_perse = req.cookies.user;
     let arr = JSON.parse(json_perse);
     res.send({ok:true, arr})
 })
-
 
 
 
