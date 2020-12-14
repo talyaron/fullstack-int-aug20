@@ -20,6 +20,8 @@ app.post('/send-user',(req, res)=>{
     res.cookie('user',json_str, { maxAge: 5000000, httpOnly: true });
     let json_perse = req.cookies.user;
     let arr = JSON.parse(json_perse);
+    
+    console.log(arr)
     res.send({ok:true,arr})
 })
 
