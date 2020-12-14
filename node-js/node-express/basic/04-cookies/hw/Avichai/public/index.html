@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style></style>
+
+<body onload="readCookie()">
+    <h1>this is it</h1>
+    <button onclick="handleClick(event)">CLICK-ME</button>
+    <button onclick="handleClick(event)">NO-CLICK-ME</button>
+    <button onclick="handleClick(event)">PLEASE-CLICK-ME</button>
+    <button onclick="handleClick(event)">NO-NO-NO!!-CLICK-ME</button>
+    <div id="root"></div>
+
+    <Script>
+        function readCookie() {
+            fetch('/read-cookie')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.cookie) {
+                        document.getElementById('root').innerHTML = `You have clicked: ${data.IFollowYou}`
+                    } else {
+                        console.log('no cookie found for this user')
+                    }
+                })
+        }
+
+        function handleClick(e) {
+
+            const clickedButton = e.target.innerText
+            // console.log(e.target.innerText)
+
+            fetch('/send-button', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ clickedButton })
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('root').innerHTML = `You have clicked: ${data.IFollowYou}`
+                    console.log(data.IFollowYou)
+                })
+        }
+    </Script>
+</body>
+
+</html>

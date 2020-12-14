@@ -7,8 +7,9 @@
 </head>
 <style>
 
-  h1{
+  #root, h1{
     text-align: center;
+    
   }
 
   input{
@@ -23,7 +24,20 @@
 <body>
 
   <h1>Enter a username and press Enter to check if it exists on the server</h1>
-  <input type="text" onkeyup="handleCheckUser(event)">
+
+  <form onsubmit="handleCheckUser(event)"> 
+    <input type="text" name="userName">
+    <input type="password" name="password" >
+    <input type="submit" value="check">
+  </form>
+ 
+
+  <!-- <form action="/check-user" method="POST">
+    <input type="text" name="userName">
+    <input type="password" name="password">
+    <input type="submit" value="check">
+  </form> -->
+  
   <div id="root"></div>
 
   <script src="js.js"></script>

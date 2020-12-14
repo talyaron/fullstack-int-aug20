@@ -1,0 +1,21 @@
+#container{
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+button{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(25, 201, 207);
+    border-radius: 5px;
+    color: white;
+}
+#displayInfoId{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 15px;
+    word-wrap: break-word;
+    padding: 5px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+
+    <div id="button-div">
+        <button id="clickMe" data-set="clickMe" onclick="handleclick(event)"> Click Me</button>
+        <button  id="redButton" data-set="redButton" onclick="handleclick(event)"> Red Button</button>
+        <button id="nothing" data-set="nothing" onclick="handleclick(event)">This one doesn't even do anything</button>
+        <button id="worldDestroyer" data-set="worldDestroyer" onclick="handleclick(event)">Click Me To Cause The World To Implode!!</button>
+
+    </div>
+    <div id="root"> </div>
+    <script>
+
+        function handleclick(e) {
+            let buttonPressed = e.target.dataset.set
+
+            console.log(e.target.dataset.set)
+
+            fetch('/button', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ buttonPressed })
+            }).then(res => res.json())
+                .then(data => {
+                    
+
+                    console.log(document.cookie.split(';'))
+
+                    // console.log(data.clickMe)
+                    // console.log(data.redButton)
+                    // console.log(data.nothing)
+                    // console.log(data.worldDestroyer)
+                    document.getElementById('root').innerHTML = `The Buttons you have pressed thus far are:<span id="aqua"> click Me ${data.clickMe} times</span>, <span id="red"> red button ${data.redButton} times</span>,<span id="salmon"> the button that doesn't do anything ${data.nothing} times</span>,<span id="slateblue"> and you have destoryed the world ${data.worldDestroyer} times</span>. `
+                    
+                    let  getcookie = JSON.parse(localStorage.getItem('IFollowYou'));
+                    console.log(getcookie)
+
+                   
+                }
+                )}
+
+    </script>
+    <style>
+        body{
+            text-align: center;
+            font-size: 35px;
+           
+        }
+        #clickMe{
+            background-color: aqua;
+            font-size: 30px;
+            border-radius: 50vw;
+            
+        }
+        #redButton{
+            background-color: red;
+            font-size: 30px;
+            border-radius: 50vw;
+        }
+        #nothing{
+            background-color: salmon;
+            font-size:30px;
+            border-radius: 50vw;
+        }
+        #worldDestroyer{
+            background-color: slateblue;
+            font-size: 30px;
+            border-radius: 50vw;
+        }
+        #root{
+            margin-top: 20px;
+        }
+        #red{color: red;}
+        #aqua{
+            color: aqua;
+        }
+        #salmon{
+            color: salmon;
+        }
+        #slateblue{
+            color: slateblue;
+        }
+    </style>
+
+</body>
+
+</html>
