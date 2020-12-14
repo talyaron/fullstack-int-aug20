@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 
 app.use(bodyParser.json())
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 const user =[];
 

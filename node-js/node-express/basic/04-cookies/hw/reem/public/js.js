@@ -4,7 +4,7 @@ function handleSubmit(e) {
     const user = e.target.value;
 
     let root = document.querySelector('.root');
-  root.innerText += `${user}`;
+  root.innerHTML += `<h1>${user}</h1>`;
     fetch('/send-user', {
         method: 'POST',
         headers: {

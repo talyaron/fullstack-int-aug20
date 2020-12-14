@@ -4,7 +4,7 @@ function handleSubmit(e) {
   e.preventDefault();
   var user = e.target.value;
   var root = document.querySelector('.root');
-  root.innerText += "".concat(user);
+  root.innerHTML += "<h1>".concat(user, "</h1>");
   fetch('/send-user', {
     method: 'POST',
     headers: {
