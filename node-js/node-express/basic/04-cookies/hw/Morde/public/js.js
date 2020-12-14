@@ -1,7 +1,9 @@
 let clickArray = [];
+
 let storedClicks = JSON.parse(localStorage.getItem("clickArray"));
-console.log(storedClicks);
+
 const root = document.getElementById("root");
+
 storedClicks.forEach((btn) => {
   root.innerHTML += `<div><p>${btn}</p></div>`;
 });
@@ -13,7 +15,9 @@ function handleClick(e) {
   let storedClicks = JSON.parse(localStorage.getItem("clickArray"));
   const root = document.getElementById("root");
   let lastBtnClicked = storedClicks[storedClicks.length - 1];
+
   root.innerHTML += `<div><p>${lastBtnClicked}</p></div>`;
+
   fetch("/getbtn", {
     method: "POST",
     headers: {
