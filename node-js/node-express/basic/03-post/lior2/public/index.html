@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="username" id='username'>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+        function handleSubmit(e) {
+            event.preventDefault()
+
+            let user = e.target.username.value;
+
+            fetch('/send_login_information', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(user)
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.ok) {
+                        console.log(data.ok)
+
+                    }
+                })
+        }
+
+    </script>
+
+</body>
+
+</html>
