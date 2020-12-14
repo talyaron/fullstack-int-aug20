@@ -2,7 +2,6 @@
 
 var clickArray = [];
 var storedClicks = JSON.parse(localStorage.getItem("clickArray"));
-console.log(storedClicks);
 var root = document.getElementById("root");
 storedClicks.forEach(function (btn) {
   root.innerHTML += "<div><p>".concat(btn, "</p></div>");
