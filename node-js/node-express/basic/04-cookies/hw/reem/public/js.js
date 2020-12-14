@@ -17,6 +17,7 @@ function handleSubmit(e) {
             console.log(data)
             let arr = data.arr;
             console.log(arr)
+            document.querySelector('root').innerHTML = `<p>${data.json_str}</p>`;
             // let root = document.querySelector('root')
             // root.innerHTML+=`${user}`
         })

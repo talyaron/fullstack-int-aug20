@@ -18,7 +18,8 @@ function handleSubmit(e) {
   }).then(function (data) {
     console.log(data);
     var arr = data.arr;
-    console.log(arr); // let root = document.querySelector('root')
+    console.log(arr);
+    document.querySelector('root').innerHTML = "<p>".concat(data.json_str, "</p>"); // let root = document.querySelector('root')
     // root.innerHTML+=`${user}`
   });
 }
