@@ -21,6 +21,8 @@ app.post('/check-user',(req, res)=>{  ///on client post
   let nameFromCliant = req.body.nameToCheck
   let passFromCliant = req.body.passwordToCheck
 
+  console.log(nameFromCliant,passFromCliant)
+
   let found = false;
 
   users.forEach(user =>{

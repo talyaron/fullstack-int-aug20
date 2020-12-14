@@ -1,7 +1,9 @@
 function handleCheckUser(e){
 
-    const nameToCheck = e.target.parentElement.children[0].value
-    const passwordToCheck = e.target.parentElement.children[1].value
+    e.preventDefault();
+
+    const nameToCheck = e.target.children.userName.value
+    const passwordToCheck = e.target.children.password.value
     const root = document.querySelector('#root')
     
     fetch('/check-user', {
