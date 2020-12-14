@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 
 app.use(bodyParser.json())
 app.use(cookieParser());
-// app.use(bodyParser.urlencoded({ extended: false }));
 
 const user =[];
 
@@ -17,7 +16,7 @@ app.post('/send-user',(req, res)=>{
     let json_str = JSON.stringify(user);
     // const {user} = req.body;
     let {IFollowYou} = req.cookies;
-    const test = `${IFollowYou} =>  ${req.body.buttonInnertext}`;
+    const test = `${IFollowYou} =>  ${req.body.user}`;
     res.cookie('IFollowYou',json_str, { maxAge: 5000000, httpOnly: true });
     let json_perse = req.cookies.user;
     let arr = JSON.parse(json_perse);
