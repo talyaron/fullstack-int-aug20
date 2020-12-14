@@ -21,29 +21,25 @@ app.get('/read-cookie', (req, res) => {   /// check if user has cookie
 })
 
 app.post('/send-button', (req, res) => {
+
     let { IFollowYou } = req.cookies
     const { clickedButton } = req.body
 
     if (!IFollowYou) {
         clickedButtonsArray = []
-        clickedButtonsArray.push(clickedButton)
-        console.log('array: ' + clickedButtonsArray)
-        res.cookie('IFollowYou', clickedButtonsArray, { maxAge: 500000, httpOnly: true })
-        console.log('IFOLLOW: ' + IFollowYou)
-
-        res.send({ IFollowYou, cookie: false })
+        cookie = false
     } else {
-        clickedButtonsArray.push(clickedButton)
-        console.log('array: ' + clickedButtonsArray)
-        res.cookie('IFollowYou', clickedButtonsArray, { maxAge: 500000, httpOnly: true })
-        console.log('IFOLLOW: ' + IFollowYou)
-        res.send({ IFollowYou, cookie: true })
+        cookie = true
     }
+    clickedButtonsArray.push(clickedButton)
+    console.log('array: ' + clickedButtonsArray)
+
+    res.cookie('IFollowYou', clickedButtonsArray, { maxAge: 5000000, httpOnly: true })
+
+    console.log('IFOLLOW: ' + IFollowYou)
+
+    res.send({ IFollowYou, cookie })
 })
-
-
-
-
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
