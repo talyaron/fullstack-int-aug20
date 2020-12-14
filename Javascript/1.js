@@ -1,3 +1,9 @@
+/******************************************
+ *  Author : eyal shemuel   
+ *  Created On : Mon Dec 14 2020
+ *  File : 1.js
+ *******************************************/
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -9,7 +15,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'))
 
 
-app.post('/buttonsClicked', (req, res) => {
+/* app.post('/buttonsClicked', (req, res) => {
     let { IFollowYou } = req.cookies;
     console.log(IFollowYou);
     const test = `${IFollowYou} =>  ${req.body.buttonInnertext}`;
@@ -18,7 +24,7 @@ app.post('/buttonsClicked', (req, res) => {
         test
     });
    
-});
+}); */
 
 
 app.listen(port, () => { console.log(`Listen on port ${port}`) });
