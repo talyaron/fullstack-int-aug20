@@ -17,7 +17,8 @@ app.post('/button', (req, res) => {
     console.log(req.body);
     let ok = true
     
-    
+    console.log(req.cookies);
+    console.log(req.headers.cookie)
 
 
     if (req.body.buttonPressed == 'clickMe') clickMe++
@@ -25,7 +26,7 @@ app.post('/button', (req, res) => {
     else if (req.body.buttonPressed == 'nothing') nothing++
     else worldDestroyer++
     
-    res.cookie(`IFollowYou`, `clickMe${clickMe}-redButton${redButton}-nothing${nothing}-worldDestroyer${worldDestroyer} `, { maxAge: 500000, httpOnly: true });
+    res.cookie(`IFollowYou`, `clickMe${clickMe}-redButton${redButton}-nothing${nothing}-worldDestroyer${worldDestroyer} `, { maxAge: 500000, httpOnly: false });
      
     res.send({ ok,clickMe,redButton,nothing,worldDestroyer })
 })
