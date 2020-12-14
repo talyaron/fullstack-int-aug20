@@ -9,15 +9,14 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
 app.use(bodyParser.json());
-app.use(cookieParser()); // app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(cookieParser());
 var user = [];
 app.post('/send-user', function (req, res) {
   user.push(req.body.user);
   var json_str = JSON.stringify(user); // const {user} = req.body;
 
   var IFollowYou = req.cookies.IFollowYou;
-  var test = "".concat(IFollowYou, " =>  ").concat(req.body.buttonInnertext);
+  var test = "".concat(IFollowYou, " =>  ").concat(req.body.user);
   res.cookie('IFollowYou', json_str, {
     maxAge: 5000000,
     httpOnly: true
