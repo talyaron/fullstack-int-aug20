@@ -1,7 +1,6 @@
 const express = require("express")
 const app = express()
 const cookieParser = require("cookie-parser")
-app.use(express.static("public"))
 app.use(cookieParser())
 
 // מדפיס עוגיות
@@ -18,6 +17,7 @@ app.use((req, res, next) => {
         iFollowYou = "this-is-my-cookie1111";
     };
     res.message = iFollowYou;
+    console.log("res.message", res.message)
     next();
 })
 app.get('/', (req, res) => {
@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
 
 
 })
+app.use(express.static("public"))
 
 
 
@@ -34,3 +35,4 @@ const port = process.env.PORT || 3001;
 app.listen(port, () => {
     console.log(port)
 })
+

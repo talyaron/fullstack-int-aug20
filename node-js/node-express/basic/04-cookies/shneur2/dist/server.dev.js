@@ -6,7 +6,6 @@ var app = express();
 
 var cookieParser = require("cookie-parser");
 
-app.use(express["static"]("public"));
 app.use(cookieParser()); // מדפיס עוגיות
 
 app.use(function (req, res, next) {
@@ -20,11 +19,13 @@ app.use(function (req, res, next) {
 
   ;
   res.message = iFollowYou;
+  console.log("res.message", res.message);
   next();
 });
 app.get('/', function (req, res) {
   res.send("<h1>".concat(res.message, "</h1>"));
-}); // מתחבר לכתובת
+});
+app.use(express["static"]("public")); // מתחבר לכתובת
 
 var port = process.env.PORT || 3001;
 app.listen(port, function () {
