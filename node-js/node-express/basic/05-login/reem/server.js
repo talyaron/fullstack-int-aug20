@@ -8,13 +8,13 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-const users =['reem','morit','rivka','nehonya'];
-const password =[9968096]
+const correctUser ={name:'reem',psw:9968096};
+
 app.post("/login", (req, res) => {
-  const username = req.body.username;
-  const regExp = new RegExp(username, "g");
-  if (regExp.test(users)) {
-    res.redirect("/success.html");
+  const user = req.body.user;
+ 
+  if (user.name == correctUser.name && user.psw == correctUser.psw) {
+    res.cookie("i-follow-you",user,{ maxAge: 10000, httpOnly:false});
   } else {
     res.redirect("/fail.html");
   }

@@ -13,14 +13,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-var users = ['reem', 'morit', 'rivka', 'nehonya'];
-var password = [9968096];
+var correctUser = {
+  name: 'reem',
+  psw: 9968096
+};
 app.post("/login", function (req, res) {
-  var username = req.body.username;
-  var regExp = new RegExp(username, "g");
+  var user = req.body.user;
 
-  if (regExp.test(users)) {
-    res.redirect("/success.html");
+  if (user.name == correctUser.name && user.psw == correctUser.psw) {
+    res.cookie("i-follow-you", user, {
+      maxAge: 10000,
+      httpOnly: false
+    });
   } else {
     res.redirect("/fail.html");
   }
