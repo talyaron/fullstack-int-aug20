@@ -1,15 +1,8 @@
-/* const express = require('express');
-const bodyParser = require('body-Parser');
-const cookieParser = require('cookie-parser');
-
-const app = express();
-app.use(bodyParser.json());
-app.use(express.static('public'));
-app.use(cookieParser()); */
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -31,8 +24,8 @@ app.post('/buttonsClicked', (req, res) => {
     res.send({
         test
     });
-    // console.log(req.body)
+   
 });
 
-const port = process.env.PORT || 3000;
+
 app.listen(port, () => { console.log(`Listen on port ${port}`) });
