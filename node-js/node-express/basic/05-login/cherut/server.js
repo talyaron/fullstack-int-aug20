@@ -7,6 +7,13 @@ app.use(bodyParser.json())
 app.use(cookieParser());
 
 let correctUser = {name: 'cherut', pass:'123'};
+const correctUsers = [
+  {name: 'cherut', pass:'123'},
+  {name: 'cherut', pass:'123'},
+  {name: 'cherut', pass:'123'},
+  {name: 'cherut', pass:'123'},
+  {name: 'cherut', pass:'123'}
+]
 
 app.post('/login', (req, res) => {
     let user = req.body.user;
@@ -20,6 +27,11 @@ app.post('/login', (req, res) => {
     } else {
       res.send({ ok: false })
     }
+
+    // correctUsers.forEach(userInArr=>{
+      
+    // })
+    
 })  
 
 app.use(express.static('public'))
