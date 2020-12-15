@@ -15,15 +15,17 @@ var UserDitles = {
 };
 app.use(bodyParser.json());
 app.use(cookiesPractice());
-app.post('/U_info', function (req, res, next) {
+app.use(express["static"]('public'));
+app.post('/U_info', function (req, res) {
   var myUserIDs = req.cookies.myUserIDs;
   console.log('sending to the claient: ' + req.body);
-  uditails = {
+  var uditails = {
     id: req.body.UserID,
     pass: req.body.mypass
   };
 
   if (req.body.UserID == UserDitles.UserID && req.body.mypass == UserDitles.Pass) {
+    /* res.redirect("/ok.html"); */
     res.cookie('myUserIDs', uditails, {
       maxAge: 3000
     });
@@ -31,6 +33,7 @@ app.post('/U_info', function (req, res, next) {
       ok: true
     });
   } else {
+    /*  res.redirect('/Rejected.html') */
     res.send({
       ok: false
     });
@@ -38,7 +41,6 @@ app.post('/U_info', function (req, res, next) {
 
   console.log(req.body.UserID);
 });
-app.use(express["static"]('public'));
 app.listen(port, function () {
   console.log("listen on port ".concat(port));
 });

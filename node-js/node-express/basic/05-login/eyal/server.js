@@ -7,19 +7,20 @@ const UserDitles = { UserID: "eyal", Pass: "123" }
 
 app.use(bodyParser.json());
 app.use(cookiesPractice());
+app.use(express.static('public'));
 
-app.post('/U_info', (req, res,next) => {
-    const {myUserIDs} =req.cookies;
+app.post('/U_info', (req, res) => {
+    const { myUserIDs } = req.cookies;
     console.log('sending to the claient: ' + req.body);
-    uditails = {id:req.body.UserID,pass:req.body.mypass}
+    const uditails = { id: req.body.UserID, pass: req.body.mypass }
     if ((req.body.UserID == UserDitles.UserID) && (req.body.mypass == UserDitles.Pass)) {
-
-        res.cookie('myUserIDs',uditails,{maxAge:3000});
+        /* res.redirect("/ok.html"); */
+        res.cookie('myUserIDs', uditails, { maxAge: 3000 });
         res.send({
-            ok: true          
-        });
-
+            ok: true
+        })
     } else {
+        /*  res.redirect('/Rejected.html') */
         res.send({
             ok: false
         });
@@ -30,8 +31,8 @@ app.post('/U_info', (req, res,next) => {
 
 
 
-app.use(express.static('public'));
-app.listen(port, () => { console.log(`listen on port ${port}`) }) 
+
+app.listen(port, () => { console.log(`listen on port ${port}`) })
 
 
 
