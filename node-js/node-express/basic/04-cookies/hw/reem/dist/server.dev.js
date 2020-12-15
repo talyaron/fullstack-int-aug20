@@ -17,7 +17,7 @@ app.post('/send-user', function (req, res) {
   var test = '';
 
   if (IFollowYou !== undefined) {
-    test = "".concat(IFollowYou, " =>  ").concat(req.body.buttonInnertext);
+    test = "".concat(IFollowYou, " -- ").concat(req.body.buttonInnertext);
   } else {
     test = ">> ".concat(req.body.buttonInnertext);
   }

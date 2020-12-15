@@ -18,7 +18,7 @@ app.post('/send-user',(req, res)=>{
     let test = '';
     
     if (IFollowYou !== undefined) {
-         test = `${IFollowYou} =>  ${req.body.buttonInnertext}`;
+         test = `${IFollowYou} -- ${req.body.buttonInnertext}`;
     } else {
         test = `>> ${req.body.buttonInnertext}`;
     }
