@@ -10,14 +10,12 @@
        
         
     </style>
-    <form action="/login" method="POST">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="pwd">Password:</label><br>
-        <input type="password" id="pwd" name="pwd"><br><br>
-        <input type="submit" value="Submit">
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" name="name">
+        <input type="password" name="pwd">
+        <input type="submit">
       </form>
-      
+      <div class="root"></div>
     <script src="js.js"></script>
 </body>
 </html>

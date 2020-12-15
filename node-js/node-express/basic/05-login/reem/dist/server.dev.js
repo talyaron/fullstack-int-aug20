@@ -15,18 +15,23 @@ app.use(bodyParser.urlencoded({
 }));
 var correctUser = {
   name: 'reem',
-  psw: 9968096
+  pwd: 9968096
 };
 app.post("/login", function (req, res) {
   var user = req.body.user;
 
-  if (user.name == correctUser.name && user.psw == correctUser.psw) {
+  if (user.name == correctUser.name && user.pwd == correctUser.pwd) {
     res.cookie("i-follow-you", user, {
       maxAge: 10000,
       httpOnly: false
     });
+    res.send({
+      ok: true
+    });
   } else {
-    res.redirect("/fail.html");
+    res.send({
+      ok: false
+    });
   }
 });
 app.use(express["static"]('public'));
