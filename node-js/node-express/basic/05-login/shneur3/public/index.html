@@ -12,17 +12,23 @@
         <input type="text" name="userName">
         <input type="submit">
 
-
     </form>
 
-
-
-
     <script>
-        hendelSubmit = (e) => {
-            console.log(e.target.children.userName.valur)
-
-
+        const hendelSubmit = (e) => {
+            e.preventDefault()
+            let userInput = e.target.children.userName.value
+            console.log(userInput)
+            fetch('/send-login', {
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({userInput}),
+            }).then(r=>r.json())
+            .then(data=>{
+                console.log(data)
+            })
 
 
         }
