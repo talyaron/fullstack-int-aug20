@@ -12,7 +12,14 @@ app.use(express.static('public'))
 app.post('/buttonsClicked', (req, res) => {
     let { IFollowYou } = req.cookies;
     console.log(IFollowYou);
-    const test = `${IFollowYou} =>  ${req.body.buttonInnertext}`;
+
+    let test = '';
+    
+    if (IFollowYou !== undefined) {
+         test = `${IFollowYou} =>  ${req.body.buttonInnertext}`;
+    } else {
+        test = `>> ${req.body.buttonInnertext}`;
+    }
     res.cookie('IFollowYou', test, { maxAge: 5000000, httpOnly: true });
     res.send({
         test
