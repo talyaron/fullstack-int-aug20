@@ -11,8 +11,9 @@
   <script>
 
    setInterval(() => {
-      
-    c
+      if(!document.cookie){
+        location.replace("/");
+      }
   }, 5000);
 
   </script>
