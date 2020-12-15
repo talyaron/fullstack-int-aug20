@@ -25,21 +25,19 @@ app.post('/U_info', function (req, res) {
   };
 
   if (req.body.UserID == UserDitles.UserID && req.body.mypass == UserDitles.Pass) {
-    /* res.redirect("/ok.html"); */
-    res.cookie('myUserIDs', uditails, {
-      maxAge: 3000
-    });
-    res.send({
-      ok: true
-    });
+    res.redirect("ok.html");
+    console.log("passed"); // res.cookie('myUserIDs', uditails, { maxAge: 3000 });
+
+    /*  res.send({
+         ok: true
+     }) */
   } else {
     /*  res.redirect('/Rejected.html') */
     res.send({
       ok: false
     });
-  }
+  } //  console.log(req.body.UserID)
 
-  console.log(req.body.UserID);
 });
 app.listen(port, function () {
   console.log("listen on port ".concat(port));

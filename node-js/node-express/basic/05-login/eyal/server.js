@@ -14,18 +14,19 @@ app.post('/U_info', (req, res) => {
     console.log('sending to the claient: ' + req.body);
     const uditails = { id: req.body.UserID, pass: req.body.mypass }
     if ((req.body.UserID == UserDitles.UserID) && (req.body.mypass == UserDitles.Pass)) {
-        /* res.redirect("/ok.html"); */
-        res.cookie('myUserIDs', uditails, { maxAge: 3000 });
-        res.send({
+        res.redirect("ok.html");
+        console.log("passed")
+        // res.cookie('myUserIDs', uditails, { maxAge: 3000 });
+       /*  res.send({
             ok: true
-        })
+        }) */
     } else {
         /*  res.redirect('/Rejected.html') */
         res.send({
             ok: false
         });
     }
-    console.log(req.body.UserID)
+  //  console.log(req.body.UserID)
 })
 
 
