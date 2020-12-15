@@ -62,6 +62,14 @@
            Password = Password.value;
 
            console.log(UserID, Password)
+
+
+           fetch('/add_user', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(UserDetlis)
+            }).then(res=>res.json())
+            .then(data=>{})
         }
     </script>
 </body>
