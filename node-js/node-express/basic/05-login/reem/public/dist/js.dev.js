@@ -18,8 +18,8 @@ function handleSubmit(e) {
       body: JSON.stringify({
         user: user
       })
-    }).then(function (res) {
-      return res.json();
+    }).then(function (r) {
+      return r.json();
     }).then(function (data) {
       if (data.ok) {
         location.replace("/success.html");

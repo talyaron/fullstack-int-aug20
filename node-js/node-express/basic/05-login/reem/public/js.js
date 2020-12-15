@@ -13,7 +13,7 @@ fetch('/login', {
     },
     body: JSON.stringify({user})
 })
-    .then( res => res.json())
+    .then( r => r.json())
     .then(data =>{
         if(data.ok){
             location.replace("/success.html");
