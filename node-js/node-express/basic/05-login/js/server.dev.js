@@ -15,7 +15,7 @@ var UserDitles = {
 };
 app.use(bodyParser.json());
 app.use(cookiesPractice());
-app.post('/U_info', function (req, res, next) {
+app.post('/U_info', function (req, res) {
   var myUserIDs = req.cookies.myUserIDs;
   console.log('sending to the claient: ' + req.body);
   uditails = {
@@ -38,6 +38,7 @@ app.post('/U_info', function (req, res, next) {
 
   console.log(req.body.UserID);
 });
+app.post('/add_user', function (req, res) {});
 app.use(express["static"]('public'));
 app.listen(port, function () {
   console.log("listen on port ".concat(port));
