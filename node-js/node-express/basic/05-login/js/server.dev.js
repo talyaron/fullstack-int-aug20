@@ -2,8 +2,9 @@
 
 var express = require('express');
 
-var port = process.env.PORT || 3000;
 var app = express();
+
+var path = require('path');
 
 var cookiesPractice = require('cookie-parser');
 
@@ -15,7 +16,7 @@ var UserDitles = {
 };
 app.use(bodyParser.json());
 app.use(cookiesPractice());
-app.use(express["static"]('public'));
+app.use(express["static"](path.join(__dirname, 'public')));
 app.post('/U_info', function (req, res) {
   var myUserIDs = req.cookies.myUserIDs;
   console.log('sending to the claient: ' + req.body);
@@ -25,12 +26,12 @@ app.post('/U_info', function (req, res) {
   };
 
   if (req.body.UserID == UserDitles.UserID && req.body.mypass == UserDitles.Pass) {
-    res.redirect("ok.html");
+    /*   res.redirect("/ok.html"); */
     console.log("passed"); // res.cookie('myUserIDs', uditails, { maxAge: 3000 });
 
-    /*  res.send({
-         ok: true
-     }) */
+    res.send({
+      ok: true
+    });
   } else {
     /*  res.redirect('/Rejected.html') */
     res.send({
@@ -39,6 +40,7 @@ app.post('/U_info', function (req, res) {
   } //  console.log(req.body.UserID)
 
 });
+var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("listen on port ".concat(port));
 });
