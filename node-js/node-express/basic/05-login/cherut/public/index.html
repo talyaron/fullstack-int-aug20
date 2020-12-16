@@ -7,17 +7,182 @@
       rel="stylesheet">
   <title>Document</title>
 </head>
+<style>
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    background: url('https://i.pinimg.com/originals/17/94/66/179466de20ee26922f9b2309fcda7c6e.jpg');
+    background-color: rgba(9, 253, 200, 0.575);
+    background-blend-mode: multiply;
+    background-size: cover;
+    /* background-blend-mode: multiply; */
+    /* no-repeat 0, 0 #99e9ff */
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+
+    color: rgb(170, 245, 255);
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* .container {
+    
+  position:absolute;
+  right: 30%;
+  top: 15vh;
+  width: 50rem;
+  height: 30rem;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }  */
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    width: 30rem;
+    position:absolute;
+    left: 10%;
+    top: 9vh;
+    /* margin: auto; */
+  }
+
+  input{
+  margin: 1.2em 0;
+  box-shadow: 0 0 1rem 0 rgba(101, 250, 242, 0.527); 
+  border-radius: 1em;
+  background-color: rgba(2, 8, 8, 0.336);
+  backdrop-filter: blur(5px);
+  border: none;
+  outline: none;
+  padding: 1em;
+  color:  white;
+  width: 100%;
+  line-height: 2rem;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  /* caret-color: transparent; */
+  }
+
+  .eye{
+    position: relative;
+    width: 100%;
+    
+  }
+
+  .material-icons{
+    position: absolute;
+    right: 1.2rem;
+    top: 1.6em;
+  }
+
+  .submit{
+    width: 100%;
+    color: rgb(170, 245, 255);
+    background-color: rgba(170, 245, 255, 0.479);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 1rem 0 rgba(27, 37, 36, 0.363); 
+    cursor: pointer;
+    font-weight: bold;
+    font-size:1rem ;
+    color: rgb(42, 43, 53);
+  
+  }
+
+  .submit:hover{
+    /* transform: scale(1.05); */
+    background-color: rgba(170, 245, 255, 0.801);
+    color: rgb(42, 43, 53);
+    box-shadow: 0 0 1rem 0 rgba(101, 250, 242, 0.527); 
+  }
+
+  h1{
+    letter-spacing: .1rem;
+    margin-bottom: .5em;
+    float: left;
+  }
+
+  h3{
+    /* margin: .3em 0; */
+    padding: 1em 0;
+    letter-spacing: .1rem;
+  }
+
+  .root{
+    padding: 1em 0;
+    letter-spacing: .1rem;
+    color: rgb(255, 96, 96);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: .5em;
+
+  }
+
+  .root>.submit{
+    width: 10em;
+    padding: .5rem;
+    border-radius: .5em;
+    border: none;
+    outline: none;
+    background-color: rgba(170, 245, 255, 0.637);
+
+  }
+
+  .root>.submit:hover{
+    /* transform: scale(1.05); */
+    background-color: rgba(170, 245, 255, 0.801);
+    color: rgb(42, 43, 53);
+    box-shadow: 0 0 1rem 0 rgba(101, 250, 242, 0.527); 
+  }
+
+  .icon{
+    left: 48%;
+    width: 4em;
+  }
+
+ 
+
+  
+</style>
 <body>
 
+  <div class="container">
+  
+ 
+
   <form onsubmit="handleSubmit(event)" class="form">
-    <input type="text" name="name" class="name" onkeypress="keypress(event)">
-    <input type="password" name="pass" class="password">
+    <h1></h1>
+    <!-- <span class="material-icons icon white">
+      account_circle
+      </span> -->
+
+    <h3>After logging in, you will only have ten seconds in the system, so you should hurry ...</h3>
+    <input type="text" name="name" class="name" placeholder="userName" onkeypress="keypress(event)" required>
+    <div class="eye" name='eye'>
+    <input type="password" name="pass" placeholder="password" class="password" required>
     <span class="material-icons" onmouseenter="showPass(event)" onmouseleave="hidePass(event)">
       visibility
     </span>
-    <input type="submit">
+    </div>
+    <input type="submit" class="submit" value="login" Clickable='false'>
+    <div class="root"></div>
   </form>
-  <div class="root"></div>
+  
+</div>
 
   <script src="script.js"></script>
 </body>
