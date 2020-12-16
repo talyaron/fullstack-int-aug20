@@ -33,6 +33,7 @@ function handleSubmit(e){
     })
         .then(res => res.json())
         .then(data => {
+          // console.log(data.ok)
           if(data.ok){
             location.replace("/home.html");
           } else {

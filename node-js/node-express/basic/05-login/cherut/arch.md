@@ -7,13 +7,8 @@
 לנקות אינפוטים
 עיצוב
 מחובר כ
-מערך של יוזרים
-
 לקבל קוקי ספציפי
-שליחה באנטר
 
-https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFLPUwndL90ILziehIOdhURDlgtiTWNTZ1-Q&usqp=CAU
-https://i.pinimg.com/originals/17/94/66/179466de20ee26922f9b2309fcda7c6e.jpg
-https://images.all-free-download.com/images/graphiclarge/digital_secure_background_lock_circle_icons_dark_blue_6837396.jpg
-https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRzGrBczn5javIoytL5REpE4gG1MrccB3eoA&usqp=CAU
-https://png.pngtree.com/thumb_back/fh260/back_pic/04/48/14/415859da6c2caa9.jpg
+
+ ולידציה למה שהוזמן ושהכפתור יהיה לחיץ רק כשמתאים שליחה באנטר
+מערך של יוזרים

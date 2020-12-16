@@ -5,19 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+><style>
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    background: url('https://previews.123rf.com/images/baks/baks1605/baks160500012/56768626-global-network-background-world-map-point-international-meaning-illustration.jpg');
+    background-color: rgba(1, 124, 122, 0.445);
+    background-blend-mode: multiply;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+  }
+
+  h1,h3{
+    text-align: center;
+    margin: .5em;
+  }
+
+</style>
 <body>
 
 
-  <h1>You are logged in as</h1>
-  <h4></h4>
+  <h1>WELCOM! you are logged in as</h1>
+  <h3></h3>
 
   <script>
 
   let userConect = document.cookie.split('%22')[3];
   let h1 = document.querySelector('h1');
-  let h4 = document.querySelector('h4');
+  let h3 = document.querySelector('h3');
   h1.innerHTML +=' ' + `${userConect}`;
-  h4.innerHTML ='החיבור תקף למשך 10 שניות, לאחר מכן נדרשת התחברות חדשה';
+  h3.innerHTML ='The connection is valid for 10 seconds, after that a new connection is required' ;
 
   
   let cookieUserExsist;
