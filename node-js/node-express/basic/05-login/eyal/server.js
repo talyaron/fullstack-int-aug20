@@ -11,8 +11,10 @@ app.use(cookiesPractice());
 app.post('/U_info', (req, res) => {
     const {myUserIDs} =req.cookies;
     console.log('sending to the claient: ' + req.body);
+    uditails = {id:req.body.UserID,pass:req.body.mypass}
     if ((req.body.UserID == UserDitles.UserID) && (req.body.mypass == UserDitles.Pass)) {
-        res.cookie('myUserIDs',req.body.UserID,{maxAge:300000});
+
+        res.cookie('myUserIDs',uditails,{maxAge:3000});
         res.send({
             ok: true          
         });
@@ -22,21 +24,11 @@ app.post('/U_info', (req, res) => {
             ok: false
         });
     }
-
-
-    
-
-
-
-    // const {myUserIDs} =req.cookies;
-
-
-   /*  res.cookie('myUserIDs',req.body.UserID,{maxAge:300000});
-    res.send({
-        OK: true
-    }) */
     console.log(req.body.UserID)
 })
+
+app.post('/add_user', (req, res) => {})
+
 
 
 

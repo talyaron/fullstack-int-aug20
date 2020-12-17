@@ -44,12 +44,15 @@
                 if (data.ok){
 
                 document.getElementById('main').innerHTML = '<h1>ok</h1>'
+                window.location.replace('ok.html')
                 }else   {
                     document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'
+                    window.location.replace('Rejected.html')
                 }
 
                 console.log(data)
                 document.getElementById('root').innerText= data.body
+               
 
             })
             console.log(UserDetlis);
@@ -62,6 +65,14 @@
            Password = Password.value;
 
            console.log(UserID, Password)
+
+
+           fetch('/add_user', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(UserDetlis)
+            }).then(res=>res.json())
+            .then(data=>{})
         }
     </script>
 </body>
