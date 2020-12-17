@@ -3,7 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'))
 
@@ -21,24 +22,26 @@ app.post('/send-user-data', (req, res) => { //when client posts.
             console.log('match username')
             console.log('match password')
             validate = true
-            saveUsername = username
+            savedUsername = username
 
         } else {
-            console.log('no match')
+            console.log(`no match ${e.username}`)
         }
     })
     if (validate) {
-        res.cookie('validated', 'this user is validated for next 30 seconds', { maxAge: 30000, httpOnly: true })
-    } else {
-        console.log('something missing')
+        res.cookie('validated', `user is validated`, { maxAge: 30000, httpOnly: true })
+        // res.redirect('/homepage.html');
     }
+
     res.send({ validate })
+
 })
 app.get('/get-username', (req, res) => {
 
-    res.send({ saveUsername })
+    res.send({ savedUsername })
 
 })
+
 app.get('/check-valid', (req, res) => {
     let validate = true
     const checkCookie = req.cookies.validated
@@ -49,6 +52,7 @@ app.get('/check-valid', (req, res) => {
         console.log('GET OUT OF MY SITE')
     }
     res.send({ validate })
+
 })
 
 const port = process.env.PORT || 3000
