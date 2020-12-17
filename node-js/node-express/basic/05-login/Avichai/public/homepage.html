@@ -15,9 +15,10 @@
             fetch('/get-username')
                 .then(r => r.json())
                 .then(data => {
-                    document.getElementById('root').innerHTML = `Hello ${data.saveUsername}, Welcome to special area`
+                    document.getElementById('root').innerHTML = `Hello ${data.savedUsername}, Welcome to special area`
                 })
         }
+        
         setInterval(function () {
             fetch('/check-valid')
                 .then(r => r.json())

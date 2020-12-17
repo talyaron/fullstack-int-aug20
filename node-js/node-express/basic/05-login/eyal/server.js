@@ -8,7 +8,7 @@ const UserDitles = { UserID: "eyal", Pass: "123" }
 app.use(bodyParser.json());
 app.use(cookiesPractice());
 
-app.post('/U_info', (req, res,next) => {
+app.post('/U_info', (req, res) => {
     const {myUserIDs} =req.cookies;
     console.log('sending to the claient: ' + req.body);
     uditails = {id:req.body.UserID,pass:req.body.mypass}
@@ -26,6 +26,8 @@ app.post('/U_info', (req, res,next) => {
     }
     console.log(req.body.UserID)
 })
+
+app.post('/add_user', (req, res) => {})
 
 
 
