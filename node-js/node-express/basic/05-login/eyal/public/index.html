@@ -86,9 +86,10 @@ background-color: cornsilk;
                     if (data.ok) {
 
                         document.getElementById('main').innerHTML = '<h1>ok</h1>'
-                       
+                        window.location.replace('ok.html')
                     } else {
                         document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'
+                        window.location.replace('Rejected.html')
                     }
 
                     console.log(data)
@@ -99,21 +100,21 @@ background-color: cornsilk;
         }
 
         function handleAddUser(e) {
-            console.dir(e)
-            let { UserID, Passwoerd } = e.target.parentElement.children;
-            UserID = UserID.value;
-            Password = Password.value;
+         const UserID =  document.getElementById('UserID').value
+         const mypass =  document.getElementById('Password').value
+         console.log(UserID )
+            const UserDetlis = { UserID, mypass }
+            
+            console.log(UserDetlis )
 
-            console.log(UserID, Password)
-
-
+ 
             fetch('/add_user', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(UserDetlis)
             }).then(res => res.json())
                 .then(data => { })
-        }
+        } 
     </script>
 </body>
 
