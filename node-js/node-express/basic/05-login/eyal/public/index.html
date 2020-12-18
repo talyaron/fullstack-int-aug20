@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>passEnterd</title>
+</head>
+<style>
+    h1 {
+        width: max-content;
+        margin: auto;
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+
+    form {
+        padding: 5%;
+        /*  display: flex;
+         flex-direction: column; */
+        border: 1px solid black;
+        border-radius: 20px;
+background-color: cornsilk;
+        width: 30%;
+        margin-top: 10%;
+        margin: auto;
+    }
+    .row {
+        display: flex;
+        
+    }
+    #UserID{
+        flex: 1;
+        margin:1%
+       
+    }
+    #Password{
+        flex: 1;
+        margin:1%
+    }
+    label{
+        margin:1%
+    }
+    input{
+        flex: 1; 
+        margin:1%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1> Welcome!</h1>
+
+        <form onsubmit='handlesubmit(event)'>
+            <div class="row">
+                <label for="UserID">user name</label>
+                <input type="text" id="UserID" name='UserID'>
+            </div>
+            <div class="row">
+            <label for="password">password</label>
+            <input type="password" id="Password" name='Password'>
+        </div>
+        <div class="row">
+            <input type="submit">
+            <input type="button" onclick='handleAddUser(event)' value="add_user">
+        </div>
+        </form>
+
+        <div id="main"></div>
+    </div>
+    <script>
+
+        function handlesubmit(e) {
+            event.preventDefault();
+            console.log('submit')
+            const UserID = e.target.UserID.value;
+            const mypass = e.target.Password.value;
+            const UserDetlis = { UserID, mypass }
+
+            fetch('/U_info', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(UserDetlis)
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.ok) {
+
+                        document.getElementById('main').innerHTML = '<h1>ok</h1>'
+                       
+                    } else {
+                        document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'
+                    }
+
+                    console.log(data)
+                    document.getElementById('root').innerText = data.body
+
+                })
+            console.log(UserDetlis);
+        }
+
+        function handleAddUser(e) {
+            console.dir(e)
+            let { UserID, Passwoerd } = e.target.parentElement.children;
+            UserID = UserID.value;
+            Password = Password.value;
+
+            console.log(UserID, Password)
+
+
+            fetch('/add_user', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(UserDetlis)
+            }).then(res => res.json())
+                .then(data => { })
+        }
+    </script>
+</body>
+
+</html>
