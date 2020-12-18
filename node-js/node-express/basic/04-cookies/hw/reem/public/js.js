@@ -15,8 +15,10 @@ function handleSubmit(e) {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            let arr = data.arr;
+            console.log(arr)
             // let root = document.querySelector('root')
             // root.innerHTML+=`${user}`
         })
-document.cookie
+
 }

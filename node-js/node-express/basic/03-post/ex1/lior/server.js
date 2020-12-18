@@ -6,28 +6,24 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'))
 
-const login = [{username:'lior',password:'1111'},
-{username:'moran',password:'2222'},
-{username:'cherut',password:'3333'},
-{username:'tal',password:'4444'}]
+  // const login = [{username:'lior',password:'1111'},
+ // {username:'moran',password:'2222'},
+  // {username:'cherut',password:'3333'},
+ // {username:'tal',password:'4444'}]
 
-    const user = login.map(a => a.username);
-    const pass = login.map(a => a.password);
+    // const user = login.map(a => a.username);
+    // const pass = login.map(a => a.password);
+    const {user,password} = req.body
+    let ok = false;
     
     app.post('/send_login_information', (req, res) => {
 
         console.log('sending to the claient: ' + req.body);
-        if ((req.body.UserID == user) && (req.body.password == Pass)) {
-    
-            res.send({
-                ok: true
-            });
-    
-        } else {
-            res.send({
-                ok: false
-            });
+        if ((user =='moran') && (password=='2222')) {
+            ok = true;
+       
         }
+        res.send({ok,user,pass});
     
     })
 

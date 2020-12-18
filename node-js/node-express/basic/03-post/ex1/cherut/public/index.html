@@ -24,10 +24,11 @@
 <body>
 
   <h1>Enter a username and press Enter to check if it exists on the server</h1>
-  <form> 
-    <input type="text">
-    <input type="password" >
-    <button onclick="handleCheckUser(event)">check</button>
+
+  <form onsubmit="handleCheckUser(event)"> 
+    <input type="text" name="userName">
+    <input type="password" name="password" >
+    <input type="submit" value="check">
   </form>
  
 

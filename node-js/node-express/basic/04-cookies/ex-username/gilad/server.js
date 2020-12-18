@@ -7,14 +7,15 @@ const cookieParser = require('cookie-parser');
 
 app.use(cookieParser());
 
-
+let buttonMemory = []
 
 app.post('/username' , (req,res)=>{
     console.log(req.body);
     let ok = true
-     let user =req.body.user
-     res.cookie(`user`,user, { maxAge: 5000000, httpOnly: true });
-    res.send({ok,user})
+     buttonMemory.push(req.body.buttonPressed) 
+
+    res.cookie(`buttonPressed`,buttonMemory, { maxAge: 500000, httpOnly: true });
+    res.send({ok,buttonMemory})
 } )
 
 
