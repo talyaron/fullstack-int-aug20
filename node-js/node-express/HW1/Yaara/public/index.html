@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form onsubmit="handleSubmit(event)">
+    <input type='text' placeholder="Enter First Name" name="firstname" required />
+    <input type='password' placeholder="Enter password" name="password"  required/>
+    <input type="submit" value="Submit">
+</form>
+    <div id="root"></div>
+    <div id="date"></div>
+    <div id="joke"></div>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+  
+            let firstname = e.target.children.firstname.value;
+            let password = e.target.children.password.value;
+            let concat = {"name": firstname,"password": password }
+
+
+            fetch('http://localhost:3000/send-details', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(concat)
+            }).then(res=>
+                res.json()
+            )
+            .then(data=>{
+                data == true? document.getElementById('root').innerHTML= "Welcome"  : document.getElementById('root').innerHTML= "You are not allowed";
+            }) 
+        }
+
+        function getJoke(){
+            fetch('http://localhost:3000/joke', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }).then(res=>
+                res.json()
+            )
+            .then(data=>{    
+               document.getElementById('joke').innerHTML = "Random Joke: " +data.joke; 
+            }) 
+        }
+
+
+        function getDate(){
+            fetch('http://localhost:3000/date', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }).then(res=>
+                res.json()
+            )
+            .then(data=>{
+                const date = new Date(data.date );
+               document.getElementById('date').innerHTML = date; 
+            }) 
+        }
+ 
+    </script>
+</body>
+
+</html>

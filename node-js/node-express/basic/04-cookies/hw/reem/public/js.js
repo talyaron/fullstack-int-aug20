@@ -1,22 +1,12 @@
-function handleSubmit(e) {
-    e.preventDefault();
-
-    const user = e.target.value;
-
-    let root = document.querySelector('.root');
-  root.innerText += `${user}`;
+handelclick = (e) => {
+    let buttonInnertext = e.target.value;
+    console.log(buttonInnertext)
     fetch('/send-user', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ user })
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ buttonInnertext })
+    }).then(res => res.json()).then(data => {
+      document.getElementById('root').innerHTML = `<p>${data.test}</p>`;
     })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            // let root = document.querySelector('root')
-            // root.innerHTML+=`${user}`
-        })
-document.cookie
-}
+
+  }

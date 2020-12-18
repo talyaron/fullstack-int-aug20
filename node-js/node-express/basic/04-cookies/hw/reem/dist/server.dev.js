@@ -12,16 +12,23 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 var user = [];
 app.post('/send-user', function (req, res) {
-  user.push(req.body.user);
-  console.log(user); // const {user} = req.body;
+  var IFollowYou = req.cookies.IFollowYou;
+  console.log(IFollowYou);
+  var test = '';
 
-  res.cookie('user', user, {
+  if (IFollowYou !== undefined) {
+    test = "".concat(IFollowYou, " -- ").concat(req.body.buttonInnertext);
+  } else {
+    test = ">> ".concat(req.body.buttonInnertext);
+  }
+
+  res.cookie('IFollowYou', test, {
     maxAge: 5000000,
     httpOnly: true
   });
   res.send({
-    ok: true
-  });
+    test: test
+  }); // console.log(req.body)
 });
 app.use(express["static"]('public'));
 var port = process.env.PORT || 3000;

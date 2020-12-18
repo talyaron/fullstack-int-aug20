@@ -1,23 +1,19 @@
 "use strict";
 
-function handleSubmit(e) {
-  e.preventDefault();
-  var user = e.target.value;
-  var root = document.querySelector('.root');
-  root.innerText += "".concat(user);
+handelclick = function handelclick(e) {
+  var buttonInnertext = e.target.value;
+  console.log(buttonInnertext);
   fetch('/send-user', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      user: user
+      buttonInnertext: buttonInnertext
     })
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
-    console.log(data); // let root = document.querySelector('root')
-    // root.innerHTML+=`${user}`
+    document.getElementById('root').innerHTML = "<p>".concat(data.test, "</p>");
   });
-  document.cookie;
-}
+};
