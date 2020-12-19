@@ -9,8 +9,18 @@ app.use(cookieParser());
 app.use(express.static('public'))
 
 let users = [{ username: 'avi', password: '123' }, { username: 'aviz', password: '1234' }, { username: 'avis', password: '12345' }]
-let saveUsername
+let savedUsername
 
+
+app.post('/new-user', (req, res) => {
+    let { username } = req.body
+    let { password } = req.body
+    users.push({ username, password })
+    console.log(users)
+    let ok = true
+    res.send({ ok })
+
+})
 app.post('/send-user-data', (req, res) => { //when client posts.
     let { username } = req.body
     let { password } = req.body
@@ -29,7 +39,7 @@ app.post('/send-user-data', (req, res) => { //when client posts.
         }
     })
     if (validate) {
-        res.cookie('validated', `user is validated`, { maxAge: 30000, httpOnly: true })
+        res.cookie('validated', username, { maxAge: 30000, httpOnly: true })
         // res.redirect('/homepage.html');
     }
 
