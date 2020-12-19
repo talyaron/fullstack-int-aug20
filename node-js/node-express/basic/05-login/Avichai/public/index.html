@@ -11,35 +11,13 @@
     <form onsubmit="handleSubmit(event)">
         <input type='text' name='username'>
         <input type='password' name='password'>
-        <input type="submit">
+        <input type="submit" value="Login">
+        <input type="button" onclick='handleNewUser(event)' value="add">
+
+        <div id="root"></div>
     </form>
 
-    <script>
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const username = e.target.children.username.value
-            const password = e.target.children.password.value
-            console.log(`username: ${username}, password: ${password}`)
-
-            fetch('/send-user-data', {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, password })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.validate) {
-                        window.location.replace("homepage.html");
-                    } else {
-                        console.log('sorry bad credentials')
-                    }
-                    console.log(data.validate)
-                })
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
