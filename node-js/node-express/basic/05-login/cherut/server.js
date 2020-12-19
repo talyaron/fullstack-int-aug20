@@ -15,25 +15,31 @@ const correctUsers = [
 app.post('/login', (req, res) => {
     let user = req.body.user;
     // console.log(user,correctUser)
+    let ok = false;
+    correctUsers.forEach(userInArr=>{
 
-    // correctUsers.forEach(userInArr=>{
+      if (user.name == userInArr.name && user.pass == userInArr.pass){
+        res.cookie('user', user, { maxAge: 10000, httpOnly:false });
+       
+        ok = true;
+        
+        // res.redirect('./home');
+      } else {
+        
+        console.log('no natch');
+      }
+      
+    })
 
-    //   if (user.name == userInArr.name && user.pass == userInArr.pass){
-    //     res.cookie('user', user, { maxAge: 10000, httpOnly:false });
-    //     console.log('home');
-    //     res.send({ ok: true })
-    //     // res.redirect('./home');
-    //   } 
-    // })
-
-    if (user.name == correctUser.name && user.pass == correctUser.pass){
-      res.cookie('user', user, { maxAge: 10000, httpOnly:false });
-      console.log('home');
-      res.send({ ok: true })
-      // res.redirect('./home');
-    } else {
-      res.send({ ok: false })
-    }
+    res.send({ ok})
+    // if (user.name == correctUser.name && user.pass == correctUser.pass){
+    //   res.cookie('user', user, { maxAge: 10000, httpOnly:false });
+    //   console.log('home');
+    //   res.send({ ok: true })
+    //   // res.redirect('./home');
+    // } else {
+    //   res.send({ ok: false })
+    // }
 })  
 
 app.use(express.static('public'))

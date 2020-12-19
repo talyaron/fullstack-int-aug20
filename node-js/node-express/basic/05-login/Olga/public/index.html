@@ -10,12 +10,13 @@
 </head>
 <body>
     
-    <form onsubmit="hendelSubmit(event)">
-        <input type="text" name="userName">
-        <input type="submit">
-
-
+    <form onsubmit='handleSubmit(event)'>
+        <input type='text' placeholder="username" name='username' required>
+        <input type="password" placeholder="password" name='password' required>
+        <button type="submit">Submit</button>
     </form>
+    <div class="errorText"></div>
+
     <script src='script.js'></script>
 </body>
 </html>
