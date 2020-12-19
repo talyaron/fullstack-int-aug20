@@ -38,7 +38,7 @@ function handleSubmit(e) {
         .then(res => res.json())
         .then(data => {
             if (data.validate) {
-                window.location.replace("homepage.html");
+                window.location.replace("logged.html");
             } else {
                 document.getElementById('root').innerHTML = `Bad username or password! Try again!`
                 console.log('sorry bad credentials')
