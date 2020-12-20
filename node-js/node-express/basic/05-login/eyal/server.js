@@ -13,35 +13,65 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static('public'));
 
+
+
+
 app.post('/U_info', (req, res) => {
-  const { myUserIDs } = req.cookies;
-  // console.log(getCookie("myUserIDs"))
-  let test = myUserIDs;
-  console.log(myUserIDs);
-  const uditails = { id: req.body.UserID, pass: req.body.mypass };
+  const { myUserIDs } = req.cookies; //get all cookies
+  const userIdArry = JSON.parse(`[${myUserIDs}]`); // set the cookie as object
+  const NewUditails = { id: req.body.UserID, pass: req.body.mypass }; //the userID that the user typed - 
+  const filteredArray = userIdArry.filter((user) => user.id === NewUditails.id);
+  let resultarry = filteredArray[0]; //in case we will find more the one take the first
+   
   if (
-    req.body.UserID == UserDitles.UserID &&
-    req.body.mypass == UserDitles.Pass
+    req.body.UserID == resultarry.id &&
+    req.body.mypass == resultarry.pass
   ) {
     console.log('passed');
+    res.cookie('userAuthorized', 'OK', { maxAge: 300 });
     res.send({
-      ok: true,
+    ok: true,
     });
   } else {
+    console.log('rejected');
     res.send({
-      ok: false,
+    ok: false,
     });
   }
-  console.log(req.body.UserID);
-  console.log(test);
+ 
 });
+
+/*  not working ---------------------------------------------------
+app.post("/U_info", (req, res) => {
+
+    const { myUserIDs } = req.cookies; //get all cookies
+    const userIdArry = JSON.parse(`[${myUserIDs}]`); // set the cookie as object
+    const NewUditails = { id: req.body.UserID, pass: req.body.mypass }; //the userID that the user typed - 
+    const filteredArray = userIdArry.filter((user) => user.id === NewUditails.id);
+    let resultarry = filteredArray[0]; //in case we will find more the one take the first
+     
+    if (
+      req.body.UserID == resultarry.id &&
+      req.body.mypass == resultarry.pass
+    ) {
+      console.log('passed');
+      res.redirect("/ok.html");
+    } else {
+      console.log('rejected');
+      res.redirect("/Rejected.html");
+    }
+  
+  });
+  -------------------------------------------------------------------- */
+
+
 
 // add user to cookie
 app.post('/Change_user', (req, res) => {
   let { myUserIDs } = req.cookies; //get all cookies
 
 
-  const NewUditails = { id: req.body.UserID, pass: req.body.mypass }; //the userID that the user typed
+  const NewUditails = { id: req.body.UserID, pass: req.body.mypass }; //the userID that the user typed - 
   let ud = JSON.stringify(NewUditails);
 
   if (myUserIDs) {// if cookie is present
@@ -59,9 +89,13 @@ app.post('/Change_user', (req, res) => {
       myUserIDs = `${ud}`;
       console.log(`user: ${myUserIDs} is axisit`);
     }
+    res.cookie('myUserIDs', myUserIDs, { maxAge: 3000000 });
+  }else{
+    myUserIDs = `${ud}`; 
+    res.cookie('myUserIDs', myUserIDs, { maxAge: 3000000 });
   }
 
-  res.cookie('myUserIDs', myUserIDs, { maxAge: 3000000 });
+  
 
   res.send();
 });
