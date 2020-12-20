@@ -9,7 +9,21 @@ app.use(cookieParser());
 app.use(express.static('public'))
 
 let users = [{ username: 'avi', password: '123' }, { username: 'aviz', password: '1234' }, { username: 'avis', password: '12345' }]
-let saveUsername
+let savedUsername
+
+// new-user - create a new object of user + password in users array
+// send-user-data - gets login info from user and sends to new page if correct info.
+// get-username - sends new page the username that has logged in.
+// check-valid - checks every 30 second if user has cookie, if he has good, if not back to index.
+app.post('/new-user', (req, res) => {
+    let { username } = req.body
+    let { password } = req.body
+    users.push({ username, password })
+    console.log(users)
+    let ok = true
+    res.send({ ok })
+})
+
 
 app.post('/send-user-data', (req, res) => { //when client posts.
     let { username } = req.body
@@ -19,8 +33,7 @@ app.post('/send-user-data', (req, res) => { //when client posts.
 
     users.forEach(e => {
         if (username == e.username && password == e.password) {
-            console.log('match username')
-            console.log('match password')
+            console.log('match username and password')
             validate = true
             savedUsername = username
 
@@ -28,13 +41,14 @@ app.post('/send-user-data', (req, res) => { //when client posts.
             console.log(`no match ${e.username}`)
         }
     })
+
+
     if (validate) {
-        res.cookie('validated', `user is validated`, { maxAge: 30000, httpOnly: true })
-        // res.redirect('/homepage.html');
+        res.cookie('validated', username, { maxAge: 30000, httpOnly: true })
+        // res.redirect('/homepage.html');  WHY DOES THIS WORK TAL? WHY DOES THIS WORK TAL? WHY DOES THIS WORK TAL?
     }
 
     res.send({ validate })
-
 })
 app.get('/get-username', (req, res) => {
 
