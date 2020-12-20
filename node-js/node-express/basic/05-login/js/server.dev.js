@@ -17,21 +17,22 @@ var UserDitles = {
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(express["static"](path.join(__dirname, 'public')));
+app.use(express["static"]('public'));
 app.post('/U_info', function (req, res) {
   var myUserIDs = req.cookies.myUserIDs;
-  console.log('sending to the claient: ' + req.body);
+  var test = myUserIDs;
+  console.log(myUserIDs);
   var uditails = {
     id: req.body.UserID,
     pass: req.body.mypass
   };
 
   if (req.body.UserID == UserDitles.UserID && req.body.mypass == UserDitles.Pass) {
-    /*   res.redirect("/ok.html"); */
     console.log("passed");
-    res.send({
-      ok: true
-    });
+    res.redirect("/ok.html");
+    /* res.send({
+        ok: true
+    }) */
   } else {
     /*  res.redirect('/Rejected.html') */
     res.send({
@@ -40,19 +41,26 @@ app.post('/U_info', function (req, res) {
   }
 
   console.log(req.body.UserID);
-});
-app.post('/add_user', function (req, res) {
-  var Users = req.cookies.Users;
+}); // add user to cookie
+
+app.post('/Change_user', function (req, res) {
+  //  let { Users } = req.cookies;
   var uditails = {
     id: req.body.UserID,
     pass: req.body.mypass
   };
-  /*  const myusers =  Users.push(req.body.UserID,req.body.mypass);
-  */
-  // console.log(`add user ${uditails.id}, ${uditails.pass}`)
+  var ud = JSON.stringify(uditails); //let Users1 = JSON.stringify(Users);
 
-  console.log(req.cookies);
-  res.cookie('myUserIDs', uditails, {
+  /*  console.log(Users)
+   if ((Users==null) || (Users==undefined)){
+       test = `${ud}`;
+   }else{
+       test = `${Users},${ud}`;
+   } */
+
+  test = "".concat(ud); //  console.log(test)
+
+  res.cookie('myUserIDs', test, {
     maxAge: 300000
   });
   res.send();

@@ -62,7 +62,7 @@ background-color: cornsilk;
         </div>
         <div class="row">
             <input type="submit">
-            <input type="button" onclick='handleAddUser(event)' value="add_user">
+            <input type="button" onclick='handleAddUser(event)' value="Change User">
         </div>
         </form>
 
@@ -108,7 +108,7 @@ background-color: cornsilk;
             console.log(UserDetlis )
 
  
-            fetch('/add_user', {
+            fetch('/Change_user', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(UserDetlis)
