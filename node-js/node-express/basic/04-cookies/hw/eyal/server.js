@@ -27,5 +27,15 @@ app.post('/buttonsClicked', (req, res) => {
    
 });
 
+<<<<<<< HEAD
+const port = process.env.PORT || 3000;
+<<<<<<< Updated upstream:node-js/node-express/basic/04-cookies/hw/eyal/server.js
+=======
 
+>>>>>>> eyal
 app.listen(port, () => { console.log(`Listen on port ${port}`) });
+=======
+app.listen(port,()=>{console.log(`Listen on port ${port}`)});
+
+
+>>>>>>> Stashed changes:node-js/node-express/basic/04-cookies/hw-track-user/eyal/server.js
