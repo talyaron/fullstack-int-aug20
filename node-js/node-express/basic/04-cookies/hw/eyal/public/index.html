@@ -134,7 +134,66 @@
       })
 
     }
+<<<<<<< HEAD
+  </style>
+  <body>
+    <header>
+      <h1>Plese Clik Buttons</h1>
+    </header>
+
+    <form id="container">
+        <input class = "button" type="button" onclick="handelclick(event)" value="litel">
+        <input class = "button" type="button" onclick="handelclick(event)" value="hamer">
+        <input class = "button" type="button" onclick="handelclick(event)" value="ent">
+        <input class = "button" type="button" onclick="handelclick(event)" value="frend">
+        <input class = "button" type="button" onclick="handelclick(event)" value="chiken">
+        <input class = "button" type="button" onclick="handelclick(event)" value="house">
+        <input class = "button" type="button" onclick="handelclick(event)" value="find">
+        <input class = "button" type="button" onclick="handelclick(event)" value="frog">
+        <input class = "button" type="button" onclick="handelclick(event)" value="shani">
+        <input class = "button" type="button" onclick="handelclick(event)" value="baby">
+        <input class = "button" type="button" onclick="handelclick(event)" value="went">
+        <input class = "button" type="button" onclick="handelclick(event)" value="sky">
+        <input class = "button" type="button" onclick="handelclick(event)" value="look">
+        <input class = "button" type="button" onclick="handelclick(event)" value="test">
+        <input class = "button" type="button" onclick="handelclick(event)" value="fly">
+        <input class = "button" type="button" onclick="handelclick(event)" value="see">
+        <input class = "button" type="button" onclick="handelclick(event)" value="boy">
+        <input class = "button" type="button" onclick="handelclick(event)" value="by">
+        <input class = "button" type="button" onclick="handelclick(event)" value="litel">
+        <input class = "button" type="button" onclick="handelclick(event)" value="litel">
+        <input class = "button" type="button" onclick="handelclick(event)" value="litel">
+        <input class = "button" type="button" onclick="handelclick(event)" value="litel">
+        <input class = "button" type="button" onclick="handelclick(event)" value="litel">
+        <input class = "button" type="button" onclick="handelclick(event)" value="litel">
+        <input class = "button" type="button" onclick="handelclick(event)" value="litel">
+              
+    </form>
+    <footer>
+      <div id="root"></div>
+    </footer>
+
+    <script>
+
+               handelclick = (e)=>{
+                 let buttonInnertext = e.target.value;
+                console.log(buttonInnertext)
+                fetch('/buttonsClicked' , {method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify({buttonInnertext})
+                                            }).then(res=>res.json()).then(data => {
+                                               document.getElementById('root').innerHTML = `<p>${data.test}</p>`;
+                })
+
+                                    }
+
+            window.getall()                        
+    </script>
+  </body>
+</html>
+=======
   </script>
 </body>
 
 </html>
+>>>>>>> eyal
