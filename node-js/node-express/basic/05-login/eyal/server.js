@@ -1,3 +1,6 @@
+//https://www.xspdf.com/resolution/50688133.html
+// https://www.w3schools.com/js/js_cookies.asp
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -16,10 +19,11 @@ app.post('/U_info', (req, res) => {
     const uditails = { id: req.body.UserID, pass: req.body.mypass }
     if ((req.body.UserID == UserDitles.UserID) && (req.body.mypass == UserDitles.Pass)) {
         console.log("passed")
-        res.redirect("/ok.html");
-        /* res.send({
+        
+        res.send({
             ok: true
-        }) */
+        })
+        // res.redirect("/ok.html")
     } else {
         /*  res.redirect('/Rejected.html') */
         res.send({

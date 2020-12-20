@@ -1,5 +1,7 @@
 "use strict";
 
+//https://www.xspdf.com/resolution/50688133.html
+// https://www.w3schools.com/js/js_cookies.asp
 var express = require('express');
 
 var app = express();
@@ -29,10 +31,9 @@ app.post('/U_info', function (req, res) {
 
   if (req.body.UserID == UserDitles.UserID && req.body.mypass == UserDitles.Pass) {
     console.log("passed");
-    res.redirect("/ok.html");
-    /* res.send({
-        ok: true
-    }) */
+    res.send({
+      ok: true
+    }); // res.redirect("/ok.html")
   } else {
     /*  res.redirect('/Rejected.html') */
     res.send({
@@ -41,7 +42,8 @@ app.post('/U_info', function (req, res) {
   }
 
   console.log(req.body.UserID);
-}); // add user to cookie
+});
+app.post('/add_user', function (req, res) {}); // add user to cookie
 
 app.post('/Change_user', function (req, res) {
   //  let { Users } = req.cookies;
