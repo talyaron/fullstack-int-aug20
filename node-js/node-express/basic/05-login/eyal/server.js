@@ -29,6 +29,7 @@ app.post('/U_info', (req, res) => {
     console.log(req.body.UserID)
 })
 
+app.post('/add_user', (req, res) => {})
 
 // add user to cookie
 app.post('/Change_user', (req, res) => {

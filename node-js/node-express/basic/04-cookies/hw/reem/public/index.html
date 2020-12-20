@@ -7,43 +7,103 @@
     <title>reem</title>
 </head>
 <style>
-    button{
-      
-        height: 80px;
-        width: 80px;
-        margin: 10px;
-        border: 1px solid;
-        border-radius:10px;
-      font-size: 15px;
+    header{
+        margin: auto;
     }
-    .root{
-        width: 200px;
-        height: 500px;
-        /* border: 1px solid black; */
-        border-radius: 8px;
-        font-style: oblique;
-        overflow-y:scroll ;
-        margin-top: 100px;
+    body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  #container {
+    padding: 1%;
+    margin: auto;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    display: grid;
+    row-gap: 20px;
+    column-gap: 30px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+  }
+    
+    footer {
+    margin: auto;
+    width: 95%;
+    height: 25vh;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 5px 3px 3px;
+  }
+  .button {
+    width: 150px;
+    height: 90px;
+    background:blueviolet;
+   
 
-    }
+    border-radius: 20px;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 100;
+    padding: 10px;
 
+    box-shadow: 3px 3px 7px 0 #000000;
+    text-shadow: 1px 1px 20px #000000;
+    border: solid #337fed 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .button:active {
+    border: solid #337fed 1px;
+    background: gold;
+  
+    box-shadow: 0px 0px 0px 0 #000000;
+
+    border-radius: 20px;
+    text-decoration: none;
+  }
 </style>
 <body>
-    <!-- <form onsubmit='handleSubmit(event)'>
-        <input type="text" name="user">
-        <input type='submit' value="Submit">
-    </form> -->
-    <button onclick='handleSubmit(event)' value="reem" style="background-color: blueviolet;">reem</button>
-    <button onclick='handleSubmit(event)' value="nehonya" style="background-color: cadetblue;">nehonya</button>
-    <button onclick='handleSubmit(event)' value="rivka" style="background-color: brown;" >rivka</button>
-    <button  onclick='handleSubmit(event)'value="cherut" style="background-color: palevioletred;">cherut</button>
-    <button  onclick='handleSubmit(event)'value="nachshon" style="background-color: whitesmoke;">nachshon</button>
-    <button onclick='handleSubmit(event)' value="kalev" style="background-color:gold;">kalev</button>
-    <button onclick='handleSubmit(event)'value="moshe" style="background-color:green;">moshe</button>
-    <div class="root"></div>
-    <script src="js.js">
-       
-    </script>
+    <header>
+        <h1> Clik Buttons</h1>
+      </header>
+    
+
+      <form id="container">
+        <input class="button" type="button" onclick="handelclick(event)" value="rivka">
+        <input class="button" type="button" onclick="handelclick(event)" value="nehonya">
+        <input class="button" type="button" onclick="handelclick(event)" value="cherut">
+        <input class="button" type="button" onclick="handelclick(event)" value="nachshon">
+        <input class="button" type="button" onclick="handelclick(event)" value="tzurishaday">
+        <input class="button" type="button" onclick="handelclick(event)" value="kalev">
+        <input class="button" type="button" onclick="handelclick(event)" value="moshe">
+        <input class="button" type="button" onclick="handelclick(event)" value="shvut ami">
+        <input class="button" type="button" onclick="handelclick(event)" value="rivka">
+        <input class="button" type="button" onclick="handelclick(event)" value="nehonya">
+        <input class="button" type="button" onclick="handelclick(event)" value="cherut">
+        <input class="button" type="button" onclick="handelclick(event)" value="nachshon">
+        <input class="button" type="button" onclick="handelclick(event)" value="tzurishaday">
+        <input class="button" type="button" onclick="handelclick(event)" value="kalev">
+        <input class="button" type="button" onclick="handelclick(event)" value="moshe">
+        <input class="button" type="button" onclick="handelclick(event)" value="shvut ami">
+        <input class="button" type="button" onclick="handelclick(event)" value="rivka">
+        <input class="button" type="button" onclick="handelclick(event)" value="nehonya">
+        <input class="button" type="button" onclick="handelclick(event)" value="cherut">
+        <input class="button" type="button" onclick="handelclick(event)" value="nachshon">
+        <input class="button" type="button" onclick="handelclick(event)" value="tzurishaday">
+        <input class="button" type="button" onclick="handelclick(event)" value="kalev">
+        <input class="button" type="button" onclick="handelclick(event)" value="moshe">
+        <input class="button" type="button" onclick="handelclick(event)" value="shvut ami">
+        <input class="button" type="button" onclick="handelclick(event)" value="shvut ami">
+    
+</form>
+<footer>
+    <div id="root"></div>
+</footer>
+    <script src="js.js"></script>
 </body>
 
 </html>

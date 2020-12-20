@@ -6,28 +6,20 @@ var app = express();
 
 var cookieParser = require("cookie-parser");
 
-app.use(cookieParser()); // מדפיס עוגיות
+app.use(cookieParser());
 
-app.use(function (req, res, next) {
-  var iFollowYou = req.cookies.iFollowYou;
-  console.log(iFollowYou); // מייצר עוגיות
+var bodyParser = require('body-parser');
 
-  if (!iFollowYou) {
-    res.cookie("iFollowYou", "this-is-my-cookie1111");
-    iFollowYou = "this-is-my-cookie1111";
-  }
-
-  ;
-  res.message = iFollowYou;
-  console.log("res.message", res.message);
-  next();
-});
-app.get('/', function (req, res) {
-  res.send("<h1>".concat(res.message, "</h1>"));
+app.use(bodyParser.json());
+app.post("/send-login", function (req, res) {
+  console.log(req.body);
+  res.send({
+    ok: true
+  });
 });
 app.use(express["static"]("public")); // מתחבר לכתובת
 
-var port = process.env.PORT || 3001;
+var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log(port);
 });

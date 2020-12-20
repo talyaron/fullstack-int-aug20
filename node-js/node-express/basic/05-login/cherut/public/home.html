@@ -5,16 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+><style>
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    background: url('https://previews.123rf.com/images/baks/baks1605/baks160500012/56768626-global-network-background-world-map-point-international-meaning-illustration.jpg');
+    background-color: rgba(15, 46, 46, 0.445);
+    background-blend-mode: multiply;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+  }
+
+  h1,h3{
+    text-align: center;
+    margin: .5em;
+  }
+
+</style>
 <body>
-  <h1>You are logged in as</h1>
+
+
+  <h1>WELCOM! you are logged in as</h1>
+  <h3></h3>
 
   <script>
 
+  let userConect = document.cookie.split('%22')[3];
+  let h1 = document.querySelector('h1');
+  let h3 = document.querySelector('h3');
+  h1.innerHTML +=' ' + `${userConect}`;
+  h3.innerHTML ='The connection is valid for 10 seconds, after that a new connection is required' ;
+
+  
+  let cookieUserExsist;
+  // console.log(cookieUserExsist)
+  
+
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (value === '; '){
+      console.log('משתמש לא מחובר');
+      cookieUserExsist = false;
+    }else{
+      
+      if (parts.length === 2){
+      cookieUserExsist = true;
+      console.log('משתמש מחובר')
+      }
+    }
+    
+    
+  
+  }
+
+  // getCookie('user');
+
+  // console.log(cookieUserExsist)
+  // !document.cookie
+
    setInterval(() => {
-      if(!document.cookie){
+      getCookie('user');
+      if(!cookieUserExsist){
         location.replace("/");
       }
   }, 5000);
+
+
 
   </script>
 </body>

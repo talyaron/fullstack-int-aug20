@@ -85,15 +85,16 @@ background-color: cornsilk;
                 .then(data => {
                     if (data.ok) {
 
-                        document.getElementById('main').innerHTML = '<h1>ok</h1>'
-                        window.location.replace('ok.html')
-                    } else {
-                        document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'
-                        window.location.replace('Rejected.html')
-                    }
+                document.getElementById('main').innerHTML = '<h1>ok</h1>'
+                window.location.replace('ok.html')
+                }else   {
+                    document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'
+                    window.location.replace('Rejected.html')
+                }
 
-                    console.log(data)
-                    document.getElementById('root').innerText = data.body
+                console.log(data)
+                document.getElementById('root').innerText= data.body
+               
 
                 })
             console.log(UserDetlis);
