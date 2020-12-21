@@ -6,23 +6,20 @@ app.use(express.static('public')) //all static files, that client get , html, js
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-
 app.post('/log-in', (req, res) => {
-    let ok = false
-console.log(req.body)
- let userName = req.body.auth.userName
- let passWord = req.body.auth.passWord
- console.log(userName)
-
-if(userName ==`1` && passWord == `456`){
-    ok = true;
+let ok = false
+let userName = req.body.userName
+let passWord = req.body.passWord
+console.log(userName)
+console.log(passWord)
+if(userName==`gilad` && passWord==123){
+    ok = true
 }
-
-res.cookie(`ok`,ok)
-
-
-    res.send({ok})
+res.cookie(`ok`,ok,{maxAge:2000})
+res.send({ok})
 })
+
+
 
 
 const port = process.env.PORT || 3000;
