@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 
 app.use(bodyParser.json())
 app.use(cookieParser());
-// app.use(bodyParser.urlencoded({ extended: false }));
 
 const user =[];
 
@@ -13,24 +12,22 @@ const user =[];
 app.post('/send-user',(req, res)=>{
 
 
-    user.push(req.body.user);
-    let json_str = JSON.stringify(user);
-    // const {user} = req.body;
-    let {IFollowYou} = req.cookies;
-    const test = `${IFollowYou} =>  ${req.body.buttonInnertext}`;
-    res.cookie('IFollowYou',json_str, { maxAge: 5000000, httpOnly: true });
-    let json_perse = req.cookies.user;
-    let arr = JSON.parse(json_perse);
-    res.send({json_str})
-})
-// app.post('/buttonsClicked', (req, res) => {
-    // let {IFollowYou} = req.cookies;
-//  console.log(IFollowYou);
-// const test = `${IFollowYou} =>  ${req.body.buttonInnertext}`;
-    // res.cookie('IFollowYou',test, { maxAge: 5000000, httpOnly: true }); 
-    // res.send({
-    //     test
-    // });
+    let { IFollowYou } = req.cookies;
+    console.log(IFollowYou);
+
+    let test = '';
+    
+    if (IFollowYou !== undefined) {
+         test = `${IFollowYou} -- ${req.body.buttonInnertext}`;
+    } else {
+        test = `>> ${req.body.buttonInnertext}`;
+    }
+    res.cookie('IFollowYou', test, { maxAge: 5000000, httpOnly: true });
+    res.send({
+        test
+    });
+    // console.log(req.body)
+});
 app.use(express.static('public'))
 
 const port = process.env.PORT || 3000;

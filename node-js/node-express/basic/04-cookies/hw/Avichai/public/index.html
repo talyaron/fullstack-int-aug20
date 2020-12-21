@@ -16,12 +16,13 @@
     <button onclick="handleClick(event)">NO-NO-NO!!-CLICK-ME</button>
     <div id="root"></div>
 
-    <Script>
+    <script>
         function readCookie() {
             fetch('/read-cookie')
                 .then(r => r.json())
                 .then(data => {
                     if (data.cookie) {
+                        
                         document.getElementById('root').innerHTML = `You have clicked: ${data.IFollowYou}`
                     } else {
                         console.log('no cookie found for this user')

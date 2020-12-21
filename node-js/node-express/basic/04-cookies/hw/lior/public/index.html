@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="buttons">
+
+        <button id="clickme" name="clickme" onclick="handelclick(event)">click me</button>
+        <button id="clickmeeeeee" name="clickmeeeeee" onclick="handelclick(event)">click meeeeee</button>
+        <button id="ifyouwontclickme" name="ifyouwontclickme" onclick="handelclick(event)">if you wont click me ****</button>
+        <button id="boom" name="boom" onclick="handelclick(event)">boom</button>
+
+    </div>
+   
+    <div id="root"></div>
+
+    <script>
+
+        function handelclick(event){
+            let pushed = event.target.innerText
+            let root= document.getElementById('root')
+            root.innerHTML += `<div>${pushed}</div>`;
+
+            fetch('/push', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({pushed})
+        })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('root').innerHTML = data.pushed; 
+            })
+                      
+        }
+
+    </script>
+</body>
+</html>
