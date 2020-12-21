@@ -8,10 +8,10 @@
 <body>
     <div id="buttons">
 
-        <button id="clickme" name="clickme" onclick="handelclick(event)">click me</button>
-        <button id="clickmeeeeee" name="clickmeeeeee" onclick="handelclick(event)">click meeeeee</button>
-        <button id="ifyouwontclickme" name="ifyouwontclickme" onclick="handelclick(event)">if you wont click me ****</button>
-        <button id="boom" name="boom" onclick="handelclick(event)">boom</button>
+        <button id="clickme" name="clickme" onclick="handelClick(event)">click me</button>
+        <button id="clickmeeeeee" name="clickmeeeeee" onclick="handelClick(event)">click meeeeee</button>
+        <button id="ifyouwontclickme" name="ifyouwontclickme" onclick="handelClick(event)">if you wont click me ****</button>
+        <button id="boom" name="boom" onclick="handelClick(event)">boom</button>
 
     </div>
    
@@ -19,10 +19,10 @@
 
     <script>
 
-        function handelclick(event){
+        function handelClick(event){
             let pushed = event.target.innerText
             let root= document.getElementById('root')
-            root.innerHTML += `<div>${pushed}</div>`;
+          console.log(pushed)
 
             fetch('/push', {
             method: 'POST',
@@ -33,7 +33,7 @@
         })
             .then(res => res.json())
             .then(data => {
-                document.getElementById('root').innerHTML = data.pushed; 
+                document.getElementById('root').innerHTML = data.pushButton; 
             })
                       
         }
