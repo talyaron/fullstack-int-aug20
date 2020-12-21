@@ -37,7 +37,7 @@
                 .then(data => {
                     console.log(data)
                     const { users } = data;
-                    writeUsersToDOM(users);
+                    // writeUsersToDOM(users);
                 })
         }
 
@@ -73,7 +73,7 @@
         function writeUsersToDOM(users) { //write users to DOM
             let html = '';
             users.forEach(user => {
-                html += `<p>${user.username} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
+                html += `<p>username:${user.username}, password:${user.password} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
             })
 
             document.getElementById('users').innerHTML = html;
@@ -81,13 +81,25 @@
 
         function handleUpdatePassword(e, username){
             e.preventDefault();
-          
+            // console.log(username)
 
-            //get the password from e.target.children.password.value
-
-            //fetch (put) body: {username, password}
-
-
+            const newPass = e.target.children[0].value;
+            fetch('/update', {
+                method: 'put',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ newPass, username})
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    const { users } = data;
+                    // writeUsersToDOM(users);
+                    // console.log(data.users)
+                    writeUsersToDOM(users);
+                })
+        
         }
     </script>
 </body>

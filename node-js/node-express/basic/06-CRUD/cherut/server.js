@@ -17,7 +17,7 @@ app.get('/read', (req, res) => {   //the client get something from the server (a
 
 app.post("/post", (req, res) => {  //the client send somthing to the server (also called CREATE)
 
-    console.log(req.body)
+    // console.log(req.body)
 
     let isUserExists = false;
     users.forEach(user => {
@@ -33,24 +33,22 @@ app.post("/post", (req, res) => {  //the client send somthing to the server (als
     };
 
 
-    console.log(users);
+    // console.log(users);
 
     res.send({ ok: true, users })
 })
 
 app.put("/update", (req, res) => {  //the client update somthing to the server (also called UPDATE)
-
-
-    //find index of user in users
-
-    // update the arry in this index, and change password
-
-    //return users
-
-    res.send({ ok: true })
+  
+    const {newPass, username} = req.body;
+    let usernameToUpdate = username;
+    // console.log(users)
+    // console.log(newPass, username);
+    let userIndex = users.findIndex(user => user.username === usernameToUpdate);
+    users[userIndex].password = newPass;
+    // console.log(users)
+    res.send({ ok: true, users })
 })
-
-
 
 app.delete("/delete", (req, res) => {  //the client ask the server to delete somthing on the server (also called DELETE)
 
