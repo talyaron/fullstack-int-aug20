@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hi</h1>
+    <form onsubmit='handleAddUser(event)'>
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="submit" value="add user">
+    </form>
+    <button onclick="handleGetUsers()">Get Users</button>
+
+    <div id="users"></div>
+    <script>
+        function handleAddUser(e) {
+            e.preventDefault();
+            let { username, password } = e.target.children;
+            username = username.value;
+            password = password.value;
+
+            console.log(username, password)
+
+            fetch('/post', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    const { users } = data;
+                    writeUsersToDOM(users);
+                })
+        }
+
+        function handleGetUsers() {
+            fetch('/read')
+                .then(r => r.json())
+                .then(data => {
+
+                    const { users } = data;
+                    writeUsersToDOM(users);
+
+                })
+        }
+
+        function deleteUser(username) {
+            console.log(username)
+
+            fetch('/delete', {
+                method: 'delete',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    const { users } = data;
+                    writeUsersToDOM(users);
+                })
+        }
+
+        function writeUsersToDOM(users) { //write users to DOM
+            let html = '';
+            users.forEach(user => {
+                html += `<p>${user.username} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
+            })
+
+            document.getElementById('users').innerHTML = html;
+        }
+
+        function handleUpdatePassword(e, username){
+            e.preventDefault();
+            console.log(username)
+        }
+    </script>
+</body>
+
+</html>
