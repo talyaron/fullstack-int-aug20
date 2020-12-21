@@ -39,18 +39,18 @@ app.post("/post", (req, res) => {  //the client send somthing to the server (als
 })
 
 app.put("/update", (req, res) => {  //the client update somthing to the server (also called UPDATE)
+const username = req.body.username
+const password = req.body.password
+console.log(username)
+let userIndex = users.findIndex(user => user.username === username);
+users[userIndex].password= password
 
 
-    //find index of user in users
+console.log(users)
 
-    // update the arry in this index, and change password
-
-    //return users
 
     res.send({ ok: true })
 })
-
-
 
 app.delete("/delete", (req, res) => {  //the client ask the server to delete somthing on the server (also called DELETE)
 
