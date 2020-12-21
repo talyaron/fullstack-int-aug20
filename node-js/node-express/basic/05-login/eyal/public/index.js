@@ -15,7 +15,7 @@ function handlesubmit(e) {
       .then((data) => {
         if (data.ok) {
           document.getElementById('main').innerHTML = '<h1>ok</h1>';
-          window.location.replace('ok.html');
+         window.location.replace('ok.html');
         } else {
           document.getElementById('main').innerHTML =
             '<h1>bad user name or password</h1>';

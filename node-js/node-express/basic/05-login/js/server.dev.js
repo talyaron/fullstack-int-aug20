@@ -10,14 +10,6 @@ var cookieParser = require('cookie-parser');
 
 var bodyParser = require('body-Parser');
 
-var _require = require('body-Parser'),
-    json = _require.json;
-
-var UserDitles = {
-  UserID: 'eyal',
-  Pass: '123'
-}; // default user ditties
-
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express["static"]('public'));
@@ -40,7 +32,8 @@ app.post('/U_info', function (req, res) {
     console.log('passed');
     res.cookie('userAuthorized', 'OK', {
       maxAge: 300
-    });
+    }); // res.redirect(307,'/ok.html');
+
     res.send({
       ok: true
     });
