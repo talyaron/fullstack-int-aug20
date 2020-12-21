@@ -2,44 +2,70 @@
 
 var express = require('express');
 
-var port = process.env.PORT || 3000;
 var app = express();
 
-var cookiesPractice = require('cookie-parser');
+var path = require('path');
+
+var cookieParser = require('cookie-parser');
 
 var bodyParser = require('body-Parser');
 
 var UserDitles = {
   UserID: "eyal",
   Pass: "123"
-};
+}; // default user ditties
+
 app.use(bodyParser.json());
-app.use(cookiesPractice());
+app.use(cookieParser());
+app.use(express["static"]('public'));
 app.post('/U_info', function (req, res) {
   var myUserIDs = req.cookies.myUserIDs;
-  console.log('sending to the claient: ' + req.body);
-  uditails = {
+  var test = myUserIDs;
+  console.log(myUserIDs);
+  var uditails = {
     id: req.body.UserID,
     pass: req.body.mypass
   };
 
   if (req.body.UserID == UserDitles.UserID && req.body.mypass == UserDitles.Pass) {
-    res.cookie('myUserIDs', uditails, {
-      maxAge: 3000
-    });
-    res.send({
-      ok: true
-    });
+    console.log("passed");
+    res.redirect("/ok.html");
+    /* res.send({
+        ok: true
+    }) */
   } else {
+    /*  res.redirect('/Rejected.html') */
     res.send({
       ok: false
     });
   }
 
   console.log(req.body.UserID);
+}); // add user to cookie
+
+app.post('/Change_user', function (req, res) {
+  //  let { Users } = req.cookies;
+  var uditails = {
+    id: req.body.UserID,
+    pass: req.body.mypass
+  };
+  var ud = JSON.stringify(uditails); //let Users1 = JSON.stringify(Users);
+
+  /*  console.log(Users)
+   if ((Users==null) || (Users==undefined)){
+       test = `${ud}`;
+   }else{
+       test = `${Users},${ud}`;
+   } */
+
+  test = "".concat(ud); //  console.log(test)
+
+  res.cookie('myUserIDs', test, {
+    maxAge: 300000
+  });
+  res.send();
 });
-app.post('/add_user', function (req, res) {});
-app.use(express["static"]('public'));
+var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("listen on port ".concat(port));
 });
