@@ -17,7 +17,7 @@ app.post("/send-login" ,(req, res)=>{
 app.use(express.static("public"))
 
 // מתחבר לכתובת
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; 
 app.listen(port, () => {
     console.log(port)
 })
