@@ -15,9 +15,7 @@ app.post('/send_user_information', (req, res) => {
 
         res.send({
             ok: true
-            /*  ,USER: req.body.UserID,
-             Pass: req.body.mypass,
-             userdb: UserDitles.UserID */
+           
         });
 
     } else {
