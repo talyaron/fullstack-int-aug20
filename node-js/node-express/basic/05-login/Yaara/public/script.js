@@ -2,6 +2,8 @@ const getCookie = () => {
     let cookieName = 'details';
     var name = cookieName + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
+    console.log(document.cookie)
+    console.log(decodedCookie)
     var ca = decodedCookie.split(';');
     for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
@@ -9,6 +11,7 @@ const getCookie = () => {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
+            console.log(c.substring(name.length, c.length));
             return c.substring(name.length, c.length);
         }
     }

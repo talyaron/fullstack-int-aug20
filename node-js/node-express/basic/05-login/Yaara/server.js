@@ -27,7 +27,9 @@ let userIndex = users.findIndex(user => user.name == req.body.name);
             // if the entered password is correct
 
             createCookie(res, req.body.name);   
-            res.send(true);
+            // res.send(true);
+            console.log('test')
+            res.redirect('/test.html')
             // console.log(req.body.name, req.body.password);
     } else {
         // the user found but the password is invalid
