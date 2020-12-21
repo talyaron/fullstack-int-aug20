@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="login">
+        <form action="" onsubmit="handlesubmit(event)"> <input id="userName" type="text" placeholder="Enter Username">
+        <input type="text" id="passWord" placeholder="Enter Password"> 
+        <button>submit</button>
+    </div></form> 
+    <script>
+       function handlesubmit(e){
+            e.preventDefault()
+            let userName =  e.target.userName.value
+            let passWord =  e.target.passWord.value
+            
+            console.log(userName)
+            console.log(passWord)
+            
+
+            fetch('/log-in', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userName,passWord })
+            }).then(res => res.json())
+            .then(data => {
+                // let cookie = document.cookie
+                // console.log(`ok = ${cookie}`)
+                
+                    
+
+                   
+                  
+                    
+                    
+                    
+
+                   
+                }
+
+            )}
+    </script>
+</body>
+</html>     
