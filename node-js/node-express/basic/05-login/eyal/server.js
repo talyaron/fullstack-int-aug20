@@ -1,6 +1,3 @@
-//https://www.xspdf.com/resolution/50688133.html
-// https://www.w3schools.com/js/js_cookies.asp
-
 const express = require('express');
 const app = express();
 const path = require('path');
