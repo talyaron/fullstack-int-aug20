@@ -22,7 +22,7 @@ function handleSubmit(e) {
             location.replace("/homepage.html");
 } else{
     let errorText = document.querySelector('.errorText');
-    errorText.innerHTML = 'login failed'; 
+    errorText.innerHTML = 'Login failed'; 
 }
              
         
