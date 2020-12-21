@@ -41,7 +41,13 @@ app.post("/post", (req, res) => {  //the client send somthing to the server (als
 app.put("/update", (req, res) => {  //the client update somthing to the server (also called UPDATE)
 
 
+  //find index of user in users
 
+    // update the arry in this index, and change password
+
+    //return users
+  
+  
     res.send({ ok: true })
 })
 
