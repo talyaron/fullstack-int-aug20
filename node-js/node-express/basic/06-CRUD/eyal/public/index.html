@@ -17,6 +17,8 @@
     <button onclick="handleGetUsers()">Get Users</button>
 
     <div id="users"></div>
+
+
     <script>
         function handleAddUser(e) {
             e.preventDefault();
@@ -70,25 +72,38 @@
                 })
         }
 
+       
+
         function writeUsersToDOM(users) { //write users to DOM
             let html = '';
             users.forEach(user => {
-                html += `<p>${user.username} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
+                html += `<p>${user.username} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}",)'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
             })
 
             document.getElementById('users').innerHTML = html;
         }
 
-        function handleUpdatePassword(e, username){
+        function handleUpdatePassword(e, username) {
             e.preventDefault();
-          
-
-            //get the password from e.target.children.password.value
-
-            //fetch (put) body: {username, password}
-
-
+           
+            console.log(username, e.target.children.newPassword.value);
+let newpass =  e.target.children.newPassword.value;
+let newUpass = {username,newpass}
+            fetch('/update', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUpass )
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    const { users } = data;
+                  //  writeUsersToDOM(users);
+                })
         }
+        
     </script>
 </body>
 

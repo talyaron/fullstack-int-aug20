@@ -1,122 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>passEnterd</title>
-</head>
-<style>
+  </head>
+  <style>
     h1 {
-        width: max-content;
-        margin: auto;
-        margin-bottom: 5%;
-        margin-top: 5%;
+      width: max-content;
+      margin: auto;
+      margin-bottom: 5%;
+      margin-top: 5%;
     }
 
     form {
-        padding: 5%;
-        /*  display: flex;
+      padding: 5%;
+      /*  display: flex;
          flex-direction: column; */
-        border: 1px solid black;
-        border-radius: 20px;
-background-color: cornsilk;
-        width: 30%;
-        margin-top: 10%;
-        margin: auto;
+      border: 1px solid black;
+      border-radius: 20px;
+      background-color: cornsilk;
+      width: 30%;
+      margin-top: 10%;
+      margin: auto;
     }
     .row {
-        display: flex;
-        
+      display: flex;
     }
-    #UserID{
-        flex: 1;
-        margin:1%
-       
+    #UserID {
+      flex: 1;
+      margin: 1%;
     }
-    #Password{
-        flex: 1;
-        margin:1%
+    #Password {
+      flex: 1;
+      margin: 1%;
     }
-    label{
-        margin:1%
+    label {
+      margin: 1%;
     }
-    input{
-        flex: 1; 
-        margin:1%;
+    input {
+      flex: 1;
+      margin: 1%;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div class="container">
-        <h1> Welcome!</h1>
+      <h1>Welcome!</h1>
 
-        <form onsubmit='handlesubmit(event)'>
-            <div class="row">
-                <label for="UserID">user name</label>
-                <input type="text" id="UserID" name='UserID'>
-            </div>
-            <div class="row">
-            <label for="password">password</label>
-            <input type="password" id="Password" name='Password'>
+      <form onsubmit="handlesubmit(event)">
+        <div class="row">
+          <label for="UserID">user name</label>
+          <input type="text" id="UserID" name="UserID" />
         </div>
         <div class="row">
-            <input type="submit">
-            <input type="button" onclick='handleAddUser(event)' value="Change User">
+          <label for="password">password</label>
+          <input type="password" id="Password" name="Password" />
         </div>
-        </form>
+        <div class="row">
+          <input type="submit" value="LogIn" />
+          <input
+            type="button"
+            onclick="handleAddUser(event)"
+            value="Add User"
+          />
+        </div>
+      </form>
 
-        <div id="main"></div>
+      <div id="main"></div>
     </div>
-    <script>
-
-        function handlesubmit(e) {
-            event.preventDefault();
-            console.log('submit')
-            const UserID = e.target.UserID.value;
-            const mypass = e.target.Password.value;
-            const UserDetlis = { UserID, mypass }
-
-            fetch('/U_info', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(UserDetlis)
-            }).then(res => res.json())
-                .then(data => {
-                    if (data.ok) {
-
-                document.getElementById('main').innerHTML = '<h1>ok</h1>'
-                window.location.replace('ok.html')
-                }else   {
-                    document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'
-                    window.location.replace('Rejected.html')
-                }
-
-                console.log(data)
-                document.getElementById('root').innerText= data.body
-               
-
-                })
-            console.log(UserDetlis);
-        }
-
-        function handleAddUser(e) {
-         const UserID =  document.getElementById('UserID').value
-         const mypass =  document.getElementById('Password').value
-         console.log(UserID )
-            const UserDetlis = { UserID, mypass }
-            
-            console.log(UserDetlis )
-
- 
-            fetch('/Change_user', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(UserDetlis)
-            }).then(res => res.json())
-                .then(data => { })
-        } 
-    </script>
-</body>
-
+   <script src="index.js"></script>
+  </body>
 </html>
