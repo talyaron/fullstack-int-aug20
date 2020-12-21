@@ -7,11 +7,20 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 app.post('/push' , (req,res)=>{
-    let {count} = req.body.pushed
+    let {count} = req.cookies
+    let pbooten = ''
+    console.log(count)
 
-    if(!count){
-        res.cookie('count',req.body.pushed, { maxAge: 5000000, httpOnly: false });
-    }
+    if (count !== undefined) {
+        pbooten = `${count} -- ${req.body.pushed}`;
+   } else {
+    pbooten = `${req.body.pushed}`;
+   }
+   res.cookie('count', pbooten, { maxAge: 5000000, httpOnly: false });
+    res.send({
+        pbooten
+    });
+
 })
 
 app.use(express.static('public')) 
