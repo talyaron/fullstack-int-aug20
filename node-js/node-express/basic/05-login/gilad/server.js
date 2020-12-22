@@ -7,16 +7,16 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 app.post('/log-in', (req, res) => {
-let ok = false
-let userName = req.body.userName
-let passWord = req.body.passWord
-console.log(userName)
-console.log(passWord)
-if(userName==`gilad` && passWord==123){
-    ok = true
-}
-res.cookie(`ok`,ok,{maxAge:2000})
-res.send({ok})
+    let ok = false
+    let userName = req.body.userName
+    let passWord = req.body.passWord
+    console.log(userName)
+    console.log(passWord)
+    if (userName == `gilad` && passWord == 123) {
+        ok = true
+    }
+    res.cookie(`ok`, ok, { maxAge: 2000 })
+    res.send({ ok })
 })
 
 

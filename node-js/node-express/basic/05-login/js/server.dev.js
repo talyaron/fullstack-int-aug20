@@ -10,59 +10,102 @@ var cookieParser = require('cookie-parser');
 
 var bodyParser = require('body-Parser');
 
-var UserDitles = {
-  UserID: "eyal",
-  Pass: "123"
-}; // default user ditties
-
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express["static"]('public'));
 app.post('/U_info', function (req, res) {
-  var myUserIDs = req.cookies.myUserIDs;
-  var test = myUserIDs;
-  console.log(myUserIDs);
-  var uditails = {
+  var myUserIDs = req.cookies.myUserIDs; //get all cookies
+
+  var userIdArry = JSON.parse("[".concat(myUserIDs, "]")); // set the cookie as object
+
+  var NewUditails = {
     id: req.body.UserID,
     pass: req.body.mypass
-  };
+  }; //the userID that the user typed - 
 
-  if (req.body.UserID == UserDitles.UserID && req.body.mypass == UserDitles.Pass) {
-    console.log("passed");
-    res.redirect("/ok.html");
-    /* res.send({
-        ok: true
-    }) */
+  var filteredArray = userIdArry.filter(function (user) {
+    return user.id === NewUditails.id;
+  });
+  var resultarry = filteredArray[0]; //in case we will find more the one take the first
+
+  if (req.body.UserID == resultarry.id && req.body.mypass == resultarry.pass) {
+    console.log('passed');
+    res.cookie('userAuthorized', 'OK', {
+      maxAge: 300
+    }); // res.redirect(307,'/ok.html');
+
+    res.send({
+      ok: true
+    });
   } else {
-    /*  res.redirect('/Rejected.html') */
+    console.log('rejected');
     res.send({
       ok: false
     });
   }
+});
+/*  not working ---------------------------------------------------
+app.post("/U_info", (req, res) => {
 
-  console.log(req.body.UserID);
-}); // add user to cookie
+    const { myUserIDs } = req.cookies; //get all cookies
+    const userIdArry = JSON.parse(`[${myUserIDs}]`); // set the cookie as object
+    const NewUditails = { id: req.body.UserID, pass: req.body.mypass }; //the userID that the user typed - 
+    const filteredArray = userIdArry.filter((user) => user.id === NewUditails.id);
+    let resultarry = filteredArray[0]; //in case we will find more the one take the first
+     
+    if (
+      req.body.UserID == resultarry.id &&
+      req.body.mypass == resultarry.pass
+    ) {
+      console.log('passed');
+      res.redirect("/ok.html");
+    } else {
+      console.log('rejected');
+      res.redirect("/Rejected.html");
+    }
+  
+  });
+  -------------------------------------------------------------------- */
+// add user to cookie
 
 app.post('/Change_user', function (req, res) {
-  //  let { Users } = req.cookies;
-  var uditails = {
+  var myUserIDs = req.cookies.myUserIDs; //get all cookies
+
+  var NewUditails = {
     id: req.body.UserID,
     pass: req.body.mypass
-  };
-  var ud = JSON.stringify(uditails); //let Users1 = JSON.stringify(Users);
+  }; //the userID that the user typed - 
 
-  /*  console.log(Users)
-   if ((Users==null) || (Users==undefined)){
-       test = `${ud}`;
-   }else{
-       test = `${Users},${ud}`;
-   } */
+  var ud = JSON.stringify(NewUditails);
 
-  test = "".concat(ud); //  console.log(test)
+  if (myUserIDs) {
+    // if cookie is present
+    var userIdArry = JSON.parse("[".concat(myUserIDs, "]")); // set the cookie as object
+    // try to filter the object and find if the user is exist
 
-  res.cookie('myUserIDs', test, {
-    maxAge: 300000
-  });
+    var filteredArray = userIdArry.filter(function (user) {
+      return user.id === NewUditails.id;
+    });
+    var resultarry = filteredArray[0]; //in case we will find more the one take the first
+
+    if (resultarry == undefined) {
+      myUserIDs = "".concat(myUserIDs, ",").concat(ud);
+      console.log("add: ".concat(ud));
+    } else {
+      myUserIDs = "".concat(ud);
+      console.log("user: ".concat(myUserIDs, " is axisit"));
+    }
+
+    res.cookie('myUserIDs', myUserIDs, {
+      maxAge: 3000000
+    });
+  } else {
+    myUserIDs = "".concat(ud);
+    res.cookie('myUserIDs', myUserIDs, {
+      maxAge: 3000000
+    });
+  }
+
   res.send();
 });
 var port = process.env.PORT || 3000;
