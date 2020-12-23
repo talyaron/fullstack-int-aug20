@@ -45,7 +45,7 @@ app.post('/check-user', (req, res) => {
        )
 console.log(check)
 if(check){
-    res.cookie("userAuthorized",user,{ maxAge: 30000, httpOnly:false});
+    res.cookie("userAuthorized",user,{ maxAge: 5000, httpOnly:false});
 }
 res.send({check})
 })
