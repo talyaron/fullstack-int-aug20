@@ -10,19 +10,14 @@
 <body>
     <h1>Hi</h1>
     <form onsubmit='handleAddUser(event)'>
-        <input type="text" name="username" id="username">
-        <input type="password" name="password" id="password">
+        <input type="text" name="username">
+        <input type="password" name="password">
         <input type="submit" value="add user">
-       
     </form>
-    <button onclick="handleGetUsers()">Get Users</button>
-
-    <button onclick="updatePass()">updatePass</button>
-
 
     <div id="users"></div>
     <script>
-        function handleAddUser(e) {
+        handleAddUser = (e) => {
             e.preventDefault();
             let {
                 username,
@@ -43,34 +38,8 @@
                         password
                     })
                 })
-                .then(r => r.json())
+                .then(res => res.json())
                 .then(data => {
-                    console.log(data)
-                    const {
-                        users
-                    } = data;
-                    writeUsersToDOM(users);
-                })
-        }
-        function updatePass() {
-            const username = document.getElementById("username").value
-            const password = document.getElementById("password").value
-       
-            console.log(username, password)
-
-            fetch('/update', {
-                    method: 'put',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        username,
-                        password
-                    })
-                })
-                .then(r => r.json())
-                .then(data => {
-                    console.log(data)
                     const {
                         users
                     } = data;
@@ -78,21 +47,8 @@
                 })
         }
 
-        function handleGetUsers() {
-            fetch('/read')
-                .then(r => r.json())
-                .then(data => {
 
-                    const {
-                        users
-                    } = data;
-                    writeUsersToDOM(users);
-
-                })
-        }
-        
-
-        function deleteUser(username) {
+        deleteUser = (username) => {
             console.log(username)
 
             fetch('/delete', {
@@ -102,11 +58,11 @@
                     },
                     body: JSON.stringify({
                         username
+
                     })
                 })
-                .then(r => r.json())
+                .then(res => res.json())
                 .then(data => {
-                    console.log(data)
                     const {
                         users
                     } = data;
@@ -115,19 +71,58 @@
         }
 
 
-        function writeUsersToDOM(users) { //write users to DOM
+
+
+        writeUsersToDOM = (users) => { //write users to DOM
             let html = '';
             users.forEach(user => {
                 html +=
-                    `<p>${user.username} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
+                    `<p>${user.username}
+                    
+                        <button onclick='deleteUser("${user.username}")'>
+                            Delete User
+                         </button>
+                         
+
+                         <form onsubmit='updatePassword(event, "${user.username}")'>
+                          <input type='text' name='newPassword' placeholder='new password' >
+                          <button type='submit'>
+                          UpdatePassword
+                          </button>
+                         </form>
+                    </p>`
             })
 
             document.getElementById('users').innerHTML = html;
         }
 
-        function handleUpdatePassword(e, username) {
+
+        updatePassword = (e, username) => {
             e.preventDefault();
-            console.log(username)
+            let newPassword = e.target.children.newPassword.value
+
+            // newPassword = newPassword.value
+            console.log(newPassword)
+                //get the password from e.target
+                //fetch (put) body: {username, password}
+            fetch('/update', {
+                    method: 'put',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username,
+                        newPassword
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        users
+                    } = data;
+                })
+
+
         }
     </script>
 </body>
