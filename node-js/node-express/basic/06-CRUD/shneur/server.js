@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json())
 
-
 const users = []; //mock data - database simulator
 
 app.use(express.static('public'))
@@ -44,18 +43,20 @@ app.post("/post", (req, res) => { //the client send somthing to the server (also
 
 app.put("/update", (req, res) => { //the client update somthing to the server (also called UPDATE)
 
-
     //find index of user in users
-    const {
+    let {
         newPassword
     } = req.body
-    let userIndex = users.findIndex(user => user.password === newPassword);
 
+    let {
+        username
+    } = req.body
+
+    let userIndex = users.findIndex(user => user.username === username);
 
     // update the arry in this index, and change password
     users[userIndex].password = newPassword
     console.log(users)
-
 
     //return users
 
@@ -65,7 +66,6 @@ app.put("/update", (req, res) => { //the client update somthing to the server (a
 
     })
 })
-
 
 
 app.delete("/delete", (req, res) => { //the client ask the server to delete somthing on the server (also called DELETE)
@@ -80,7 +80,6 @@ app.delete("/delete", (req, res) => { //the client ask the server to delete somt
     });
 
 
-
     //remove the user from the array
     users.splice(userIndex, 1);
 
@@ -92,7 +91,6 @@ app.delete("/delete", (req, res) => { //the client ask the server to delete somt
         users
     })
 })
-
 
 
 app.listen(3000, () => {
