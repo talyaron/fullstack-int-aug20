@@ -18,5 +18,27 @@
 </style>
 <body>
     <h1>passed</h1>
-</body>
+    <script>
+
+          
+
+    function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2){
+     return parts.pop().split(';').shift(); 
+  } else{
+     return false;
+  }
+}
+
+    setInterval(() => {
+     
+      if(!getCookie('userAuthorized')){
+        location.replace("/");
+      }
+  }, 5000);
+         
+  
+    </script>
 </html>

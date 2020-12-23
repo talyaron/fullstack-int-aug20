@@ -82,6 +82,27 @@
         function handleUpdatePassword(e, username){
             e.preventDefault();
             console.log(username)
+             
+            
+            //get the password from e.target.children.password.value
+
+            //fetch (put) body: {username, password}
+            const newPass = e.target.children[0].value;
+            fetch('/update', {
+                method: 'put',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ newPass, username})
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    const { users } = data;
+                    // writeUsersToDOM(users);
+                    // console.log(data.users)
+                    writeUsersToDOM(users);
+                })
         }
     </script>
 </body>

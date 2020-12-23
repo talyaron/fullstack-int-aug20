@@ -40,8 +40,20 @@ app.post("/post", (req, res) => {  //the client send somthing to the server (als
 
 app.put("/update", (req, res) => {  //the client update somthing to the server (also called UPDATE)
 
+    const {newPass, username} = req.body;
+    let usernameToUpdate = username;
+    // console.log(users)
+    // console.log(newPass, username);
+    let userIndex = users.findIndex(user => user.username === usernameToUpdate);
+    users[userIndex].password = newPass;
+    // console.log(users)
+  //find index of user in users
 
+    // update the arry in this index, and change password
 
+    //return users
+  
+  
     res.send({ ok: true })
 })
 
