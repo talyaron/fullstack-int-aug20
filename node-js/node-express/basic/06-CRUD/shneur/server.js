@@ -46,10 +46,15 @@ app.put("/update", (req, res) => { //the client update somthing to the server (a
 
 
     //find index of user in users
-    const {
+    let {
         newPassword
     } = req.body
-    let userIndex = users.findIndex(user => user.password === newPassword);
+
+    let {
+        username
+    } = req.body
+
+    let userIndex = users.findIndex(user => user.username === username);
 
 
     // update the arry in this index, and change password
