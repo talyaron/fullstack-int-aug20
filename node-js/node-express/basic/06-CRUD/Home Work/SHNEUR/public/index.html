@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color: bisque;
+    }
+
+    .cardsGrid {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        grid-template-rows: auto;
+        gap: 30px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 5px;
+        box-shadow: teal 10px 10px 10px;
+        width: 200px;
+        max-width: 200px;
+        height: 50vw;
+        max-height: 250px;
+        transition: all;
+        transition-duration: 200ms;
+    }
+
+    .card:hover {
+        background-color: rgb(255, 184, 176);
+
+    }
+
+    .deleteButton {
+        border-radius: 50%;
+        box-shadow: rgb(1, 136, 136) 5px 5px 7px;
+        background-color: rgb(255, 121, 121);
+        width: 20px;
+        height: 20px;
+        position: relative;
+        opacity: 20%;
+        transition: all;
+        transition-duration: 200ms;
+        left: -5px;
+        top: -5px;
+
+    }
+
+    .deleteButton:hover {
+        opacity: 100;
+        width: 30px;
+        height: 30px;
+
+    }
+
+    .editButton {
+        border-radius: 50%;
+        box-shadow: rgb(1, 136, 136) 5px 5px 7px;
+        background-color: rgb(98, 127, 252);
+        width: 20px;
+        height: 20px;
+        position: relative;
+        opacity: 20%;
+        transition: all;
+        transition-duration: 200ms;
+        right: -184px;
+        top: -25px;
+
+
+
+    }
+
+    .editButton:hover {
+        opacity: 100;
+        width: 30px;
+        height: 30px;
+
+    }
+</style>
+
+<body>
+    <h1>Hi this is my store</h1>
+    <div class="cardsGrid">
+        <div class="card">
+            <div class="deleteButton"></div>
+            <div class="editButton"></div>
+
+        </div>
+        <div class="card">
+            <div class="deleteButton"></div>
+            <div class="editButton"></div>
+
+        </div>
+        <div class="card">
+            <div class="deleteButton"></div>
+            <div class="editButton"></div>
+
+        </div>
+        <div class="card">
+            <div class="deleteButton"></div>
+            <div class="editButton"></div>
+
+        </div>
+        <div class="card">
+            <div class="deleteButton"></div>
+            <div class="editButton"></div>
+
+        </div>
+        <div class="card">
+            <div class="deleteButton"></div>
+            <div class="editButton"></div>
+
+        </div>
+        <div class="card">
+            <div class="deleteButton"></div>
+            <div class="editButton"></div>
+
+        </div>
+        <div class="card">
+            <div class="deleteButton"></div>
+            <div class="editButton"></div>
+
+        </div>
+
+
+    </div>
+    <form onsubmit='addProduct(event)'>
+        <input type="text" name="proName">
+        <input type="text" name="proPrice">
+        <input type="submit" value="add user">
+    </form>
+
+    <div id="users"></div>
+    <script>
+        addProduct = (e) => {
+            e.preventDefault();
+            let {
+                proName,
+                proPrice
+            } = e.target.children;
+            proName = proName.value;
+            proPrice = proPrice.value;
+
+            console.log(proName, proPrice)
+
+            fetch('/post', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        proName,
+                        proPrice
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        products
+                    } = data;
+                    writeToDOM(products);
+                })
+        }
+
+
+        deleteUser = (proName) => {
+            console.log(proName)
+
+            fetch('/delete', {
+                    method: 'delete',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        proName
+
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        products
+                    } = data;
+                    writeToDOM(products);
+                })
+        }
+
+
+
+
+        writeToDOM = (products) => {
+            let html = '';
+            products.forEach(product => {
+                html +=
+                    `
+                    <div class="card">
+                      <div class="deleteButton"></div>
+                      <div class="editButton"></div>
+
+                    </div>
+                    
+                    
+                    <p>${product.proName}
+                    
+                        <button onclick='deleteUser("${product.proName}")'>
+                            Delete User
+                         </button>
+                         
+
+                         <form onsubmit='updatePassword(event, "${product.proName}")'>
+                          <input type='text' name='newPassword' placeholder='new password' >
+                          <button type='submit'>
+                          UpdatePassword
+                          </button>
+                         </form>
+                    </p>`
+            })
+
+            document.getElementById('products').innerHTML = html;
+        }
+
+
+        updatePassword = (e, proName) => {
+            e.preventDefault();
+            let newPassword = e.target.children.newPassword.value
+
+            console.log(newPassword)
+
+            fetch('/update', {
+                    method: 'put',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        proName,
+                        newPassword
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        products
+                    } = data;
+                    console.log(products)
+
+                })
+
+
+        }
+    </script>
+</body>
+
+</html>
