@@ -1,14 +1,8 @@
-//https://www.xspdf.com/resolution/50688133.html
-// https://www.w3schools.com/js/js_cookies.asp
-
 const express = require('express');
 const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-Parser');
-const { json } = require('body-Parser');
-const UserDitles = { UserID: 'eyal', Pass: '123' }; // default user ditties
-
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static('public'));
@@ -29,6 +23,7 @@ app.post('/U_info', (req, res) => {
   ) {
     console.log('passed');
     res.cookie('userAuthorized', 'OK', { maxAge: 300 });
+    // res.redirect(307,'/ok.html');
     res.send({
     ok: true,
     });
