@@ -1,10 +1,11 @@
 function handleGetProduct() {
-  alert('get');
+
   fetch('/read')
       .then(r => r.json())
       .then(data => {
           const { Products } = data;
           console.log(Products)
+          writeProductsToDOM(Products);
           // writeUsersToDOM(products);
       })
 }
@@ -12,7 +13,6 @@ function handleGetProduct() {
 
 function handleAddProduct(e) {
 
-  alert('add');
   e.preventDefault();
   let { name, imgUrl ,price} = e.target.children;
   name = name.value;
@@ -33,62 +33,68 @@ function handleAddProduct(e) {
 
         const { Products } = data;
         console.log(Products)
-          // writeUsersToDOM(users);
+ 
       })
 }
 
 
 
-function handleDeleteProduct(username) {
-
-  alert('del');
-  console.log(username)
+function handleDeleteProduct(name) {
 
   fetch('/delete', {
       method: 'delete',
       headers: {
           'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username })
+      body: JSON.stringify({ name })
   })
       .then(r => r.json())
       .then(data => {
-          console.log(data)
-          const { users } = data;
-          writeUsersToDOM(users);
+        const { Products } = data;
+        console.log(Products)
+        writeProductsToDOM(Products);
       })
 }
 
-function writeUsersToDOM(users) { //write users to DOM
-  let html = '';
-  users.forEach(user => {
-      html += `<p>username:${user.username}, password:${user.password} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
-  })
-
-  document.getElementById('users').innerHTML = html;
-}
-
-function handleUpdateProduct(e, username){
-  alert('update');
+function handleUpdateProduct(e, nameToUpdate){
+//   alert('update');
 
   e.preventDefault();
   // console.log(username)
 
-  const newPass = e.target.children[0].value;
+//   const newProductDetails = e.target.children[0].value;
+  let { name, imgUrl, price } = e.target.children;
+  newName = name.value;
+  newImgUrl = imgUrl.value;
+  newPrice = price.value;
+
   fetch('/update', {
       method: 'put',
       headers: {
           'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ newPass, username})
+      body: JSON.stringify({ newName, newImgUrl, newPrice, nameToUpdate })
   })
       .then(r => r.json())
       .then(data => {
           console.log(data)
-          const { users } = data;
+          const { Products } = data;
           // writeUsersToDOM(users);
-          // console.log(data.users)
-          writeUsersToDOM(users);
+          console.log(Products)
+          writeProductsToDOM(Products);
       })
 
 }
+
+function writeProductsToDOM(Products) {
+    let html = '';
+    Products.forEach(product => {
+        html += `<p>name:${product.name},  price:${product.price} <button onclick='handleDeleteProduct("${product.name}")'>Delete product</button></p><img src="${product.imgUrl}">
+        <form onsubmit='handleUpdateProduct(event, "${product.name}")'><input type="text" name="name" placeholder="name">
+        <input type="text" name="imgUrl" placeholder="img-url">
+        <input type="number" name="price" placeholder="price">
+        <input type="submit" value="update product"></form>`
+    })
+  
+    document.querySelector('.product').innerHTML = html;
+  }
