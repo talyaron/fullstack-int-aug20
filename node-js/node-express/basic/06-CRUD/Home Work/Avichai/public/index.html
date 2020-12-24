@@ -4,29 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<style>
-    .product {
-        width: 50%;
-        margin: auto;
-        margin-top: 10px;
-        border: 1px solid black;
-    }
-</style>
 
 <body>
 
-    <form onsubmit="handleAddProduct(event)">
-        <input type='text' name="productName" placeholder="Product Name" required>
-        <input type='number' name="productPrice" placeholder="Product Price" required>
-        <input type='text' name="productIMG" placeholder="Product IMG" required>
-        <input type="submit" value="Add Product">
-    </form>
+    <div class="product__page">
+        <form class="product__create" onsubmit="handleAddProduct(event)">
+            <input type='text' name="productName" placeholder="Product Name" required>
+            <input type='number' name="productPrice" placeholder="Product Price" required>
+            <input type='text' name="productIMG" placeholder="Product IMG(URL)" required>
+            <input type="submit" value="Add Product">
+        </form>
 
-    <button onclick="showProducts()">Show all products</button>
-    <div id="products"></div>
-
+        <button class="product__showAll" onclick="showProducts()">Show all products</button>
+        <div id="products"></div>
+    </div>
     <script src="js.js"></script>
 </body>
 
