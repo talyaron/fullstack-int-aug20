@@ -1,16 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        background-color: bisque;
+    }
+
+    .cardsGrid {
+        display: grid;
+        grid-area: auto;
+        gap: 30px;
+    }
+    .card{
+        background-color: white;
+        padding: 5px;
+        box-shadow: teal 10px 10px 10px ;
+        max-width: 50px;
+        max-height: 100px;
+        display: grid;
+        grid-template-rows: 4fr 1fr 1fr;
+
+
+    }
+</style>
+
 <body>
+    <h1>Hi this is my store</h1>
+    <div class="cardsGrid">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+
+    </div>
 
 
+
+
+    
+    
+    <form onsubmit='handleAddUser(event)'>
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="submit" value="add user">
+    </form>
+
+    <div id="users"></div>
     <script>
+        handleAddUser = (e) => {
+            e.preventDefault();
+            let {
+                username,
+                password
+            } = e.target.children;
+            username = username.value;
+            password = password.value;
 
-        
+            console.log(username, password)
+
+            fetch('/post', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username,
+                        password
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        users
+                    } = data;
+                    writeUsersToDOM(users);
+                })
+        }
+
+
+        deleteUser = (username) => {
+            console.log(username)
+
+            fetch('/delete', {
+                    method: 'delete',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username
+
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        users
+                    } = data;
+                    writeUsersToDOM(users);
+                })
+        }
+
+
+
+
+        writeUsersToDOM = (users) => { //write users to DOM
+            let html = '';
+            users.forEach(user => {
+                html +=
+                    `<p>${user.username}
+                    
+                        <button onclick='deleteUser("${user.username}")'>
+                            Delete User
+                         </button>
+                         
+
+                         <form onsubmit='updatePassword(event, "${user.username}")'>
+                          <input type='text' name='newPassword' placeholder='new password' >
+                          <button type='submit'>
+                          UpdatePassword
+                          </button>
+                         </form>
+                    </p>`
+            })
+
+            document.getElementById('users').innerHTML = html;
+        }
+
+
+        updatePassword = (e, username) => {
+            e.preventDefault();
+            let newPassword = e.target.children.newPassword.value
+
+            // newPassword = newPassword.value
+            console.log(newPassword)
+            //get the password from e.target
+            //fetch (put) body: {username, password}
+            fetch('/update', {
+                    method: 'put',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username,
+                        newPassword
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        users
+                    } = data;
+                    console.log(users)
+
+                })
+
+
+        }
     </script>
 </body>
+
 </html>

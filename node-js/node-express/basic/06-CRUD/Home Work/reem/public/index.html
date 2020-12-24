@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="handleGetProduct(event)"> 
+    <h1>Product management</h1>
+
+    <div class="products">
+        <form onsubmit='handleAddProduct(event)'>
+            <input type="text" name="name" placeholder="name">
+            <input type="text" name="imgUrl" placeholder="img-url">
+            <input type="number" name="price" placeholder="price">
+            <input type="submit" value="add product">
+        </form>
+        <!-- <button onclick="handleAddProduct(event)">add</button> -->
+        <button onclick="handleGetProduct(event)">get</button>
+        <div class="product">
+            <!-- <h3>name</h3>
+            <img src="" alt="">
+            <p>price</p>
+            <div class="buttons">
+                <button onclick="handleDeleteProduct(event)">delete</button>
+                <button onclick="handleUpdateProduct(event)">update</button>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

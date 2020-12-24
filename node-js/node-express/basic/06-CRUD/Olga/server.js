@@ -39,17 +39,15 @@ app.post("/post", (req, res) => {  //the client send somthing to the server (als
 })
 
 app.put("/update", (req, res) => {  //the client update somthing to the server (also called UPDATE)
-const username = req.body.username
-const password = req.body.password
-console.log(username)
-let userIndex = users.findIndex(user => user.username === username);
-users[userIndex].password= password
 
-
-console.log(users)
-
-
-    res.send({ ok: true })
+    const updateUser  = req.body;
+    console.log(updateUser)
+    
+    let userIndex = users.findIndex(user => user.username === updateUser.username);
+    //console.log(userIndex)
+    users.splice(userIndex, 1); 
+    users.push(updateUser);
+    res.send({ ok: true, users })
 })
 
 app.delete("/delete", (req, res) => {  //the client ask the server to delete somthing on the server (also called DELETE)
