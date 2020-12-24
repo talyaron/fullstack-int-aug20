@@ -1,20 +1,20 @@
 function handleGetProduct() {
 
   fetch('/read')
-      .then(r => r.json())
-      .then(data => {
-          const { Products } = data;
-          console.log(Products)
-          writeProductsToDOM(Products);
-          // writeUsersToDOM(products);
-      })
+    .then(r => r.json())
+    .then(data => {
+      const { Products } = data;
+      console.log(Products)
+      writeProductsToDOM(Products);
+      // writeUsersToDOM(products);
+    })
 }
 
 
 function handleAddProduct(e) {
 
   e.preventDefault();
-  let { name, imgUrl ,price} = e.target.children;
+  let { name, imgUrl, price } = e.target.children;
   name = name.value;
   imgUrl = imgUrl.value;
   price = price.value;
@@ -22,51 +22,51 @@ function handleAddProduct(e) {
   console.log(name, imgUrl, price)
 
   fetch('/add', {
-      method: 'post',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name, imgUrl, price })
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name, imgUrl, price })
   })
-      .then(r => r.json())
-      .then(data => {
+    .then(r => r.json())
+    .then(data => {
 
-        const { Products } = data;
-        console.log(Products);
-        writeProductsToDOM(Products);
-        e.target.children.name.value= '';
-        e.target.children.imgUrl.value= '';
-        e.target.children.price.value= '';
-      })
+      const { Products } = data;
+      console.log(Products);
+      writeProductsToDOM(Products);
+      e.target.children.name.value = '';
+      e.target.children.imgUrl.value = '';
+      e.target.children.price.value = '';
+    })
 }
 
 
 
 function handleDeleteProduct(name) {
 
-    console.log(name)
+  console.log(name)
   fetch('/delete', {
-      method: 'delete',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name })
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name })
   })
-      .then(r => r.json())
-      .then(data => {
-        const { Products } = data;
-        console.log(Products)
-        writeProductsToDOM(Products);
-      })
+    .then(r => r.json())
+    .then(data => {
+      const { Products } = data;
+      console.log(Products)
+      writeProductsToDOM(Products);
+    })
 }
 
-function handleUpdateProduct(e, nameToUpdate){
-//   alert('update');
+function handleUpdateProduct(e, nameToUpdate) {
+  //   alert('update');
 
   e.preventDefault();
   // console.log(username)
 
-//   const newProductDetails = e.target.children[0].value;
+  //   const newProductDetails = e.target.children[0].value;
   let { name, imgUrl, price } = e.target.children;
   newName = name.value;
   newImgUrl = imgUrl.value;
@@ -74,39 +74,39 @@ function handleUpdateProduct(e, nameToUpdate){
 
   console.log(newImgUrl)
   fetch('/update', {
-      method: 'put',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ newName, newImgUrl, newPrice, nameToUpdate })
+    method: 'put',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ newName, newImgUrl, newPrice, nameToUpdate })
   })
-      .then(r => r.json())
-      .then(data => {
-          console.log(data)
-          const { Products } = data;
-          // writeUsersToDOM(users);
-          console.log(Products)
-          writeProductsToDOM(Products);
-      })
+    .then(r => r.json())
+    .then(data => {
+      console.log(data)
+      const { Products } = data;
+      // writeUsersToDOM(users);
+      console.log(Products)
+      writeProductsToDOM(Products);
+    })
 
 }
 
-function send(){
-    console.log('send')
-    document.getElementById('submit').click();
+function send() {
+  console.log('send')
+  document.getElementById('submit').click();
 }
 
 function writeProductsToDOM(Products) {
-    let html = '';
-    Products.forEach(product => {
-        html +=
-        //  `<p>name:${product.name},  price:${product.price} <button onclick='handleDeleteProduct("${product.name}")'>Delete product</button></p><img src="${product.imgUrl}">
-        // <form onsubmit='handleUpdateProduct(event, "${product.name}")'><input type="text" name="name" placeholder="name">
-        // <input type="text" name="imgUrl" placeholder="img-url">
-        // <input type="number" name="price" placeholder="price">
-        // <input type="submit" value="update product"></form>`
-        
-    `<div class="card" style="width: 18rem;">
+  let html = '';
+  Products.forEach(product => {
+    html +=
+      //  `<p>name:${product.name},  price:${product.price} <button onclick='handleDeleteProduct("${product.name}")'>Delete product</button></p><img src="${product.imgUrl}">
+      // <form onsubmit='handleUpdateProduct(event, "${product.name}")'><input type="text" name="name" placeholder="name">
+      // <input type="text" name="imgUrl" placeholder="img-url">
+      // <input type="number" name="price" placeholder="price">
+      // <input type="submit" value="update product"></form>`
+
+      `<div class="card" style="width: 18rem;">
     <img class="card-img-top" src="${product.imgUrl}" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">${product.name}</h5>
@@ -151,9 +151,9 @@ function writeProductsToDOM(Products) {
     </div>
   </div>
     `
-    
-    })
 
-  
-    document.querySelector('.product').innerHTML = html;
-  }
+  })
+
+
+  document.querySelector('.product').innerHTML = html;
+}
