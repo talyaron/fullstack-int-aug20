@@ -10,12 +10,18 @@ app.use(bodyParser.json()) //return req.body = body (from client)
 
 app.post('/send-chosen', (req, res, next) => {
 
-    console.log(req.body.chosen);
-    let { IFollowYou } = req.body.chosen;
-    
-    if(!IFollowYou){ //if IFollowYou do not exist, create it
-        res.cookie('IFollowYou',req.body.chosen, { maxAge: 500000, httpOnly: true });
-    }
+    console.log(req.body.chosenArr);
+    let  IFollowYou  ="'"+JSON.stringify( req.body.chosenArr)+ "'";
+    console.log(IFollowYou)
+    // if(!IFollowYou){ //if IFollowYou do not exist, create it
+        res.cookie('IFollowYou',IFollowYou, { maxAge: 500000, httpOnly: false }).send();
+    // }
+ 
+    next(); 
+})
+
+app.post('/reset', (req, res, next) => {
+        res.cookie('IFollowYou',"", { maxAge: 1, httpOnly: false }).send();
     next(); 
 })
 
