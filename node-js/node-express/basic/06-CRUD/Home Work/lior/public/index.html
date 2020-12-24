@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+    <form onsubmit='handleAddprodacts(event)'>
+        <input type="text" name="img">
+        <input type="text" name="name">
+        <input type="text" name="price">
+        <input type="submit" value="add prodact">
+    </form>
+    <button onclick="handleGetprodacts()">Get prodacts</button>
+
+    <div id="prodacts"></div>
+
+    <script>
+
+function handleAddprodacts(e) {
+            e.preventDefault();
+            let { img , name , price} = e.target.children;
+            img = img.value;
+            name = name.value;
+            price = price.value;
+
+            console.log(img, name, price)
+
+            fetch('/post', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ img, name, price })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    const { prodacts } = data;
+                    writeUsersToDOM(prodacts);
+                })
+        }
+
+        function handleGetprodacts() {
+            fetch('/read')
+                .then(r => r.json())
+                .then(data => {
+
+                    const { prodacts } = data;
+                   writeprodactsToDOM(prodacts);
+
+                })
+        }
+
+        function writeprodactsToDOM(prodacts) { 
+            let html = '';
+            prodacts.forEach(prodact => {
+                html += `<p>${prodact.img,prodact.name,prodact.price}</p>`
+            })
+
+            document.getElementById('prodacts').innerHTML = html;
+        }
+
+    </script>
+</body>
+</html>

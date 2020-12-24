@@ -35,7 +35,13 @@ app.post("/send-new-price", function (req, res) {
   var productIndex = productsArray.findIndex(function (product) {
     return product.title === productToUpdate;
   });
-  productsArray[productIndex].price = newPrice;
+
+  if (newPrice == "") {
+    console.log("Sorry, You didn't enter a valid number");
+  } else {
+    productsArray[productIndex].price = newPrice;
+  }
+
   res.send({
     status: 200
   });
