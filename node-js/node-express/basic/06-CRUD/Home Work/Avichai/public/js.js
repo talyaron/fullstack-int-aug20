@@ -1,9 +1,23 @@
+function checkAdmin() {
+    fetch('/check-valid')
+        .then(r => r.json())
+        .then(data => {
+            console.log(data.isAdmin)
+            if (data.isAdmin) {
+                document.getElementById('product__create').style.display = "inline";
+
+            }
+        })
+}
+
+
 function handleAddProduct(e) {
     e.preventDefault()
     let { productName, productPrice, productIMG } = e.target.children;
     productName = productName.value
     productPrice = productPrice.value
     productIMG = productIMG.value
+
 
     console.log(productName, productPrice, productIMG)
     fetch('/post-product', {
@@ -19,8 +33,10 @@ function handleAddProduct(e) {
             const { products } = data
             writeProductsToDom(products)
         })
+
 }
 function showProducts() {
+
     fetch('/get-products')
         .then(r => r.json())
         .then(data => {
@@ -93,8 +109,21 @@ function writeProductsToDom(products) {
              <input type="text" name="newProductImg" placeholder="Edit Img(URL)">
              <input type="submit" value="Update Product"></form>
 
-             <button class="product__delete" onclick="handleDelete(event, '${product.productName}')">Delete Product</button>
+             <button id="product__delete" onclick="handleDelete(event, '${product.productName}')">Delete Product</button>
              </div>`
     })
     document.getElementById("products").innerHTML = html
+
+    fetch('/check-valid')
+        .then(r => r.json())
+        .then(data => {
+            console.log(data.isAdmin)
+            if (data.isAdmin) {
+                document.getElementById('editForm').style.display = "inline";
+                document.getElementById('product__delete').style.display = "inline";
+
+            }
+        })
+
+
 }
