@@ -88,8 +88,8 @@ function writeProductsToDom(products) {
 
 
              <form id="editForm" onsubmit="handleUpdate(event, '${product.productName}','${product.productPrice}','${product.productIMG}')">
-             <input type="text" name="newProductName" placeholder="Edit Name">
-             <input type="number" name="newProductPrice" placeholder="Edit Price">
+             <input type="text" name="newProductName" placeholder="Edit Name" value="${product.productName}">
+             <input type="number" name="newProductPrice" placeholder="Edit Price" value="${product.productPrice}">
              <input type="text" name="newProductImg" placeholder="Edit Img(URL)">
              <input type="submit" value="Update Product"></form>
 
