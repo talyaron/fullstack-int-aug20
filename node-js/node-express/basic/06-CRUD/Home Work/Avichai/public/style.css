@@ -3,11 +3,12 @@
     margin: auto;
 }
 
-.product__create {
+#product__create {
     display: flex;
     justify-content: center;
     width: 95%;
     margin: auto;
+    display: none;
 }
 
 .product__showAll {
@@ -22,7 +23,7 @@
     margin: auto;
     margin-top: 4%;
     border: 1px solid gray;
-    overflow: hidden;
+
     text-align: center;
 }
 
@@ -34,18 +35,20 @@
     display: flex;
     flex-direction: column;
     margin-top: 3%;
+    display: none;
 }
 
-.product__delete {
+#product__delete {
     margin-top: 2%;
     float: right;
     color: white;
     font-weight: 600;
     border: 1px solid black;
     background-color: rgb(209, 47, 47);
+    display: none;
 }
 
-.product__delete:hover {
+#product__delete:hover {
     background-color: red;
 }
 
