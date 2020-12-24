@@ -6,13 +6,15 @@ app.use(express.static('public'))
 let products = []
 
 app.post('/postProduct', (req, res) => {  
-    
-    console.log(req.body)
-    products.push(req.body)
-    console.log(products)
-    
-    
-    res.send(products);
+    let ok =true
+    products.forEach(product => {
+        if(product.name == req.body.name){
+        ok = false}  
+    });
+    if(ok){
+        products.push(req.body) 
+    }
+    res.send({products,ok});
 })
 app.delete("/delete", (req, res) => {  
 

@@ -10,6 +10,10 @@
     text-align: center;
     
     }
+    
+   #container{
+    background-color: aqua;
+   }
     #productCreator{
         margin-top: 5%;
         background-color: aqua;
@@ -17,31 +21,45 @@
         padding-top: 3vw;
     }
     #root{
-        background-color: blueviolet;
+        
         display: flex;
+       padding-bottom: 150px;
         
     }
     .products{
         border: solid 1px black;
         margin: 2px;
-        background-color: yellow;
+        background-color: rgba(255, 255, 255, 0.781);
+      
     }
+    .name{
+        color: blue;
+        font-size: 30px;
+    }
+    .price{
+        color: red;
+    }
+  
 
 </style>
 <body>
     <h1>welcome to my store.</h1>
     <h2>to add products please fill the folowing details</h2>
+    <div id="container">
     <div id="productCreator">
         <form onsubmit="handleSubmit(event)">
+           
             <input type="text" id="name" placeholder="enter item name">
-            <input type="text" id="description" placeholder="enter item description">
             <input type="number" id="price" placeholder="enter product price">
             <label for="">$</label>
-            <button>submit</button>
+            <input type="file" id="image">
+           
+            <button id="button">Add Product</button>
         </form >
 
     </div>
     <div id="root"></div>
+</div>
     <script src="script.js"></script>
     
 </body>
