@@ -6,8 +6,16 @@
     <link rel="stylesheet" href="dist/style.css" />
     <title>Document</title>
   </head>
-  <body onload="handleLoad()">
+  <body>
+    <form onsubmit="handleLogin(event)">
+      <input type="text" name="username" placeholder="Username" />
+
+      <input type="password" name="password" placeholder="Password" />
+
+      <button type="submit">Log Me In</button>
+    </form>
     <div id="root" class="container"></div>
+    <div id="root2" class="container"></div>
 
     <script src="js.js"></script>
   </body>
