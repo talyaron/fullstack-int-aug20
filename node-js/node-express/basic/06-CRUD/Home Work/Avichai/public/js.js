@@ -79,14 +79,19 @@ function handleUpdate(e, productName, productPrice, productIMG) {
 function writeProductsToDom(products) {
     let html = ''
     products.forEach(product => {
-        html += `<div class="product"><p>
+        html +=
+            `<div class="product">
+            <p>
             Product Name:${product.productName} Proudct Price:${product.productPrice} Product IMG:${product.productIMG}
              <button onclick="handleDelete(event, '${product.productName}')">Delete Product</button>
 
-             <form onsubmit="handleUpdate(event, '${product.productName}','${product.productPrice}','${product.productIMG}')"><input type="text" name="newProductName" placeholder="Edit Name">
+             <form onsubmit="handleUpdate(event, '${product.productName}','${product.productPrice}','${product.productIMG}')">
+             <input type="text" name="newProductName" placeholder="Edit Name">
              <input type="number" name="newProductPrice" placeholder="Edit Price">
-             <input type="text" name="newProductImg" placeholder="Edit Img"><input type="submit" value="Update Product"></form>
-             </p></div>`
+             <input type="text" name="newProductImg" placeholder="Edit Img">
+             <input type="submit" value="Update Product"></form>
+             </p>
+             </div>`
     })
     document.getElementById("products").innerHTML = html
 }
