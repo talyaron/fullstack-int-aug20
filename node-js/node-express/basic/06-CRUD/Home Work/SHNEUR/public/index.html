@@ -12,6 +12,45 @@
         background-color: bisque;
     }
 
+    .addButton {
+        border-radius: 50%;
+        box-shadow: rgb(1, 136, 136) 5px 5px 7px;
+        background-color: rgb(98, 127, 252);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        transition: all;
+        transition-duration: 200ms;
+        right: 7px;
+        top: 7px;
+        opacity: 60%;
+    }
+
+
+    .addButton:hover {
+        width: 53px;
+        height: 53px;
+        opacity: 100;
+    }
+ 
+
+    .formContainer {
+        opacity: 30%;
+        background-color: white;
+        border-radius: 8px;
+        padding: 7px;
+        transition: all;
+        transition-duration: 200ms;
+        position: absolute;
+        margin-left: 95vw;
+        top:2px;
+        direction: rtl;
+        box-shadow: teal 10px 10px 10px;
+        width: 300px;
+        height: 100px;
+        margin-left: 33vw;
+    }
+ 
     .cardsGrid {
         margin: auto;
         width: 100%;
@@ -28,16 +67,14 @@
         padding: 5px;
         box-shadow: teal 10px 10px 10px;
         width: 200px;
-        max-width: 200px;
-        height: 50vw;
-        max-height: 250px;
+        height: 250px;
         transition: all;
         transition-duration: 200ms;
     }
 
     .card:hover {
-        background-color: rgb(255, 184, 176);
-
+        background-color: rgb(222, 252, 208);
+        width: 202px;
     }
 
     .deleteButton {
@@ -52,14 +89,6 @@
         transition-duration: 200ms;
         left: -5px;
         top: -5px;
-
-    }
-
-    .deleteButton:hover {
-        opacity: 100;
-        width: 30px;
-        height: 30px;
-
     }
 
     .editButton {
@@ -74,81 +103,73 @@
         transition-duration: 200ms;
         right: -184px;
         top: -25px;
-
-
-
     }
 
-    .editButton:hover {
+    .editButton:hover,
+    .deleteButton:hover {
         opacity: 100;
-        width: 30px;
-        height: 30px;
+    }
+
+    .cardInfo {
+        display: grid;
+        grid-template-rows: 4fr 1fr 1fr;
+        border: solid black;
+        padding: 2px;
+        height: 85%;
+        gap: 3px;
+        margin-top: -10px;
+    }
+
+    .cardName,
+    .cardPrice,
+    .cardImage {
+        color: black;
+        border: solid black;
+        padding: 2px;
 
     }
 </style>
 
 <body>
-    <h1>Hi this is my store</h1>
+    <h1>החנות שלי</h1>
+    <div class="addButton" onclick="addProduct(event)"></div>
     <div class="cardsGrid">
+
         <div class="card">
-            <div class="deleteButton"></div>
+            <div class="deleteButton" onclick="deleteProduct()"></div>
             <div class="editButton"></div>
 
-        </div>
-        <div class="card">
-            <div class="deleteButton"></div>
-            <div class="editButton"></div>
+            <div class="cardInfo">
+                <div class="cardImage"></div>
+                <div class="cardName"></div>
+                <div class="cardPrice"></div>
+
+            </div>
 
         </div>
-        <div class="card">
-            <div class="deleteButton"></div>
-            <div class="editButton"></div>
-
-        </div>
-        <div class="card">
-            <div class="deleteButton"></div>
-            <div class="editButton"></div>
-
-        </div>
-        <div class="card">
-            <div class="deleteButton"></div>
-            <div class="editButton"></div>
-
-        </div>
-        <div class="card">
-            <div class="deleteButton"></div>
-            <div class="editButton"></div>
-
-        </div>
-        <div class="card">
-            <div class="deleteButton"></div>
-            <div class="editButton"></div>
-
-        </div>
-        <div class="card">
-            <div class="deleteButton"></div>
-            <div class="editButton"></div>
-
-        </div>
-
 
     </div>
-    <form onsubmit='addProduct(event)'>
-        <input type="text" name="proName">
-        <input type="text" name="proPrice">
-        <input type="submit" value="add user">
-    </form>
+    <div class="formContainer">
+        <form onsubmit='addProduct(event)'>
+            <input type="text" name="proName" placeholder="שם מוצר">
+            <input type="number" name="proPrice" placeholder="מחיר">
+            <input type="file" name="proImage" placeholder="תמונה">
+            <input type="submit" value="הוסף מוצר">
+        </form>
+    </div>
 
-    <div id="users"></div>
+    <div id="products"></div>
     <script>
         addProduct = (e) => {
             e.preventDefault();
             let {
                 proName,
-                proPrice
+                proPrice,
+                proImage
             } = e.target.children;
             proName = proName.value;
             proPrice = proPrice.value;
+            proImage = proImage.value;
 
             console.log(proName, proPrice)
 
@@ -159,7 +180,8 @@
                     },
                     body: JSON.stringify({
                         proName,
-                        proPrice
+                        proPrice,
+                        proImage
                     })
                 })
                 .then(res => res.json())
@@ -172,7 +194,7 @@
         }
 
 
-        deleteUser = (proName) => {
+        deleteProduct = (proName) => {
             console.log(proName)
 
             fetch('/delete', {
@@ -203,23 +225,25 @@
                 html +=
                     `
                     <div class="card">
-                      <div class="deleteButton"></div>
-                      <div class="editButton"></div>
+            <div class="deleteButton" onclick="deleteProduct()"></div>
+            <div class="editButton"></div>
 
-                    </div>
+            <div class="cardInfo">
+                <div class="cardImage">${product.proImage}</div>
+                <div class="cardName">${product.proName}</div>
+                <div class="cardPrice">${product.proPrice}</div>
+
+            </div>
+
+        </div>
                     
                     
                     <p>${product.proName}
-                    
-                        <button onclick='deleteUser("${product.proName}")'>
-                            Delete User
-                         </button>
-                         
-
-                         <form onsubmit='updatePassword(event, "${product.proName}")'>
-                          <input type='text' name='newPassword' placeholder='new password' >
+                
+                         <form onsubmit='updatePrice(event, "${product.proName}")'>
+                          <input type='text' name='newPrice' placeholder='new Price' >
                           <button type='submit'>
-                          UpdatePassword
+                          UpdatePrice
                           </button>
                          </form>
                     </p>`
@@ -229,11 +253,11 @@
         }
 
 
-        updatePassword = (e, proName) => {
+        updatePrice = (e, proName) => {
             e.preventDefault();
-            let newPassword = e.target.children.newPassword.value
+            let newPrice = e.target.children.newPrice.value
 
-            console.log(newPassword)
+            console.log(newPrice)
 
             fetch('/update', {
                     method: 'put',
@@ -242,7 +266,7 @@
                     },
                     body: JSON.stringify({
                         proName,
-                        newPassword
+                        newPrice
                     })
                 })
                 .then(res => res.json())

@@ -21,16 +21,16 @@ app.post("/post", (req, res) => { //the client send somthing to the server (also
 
     console.log(req.body)
 
-    let isUserExists = false;
+    let isProductExists = false;
     products.forEach(elm => {
         if (elm.proName === req.body.proName) {
-            isUserExists = true
+            isProductExists = true
             return;
         };
 
     });
 
-    if (!isUserExists) {
+    if (!isProductExists) {
         products.push(req.body);
     };
 
@@ -43,22 +43,19 @@ app.post("/post", (req, res) => { //the client send somthing to the server (also
 
 app.put("/update", (req, res) => { //the client update somthing to the server (also called UPDATE)
 
-    //find index of user in users
+    //find index of product in products
     let {
-        newPassword
-    } = req.body
-
-    let {
+        newPrice,
         proName
     } = req.body
 
     let productIndex = products.findIndex(product => product.proName === proName);
 
     // update the arry in this index, and change password
-    products[productIndex].proPrice = newPassword
+    products[productIndex].proPrice = newPrice
     console.log(products)
 
-    //return users
+    //return products
 
     res.send({
         ok: true,
@@ -74,13 +71,13 @@ app.delete("/delete", (req, res) => { //the client ask the server to delete somt
         proName
     } = req.body;
 
-    //find the index of the user in the array
+    //find the index of the product in the array
     let productIndex = products.findIndex(elm => {
         elm.proName === proName
     });
 
 
-    //remove the user from the array
+    //remove the product from the array
     products.splice(productIndex, 1);
 
     console.log(products);
