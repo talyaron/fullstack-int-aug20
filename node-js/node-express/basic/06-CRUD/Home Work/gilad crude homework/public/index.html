@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    text-align: center;
+    
+    }
+    #productCreator{
+        margin-top: 5%;
+        background-color: aqua;
+        height: 5vw;
+        padding-top: 3vw;
+    }
+    #root{
+        background-color: blueviolet;
+        display: flex;
+        
+    }
+    .products{
+        border: solid 1px black;
+        margin: 2px;
+        background-color: yellow;
+    }
+
+</style>
+<body>
+    <h1>welcome to my store.</h1>
+    <h2>to add products please fill the folowing details</h2>
+    <div id="productCreator">
+        <form onsubmit="handleSubmit(event)">
+            <input type="text" id="name" placeholder="enter item name">
+            <input type="text" id="description" placeholder="enter item description">
+            <input type="number" id="price" placeholder="enter product price">
+            <label for="">$</label>
+            <button>submit</button>
+        </form >
+
+    </div>
+    <div id="root"></div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
