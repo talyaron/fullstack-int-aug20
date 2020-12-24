@@ -39,7 +39,6 @@ app.post("/post", (req, res) => {  //the client send somthing to the server (als
 })
 
 app.put("/update", (req, res) => {  //the client update somthing to the server (also called UPDATE)
-<<<<<<< HEAD
 
 
     //find index of user in users
@@ -49,10 +48,6 @@ app.put("/update", (req, res) => {  //the client update somthing to the server (
     //return users
 
     res.send({ ok: true })
-=======
-  
-    console.log(user)
->>>>>>> f0ec2c65177d09cb7b335ff06ad70303b45eb78d
 })
 
 

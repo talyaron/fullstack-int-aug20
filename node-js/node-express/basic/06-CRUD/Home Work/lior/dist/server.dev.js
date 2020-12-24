@@ -11,19 +11,7 @@ app.use(bodyParser.json());
 var cookieParser = require('cookie-parser');
 
 app.use(cookieParser());
-var prodacts = [{
-  img: 'https://www.hobby-3.co.il/media/main/IMG_1088.jpg',
-  name: 'Wooden sewing box',
-  price: '25'
-}, {
-  img: 'https://www.ambat4u.co.il/images/Products/big/0_1549796075.JPG',
-  name: 'Luxurious wooden bench for the bathroom',
-  price: '250'
-}, {
-  img: 'https://d3m9l0v76dty0.cloudfront.net/system/photos/1995674/large/32b65db720face9fdb729bd04cb6b817.jpg',
-  name: 'Solid wood baby playpen',
-  price: '500'
-}];
+var prodacts = [];
 app.use(express["static"]('public'));
 app.get('/read', function (req, res) {
   res.send({
@@ -44,6 +32,23 @@ app.post("/post", function (req, res) {
   //     };
   //     console.log(users);
   //     res.send({ ok: true, users })
+});
+app.put('/update-product', function (req, res) {
+  var newName = req.body.newName;
+  var newPrice = req.body.newPrice;
+  var newImg = req.body.newImg;
+  var Name = req.body.Name;
+  var productIndex = products.findIndex(function (product) {
+    return product.Name === Name;
+  });
+  products[productIndex].productName = newName;
+  products[productIndex].productPrice = newPrice;
+  products[productIndex].productIMG = newImg;
+  console.log(products);
+  res.send({
+    ok: true,
+    products: products
+  });
 });
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
