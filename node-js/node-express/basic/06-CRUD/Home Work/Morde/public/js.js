@@ -5,7 +5,7 @@ function handleLoad() {
       data.productsArray.forEach((product) => {
         const root = document.getElementById("root");
         root.innerHTML += `<div><img class='productPic' src='${product.img}'/><h2 class='productTitle'>${product.title}</h2><p class='productPrice'>${product.price}$</p><form onsubmit="handleUpdatePrice(event)">
-        <input type="text" placeholder="Enter A New Price" name="newPrice" />
+        <input type="number" placeholder="Enter A New Price" name="newPrice" />
         <div><button class="formBtn" type="submit">Update</button><div>
       </form></div>`;
       });
