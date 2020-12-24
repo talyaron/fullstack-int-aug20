@@ -39,10 +39,8 @@ app.post("/post", (req, res) => {  //the client send somthing to the server (als
 })
 
 app.put("/update", (req, res) => {  //the client update somthing to the server (also called UPDATE)
-
-
-
-    res.send({ ok: true })
+  
+    console.log(user)
 })
 
 app.delete("/delete", (req, res) => {  //the client ask the server to delete somthing on the server (also called DELETE)
@@ -65,4 +63,4 @@ app.delete("/delete", (req, res) => {  //the client ask the server to delete som
 
 
 
-app.listen(3000, () => { console.log('listen 3000') })
+app.listen(8000, () => { console.log('listen 8000') })

@@ -1,0 +1,25 @@
+body{
+    background-color: beige;
+    text-align: center;
+    
+}
+h1{
+    color: red;
+    font-size: 54px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.row1{
+    display: flex;
+}
+.rigth>img{
+    margin-left: 30px;
+    width: 30vw;
+    height: 40vh;
+}
+.rigth>h4 , .rigth>h5{
+    text-align: center;
+}
+.row2{
+    display: flex;
+}
