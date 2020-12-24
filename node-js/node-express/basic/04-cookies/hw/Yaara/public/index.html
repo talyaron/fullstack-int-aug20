@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js"></script>
+   
 </head>
 <style>
     #red{
@@ -25,35 +27,13 @@
         height: 50px;
     }
 </style>
-<body>
+<body onload="onLoad()">
     <button type="button" id='red' onclick="handleClick(event)">red </button>
     <button type="button" id='blue' onclick="handleClick(event)">blue</button>
     <button type="button" id='yellow' onclick="handleClick(event)">yellow</button>
+    <button type="button" onclick="reset()">reset</button>
 
     <div id="theList"></div>
-
-    <script>
-        function handleClick (e){
-            let chosen = e.target.outerText;
-            let theList= document.getElementById('theList')
-            theList.innerHTML += `<div>${chosen}</div>`;
-
-            fetch('/send-chosen', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({chosen})
-            }).then(res=>
-                res.json()
-            )
-            .then(data=>{
-                document.getElementById('theList').innerHTML = data.chosen;
-            }) 
-        }
-
-
-    </script>
 
 
 </body>
