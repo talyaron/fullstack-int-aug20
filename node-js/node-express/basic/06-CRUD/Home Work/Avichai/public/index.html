@@ -7,26 +7,80 @@
     <title>Document</title>
 </head>
 <style>
-    .product {
+    .product__page {
         width: 50%;
         margin: auto;
-        margin-top: 10px;
+    }
+
+    .product__create {
+        display: flex;
+        justify-content: center;
+        width: 95%;
+        margin: auto;
+    }
+
+    .product__showAll {
+        margin: 1% 40%;
+    }
+
+
+
+    .product {
+        width: 90%;
+        height: 23vh;
+        margin: auto;
+        margin-top: 4%;
+        border: 1px solid gray;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .product__info {
+        margin-top: 2%;
+    }
+
+    #editForm {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3%;
+    }
+
+    .product__delete {
+        margin-top: 2%;
+        float: right;
+        color: white;
+        font-weight: 600;
         border: 1px solid black;
+        background-color: rgb(209, 47, 47);
+    }
+
+    .product__delete:hover {
+        background-color: red;
+    }
+
+    img {
+        margin-top: -2%;
+        margin-left: 2%;
+        width: 50%;
+        height: 110%;
+        float: right;
+        display: inline;
     }
 </style>
 
 <body>
 
-    <form onsubmit="handleAddProduct(event)">
-        <input type='text' name="productName" placeholder="Product Name" required>
-        <input type='number' name="productPrice" placeholder="Product Price" required>
-        <input type='text' name="productIMG" placeholder="Product IMG" required>
-        <input type="submit" value="Add Product">
-    </form>
+    <div class="product__page">
+        <form class="product__create" onsubmit="handleAddProduct(event)">
+            <input type='text' name="productName" placeholder="Product Name" required>
+            <input type='number' name="productPrice" placeholder="Product Price" required>
+            <input type='text' name="productIMG" placeholder="Product IMG(URL)" required>
+            <input type="submit" value="Add Product">
+        </form>
 
-    <button onclick="showProducts()">Show all products</button>
-    <div id="products"></div>
-
+        <button class="product__showAll" onclick="showProducts()">Show all products</button>
+        <div id="products"></div>
+    </div>
     <script src="js.js"></script>
 </body>
 
