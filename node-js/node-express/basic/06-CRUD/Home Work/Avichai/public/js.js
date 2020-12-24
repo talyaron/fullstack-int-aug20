@@ -20,7 +20,14 @@ function handleAddProduct(e) {
             writeProductsToDom(products)
         })
 }
-
+function showProducts() {
+    fetch('/get-products')
+        .then(r => r.json())
+        .then(data => {
+            const { products } = data
+            writeProductsToDom(products)
+        })
+}
 function handleDelete(e, productName) {
     console.log(productName)
 
@@ -37,28 +44,29 @@ function handleDelete(e, productName) {
             writeProductsToDom(products)
         })
 }
-
-
-function showProducts() {
-    fetch('/get-products')
-        .then(r => r.json())
-        .then(data => {
-            const { products } = data
-            writeProductsToDom(products)
-        })
-}
-function handleEditName(e, productName) {
+function handleUpdate(e, productName, productPrice, productIMG) {
     e.preventDefault();
 
-    const newProductName = e.target.children.newProductName.value
+    let newProductName = e.target.children.newProductName.value
+    let newProductPrice = e.target.children.newProductPrice.value
+    let newProductImg = e.target.children.newProductImg.value
 
+    if (newProductName == '') {
+        newProductName = productName
+    }
+    if (newProductPrice == '') {
+        newProductPrice = productPrice
+    }
+    if (newProductImg == '') {
+        newProductImg = productIMG
+    }
 
-    fetch('/update-name', {
+    fetch('/update-product', {
         method: 'PUT', // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ productName, newProductName })
+        body: JSON.stringify({ productName, newProductName, newProductPrice, newProductImg })
     })
         .then(res => res.json())
         .then(data => {
@@ -67,52 +75,26 @@ function handleEditName(e, productName) {
         })
 }
 
-function handleEditPrice(e, productName) {
-    e.preventDefault();
 
-    const newProductPrice = e.target.children.newProductPrice.value
-    console.log(newProductPrice)
-    fetch('/update-price', {
-        method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ productName, newProductPrice })
-    })
-        .then(res => res.json())
-        .then(data => {
-            const { products } = data
-            writeProductsToDom(products)
-        })
-}
-function handleEditImg(e, productName) {
-    e.preventDefault();
-
-    const newProductImg = e.target.children.newProductImg.value
-
-    fetch('/update-img', {
-        method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ productName, newProductImg })
-    })
-        .then(res => res.json())
-        .then(data => {
-            const { products } = data
-            writeProductsToDom(products)
-        })
-}
 function writeProductsToDom(products) {
     let html = ''
     products.forEach(product => {
-        html += `<div class="product"><p>
-            Product Name:${product.productName} Proudct Price:${product.productPrice} Product IMG:${product.productIMG}
-             <button onclick="handleDelete(event, '${product.productName}')">Delete Product</button>
-             <form onsubmit="handleEditName(event, '${product.productName}')"><input type="text" name="newProductName" placeholder="Edit Name" required><input type="submit" value="Edit Name"></form>
-             <form onsubmit="handleEditPrice(event, '${product.productName}')"><input type="number" name="newProductPrice" placeholder="Edit Price" required><input type="submit" value="Edit Price"></form>
-             <form onsubmit="handleEditImg(event, '${product.productName}')"><input type="text" name="newProductImg" placeholder="Edit Img" required><input type="submit" value="Edit Img"></form>
-             </p></div>`
+        html +=
+            `<div class="product">
+
+            <div class="product__info">
+            Product Name:${product.productName} Proudct Price:${product.productPrice} <img src="${product.productIMG}">
+            </div>
+
+
+             <form id="editForm" onsubmit="handleUpdate(event, '${product.productName}','${product.productPrice}','${product.productIMG}')">
+             <input type="text" name="newProductName" placeholder="Edit Name">
+             <input type="number" name="newProductPrice" placeholder="Edit Price">
+             <input type="text" name="newProductImg" placeholder="Edit Img(URL)">
+             <input type="submit" value="Update Product"></form>
+
+             <button class="product__delete" onclick="handleDelete(event, '${product.productName}')">Delete Product</button>
+             </div>`
     })
     document.getElementById("products").innerHTML = html
 }

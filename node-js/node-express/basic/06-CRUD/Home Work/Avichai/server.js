@@ -33,36 +33,22 @@ app.delete('/delete', (req, res) => {
 app.get('/get-products', (req, res) => {
     res.send({ ok: true, products })
 })
-app.put('/update-name', (req, res) => { // the client UPDATES something to the server. (also called UPDATE)
+app.put('/update-product', (req, res) => { // the client UPDATES something to the server. (also called UPDATE)
     const { newProductName } = req.body
-    const { productName } = req.body
-
-    let productIndex = products.findIndex(product => product.productName === productName)
-    products[productIndex].productName = newProductName
-    console.log(products)
-
-    res.send({ ok: true, products })
-})
-app.put('/update-price', (req, res) => { // the client UPDATES something to the server. (also called UPDATE)
     const { newProductPrice } = req.body
-    const { productName } = req.body
-
-    let productIndex = products.findIndex(product => product.productName === productName)
-    products[productIndex].productPrice = newProductPrice
-    console.log(products)
-
-    res.send({ ok: true, products })
-})
-app.put('/update-img', (req, res) => { // the client UPDATES something to the server. (also called UPDATE)
     const { newProductImg } = req.body
     const { productName } = req.body
 
     let productIndex = products.findIndex(product => product.productName === productName)
+
+    products[productIndex].productName = newProductName
+    products[productIndex].productPrice = newProductPrice
     products[productIndex].productIMG = newProductImg
     console.log(products)
 
     res.send({ ok: true, products })
 })
+
 
 
 app.listen(3000, () => { console.log('listen 3000') })
