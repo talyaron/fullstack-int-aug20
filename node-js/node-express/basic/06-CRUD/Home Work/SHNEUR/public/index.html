@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color: bisque;
+    }
+
+    .addButton {
+        border-radius: 50%;
+        box-shadow: rgb(1, 136, 136) 5px 5px 7px;
+        background-color: rgb(98, 127, 252);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        transition: all;
+        transition-duration: 200ms;
+        right: 7px;
+        top: 7px;
+        opacity: 60%;
+    }
+
+
+    .addButton:hover {
+        width: 53px;
+        height: 53px;
+        opacity: 100;
+    }
+ 
+
+    .formContainer {
+        opacity: 30%;
+        background-color: white;
+        border-radius: 8px;
+        padding: 7px;
+        transition: all;
+        transition-duration: 200ms;
+        position: absolute;
+        margin-left: 95vw;
+        top:2px;
+        direction: rtl;
+        box-shadow: teal 10px 10px 10px;
+        width: 300px;
+        height: 100px;
+        margin-left: 33vw;
+    }
+ 
+    .cardsGrid {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        grid-template-rows: auto;
+        gap: 30px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 5px;
+        box-shadow: teal 10px 10px 10px;
+        width: 200px;
+        height: 250px;
+        transition: all;
+        transition-duration: 200ms;
+    }
+
+    .card:hover {
+        background-color: rgb(222, 252, 208);
+        width: 202px;
+    }
+
+    .deleteButton {
+        border-radius: 50%;
+        box-shadow: rgb(1, 136, 136) 5px 5px 7px;
+        background-color: rgb(255, 121, 121);
+        width: 20px;
+        height: 20px;
+        position: relative;
+        opacity: 20%;
+        transition: all;
+        transition-duration: 200ms;
+        left: -5px;
+        top: -5px;
+    }
+
+    .editButton {
+        border-radius: 50%;
+        box-shadow: rgb(1, 136, 136) 5px 5px 7px;
+        background-color: rgb(98, 127, 252);
+        width: 20px;
+        height: 20px;
+        position: relative;
+        opacity: 20%;
+        transition: all;
+        transition-duration: 200ms;
+        right: -184px;
+        top: -25px;
+    }
+
+    .editButton:hover,
+    .deleteButton:hover {
+        opacity: 100;
+    }
+
+    .cardInfo {
+        display: grid;
+        grid-template-rows: 4fr 1fr 1fr;
+        border: solid black;
+        padding: 2px;
+        height: 85%;
+        gap: 3px;
+        margin-top: -10px;
+    }
+
+    .cardName,
+    .cardPrice,
+    .cardImage {
+        color: black;
+        border: solid black;
+        padding: 2px;
+
+    }
+</style>
+
+<body>
+    <h1>החנות שלי</h1>
+    <div class="addButton" onclick="addProduct(event)"></div>
+    <div class="cardsGrid">
+
+        <div class="card">
+            <div class="deleteButton" onclick="deleteProduct()"></div>
+            <div class="editButton"></div>
+
+            <div class="cardInfo">
+                <div class="cardImage"></div>
+                <div class="cardName"></div>
+                <div class="cardPrice"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="formContainer">
+        <form onsubmit='addProduct(event)'>
+            <input type="text" name="proName" placeholder="שם מוצר">
+            <input type="number" name="proPrice" placeholder="מחיר">
+            <input type="file" name="proImage" placeholder="תמונה">
+            <input type="submit" value="הוסף מוצר">
+        </form>
+    </div>
+
+    <div id="products"></div>
+    <script>
+        addProduct = (e) => {
+            e.preventDefault();
+            let {
+                proName,
+                proPrice,
+                proImage
+            } = e.target.children;
+            proName = proName.value;
+            proPrice = proPrice.value;
+            proImage = proImage.value;
+
+            console.log(proName, proPrice)
+
+            fetch('/post', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        proName,
+                        proPrice,
+                        proImage
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        products
+                    } = data;
+                    writeToDOM(products);
+                })
+        }
+
+
+        deleteProduct = (proName) => {
+            console.log(proName)
+
+            fetch('/delete', {
+                    method: 'delete',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        proName
+
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        products
+                    } = data;
+                    writeToDOM(products);
+                })
+        }
+
+
+
+
+        writeToDOM = (products) => {
+            let html = '';
+            products.forEach(product => {
+                html +=
+                    `
+                    <div class="card">
+            <div class="deleteButton" onclick="deleteProduct()"></div>
+            <div class="editButton"></div>
+
+            <div class="cardInfo">
+                <div class="cardImage">${product.proImage}</div>
+                <div class="cardName">${product.proName}</div>
+                <div class="cardPrice">${product.proPrice}</div>
+
+            </div>
+
+        </div>
+                    
+                    
+                    <p>${product.proName}
+                
+                         <form onsubmit='updatePrice(event, "${product.proName}")'>
+                          <input type='text' name='newPrice' placeholder='new Price' >
+                          <button type='submit'>
+                          UpdatePrice
+                          </button>
+                         </form>
+                    </p>`
+            })
+
+            document.getElementById('products').innerHTML = html;
+        }
+
+
+        updatePrice = (e, proName) => {
+            e.preventDefault();
+            let newPrice = e.target.children.newPrice.value
+
+            console.log(newPrice)
+
+            fetch('/update', {
+                    method: 'put',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        proName,
+                        newPrice
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        products
+                    } = data;
+                    console.log(products)
+
+                })
+
+
+        }
+    </script>
+</body>
+
+</html>
