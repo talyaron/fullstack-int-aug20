@@ -73,7 +73,7 @@
         function writeUsersToDOM(users) { //write users to DOM
             let html = '';
             users.forEach(user => {
-                html += `<p>${user.username} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' id='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
+                html += `<p>${user.username} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
             })
 
             document.getElementById('users').innerHTML = html;
@@ -81,25 +81,27 @@
 
         function handleUpdatePassword(e, username){
             e.preventDefault();
-            const password = e.target.newPassword.value
-            console.log(password)
             console.log(username)
-            fetch("/update", {
-                method: 'PUT',
+            let newPassword = e.target.children.newPassword.value;
+                    
+                      
+            console.log(newPassword)
+            
+            fetch('/update', {
+                method: 'put',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ username,password })
+                body: JSON.stringify({ username, newPassword })
             })
-                .then(res => res.json())
+                .then(r => r.json())
                 .then(data => {
                     console.log(data)
+                    
+                    //writeUsersToDOM(users);
                 })
-        
-
-            
-           
         }
+        
     </script>
 </body>
 
