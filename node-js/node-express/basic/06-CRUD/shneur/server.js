@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json())
 
-
 const users = []; //mock data - database simulator
 
 app.use(express.static('public'))
@@ -23,22 +22,19 @@ app.post("/post", (req, res) => { //the client send somthing to the server (also
     console.log(req.body)
 
     let isUserExists = false;
-    users.forEach(user => {
-        if (user.username === req.body.username) {
+    users.forEach(elm => {
+        if (elm.username === req.body.username) {
             isUserExists = true
             return;
         };
 
     });
-    console.log(isUserExists)
 
     if (!isUserExists) {
         users.push(req.body);
     };
 
-
     console.log(users);
-
     res.send({
         ok: true,
         users
@@ -46,53 +42,42 @@ app.post("/post", (req, res) => { //the client send somthing to the server (also
 })
 
 app.put("/update", (req, res) => { //the client update somthing to the server (also called UPDATE)
-    const {
-        password,
+
+    //find index of user in users
+    let {
+        newPassword
+    } = req.body
+
+    let {
         username
-    } = req.body;
-    if (username === users.username) {
-        users.password = password
+    } = req.body
 
-          
+    let userIndex = users.findIndex(user => user.username === username);
 
+    // update the arry in this index, and change password
+    users[userIndex].password = newPassword
+    console.log(users)
 
+    //return users
 
-    }
-    //find the index of the user in the array
-    let userIndex = users.findIndex(password => user.password === password);
-
-
-    //remove the user from the array
-    console.log(req.body.username)
-
-    res.body.password = newPass
-
-    console.log(users);
-
-    //return the users
     res.send({
         ok: true,
         users
-    })
 
-
-
-
-
-    res.send({
-        ok: true
     })
 })
 
-app.delete("/delete", (req, res) => { //the client ask the server to delete somthing on the server (also called DELETE)
 
+app.delete("/delete", (req, res) => { //the client ask the server to delete somthing on the server (also called DELETE)
 
     const {
         username
     } = req.body;
 
     //find the index of the user in the array
-    let userIndex = users.findIndex(user => user.username === username);
+    let userIndex = users.findIndex(elm => {
+        elm.username === username
+    });
 
 
     //remove the user from the array
@@ -106,7 +91,6 @@ app.delete("/delete", (req, res) => { //the client ask the server to delete somt
         users
     })
 })
-
 
 
 app.listen(3000, () => {
