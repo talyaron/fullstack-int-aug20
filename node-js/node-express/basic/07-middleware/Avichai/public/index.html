@@ -9,10 +9,12 @@
 
 <body>
     <form onsubmit="handleLogin(event)">
-        <input type="text" name="username" placeholder="username">
+        <input type="text" placeholder="username" name="username">
         <input type="password" name="password" placeholder="password">
         <input type="submit">
     </form>
+
+    <button onclick="handleAdmin()">Get all Data</button>
 
     <script>
         function handleLogin(e) {
@@ -30,9 +32,14 @@
             })
                 .then(res => res.json())
                 .then(data => {
-                    if(data.userLoggedIn){
-                        window.location.replace("products.html");
-                    }
+                    console.log(data)
+                })
+        }
+        function handleAdmin() {
+            fetch('/admin-panel')
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
                 })
         }
     </script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body onload="checkAdmin()">
+
+    <div class="product__page">
+        <form id="product__create" onsubmit="handleAddProduct(event)">
+            <input type='text' name="productName" placeholder="Product Name" required>
+            <input type='number' name="productPrice" placeholder="Product Price" required>
+            <input type='text' name="productIMG" placeholder="Product IMG(URL)" required>
+            <input type="submit" value="Add Product">
+        </form>
+
+        <button class="product__showAll" onclick="showProducts()">Show all products</button>
+        <div id="products"></div>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+
+</html>

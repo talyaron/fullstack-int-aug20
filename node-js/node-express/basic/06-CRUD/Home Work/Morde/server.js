@@ -1,10 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 
 const app = express();
+app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
+
+const users = [
+  { username: "morde", password: "123", role: "admin" },
+  { username: "olga", password: "123", role: "public" },
+];
 
 const productsArray = [
   {
@@ -26,6 +32,35 @@ const productsArray = [
       "https://stockx.imgix.net/images/Air-Jordan-1-Retro-High-Dior-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&updated_at=1607043976",
   },
 ];
+
+function authUser(req, res, next) {
+  const { role } = req.cookies;
+
+  next();
+}
+
+app.post("/auth-user", (req, res) => {
+  const { username, password } = req.body;
+
+  // let isUserExist = false;
+  let role = "denied";
+
+  const indexUser = users.findIndex(
+    (user) => user.username === username && user.password === password
+  );
+  if (users[indexUser].role === "admin") {
+    res.authorized = true;
+  }
+  if (indexUser > -1 && res.authorized == true) {
+    // isUserExist = true;
+    let role = users[indexUser].role;
+    res.cookie("role", role, { maxAge: 20000, httpOnly: true });
+    res.send({ ok: true });
+  } else {
+    res.cookie("role", role, { maxAge: 20000, httpOnly: true });
+    res.send({ ok: false });
+  }
+});
 
 app.get("/get-products-array", (req, res) => {
   res.send({ productsArray });

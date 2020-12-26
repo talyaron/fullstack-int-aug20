@@ -81,7 +81,7 @@
     }
 </style>
 
-<body>
+<body onload="handleGetProducts()">
     <header>
         <ul>
             <li> <a href="/">Home</a></li>
@@ -91,25 +91,19 @@
     </header>
 
     <div class="mainBody">
-        <div class="card">tt</div>
-        <div class="card">tt</div>
-        <div class="card">tt</div>
-        <div class="card">tt</div>
-        <div class="card">tt</div>
-        <div class="card">tt</div>
-        <div class="card">tt</div>
-        <div class="card">tt</div>
+        <div id="cardContainer" class="cardContainer">
+
+
+            
+
+         
+        </div>
 
     </div>
     <footer>
 
     </footer>
-    <script>
-        function redirectLogin() {
-            window.location.replace("/admin/login.html")
-        }
-
-    </script>
+    <script src="/admin/index.js"></script>
 </body>
 
 </html>
