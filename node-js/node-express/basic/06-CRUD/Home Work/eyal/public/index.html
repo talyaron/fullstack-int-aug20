@@ -54,16 +54,17 @@
 
     .mainBody {
         margin: 10px;
-        display:grid;
+        display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         column-gap: 10px;
         row-gap: 10px;
 
     }
-    .card{
+
+    .card {
         background-color: rgb(255, 15, 15);
         border: 1px solid black;
-        border-radius:10px;
+        border-radius: 10px;
         height: 300px;
         width: 350px;
     }
@@ -83,9 +84,9 @@
 <body>
     <header>
         <ul>
-            <li> <a href="#" onclick="">Home</a></li>
-            <li> <a href="#" onclick="">Login</a></li>
-            <li> <a href="#" onclick="">SingUp</a></li>
+            <li> <a href="/">Home</a></li>
+            <li> <a href="/admin/login.html">Login</a></li>
+            <li> <a href="/admin/singup.html">SingUp</a></li>
         </ul>
     </header>
 
@@ -103,6 +104,12 @@
     <footer>
 
     </footer>
+    <script>
+        function redirectLogin() {
+            window.location.replace("/admin/login.html")
+        }
+
+    </script>
 </body>
 
 </html>

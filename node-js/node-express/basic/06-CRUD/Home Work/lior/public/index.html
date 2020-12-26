@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+    <form onsubmit='handleAddprodacts(event)'>
+        <input type="text" name="img">
+        <input type="text" name="name">
+        <input type="text" name="price">
+        <input type="submit" value="add prodact">
+    </form>
+    <button onclick="handleGetprodacts()">Get prodacts</button>
+
+    <div id="prodacts"></div>
+
+    <script>
+
+function handleAddprodacts(e) {
+            e.preventDefault();
+            let { img , name , price} = e.target.children;
+            img = img.value;
+            name = name.value;
+            price = price.value;
+
+            console.log(img, name, price)
+
+            fetch('/post', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ img, name, price })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    const { prodacts } = data;
+                    console.log(prodacts);
+                })
+        }
+
+        function handleGetprodacts() {
+            fetch('/read')
+                .then(r => r.json())
+                .then(data => {
+
+                    const { prodacts } = data;
+                  console.log(prodacts);
+
+                })
+        }
+
+        function handleUpdate(e,img , name , price) {
+    e.preventDefault();
+
+    let newName = e.target.children.newName.value
+    let newPrice = e.target.children.newPrice.value
+    let newImg = e.target.children.newImg.value
+
+    if (newName == '') {
+        newName = Name
+    }
+    if (newPrice == '') {
+        newPrice = Price
+    }
+    if (newImg == '') {
+        newImg = IMG
+    }
+
+    fetch('/update-', {
+        method: 'PUT', 
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ Name, newName, newPrice, newImg })
+    })
+        .then(res => res.json())
+        .then(data => {
+            const { s } = data
+            console.log(s)
+        })
+}
+
+
+    </script>
+</body>
+</html>

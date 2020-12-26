@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    width: 100vw;
+    height: 100vh;
+
+
+  }
+
+  header {
+    /*  grid-row: 1;
+        grid-column: 1; */
+    background-color: rgb(65, 58, 58);
+    max-height: 10vh;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+
+  }
+
+  header>ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    list-style: none;
+    color: aliceblue;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:link {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  a:active {
+    color: red;
+  }
+
+  .mainBody {
+    margin: 10px;
+    /* display:grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); */
+    column-gap: 10px;
+    row-gap: 10px;
+
+  }
+
+  .card {
+    background-color: rgb(255, 15, 15);
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 300px;
+    width: 350px;
+  }
+
+  footer {
+    /*  grid-row: 3;
+        grid-column: 1; */
+    background-color: rgb(65, 58, 58);
+    height: 15vh;
+    justify-content: center;
+    align-self: flex-end;
+    display: flex;
+
+  }
+
+  h1 {
+    width: max-content;
+    margin: auto;
+    margin-bottom: 1%;
+    /*  margin-top: 5%; */
+  }
+
+  form {
+    padding: 5%;
+    /*  display: flex;
+         flex-direction: column; */
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: cornsilk;
+    width: 30%;
+    /* margin-top: 10%; */
+    margin: auto;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  #UserID {
+    flex: 1;
+    margin: 1%;
+  }
+
+  #Password {
+    flex: 1;
+    margin: 1%;
+  }
+
+  label {
+    margin: 1%;
+  }
+
+  input {
+    flex: 1;
+    margin: 1%;
+  }
+
+  #adduserB {
+    display: none;
+  }
+</style>
+
+<body>
+  <header>
+    <ul>
+      <li> <a href="/" >Home</a></li>
+      <li> <a href="/admin/login.html" >Login</a></li>
+      <li> <a href="/admin/singup.html">SingUp</a></li>
+    </ul>
+  </header>
+
+  <div class="mainBody">
+    <div class="container">
+      <h1>Welcome!</h1>
+
+      <form onsubmit="handlesubmit(event)">
+        <div class="row">
+          <label for="UserID">user name</label>
+          <input type="text" id="UserID" name="UserID" />
+        </div>
+        <div class="row">
+          <label for="password">password</label>
+          <input type="password" id="Password" name="Password" />
+        </div>
+        <div class="row">
+          <input type="submit" value="LogIn" />
+          <input id="adduserB" type="button" onclick="handleAddUser(event)" value="Add User" />
+        </div>
+      </form>
+
+      <div id="main"></div>
+    </div>
+
+  </div>
+  <footer>
+
+  </footer>
+  <script src="/admin/index.js"></script>
+</body>
+
+</html>
