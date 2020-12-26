@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="handleLogin(event)">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit">
+    </form>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault()
+            const username = e.target.children.username.value
+            const password = e.target.children.password.value
+            console.log(username, password)
+
+            fetch('/login', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.userLoggedIn){
+                        window.location.replace("products.html");
+                    }
+                })
+        }
+    </script>
+</body>
+
+</html>

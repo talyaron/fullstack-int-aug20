@@ -4,21 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Document</title>
 </head>
 
-<body onload="handleGetProduct(event)"> 
+<style>
+    body{
+        width: 920px;
+        margin: auto;
+    }
+    .product{
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+        /* margin: 1em; */
+    }
+
+    .product > div{
+      background-color: rgba(128, 128, 128, 0.267);
+        margin: .5em;
+    }
+
+    #submit{
+        display: none;
+    }
+
+    h1{
+        text-align: center;
+        margin-top:1em;
+        margin-bottom:1em;
+    }
+
+    .mdc-touch-target-wrapper{
+       position: absolute;
+       top: 80vh;
+       left: 200px;
+    }
+
+    .product>form>input{
+        width: 20px;
+        margin: 10px;
+        /* margin: auto; */
+    }
+
+    #add{
+        display: flex;
+        margin-top:1em;
+        margin-bottom:1em;
+    }
+    .form-control,.form-control1 {
+        margin: 10px;
+        width: 30%;
+    }
+
+    .form-control1{
+        height:20px;
+    }
+
+</style>
+
+<body onload="handleGetProduct(event)">
+
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+
+
     <h1>Product management</h1>
 
     <div class="products">
-        <form onsubmit='handleAddProduct(event)'>
-            <input type="text" name="name" placeholder="name">
+        <form onsubmit='handleAddProduct(event)' id="add">
+            <!-- <label >name</label> -->
+            <input type="text" class="form-control"  name="name"  placeholder="name">
+            <!-- <label >img Url</label> -->
+            <input type="text" class="form-control"  name="imgUrl" placeholder="imgUrl">
+            <!-- <label >price</label> -->
+            <input type="number" class="form-control" name="price" placeholder="price">
+<!-- 
+            <button type="submit" class="btn btn-primary" onclick="send()" data-dismiss="modal">update product</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input id="submit" type="submit" class="btn btn-secondary" value="update product"> -->
+
+            <!-- <input type="text" name="name" placeholder="name">
             <input type="text" name="imgUrl" placeholder="img-url">
-            <input type="number" name="price" placeholder="price">
-            <input type="submit" value="add product">
+            <input type="number" name="price" placeholder="price"> -->
+            <input type="submit" value="add product" class="btn btn-primary" class="form-control1">
         </form>
         <!-- <button onclick="handleAddProduct(event)">add</button> -->
-        <button onclick="handleGetProduct(event)">get</button>
+        <!-- <button onclick="handleGetProduct(event)">get</button> -->
         <div class="product">
             <!-- <h3>name</h3>
             <img src="" alt="">
@@ -29,7 +107,24 @@
             </div> -->
         </div>
     </div>
+    <!-- <div class="mdc-touch-target-wrapper">
+        <button class="mdc-fab mdc-fab--mini mdc-fab--touch">
+          <div class="mdc-fab__ripple"></div>
+          <span class="material-icons mdc-fab__icon">add</span>
+          <div class="mdc-fab__touch"></div>
+        </button>
+      </div> -->
+    <!-- <button class="btn pmd-btn-fab pmd-ripple-effect btn-light " type="button"><i class="material-icons pmd-sm">add</i></button> -->
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 
