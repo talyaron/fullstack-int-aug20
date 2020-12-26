@@ -1,91 +1,91 @@
+"use strict";
 
 function handlesubmit(e) {
-  console.log('handlesubmit activated')
+  console.log('handlesubmit activated');
   e.preventDefault();
   console.log('submit');
-  const UserID = e.target.UserID.value;
-  const pass = e.target.Password.value;
-  const UserDetlis = { UserID, pass };
-
+  var UserID = e.target.UserID.value;
+  var pass = e.target.Password.value;
+  var UserDetlis = {
+    UserID: UserID,
+    pass: pass
+  };
   fetch('/U_info', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(UserDetlis),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.ok) {
-        // document.getElementById('main').innerHTML = '<h1>ok</h1>';
-        window.location.replace('/admin/admin.html');
-      } else {
-        document.getElementById('main').innerHTML =
-          '<h1>bad user name or password</h1>';
-        //  window.location.replace('Rejected.html');
-      }
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(UserDetlis)
+  }).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    if (data.ok) {
+      // document.getElementById('main').innerHTML = '<h1>ok</h1>';
+      window.location.replace('/admin/admin.html');
+    } else {
+      document.getElementById('main').innerHTML = '<h1>bad user name or password</h1>'; //  window.location.replace('Rejected.html');
+    }
 
-      console.log(data);
-      document.getElementById('root').innerText = data.body;
-    });
+    console.log(data);
+    document.getElementById('root').innerText = data.body;
+  });
   console.log(UserDetlis);
 }
 
-
-
 function handleAddUser(e) {
-  console.log('handleAddUser activated')
-  const UserID = document.getElementById('UserID').value;
-  const pass = document.getElementById('Password').value;
+  console.log('handleAddUser activated');
+  var UserID = document.getElementById('UserID').value;
+  var pass = document.getElementById('Password').value;
   console.log(UserID);
-  const UserDetlis = { UserID, pass };
-
+  var UserDetlis = {
+    UserID: UserID,
+    pass: pass
+  };
   console.log(UserDetlis);
-
   fetch('/add_user', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(UserDetlis),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-
-      
-      
-        document.getElementById('main').innerHTML =
-        `<h1>${data.massege}</h1>`;
-     
-     
-    });
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(UserDetlis)
+  }).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    document.getElementById('main').innerHTML = "<h1>".concat(data.massege, "</h1>");
+  });
 }
 
 function handleAddProduct(e) {
   e.preventDefault();
   console.log('submit');
-  const ProductName = e.target.ProductName.value;
-  const image = e.target.Image.value;
-  const price = e.target.Price.value;
+  var ProductName = e.target.ProductName.value;
+  var image = e.target.Image.value;
+  var price = e.target.Price.value;
   /* let { ProductName, image, price } = e.target.children;
   ProductName = ProductName.value;
   image = image.value;
-  price = price.value; */ 
-  console.log(`submit:${ProductName} ; ${image}; ${price}`);
+  price = price.value; */
 
+  console.log("submit:".concat(ProductName, " ; ").concat(image, "; ").concat(price));
   fetch('/post', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ ProductName, image, price })
-  })
-    .then(r => r.json())
-    .then(data => {
-      console.log(data)
-      const { products } = data;
-      
-      console.log(products)
-      writeProductsToDOM(products);
+    body: JSON.stringify({
+      ProductName: ProductName,
+      image: image,
+      price: price
     })
+  }).then(function (r) {
+    return r.json();
+  }).then(function (data) {
+    console.log(data);
+    var products = data.products;
+    console.log(products);
+    writeProductsToDOM(products);
+  });
 }
-
 /* {
   name: 'bar',
   imgurl:
@@ -93,31 +93,21 @@ function handleAddProduct(e) {
   price: '4$',
 } */
 
-function writeProductsToDOM(products) { //write users to DOM
-  let html = '';
-  products.forEach(product => {
-    html += `<div class="card" >
-      <img  style="margin:0 auto 0" src="${product.image}" alt="" >
-      <input id="Image" type="file" name="Image" >
-      <input type="text" name="name" value="${product.ProductName}" style="margin:1%;width: 90%;">
-      <span>
-          <input type="text" name="price"  value="${product.price}" style="margin:1%; width: 45%;">
-          <input type="button" value="Delete" style="margin:1%">
-          <input type="button" value="Update" style="margin:1%">
-      </span>
-  </div>`
-  })
 
+function writeProductsToDOM(products) {
+  //write users to DOM
+  var html = '';
+  products.forEach(function (product) {
+    html += "<div class=\"card\" >\n      <img  style=\"margin:0 auto 0\" src=\"".concat(product.image, "\" alt=\"\" >\n      <input id=\"Image\" type=\"file\" name=\"Image\" >\n      <input type=\"text\" name=\"name\" value=\"").concat(product.ProductName, "\" style=\"margin:1%;width: 90%;\">\n      <span>\n          <input type=\"text\" name=\"price\"  value=\"").concat(product.price, "\" style=\"margin:1%; width: 45%;\">\n          <input type=\"button\" value=\"Delete\" style=\"margin:1%\">\n          <input type=\"button\" value=\"Update\" style=\"margin:1%\">\n      </span>\n  </div>");
+  });
   document.getElementById('cardContainer').innerHTML = html;
 }
 
 function handleGetProducts() {
-  fetch('/read')
-      .then(r => r.json())
-      .then(data => {
-
-          const { products } = data;
-          writeProductsToDOM(products);
-
-      })
+  fetch('/read').then(function (r) {
+    return r.json();
+  }).then(function (data) {
+    var products = data.products;
+    writeProductsToDOM(products);
+  });
 }
