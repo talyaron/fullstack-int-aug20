@@ -12,6 +12,9 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
 var app = express();
+
+var formidable = require('formidable');
+
 var port = process.env.PORT || 3000; // let TheUserDataBase = [{ id:"eyal", pass: "123" }];
 
 var TheUserDataBase = [{
@@ -29,6 +32,20 @@ var products = [{
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express["static"]('public'));
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/admin.html');
+});
+app.post('/', function (req, res) {
+  var form = new formidable.IncomingForm();
+  form.parse(req);
+  form.on('fileBegin', function (name, file) {
+    file.path = __dirname + '/public/image/' + file.name;
+  });
+  form.on('file', function (name, file) {
+    console.log("Uploaded file", file.name);
+  });
+  res.sendFile(__dirname + '/public/admin.html');
+});
 app.post('/U_info', function (req, res) {
   // const NewUditails = { id: req.body.UserID, pass: req.body.pass }; //the userID that the user typed -
 
