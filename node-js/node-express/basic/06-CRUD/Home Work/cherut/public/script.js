@@ -183,15 +183,5 @@ function writeProductsToDOM(Products) {
     
       }
      
-  }
-
-
-
-
-  document.addEventListener('onload',() => {
-    console.log('rol')
-  }) 
-  function checkUserRole(e){
-    let rol = document.cookie;
-    console.log('rol')
-  }
+  })
+}
