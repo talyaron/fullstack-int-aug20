@@ -1,5 +1,7 @@
 function handleGetProduct() {
 
+
+
   fetch('/read')
       .then(r => r.json())
       .then(data => {
@@ -8,6 +10,16 @@ function handleGetProduct() {
           writeProductsToDOM(Products);
           // writeUsersToDOM(products);
       })
+
+      // const role = document.cookie.split('=')[1]
+      // console.log(role)
+      // if(role == 'admin'){
+      //   let btn = document.querySelectorAll('.btn');
+      //   console.log(btn)
+      //   btn[0].style.display = 'none'
+      //   let button = document.querySelectorAll('.button');
+      //   console.log(button)
+      // }
 }
 
 
@@ -111,10 +123,10 @@ function writeProductsToDOM(Products) {
     <div class="card-body">
         <h5 class="card-title">${product.name}</h5>
         <p class="card-text"> price: ${product.price}$</p>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-name=${product.name}>
+        <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#exampleModal" data-name=${product.name}>
         update
         </button>
-        <button type="button" class="btn btn-secondary" onclick="handleDeleteProduct('${product.name}')">delete</button>
+        <button type="button" class="btn btn-secondary button" onclick="handleDeleteProduct('${product.name}')">delete</button>
      </div>
     </div>
 
@@ -156,4 +168,32 @@ function writeProductsToDOM(Products) {
 
   
     document.querySelector('.product').innerHTML = html;
+
+    const role = document.cookie.split('=')[1]
+      console.log(role)
+      if(role !== 'admin'){
+        let btn = document.querySelectorAll('.btn');
+        console.log(btn)
+        btn.forEach(button =>{
+          button.style.display = 'none'
+        })
+        let forms = document.querySelectorAll('form');
+        forms.forEach(form =>{
+          form.style.display = 'none'
+        })
+        // btn[0].style.display = 'none'
+    
+      }
+     
+  }
+
+
+
+
+  document.addEventListener('onload',() => {
+    console.log('rol')
+  }) 
+  function checkUserRole(e){
+    let rol = document.cookie;
+    console.log('rol')
   }

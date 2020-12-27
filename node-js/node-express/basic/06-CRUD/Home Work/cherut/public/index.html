@@ -6,21 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form onsubmit='handleLogin(event)'>
-            <input type="text"  name="username"  placeholder="name">
-            <input type="password"  name="password"  placeholder="name">
-            <input type="submit" value="login">
+        <input type="text" name="username" placeholder="name">
+        <input type="password" name="password" placeholder="name">
+        <input type="submit" value="login" onclick="handelIsAuth()">
     </form>
     <script>
-        function handleLogin(e){
+        function handleLogin(e) {
             e.preventDefault();
             const username = e.target.children.username.value;
             const password = e.target.children.password.value;
 
-            console.log(username,password)
-             
-        }
+            console.log(username, password)
+
+            fetch('/login', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    if(data.ok == true){
+                        window.location.href='store.html';
+                    }
+                })
+            }
+
+        
     </script>
 </body>
+
 </html>
