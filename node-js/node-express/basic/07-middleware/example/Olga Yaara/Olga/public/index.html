@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit='handleLogin(event)'>
+        <input type="text" name="username" placeholder="user name">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Send">
+    </form>
+    <!-- <button onclick='handleAdmin()'>Get all the information</button>
+    <a href='adminPanel.html'>Admin Panel</a> -->
+    <!-- <script>
+       app.post('/login', (req, res) => {
+
+//create cookie that set the role of the user
+
+//check user
+const { username, password } = req.body;
+
+let isUserExist = false;
+let role = 'denied';
+
+const indexUser = users.findIndex(user => user.username === username && user.password === password);
+if (indexUser > -1) {
+    isUserExist = true;
+    role = users[indexUser].role;
+    console.log(role)
+
+}
+
+res.cookie('role', role, { maxAge: 20000, httpOnly: true });
+console.log(role)
+res.send({ role })
+
+
+})
+
+
+app.put("/updateproduct", (req, res) => {  //the client update somthing to the server (also called UPDATE)
+
+const updateProduct  = req.body;
+console.log(updateProduct.newProduct.name)
+
+let productIndex = products.findIndex(prod => prod.name === updateProduct.name);
+console.log(productIndex)
+products.splice(productIndex, 1, updateProduct.newProduct); 
+
+res.send({ products })
+})
+
+
+
+
+
+app.listen(3000, () => { console.log('listen 3000') })
+    </script> -->
+    <script src='script.js'></script>
+</body>
+</html>

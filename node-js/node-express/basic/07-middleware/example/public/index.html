@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit='handleLogin(event)'>
+        <input type="text" name="username" placeholder="user name">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Send">
+    </form>
+    <button onclick='handleAdmin()'>Get all the information</button>
+    <a href='adminPanel.html'>Admin Panel</a>
+    <script>
+        function handleLogin(e){
+            e.preventDefault();
+
+            const password = e.target.children.password.value;
+            const username = e.target.children.username.value;
+
+            console.log(password, username)
+
+            fetch('/login',{
+                method:'post',
+                headers:{
+                    'Content-Type':'application/json'
+
+                },
+                body:JSON.stringify({username, password})
+            })
+            .then(r=>r.json())
+            .then(data=>{
+                console.log(data)
+            })
+        }
+
+        function handleAdmin(){
+            
+            fetch('/admin-panel')
+            .then(r=>r.json())
+            .then(data=>{
+                console.log(data)
+            })
+        }
+    </script>
+</body>
+</html>

@@ -6,29 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    .product {
-        width: 50%;
-        margin: auto;
-        margin-top: 10px;
-        border: 1px solid black;
-    }
-</style>
 
 <body>
-
-    <form onsubmit="handleAddProduct(event)">
-        <input type='text' name="productName" placeholder="Product Name" required>
-        <input type='number' name="productPrice" placeholder="Product Price" required>
-        <input type='text' name="productIMG" placeholder="Product IMG" required>
-        <input type="submit" value="Add Product">
+    <form onsubmit="handleLogin(event)">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit">
     </form>
 
-    <button onclick="showProducts()">Show all products</button>
-    <div id="products"></div>
+    <script>
+        function handleLogin(e) {
+            e.preventDefault()
+            const username = e.target.children.username.value
+            const password = e.target.children.password.value
+            console.log(username, password)
 
-    <script src="js.js"></script>
+            fetch('/login', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.userLoggedIn){
+                        window.location.replace("products.html");
+                    }
+                })
+        }
+    </script>
 </body>
-
 
 </html>
