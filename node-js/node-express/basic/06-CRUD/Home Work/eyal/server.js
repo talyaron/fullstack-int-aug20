@@ -137,7 +137,23 @@ app.post('/post', (req, res) => {
 });
 
 
+app.delete("/delete", (req, res) => {  //the client ask the server to delete somthing on the server (also called DELETE)
 
+
+  const { ProductName } = req.body;
+
+  //find the index of the user in the array
+  let  ProductIndex = products.findIndex(product => product.ProductName === ProductName);
+  
+  
+  //remove the user from the array
+  products.splice(ProductIndex, 1); 
+
+  console.log(products);
+
+  //return the users
+  res.send({ ok: true, products })
+})
 
 
 app.listen(port, () => {
