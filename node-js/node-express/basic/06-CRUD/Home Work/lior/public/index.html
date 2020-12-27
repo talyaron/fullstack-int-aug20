@@ -39,7 +39,7 @@ function handleAddprodacts(e) {
                 .then(data => {
                     console.log(data)
                     const { prodacts } = data;
-                    writeUsersToDOM(prodacts);
+                    console.log(prodacts);
                 })
         }
 
@@ -49,19 +49,42 @@ function handleAddprodacts(e) {
                 .then(data => {
 
                     const { prodacts } = data;
-                   writeprodactsToDOM(prodacts);
+                  console.log(prodacts);
 
                 })
         }
 
-        function writeprodactsToDOM(prodacts) { 
-            let html = '';
-            prodacts.forEach(prodact => {
-                html += `<p>${prodact.img,prodact.name,prodact.price}</p>`
-            })
+        function handleUpdate(e,img , name , price) {
+    e.preventDefault();
 
-            document.getElementById('prodacts').innerHTML = html;
-        }
+    let newName = e.target.children.newName.value
+    let newPrice = e.target.children.newPrice.value
+    let newImg = e.target.children.newImg.value
+
+    if (newName == '') {
+        newName = Name
+    }
+    if (newPrice == '') {
+        newPrice = Price
+    }
+    if (newImg == '') {
+        newImg = IMG
+    }
+
+    fetch('/update-', {
+        method: 'PUT', 
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ Name, newName, newPrice, newImg })
+    })
+        .then(res => res.json())
+        .then(data => {
+            const { s } = data
+            console.log(s)
+        })
+}
+
 
     </script>
 </body>

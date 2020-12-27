@@ -6,9 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        background-color: bisque;
+    }
+
+    .cardsGrid {
+        display: grid;
+        grid-area: auto;
+        gap: 30px;
+    }
+    .card{
+        background-color: white;
+        padding: 5px;
+        box-shadow: teal 10px 10px 10px ;
+        max-width: 50px;
+        max-height: 100px;
+        display: grid;
+        grid-template-rows: 4fr 1fr 1fr;
+
+
+    }
+</style>
 
 <body>
-    <h1>Hi</h1>
+    <h1>Hi this is my store</h1>
+    <div class="cardsGrid">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+
+    </div>
+
+
+
+
+    
+    
     <form onsubmit='handleAddUser(event)'>
         <input type="text" name="username">
         <input type="password" name="password">
@@ -103,8 +139,8 @@
 
             // newPassword = newPassword.value
             console.log(newPassword)
-                //get the password from e.target
-                //fetch (put) body: {username, password}
+            //get the password from e.target
+            //fetch (put) body: {username, password}
             fetch('/update', {
                     method: 'put',
                     headers: {

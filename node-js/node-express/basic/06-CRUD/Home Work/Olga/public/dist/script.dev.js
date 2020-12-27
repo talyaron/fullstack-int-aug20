@@ -11,6 +11,8 @@ function getProducts(products) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', getProducts());
+
 function deleteProduct(name) {
   console.log(name);
   fetch('/deleteproduct', {
@@ -111,5 +113,3 @@ function updateProduct(e, name) {
   });
   document.location.reload();
 }
-
-document.addEventListener('DOMContentLoaded', getProducts());

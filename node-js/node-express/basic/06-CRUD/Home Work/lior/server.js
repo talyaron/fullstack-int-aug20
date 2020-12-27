@@ -6,16 +6,7 @@ const cookieParser = require('cookie-parser');
 
 app.use(cookieParser());
 
-const prodacts = [
-    {img:'https://www.hobby-3.co.il/media/main/IMG_1088.jpg',
-    name:'Wooden sewing box',
-    price:'25'},
-    {img:'https://www.ambat4u.co.il/images/Products/big/0_1549796075.JPG',
-    name:'Luxurious wooden bench for the bathroom',
-    price:'250'},
-    {img:'https://d3m9l0v76dty0.cloudfront.net/system/photos/1995674/large/32b65db720face9fdb729bd04cb6b817.jpg',
-    name:'Solid wood baby playpen',
-    price:'500'}]
+const prodacts = []
 
 app.use(express.static('public'))
 
@@ -44,6 +35,22 @@ app.post("/post", (req, res) => {
 //     console.log(users);
 
 //     res.send({ ok: true, users })
+})
+
+app.put('/update-product', (req, res) => {
+    const { newName } = req.body
+    const { newPrice } = req.body
+    const { newImg } = req.body
+    const { Name } = req.body
+
+    let productIndex = products.findIndex(product => product.Name === Name)
+
+    products[productIndex].productName = newName
+    products[productIndex].productPrice = newPrice
+    products[productIndex].productIMG = newImg
+    console.log(products)
+
+    res.send({ ok: true, products })
 })
 
 const port = process.env.PORT || 3000;
