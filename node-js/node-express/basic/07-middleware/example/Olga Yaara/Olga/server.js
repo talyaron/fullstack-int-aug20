@@ -25,6 +25,7 @@ app.post('/login', (req, res) => {
     let role = 'denied';
 
     const indexUser = users.findIndex(user => user.username === username && user.password === password);
+    console.log(indexUser)
     if (indexUser > -1) {
         isUserExist = true;
         role = users[indexUser].role;
@@ -32,7 +33,7 @@ app.post('/login', (req, res) => {
 
     }
 
-    res.cookie('role', role, { maxAge: 20000, httpOnly: true });
+    res.cookie('role', role, { maxAge: 200000, httpOnly: true });
     console.log(role)
     res.send({ role })
 

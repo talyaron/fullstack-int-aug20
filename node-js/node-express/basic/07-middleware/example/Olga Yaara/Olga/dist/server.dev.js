@@ -32,6 +32,7 @@ app.post('/login', function (req, res) {
   var indexUser = users.findIndex(function (user) {
     return user.username === username && user.password === password;
   });
+  console.log(indexUser);
 
   if (indexUser > -1) {
     isUserExist = true;
@@ -40,7 +41,7 @@ app.post('/login', function (req, res) {
   }
 
   res.cookie('role', role, {
-    maxAge: 20000,
+    maxAge: 200000,
     httpOnly: true
   });
   console.log(role);
