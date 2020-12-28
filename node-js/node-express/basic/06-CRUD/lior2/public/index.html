@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit='handleAddprodact(event)'>
+        <input type="url" placeholder="url" name="img" >
+        <input type="text" placeholder="name of prodact" name="name">
+        <input type="number" placeholder="price of prodact" name="price">
+        <input type="submit" value="add prodact">
+    </form>
+
+    <div id="prodacts"></div>
+
+    <script>
+        function handleAddprodact(e) {
+            e.preventDefault();
+            let { img , name , price} = e.target.children;
+            img = img.value;
+            name = name.value;
+            price = price.value;
+
+            //console.log(img, name, price)
+
+            fetch('/post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ img, name, price })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    //console.log(data)
+                    const { prodacts } = data;
+                    //console.log(prodacts);
+                })
+        }
+    </script>
+</body>
+</html>
