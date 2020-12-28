@@ -18,7 +18,7 @@ function handleLogin(e){
     .then(data=>{
         console.log(data.role)
         
-            location.replace('index2.html')
+            window.location.href = './index2.html'
         
     })
 }
