@@ -1,108 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <h1>Hi</h1>
-    <form onsubmit='handleAddUser(event)'>
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <input type="submit" value="add user">
+    <form onsubmit='handleLogin(event)'>
+        <input type="text" name="username" placeholder="user name">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Send">
     </form>
-    <button onclick="handleGetUsers()">Get Users</button>
+    <!-- <button onclick='handleAdmin()'>Get all the information</button>
+    <a href='adminPanel.html'>Admin Panel</a> -->
+    <!-- <script>
+       app.post('/login', (req, res) => {
 
-    <div id="users"></div>
-    <script>
-        function handleAddUser(e) {
-            e.preventDefault();
-            let { username, password } = e.target.children;
-            username = username.value;
-            password = password.value;
+//create cookie that set the role of the user
 
-            console.log(username, password)
+//check user
+const { username, password } = req.body;
 
-            fetch('/post', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, password })
-            })
-                .then(r => r.json())
-                .then(data => {
-                    console.log(data)
-                    const { users } = data;
-                    writeUsersToDOM(users);
-                })
-        }
+let isUserExist = false;
+let role = 'denied';
 
-        function handleGetUsers() {
-            fetch('/read')
-                .then(r => r.json())
-                .then(data => {
+const indexUser = users.findIndex(user => user.username === username && user.password === password);
+if (indexUser > -1) {
+    isUserExist = true;
+    role = users[indexUser].role;
+    console.log(role)
 
-                    const { users } = data;
-                    writeUsersToDOM(users);
+}
 
-                })
-        }
+res.cookie('role', role, { maxAge: 20000, httpOnly: true });
+console.log(role)
+res.send({ role })
 
-        function deleteUser(username) {
-            console.log(username)
 
-            fetch('/delete', {
-                method: 'delete',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username })
-            })
-                .then(r => r.json())
-                .then(data => {
-                    console.log(data)
-                    const { users } = data;
-                    writeUsersToDOM(users);
-                })
-        }
+})
 
-        function writeUsersToDOM(users) { //write users to DOM
-            let html = '';
-            users.forEach(user => {
-                html += `<p>${user.username} <button onclick='deleteUser("${user.username}")'>Delete User</button><form onsubmit='handleUpdatePassword(event, "${user.username}")'><input type='text' name='newPassword' placeholder='new password' ><button type='submit'>UpdatePassword</button></form></p>`
-            })
 
-            document.getElementById('users').innerHTML = html;
-        }
+app.put("/updateproduct", (req, res) => {  //the client update somthing to the server (also called UPDATE)
 
-        function handleUpdatePassword(e, username){
-            e.preventDefault();
-            console.log(username)
-            let newPassword = e.target.children.newPassword.value;
-                    
-                      
-            console.log(newPassword)
-            
-            fetch('/update', {
-                method: 'put',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, newPassword })
-            })
-                .then(r => r.json())
-                .then(data => {
-                    console.log(data)
-                    
-                    //writeUsersToDOM(users);
-                })
-        }
-        
-    </script>
+const updateProduct  = req.body;
+console.log(updateProduct.newProduct.name)
+
+let productIndex = products.findIndex(prod => prod.name === updateProduct.name);
+console.log(productIndex)
+products.splice(productIndex, 1, updateProduct.newProduct); 
+
+res.send({ products })
+})
+
+
+
+
+
+app.listen(3000, () => { console.log('listen 3000') })
+    </script> -->
+    <script src='script.js'></script>
 </body>
-
 </html>

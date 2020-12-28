@@ -20,6 +20,7 @@
 
 
     <script>
+        
         function handleAddUser(e) {
             e.preventDefault();
             let { username, password } = e.target.children;
@@ -43,6 +44,9 @@
                 })
         }
 
+
+
+
         function handleGetUsers() {
             fetch('/read')
                 .then(r => r.json())
@@ -53,6 +57,9 @@
 
                 })
         }
+
+
+
 
         function deleteUser(username) {
             console.log(username)
@@ -72,7 +79,7 @@
                 })
         }
 
-       
+
 
         function writeUsersToDOM(users) { //write users to DOM
             let html = '';
@@ -83,27 +90,30 @@
             document.getElementById('users').innerHTML = html;
         }
 
+
+
+
         function handleUpdatePassword(e, username) {
             e.preventDefault();
-           
+
             console.log(username, e.target.children.newPassword.value);
-let newpass =  e.target.children.newPassword.value;
-let newUpass = {username,newpass}
+            let newpass = e.target.children.newPassword.value;
+            let newUpass = { username, newpass }
             fetch('/update', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(newUpass )
+                body: JSON.stringify(newUpass)
             })
                 .then(r => r.json())
                 .then(data => {
                     console.log(data)
                     const { users } = data;
-                  //  writeUsersToDOM(users);
+                    //  writeUsersToDOM(users);
                 })
         }
-        
+
     </script>
 </body>
 
