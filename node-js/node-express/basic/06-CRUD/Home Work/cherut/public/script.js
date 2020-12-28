@@ -5,6 +5,9 @@ function handleGetProduct() {
   fetch('/read')
       .then(r => r.json())
       .then(data => {
+        if(data.ok === false){
+          window.location.href='index.html'
+        }
           const { Products } = data;
           console.log(Products)
           writeProductsToDOM(Products);
