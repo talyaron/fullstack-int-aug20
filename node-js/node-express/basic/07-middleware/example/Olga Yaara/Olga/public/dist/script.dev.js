@@ -1,29 +1,28 @@
 "use strict";
 
-function handleLogin(e) {
-  e.preventDefault();
-  var password = e.target.children.password.value;
-  var username = e.target.children.username.value;
-  console.log(password, username);
-  fetch('/login', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      username: username,
-      password: password
-    })
-  }).then(function (r) {
-    return r.json();
-  }).then(function (data) {
-    console.log(data);
+var getCookie = function getCookie() {
+  var name = "role" + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
 
-    if (data == 'admin') {
-      window.location.href('index2.html');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
-  });
-}
+
+    if (c.indexOf(name) == 0) {
+      return JSON.parse(c.substring(name.length, c.length).replaceAll("'", ""));
+    }
+  }
+
+  return null;
+};
+
+chosenArr = getCookie();
+console.log(chosenArr);
+console.log(document.cookie);
 
 function getProducts(products) {
   fetch('/allproducts').then(function (r) {
