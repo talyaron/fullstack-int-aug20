@@ -1,7 +1,7 @@
 "use strict";
 
 function handlesubmit(e) {
-  console.log('handlesubmit activated');
+  // console.log('handlesubmit activated')
   e.preventDefault();
   console.log('submit');
   var UserID = e.target.UserID.value;
@@ -32,13 +32,15 @@ function handlesubmit(e) {
   console.log(UserDetlis);
 }
 
-function handleAddUser(e) {
+function handleAddUser() {
   console.log('handleAddUser activated');
   var UserID = document.getElementById('UserID').value;
   var pass = document.getElementById('Password').value;
+  var role = document.getElementById('role').value;
   console.log(UserID);
   var UserDetlis = {
     UserID: UserID,
+    role: role,
     pass: pass
   };
   console.log(UserDetlis);
@@ -93,7 +95,7 @@ function handleAddProduct(e) {
   }
 }
 
-function writeProductsToDOM(products) {
+function writeProductsToDOM(products, role) {
   //write users to DOM
   var html = '';
   products.forEach(function (product) {

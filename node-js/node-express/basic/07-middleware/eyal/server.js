@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 // let TheUserDataBase = [{ id:"eyal", pass: "123" }];
 let TheUserDataBase = [
   { UserID: 'eyal', role: 'admin',pass: '123' },
-  { UserID: 'ben',role: 'public', pass: '1233' },
+  { UserID: 'ben', role: 'public', pass: '1233' },
 ];
 let products = [
   {
@@ -24,15 +24,21 @@ let products = [
   },
 ];
 
+
+
+///////app.use////////////////////////////////
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.static('public'));
+//////////////////////////////////////////////
 
 
+
+
+//file upload////////////////////////////////////////////////////////////
 app.get('/', (req,res)=> {
   res.sendFile(__dirname+'/public/admin.html')
 })
-
 app.post('/', (req,res)=> {
  var form = new formidable.IncomingForm()
  form.parse(req)
@@ -45,11 +51,14 @@ app.post('/', (req,res)=> {
  })
  res.sendFile(__dirname+'/public/admin.html')
 })
+/////////////////////////////////////////////////////////////////////////////
 
-app.post('/U_info', (req, res) => {
-  // const NewUditails = { id: req.body.UserID, pass: req.body.pass }; //the userID that the user typed -
-  /*  const filteredArray = TheUserDataBase.filter((user) => user.id === NewUditails.id);
-  let resultarry = filteredArray[0]; //in case we will find more the one take the first */
+
+
+
+
+//login //////////////////////////////////////////////////////////////////////
+app.post('/U_info',getUserfromedataBse,ISuserAuthorized, (req, res,next) => {  
   const resultarry = TheUserDataBase.find(
     ({ UserID }) => UserID === req.body.UserID
   );
@@ -59,7 +68,8 @@ app.post('/U_info', (req, res) => {
       req.body.pass == resultarry.pass
     ) {
       console.log('passed');
-      res.cookie('userAuthorized', 'OK', { maxAge: 300 });
+     
+      res.cookie('userAuthorized', res.userFromDatabase.role, { maxAge: 99999999999999999999 });
       res.send({
         ok: true,
       });
@@ -67,6 +77,7 @@ app.post('/U_info', (req, res) => {
       console.log('rejected');
       res.send({
         ok: false,
+        ISuserAuthorized: `${res.authorized}`
       });
     }
   } else {
@@ -75,29 +86,33 @@ app.post('/U_info', (req, res) => {
     });
     console.log('rong user name or password');
   }
+  next();
 });
+/////////////////////////////////////////////////////////////////////
 
-// add user
+
+
+
+
+
+// add user//////////////////////////////////////////////////////////
 app.post('/add_user', IsUserAllredyExist, (req, res, next) => {
   theUserEntersIsEmpty = true;
   IsUserAllredyExist = true;
-  const pulledUserFromClaient = {
-    UserID: req.body.UserID,
-    pass: req.body.pass,
-  }; //the userID that the user typed -
-  console.log(pulledUserFromClaient);
-  if (pulledUserFromClaient.UserID.length > 0) {
+  
+  console.log(req.body);
+  if (req.body.UserID.length > 0) {
     theUserEntersIsEmpty = false;
     if (res.userExist) {
       res.send({
         OK: false,
-        massege: `user named ${pulledUserFromClaient.UserID} is exist`,
+        massege: `user named ${req.body.UserID} is exist`,
       });
     } else {
       TheUserDataBase.push(req.body);
       res.send({
         OK: true,
-        massege: `user named ${pulledUserFromClaient.UserID} is added`,
+        massege: `user named ${req.body.UserID} is added`,
       });
     }
   } else {
@@ -106,8 +121,32 @@ app.post('/add_user', IsUserAllredyExist, (req, res, next) => {
 
   next();
 });
+////////////////////////////////////////////////////////////////////
 
-function IsUserAllredyExist(req, res, next) {  // mideleWare that check if user exist in the dataBase
+
+
+
+
+
+//mideleWares//////////////////////////////////////////////////////
+function ISuserAuthorized(req,res,next){
+  res.authorized = 'forbidden'
+  const { userAuthorized } = req.cookies
+
+    if (userAuthorized === 'admin') {
+        res.authorized = true;
+    }
+    next()
+  }
+
+function getUserfromedataBse(req,res,next){
+   res.userFromDatabase = TheUserDataBase.find(
+    ({ UserID }) => UserID === req.body.UserID
+  );
+  next();
+}
+
+function IsUserAllredyExist(req, res, next) {  // middleWare that check if user exist in the dataBase
   const result = TheUserDataBase.find(
     ({ UserID }) => UserID === req.body.UserID
   );
@@ -121,39 +160,49 @@ function IsUserAllredyExist(req, res, next) {  // mideleWare that check if user 
   }
   next();
 }
+///////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 //the client get (ask/read) from server thr products
 app.get('/read', (req, res) => {
   res.send({ ok: true, products });
 });
 
-app.post('/post', (req, res) => {
-  //the client send/CREATE Product to the server 
+////////////////////////////////////////////////////////////////////////
 
-  //console.log(req.body);
+
+
+
+
+//the client send/CREATE Product to the server /////////////////////
+app.post('/post', (req, res) => {
   products.push(req.body);
-  //console.log(products);
   res.send({ ok: true, products });
 });
+////////////////////////////////////////////////////////////////////
 
 
-app.delete("/delete", (req, res) => {  //the client ask the server to delete somthing on the server (also called DELETE)
 
 
+//the client ask the server to delete somthing on the server (also called DELETE)////////////////////////
+app.delete("/delete", (req, res) => {  
   const { ProductName } = req.body;
-
   //find the index of the user in the array
   let  ProductIndex = products.findIndex(product => product.ProductName === ProductName);
-  
-  
-  //remove the user from the array
+   //remove the user from the array
   products.splice(ProductIndex, 1); 
-
   console.log(products);
-
   //return the users
   res.send({ ok: true, products })
 })
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 app.listen(port, () => {

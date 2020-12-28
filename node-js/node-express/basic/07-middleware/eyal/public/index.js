@@ -1,6 +1,6 @@
 
 function handlesubmit(e) {
-  console.log('handlesubmit activated')
+ // console.log('handlesubmit activated')
   e.preventDefault();
   console.log('submit');
   const UserID = e.target.UserID.value;
@@ -31,12 +31,13 @@ function handlesubmit(e) {
 
 
 
-function handleAddUser(e) {
+function handleAddUser() {
   console.log('handleAddUser activated')
   const UserID = document.getElementById('UserID').value;
   const pass = document.getElementById('Password').value;
+  const role = document.getElementById('role').value;
   console.log(UserID);
-  const UserDetlis = { UserID, pass };
+  const UserDetlis = { UserID,role, pass };
 
   console.log(UserDetlis);
 
@@ -46,9 +47,7 @@ function handleAddUser(e) {
     body: JSON.stringify(UserDetlis),
   })
     .then((res) => res.json())
-    .then((data) => {
-
-      
+    .then((data) => {      
       
         document.getElementById('main').innerHTML =
         `<h1>${data.massege}</h1>`;
@@ -95,7 +94,7 @@ if (ProductName!=''){
 }
 
 
-function writeProductsToDOM(products) { //write users to DOM
+function writeProductsToDOM(products,role) { //write users to DOM
   let html = '';
   products.forEach(product => {
     html += `<div class="card" >
