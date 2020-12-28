@@ -1,31 +1,25 @@
-function handleLogin(e){
-    e.preventDefault();
 
-    const password = e.target.children.password.value;
-    const username = e.target.children.username.value;
+/*const getCookie = () => {
+    var name = "role" + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
 
-    console.log(password, username)
-
-    fetch('/login',{
-        method:'post',
-        headers:{
-            'Content-Type':'application/json'
-
-        },
-        body:JSON.stringify({username, password})
-    })
-    .then(r=>r.json())
-    .then(data=>{
-        console.log(data)
-        if (data == 'admin'){
-            window.location.href('index2.html')
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
         }
-    })
+        if (c.indexOf(name) == 0) {
+            return JSON.parse(c.substring(name.length, c.length).replaceAll("'",""));
+        }
+    }
+    return null;
 }
 
+chosenArr =  getCookie();
+console.log(chosenArr)*/
 
-
-
+console.log(document.cookie)
 
 function getProducts(products) {
 
