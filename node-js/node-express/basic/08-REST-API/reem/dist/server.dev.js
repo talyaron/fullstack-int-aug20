@@ -16,7 +16,7 @@ var fetch = require('node-fetch');
 app.use(cookieParser());
 app.use(express["static"]('public'));
 app.use(bodyParser.json());
-app.postNODE('/sendCity', function (req, res) {
+app.post('/sendCity', function (req, res) {
   // fetch('api.openweathermap.org/data/2.5/weather?q=jerusalem&appid=9c72c68beca5025e3cc723b7e0045386')
   var city = req.body.city;
   console.log(city);

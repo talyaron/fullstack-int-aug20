@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json())
 
 
-app.postNODE('/sendCity', (req, res) => {
+app.post('/sendCity', (req, res) => {
 
 
     // fetch('api.openweathermap.org/data/2.5/weather?q=jerusalem&appid=9c72c68beca5025e3cc723b7e0045386')
