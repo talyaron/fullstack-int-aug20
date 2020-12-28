@@ -1,5 +1,5 @@
 
-const getCookie = () => {
+/*const getCookie = () => {
     var name = "role" + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
@@ -17,7 +17,7 @@ const getCookie = () => {
 }
 
 chosenArr =  getCookie();
-console.log(chosenArr)
+console.log(chosenArr)*/
 
 console.log(document.cookie)
 
