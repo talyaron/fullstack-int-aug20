@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Press Start 2P', cursive;
+    }
+</style>
+
+<body>
+    <form onsubmit='handleSendCity(event)'>
+        <input type='text' placeholder="Enter City" name="city">
+        <input type="submit" value="Get Weather">
+    </form>
+
+    <div id="weather"></div>
+
+    <script>
+        function handleSendCity(e) {
+            e.preventDefault();
+
+            const city = e.target.children.city.value;
+            console.log(city)
+
+            fetch('/sendCity', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ city })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)    } C`;
+                })
+        }
+    </script>
+</body>
+
+</html>
