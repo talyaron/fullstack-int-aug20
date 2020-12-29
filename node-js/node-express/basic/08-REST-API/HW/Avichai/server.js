@@ -1,10 +1,8 @@
 const express = require('express')
 const app = express(); ///server;
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser')
 const fetch = require('node-fetch');
 
-app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(express.static('public'))
 

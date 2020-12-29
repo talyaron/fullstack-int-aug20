@@ -6,11 +6,8 @@ var app = express(); ///server;
 
 var bodyParser = require('body-parser');
 
-var cookieParser = require('cookie-parser');
-
 var fetch = require('node-fetch');
 
-app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express["static"]('public'));
 app.post('/getMovieList', function (req, res) {
