@@ -1,7 +1,7 @@
 "use strict";
 
 /******************************************
- *  Author : eyal shemuel   
+ *  Author : eyal shemuel
  *  Created On : Mon Dec 28 2020
  *  File : server.js.js
  *******************************************/
@@ -22,10 +22,10 @@ app.post('/SendmMessage', function (req, res) {
   ////AI BOT
   var massege = req.body.massege;
   fetch("https://acobot-brainshop-ai-v1.p.rapidapi.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=".concat(massege), {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
-      "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com"
+    method: 'GET',
+    headers: {
+      'x-rapidapi-key': '2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0',
+      'x-rapidapi-host': 'acobot-brainshop-ai-v1.p.rapidapi.com'
     }
   }).then(function (response) {
     return response.json({
