@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .page {
+        width: 95%;
+        margin: auto;
+        height: 100vh;
+    }
+
+    #moviesBox {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5px;
+    }
+
+    #movie {
+        width: 80%;
+        height: 20%;
+    }
+
+    img {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="page">
+        <form onsubmit="handleSendCity(event)">
+            <input type="text" name="movie">
+            <input type="submit" value="Find Movies">
+        </form>
+        <div id="root"></div>
+        <div id="moviesBox"></div>
+    </div>
+    <script>
+        function handleSendCity(e) {
+            e.preventDefault();
+            const movie = e.target.children.movie.value
+
+            fetch('/getMovieList', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ movie })
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    let movies = data.x
+                    writeButtonsDom(movies)
+                    console.log(movies)
+                })
+        }
+
+        function handleMovieClick(e) {
+            const movieName = e.target.dataset.td
+
+            fetch('/getMovieInfo', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ movieName })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    let movies = data.x
+                    console.log(movies)
+                    writeMovieToDom(movies)
+                })
+        }
+
+        function writeButtonsDom(movies) {
+            html = ''
+            movies.forEach(movie => {
+                html += `<button id="movieName" data-td="${movie.Title}" onclick="handleMovieClick(event)">${movie.Title}</button>`
+            })
+            document.getElementById('root').innerHTML = html
+        }
+
+        function writeMovieToDom(movies) {
+            html = ''
+            movies.forEach(movie => {
+                html += `<div id="movie" data-td="${movie.Title}"> Movie Title: ${movie.Title} <br> Public Year: ${movie.Year}
+                    <img src="${movie.Poster}">
+                    </div>`
+                console.log(movie.Title)
+            })
+            document.getElementById('moviesBox').innerHTML = html
+        }
+
+    </script>
+</body>
+
+</html>
