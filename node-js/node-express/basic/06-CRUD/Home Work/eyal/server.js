@@ -8,6 +8,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const app = express();
+const formidable = require('formidable');
 const port = process.env.PORT || 3000;
 // let TheUserDataBase = [{ id:"eyal", pass: "123" }];
 let TheUserDataBase = [
@@ -26,6 +27,24 @@ let products = [
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.static('public'));
+
+
+app.get('/', (req,res)=> {
+  res.sendFile(__dirname+'/public/admin.html')
+})
+
+app.post('/', (req,res)=> {
+ var form = new formidable.IncomingForm()
+ form.parse(req)
+
+ form.on('fileBegin',function(name,file){
+   file.path=__dirname+'/public/image/'+file.name
+ })
+ form.on('file',function(name,file){
+   console.log("Uploaded file", file.name)
+ })
+ res.sendFile(__dirname+'/public/admin.html')
+})
 
 app.post('/U_info', (req, res) => {
   // const NewUditails = { id: req.body.UserID, pass: req.body.pass }; //the userID that the user typed -
@@ -116,6 +135,26 @@ app.post('/post', (req, res) => {
   //console.log(products);
   res.send({ ok: true, products });
 });
+
+
+app.delete("/delete", (req, res) => {  //the client ask the server to delete somthing on the server (also called DELETE)
+
+
+  const { ProductName } = req.body;
+
+  //find the index of the user in the array
+  let  ProductIndex = products.findIndex(product => product.ProductName === ProductName);
+  
+  
+  //remove the user from the array
+  products.splice(ProductIndex, 1); 
+
+  console.log(products);
+
+  //return the users
+  res.send({ ok: true, products })
+})
+
 
 app.listen(port, () => {
   console.log(`Listen on port ${port}`);

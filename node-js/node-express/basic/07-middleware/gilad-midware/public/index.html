@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+
+    }
+
+    #container {
+        background-color: aqua;
+    }
+
+    #productCreator {
+        margin-top: 5%;
+        background-color: aqua;
+        height: 5vw;
+        padding-top: 3vw;
+    }
+
+    #root {
+
+        display: flex;
+        padding-bottom: 150px;
+
+    }
+
+    .products {
+        border: solid 1px black;
+        margin: 2px;
+        background-color: rgba(255, 255, 255, 0.781);
+
+    }
+    .products>button{
+        display: inline;
+        
+    }
+
+    .name {
+        color: blue;
+        font-size: 30px;
+    }
+
+    .price {
+        color: red;
+    }
+
+    #store {
+        display: none;
+
+    }
+    
+    
+    
+</style>
+
+<body>
+    <div id="loginHtml">
+        <h1>please logg in </h1>
+        <div>
+            <form action="" onsubmit="handleLogin(event)">
+                <input id="userName" type="text" placeholder="Enter username">
+                <input id="PassWord" type="password" placeholder="Enter Password">
+                <button>submit</button>
+        </div>
+        </form>
+        <div id="login"></div>
+    </div>
+    <div id="store">
+        <h1>welcome to my store.</h1>
+        <div id="role"></div>
+        
+        <div id="container">
+            <div id="productCreator">
+                <form onsubmit="handleSubmit(event)">
+
+                    <input type="text" id="name" placeholder="enter item name">
+                    <input type="number" id="price" placeholder="enter product price">
+                    <label for="">$</label>
+                    <input type="file" id="image">
+
+                    <button class="button">Add Product</button>
+                </form>
+
+            </div>
+            <div id="root"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

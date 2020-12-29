@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    
+</head>
+<body>
+   
+    <h1>OUR STORE</h1>
+    <div id="allProducts"></div>
+    <div id="popUpAdd">NEW PRODUCT
+        <button type="submit" id="close">&times</button>
+        <form onsubmit='addProduct(event)'>
+            <input type='text' placeholder="name" name='name' required></br>
+            <input type='text' placeholder="picture" name='picture' required></br>
+            <input type='text' placeholder="price" name='price' required></br>
+            <input type="submit" value="send">
+        </form>
+    </div>
+    <div id="updatePopUp">UPDATE</div>
+    <div id="btnWrapper">
+        <button id="btnAddProduct" onclick="addPopUp(event)">+</button>
+    </div>
+   
+    <script src='js.js'></script>
+    <script src='script.js'></script>
+</body>
+</html>
