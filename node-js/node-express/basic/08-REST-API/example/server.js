@@ -24,7 +24,7 @@ app.post('/sendCity', (req, res) => {
         });
 
 
-    console.log('cont')
+    console.log('cont');
 
 })
 
