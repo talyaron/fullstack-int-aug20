@@ -11,9 +11,11 @@ function handleSendMovie(e) {
     })
         .then(res => res.json())
         .then(data => {
-            if(data.ok === false){
+            if (data.ok === false) {
                 console.log('nothing found')
-            }else{
+                let movieBox = document.querySelector('.moviesBox')
+                movieBox.innerHTML = `<div class="notFound">Sorry no match with these characters</div>`
+            } else {
                 let movies = data.movies
                 writeMovieToDom(movies)
                 console.log(movies)
@@ -36,9 +38,8 @@ function writeMovieToDom(movies) {
         }
 
         if (movie.Type === 'movie' || movie.Type === 'series') {
-            if (i === 0) {
-                html += `<div class="row d-flex justify-content-around">
-                <div class="card" style="width: 13rem;">
+            html += `
+                <div class="card mt-2" style="width: 13.6rem;">
                     <img class="card-img-top" style="height: 16.2rem;"
                         src="${movie.Poster}"
                         alt="Card image cap">
@@ -49,50 +50,6 @@ function writeMovieToDom(movies) {
                         <a href="https://www.imdb.com/title/${movie.imdbID}/" class="btn btn-primary btn-sm position-relative" style="width:75%;bottom:0.6rem;margin:auto auto auto auto">IMBd
                         page</a>
                 </div>`
-            } else if (i === 5) {
-                html += `</div><div class="row d-flex justify-content-around mt-2">
-                <div class="card" style="width: 13rem;">
-                    <img class="card-img-top" style="height: 16.2rem;"
-                        src="${movie.Poster}"
-                        alt="Card image cap">
-                    <div class="card-body d-flex flex-column justify-content-center h-50">
-                        <h6 class="card-title">${movie.Title} (${movie.Year})</h6>
-                        <h6 class="card-text">${type}</h6>
-                        </div>
-                        <a href="https://www.imdb.com/title/${movie.imdbID}/" class="btn btn-primary btn-sm position-relative" style="width:75%;bottom:0.6rem;margin:auto auto auto auto">IMBd
-                        page</a>
-                </div>`
-            } else if (i === 10) {
-                html += `</div><div class="row d-flex justify-content-around mt-2">
-                <div class="card" style="width: 13rem;">
-                    <img class="card-img-top" style="height: 16.2rem;"
-                        src="${movie.Poster}"
-                        alt="Card image cap">
-                    <div class="card-body d-flex flex-column justify-content-center h-50">
-                        <h6 class="card-title">${movie.Title} (${movie.Year})</h6>
-                        <h6 class="card-text">${type}</h6>
-                        </div>
-                        <a href="https://www.imdb.com/title/${movie.imdbID}/" class="btn btn-primary btn-sm position-relative" style="width:75%;bottom:0.6rem;margin:auto auto auto auto">IMBd
-                        page</a>
-                </div>`
-            } else {
-                html += `<div class="card" style="width: 13rem;">
-                <img class="card-img-top" style="height: 16.2rem;"
-                    src="${movie.Poster}"
-                    alt="Card image cap">
-                <div class="card-body d-flex flex-column justify-content-center ">
-                    <h6 class="card-title">${movie.Title} (${movie.Year})</h6>
-                    <h6 class="card-text">${type}</h6>
-                    </div>
-                    <a href="https://www.imdb.com/title/${movie.imdbID}/" class="btn btn-primary btn-sm position-relative" style="width:75%;bottom:0.6rem;margin:auto auto auto auto">IMBd
-                        page</a>
-                       
-               
-            </div>`
-            }
-            console.log(i)
-            console.log(movies[i])
-            i++
         }
     })
     let movieBox = document.querySelector('.moviesBox')

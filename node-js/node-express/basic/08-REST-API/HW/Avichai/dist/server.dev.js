@@ -24,7 +24,6 @@ app.post('/getMovieList', function (req, res) {
   }).then(function (data) {
     var movies = data.Search;
     var ok = true;
-    console.log(data.totalResults);
 
     if (data.totalResults === undefined) {
       res.send({

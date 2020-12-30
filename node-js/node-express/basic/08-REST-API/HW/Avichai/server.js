@@ -10,8 +10,6 @@ app.use(express.static('public'))
 app.post('/getMovieList', (req, res) => {
     const { movie } = req.body
 
-
-
     fetch(`https://movie-database-imdb-alternative.p.rapidapi.com/?s=${movie}&page=1&r=json`, {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
         headers: {
@@ -25,7 +23,7 @@ app.post('/getMovieList', (req, res) => {
             let movies = data.Search
             let ok = true
 
-            console.log(data.totalResults)
+
             if (data.totalResults === undefined) {
                 res.send({ ok: false })
             } else {
