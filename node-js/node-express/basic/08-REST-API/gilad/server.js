@@ -10,23 +10,29 @@ app.use(express.static('public'));
 app.use(bodyParser.json())
 
 
-app.post('/sendCity', (req, res) => {
+
+app.post('/fetchApi', (req, res) => {
+    const { test } = req.body;
+    console.log(test)
+
+    fetch(`http://maps.openweathermap.org/maps/2.0/weather/TA2/1/1/{y}&appid=c399d7a4de28f7c870248632ab334d4d`)
+    
 
 
-   
-    const { city } = req.body;
-    console.log(city)
-
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9c72c68beca5025e3cc723b7e0045386&units=metric`) //event loop
         .then(res => res.json())
         .then(weather => {
+            console.log(weather)
             res.send({ ok: true, weather }) //asynchornic programing
         });
 
 
-    console.log('cont')
+    
+
+    res.send({ ok: true })
 
 })
+
+
 
 
 
