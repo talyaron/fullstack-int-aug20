@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <title>Movie searcher</title>
+</head>
+
+
+<body>
+    <div class="page">
+        <form onsubmit="handleSendCity(event)">
+            <input type="text" name="movie">
+            <input type="submit" value="Find Movies">
+        </form>
+        <div id="root"></div>
+        <div id="moviesBox">
+            <div id="movie" data-td="${movie.Title}">
+                <div class="movie__text"> Movie Title: ${movie.Title} <br> Public Year: ${movie.Year}
+                    <br> <a href="https://www.imdb.com/title/${movie.imdbID}/">IMDb page</a>
+                </div>
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BN2UxZDJlYjAtNGQ0OC00MWE4LTkzMjktMDAyNTg2ZTVkZjQ1XkEyXkFqcGdeQXVyMTc2MDc0Nw@@._V1_SX300.jpg">
+            </div>
+            <div id="movie" data-td="${movie.Title}">
+                <div class="movie__text"> Movie Title: ${movie.Title} <br> Public Year: ${movie.Year}
+                    <br> <a href="https://www.imdb.com/title/${movie.imdbID}/">IMDb page</a>
+                </div>
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BN2UxZDJlYjAtNGQ0OC00MWE4LTkzMjktMDAyNTg2ZTVkZjQ1XkEyXkFqcGdeQXVyMTc2MDc0Nw@@._V1_SX300.jpg">
+            </div>
+            <div id="movie" data-td="${movie.Title}">
+                <div class="movie__text"> Movie Title: ${movie.Title} <br> Public Year: ${movie.Year}
+                    <br> <a href="https://www.imdb.com/title/${movie.imdbID}/">IMDb page</a>
+                </div>
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BN2UxZDJlYjAtNGQ0OC00MWE4LTkzMjktMDAyNTg2ZTVkZjQ1XkEyXkFqcGdeQXVyMTc2MDc0Nw@@._V1_SX300.jpg">
+            </div>
+            <div id="movie" data-td="${movie.Title}">
+                <div class="movie__text"> Movie Title: ${movie.Title} <br> Public Year: ${movie.Year}
+                    <br> <a href="https://www.imdb.com/title/${movie.imdbID}/">IMDb page</a>
+                </div>
+                <img
+                    src="https://m.media-amazon.com/images/M/MV5BN2UxZDJlYjAtNGQ0OC00MWE4LTkzMjktMDAyNTg2ZTVkZjQ1XkEyXkFqcGdeQXVyMTc2MDc0Nw@@._V1_SX300.jpg">
+            </div>
+
+        </div>
+    </div>
+    <script src="js.js"> </script>
+</body>
+
+</html>

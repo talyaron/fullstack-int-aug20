@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <style>
     body {
-        font-family: 'Press Start 2P', cursive;
+        font-family: 'Aldrich', sans-serif;
     }
 </style>
 
@@ -37,7 +37,7 @@
                 .then(r => r.json())
                 .then(data => {
                     console.log(data)
-                    document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)    } C`;
+                    document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)} C &#8451;`;
                 })
         }
     </script>
