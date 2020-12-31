@@ -15,29 +15,29 @@
 </style>
 
 <body>
-    <form onsubmit='searchPokemon(event)'>
-        <input type='text' placeholder="pokemon name" name="pokemon">
-        <input type="submit" value="Get Pokemon">
+    <form onsubmit='handleSendCity(event)'>
+        <input type='text' placeholder="Enter City" name="city">
+        <input type="submit" value="Get Weather">
     </form>
 
-    <div id="pokemon"></div>
+    <div id="weather"></div>
 
     <script>
-        function searchPokemon(e) {
+        function handleSendCity(e) {
             e.preventDefault();
 
-            const pokemon = e.target.children.pokemon.value;
-            console.log(pokemon)
+            const city = e.target.children.city.value;
+            console.log(city)
 
-            fetch('/sendPokemon', {
+            fetch('/sendCity', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ pokemon })
+                body: JSON.stringify({ city })
             })
                 .then(r => r.json())
                 .then(data => {
                     console.log(data)
-                    /*document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)    } C`;*/
+                    document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)    } C`;
                 })
         }
     </script>
