@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+body, html{
+    margin: 0px;  
+  }
+  
+  .app{
+      display: grid;
+      grid-template-rows: 30px auto 100px;
+      height: 100vh;
+=======
 :root {
   --background: #E5FFB3;
   --background-accent: #DBF8A3;
@@ -22,15 +32,38 @@ body, html{
       background-image: url("https://web.whatsapp.com/img/bg-chat-tile-light_04fcacde539c58cca6745483d4858c52.png");
       background-color: #eeffd4;
       box-shadow: 5px 5px 5px;
+>>>>>>> master
   }
   header{
       background-color: teal;
       color: white;
+<<<<<<< HEAD
+=======
       font-size:2rem;
+>>>>>>> master
       text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
+<<<<<<< HEAD
+  }
+  
+  .inputText{
+      width: 100%;
+      display: flex;
+  
+      .textarea {        
+        width: 100%;    
+        position: relative;   
+    }
+  }
+  
+  #messagesWrapper{
+      background-color: rgb(240, 240, 240);
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      
+=======
      
   }
   
@@ -104,17 +137,25 @@ body, html{
       scroll-behavior: smooth;
       
       
+>>>>>>> master
   }
   
   .message{
     background-color: #eeffd4;
     padding: 20px;
+<<<<<<< HEAD
+    width: max-content;
+=======
     width: 90%;
+>>>>>>> master
     margin: 3%;
     position: relative;
     border-radius: 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+<<<<<<< HEAD
+=======
     font-size: 1.3rem;
+>>>>>>> master
 
       ::after{
         background-color: #eeffd4;
@@ -124,7 +165,11 @@ body, html{
         height: 20px;
         width:  20px;
         position: absolute;
+<<<<<<< HEAD
+        /* left: 95%; */
+=======
         left: 1%;
+>>>>>>> master
         top: 82.5%;
         transform: rotate( 316deg );
       }
@@ -133,6 +178,18 @@ body, html{
   }
   
   .InMessage{
+<<<<<<< HEAD
+    background-color: #d4faff; 
+    left: 20%;
+
+    ::after{
+        background-color: #d4faff; 
+        left: 20%;
+        top: 82.5%;
+        
+      }
+
+=======
     background-color: #e0f7fae3; 
     left: -3%;
     padding: 20px;
@@ -159,5 +216,6 @@ body, html{
       }
         
      
+>>>>>>> master
   }
   
