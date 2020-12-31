@@ -4,9 +4,12 @@ body, html {
 }
 
 .app {
+  margin: auto;
   display: grid;
-  grid-template-rows: 30px auto 100px;
+  grid-template-rows: 7% auto 15%;
   height: 100vh;
+  width: 70%;
+  box-shadow: 5px 5px 5px;
 }
 
 header {
@@ -22,26 +25,26 @@ header {
   width: 100%;
   display: flex;
 }
-.inputText .textarea {
+.inputText textarea {
   width: 100%;
   position: relative;
 }
 
 #messagesWrapper {
-  background-color: #f0f0f0;
+  background-color: #E5DDD5;
   overflow-y: auto;
   scroll-behavior: smooth;
+  background-image: url("https://web.whatsapp.com/img/bg-chat-tile-light_04fcacde539c58cca6745483d4858c52.png");
 }
 
 .message {
   background-color: #eeffd4;
   padding: 20px;
-  width: max-content;
+  width: 90%;
   margin: 3%;
   position: relative;
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
-  justify-self: end;
 }
 .message ::after {
   background-color: #eeffd4;
@@ -51,17 +54,30 @@ header {
   height: 20px;
   width: 20px;
   position: absolute;
-  /* left: 95%; */
+  left: 1%;
   top: 82.5%;
   transform: rotate(316deg);
 }
 
 .InMessage {
   background-color: #d4faff;
-  /* left: 50%; */
+  left: -3%;
+  padding: 20px;
+  width: 90%;
+  margin: 3%;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
 }
 .InMessage ::after {
   background-color: #d4faff;
-  left: 20%;
+  /* left: 20%; */
   top: 82.5%;
+  box-shadow: -1px 1px 1px 0px rgba(0, 0, 0, 0.534);
+  content: " ";
+  display: block;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  transform: rotate(316deg);
 }
