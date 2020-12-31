@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body, html{
     margin: 0px;  
   }
@@ -6,14 +7,45 @@ body, html{
       display: grid;
       grid-template-rows: 30px auto 100px;
       height: 100vh;
+=======
+:root {
+  --background: #E5FFB3;
+  --background-accent: #DBF8A3;
+  --background-accent-2: #BDE66E;
+  --light: #92DE34;
+  --dark: #69BC22;
+  --text: #025600;
+}
+
+
+body, html{
+    margin: 0px; 
+    background-color:#e5ddd56b;
+  }
+  
+  .app{
+    margin:auto;
+      display: grid;
+      grid-template-rows: 9% auto 15%;
+      height: 100vh;
+      width: 70%;
+      background-image: url("https://web.whatsapp.com/img/bg-chat-tile-light_04fcacde539c58cca6745483d4858c52.png");
+      background-color: #eeffd4;
+      box-shadow: 5px 5px 5px;
+>>>>>>> master
   }
   header{
       background-color: teal;
       color: white;
+<<<<<<< HEAD
+=======
+      font-size:2rem;
+>>>>>>> master
       text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
+<<<<<<< HEAD
   }
   
   .inputText{
@@ -31,16 +63,99 @@ body, html{
       overflow-y: auto;
       scroll-behavior: smooth;
       
+=======
+     
+  }
+  
+  .inputText{
+  
+    height: 90%;
+      width: 100%;
+      display: flex;
+  // background-color:#e5ddd56b;
+      textarea {        
+        width: 83%;    
+        height: 94%;
+        margin:auto; 
+        position: relative;  
+    }
+
+     
+   button {
+    width: 15%;
+    height: 100%;
+      margin:auto; 
+    display: block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: var(--light);
+    /* width: 400px;
+    height: 70px; */
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
+    background-size: 100% 100%;
+    box-shadow: 0 0 0 4px var(--light) inset;
+    box-shadow: 4px 4px 2px 1px ;
+    margin-bottom: 15px;
+  }
+  
+  button:active {
+    background-image: linear-gradient(
+      145deg,
+      transparent 10%,
+      var(--dark) 10% 20%,
+      transparent 20% 30%,
+      var(--dark) 30% 40%,
+      transparent 40% 50%,
+      var(--dark) 50% 60%,
+      transparent 60% 70%,
+      var(--dark) 70% 80%,
+      transparent 80% 90%,
+      var(--dark) 90% 100%
+    );
+    
+    animation: background 1s linear 0.1s 1;
+  }
+  
+  @keyframes background {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 400px 0;
+    }
+  }
+
+  }
+  
+  #messagesWrapper{
+    background-color:#e5ddd56b;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      
+      
+>>>>>>> master
   }
   
   .message{
     background-color: #eeffd4;
     padding: 20px;
+<<<<<<< HEAD
     width: max-content;
+=======
+    width: 90%;
+>>>>>>> master
     margin: 3%;
     position: relative;
     border-radius: 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+<<<<<<< HEAD
+=======
+    font-size: 1.3rem;
+>>>>>>> master
 
       ::after{
         background-color: #eeffd4;
@@ -50,7 +165,11 @@ body, html{
         height: 20px;
         width:  20px;
         position: absolute;
+<<<<<<< HEAD
         /* left: 95%; */
+=======
+        left: 1%;
+>>>>>>> master
         top: 82.5%;
         transform: rotate( 316deg );
       }
@@ -59,6 +178,7 @@ body, html{
   }
   
   .InMessage{
+<<<<<<< HEAD
     background-color: #d4faff; 
     left: 20%;
 
@@ -69,5 +189,33 @@ body, html{
         
       }
 
+=======
+    background-color: #e0f7fae3; 
+    left: -3%;
+    padding: 20px;
+    width: 90%;
+    margin: 3%;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+    font-style:italic;
+    font-size: 1.3rem;
+
+
+    ::after{
+        background-color: #e0f7fae3; 
+        /* left: 20%; */
+        top: 82.5%;
+        box-shadow:  -1px 1px 1px 0px rgba(0, 0, 0,  0.534);
+        content: "\00a0";
+        display: block;
+        height: 20px;
+        width:  20px;
+        position: absolute;
+        transform: rotate( 316deg );
+      }
+        
+     
+>>>>>>> master
   }
   
