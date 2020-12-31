@@ -10,16 +10,11 @@ app.use(express.static('public'));
 app.use(bodyParser.json())
 
 
-app.post('/sendPokemon', (req, res) => {
-    const { pokemon } = req.body;
-    console.log(pokemon)
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`) //event loop
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        res.send({ ok: true, data }) //asynchornic programing
-    });
-   /* const { city } = req.body;
+app.post('/sendCity', (req, res) => {
+
+
+   
+    const { city } = req.body;
     console.log(city)
 
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9c72c68beca5025e3cc723b7e0045386&units=metric`) //event loop
@@ -29,7 +24,7 @@ app.post('/sendPokemon', (req, res) => {
         });
 
 
-    console.log('cont')*/
+    console.log('cont')
 
 })
 

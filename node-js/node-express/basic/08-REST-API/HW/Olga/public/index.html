@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align: center;
+    }
+   
+</style>
+
+<body>
+    <form onsubmit='searchPokemon(event)'>
+        <input type='text' placeholder="pokemon name" name="pokemon">
+        <input type="submit" value="Get Pokemon">
+    </form>
+
+    <div id="pokemon"></div>
+
+    <script>
+        function searchPokemon(e) {
+            e.preventDefault();
+
+            const pokemon = e.target.children.pokemon.value;
+            console.log(pokemon)
+
+            fetch('/sendPokemon', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ pokemon })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+
+                    document.getElementById('pokemon').innerHTML = 
+    `<p>name: <span>${data.name}</span></p>
+    <img src='${data.sprites.front_default}' height="200">
+    <p>height: <span>${data.height}</span></p>
+    <p>type: <span>${data.types[0].type.name}</span></p>
+    <p>weight: <span>${data.weight}</span></p>`
+
+                    /*document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)    } C`;*/
+                })
+        }
+    </script>
+</body>
+
+</html>
