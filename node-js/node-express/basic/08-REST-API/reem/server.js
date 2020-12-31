@@ -17,12 +17,9 @@ app.post('/sendCity', (req, res) => {
     const { city } = req.body;
     console.log(city)
 
-	fetch("https://covid-19-data.p.rapidapi.com/report/country/name?date=2020-12-28&name=Israel", {
+	fetch("https://api.greeninvoice.co.il/api/v1/", {
 		"method": "GET",
-		"headers": {
-			"x-rapidapi-key": "ef43e6d47amsh4cf6fbca708489fp108d1djsn0c4fa57ab462",
-			"x-rapidapi-host": "covid-19-data.p.rapidapi.com"
-		}
+		"body" : { "secret" : "" , "kem":""}
 	})
 	// .then(response => {
 	// 	console.log(response);
@@ -31,8 +28,8 @@ app.post('/sendCity', (req, res) => {
 	// 	console.error(err);
 	// });
         .then(res => res.json())
-        .then(weather => {
-            res.send({ ok: true, weather }) //asynchornic programing
+        .then(response => {
+            res.send({ ok: true, response }) //asynchornic programing
         });
 
 
