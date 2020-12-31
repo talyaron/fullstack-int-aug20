@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="title"></div>
+
+    <!-- <script>
+        function handleSendTitleMovie(e) {
+            e.preventDefault();
+
+            const title = e.target.children.movie.value;
+            console.log(title)
+
+            fetch('/sendTitle', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ movie })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    document.getElementById('title').innerText = `${(data.title.main.search)}`;
+                })
+        }
+    </script> -->
+</body>
+</html>
