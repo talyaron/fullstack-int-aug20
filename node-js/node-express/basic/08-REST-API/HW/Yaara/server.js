@@ -22,7 +22,8 @@ app.post('/Currency', (req, res) => {
 
         .then(res => res.json())
         .then(json => {
-            Currency = json
+            Currency = json;
+            console.log(Currency)
             res.send({ Currency })
         });
 })
