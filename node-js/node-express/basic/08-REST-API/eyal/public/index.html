@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="heb" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AplicRony</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
     <div class="app">
-        <header>APPLIRONY</header>
+        <header lang="en">AplicRony - to make it work enter your rapid-API-key in server.js</header>
         <div id="messagesWrapper">
-
+            <div class='message InMessage'>שלום, מה שלומך?<div class="tail"></div> </div>
         </div>
         <form class="inputText" onsubmit='handleSubmitMessage(event)'>
-            <textarea name="message" onkeyup='handleTextArea(event)'></textarea>
-            <button type="submit" id='submitButton'>Send</button>
-            
+            <textarea name="message" onkeyup='handleTextArea(event)'>            
+            </textarea>
+            <button type="submit" id='submitButton'>
+                <span class="material-icons" style="font-size:300%">reply</span>
+            </button>
+
         </form>
 
     </div>
-   
+
     <script src="js.js"></script>
 </body>
 
