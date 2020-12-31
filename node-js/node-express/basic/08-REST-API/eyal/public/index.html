@@ -1,46 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="heb" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>AplicRony</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<style>
-    body {
-        font-family: 'Press Start 2P', cursive;
-    }
-</style>
 
 <body>
-    <form onsubmit='handleSendCity(event)'>
-        <input type='text' placeholder="Enter City" name="city">
-        <input type="submit" value="Get Weather">
-    </form>
+    <div class="app">
+        <header lang="en">AplicRony - to make it work enter your rapid-API-key in server.js</header>
+        <div id="messagesWrapper">
+            <div class='message InMessage'>שלום, מה שלומך?<div class="tail"></div> </div>
+        </div>
+        <form class="inputText" onsubmit='handleSubmitMessage(event)'>
+            <textarea name="message" onkeyup='handleTextArea(event)'>            
+            </textarea>
+            <button type="submit" id='submitButton'>
+                <span class="material-icons" style="font-size:300%">reply</span>
+            </button>
 
-    <div id="weather"></div>
+        </form>
 
-    <script>
-        function handleSendCity(e) {
-            e.preventDefault();
+    </div>
 
-           /*  const city = e.target.children.city.value;
-            console.log(city) */
-
-            fetch('/sendCity', {
-                method: 'get',
-                headers: { 'Content-Type': 'application/json' }
-              
-            })
-                .then(r => r.json())
-                .then(data => {
-                    console.log(data)
-                   // document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)    } C`;
-                })
-        }
-    </script>
+    <script src="js.js"></script>
 </body>
 
 </html>
