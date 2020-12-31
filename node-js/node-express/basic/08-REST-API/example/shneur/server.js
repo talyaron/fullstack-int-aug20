@@ -17,11 +17,11 @@ app.post('/sendStock', (req, res) => {
     const { myStock } = req.body;
     console.log(myStock)
 
-    fetch(`https://zirra.p.rapidapi.com/v1/companies?ticker=${myStock}`, {
+    fetch("https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?album_type=SINGLE&offset=20&limit=10", {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "e846b0c7f4msha2c3878c64cee80p17095djsn12b3512845a6",
-            "x-rapidapi-host": "zirra.p.rapidapi.com"
+            "x-rapidapi-host": "finage-currency-data-feed.p.rapidapi.com"
         }
     })
     .then(response => {
@@ -29,7 +29,8 @@ app.post('/sendStock', (req, res) => {
     })
     .catch(err => {
         console.error(err);
-    });
+    }); 
+   
 
 })
 
