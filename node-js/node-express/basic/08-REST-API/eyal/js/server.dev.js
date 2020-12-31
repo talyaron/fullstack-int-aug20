@@ -80,7 +80,7 @@ function SendMessageToRobot(massage) {
           return regeneratorRuntime.awrap(fetch("https://acobot-brainshop-ai-v1.p.rapidapi.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=".concat(massage), {
             method: 'GET',
             headers: {
-              'x-rapidapi-key': '2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0',
+              'x-rapidapi-key': '',
               'x-rapidapi-host': 'acobot-brainshop-ai-v1.p.rapidapi.com'
             }
           }).then(function (response) {
@@ -115,7 +115,7 @@ function translate(fromLng, toLng, massage) {
           return regeneratorRuntime.awrap(fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=0&de=a%40b.c"), {
             "method": "GET",
             "headers": {
-              "x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
+              "x-rapidapi-key": "",
               "x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com"
             }
           }).then(function (response) {

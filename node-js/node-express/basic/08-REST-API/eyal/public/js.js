@@ -16,15 +16,15 @@ function handleSubmitMessage(e) {
     messagesWrapper.scrollTo(0, messagesWrapper.scrollHeight);
     console.log('start fetch');
 
-    fetch('/SendmMessage', {
+    fetch('/SendMessage', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message }),
     }).then(r => r.json())
     .then(data => {
-        console.log(data.cnt)
-        document.querySelector('#messagesWrapper').innerHTML += htmlMessage(
-            data.cnt
+        console.log(data.hebTransaction)
+        document.querySelector('#messagesWrapper').innerHTML += htmlIncomeMessage(
+            data.hebTransaction
           );
     })
 
@@ -37,7 +37,7 @@ function htmlMessage(message) {
   return `<div class='message'>${message} <div class="tail"></div> </div>`;
 }
 function htmlIncomeMessage(message) {
-  return `<div class='message InMessage' ${message} <div class="tail"></div> </div>`;
+  return `<div class='message InMessage'> ${message} <div class="tail"></div> </div>`;
 }
 
 function handleTextArea(e) {
@@ -46,23 +46,3 @@ function handleTextArea(e) {
     document.getElementById('submitButton').click();
   }
 }
-
-/* 
-        function handleSendCity(e) {
-            e.preventDefault();
-
-            const city = e.target.children.city.value;
-            console.log(city)
-
-            fetch('/sendCity', {
-                method: 'post',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ city })
-            })
-                .then(r => r.json())
-                .then(data => {
-                    console.log(data)
-                    document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)} C &#8451;`;
-                })
-        }
- */

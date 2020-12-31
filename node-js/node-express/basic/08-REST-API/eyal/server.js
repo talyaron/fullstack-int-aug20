@@ -8,6 +8,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const fetch = require('node-fetch');
+const { encode, decode } = require('url-encode-decode')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,51 +17,74 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.post('/SendmMessage', (req, res) => {
-  ////AI BOT
-  const { massege } = req.body;
-  fetch(
-    `https://acobot-brainshop-ai-v1.p.rapidapi.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=${massege}`,
+app.post('/SendMessage', async (req, res) => {
+  
+  try{
+    console.log(req.body.message)
+// translate massage to english
+const EngTransaction = await translate('iw', 'en', req.body.message)
+console.log(EngTransaction)
+// send massage to the robot 
+const RobotMassage = await SendMessageToRobot(EngTransaction)
+console.log(RobotMassage)
+//translate massage to hebrew
+const hebTransaction = await translate('en', 'iw', RobotMassage)
+console.log(hebTransaction)
+
+res.send({hebTransaction});
+  }catch(e){
+    console.log(e);
+  }
+  
+
+
+});
+
+
+async function SendMessageToRobot(massage) {
+  let robotResponseMsg;
+  await fetch(
+    `https://acobot-brainshop-ai-v1.p.rapidapi.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=${massage}`,
     {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': '2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0',
+        'x-rapidapi-key': '',
         'x-rapidapi-host': 'acobot-brainshop-ai-v1.p.rapidapi.com',
       },
     }
   )
     .then((response) => response.json({ response }))
     .then((response) => {
-      console.log(response);
-      res.send(response);
+      robotResponseMsg = response.cnt;
     })
     .catch((err) => {
       console.error(err);
     });
-});
+  return robotResponseMsg;
+}
 
-////traslate
 
-/* fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", {
-	"method": "POST",
-	"headers": {
-		"content-type": "application/x-www-form-urlencoded",
-		"accept-encoding": "application/gzip",
-		"x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
-		"x-rapidapi-host": "google-translate1.p.rapidapi.com"
-	},
-	"body": {
-		"q": "Hello, world!",
-		"source": "en",
-		"target": "es"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-}); */
+async function translate(fromLng, toLng, massage) {
+  let translatedMessage;
+  let textToTranslate =  encode(massage);
+
+  await fetch(`https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=0&de=a%40b.c`, {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "",
+      "x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com"
+    }
+  }).then((response) => response.json({ response }))
+    .then(response => {
+      translatedMessage = response.responseData.translatedText;
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  return translatedMessage;
+}
+
+
 
 app.listen(port, () => {
   console.log(`Listen on port ${port}`);
