@@ -1,58 +1,60 @@
+"use strict";
+
 // const messages = []
-const messagesWrapper = document.querySelector('#messagesWrapper');
+var messagesWrapper = document.querySelector('#messagesWrapper');
 
 function handleSubmitMessage(e) {
-  e.preventDefault();
-  // console.log(e)
-  const message = e.target.elements.message.value;
-  // console.log(message)
+  e.preventDefault(); // console.log(e)
 
+  var message = e.target.elements.message.value; // console.log(message)
   // messages.push(message);
+
   if (message.length > 2) {
-    document.querySelector('#messagesWrapper').innerHTML += htmlMessage(
-      message
-    ); /* htmlIncomeMessage(message); */
+    document.querySelector('#messagesWrapper').innerHTML += htmlMessage(message);
+    /* htmlIncomeMessage(message); */
+
     e.target.reset();
     messagesWrapper.scrollTo(0, messagesWrapper.scrollHeight);
     console.log('start fetch');
-
     fetch('/SendMessage', {
       method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message }),
-    }).then(r => r.json())
-      .then(data => {
-        console.log(data.hebTransaction)
-        document.querySelector('#messagesWrapper').innerHTML += htmlIncomeMessage(
-          data.hebTransaction
-        );
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: message
       })
-
+    }).then(function (r) {
+      return r.json();
+    }).then(function (data) {
+      console.log(data.hebTransaction);
+      document.querySelector('#messagesWrapper').innerHTML += htmlIncomeMessage(data.hebTransaction);
+    });
   }
 }
 
-
-
 function htmlMessage(message) {
-  return `<div class='message'>${message} <div class="tail"></div> </div>`;
+  return "<div class='message'>".concat(message, " <div class=\"tail\"></div> </div>");
 }
+
 function htmlIncomeMessage(message) {
   var msg = new SpeechSynthesisUtterance();
   var voices = window.speechSynthesis.getVoices();
   msg.voice = voices[10];
   msg.volume = 1; // From 0 to 1
+
   msg.rate = 1; // From 0.1 to 10
+
   msg.pitch = 1; // From 0 to 2
+
   msg.text = message;
   msg.lang = 'he';
   speechSynthesis.speak(msg);
-
   /* speechSynthesis.getVoices().forEach(function(voice) {
     console.log(voice.name, voice.default ? voice.default :'');
   }); */
-  
 
-  return `<div class='message InMessage'> ${message} <div class="tail"></div> </div>`;
+  return "<div class='message InMessage'> ".concat(message, " <div class=\"tail\"></div> </div>");
 }
 
 function handleTextArea(e) {
