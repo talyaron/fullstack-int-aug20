@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <form onsubmit='handleSendTitleMovie(event)'>
         <input type='text' placeholder="Enter movie title" name="movie">
         <input type="submit" value="Get movie">
     </form>
-   
+
     <div id="title"></div>
     <div id="moviesList">
-            <div name="name"></div>
-            <div name="year"></div>
-            <img src="" id="poster">
-    <div>
-    <script>
-        function handleSendTitleMovie(e) {
-            e.preventDefault();
+        <div name="name"></div>
+        <div name="year"></div>
+        <img src="" id="poster">
+        <div>
+            <script>
+                function handleSendTitleMovie(e) {
+                    e.preventDefault();
 
-            const movie = e.target.children.movie.value;
-            console.log(movie)
+                    const movie = e.target.children.movie.value;
+                    console.log(movie)
 
-            fetch('/sendTitle', {
-                method: 'post',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ movie })
-            })
-                .then(r => r.json())
-                .then(data => {
-                    let movies = data.movies
+                    fetch('/sendTitle', {
+                        method: 'post',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ movie })
+                    })
+                        .then(r => r.json())
+                        .then(data => {
+                            let movies = data.movies
+                            console.log(movies)
 
-                    function writeMovieToDom(movies) {
-                       html =""
-                        movies.forEach(movie => {
-                            html +=`<div name="name">${movie.title}</div>
-                                    <div name="year">${movie.year}</div>
-                                    <img src="${movie.poster}" id="poster">`
-                      
-                        document.getElementById('moviesList').innerHTML = html
-                       })
-                    }
-                       
-                })
-        }
+                            // function writeMovieToDom(movies) {
 
-        
-    </script>
+                            html = ""
+                            movies.forEach(movie => {
+                                console.log(movie)
+                                html += `<div name="name">${movie.Title}</div>
+                                    <div name="year">${movie.Year}</div>
+                                    <img src="${movie.Poster}" id="poster">`
+
+
+                            })
+
+                            document.getElementById('moviesList').innerHTML = html
+                            // }
+
+                        })
+                }
+
+
+            </script>
 </body>
+
 </html>
