@@ -42,17 +42,17 @@ const Products = [
 
 
 
-function isAuthorized(req, res, next) {
-    const { role } = req.cookies
-    res.authorized = false;
+// function isAuthorized(req, res, next) {
+//     const { role } = req.cookies
+//     res.authorized = false;
 
-    if (role === 'admin' || role === 'public') {
-        res.authorized = true;
-        console.log(res.authorized)
-    }
+//     if (role === 'admin' || role === 'public') {
+//         res.authorized = true;
+//         console.log(res.authorized)
+//     }
 
-    next()
-}
+//     next()
+// }
 
 function isAdmin(req, res, next) {
     const { role } = req.cookies
@@ -154,15 +154,7 @@ app.post('/login', (req, res) => {
 
     res.send({ ok })
 
-
-
 })
-
-
-
-
-
-
 
 // function isAdmin(req, res, next) {
 

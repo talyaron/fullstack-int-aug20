@@ -4,6 +4,17 @@
 var messagesWrapper = document.querySelector('#messagesWrapper');
 
 function handleSubmitMessage(e) {
+<<<<<<< HEAD
+  e.preventDefault();
+  console.log(e);
+  var message = e.target.elements.message.value;
+  console.log(message); // messages.push(message);
+
+  if (message.length > 2) {
+    document.querySelector('#messagesWrapper').innerHTML += htmlMessage(message);
+    e.target.reset();
+    messagesWrapper.scrollTo(0, messagesWrapper.scrollHeight);
+=======
   e.preventDefault(); // console.log(e)
 
   var message = e.target.elements.message.value; // console.log(message)
@@ -30,6 +41,7 @@ function handleSubmitMessage(e) {
       console.log(data.cnt);
       document.querySelector('#messagesWrapper').innerHTML += htmlMessage(data.cnt);
     });
+>>>>>>> master
   }
 }
 
@@ -37,15 +49,21 @@ function htmlMessage(message) {
   return "<div class='message'>".concat(message, " <div class=\"tail\"></div> </div>");
 }
 
+<<<<<<< HEAD
+=======
 function htmlIncomeMessage(message) {
   return "<div class='message InMessage' ".concat(message, " <div class=\"tail\"></div> </div>");
 }
 
+>>>>>>> master
 function handleTextArea(e) {
   if (e.key === 'Enter' && e.shiftKey == true) {
     //submit
     document.getElementById('submitButton').click();
   }
+<<<<<<< HEAD
+}
+=======
 }
 /* 
         function handleSendCity(e) {
@@ -66,3 +84,4 @@ function handleTextArea(e) {
                 })
         }
  */
+>>>>>>> master

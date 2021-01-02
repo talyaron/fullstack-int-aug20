@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="handleclick(event)">fetch api</button>
+    <script>
+        function handleclick(e){
+            const test = true
+            console.log('button click')
+            fetch('/fetchApi', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ test })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                   
+                })
+        }
+        
+    </script>
+</body>
+</html>

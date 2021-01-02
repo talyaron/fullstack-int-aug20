@@ -28,6 +28,7 @@ app.post('/getMovieList', (req, res) => {
             res.send({ x })
         })
 })
+
 app.post('/getMovieInfo', (req, res) => {
     const { movieName } = req.body
 
@@ -41,6 +42,7 @@ app.post('/getMovieInfo', (req, res) => {
         .then(res => res.json())
         .then(data => {
             let x = data.Search
+            console.log(x)
             res.send({ x })
         })
 })

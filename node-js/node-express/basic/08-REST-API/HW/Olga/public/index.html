@@ -10,8 +10,10 @@
 </head>
 <style>
     body {
-        font-family: 'Press Start 2P', cursive;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align: center;
     }
+   
 </style>
 
 <body>
@@ -37,6 +39,14 @@
                 .then(r => r.json())
                 .then(data => {
                     console.log(data)
+
+                    document.getElementById('pokemon').innerHTML = 
+    `<p>name: <span>${data.name}</span></p>
+    <img src='${data.sprites.front_default}' height="200">
+    <p>height: <span>${data.height}</span></p>
+    <p>type: <span>${data.types[0].type.name}</span></p>
+    <p>weight: <span>${data.weight}</span></p>`
+
                     /*document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)    } C`;*/
                 })
         }

@@ -17,7 +17,7 @@ app.post('/sendPokemon', (req, res) => {
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        res.send({ ok: true, data }) //asynchornic programing
+        res.send(data) //asynchornic programing
     });
    /* const { city } = req.body;
     console.log(city)

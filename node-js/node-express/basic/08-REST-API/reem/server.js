@@ -17,22 +17,23 @@ app.post('/sendCity', (req, res) => {
     const { city } = req.body;
     console.log(city)
 
-    fetch("https://api-nba-v1.p.rapidapi.com/leagues/", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "ef43e6d47amsh4cf6fbca708489fp108d1djsn0c4fa57ab462",
-		"x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
+	fetch("https://api.greeninvoice.co.il/api/v1/", {
+		"method": "GET",
+		"body" : { "secret" : "" , "kem":""}
+	})
+	// .then(response => {
+	// 	console.log(response);
+	// })
+	// .catch(err => {
+	// 	console.error(err);
+	// });
+        .then(res => res.json())
+        .then(response => {
+            res.send({ ok: true, response }) //asynchornic programing
+        });
 
 
-    console.log('cont')
+    console.log('cont');
 
 })
 

@@ -24,10 +24,7 @@ app.post('/sendPokemon', function (req, res) {
     return res.json();
   }).then(function (data) {
     console.log(data);
-    res.send({
-      ok: true,
-      data: data
-    }); //asynchornic programing
+    res.send(data); //asynchornic programing
   });
   /* const { city } = req.body;
    console.log(city)
