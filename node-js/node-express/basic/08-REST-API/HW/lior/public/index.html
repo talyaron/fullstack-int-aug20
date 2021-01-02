@@ -6,15 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+
+    <form onsubmit='handleSendTitleMovie(event)'>
+        <input type='text' placeholder="Enter movie title" name="movie">
+        <input type="submit" value="Get movie">
+    </form>
    
     <div id="title"></div>
-
-    <!-- <script>
+    <div id="moviesList">
+            <div name="name"></div>
+            <div name="year"></div>
+            <img src="" id="poster">
+    <div>
+    <script>
         function handleSendTitleMovie(e) {
             e.preventDefault();
 
-            const title = e.target.children.movie.value;
-            console.log(title)
+            const movie = e.target.children.movie.value;
+            console.log(movie)
 
             fetch('/sendTitle', {
                 method: 'post',
@@ -23,10 +32,23 @@
             })
                 .then(r => r.json())
                 .then(data => {
-                    console.log(data)
-                    document.getElementById('title').innerText = `${(data.title.main.search)}`;
+                    let movies = data.movies
+
+                    function writeMovieToDom(movies) {
+                       html =""
+                        movies.forEach(movie => {
+                            html +=`<div name="name">${movie.title}</div>
+                                    <div name="year">${movie.year}</div>
+                                    <img src="${movie.poster}" id="poster">`
+                      
+                        document.getElementById('moviesList').innerHTML = html
+                       })
+                    }
+                       
                 })
         }
-    </script> -->
+
+        
+    </script>
 </body>
 </html>

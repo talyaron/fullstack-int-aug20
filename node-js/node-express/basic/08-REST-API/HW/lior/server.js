@@ -12,16 +12,26 @@ app.use(bodyParser.json())
 
 
 
-//app.post('/sendTitle', (req, res) => {
+app.post('/sendTitle', (req, res) => {
 
-    // const { city } = req.body;
-    // console.log(city)
+    const { movie } = req.body;
+    console.log(movie)
+    fetch(`https://movie-database-imdb-alternative.p.rapidapi.com/?s=${movie}&page=1&r=json`, {
+	method: 'GET',
+	headers: {
+		"x-rapidapi-key": "d27ad88beamsh2505efd620ca6edp10ba77jsnf02f7cbe9f7a",
+        "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
+        
+    }
+    })
+     .then(res => res.json())
+     .then(data => {
+        let movies = data.Search
+        console.log(movies)
+        res.send({ movies })
+    })
 
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007`) //event loop
-        .then(res => res.json())
-        .then(weather => {
-            res.send({ ok: true, weather }) //asynchornic programing
-        });
+});
 
-//})
+
 app.listen(3000, () => { console.log('listen 3000') })
