@@ -1,3 +1,50 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+</style>
+
+<body>
+    <form onsubmit='handleSendCity(event)'>
+        <input type='text' placeholder="Enter Stock" name="myStock">
+        <input type="submit" value="Get Stock">
+    </form>
+
+    <div id="Stock"></div>
+
+    <script>
+        function handleSendCity(e) {
+            e.preventDefault();
+
+            const myStock = e.target.children.myStock.value;
+            console.log(myStock)
+
+            fetch('/sendStock', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ myStock })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    // document.getElementById('Stock').innerText = `${Math.round(data.weather.main.temp)    } ;
+                })
+        }
+    </script>
+</body>
+
+=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,4 +92,5 @@
     </script>
 </body>
 
+>>>>>>> master
 </html>
