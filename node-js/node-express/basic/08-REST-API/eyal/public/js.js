@@ -56,12 +56,12 @@ function handleTextArea(e){
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message }),
     }).then(r => r.json())
-    .then(data => {
+      .then(data => {
         console.log(data.hebTransaction)
         document.querySelector('#messagesWrapper').innerHTML += htmlIncomeMessage(
-            data.hebTransaction
-          );
-    })
+          data.hebTransaction
+        );
+      })
 
   }
 }
@@ -72,6 +72,21 @@ function htmlMessage(message) {
   return `<div class='message'>${message} <div class="tail"></div> </div>`;
 }
 function htmlIncomeMessage(message) {
+  var msg = new SpeechSynthesisUtterance();
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[10];
+  msg.volume = 1; // From 0 to 1
+  msg.rate = 1; // From 0.1 to 10
+  msg.pitch = 1; // From 0 to 2
+  msg.text = message;
+  msg.lang = 'he';
+  speechSynthesis.speak(msg);
+
+  /* speechSynthesis.getVoices().forEach(function(voice) {
+    console.log(voice.name, voice.default ? voice.default :'');
+  }); */
+  
+
   return `<div class='message InMessage'> ${message} <div class="tail"></div> </div>`;
 }
 
