@@ -1,25 +1,21 @@
 html {
     font-size: 1px;
 }
-body{
+
+body {
     background-color: rgb(182, 211, 173);
+}
+
+.Circle,
+.square {
+    height: 250px;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
+    margin: 50px auto;
 }
 
 .Circle {
     border-radius: 50%;
-    height: 250px;
-    width: 250px;
-    margin: 50px auto;
-    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
-
-}
-
-.square {
-    height: 250px;
-    width: 250px;
-    margin: 50px auto;
-    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
-
 }
 
 
@@ -73,8 +69,6 @@ body{
     border-radius: 20px;
     font-family: 'Rubik', sans-serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
 }
 
 input {
@@ -84,33 +78,27 @@ input {
     width: 100px;
     height: 40px;
     outline: none;
-
 }
 
-
-.colorinput {
+.colorinput,
+.shapeinput {
     width: 100%;
     margin: auto;
-    /* border: 5px solid rgb(119, 139, 138); */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px 20px 0px 0px;
     box-sizing: border-box;
     background-color: rgba(6, 100, 100, 0.281);
+
+}
+.colorinput {
+    border-radius: 20px 20px 0px 0px;
     font-size: 20rem;
 
 }
 
 .shapeinput {
     font-size: 20rem;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    background-color: rgba(6, 100, 100, 0.281);
     margin: 3px 0;
 }
 
@@ -121,7 +109,7 @@ select {
     height: 40px;
     outline: none;
     font-size: 20rem;
- border: 0;
+    border: 0;
 
 }
 
@@ -136,9 +124,10 @@ button {
     margin: auto;
 
 }
-option{
+
+option {
     background-color: rgba(6, 100, 100, 0.281);
-font-size: 20rem;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 20rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
