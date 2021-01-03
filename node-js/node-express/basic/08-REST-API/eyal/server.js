@@ -119,7 +119,7 @@ async function translate(fromLng, toLng, massage) {
 
 
 
-const getFaceFromeImage = async (imgeUrl) => {
+const getFaceFromImage = async (imageUrl) => {
   //how to get img from webcam   -   https://medium.com/swlh/how-to-access-webcam-and-take-picture-with-javascript-b9116a983d78
   //                                  https://bensonruan.com/how-to-access-webcam-and-take-photo-with-javascript/
   const form = new FormData(img);
