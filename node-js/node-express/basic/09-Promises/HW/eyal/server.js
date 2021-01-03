@@ -18,14 +18,12 @@ app.post('/getLang', async (req, res) => {
 
 
 
-app.post('/SendTraslation', async (req, res) => {
+app.post('/SendTranslation', async (req, res) => {
   
-  const fromLang = req.formlang;
-  const toLang = rew.toLang;
+  const fromLang = req.body.formlang;
+  const toLang = req.body.toLang;
   try {
-    console.log(req.body.message);
-   
-
+    console.log(req.body.message , fromLang , toLang);
     const Transaction = await translate(
       `${fromLang}`,
       `${toLang}`,
