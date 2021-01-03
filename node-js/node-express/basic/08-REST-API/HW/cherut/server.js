@@ -2,6 +2,9 @@ const express = require('express')
 const app = express();
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
+var cors = require('cors')
+
+app.use(cors());
 
 app.use(express.static('public'));
 app.use(bodyParser.json())
@@ -10,6 +13,8 @@ app.post('/try', (req, res) => {
 
     let {ingredientToSearch} = req.body;
     console.log(ingredientToSearch);
+
+    
 
     fetch(`https://recipe-puppy.p.rapidapi.com/?p=2&q=${ingredientToSearch}`, {
             "method": "GET",
