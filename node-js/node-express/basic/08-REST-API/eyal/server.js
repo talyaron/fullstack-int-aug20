@@ -1,9 +1,5 @@
 /******************************************
-<<<<<<< HEAD
- *  Author : eyal shemuel   
-=======
  *  Author : eyal shemuel
->>>>>>> master
  *  Created On : Mon Dec 28 2020
  *  File : server.js.js
  * 
@@ -20,69 +16,34 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const fetch = require('node-fetch');
-<<<<<<< HEAD
-=======
 const { encode, decode } = require('url-encode-decode')
->>>>>>> master
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cookieParser());
 app.use(bodyParser.json());
-<<<<<<< HEAD
-app.use(express.static('public'))
-
-
-app.get('/sendCity', (req, res) => {
-    console.log('tt')
-
-
-    fetch("https://dark-sky.p.rapidapi.com/33,33?lang=en&units=auto", {
-        method: "GET",
-        headers: {
-            "x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
-            "x-rapidapi-host": "dark-sky.p.rapidapi.com"
-        }
-    }).then(response => response.json())
-        .then(response => {
-            console.log(response);
-            res.send(response);
-        })
-        .catch(err => {
-            console.error(err);
-        });
-
-
-
-
-})
-
-
-
-app.listen(port, () => { console.log(`Listen on port ${port}`) });
-=======
 app.use(express.static('public'));
 
 app.post('/SendMessage', async (req, res) => {
-  
-  try{
-    console.log(req.body.message)
-// translate massage to english
-const EngTransaction = await translate('iw', 'en', req.body.message)
-console.log(EngTransaction)
-// send massage to the robot 
-const RobotMassage = await SendMessageToRobot(EngTransaction)
-console.log(RobotMassage)
-//translate massage to hebrew
-const hebTransaction = await translate('en', 'iw', RobotMassage)
-console.log(hebTransaction)
 
-res.send({hebTransaction});
-  }catch(e){
+  try {
+    /* console.log(req.body.message) */
+
+    const EngTransaction = await translate('iw', 'en', req.body.message)// translate massage to english
+    /* console.log(EngTransaction) */
+
+    const RobotMassage = await SendMessageToRobot(EngTransaction)// send massage to the robot 
+    /* console.log(RobotMassage) */
+
+    const hebTransaction = await translate('en', 'iw', RobotMassage)//translate massage to hebrew
+    /* console.log(hebTransaction) */
+
+    res.send({ hebTransaction });
+  } catch (e) {
     console.log(e);
   }
-  
+
 
 
 });
@@ -91,8 +52,8 @@ res.send({hebTransaction});
 async function SendMessageToRobot(massage) {
   let robotResponseMsg;
   await fetch(
-  //  `https://acobot-brainshop-ai-v1.p.rapidapi.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=${massage}`,
-   ` https://acobot-brainshop-ai-v1.p.rapidapi.com/get?bid=154389&key=MqKbUKOqNKyU0Dmg&uid=moshe&msg=${massage}`,
+    //  `https://acobot-brainshop-ai-v1.p.rapidapi.com/get?bid=178&key=sX5A2PcYZbsN5EY6&uid=mashape&msg=${massage}`,
+    ` https://acobot-brainshop-ai-v1.p.rapidapi.com/get?bid=154389&key=MqKbUKOqNKyU0Dmg&uid=moshe&msg=${massage}`,
     {
       method: 'GET',
       headers: {
@@ -111,30 +72,35 @@ async function SendMessageToRobot(massage) {
   return robotResponseMsg;
 }
 
-async function setKey(){
+
+
+async function setKey() {
   let key;
- await fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/createkey", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
-		"x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com"
-	}
-})
-.then(response => {
-	key = response;
-})
-.catch(err => {
-	console.error(err);
-});
-return key;
+  await fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/createkey", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
+      "x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com"
+    }
+  })
+    .then(response => {
+      key = response;
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  return key;
 }
+
+
+
 
 async function translate(fromLng, toLng, massage) {
   let translatedMessage;
-  let textToTranslate =  encode(massage);
-//let Tkey = await setKey;// no nead - so canceld
+  let textToTranslate = encode(massage);
+  //let Tkey = await setKey;// no nead - so canceld
   await fetch(`
-  https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,  {
+  https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`, {
     "method": "GET",
     "headers": {
       "x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
@@ -150,13 +116,16 @@ async function translate(fromLng, toLng, massage) {
   return translatedMessage;
 }
 
-const getFaceFromeImage =  async (imgeUrl) => {
-//how to get img from webcam   -   https://medium.com/swlh/how-to-access-webcam-and-take-picture-with-javascript-b9116a983d78
-//                                  https://bensonruan.com/how-to-access-webcam-and-take-photo-with-javascript/
+
+
+
+const getFaceFromeImage = async (imgeUrl) => {
+  //how to get img from webcam   -   https://medium.com/swlh/how-to-access-webcam-and-take-picture-with-javascript-b9116a983d78
+  //                                  https://bensonruan.com/how-to-access-webcam-and-take-photo-with-javascript/
   const form = new FormData(img);
   form.append("image", `${img}`);
-  
- await fetch("https://facedetection9.p.rapidapi.com/faces", {
+
+  await fetch("https://facedetection9.p.rapidapi.com/faces", {
     "method": "POST",
     "headers": {
       "content-type": "multipart/form-data; boundary=---011000010111000001101001",
@@ -164,16 +133,18 @@ const getFaceFromeImage =  async (imgeUrl) => {
       "x-rapidapi-host": "facedetection9.p.rapidapi.com"
     }
   })
-  .then(response => {
-    console.log(response);
-  })
-  .catch(err => {
-    console.error(err);
-  });
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err => {
+      console.error(err);
+    });
 
 }
+
+
+
 
 app.listen(port, () => {
   console.log(`Listen on port ${port}`);
 });
->>>>>>> master
