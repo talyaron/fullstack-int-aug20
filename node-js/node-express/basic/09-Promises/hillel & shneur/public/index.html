@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שיעורי בית הלל ושניאור</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body dir="rtl">
+    <div class="box">
+        <div class="colorinput">
+            <div>בחר צבע </div>
+            <input type="color" id="color" onfocusout='sendData()' value="#d3a7a7">
+        </div>
+
+        <div class="shapeinput">
+            <select name="shape" id="shape" onclick='sendData()'>
+                <option >בחר צורה</option>
+                <option value="Circle">עיגול</option>
+                <option value="triangle">משולש</option>
+                <option value="square">מרובע</option>
+                <option value="hexagon">משושה</option>
+            </select>
+        </div> </br>
+        <!-- <div style="text-align: center;"> -->
+            <!-- <button onclick="sendData()">צור צורה</button> -->
+        <!-- </div> -->
+        <div class="obj"></div>
+    </div>
+    <script>
+
+        function sendData() {
+            const obj = document.querySelector(".obj")
+            const color = document.querySelector("#color").value
+            const shape = document.querySelector("#shape").value
+            let col = 
+                getDada()
+
+              
+            // function getDada() {
+            //     colorpromise().then(number => {
+            //         console.log('promise:', number)
+
+            //         shapepromise().then(data => {
+            //             console.log(data)
+            //         })
+            //     })
+            // }
+
+            async function getDada() {
+                let firstNumber = await colorpromise();
+                let multpliedNumber = await shapepromise();
+            }
+
+
+            function colorpromise() {
+                return fetch('/color', {
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            color
+                        })
+
+                    }).then(r => r.json())
+                    .then(data => {
+                        col = data.color
+                        console.log(data.color)
+                        console.log(data.color)
+                    })
+
+                    .catch(e => {
+                        console.log(e)
+                    })
+
+            }
+
+            function shapepromise() {
+                return fetch('http://localhost:3001/shape', {
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            shape
+                        })
+
+                    }).then(r => r.json())
+                    .then(data => {
+                        // resolve(data.shape)
+                        console.log(data.shape)
+                        if (data.shape == 'triangle') {
+                            obj.innerHTML = `<div class="${data.shape}" style="color:${col}"></div>`
+
+                        } else if (data.shape == 'hexagon') {
+                            obj.innerHTML =
+                                `<div class="${data.shape}" style="background:${col}; color:${col}" ></div>`
+
+                        } else {
+                            obj.innerHTML =
+                                `<div class="${data.shape}" style="background:${col}"></div>`
+                        }
+                    })
+                    .catch(e => {
+                        console.log(e)
+                        // })
+                    })
+            }
+        }
+    </script>
+</body>
+
+</html>
