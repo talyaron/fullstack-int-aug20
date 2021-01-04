@@ -7,6 +7,7 @@ const fetch = require('node-fetch');
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
+async function getWeather(city1,city2) {
 
 app.post('/click', async (req, res) => {
     try {
