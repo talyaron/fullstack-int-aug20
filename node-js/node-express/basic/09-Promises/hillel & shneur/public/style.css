@@ -1,0 +1,125 @@
+html {
+    font-size: 1px;
+    font-family: 'Rubik', sans-serif;
+    background-color: rgb(182, 211, 173);
+
+}
+
+.Circle,
+.square {
+    height: 250px;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
+    margin: 50px auto;
+}
+
+.Circle {
+    border-radius: 50%;
+}
+
+
+.hexagon {
+    position: relative;
+    width: 250px;
+    height: 144.34px;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
+
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 72.17px solid;
+
+}
+
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 72.17px solid;
+
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 240px solid;
+    margin: 50px auto;
+}
+
+.box {
+    background-color: rgba(204, 233, 233, 0.63);
+    margin: 100px auto;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input {
+    background: none;
+    border: none;
+    width: 200px;
+    height: 200px;
+    margin-top: -20px;
+    margin-right: -20px;
+
+}
+.inputContainer{
+    overflow: hidden;
+    width: 34px;
+    height: 34px;
+    border: solid 2px #ddd;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.colorinput,
+.shapeinput {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: rgba(6, 100, 100, 0.281);
+
+}
+.colorinput {
+    border-radius: 20px 20px 0px 0px;
+    font-size: 20rem;
+}
+
+.shapeinput {
+    font-size: 20rem;
+    margin: 3px 0;
+}
+
+select {
+    background: none;
+    margin: 10px;
+    width: 120px;
+    height: 40px;
+    outline: none;
+    font-size: 20rem;
+    border: 0;
+    transition: 200ms;
+}
+
+
+option {
+    background-color: rgba(8, 6, 100, 0.281);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
