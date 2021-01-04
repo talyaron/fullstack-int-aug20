@@ -1,42 +1,51 @@
 html {
-    font-size: 1px;
-}
-body {
+    font-size: 20px;
     background-color: rgb(182, 211, 173);
+    font-family: 'Rubik', sans-serif;
+    transition: all 0.6s;
+
+
 }
+
 .box {
     background-color: rgba(204, 233, 233, 0.63);
     margin: 100px auto;
     width: 400px;
     height: 450px;
     border-radius: 20px;
-    font-family: 'Rubik', sans-serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.colorinput {
+
+.colorinput,
+.label,
+.shapeinput {
     width: 100%;
     margin: auto;
+}
+
+.colorinput {
     border-radius: 20px 20px 0px 0px;
     box-sizing: border-box;
     background-color: rgba(6, 100, 100, 0.281);
-    font-size: 20rem;
     position: relative;
     height: 50px;
 }
-label{
+
+label,
+.shapeinput {
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
     cursor: pointer;
-    width: 150px;
-    margin: auto;
 }
+
 img {
     height: 40px;
     position: absolute;
     left: 140px;
     top: 5px;
 }
+
 input {
     background: none;
     margin: 10px;
@@ -45,34 +54,32 @@ input {
     height: 25px;
     outline: none;
 }
+
 .shapeinput {
-    font-size: 20rem;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
     box-sizing: border-box;
     background-color: rgba(6, 100, 100, 0.281);
     margin: 3px 0;
     height: 50px;
 }
+
 .bix {
     width: 100px;
     padding: 2px;
-    font-size: 20px;
     position: relative;
     text-align: center;
     cursor: pointer;
 }
+
 .bix:hover .ce {
     height: 143px;
     opacity: 1;
     display: block;
 }
+
 .ce {
     overflow: hidden;
-    height:0;
+    height: 0;
     transition: all 0.4s;
     position: absolute;
     background-color: rgba(6, 100, 100, 0.281);
@@ -82,22 +89,30 @@ input {
     opacity: 0;
     z-index: 100000;
 }
+
 .cc {
     background-color: rgb(197, 219, 219);
     margin-bottom: 5px;
     padding: 4px;
+    transition: all 0.4s;
 }
-.cc:hover{
+
+.cc:hover {
     background-color: rgba(89, 131, 131, 0.89);
 }
+
 .Circle {
     border-radius: 50%;
+}
+
+.Circle,
+.square {
+    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
     height: 250px;
     width: 250px;
     margin: 50px auto;
-    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
-
 }
+
 .triangle {
     width: 0;
     height: 0;
@@ -106,12 +121,7 @@ input {
     border-bottom: 240px solid;
     margin: 50px auto;
 }
-.square {
-    height: 250px;
-    width: 250px;
-    margin: 50px auto;
-    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
-}
+
 .hexagon {
     position: relative;
     width: 250px;
@@ -119,6 +129,7 @@ input {
     margin: 100px auto;
     box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
 }
+
 .hexagon:before,
 .hexagon:after {
     content: "";
@@ -127,13 +138,14 @@ input {
     border-left: 125px solid transparent;
     border-right: 125px solid transparent;
 }
+
 .hexagon:before {
     bottom: 100%;
     border-bottom: 72.17px solid;
 }
+
 .hexagon:after {
     top: 100%;
     width: 0;
     border-top: 72.17px solid;
 }
-
