@@ -1,4 +1,12 @@
-async function getData() {
+let artist = 'michael jackson';
+let song = 'bad';
+
+async function getData(e) {
+
+  // e.preventDefault()
+
+  // artist = e.target.children.artist.value;
+  // song = e.target.children.song.value;
 
   const root = document.querySelector('.root');
   const root2 = document.querySelector('.root2');
@@ -10,7 +18,7 @@ async function getData() {
   // console.log(status);
 
   root.innerHTML = `<img src='${url}'>`;
-  root2.innerHTML = `<h1>${status}</h1>`;
+  root2.innerHTML = `<p>${status}</p>`;
 
 }
 
@@ -33,8 +41,8 @@ async function getImg() {
 
 async function getLyrics() {
 
-  let artist = 'michael jackson';
-  let song = 'bad';
+  // let artist = 'michael jackson';
+  // let song = 'bad';
   let status;
 
   await fetch(`https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=${encodeURI(artist)}&song=${song}`, {
@@ -57,23 +65,34 @@ async function getLyrics() {
 
 
 // xmlh
-const data = null;
+// async function getLyrics2() {
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+  let Lyrics;
+  const data = null;
 
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === this.DONE) {
-    console.log(this.responseText);
-  }
-});
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
 
-xhr.open("GET", "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=michael%20jackson&song=bad");
-xhr.setRequestHeader("x-rapidapi-key", "3141833d07msh1c4d90f6d62efb2p1b4fccjsn887bca0704a2");
-xhr.setRequestHeader("x-rapidapi-host", "sridurgayadav-chart-lyrics-v1.p.rapidapi.com");
+  xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === this.DONE) {
+      let xml = this.responseText;
+      // console.log(xml)
+      let parser = new DOMParser(),
+      xmlDoc = parser.parseFromString(xml, 'text/xml')
+      console.log(xmlDoc.getElementsByTagName('Lyric')[0].innerHTML)
+      Lyrics = xmlDoc.getElementsByTagName('Lyric')[0].innerHTML;
+      // .getElementByTagName('')
+    }
+  });
 
-xhr.send(data);
+
+    xhr.open("GET", "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=michael%20jackson&song=bad");
+    xhr.setRequestHeader("x-rapidapi-key", "3141833d07msh1c4d90f6d62efb2p1b4fccjsn887bca0704a2");
+    xhr.setRequestHeader("x-rapidapi-host", "sridurgayadav-chart-lyrics-v1.p.rapidapi.com");
+
+
+
+  xhr.send(data);
+//   return Lyrics;
+// }
 // xmlh
-
-
-
