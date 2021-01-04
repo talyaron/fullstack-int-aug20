@@ -37,7 +37,7 @@
                 .then(r => r.json())
                 .then(data => {
                     console.log(data)
-                    document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)} C`;
+                    document.getElementById('weather').innerText = `${Math.round(data.weather.main.temp)} C &#8451;`;
                 })
         }
     </script>
