@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick='getNumbers()'>Get Number</button>
+    <div id="root"></div>
+    <script>
+
+        function getNumbers() {
+
+            getRandomNumberPromise(2021).then(number => {
+                console.log('promise:', number)
+
+                getAboutYear(number).then(data => {
+                    console.log(data)
+                })
+            })
+        }
+
+     
+
+
+      async function  getRandomNumberPromise(randomNumber) {
+
+            let number
+
+            await fetch('/sendRandomNumber', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ randomNumber })
+
+            }).then(r => r.json())
+                .then(data => {
+
+                    number = data.number;
+                })
+                .catch(e => {
+                    reject(e)
+                })
+            return number;
+        }
+
+        async function getAboutYear(number) {
+
+         
+            await fetch('http://localhost:3001/sendAboutYear', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({randomNumber: number })
+
+            }).then(r => r.json())
+                .then(data => {
+                   console.log(data)
+                   document.getElementById('root').innerHTML =  `<p>${data.text}</p>`
+                }).catch(e => {
+                    console.error(e)
+                })
+
+        }
+
+    </script>
+</body>
+
+</html>
