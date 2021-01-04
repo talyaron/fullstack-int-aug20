@@ -12,18 +12,42 @@ async function getData(e) {
   const root2 = document.querySelector('.root2');
 
   let url = await getImg();
-  let status = await getLyrics();
-
-  // console.log(url);
-  // console.log(status);
+  let Lyrics = await getLyrics();
 
   root.innerHTML = `<img src='${url}'>`;
-  root2.innerHTML = `<p>${status}</p>`;
+  root2.innerHTML = `<p>${Lyrics}</p>`;
 
 }
 
+async function getLyrics() {
 
-getData()
+  // let artist = 'michael jackson';
+  // let song = 'bad';
+  let status;
+
+  await fetch("https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=michael%20jackson&song=bad", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "3141833d07msh1c4d90f6d62efb2p1b4fccjsn887bca0704a2",
+      "x-rapidapi-host": "sridurgayadav-chart-lyrics-v1.p.rapidapi.com"
+    }
+  })
+    .then(response => response.text())
+    .then(xmlString => $.parseXML(xmlString))
+    .then(data => {
+
+      Lyrics = data.getElementsByTagName('Lyric')[0].innerHTML;
+      console.log(Lyrics);
+      status = Lyrics;
+    })
+    .catch(e => {
+      console.error(e);
+    })
+  return status;
+}
+
+
+getData();
 
 async function getImg() {
 
@@ -39,51 +63,31 @@ async function getImg() {
   return url;
 }
 
-async function getLyrics() {
 
-  // let artist = 'michael jackson';
-  // let song = 'bad';
-  let status;
-
-  await fetch(`https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=${encodeURI(artist)}&song=${song}`, {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": "3141833d07msh1c4d90f6d62efb2p1b4fccjsn887bca0704a2",
-        "x-rapidapi-host": "sridurgayadav-chart-lyrics-v1.p.rapidapi.com"
-      }
-    })
-    // .then(r => r.json())
-    .then(data => {
-      console.log(data);
-      status = data.status;
-    })
-    .catch(e => {
-      console.error(e);
-    })
-  return status;
-}
 
 
 // xmlh
-// async function getLyrics2() {
+function getLyrics2() {
 
-  let Lyrics;
-  const data = null;
+  return new Promise((resolve, reject) => {
+    let Lyrics;
+    const data = null;
 
-  const xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
 
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === this.DONE) {
-      let xml = this.responseText;
-      // console.log(xml)
-      let parser = new DOMParser(),
-      xmlDoc = parser.parseFromString(xml, 'text/xml')
-      console.log(xmlDoc.getElementsByTagName('Lyric')[0].innerHTML)
-      Lyrics = xmlDoc.getElementsByTagName('Lyric')[0].innerHTML;
-      // .getElementByTagName('')
-    }
-  });
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === this.DONE) {
+        let xml = this.responseText;
+        // console.log(xml)
+        let parser = new DOMParser(),
+          xmlDoc = parser.parseFromString(xml, 'text/xml')
+        // console.log(xmlDoc.getElementsByTagName('Lyric')[0].innerHTML)
+        Lyrics = xmlDoc.getElementsByTagName('Lyric')[0].innerHTML;
+        resolve(Lyrics)
+
+      }
+    });
 
 
     xhr.open("GET", "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=michael%20jackson&song=bad");
@@ -92,7 +96,9 @@ async function getLyrics() {
 
 
 
-  xhr.send(data);
+    xhr.send(data);
+  })
+}
 //   return Lyrics;
 // }
 // xmlh

@@ -8,54 +8,62 @@ app.use(bodyParser.json())
 app.use(express.static('public'))
 
 
-app.post('/click', (req, res) => {
-    const city1 = req.body.cities.city1
-    const city2 = req.body.cities.city2
+app.post('/click', async (req, res) => {
+    try {
+        console.log(req.body)
+        const { city1, city2 } = req.body;
 
-    async function getWeather() {
 
-        let weather1 = await getWeather1Proise(city1);
-        let weather2 = await getWeather2Proise(city2);
-        console.log(weather1)
-        console.log(weather2)
+        
+        const weathers = await getWeather(city1, city2);
+        console.log(weathers)
 
+
+        res.send({ ok: true,weathers })
+    } catch (e) {
+        console.log(e)
     }
-    
-
-console.log(req.body)
-
-    res.send({ok:true})
 
 });
 
+async function getWeather(city1, city2) {
 
-function getWeather1Proise(city1){
-    return new Promise((resolve, reject) => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=cc298c7bc3fd0a6a0af96261903cb0d2`) 
-        .then(res => res.json())
-        .then(data => {
-            resolve(data)
-        })
-        .catch(e => {
-            reject(e)
-        })
-        
-    })
-    
+    let weather1 = await getWeather1Proise(city1);
+    console.log(weather1)
+    let weather2 = await getWeather2Proise(city2);
+   
+    console.log(weather2)
+    return {weather1,weather2}
 }
-function getWeather2Proise(city2){
+
+
+function getWeather1Proise(city1) {
     return new Promise((resolve, reject) => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city2}&appid=cc298c7bc3fd0a6a0af96261903cb0d2`) 
-        .then(res => res.json())
-        .then(data => {
-            resolve(data)
-        })
-        .catch(e => {
-            reject(e)
-        })
-        
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=cc298c7bc3fd0a6a0af96261903cb0d2`)
+            .then(res => res.json())
+            .then(data => {
+                resolve(data);
+            })
+            .catch(e => {
+                reject(e)
+            })
+
     })
-    
+
+}
+function getWeather2Proise(city2) {
+    return new Promise((resolve, reject) => {
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city2}&appid=cc298c7bc3fd0a6a0af96261903cb0d2`)
+            .then(res => res.json())
+            .then(data => {
+                resolve(data)
+            })
+            .catch(e => {
+                reject(e)
+            })
+
+    })
+
 }
 
 
