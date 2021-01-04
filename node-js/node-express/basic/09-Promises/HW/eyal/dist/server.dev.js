@@ -39,16 +39,16 @@ app.post('/getLang', function _callee(req, res) {
     }
   });
 });
-app.post('/SendTraslation', function _callee2(req, res) {
+app.post('/SendTranslation', function _callee2(req, res) {
   var fromLang, toLang, Transaction;
   return regeneratorRuntime.async(function _callee2$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          fromLang = req.formlang;
-          toLang = rew.toLang;
+          fromLang = req.body.formlang;
+          toLang = req.body.toLang;
           _context2.prev = 2;
-          console.log(req.body.message);
+          console.log(req.body.message, fromLang, toLang);
           _context2.next = 6;
           return regeneratorRuntime.awrap(translate("".concat(fromLang), "".concat(toLang), req.body.message));
 
@@ -113,7 +113,7 @@ var translate = function translate(fromLng, toLng, massage) {
           textToTranslate = encode(massage); //let Tkey = await setKey;// no nead - so canceld
 
           _context4.next = 3;
-          return regeneratorRuntime.awrap(fetch("\n    https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
+          return regeneratorRuntime.awrap(fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
             method: 'GET',
             headers: {
               'x-rapidapi-key': '2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0',

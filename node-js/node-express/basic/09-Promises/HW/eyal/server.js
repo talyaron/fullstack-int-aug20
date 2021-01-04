@@ -58,8 +58,7 @@ const translate = async (fromLng, toLng, massage) => {
   let textToTranslate = encode(massage);
   //let Tkey = await setKey;// no nead - so canceld
   await fetch(
-    `
-    https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
+    `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
     {
       method: 'GET',
       headers: {
