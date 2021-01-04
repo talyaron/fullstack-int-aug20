@@ -16,7 +16,8 @@
         <div class="colorinput">
             <label for="color">בחר צבע
                 <img src="https://img.icons8.com/officel/80/000000/rgb-circle-1.png">
-                <input type="color" id="color" onfocusout='sendData()' value="#d3a7a7" class="color">
+                <input type="color" id="color" onfocusout='sendData()' value="#d3a7a7" class="color"
+                   >
             </label>
         </div>
 
@@ -27,104 +28,115 @@
                     <div class="shape" value="triangle" onclick="refresh(event)">משולש</div>
                     <div class="shape" value="square" onclick="refresh(event)">מרובע</div>
                     <div class="shape" value="hexagon" onclick="refresh(event)">משושה</div>
+                    <div class="shape" value="heart" onclick="refresh(event)">לב</div>
+
                 </div>
             </div>
         </div>
-        <div class="obj"></div>
-    </div>
-    <script>
-        const shapeContainer = document.querySelector(".shapeContainer")
-        const chooseShape = document.querySelector(".chooseShape")
-        let color
-        let shape
+        <div class="obj">
+<!-- <div class="heart"style="background:red;"> <div class="heartcolor1" style="background:red"></div><div class="heartcolor2"style="background:red;"></div></div></div>` -->
 
-        function none() {
-            shapeContainer.style.height = "0"
-        }
-
-        function block() {
-            shapeContainer.style.height = '143px'
-        }
+        </div>
+        <script>
+            const shapeContainer = document.querySelector(".shapeContainer")
+            const chooseShape = document.querySelector(".chooseShape")
+            let colo
+            let shape
 
 
-        function refresh(event) {
-            const color = event.target.textContent
-            if (color == 'עיגול') {
-                shape = 'Circle'
-            } else if (color == 'משולש') {
-                shape = 'triangle'
-            } else if (color == 'מרובע') {
-                shape = 'square'
-            } else if (color == 'משושה') {
-                shape = 'hexagon'
-            }
-            sendData()
-        }
-
-        function sendData() {
-            const obj = document.querySelector(".obj")
-            const color = document.querySelector("#color").value
-            
-            getDada()
-
-            async function getDada() {
-                let firstNumber = await colorpromise();
-                let multpliedNumber = await shapepromise();
+            function none() {
+                shapeContainer.style.height = "0"
             }
 
-            function colorpromise() {
-                return fetch('/color', {
-                        method: 'post',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            color
+            function block() {
+                shapeContainer.style.height = '180px'
+            }
+
+
+            function refresh(event) {
+                const color = event.target.textContent
+                if (color == 'עיגול') {
+                    shape = 'Circle'
+                } else if (color == 'משולש') {
+                    shape = 'triangle'
+                } else if (color == 'מרובע') {
+                    shape = 'square'
+                } else if (color == 'משושה') {
+                    shape = 'hexagon'
+                } else if (color == 'לב') {
+                    shape = 'heart'
+                }
+                sendData()
+            }
+
+            function sendData() {
+                const obj = document.querySelector(".obj")
+                const color = document.querySelector("#color").value
+
+                getDada()
+
+                async function getDada() {
+                    let firstNumber = await colorpromise();
+                    let multpliedNumber = await shapepromise();
+                }
+
+                function colorpromise() {
+                    return fetch('/color', {
+                            method: 'post',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                color
+                            })
+
+                        }).then(r => r.json())
+                        .then(data => {
+                            colo = data.color
+                            console.log(data.color)
                         })
 
-                    }).then(r => r.json())
-                    .then(data => {
-                        color = data.color
-                        console.log(data.color)
-                    })
-
-                    .catch(e => {
-                        console.log(e)
-                    })
-
-            }
-
-            function shapepromise() {
-                return fetch('http://localhost:3001/shape', {
-                        method: 'post',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            shape
+                        .catch(e => {
+                            console.log(e)
                         })
 
-                    }).then(r => r.json())
-                    .then(data => {
-                        console.log(data.shape)
-                        if (data.shape == 'triangle') {
-                            obj.innerHTML = `<div class="${data.shape}" style="color:${color}"></div>`
+                }
 
-                        } else if (data.shape == 'hexagon') {
-                            obj.innerHTML =
-                                `<div class="${data.shape}" style="background:${color}; color:${color}" ></div>`
+                function shapepromise() {
+                    return fetch('http://localhost:3001/shape', {
+                            method: 'post',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                shape
+                            })
 
-                        } else {
-                            obj.innerHTML =
-                                `<div class="${data.shape}" style="background:${color}"></div>`
-                        }
-                    })
-                    .catch(e => {
-                        console.log(e)
-                    })
+                        }).then(r => r.json())
+                        .then(data => {
+                            console.log(data.shape)
+                            if (data.shape == 'triangle') {
+                                obj.innerHTML = `<div class="${data.shape}" style="color:${colo}"></div>`
+
+                            } else if (data.shape == 'hexagon') {
+                                obj.innerHTML =
+                                    `<div class="${data.shape}" style="background:${colo}; color:${colo}" ></div>`
+
+                            } else if (data.shape == 'heart') {
+                                obj.innerHTML =
+                                    `            <div class="${data.shape}"style="background:${colo};"> <div class="heartcolor1" style="background:${colo};"></div><div class="heartcolor2"style="background:${colo};"></div></div></div>`
+
+                            } else {
+                                obj.innerHTML =
+                                    `<div class="${data.shape}" style="background:${colo}"></div>`
+                            }
+                        })
+                        .catch(e => {
+                            console.log(e)
+                        })
+                }
             }
-        }
-    </script>
+        </script>
 </body>
 
 </html>

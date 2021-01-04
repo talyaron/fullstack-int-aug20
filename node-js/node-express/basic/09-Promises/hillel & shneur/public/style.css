@@ -56,7 +56,7 @@ input {
 }
 
 .shapeinput {
-   
+
     box-sizing: border-box;
     background-color: rgba(6, 100, 100, 0.281);
     margin: 3px 0;
@@ -72,7 +72,7 @@ input {
 }
 
 .chooseShape:hover .shapeContainer {
-    height: 143px;
+    height: 180px;
     opacity: 1;
     display: block;
 }
@@ -107,7 +107,7 @@ input {
 
 .Circle,
 .square {
-    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
+    /* box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589); */
     height: 250px;
     width: 250px;
     margin: 50px auto;
@@ -120,6 +120,8 @@ input {
     border-right: 150px solid transparent;
     border-bottom: 240px solid;
     margin: 50px auto;
+    background: none;
+    color: rgba(240, 255, 240, 0);
 }
 
 .hexagon {
@@ -127,7 +129,7 @@ input {
     width: 250px;
     height: 144.34px;
     margin: 100px auto;
-    box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589);
+    /* box-shadow: 0 4px 8px 0 rgba(117, 116, 116, 0.589), 0 6px 20px 0 rgba(98, 97, 97, 0.589); */
 }
 
 .hexagon:before,
@@ -148,4 +150,30 @@ input {
     top: 100%;
     width: 0;
     border-top: 72.17px solid;
+}
+
+.heart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(45deg);
+    margin: 100px auto;
+    border-radius: 50% 10px 0px 10px;
+}
+
+.heartcolor1 {
+    position: absolute;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    top: -53px;
+}
+
+.heartcolor2 {
+    position: absolute;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    top: 20px;
+    right: 72px;
 }
