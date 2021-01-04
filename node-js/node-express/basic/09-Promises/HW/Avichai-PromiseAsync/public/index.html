@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="sendCities(event)">
+        <input type="text" placeholder="City1" name="city1">
+        <input type="text" placeholder="City2" name="city2">
+        <input type="submit">
+    </form>
+    <div id="root"></div>
+
+    <script>
+        function sendCities(e) {
+            e.preventDefault();
+            const city1 = e.target.children.city1.value
+            const city2 = e.target.children.city2.value
+
+            fetch('/getCities', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ city1, city2 })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+    </script>
+</body>
+
+</html>
