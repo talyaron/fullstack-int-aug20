@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+ 
+</style>
+
+<body>
+<div class=page>
+    <form onsubmit='handleSendMusic(event)'>
+        <input type='text' placeholder="Enter music" name="music">
+        <input type="submit" value="Get songs">
+    </form>
+
+    <div id="title"></div>
+    <!-- <div id="songList">
+        <div class="song">
+        <div name="name"></div>
+        <div name="year"></div>
+        <img src="" id="poster">
+        </div>
+        <div> -->
+        </div>
+            <script>
+                function handleSendTitleMovie(e) {
+                    e.preventDefault();
+
+                    const music = e.target.children.music.value;
+                    console.log(music)
+
+                    // fetch('/sendTitle', {
+                    //     method: 'post',
+                    //     headers: { 'Content-Type': 'application/json' },
+                    //     body: JSON.stringify({ movie })
+                    // })
+                    //     .then(r => r.json())
+                    //     .then(data => {
+                    //         let movies = data.movies
+                    //         console.log(movies)
+
+                            
+
+                    //         html = ""
+                    //         movies.forEach(movie => {
+
+                        
+                    //             if (movie.Poster!='N/A'){
+                    //                 console.log(movie)
+                    //                 html += `
+                    //                 <style>
+                    //                     .page {
+                    //                      width: 97%;
+                    //                      margin: auto;
+                    //                      height: 100vh;
+                    //                      border: 1px solid black;
+                    //                      font-family: Arial, Helvetica, sans-serif;}
+                    //                  #page movieList{
+                    //                     width: 95%;
+                    //                     margin: 3% auto auto auto;
+                    //                     display: grid;
+                    //                     grid-template-columns: 1fr 1fr 1fr;
+                    //                     grid-gap: 10px;
+                    //                     border: 1px solid black;   
+                    //                  #page movie{
+                    //                     width: 100%;
+                    //                     height: 100%;
+                    //                     border: 1px solid black;
+                    //                     overflow: hidden;
+                    //                     display: flex;
+                    //                     align-items: center;
+                    //                     justify-content: space-around;}  
+                    //                  }
+                    //                 </style>
+                    //                 <div class="movie">
+                    //                 <div name="name">${movie.Title}</div>
+                    //                 <div name="year">${movie.Year}</div>
+                    //                 </div>
+                    //                 <img src="${movie.Poster}" id="poster">`
+                    //             }
+                    //         })
+
+                    //         document.getElementById('moviesList').innerHTML = html
+                         
+
+                    //     })
+                }
+
+
+            </script>
+</body>
+
+</html>

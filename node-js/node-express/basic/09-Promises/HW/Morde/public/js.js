@@ -13,26 +13,30 @@ function handleSubmit(e) {
   })
     .then(async (res) => await res.json())
     .then((data) => {
-      const nameArray = data.playersNameList.split(",");
-      nameArray.forEach((name) => {
-        document.getElementById("names").innerHTML +=
-          "<div class='divStyle'>" + name + "</div>";
-      });
-      const positionArray = data.playersPositionList.split(",");
-      positionArray.forEach((position) => {
-        document.getElementById("positions").innerHTML +=
-          "<div class='divStyle'>" + position + "</div>";
-      });
+      try {
+        const nameArray = data.playersNameList.split(",");
+        nameArray.forEach((name) => {
+          document.getElementById("names").innerHTML +=
+            "<div class='divStyle'>" + name + "</div>";
+        });
+        const positionArray = data.playersPositionList.split(",");
+        positionArray.forEach((position) => {
+          document.getElementById("positions").innerHTML +=
+            "<div class='divStyle'>" + position + "</div>";
+        });
 
-      const numbersArray = data.playersNumberList.split(",");
-      numbersArray.forEach((number) => {
-        document.getElementById("numbers").innerHTML +=
-          "<div class='divStyle'>" + number + "</div>";
-      });
-      const countryArray = data.playersCountryList.split(",");
-      countryArray.forEach((country) => {
-        document.getElementById("countries").innerHTML +=
-          "<div class='divStyle'>" + country + "</div>";
-      });
+        const numbersArray = data.playersNumberList.split(",");
+        numbersArray.forEach((number) => {
+          document.getElementById("numbers").innerHTML +=
+            "<div class='divStyle'>" + number + "</div>";
+        });
+        const countryArray = data.playersCountryList.split(",");
+        countryArray.forEach((country) => {
+          document.getElementById("countries").innerHTML +=
+            "<div class='divStyle'>" + country + "</div>";
+        });
+      } catch (e) {
+        console.log(e);
+      }
     });
 }
