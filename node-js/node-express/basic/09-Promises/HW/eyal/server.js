@@ -18,14 +18,12 @@ app.post('/getLang', async (req, res) => {
 
 
 
-app.post('/SendTraslation', async (req, res) => {
+app.post('/SendTranslation', async (req, res) => {
   
-  const fromLang = req.formlang;
-  const toLang = rew.toLang;
+  const fromLang = req.body.formlang;
+  const toLang = req.body.toLang;
   try {
-    console.log(req.body.message);
-   
-
+    console.log(req.body.message , fromLang , toLang);
     const Transaction = await translate(
       `${fromLang}`,
       `${toLang}`,
@@ -60,8 +58,7 @@ const translate = async (fromLng, toLng, massage) => {
   let textToTranslate = encode(massage);
   //let Tkey = await setKey;// no nead - so canceld
   await fetch(
-    `
-    https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
+    `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
     {
       method: 'GET',
       headers: {

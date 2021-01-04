@@ -113,7 +113,7 @@ var translate = function translate(fromLng, toLng, massage) {
           textToTranslate = encode(massage); //let Tkey = await setKey;// no nead - so canceld
 
           _context4.next = 3;
-          return regeneratorRuntime.awrap(fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
+          return regeneratorRuntime.awrap(fetch("\n    https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
             method: 'GET',
             headers: {
               'x-rapidapi-key': '2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0',
