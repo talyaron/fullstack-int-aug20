@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form onsubmit="hendleMyCity(event)">
+        <input type="text" placeholder="First city" name="firstCity">
+        <input type="text" placeholder="Second city" name="secondCity">
+        <input type="submit" value="Set">
+    </form>
+
+    <div id="root"></div>
+    <div id="root2"></div>
+
+
+    <script>
+        function hendleMyCity(e) {
+            e.preventDefault();
+
+            const firstCity = e.target.children.firstCity.value;
+            const secondCity = e.target.children.secondCity.value;
+            const root = document.getElementById('root')
+            const root2 = document.getElementById('root2')
+
+
+            console.log(firstCity, secondCity)
+
+            fetch('/sendCity', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        firstCity,
+                        secondCity
+                    })
+                }).then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                        // root.innerHTML = `<p>The temperature is ${Math.round(data.weather.main.temp-273.15)} &#8451 </p>
+                        //     <p>It's feels like ${Math.round(data.weather.main.feels_like-273.15)} &#8451</p>
+                        //     <p>The wind speed is ${data.weather.wind.speed}</p>`;
+
+                })
+        }
+    </script>
+
+
+
+    </div>
+</body>
+
+</html>
