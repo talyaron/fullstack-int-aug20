@@ -11,9 +11,10 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.post('/getLang', async (req, res) => {
-    const AllLangs = await detectlanguage();
-    res.send({ AllLangs });
+app.get('/getLang', async (req, res) => {
+  console.log('in the getLang')  
+  const AllLangs = await GetLangFromAPI();
+    res.send( AllLangs );
 });
 
 
@@ -37,15 +38,14 @@ app.post('/SendTranslation', async (req, res) => {
   }
 });
 
-async function detectlanguage(){
+async function GetLangFromAPI(){
   let languages;
-  //let textToTranslate = encode(massage);
-  //let Tkey = await setKey;// no nead - so canceld
-   await fetch(`https://ws.detectlanguage.com/0.2/languages`)
+    await fetch(`https://ws.detectlanguage.com/0.2/languages`)
     .then((response) => response.json({ response }))
     .then((response) => {
       languages = response;
-      //console.log('ok' ,response )
+      console.log('ok' ,response )
+      
     })
     .catch((err) => {
       console.error(err);
@@ -56,7 +56,6 @@ async function detectlanguage(){
 const translate = async (fromLng, toLng, massage) => {
   let translatedMessage;
   let textToTranslate = encode(massage);
-  //let Tkey = await setKey;// no nead - so canceld
   await fetch(
     `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
     {

@@ -17,22 +17,21 @@ var port = process.env.PORT || 3000;
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express["static"]('public'));
-app.post('/getLang', function _callee(req, res) {
+app.get('/getLang', function _callee(req, res) {
   var AllLangs;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          _context.next = 2;
-          return regeneratorRuntime.awrap(detectlanguage());
+          console.log('in the getLang');
+          _context.next = 3;
+          return regeneratorRuntime.awrap(GetLangFromAPI());
 
-        case 2:
+        case 3:
           AllLangs = _context.sent;
-          res.send({
-            AllLangs: AllLangs
-          });
+          res.send(AllLangs);
 
-        case 4:
+        case 5:
         case "end":
           return _context.stop();
       }
@@ -74,9 +73,9 @@ app.post('/SendTranslation', function _callee2(req, res) {
   }, null, null, [[2, 11]]);
 });
 
-function detectlanguage() {
+function GetLangFromAPI() {
   var languages;
-  return regeneratorRuntime.async(function detectlanguage$(_context3) {
+  return regeneratorRuntime.async(function GetLangFromAPI$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
@@ -86,7 +85,8 @@ function detectlanguage() {
               response: response
             });
           }).then(function (response) {
-            languages = response; //console.log('ok' ,response )
+            languages = response;
+            console.log('ok', response);
           })["catch"](function (err) {
             console.error(err);
           }));
@@ -110,10 +110,9 @@ var translate = function translate(fromLng, toLng, massage) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
-          textToTranslate = encode(massage); //let Tkey = await setKey;// no nead - so canceld
-
+          textToTranslate = encode(massage);
           _context4.next = 3;
-          return regeneratorRuntime.awrap(fetch("\n    https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
+          return regeneratorRuntime.awrap(fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
             method: 'GET',
             headers: {
               'x-rapidapi-key': '2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0',

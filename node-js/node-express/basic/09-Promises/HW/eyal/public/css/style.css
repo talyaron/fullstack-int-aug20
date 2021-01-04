@@ -5,6 +5,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@media only screen and (min-width: 480px) {
+  body {
+    width: 99vw;
+    height: 90vh;
+  }
+}
 body #appContainer header h1 {
   width: max-content;
   margin-left: auto;
@@ -16,6 +22,26 @@ body #appContainer #body {
   /* flex: 1; */
   height: 40vh;
 }
+@media only screen and (min-width: 260px) {
+  body #appContainer #body {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 480px) {
+  body #appContainer #body {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body #appContainer #body {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body #appContainer #body {
+    flex-direction: row;
+  }
+}
 body #appContainer #body .Column {
   display: flex;
   flex-direction: column;
@@ -24,18 +50,28 @@ body #appContainer #body .Column {
   margin-right: 1%;
 }
 body #appContainer #body .Column #LangTo {
-  height: 10%;
+  /*  height: 10%; */
   line-height: 1.5rem;
   font-size: large;
   margin-bottom: 1%;
   width: 30%;
 }
+@media only screen and (min-width: 768px) {
+  body #appContainer #body .Column #LangTo {
+    height: 10%;
+  }
+}
 body #appContainer #body .Column #LangFrom {
-  height: 10%;
+  /*  height: 10%; */
   line-height: 1.5rem;
   font-size: large;
   margin-bottom: 1%;
   width: 30%;
+}
+@media only screen and (min-width: 768px) {
+  body #appContainer #body .Column #LangFrom {
+    height: 10%;
+  }
 }
 body #appContainer #body .Column textarea {
   height: 100%;
