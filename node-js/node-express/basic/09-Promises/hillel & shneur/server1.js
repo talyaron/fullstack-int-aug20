@@ -15,5 +15,5 @@ app.post('/color', (req, res) => {
 
 
 
-const port = process.env.PORT || 3008;
+const port = process.env.PORT || 3000;
 app.listen(port, () => { console.log(`listen on port ${port}`) }) //listen to clients requests
