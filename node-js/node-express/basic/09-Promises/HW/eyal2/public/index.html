@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="heb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body onload="handleLoadLang()">
+    <div id="appContainer">
+        <header>
+           <h1>Multi Translator</h1> 
+        </header>
+        <div id="body"  >
+            <div id="fromSide" class="Column" >
+                <label for="LangFrom">Transition From:</label>
+                  <select id="LangFrom" name="LangFrom">
+                  <!-- <option value="iw">עברית</option>
+                  <option value="en">אנגלית</option>     -->        
+                </select>
+                <textarea id="Origen" name="Origen" ></textarea>
+              </div>
+           
+            <div id="ToSide" class="Column" >
+                <label for="LangTo">Translation To:</label>
+                  <select id="LangTo" name="LangTo">
+                   <!--  <option value="iw">עברית</option>
+                    <option value="en">אנגלית</option>         -->
+                </select>
+                <!-- <textarea name="transform" onkeyup='handleTextArea(event)'></textarea> -->
+                <textarea id="transform" name="transform" ></textarea>
+              </div>
+            
+        </div>
+        
+    </div>
+
+   
+    <script src="index.js"></script>
+    
+</body>
+</html>

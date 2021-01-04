@@ -21,18 +21,50 @@ app.get('/getLang', async (req, res) => {
 
 app.post('/SendTranslation', async (req, res) => {
   
+  //const fromLang = req.body.formlang;
+ console.log("////")
+  const fromLang = await detectLang(req.body.message);
+  console.log(fromLang)
+  console.log("////")
+  const toLang = req.body.toLang;
   try {
+    console.log(req.body.message , fromLang , toLang);
+    const Transaction = await translate(
+      `${fromLang}`,
+      `${toLang}`,
+      req.body.message
+    );
+    console.log(Transaction);
 
-    const {fromLang, toLang,message} = req.body;
-   
-    const transaction = await translate(fromLang,toLang,message);
-    console.log(transaction);
-
-    res.send({ transaction });
+    res.send({ Transaction });
   } catch (e) {
     console.log(e);
   }
 });
+
+async function detectLang(text){
+  let lang;
+ await fetch("https://google-translate1.p.rapidapi.com/language/translate/v2/detect", {
+    "method": "POST",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded",
+      "accept-encoding": "application/gzip",
+      "x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
+      "x-rapidapi-host": "google-translate1.p.rapidapi.com"
+    },
+    "body": {
+      "q": `${text}`
+    }
+  })
+  .then(response => {
+   // console.log(response);
+    lang = response;
+  }).then((response) => response.json({ response }))
+  .catch(err => {
+    console.error(err);
+  });
+  return lang;
+}
 
 async function GetLangFromAPI(){
   let languages;
@@ -49,11 +81,11 @@ async function GetLangFromAPI(){
   return languages;
 };
 
-const translate = async (fromLang, toLang, massage) => {
+const translate = async (fromLng, toLng, massage) => {
   let translatedMessage;
   let textToTranslate = encode(massage);
   await fetch(
-    `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLang}%7C${toLang}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
+    `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
     {
       method: 'GET',
       headers: {
@@ -66,13 +98,11 @@ const translate = async (fromLang, toLang, massage) => {
     .then((response) => response.json({ response }))
     .then((response) => {
       translatedMessage = response.responseData.translatedText;
-      
     })
     .catch((err) => {
       console.error(err);
     });
-     console.log(translatedMessage)
-    return translatedMessage;
+  return translatedMessage;
 };
 
 app.listen(port, () => {

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form action="" onsubmit="handleSubmit(event)">
+    <input type="text" id="city1" placeholder="enter city 1">
+    <input type="text" id="city2" placeholder="enter city 2">
+    <input type="submit" value="submit">
+  </form>
+    <div id="root"></div>
+
+    <script>
+        function handleSubmit(e){
+            e.preventDefault()
+          const city1 = e.target.city1.value
+          const city2 = e.target.city2.value
+          console.log(city1,city2)
+          const cities = {city1,city2}
+          fetch('/click', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cities)
+            })
+                .then(r => r.json())
+                .then(data => {
+                    console.log(data)
+                    temp1 = Math.round(data.weathers.weather1.main.temp - 273)
+                    temp2 = Math.round(data.weathers.weather2.main.temp - 273)
+                    
+                    document.getElementById('root').innerHTML = `<div> the weather in ${city1} is ${temp1},the weather in ${city2} is ${temp2}</div>`
+                  
+                })
+            
+        }
+    </script>
+</body>
+</html>
