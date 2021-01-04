@@ -36,7 +36,6 @@ async function getLyrics() {
   let artist = 'michael jackson';
   let song = 'bad';
   let status;
-  console.log(encodeURI(artist));
 
   await fetch(`https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=${encodeURI(artist)}&song=${song}`, {
       "method": "GET",
@@ -45,6 +44,7 @@ async function getLyrics() {
         "x-rapidapi-host": "sridurgayadav-chart-lyrics-v1.p.rapidapi.com"
       }
     })
+    // .then(r => r.json())
     .then(data => {
       console.log(data);
       status = data.status;
