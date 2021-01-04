@@ -1,3 +1,20 @@
+const express = require('express')
+const app = express(); ///server
+const bodyParser = require('body-parser');
+var cors = require('cors')
+
+
+app.use(bodyParser.json())
+app.use(cors());
+
+app.use(express.static('public'))
+app.use(cors());
+
+
+
+app.use(bodyParser.json())
+
+app.use(express.static('public'))
 const hello = async (string, names) => {
     console.log('translating....');
     const stringInEnglish = await translate(string, 'iw', 'en');
@@ -35,3 +52,5 @@ async function translate(sentence, langFrom, langTo) {
     let translatedString = fetchResponse.responseData.translatedText;
     return translatedString;
 }
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>{console.log(`listen on port ${port}`)}) //listen to clients requests
