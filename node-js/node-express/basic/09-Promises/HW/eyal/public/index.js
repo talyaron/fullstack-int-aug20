@@ -52,11 +52,11 @@ function doneTyping () {
             fetch('/SendTranslation', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ formlang: `${LangFrom.value}`, toLang: `${LangTo.value}`, message: `${message}` }),
+                body: JSON.stringify({ fromLang: `${LangFrom.value}`, toLang: `${LangTo.value}`, message: `${message}` }),
             }).then(r => r.json())
                 .then(data => {
                     console.log(ariaTranslated);
-                    document.getElementById('transform').value = data.Transaction;
+                    document.getElementById('transform').value = data.transaction;
                 })
         } catch (e) {
             console.log(e);

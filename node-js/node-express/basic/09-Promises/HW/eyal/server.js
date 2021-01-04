@@ -21,18 +21,14 @@ app.get('/getLang', async (req, res) => {
 
 app.post('/SendTranslation', async (req, res) => {
   
-  const fromLang = req.body.formlang;
-  const toLang = req.body.toLang;
   try {
-    console.log(req.body.message , fromLang , toLang);
-    const Transaction = await translate(
-      `${fromLang}`,
-      `${toLang}`,
-      req.body.message
-    );
-    console.log(Transaction);
 
-    res.send({ Transaction });
+    const {fromLang, toLang,message} = req.body;
+   
+    const transaction = await translate(fromLang,toLang,message);
+    console.log(transaction);
+
+    res.send({ transaction });
   } catch (e) {
     console.log(e);
   }
@@ -53,11 +49,11 @@ async function GetLangFromAPI(){
   return languages;
 };
 
-const translate = async (fromLng, toLng, massage) => {
+const translate = async (fromLang, toLang, massage) => {
   let translatedMessage;
   let textToTranslate = encode(massage);
   await fetch(
-    `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLng}%7C${toLng}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
+    `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=${fromLang}%7C${toLang}&q=${textToTranslate}&mt=1&onlyprivate=1&de=a%40b.c`,
     {
       method: 'GET',
       headers: {
@@ -70,11 +66,13 @@ const translate = async (fromLng, toLng, massage) => {
     .then((response) => response.json({ response }))
     .then((response) => {
       translatedMessage = response.responseData.translatedText;
+      
     })
     .catch((err) => {
       console.error(err);
     });
-  return translatedMessage;
+     console.log(translatedMessage)
+    return translatedMessage;
 };
 
 app.listen(port, () => {

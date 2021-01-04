@@ -9,7 +9,6 @@ app.use(express.static('public'))
 
 async function getWeather(city1,city2) {
 
-<<<<<<< Updated upstream
 app.post('/click', async (req, res) => {
     try {
         console.log(req.body)
@@ -25,19 +24,6 @@ app.post('/click', async (req, res) => {
     } catch (e) {
         console.log(e)
     }
-=======
-    let weather1 = await getWeather1Proise(city1);
-    let weather2 = await getWeather2Proise(city2);
-    console.log(weather1)
-    console.log(weather2)
-
-}
-app.post('/click', (req, res) => {
-    const city1 = req.body.cities.city1
-    const city2 = req.body.cities.city2
-
-    getWeather(city1,city2)
->>>>>>> Stashed changes
 
 });
 
