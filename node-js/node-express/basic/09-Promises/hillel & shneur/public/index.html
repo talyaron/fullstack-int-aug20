@@ -9,19 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/officel/150/000000/rgb-circle-1.png" type="image/x-icon">
 </head>
 
 <body dir="rtl">
     <div class="box">
         <div class="colorinput">
             <label for="color">בחר צבע
-                <img src="https://img.icons8.com/officel/80/000000/rgb-circle-1.png">
+                <img src="https://img.icons8.com/clouds/100/000000/fill-color.png" />
                 <input type="color" id="color" onfocusout='sendData()' value="#d3a7a7" class="color">
             </label>
         </div>
 
         <div class="shapeinput">
-            <div class="chooseShape" onclick="none()" onmouseover="block()">בחר צורה
+            <div class="chooseShape" onclick="none()" onmouseover="block()" onmouseleave="mouseleave()">בחר צורה
                 <div class="shapeContainer">
                     <div class="shape" value="Circle" onclick="refresh(event)">עיגול</div>
                     <div class="shape" value="triangle" onclick="refresh(event)">משולש</div>
@@ -34,7 +35,6 @@
         </div>
         <div class="obj">
             <!-- <div class="heart"style="background:red;"> <div class="heartcolor1" style="background:red"></div><div class="heartcolor2"style="background:red;"></div></div></div>` -->
-
         </div>
         <script>
             const shapeContainer = document.querySelector(".shapeContainer")
@@ -42,15 +42,18 @@
             let colo
             let shape
 
-
             function none() {
                 shapeContainer.style.height = "0"
+                shapeContainer.style.transition = 'all 0.1s'
             }
-
             function block() {
                 shapeContainer.style.height = '180px'
+                shapeContainer.style.transition = 'all 0.4s'
             }
-
+            function mouseleave() {
+                shapeContainer.style.height = '0px'
+                shapeContainer.style.transition = 'all 0.4s'
+            }
 
             function refresh(event) {
                 const color = event.target.textContent
@@ -72,13 +75,12 @@
                 const obj = document.querySelector(".obj")
                 const color = document.querySelector("#color").value
 
-
                 getDada()
 
                 async function getDada() {
                     let getColorpromise = await colorpromise();
                     let getShapepromise = await shapepromise();
-                  
+
                 }
 
 
@@ -91,17 +93,14 @@
                             body: JSON.stringify({
                                 color
                             })
-
                         }).then(r => r.json())
                         .then(data => {
                             colo = data.color
                             console.log(data.color)
                         })
-
                         .catch(e => {
                             console.log(e)
                         })
-
                 }
 
                 function shapepromise() {
@@ -113,33 +112,26 @@
                             body: JSON.stringify({
                                 shape
                             })
-
                         }).then(r => r.json())
                         .then(data => {
                             console.log(data.shape)
                             if (data.shape == 'triangle') {
                                 obj.innerHTML = `<div class="${data.shape}" style="color:${colo}"></div>`
-
                             } else if (data.shape == 'hexagon') {
                                 obj.innerHTML =
                                     `<div class="${data.shape}" style="background:${colo}; color:${colo}" ></div>`
-
                             } else if (data.shape == 'heart') {
                                 obj.innerHTML =
-                                    `            <div class="${data.shape}"style="background:${colo};"> <div class="heartcolor1" style="background:${colo};"></div><div class="heartcolor2"style="background:${colo};"></div></div></div>`
-
+                                    `<div class="${data.shape}"style="background:${colo};"> <div class="heartcolor1" style="background:${colo};"></div><div class="heartcolor2"style="background:${colo};"></div></div></div>`
                             } else {
                                 obj.innerHTML =
                                     `<div class="${data.shape}" style="background:${colo}"></div>`
                             }
-
                         })
                         .catch(e => {
                             console.log(e)
                         })
                 }
-
-
             }
         </script>
 </body>
