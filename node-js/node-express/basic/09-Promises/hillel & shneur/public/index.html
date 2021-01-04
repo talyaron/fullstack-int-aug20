@@ -21,7 +21,7 @@
         </div>
 
         <div class="shapeinput">
-            <div class="bix">בחר צורה
+            <div class="bix" onclick="none()" onmouseover="block()">בחר צורה
                 <div class="ce">
                     <div class="cc" value="Circle" onclick="sendDa(event)">עיגול</div>
                     <div class="cc" value="triangle" onclick="sendDa(event)">משולש</div>
@@ -37,7 +37,13 @@
         const bix = document.querySelector(".bix")
         let col
         let shape
-       
+       function none(){
+        ce.style.height = "0"
+       }
+       function block(){
+        ce.style.height = '143px'
+       }
+
 
         function sendDa(event) {
          const colr = event.target.textContent
