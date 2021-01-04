@@ -63,7 +63,7 @@ input {
     height: 50px;
 }
 
-.bix {
+.chooseShape {
     width: 100px;
     padding: 2px;
     position: relative;
@@ -71,13 +71,13 @@ input {
     cursor: pointer;
 }
 
-.bix:hover .ce {
+.chooseShape:hover .shapeContainer {
     height: 143px;
     opacity: 1;
     display: block;
 }
 
-.ce {
+.shapeContainer {
     overflow: hidden;
     height: 0;
     transition: all 0.4s;
@@ -90,14 +90,14 @@ input {
     z-index: 100000;
 }
 
-.cc {
+.shape {
     background-color: rgb(197, 219, 219);
     margin-bottom: 5px;
     padding: 4px;
     transition: all 0.4s;
 }
 
-.cc:hover {
+.shape:hover {
     background-color: rgba(89, 131, 131, 0.89);
 }
 

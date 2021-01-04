@@ -21,27 +21,27 @@
         </div>
 
         <div class="shapeinput">
-            <div class="bix" onclick="none()" onmouseover="block()">בחר צורה
-                <div class="ce">
-                    <div class="cc" value="Circle" onclick="sendDa(event)">עיגול</div>
-                    <div class="cc" value="triangle" onclick="sendDa(event)">משולש</div>
-                    <div class="cc" value="square" onclick="sendDa(event)">מרובע</div>
-                    <div class="cc" value="hexagon" onclick="sendDa(event)">משושה</div>
+            <div class="chooseShape" onclick="none()" onmouseover="block()">בחר צורה
+                <div class="shapeContainer">
+                    <div class="shape" value="Circle" onclick="sendDa(event)">עיגול</div>
+                    <div class="shape" value="triangle" onclick="sendDa(event)">משולש</div>
+                    <div class="shape" value="square" onclick="sendDa(event)">מרובע</div>
+                    <div class="shape" value="hexagon" onclick="sendDa(event)">משושה</div>
                 </div>
             </div>
         </div>
         <div class="obj"></div>
     </div>
     <script>
-        const ce = document.querySelector(".ce")
-        const bix = document.querySelector(".bix")
+        const shapeContainer = document.querySelector(".shapeContainer")
+        const chooseShape = document.querySelector(".chooseShape")
         let col
         let shape
        function none(){
-        ce.style.height = "0"
+        shapeContainer.style.height = "0"
        }
        function block(){
-        ce.style.height = '143px'
+        shapeContainer.style.height = '143px'
        }
 
 
