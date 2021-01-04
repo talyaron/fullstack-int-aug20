@@ -21,7 +21,7 @@ function getData() {
           // console.log(url);
           // console.log(status);
           root.innerHTML = "<img src='".concat(url, "'>");
-          root2.innerHTML = "<h1>".concat(status, "</h1>");
+          root2.innerHTML = "<h1>".concat(responseText, "</h1>");
 
         case 10:
         case "end":
@@ -93,11 +93,14 @@ function getLyrics() {
 
 
 var data = null;
+var responseText;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-    console.log(this.responseText);
+    responseText = this.responseText;
+    console.log(this.responseText.xml2json);
+    this.responseText.xml2json;
   }
 });
 xhr.open("GET", "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=michael%20jackson&song=bad");

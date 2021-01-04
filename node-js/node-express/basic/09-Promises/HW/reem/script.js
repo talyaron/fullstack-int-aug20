@@ -10,7 +10,7 @@ async function getData() {
     // console.log(status);
   
     root.innerHTML = `<img src='${url}'>`;
-    root2.innerHTML = `<h1>${status}</h1>`;
+    root2.innerHTML = `<h1>${  responseText}</h1>`;
   
   }
   
@@ -58,13 +58,17 @@ async function getData() {
   
   // xmlh
   const data = null;
-  
+  let responseText
+ 
   const xhr = new XMLHttpRequest();
   xhr.withCredentials = true;
   
   xhr.addEventListener("readystatechange", function () {
     if (this.readyState === this.DONE) {
-      console.log(this.responseText);
+      responseText = this.responseText
+      console.log(this.responseText.xml2json);
+      this.responseText.xml2json
+      
     }
   });
   
