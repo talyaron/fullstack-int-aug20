@@ -14,53 +14,56 @@
 <body dir="rtl">
     <div class="box">
         <div class="colorinput">
-            <div>בחר צבע </div>
-            <div class="inputContainer">
-            <input type="color" id="color" onfocusout='sendData()' value="#d3a7a7">
-        </div>
+            <label for="color">בחר צבע
+                <img src="https://img.icons8.com/officel/80/000000/rgb-circle-1.png">
+                <input type="color" id="color" onfocusout='sendData()' value="#d3a7a7" class="color">
+            </label>
         </div>
 
         <div class="shapeinput">
-            <select name="shape" id="shape" onclick='sendData()'>
-                <option >בחר צורה</option>
-                <option value="Circle">עיגול</option>
-                <option value="triangle">משולש</option>
-                <option value="square">מרובע</option>
-                <option value="hexagon">משושה</option>
-
-            </select>
-        </div> </br>
-        <!-- <div style="text-align: center;"> -->
-            <!-- <button onclick="sendData()">צור צורה</button> -->
-        <!-- </div> -->
+            <div class="bix">בחר צורה
+                <div class="ce">
+                    <div class="cc" value="Circle" onclick="sendDa(event)">עיגול</div>
+                    <div class="cc" value="triangle" onclick="sendDa(event)">משולש</div>
+                    <div class="cc" value="square" onclick="sendDa(event)">מרובע</div>
+                    <div class="cc" value="hexagon" onclick="sendDa(event)">משושה</div>
+                </div>
+            </div>
+        </div>
         <div class="obj"></div>
     </div>
     <script>
+        const ce = document.querySelector(".ce")
+        const bix = document.querySelector(".bix")
+        let col
+        let shape
+       
+
+        function sendDa(event) {
+         const colr = event.target.textContent
+            if (colr == 'עיגול') {
+                 shape = 'Circle'
+            } else if (colr == 'משולש') {
+                 shape = 'triangle'
+            } else if (colr == 'מרובע') {
+                shape = 'square'
+            } else if (colr == 'משושה') {
+                 shape = 'hexagon'
+            }else{
+                shape = 'hexagon'
+            }
+             sendData()
+        }
 
         function sendData() {
             const obj = document.querySelector(".obj")
             const color = document.querySelector("#color").value
-            const shape = document.querySelector("#shape").value
-            let col = 
-                getDada()
-
-              
-            // function getDada() {
-            //     colorpromise().then(number => {
-            //         console.log('promise:', number)
-
-            //         shapepromise().then(data => {
-            //             console.log(data)
-            //         })
-            //     })
-            // }
+            getDada()
 
             async function getDada() {
                 let firstNumber = await colorpromise();
                 let multpliedNumber = await shapepromise();
             }
-
-
             function colorpromise() {
                 return fetch('/color', {
                         method: 'post',
@@ -74,7 +77,6 @@
                     }).then(r => r.json())
                     .then(data => {
                         col = data.color
-                        console.log(data.color)
                         console.log(data.color)
                     })
 
@@ -96,7 +98,6 @@
 
                     }).then(r => r.json())
                     .then(data => {
-                        // resolve(data.shape)
                         console.log(data.shape)
                         if (data.shape == 'triangle') {
                             obj.innerHTML = `<div class="${data.shape}" style="color:${col}"></div>`
@@ -112,7 +113,6 @@
                     })
                     .catch(e => {
                         console.log(e)
-                        // })
                     })
             }
         }
