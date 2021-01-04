@@ -16,8 +16,7 @@
         <div class="colorinput">
             <label for="color">בחר צבע
                 <img src="https://img.icons8.com/officel/80/000000/rgb-circle-1.png">
-                <input type="color" id="color" onfocusout='sendData()' value="#d3a7a7" class="color"
-                   >
+                <input type="color" id="color" onfocusout='sendData()' value="#d3a7a7" class="color">
             </label>
         </div>
 
@@ -34,7 +33,7 @@
             </div>
         </div>
         <div class="obj">
-<!-- <div class="heart"style="background:red;"> <div class="heartcolor1" style="background:red"></div><div class="heartcolor2"style="background:red;"></div></div></div>` -->
+            <!-- <div class="heart"style="background:red;"> <div class="heartcolor1" style="background:red"></div><div class="heartcolor2"style="background:red;"></div></div></div>` -->
 
         </div>
         <script>
@@ -73,12 +72,15 @@
                 const obj = document.querySelector(".obj")
                 const color = document.querySelector("#color").value
 
+
                 getDada()
 
                 async function getDada() {
-                    let firstNumber = await colorpromise();
-                    let multpliedNumber = await shapepromise();
+                    let getColorpromise = await colorpromise();
+                    let getShapepromise = await shapepromise();
+                 
                 }
+
 
                 function colorpromise() {
                     return fetch('/color', {
@@ -130,6 +132,7 @@
                                 obj.innerHTML =
                                     `<div class="${data.shape}" style="background:${colo}"></div>`
                             }
+
                         })
                         .catch(e => {
                             console.log(e)
