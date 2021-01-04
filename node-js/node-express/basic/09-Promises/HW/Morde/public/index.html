@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="dist/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Follow Your Favorite NBA Team!</h1>
+    <img class="nbaPic" src="img/nba.jpg" alt="" />
+    <p>Just enter your team's nickname and get back their roster of players.</p>
+    <p>If you are not familiar with the nicknames, here are some :</p>
+    <div>
+      <p>hawks, celtics, pistons, lakers</p>
+    </div>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" name="team" placeholder="Enter Team's Nickname" />
+      <button type="submit">Go</button>
+    </form>
+    <div id="teamImg"></div>
+    <div class="container">
+      <div id="names"></div>
+      <div id="positions"></div>
+      <div id="numbers"></div>
+      <div id="countries"></div>
+    </div>
+
+    <script src="js.js"></script>
+  </body>
+</html>
