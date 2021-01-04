@@ -1,0 +1,35 @@
+
+
+async function getNumbersAsync(e) {
+    e.preventDefault()
+    const number = e.target.children.number.value
+    // let firstNumber = await first(number);
+    // let secondNumber = await second(firstNumber);
+    // console.log(secondNumber)
+
+
+async function first(firstNumber) {
+    let number = 0;
+    await fetch('/first', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ firstNumber })
+    }).then(r => r.json())
+        .then(data => {
+            number = data.number;
+            // console.log(data)
+        })
+        .catch(e => {
+            reject(e)
+        })
+    return number;
+}
+async function second(number) {
+    const something = number + 'hello'
+    return something
+}
+
+
+
