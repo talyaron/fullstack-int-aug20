@@ -1,14 +1,34 @@
-/* let lastStroke;
-
-function counting(startTime) {
-    var elapsedTime = startTime - lastStroke;
-    lastStroke = startTime;
-    return Math.floor(elapsedTime / 1000);
-} */
 
 let typingTimer;                //timer identifier
 const doneTypingInterval = 2000;  //time in ms (5 seconds)
 const OrigenText = document.getElementById('Origen');
+const LangFrom =  document.getElementById('LangFrom');
+
+
+window.addEventListener('load', async() => {      
+ const allLangs = await handleLoadLang() ;
+ const t = [...allLangs]
+ console.log(t);
+ t.forEach(lang => {
+     console.log(lang);
+   
+     const LangFrom1 = document.getElementById("LangFrom");
+     const LangTo =  document.getElementById('LangTo');
+
+     var option = document.createElement("option");
+     var option1 = document.createElement("option");
+
+     option.text = lang.name;
+     option.value = lang.code;
+     option1.text = lang.name;
+     option1.value = lang.code;
+
+     LangFrom1.add(option);
+     LangTo.add(option1);
+ });
+
+
+});
 
 //on keyup, start the countdown
 
@@ -24,11 +44,9 @@ function doneTyping () {
     const ariaTranslated =  document.getElementById('transform');
     const LangFrom =  document.getElementById('LangFrom');
     const LangTo =  document.getElementById('LangTo');
-    const message = OrigenText.value;/////////////////////////////////////////////////////
+    const message = OrigenText.value;
     console.log(message)
-    // let startTime = Date.now();
-    
-    //if (counting(startTime) > 3) {
+   
 
         try {
             fetch('/SendTranslation', {
@@ -44,23 +62,25 @@ function doneTyping () {
             console.log(e);
         }
         }
-  //  }}
+ 
 
 
-/* function handleText(e) {
-   
-} */
 
-function handleLoadLang() {
-    try {
-    fetch('/getLang',{
-        method: 'GET'
-    }).then(r => r.json())
+async function handleLoadLang() {
+    let t ;
+    console.log('handleLoadLang called')
+    try { 
+   await fetch('/getLang')
+    .then(r => r.json())
     .then(data => {
-        console.log(data);
+       
+        t = data
       //  document.getElementById('transform').value = data.Transaction;
     })} catch (e) {
         console.log(e);
     }
+   console.log('handleLoadLang OK')
+    return t;
+
     }
     
