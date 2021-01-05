@@ -15,6 +15,10 @@ function getWeather(e){
         .then(r => r.json())
         .then(data => {
             console.log(data)
+            console.log(data.weathers[0].main.temp)
+            document.getElementById('temp1').innerHTML =  `<div>${Math.round(data.weathers[0].main.temp -273.15)}°</div>`
+            document.getElementById('temp2').innerHTML =  `<div>${Math.round(data.weathers[1].main.temp -273.15)}°</div>`
+
             
         })
 }

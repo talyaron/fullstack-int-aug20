@@ -19,5 +19,8 @@ function getWeather(e) {
     return r.json();
   }).then(function (data) {
     console.log(data);
+    console.log(data.weathers[0].main.temp);
+    document.getElementById('temp1').innerHTML = "<div>".concat(Math.round(data.weathers[0].main.temp - 273.15), "\xB0</div>");
+    document.getElementById('temp2').innerHTML = "<div>".concat(Math.round(data.weathers[1].main.temp - 273.15), "\xB0</div>");
   });
 }

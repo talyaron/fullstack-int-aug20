@@ -15,37 +15,51 @@ app.use(bodyParser.json());
 app.use(express["static"]('public'));
 
 function getWeather(city1, city2) {
-  var weather1, weather2;
-  return regeneratorRuntime.async(function getWeather$(_context) {
+  try {
+    return new Promise(function (resolve, reject) {
+      Promise.all([getWeather1(city1), getWeather2(city2)]).then(function (results) {
+        console.log(results);
+        resolve(results);
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
+/* async function getWeather(city1,city2) {
+
+    let weather1 = await getWeather1(city1);
+    let weather2 = await getWeather2(city2);
+    console.log(weather1)
+    console.log(weather2)
+
+}  */
+
+
+app.post('/getWeather', function _callee(req, res) {
+  var city1, city2, weathers;
+  return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          _context.next = 2;
-          return regeneratorRuntime.awrap(getWeather1(city1));
-
-        case 2:
-          weather1 = _context.sent;
+          city1 = req.body.city1;
+          city2 = req.body.city2;
+          console.log(city1, city2);
           _context.next = 5;
-          return regeneratorRuntime.awrap(getWeather2(city2));
+          return regeneratorRuntime.awrap(getWeather(city1, city2));
 
         case 5:
-          weather2 = _context.sent;
-          console.log(weather1);
-          console.log(weather2);
+          weathers = _context.sent;
+          res.send({
+            weathers: weathers
+          });
 
-        case 8:
+        case 7:
         case "end":
           return _context.stop();
       }
     }
   });
-}
-
-app.post('/getWeather', function (req, res) {
-  var city1 = req.body.city1;
-  var city2 = req.body.city2;
-  console.log(city1, city2);
-  getWeather(city1, city2);
 });
 /* async function getWeather(city1, city2) {
 

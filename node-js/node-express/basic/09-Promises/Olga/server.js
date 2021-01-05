@@ -7,21 +7,37 @@ const fetch = require('node-fetch');
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
-async function getWeather(city1,city2) {
+
+function getWeather(city1, city2){
+    try{
+        return new Promise((resolve, reject) =>{
+            Promise.all([getWeather1(city1), getWeather2(city2)]).then(results=>{
+                console.log(results)
+                resolve(results)
+            })
+        })
+    }catch(e){
+        console.log(e)
+    }
+    
+}
+
+/* async function getWeather(city1,city2) {
 
     let weather1 = await getWeather1(city1);
     let weather2 = await getWeather2(city2);
     console.log(weather1)
     console.log(weather2)
 
-} 
-app.post('/getWeather', (req, res) => {
+}  */
+app.post('/getWeather', async (req, res) => {
     
     const city1 = req.body.city1
     const city2 = req.body.city2
     console.log(city1,city2)
 
-       getWeather(city1,city2)
+    const weathers = await getWeather(city1,city2)
+    res.send({weathers})
 
 });
 
@@ -34,6 +50,9 @@ app.post('/getWeather', (req, res) => {
     console.log(weather2)
     return {weather1,weather2}
 }*/
+
+
+
 
 
 function getWeather1(city1) {
