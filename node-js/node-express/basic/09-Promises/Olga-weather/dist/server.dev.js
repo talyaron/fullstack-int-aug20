@@ -26,15 +26,6 @@ function getWeather(city1, city2) {
     console.log(e);
   }
 }
-/* async function getWeather(city1,city2) {
-
-    let weather1 = await getWeather1(city1);
-    let weather2 = await getWeather2(city2);
-    console.log(weather1)
-    console.log(weather2)
-
-}  */
-
 
 app.post('/getWeather', function _callee(req, res) {
   var city1, city2, weathers;
@@ -61,15 +52,6 @@ app.post('/getWeather', function _callee(req, res) {
     }
   });
 });
-/* async function getWeather(city1, city2) {
-
-    let weather1 = await getWeather1Proise(city1);
-    console.log(weather1)
-    let weather2 = await getWeather2Proise(city2);
-   
-    console.log(weather2)
-    return {weather1,weather2}
-}*/
 
 function getWeather1(city1) {
   return new Promise(function (resolve, reject) {
