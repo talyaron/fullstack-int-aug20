@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const fetch = require('node-fetch');
 const { encode, decode } = require('url-encode-decode');
 
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -22,21 +23,13 @@ app.get('/getLang', async (req, res) => {
 app.post('/SendTranslation', async (req, res) => {
   
   //const fromLang = req.body.formlang;
- console.log("////")
   const fromLang = await detectLang(req.body.message);
-  console.log(fromLang)
-  console.log("////")
-  const toLang = req.body.toLang;
-  try {
-    console.log(req.body.message , fromLang , toLang);
-    const Transaction = await translate(
-      `${fromLang}`,
-      `${toLang}`,
-      req.body.message
-    );
-    console.log(Transaction);
-
-    res.send({ Transaction });
+  console.log(`detectLang: ${fromLang}`)
+   try {
+    const {fromLang, toLang,message} = req.body;   
+    const transaction = await translate(fromLang,toLang,message);
+   // console.log(transaction);
+    res.send({ transaction });
   } catch (e) {
     console.log(e);
   }

@@ -39,46 +39,92 @@ app.get('/getLang', function _callee(req, res) {
   });
 });
 app.post('/SendTranslation', function _callee2(req, res) {
-  var _req$body, fromLang, toLang, message, transaction;
+  var fromLang, _req$body, _fromLang, toLang, message, transaction;
 
   return regeneratorRuntime.async(function _callee2$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          _context2.prev = 0;
-          _req$body = req.body, fromLang = _req$body.fromLang, toLang = _req$body.toLang, message = _req$body.message;
-          _context2.next = 4;
-          return regeneratorRuntime.awrap(translate(fromLang, toLang, message));
+          _context2.next = 2;
+          return regeneratorRuntime.awrap(detectLang(req.body.message));
 
-        case 4:
+        case 2:
+          fromLang = _context2.sent;
+          console.log("detectLang: ".concat(fromLang));
+          _context2.prev = 4;
+          _req$body = req.body, _fromLang = _req$body.fromLang, toLang = _req$body.toLang, message = _req$body.message;
+          _context2.next = 8;
+          return regeneratorRuntime.awrap(translate(_fromLang, toLang, message));
+
+        case 8:
           transaction = _context2.sent;
-          console.log(transaction);
+          // console.log(transaction);
           res.send({
             transaction: transaction
           });
-          _context2.next = 12;
+          _context2.next = 15;
           break;
 
-        case 9:
-          _context2.prev = 9;
-          _context2.t0 = _context2["catch"](0);
+        case 12:
+          _context2.prev = 12;
+          _context2.t0 = _context2["catch"](4);
           console.log(_context2.t0);
 
-        case 12:
+        case 15:
         case "end":
           return _context2.stop();
       }
     }
-  }, null, null, [[0, 9]]);
+  }, null, null, [[4, 12]]);
 });
 
-function GetLangFromAPI() {
-  var languages;
-  return regeneratorRuntime.async(function GetLangFromAPI$(_context3) {
+function detectLang(text) {
+  var lang;
+  return regeneratorRuntime.async(function detectLang$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
           _context3.next = 2;
+          return regeneratorRuntime.awrap(fetch("https://google-translate1.p.rapidapi.com/language/translate/v2/detect", {
+            "method": "POST",
+            "headers": {
+              "content-type": "application/x-www-form-urlencoded",
+              "accept-encoding": "application/gzip",
+              "x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
+              "x-rapidapi-host": "google-translate1.p.rapidapi.com"
+            },
+            "body": {
+              "q": "".concat(text)
+            }
+          }).then(function (response) {
+            // console.log(response);
+            lang = response;
+          }).then(function (response) {
+            return response.json({
+              response: response
+            });
+          })["catch"](function (err) {
+            console.error(err);
+          }));
+
+        case 2:
+          return _context3.abrupt("return", lang);
+
+        case 3:
+        case "end":
+          return _context3.stop();
+      }
+    }
+  });
+}
+
+function GetLangFromAPI() {
+  var languages;
+  return regeneratorRuntime.async(function GetLangFromAPI$(_context4) {
+    while (1) {
+      switch (_context4.prev = _context4.next) {
+        case 0:
+          _context4.next = 2;
           return regeneratorRuntime.awrap(fetch("https://ws.detectlanguage.com/0.2/languages").then(function (response) {
             return response.json({
               response: response
@@ -91,11 +137,11 @@ function GetLangFromAPI() {
           }));
 
         case 2:
-          return _context3.abrupt("return", languages);
+          return _context4.abrupt("return", languages);
 
         case 3:
         case "end":
-          return _context3.stop();
+          return _context4.stop();
       }
     }
   });
@@ -103,15 +149,15 @@ function GetLangFromAPI() {
 
 ;
 
-var translate = function translate(fromLang, toLang, massage) {
+var translate = function translate(fromLng, toLng, massage) {
   var translatedMessage, textToTranslate;
-  return regeneratorRuntime.async(function translate$(_context4) {
+  return regeneratorRuntime.async(function translate$(_context5) {
     while (1) {
-      switch (_context4.prev = _context4.next) {
+      switch (_context5.prev = _context5.next) {
         case 0:
           textToTranslate = encode(massage);
-          _context4.next = 3;
-          return regeneratorRuntime.awrap(fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLang, "%7C").concat(toLang, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
+          _context5.next = 3;
+          return regeneratorRuntime.awrap(fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
             method: 'GET',
             headers: {
               'x-rapidapi-key': '2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0',
@@ -128,12 +174,11 @@ var translate = function translate(fromLang, toLang, massage) {
           }));
 
         case 3:
-          console.log(translatedMessage);
-          return _context4.abrupt("return", translatedMessage);
+          return _context5.abrupt("return", translatedMessage);
 
-        case 5:
+        case 4:
         case "end":
-          return _context4.stop();
+          return _context5.stop();
       }
     }
   });
