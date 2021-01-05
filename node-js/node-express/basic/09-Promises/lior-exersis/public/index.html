@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit='handlWhter(event)'>
+       <input type="text" placeholder="enter firest city" name="city1">
+       <input type="text" placeholder="enter secend city" name="city2">
+       <input type="submit" value="get whter">
+    </form>
+    <div id="root"></div>
+
+    <script>
+
+        function handlWhter(e){
+            e.preventDefault();
+            const city1 = e.target.children.city1.value; 
+            const city2 = e.target.children.city2.value; 
+            
+            fetch('/sendCity1', {
+                        method: 'post',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ city1,city2 })
+                    })
+                        .then(r => r.json())
+                        .then(data => {
+                            console.log(data)
+                        })
+        }
+    </script>
+</body>
+
+</html>
