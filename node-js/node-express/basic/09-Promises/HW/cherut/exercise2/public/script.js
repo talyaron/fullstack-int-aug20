@@ -1,22 +1,21 @@
-function getWeather(e) {
+ function loginGetData(e) {
 
   e.preventDefault();
 
-  const city1 = e.target.children.city1.value;
-  const city2 = e.target.children.city2.value;
+  const password = e.target.children.password.value;
 
-  fetch('/getWeather', {
+   fetch('/checkAuthorization', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        city1,city2
+        password
       })
     })
     .then(r => r.json())
     .then(data => {
-      console.log(data.temp)
+      console.log(data.result.Authorized)
     })
     .catch(e => {
       console.log(e)
