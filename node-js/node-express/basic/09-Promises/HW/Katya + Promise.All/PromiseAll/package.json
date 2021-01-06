@@ -1,16 +1,17 @@
 {
-  "name": "gilad-promise2",
+  "name": "Lesson",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "numbers": "node server2.js"
+    "start": "node server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1"
   }
