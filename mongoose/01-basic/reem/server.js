@@ -1,44 +1,53 @@
 const express = require('express');
 const app = express();
-const url = "mongodb+srv://reem:sh9968096@cluster0.owuec.mongodb.net/test";
 
 //body parser
 var bodyParser = require('body-parser');
-// parse various different custom JSON types as JSON
-app.use(bodyParser.urlencoded({ extended: false }));
+
 // parse application/json
 app.use(bodyParser.json());
 
 app.use(express.static('public'))
 
+
+// mongoose
 const mongoose = require('mongoose');
+const url = 'mongodb+srv://reem:sh9968096@cluster0.owuec.mongodb.net/test';
+
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const Car = mongoose.model('Car', {
+const Car = mongoose.model('Car', { //collection
     name: String,
     price: Number
 });
 
-const bmw = new Car({ name: 'renult', price: 1230 });
-bmw.save().then(() => console.log('meow3'));
+const bmw = new Car({ name: 'Hundai', price: 60000 });
+// bmw.save().then(doc => console.log(doc)).catch(e=>{console.log(e)});
 
-app.get('/api/geroup', async (req, res) => {
-    let docs = await Car.aggregate([
-        { $match: {  } },
-        {
-            $group: {
-                _id: '$name',
-                carTypes: { $push: "$$ROOT" },
-                sum: { $sum: '$price' }
-            }
-        },
-        {$project:
-            {'sum':true,'carTypes':true}
-        }
-    ])
-
-    res.send(docs)
+const Man = mongoose.model('Man',{
+    address:String,
+    price:Number
 })
+const house1 = new Man({address:'tcharnichovski st 123/14', price:7000000})
+house1.save().then(doc => console.log(doc)).catch(e=>{console.log(e)});
+
+// app.get('/api/geroup', async (req, res) => {
+//     let docs = await Car.aggregate([
+//         { $match: {  } },
+//         {
+//             $group: {
+//                 _id: '$name',
+//                 carTypes: { $push: "$$ROOT" },
+//                 sum: { $sum: '$price' }
+//             }
+//         },
+//         {$project:
+//             {'sum':true,'carTypes':true}
+//         }
+//     ])
+
+//     res.send(docs)
+// })
 
 
 const port = process.env.PORT || 3000;
