@@ -16,6 +16,7 @@
     <div id="root"></div>
 
     <script>
+
         function sendCities(e) {
             e.preventDefault();
             const city1 = e.target.children.city1.value
@@ -31,7 +32,24 @@
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
+
+                    let city1Weather = data.citiesWeather[0]
+                    let city2Weather = data.citiesWeather[1]
+
+                    writeWeatherToDom(city1Weather, city2Weather)
                 })
+        }
+        
+        function writeWeatherToDom(city1, city2) {
+            const root = document.getElementById('root')
+
+            let city1Name = city1.name
+            let city1Weather = city1.main.temp
+
+            let city2Name = city2.name
+            let city2Weather = city2.main.temp
+
+            root.innerHTML = `${city1Name}:${city1Weather} ${city2Name}:${city2Weather}`
         }
     </script>
 </body>

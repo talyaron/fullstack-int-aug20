@@ -36,7 +36,7 @@ function getCityWeatherPromise(city) {
     try {
 
         return new Promise((resolve, reject) => {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c87741dd5f7b5255c31850edd25a2db9`, {
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c87741dd5f7b5255c31850edd25a2db9&units=metric`, {
             })
                 .then(res => res.json())
                 .then(data => {
