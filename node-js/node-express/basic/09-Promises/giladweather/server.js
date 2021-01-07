@@ -7,11 +7,10 @@ const fetch = require('node-fetch');
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
-<<<<<<< HEAD:node-js/node-express/basic/09-Promises/giladweather/server.js
-=======
-async function getWeather(city1,city2) {
 
->>>>>>> master:node-js/node-express/basic/09-Promises/HW/gilad-promise2/server.js
+
+
+
 app.post('/click', async (req, res) => {
     try{    
         console.log(req.body)
@@ -25,14 +24,8 @@ app.post('/click', async (req, res) => {
     }catch (e){
         console.log(e)
     }
-<<<<<<< HEAD:node-js/node-express/basic/09-Promises/giladweather/server.js
-    
-    
-    
-})
 
-=======
->>>>>>> master:node-js/node-express/basic/09-Promises/HW/gilad-promise2/server.js
+
 
 async function getWeather(city1,city2){
     let weather1 = await getWeather1Promise(city1);
