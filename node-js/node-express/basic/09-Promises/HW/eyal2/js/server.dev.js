@@ -39,78 +39,71 @@ app.get('/getLang', function _callee(req, res) {
   });
 });
 app.post('/SendTranslation', function _callee2(req, res) {
-  var fromLang, _req$body, _fromLang, toLang, message, transaction;
+  var _req$body, UserfromLang, toLang, message, fromLang, transaction;
 
   return regeneratorRuntime.async(function _callee2$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          _context2.next = 2;
-          return regeneratorRuntime.awrap(detectLang(req.body.message));
+          _req$body = req.body, UserfromLang = _req$body.UserfromLang, toLang = _req$body.toLang, message = _req$body.message;
+          _context2.prev = 1;
+          _context2.next = 4;
+          return regeneratorRuntime.awrap(detectLang(message));
 
-        case 2:
+        case 4:
           fromLang = _context2.sent;
-          console.log("detectLang: ".concat(fromLang));
-          _context2.prev = 4;
-          _req$body = req.body, _fromLang = _req$body.fromLang, toLang = _req$body.toLang, message = _req$body.message;
-          _context2.next = 8;
-          return regeneratorRuntime.awrap(translate(_fromLang, toLang, message));
+          _context2.next = 7;
+          return regeneratorRuntime.awrap(translate(fromLang, toLang, message));
 
-        case 8:
+        case 7:
           transaction = _context2.sent;
           // console.log(transaction);
           res.send({
             transaction: transaction
           });
-          _context2.next = 15;
+          _context2.next = 14;
           break;
 
-        case 12:
-          _context2.prev = 12;
-          _context2.t0 = _context2["catch"](4);
+        case 11:
+          _context2.prev = 11;
+          _context2.t0 = _context2["catch"](1);
           console.log(_context2.t0);
 
-        case 15:
+        case 14:
         case "end":
           return _context2.stop();
       }
     }
-  }, null, null, [[4, 12]]);
+  }, null, null, [[1, 11]]);
 });
 
 function detectLang(text) {
-  var lang;
+  var apiKey, lang;
   return regeneratorRuntime.async(function detectLang$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
-          _context3.next = 2;
-          return regeneratorRuntime.awrap(fetch("https://google-translate1.p.rapidapi.com/language/translate/v2/detect", {
-            "method": "POST",
-            "headers": {
-              "content-type": "application/x-www-form-urlencoded",
-              "accept-encoding": "application/gzip",
-              "x-rapidapi-key": "2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0",
-              "x-rapidapi-host": "google-translate1.p.rapidapi.com"
-            },
-            "body": {
-              "q": "".concat(text)
+          apiKey = "ef42a320dae69f2f069d4e419f8c48e3";
+          _context3.next = 3;
+          return regeneratorRuntime.awrap(fetch("https://ws.detectlanguage.com/0.2/detect?q=".concat(encodeURI(text)), {
+            method: "GET",
+            headers: {
+              'Authorization': "Bearer ".concat(apiKey)
             }
-          }).then(function (response) {
-            // console.log(response);
-            lang = response;
           }).then(function (response) {
             return response.json({
               response: response
             });
+          }).then(function (response) {
+            lang = response.data.detections[0].language;
           })["catch"](function (err) {
             console.error(err);
           }));
 
-        case 2:
+        case 3:
           return _context3.abrupt("return", lang);
 
-        case 3:
+        case 4:
         case "end":
           return _context3.stop();
       }
@@ -130,8 +123,7 @@ function GetLangFromAPI() {
               response: response
             });
           }).then(function (response) {
-            languages = response;
-            console.log('ok', response);
+            languages = response; //   console.log('ok', response)
           })["catch"](function (err) {
             console.error(err);
           }));
