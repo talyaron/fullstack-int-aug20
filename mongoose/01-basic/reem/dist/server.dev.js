@@ -28,8 +28,10 @@ var Car = mongoose.model('Car', {
 var bmw = new Car({
   name: 'renult',
   price: 1230
-}); // bmw.save().then(() => console.log('meow3'));
-
+});
+bmw.save().then(function () {
+  return console.log('meow3');
+});
 app.get('/api/geroup', function _callee(req, res) {
   var docs;
   return regeneratorRuntime.async(function _callee$(_context) {
