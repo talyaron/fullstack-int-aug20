@@ -24,30 +24,26 @@ const Car = mongoose.model('Car', { //collection
 const bmw = new Car({ name: 'Hundai', price: 60000 });
 // bmw.save().then(doc => console.log(doc)).catch(e=>{console.log(e)});
 
-const Man = mongoose.model('Man',{
-    address:String,
-    price:Number
+Car.findOne({ name: 'Hundai' , price:60000}).then(doc=>{
+    if(doc === null) bmw.save().then(doc => console.log(doc)).catch(e=>{console.log(e)}); 
 })
-const house1 = new Man({address:'tcharnichovski st 123/14', price:7000000})
-house1.save().then(doc => console.log(doc)).catch(e=>{console.log(e)});
 
-// app.get('/api/geroup', async (req, res) => {
-//     let docs = await Car.aggregate([
-//         { $match: {  } },
-//         {
-//             $group: {
-//                 _id: '$name',
-//                 carTypes: { $push: "$$ROOT" },
-//                 sum: { $sum: '$price' }
-//             }
-//         },
-//         {$project:
-//             {'sum':true,'carTypes':true}
-//         }
-//     ])
+const Man = mongoose.model('Man', {
+    address: String,
+    price: Number
+})
+const house1 = new Man({ address: 'tcharnichovski st 123/14', price: 7000000 })
+// house1.save().then(doc => console.log(doc)).catch(e=>{console.log(e)});
 
-//     res.send(docs)
-// })
+app.get('/api/group', async (req, res) => {
+    try {
+        let docs = await Car.find({ name: 'Hundai' })
+
+        res.send(docs)
+    } catch (e) {
+        console.log(e)
+    }
+})
 
 
 const port = process.env.PORT || 3000;
