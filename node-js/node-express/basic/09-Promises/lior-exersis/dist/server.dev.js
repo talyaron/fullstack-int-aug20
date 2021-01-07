@@ -6,14 +6,15 @@ var app = express(); ///server;
 
 var bodyParser = require('body-parser');
 
-var fetch = require('node-fetch');
+var fetch = require('node-fetch'); //var cors = require('cors')
 
-var cors = require('cors');
 
 app.use(express["static"]('public'));
 app.use(bodyParser.json());
 app.post('/sendCityWeather', function (req, res) {
-  fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html", {
+  console.log(req.body);
+  var city1 = req.body;
+  fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=".concat(city1, "&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html"), {
     "method": "GET",
     "headers": {
       "x-rapidapi-key": "d27ad88beamsh2505efd620ca6edp10ba77jsnf02f7cbe9f7a",
