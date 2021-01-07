@@ -23,10 +23,11 @@
 
         hendelOnSubmit = (e) => {
             e.preventDefault()
-            let sity1 = event.target.children.sity1.value
-            let sity2 = event.target.children.sity2.value
+            let sity1 = e.target.children.sity1.value
+            let sity2 = e.target.children.sity2.value
             console.log(sity1, sity2)
-
+            sendSity(sity1, sity2)
+    
         }
 
         function sendSity(sity1, sity2) {
@@ -39,8 +40,8 @@
                         sity1, sity2
                     })
                 }).then(r => r.json())
-                .then(data => {
-                    console.log(data)
+                .then(waether => {
+                    console.log(waether)
                   
                 })
                 .catch(e => {
