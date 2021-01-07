@@ -20,7 +20,7 @@ const Car = mongoose.model('Car', {
 });
 
 const bmw = new Car({ name: 'renult', price: 1230 });
-// bmw.save().then(() => console.log('meow3'));
+bmw.save().then(() => console.log('meow3'));
 
 app.get('/api/geroup', async (req, res) => {
     let docs = await Car.aggregate([
