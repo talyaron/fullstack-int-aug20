@@ -143,6 +143,8 @@ function handleLogin(e) {
     if (data.userValid) {
       window.location.replace("/welcome.html");
     } else {
+      var root = document.getElementById('root');
+      root.innerHTML = 'Sorry username/email or password is incorrect.';
       console.log('not found');
     }
   });

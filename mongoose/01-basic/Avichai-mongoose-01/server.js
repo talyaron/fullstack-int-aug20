@@ -100,10 +100,11 @@ app.post('/login', (req, res) => { // valid logn
             res.send({ ok: false })
         } else {
             users.forEach(user => {
-                if (user.username === username && user.password === password) {
-                    console.log('match found')
-                    userValid = true
-
+                if (user.username === username || user.email === username && user.password === password) {
+                    console.log('USERNAME OR EMAIL FOUND')
+                    if (user.password === password) {
+                        userValid = true
+                    }
                 } else {
                     console.log('not found')
                 }
@@ -120,7 +121,7 @@ app.post('/login', (req, res) => { // valid logn
 })
 async function giveRole(username) {
     let role = 'denied'
-    await User.findOne({ username: username }, (err, user) => {
+    await User.findOne({ $or: [{ username: username }, { email: username }] }, (err, user) => {
         if (err) {
             console.log(err)
         } else {

@@ -149,9 +149,12 @@ app.post('/login', function (req, res) {
 
           case 6:
             users.forEach(function (user) {
-              if (user.username === username && user.password === password) {
-                console.log('match found');
-                userValid = true;
+              if (user.username === username || user.email === username && user.password === password) {
+                console.log('USERNAME OR EMAIL FOUND');
+
+                if (user.password === password) {
+                  userValid = true;
+                }
               } else {
                 console.log('not found');
               }
@@ -196,7 +199,11 @@ function giveRole(username) {
           role = 'denied';
           _context2.next = 3;
           return regeneratorRuntime.awrap(User.findOne({
-            username: username
+            $or: [{
+              username: username
+            }, {
+              email: username
+            }]
           }, function (err, user) {
             if (err) {
               console.log(err);
