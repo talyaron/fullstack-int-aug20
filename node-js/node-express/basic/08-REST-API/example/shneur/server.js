@@ -1,39 +1,24 @@
-const express = require('express')
-const app = express(); ///server;
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const {
-    response
-} = require('express');
-const fetch = require('node-fetch');
-
-app.use(cookieParser());
-app.use(express.static('public'));
+const express = require("express")
+const app = express()
+const bodyParser = require("body-parser")
 app.use(bodyParser.json())
+const fetch = require('node-fetch');
+app.use(express.static('public'))
+
 
 
 app.post('/sendStock', (req, res) => {
     try {
-        const {
-            myStock
-        } = req.body;
-        console.log(myStock)
-
-
-        fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US", {
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-key": "e846b0c7f4msha2c3878c64cee80p17095djsn12b3512845a6",
-                    "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
-                }
+        const { city } = req.body
+    
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2696b0332c54013f464ebede33ee772b&units=metric`)
+            .then(res => res.json())
+            .then(weather => {
+                res.send({ weather })
             })
-            .then(response => {
-                console.log(response);
-                res.send(response)
-            })
-            .catch(err => {
-                console.error(err);
-            });
+        .catch(err => {
+            console.error(err);
+        });
 
     } catch (e) {
         console.log(` erorr ${e}`)

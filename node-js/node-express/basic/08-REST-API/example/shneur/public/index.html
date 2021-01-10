@@ -26,18 +26,17 @@
         function handleSendCity(e) {
             e.preventDefault();
 
-            const myStock = e.target.children.myStock.value;
-            console.log(myStock)
+            const city = e.target.children.myStock.value;
 
             fetch('/sendStock', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ myStock })
+                body: JSON.stringify({ city })
             })
                 .then(r => r.json())
                 .then(data => {
-                    console.log(data)
-                    // document.getElementById('Stock').innerText = `${Math.round(data.weather.main.temp)    } ;
+                    console.log(Math.round(data.weather.main.temp))
+                    document.getElementById('Stock').innerText = Math.round(data.weather.main.temp)
                 })
         }
     </script>
