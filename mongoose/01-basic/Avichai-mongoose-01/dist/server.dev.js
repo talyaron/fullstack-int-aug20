@@ -10,6 +10,10 @@ var mongoose = require('mongoose');
 
 var url = 'mongodb+srv://avichai:123@cluster0.7lig6.mongodb.net/test';
 var Schema = mongoose.Schema;
+
+var cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express["static"]('public'));
 app.use(bodyParser.urlencoded({
@@ -35,6 +39,7 @@ var User = mongoose.model('User', {
   },
   username: {
     type: String,
+    unique: true,
     required: true // must have username
 
   },
@@ -48,12 +53,16 @@ var User = mongoose.model('User', {
     // date type
     "default": Date.now // give default date if user does not enter date.
 
+  },
+  role: {
+    type: String,
+    "default": 'public'
   }
 });
 app.get('/users', function (req, res) {
   //GET-  show all users
   console.log('finding users.');
-  User.find({}).exec(function (err, users) {
+  User.find({}, function (err, users) {
     if (err) {
       res.send({
         ok: false
@@ -70,14 +79,15 @@ app.get('/users/:id', function (req, res) {
   console.log('finding user by id.');
   User.findOne({
     _id: req.params.id
-  }).exec(function (err, user) {
+  }, function (err, user) {
     if (err) {
       res.send({
         ok: false
       });
     } else {
-      console.log(user);
+      console.log("deleteing user ".concat(user));
       res.send({
+        ok: true,
         user: user
       });
     }
@@ -96,7 +106,7 @@ app.post('/users', function (req, res) {
         ok: false
       });
     } else {
-      User.find({}).exec(function (err, users) {
+      User.find({}, function (err, users) {
         if (err) {
           res.send({
             ok: false
@@ -110,12 +120,107 @@ app.post('/users', function (req, res) {
         }
       });
     }
-  }); // .then(newUser => {
-  //     // console.log(newUser) 
-  //     console.log(keyPattern)
-  //     res.send({ newUser })
-  // })
-  // .catch(e => console.log('err'))
+  });
+});
+app.post('/login', function (req, res) {
+  // valid logn
+  var _req$body = req.body,
+      username = _req$body.username,
+      password = _req$body.password;
+  User.find({}, function _callee(err, users) {
+    var userValid, role;
+    return regeneratorRuntime.async(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            userValid = false;
+            role = 'denied';
+
+            if (!err) {
+              _context.next = 6;
+              break;
+            }
+
+            res.send({
+              ok: false
+            });
+            _context.next = 14;
+            break;
+
+          case 6:
+            users.forEach(function (user) {
+              if (user.username === username && user.password === password) {
+                console.log('match found');
+                userValid = true;
+              } else {
+                console.log('not found');
+              }
+            });
+
+            if (!(userValid === true)) {
+              _context.next = 12;
+              break;
+            }
+
+            _context.next = 10;
+            return regeneratorRuntime.awrap(giveRole(username));
+
+          case 10:
+            role = _context.sent;
+            console.log('user role: ' + role);
+
+          case 12:
+            res.cookie('userPower', role, {
+              maxAge: 5000000,
+              httpOnly: true
+            });
+            res.send({
+              userValid: userValid
+            });
+
+          case 14:
+          case "end":
+            return _context.stop();
+        }
+      }
+    });
+  });
+});
+
+function giveRole(username) {
+  var role;
+  return regeneratorRuntime.async(function giveRole$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          role = 'denied';
+          _context2.next = 3;
+          return regeneratorRuntime.awrap(User.findOne({
+            username: username
+          }, function (err, user) {
+            if (err) {
+              console.log(err);
+            } else {
+              role = user.role;
+            }
+          }));
+
+        case 3:
+          return _context2.abrupt("return", role);
+
+        case 4:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  });
+}
+
+app.get('/checkCookie', function (req, res) {
+  var cookie = req.cookies;
+  res.send({
+    cookie: cookie
+  });
 });
 app.post('/users2', function (req, res) {
   //POST-  add new user Method 2 POST - FORM: EMAIL,USERNAME,PASSWORD
@@ -127,9 +232,9 @@ app.post('/users2', function (req, res) {
 });
 app.put('/users/:id', function (req, res) {
   //PUT- find user by id and update info. 
-  var _req$body = req.body,
-      email = _req$body.email,
-      username = _req$body.username;
+  var _req$body2 = req.body,
+      email = _req$body2.email,
+      username = _req$body2.username;
   User.findOneAndUpdate({
     _id: req.params.id
   }, {
@@ -144,7 +249,7 @@ app.put('/users/:id', function (req, res) {
         ok: false
       });
     } else {
-      User.find({}).exec(function (err, users) {
+      User.find({}, function (err, users) {
         if (err) {
           res.send({
             ok: false
@@ -161,7 +266,7 @@ app.put('/users/:id', function (req, res) {
   });
 });
 app["delete"]('/users/:id', function (req, res) {
-  //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
+  //DELETE-  find user and delete 
   User.findOneAndRemove({
     _id: req.params.id
   }, function (err, user) {
@@ -170,7 +275,7 @@ app["delete"]('/users/:id', function (req, res) {
         ok: false
       });
     } else {
-      User.find({}).exec(function (err, users) {
+      User.find({}, function (err, users) {
         if (err) {
           res.send({
             ok: false

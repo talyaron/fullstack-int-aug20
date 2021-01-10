@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const url = 'mongodb+srv://avichai:123@cluster0.7lig6.mongodb.net/test'
 const Schema = mongoose.Schema
+const cookieParser = require('cookie-parser');
 
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -23,6 +25,7 @@ const User = mongoose.model('User', { // scheme for adding user
     },
     username: {
         type: String,
+        unique: true,
         required: true // must have username
     },
     password: {
@@ -32,35 +35,35 @@ const User = mongoose.model('User', { // scheme for adding user
     whenUserCreated: {
         type: Date, // date type
         default: Date.now // give default date if user does not enter date.
+    },
+    role: {
+        type: String,
+        default: 'public'
     }
 })
 
 
 app.get('/users', (req, res) => { //GET-  show all users
     console.log('finding users.')
-    User.find({})
-        .exec(function (err, users) {
-            if (err) {
-                res.send({ ok: false })
-            } else {
-                res.send({ users })
-            }
-        })
+    User.find({}, (err, users) => {
+        if (err) {
+            res.send({ ok: false })
+        } else {
+            res.send({ users })
+        }
+    })
 })
 
 app.get('/users/:id', (req, res) => { //GET-  find user by id localhost:3000/users/USER-ID-HERE
     console.log('finding user by id.')
-    User.findOne({
-        _id: req.params.id
+    User.findOne({ _id: req.params.id }, (err, user) => {
+        if (err) {
+            res.send({ ok: false })
+        } else {
+            console.log(`deleteing user ${user}`)
+            res.send({ ok: true, user })
+        }
     })
-        .exec(function (err, user) {
-            if (err) {
-                res.send({ ok: false })
-            } else {
-                console.log(user)
-                res.send({ user })
-            }
-        })
 })
 app.post('/users', (req, res) => { //POST- add new user Method 1 - FORM: EMAIL,USERNAME,PASSWORD
     const newUser = new User();
@@ -74,8 +77,7 @@ app.post('/users', (req, res) => { //POST- add new user Method 1 - FORM: EMAIL,U
             console.log('User with this email already exist')
             res.send({ ok: false })
         } else {
-            User.find({})
-            .exec(function (err, users) {
+            User.find({}, (err, users) => {
                 if (err) {
                     res.send({ ok: false })
                 } else {
@@ -85,21 +87,58 @@ app.post('/users', (req, res) => { //POST- add new user Method 1 - FORM: EMAIL,U
             })
         }
     })
-    // .then(newUser => {
-    //     // console.log(newUser) 
-    //     console.log(keyPattern)
-    //     res.send({ newUser })
-    // })
-    // .catch(e => console.log('err'))
 })
+app.post('/login', (req, res) => { // valid logn
+    const { username, password } = req.body
 
+
+    User.find({}, async (err, users) => {
+        let userValid = false
+        let role = 'denied'
+
+        if (err) {
+            res.send({ ok: false })
+        } else {
+            users.forEach(user => {
+                if (user.username === username && user.password === password) {
+                    console.log('match found')
+                    userValid = true
+
+                } else {
+                    console.log('not found')
+                }
+            })
+            if (userValid === true) {
+                role = await giveRole(username)
+                console.log('user role: ' + role)
+            }
+
+            res.cookie('userPower', role, { maxAge: 5000000, httpOnly: true })
+            res.send({ userValid })
+        }
+    })
+})
+async function giveRole(username) {
+    let role = 'denied'
+    await User.findOne({ username: username }, (err, user) => {
+        if (err) {
+            console.log(err)
+        } else {
+            role = user.role
+        }
+    })
+    return role;
+}
+app.get('/checkCookie', (req, res) => {
+    const cookie = req.cookies
+    res.send({ cookie })
+})
 app.post('/users2', (req, res) => { //POST-  add new user Method 2 POST - FORM: EMAIL,USERNAME,PASSWORD
     User.create(req.body).then(user => console.log(user), res.send(user)).catch(e => console.log(e))
 })
 
 app.put('/users/:id', (req, res) => { //PUT- find user by id and update info. 
     const { email, username } = req.body
-
 
     User.findOneAndUpdate({
         _id: req.params.id
@@ -112,28 +151,27 @@ app.put('/users/:id', (req, res) => { //PUT- find user by id and update info.
                 console.log('error')
                 res.send({ ok: false });
             } else {
-                User.find({})
-                    .exec(function (err, users) {
-                        if (err) {
-                            res.send({ ok: false })
-                        } else {
-                            console.log(newUser)
-                            res.send({ newUser, users })
-                        }
-                    })
+                User.find({}, (err, users) => {
+                    if (err) {
+                        res.send({ ok: false })
+                    } else {
+                        console.log(newUser)
+                        res.send({ newUser, users })
+                    }
+                })
             }
         }
     )
 })
-app.delete('/users/:id', (req, res) => { //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
+
+app.delete('/users/:id', (req, res) => { //DELETE-  find user and delete 
     User.findOneAndRemove({
         _id: req.params.id
     }, function (err, user) {
         if (err) {
             res.send({ ok: false })
         } else {
-            User.find({})
-            .exec(function (err, users) {
+            User.find({}, (err, users) => {
                 if (err) {
                     res.send({ ok: false })
                 } else {
