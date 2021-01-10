@@ -13,38 +13,30 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
+mongoose.set('returnOriginal', false); // will show updated info when updating a user.
 
-const Car = mongoose.model('Car', {
-    name: String,
-    price: Number
-});
-
-const bmw = new Car({ name: 'Hundai', price: 60000 });
-// bmw.save().then(doc => console.log(doc)).catch(e => { console.log(e) });
-
-const User = mongoose.model('User', { // scheme for adding user/email
+const User = mongoose.model('User', { // scheme for adding user
     email: {
         type: String,
         unique: true, // if email exist in db section, will not be created!
-        required: true // must be here or wont be added to db.
+        required: true // must have email
     },
     username: {
         type: String,
-        required: true
+        required: true // must have username
     },
     password: {
         type: String,
-        required: true
+        required: true  // must have password
     },
     when: {
         type: Date, // date type
         default: Date.now // give default date if user does not enter date.
     }
 })
-const user = new User({ email: 'aftat@gmail.com', password: '123', username: '123' })
-// user.save().then(data => console.log(data)).catch(e => { console.log(e) });
 
-app.get('/users', (req, res) => {
+
+app.get('/users', (req, res) => { //GET-  show all users
     console.log('finding users.')
     User.find({})
         .exec(function (err, info) {
@@ -55,57 +47,62 @@ app.get('/users', (req, res) => {
             }
         })
 })
-app.get('/users/:id', (req, res) => {
+app.get('/users/:id', (req, res) => { //GET-  find user by id localhost:3000/users/USER-ID-HERE
     console.log('finding user.')
     User.findOne({
         _id: req.params.id
-    }).exec(function (err, user) {
-        if (err) {
-            res.send({ ok: false })
-        } else {
-            console.log(user)
-            res.send(user)
-        }
     })
+        .exec(function (err, user) {
+            if (err) {
+                res.send({ ok: false })
+            } else {
+                console.log(user)
+                res.send(user)
+            }
+        })
 })
-app.post('/users', (req, res) => {
+app.post('/users', (req, res) => { //POST- add new user Method 1 - FORM: EMAIL,USERNAME,PASSWORD
     const newUser = new User();
     newUser.email = req.body.email
     newUser.username = req.body.username
     newUser.password = req.body.password
 
-    newUser.save().then(user => console.log(user), res.send(user)).catch(e => console.log(e))
+
+    newUser.save().then(newUser => console.log(newUser), res.send({ newUser })).catch(e => console.log(e))
 })
-app.post('/users2', (req, res) => {
+
+app.post('/users2', (req, res) => { //POST-  add new user Method 2 POST - FORM: EMAIL,USERNAME,PASSWORD
     User.create(req.body).then(user => console.log(user), res.send(user)).catch(e => console.log(e))
 })
 
-app.put('/user/:id', (req, res) => {
+app.put('/users/:id', (req, res) => { //PUT- find user by id and update info. localhost:3000/users/USER-ID-HERE
+    const { email, username } = req.body
     User.findOneAndUpdate({
         _id: req.params.id
     }, {
         $set:
-            { email: req.body.email }
+            { email, username }
     },
         function (err, newUser) {
             if (err) {
                 console.log('error')
+                res.send({ ok: false });
             } else {
                 console.log(newUser)
-                res.send(newUser);
+                res.send({ newUser });
             }
         }
     )
 })
-app.delete('/user/:id', (req, res) => {
+app.delete('/users/:id', (req, res) => { //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
     User.findOneAndRemove({
         _id: req.params.id
     }, function (err, user) {
         if (err) {
-            console.log(err)
+            res.send({ok:false})
         } else {
             console.log(`deleteing user ${user}`)
-            res.sendStatus(204)
+            res.send({ok:true})
         }
     })
 })

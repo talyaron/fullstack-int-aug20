@@ -8,7 +8,45 @@
 </head>
 
 <body>
-    <button onclick="handleClick(event)"></button>
+    <p>
+        <button onclick="handleClick(event)">Console log all users</button>
+    </p>
+
+    <p>
+    <form onsubmit="handleFindUser(event)">
+        <label>Find user by ID</label>
+        <input type="text" name="userID" placeholder="user ID">
+        <input type="submit">
+    </form>
+    </p>
+
+    <p>
+    <form onsubmit="handleNewUser(event)">
+        <label>Create new user</label>
+        <input type="text" name='email' placeholder="email">
+        <input type="text" name='username' placeholder="username">
+        <input type="password" name='password' placeholder="password">
+        <input type="submit">
+    </form>
+    </p>
+
+    <p>
+    <form onsubmit="handleEditUser(event)">
+        <label>Edit user by ID</label>
+        <input type="text" name="userID" placeholder="user ID">
+        <input type="text" name='email' placeholder="email">
+        <input type="text" name='username' placeholder="username">
+        <input type="submit">
+    </form>
+    </p>
+
+    <p>
+    <form onsubmit="handleDeleteUser(event)">
+        <label>Delete user by ID</label>
+        <input type="text" name="userID" placeholder="user ID">
+        <input type="submit">
+    </form>
+    </p>
     <script>
         function handleClick(e) {
 
@@ -16,6 +54,81 @@
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
+                })
+        }
+        function handleFindUser(e) {
+            e.preventDefault()
+            const userID = e.target.children.userID.value
+
+            fetch(`/users/${userID}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.ok === false) {
+                        console.log(`user with ID: ${userID} not found`)
+                    } else {
+                        console.log(data)
+                    }
+                })
+        }
+        function handleNewUser(e) {
+            e.preventDefault()
+            const email = e.target.children.email.value
+            const username = e.target.children.username.value
+            const password = e.target.children.password.value
+
+            fetch('/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, username, password })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+        function handleEditUser(e) {
+            e.preventDefault();
+            const userID = e.target.children.userID.value
+            const email = e.target.children.email.value
+            const username = e.target.children.username.value
+
+            fetch(`/users/${userID}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, username })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.ok === false) {
+                        console.log(`User with ID: ${userID} not found`)
+                    }
+                    console.log(`User id: ${userID}, Info has been updated.`)
+                    console.log(`New email: ${data.newUser.email}`)
+                    console.log(`New Username: ${data.newUser.username}`)
+                })
+        }
+        function handleDeleteUser(e) {
+            e.preventDefault();
+            const userID = e.target.children.userID.value
+
+            fetch(`/users/${userID}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.ok === false) {
+                        console.log(`User with ID: ${userID} not found`)
+                    } else {
+                        console.log(`user with id ${userID} is deleted.`)
+                    }
                 })
         }
     </script>
