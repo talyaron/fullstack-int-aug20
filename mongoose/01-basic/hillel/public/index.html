@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root"></div>
+    <script>
+        fetch('/api/geroup')
+        .then(r=>r.json())
+        .then(data=>{
+            console.log(data)
+            data.forEach(element => {
+                console.log(element._id)
+                    document.querySelector('.root').innerHTML+=`<div>${element.price}</div>`
+
+            });
+        })
+    </script>
+</body>
+</html>
