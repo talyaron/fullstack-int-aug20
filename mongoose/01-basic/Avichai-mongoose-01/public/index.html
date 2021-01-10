@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+    <form onsubmit="handleNewUser(event)">
+        <label>Create new user</label>
+        <input type="text" required name='email' placeholder="email">
+        <input type="text" required name='username' placeholder="username">
+        <input type="password" required name='password' placeholder="password">
+        <input type="submit">
+    </form>
+    </p>
+
+    <form onsubmit="handleLogin(event)">
+        <label>Login</label>
+        <input type="text" required name='username' placeholder="username or email">
+        <input type="password" required name='password' placeholder="password">
+        <input type="submit">
+    </form>
+
+    <div id="root"></div>
+    <script src="js.js"></script>
+</body>
+
+</html>
