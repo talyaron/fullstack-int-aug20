@@ -1,5 +1,9 @@
 "use strict";
 
+// npm i express mongoose body-parser cookie-parser
+// npm i express mongoose body-parser cookie-parser
+// npm i express mongoose body-parser cookie-parser
+// npm i express mongoose body-parser cookie-parser
 var express = require('express');
 
 var app = express();
@@ -9,7 +13,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var url = 'mongodb+srv://avichai:123@cluster0.7lig6.mongodb.net/test';
-var Schema = mongoose.Schema;
 
 var cookieParser = require('cookie-parser');
 

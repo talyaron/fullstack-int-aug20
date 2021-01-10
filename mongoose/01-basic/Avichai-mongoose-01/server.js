@@ -1,15 +1,21 @@
+// npm i express mongoose body-parser cookie-parser
+// npm i express mongoose body-parser cookie-parser
+// npm i express mongoose body-parser cookie-parser
+// npm i express mongoose body-parser cookie-parser
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const url = 'mongodb+srv://avichai:123@cluster0.7lig6.mongodb.net/test'
-const Schema = mongoose.Schema
 const cookieParser = require('cookie-parser');
 
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
+
+
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('useNewUrlParser', true);
