@@ -9,7 +9,7 @@
 
 <body>
     <p>
-        <button onclick="handleClick(event)">Console log all users</button>
+        <label>Show all users</label><button onclick="handleFindAllUsers(event)">Show</button>
     </p>
 
     <p>
@@ -19,6 +19,7 @@
         <input type="submit">
     </form>
     </p>
+
 
     <p>
     <form onsubmit="handleNewUser(event)">
@@ -53,15 +54,19 @@
         <input type="submit" value="Delete">
     </form>
     </p>
+
+    <div id="root"></div>
     <script>
-        function handleClick(e) {
+        function handleFindAllUsers(e) {
 
             fetch('/users')
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
+                    writeUsersToDom(data.users)
                 })
         }
+
         function handleFindUser(e) {
             e.preventDefault()
             const userID = e.target.children.userID.value
@@ -79,6 +84,7 @@
                     }
                 })
         }
+
         function handleNewUser(e) {
             e.preventDefault()
             const email = e.target.children.email.value
@@ -98,10 +104,11 @@
                         console.log('User with this email already exist')
                     } else {
                         console.log(`New User created--
-                        email: ${data.newUser.email}
-                        Username: ${data.newUser.username}
-                        Password: ${data.newUser.password}
-                        User ID: ${data.newUser._id}`)
+                    email: ${data.newUser.email}
+                    Username: ${data.newUser.username}
+                    Password: ${data.newUser.password}
+                    User ID: ${data.newUser._id} `)
+                    writeUsersToDom(data.users)
                     }
                 })
         }
@@ -122,10 +129,13 @@
                 .then(data => {
                     if (data.ok === false) {
                         console.log(`User with ID: ${userID} not found`)
+                    } else {
+                        console.log(`User id: ${userID}, Info has been updated.`)
+                        console.log(`New email: ${data.newUser.email} `)
+                        console.log(`New Username: ${data.newUser.username} `)
+                        console.log(data.users)
+                        writeUsersToDom(data.users)
                     }
-                    console.log(`User id: ${userID}, Info has been updated.`)
-                    console.log(`New email: ${data.newUser.email}`)
-                    console.log(`New Username: ${data.newUser.username}`)
                 })
         }
         function handleDeleteUser(e) {
@@ -145,6 +155,8 @@
                         console.log(`User with ID: ${userID} not found`)
                     } else {
                         console.log(`user with id ${userID} is deleted.`)
+                        console.log(data.users)
+                        writeUsersToDom(data.users)
                     }
                 })
         }
@@ -163,8 +175,23 @@
                         console.log(`Error no users deleted`)
                     } else {
                         console.log(`all users deleted.`)
+                        let root = document.getElementById('root')
+                        root.innerHTML = ''
                     }
                 })
+        }
+        function writeUsersToDom(data) {
+            let html = ''
+            let root = document.getElementById('root')
+            data.forEach(user => {
+                html += `<p class='userDisplay'>         
+                        email: ${user.email}
+                        Username: ${user.username}
+                        Password: ${user.password}
+                        User ID: ${user._id}
+                         </p>`
+            })
+            root.innerHTML = html
         }
     </script>
 </body>

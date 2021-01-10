@@ -47,8 +47,9 @@ app.get('/users', (req, res) => { //GET-  show all users
             }
         })
 })
+
 app.get('/users/:id', (req, res) => { //GET-  find user by id localhost:3000/users/USER-ID-HERE
-    console.log('finding user.')
+    console.log('finding user by id.')
     User.findOne({
         _id: req.params.id
     })
@@ -73,8 +74,15 @@ app.post('/users', (req, res) => { //POST- add new user Method 1 - FORM: EMAIL,U
             console.log('User with this email already exist')
             res.send({ ok: false })
         } else {
-            console.log(newUser)
-            res.send({ newUser })
+            User.find({})
+            .exec(function (err, users) {
+                if (err) {
+                    res.send({ ok: false })
+                } else {
+                    console.log(newUser)
+                    res.send({ newUser, users })
+                }
+            })
         }
     })
     // .then(newUser => {
@@ -89,8 +97,10 @@ app.post('/users2', (req, res) => { //POST-  add new user Method 2 POST - FORM: 
     User.create(req.body).then(user => console.log(user), res.send(user)).catch(e => console.log(e))
 })
 
-app.put('/users/:id', (req, res) => { //PUT- find user by id and update info. localhost:3000/users/USER-ID-HERE
+app.put('/users/:id', (req, res) => { //PUT- find user by id and update info. 
     const { email, username } = req.body
+
+
     User.findOneAndUpdate({
         _id: req.params.id
     }, {
@@ -102,8 +112,15 @@ app.put('/users/:id', (req, res) => { //PUT- find user by id and update info. lo
                 console.log('error')
                 res.send({ ok: false });
             } else {
-                console.log(newUser)
-                res.send({ newUser });
+                User.find({})
+                    .exec(function (err, users) {
+                        if (err) {
+                            res.send({ ok: false })
+                        } else {
+                            console.log(newUser)
+                            res.send({ newUser, users })
+                        }
+                    })
             }
         }
     )
@@ -115,8 +132,15 @@ app.delete('/users/:id', (req, res) => { //DELETE-  find user and delete localho
         if (err) {
             res.send({ ok: false })
         } else {
-            console.log(`deleteing user ${user}`)
-            res.send({ ok: true })
+            User.find({})
+            .exec(function (err, users) {
+                if (err) {
+                    res.send({ ok: false })
+                } else {
+                    console.log(`deleteing user ${user}`)
+                    res.send({ ok: true, users })
+                }
+            })
         }
     })
 })

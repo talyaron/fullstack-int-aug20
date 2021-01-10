@@ -67,7 +67,7 @@ app.get('/users', function (req, res) {
 });
 app.get('/users/:id', function (req, res) {
   //GET-  find user by id localhost:3000/users/USER-ID-HERE
-  console.log('finding user.');
+  console.log('finding user by id.');
   User.findOne({
     _id: req.params.id
   }).exec(function (err, user) {
@@ -96,9 +96,18 @@ app.post('/users', function (req, res) {
         ok: false
       });
     } else {
-      console.log(newUser);
-      res.send({
-        newUser: newUser
+      User.find({}).exec(function (err, users) {
+        if (err) {
+          res.send({
+            ok: false
+          });
+        } else {
+          console.log(newUser);
+          res.send({
+            newUser: newUser,
+            users: users
+          });
+        }
       });
     }
   }); // .then(newUser => {
@@ -117,7 +126,7 @@ app.post('/users2', function (req, res) {
   });
 });
 app.put('/users/:id', function (req, res) {
-  //PUT- find user by id and update info. localhost:3000/users/USER-ID-HERE
+  //PUT- find user by id and update info. 
   var _req$body = req.body,
       email = _req$body.email,
       username = _req$body.username;
@@ -135,9 +144,18 @@ app.put('/users/:id', function (req, res) {
         ok: false
       });
     } else {
-      console.log(newUser);
-      res.send({
-        newUser: newUser
+      User.find({}).exec(function (err, users) {
+        if (err) {
+          res.send({
+            ok: false
+          });
+        } else {
+          console.log(newUser);
+          res.send({
+            newUser: newUser,
+            users: users
+          });
+        }
       });
     }
   });
@@ -152,9 +170,18 @@ app["delete"]('/users/:id', function (req, res) {
         ok: false
       });
     } else {
-      console.log("deleteing user ".concat(user));
-      res.send({
-        ok: true
+      User.find({}).exec(function (err, users) {
+        if (err) {
+          res.send({
+            ok: false
+          });
+        } else {
+          console.log("deleteing user ".concat(user));
+          res.send({
+            ok: true,
+            users: users
+          });
+        }
       });
     }
   });
