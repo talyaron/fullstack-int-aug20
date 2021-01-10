@@ -23,9 +23,9 @@
     <p>
     <form onsubmit="handleNewUser(event)">
         <label>Create new user</label>
-        <input type="text" name='email' placeholder="email">
-        <input type="text" name='username' placeholder="username">
-        <input type="password" name='password' placeholder="password">
+        <input type="text" required name='email' placeholder="email">
+        <input type="text" required name='username' placeholder="username">
+        <input type="password" required name='password' placeholder="password">
         <input type="submit">
     </form>
     </p>
@@ -47,6 +47,12 @@
         <input type="submit">
     </form>
     </p>
+    <p>
+    <form onsubmit="handleDeleteAllUser(event)">
+        <label>Delete ALL users</label>
+        <input type="submit" value="Delete">
+    </form>
+    </p>
     <script>
         function handleClick(e) {
 
@@ -65,7 +71,10 @@
                 .then(data => {
                     if (data.ok === false) {
                         console.log(`user with ID: ${userID} not found`)
-                    } else {
+                    } else if (data.user === null) {
+                        console.log(`user with ID: ${userID} not found`)
+                    }
+                    else {
                         console.log(data)
                     }
                 })
@@ -85,7 +94,15 @@
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    if (data.ok === false) {
+                        console.log('User with this email already exist')
+                    } else {
+                        console.log(`New User created--
+                        email: ${data.newUser.email}
+                        Username: ${data.newUser.username}
+                        Password: ${data.newUser.password}
+                        User ID: ${data.newUser._id}`)
+                    }
                 })
         }
         function handleEditUser(e) {
@@ -128,6 +145,24 @@
                         console.log(`User with ID: ${userID} not found`)
                     } else {
                         console.log(`user with id ${userID} is deleted.`)
+                    }
+                })
+        }
+        function handleDeleteAllUser(e) {
+            e.preventDefault()
+            fetch(`/deleteAll`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.ok === false) {
+                        console.log(`Error no users deleted`)
+                    } else {
+                        console.log(`all users deleted.`)
                     }
                 })
         }

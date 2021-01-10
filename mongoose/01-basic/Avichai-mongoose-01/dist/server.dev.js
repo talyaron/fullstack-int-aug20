@@ -43,7 +43,7 @@ var User = mongoose.model('User', {
     required: true // must have password
 
   },
-  when: {
+  whenUserCreated: {
     type: Date,
     // date type
     "default": Date.now // give default date if user does not enter date.
@@ -53,13 +53,15 @@ var User = mongoose.model('User', {
 app.get('/users', function (req, res) {
   //GET-  show all users
   console.log('finding users.');
-  User.find({}).exec(function (err, info) {
+  User.find({}).exec(function (err, users) {
     if (err) {
       res.send({
         ok: false
       });
     } else {
-      res.json(info);
+      res.send({
+        users: users
+      });
     }
   });
 });
@@ -75,7 +77,9 @@ app.get('/users/:id', function (req, res) {
       });
     } else {
       console.log(user);
-      res.send(user);
+      res.send({
+        user: user
+      });
     }
   });
 });
@@ -85,13 +89,24 @@ app.post('/users', function (req, res) {
   newUser.email = req.body.email;
   newUser.username = req.body.username;
   newUser.password = req.body.password;
-  newUser.save().then(function (newUser) {
-    return console.log(newUser);
-  }, res.send({
-    newUser: newUser
-  }))["catch"](function (e) {
-    return console.log(e);
-  });
+  newUser.save(function (err, newUser) {
+    if (err) {
+      console.log('User with this email already exist');
+      res.send({
+        ok: false
+      });
+    } else {
+      console.log(newUser);
+      res.send({
+        newUser: newUser
+      });
+    }
+  }); // .then(newUser => {
+  //     // console.log(newUser) 
+  //     console.log(keyPattern)
+  //     res.send({ newUser })
+  // })
+  // .catch(e => console.log('err'))
 });
 app.post('/users2', function (req, res) {
   //POST-  add new user Method 2 POST - FORM: EMAIL,USERNAME,PASSWORD
@@ -138,6 +153,21 @@ app["delete"]('/users/:id', function (req, res) {
       });
     } else {
       console.log("deleteing user ".concat(user));
+      res.send({
+        ok: true
+      });
+    }
+  });
+});
+app["delete"]('/deleteAll', function (req, res) {
+  //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
+  User.deleteMany({}, function (err, user) {
+    if (err) {
+      console.log('err');
+      res.send({
+        ok: false
+      });
+    } else {
       res.send({
         ok: true
       });
