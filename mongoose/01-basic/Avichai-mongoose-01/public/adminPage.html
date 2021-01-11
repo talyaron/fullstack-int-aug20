@@ -11,16 +11,6 @@
     <p>
         <label>Show all users</label><button onclick="handleFindAllUsers(event)">Show</button>
     </p>
-
-    <p>
-    <form onsubmit="handleFindUser(event)">
-        <label>Find user by ID</label>
-        <input type="text" name="userID" placeholder="user ID">
-        <input type="submit">
-    </form>
-    </p>
-
-
     <p>
     <form onsubmit="handleNewUser(event)">
         <label>Create new user</label>
@@ -33,17 +23,24 @@
 
     <p>
     <form onsubmit="handleEditUser(event)">
-        <label>Edit user by ID</label>
-        <input type="text" required name="userID" placeholder="user ID">
-        <input type="text" name='email' placeholder="email">
-        <input type="text" name='username' placeholder="username">
+        <label>Edit user by email/username</label>
+        <input type="text" required name="userID" placeholder="email/username">
+        <input type="text" name='email' placeholder="New email">
+        <input type="text" name='username' placeholder="New username">
+        <input type="submit">
+    </form>
+    </p>
+    <p>
+    <form onsubmit="handleFindUser(event)">
+        <label>Find users by email/username</label>
+        <input type="text" name="userID" placeholder="username/email">
         <input type="submit">
     </form>
     </p>
 
     <p>
     <form onsubmit="deleteUserById(event)">
-        <label>Delete user by ID</label>
+        <label>Delete user by email/username</label>
         <input type="text" name="userID" placeholder="user ID">
         <input type="submit">
     </form>

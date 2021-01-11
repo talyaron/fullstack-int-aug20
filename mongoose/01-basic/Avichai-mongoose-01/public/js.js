@@ -10,7 +10,7 @@ function handleFindAllUsers(e) {
 
 function handleFindUser(e) {
     e.preventDefault()
-    const userArray = []
+
     const userID = e.target.children.userID.value
     fetch('/users/find', {
         method: 'POST',
@@ -27,8 +27,8 @@ function handleFindUser(e) {
                 console.log(`user with ID: ${userID} not found`)
             }
             else {
-                userArray.push(data.user)
-                writeUsersToDom(userArray)
+                console.log(data.users)
+                writeUsersToDom(data.users)
             }
         })
 }
@@ -71,7 +71,7 @@ function handleEditUser(e) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ userID , email, username })
+        body: JSON.stringify({ userID, email, username })
     })
         .then(res => res.json())
         .then(data => {
@@ -86,29 +86,31 @@ function handleEditUser(e) {
             }
         })
 }
-function deleteUserById(e){
+function deleteUserById(e) {
     e.preventDefault();
     const userID = e.target.children.userID.value
     handleDeleteUser(userID)
 }
-function deleteUserByButton(e){
-    const userID = e.target.dataset.id
-    handleDeleteUser(userID)
+function deleteUserByButton(e) {
+    const userEmail = e.target.dataset.id
+    handleDeleteUser(userEmail)
 }
 
 function handleDeleteUser(user) {
-
+    let ifNoUsers = []
     fetch('/users/delete', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({user})
+        body: JSON.stringify({ user })
     })
         .then(res => res.json())
         .then(data => {
             if (data.ok === false) {
                 console.log(`User with ID: ${user} not found`)
+            } else if (data.users.length===0) {
+                writeUsersToDom(ifNoUsers)
             } else {
                 console.log(`user with id ${user} is deleted.`)
                 console.log(data.users)
@@ -208,7 +210,7 @@ function writeUsersToDom(data) {
                 Username: ${user.username}
                 Password: ${user.password}
                 User ID: ${user._id}
-                <button data-id='${user._id}' onclick='deleteUserByButton(event)'>Delete this user</button>
+                <button data-id='${user.email}' onclick='deleteUserByButton(event)'>Delete this user</button>
                  </p>`
     })
     root.innerHTML = html

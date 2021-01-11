@@ -61,14 +61,14 @@ app.get('/users', (req, res) => { //GET-  show all users
 })
 
 app.post('/users/find', (req, res) => { //GET-  find user by id localhost:3000/users/USER-ID-HERE
-    console.log('finding user by id.')
-    const {userID} = req.body
-    User.findOne({ _id: userID }, (err, user) => {
+    console.log('finding users by email/username.')
+    const { userID } = req.body
+    User.find({ $or: [{ email: { $regex: userID } }, { username: { $regex: userID } }] }, (err, users) => {
         if (err) {
             res.send({ ok: false })
         } else {
-            console.log(`deleteing user ${user}`)
-            res.send({ ok: true, user })
+            console.log(`user found: ${users}`)
+            res.send({ ok: true, users })
         }
     })
 })
@@ -99,19 +99,19 @@ app.post('/users/create', (req, res) => { //POST- add new user Method 1 - FORM: 
 //     User.create(req.body).then(user => console.log(user), res.send(user)).catch(e => console.log(e))
 // })
 function findUserForEdit(userID) {
-    let findUserInfo = User.find({$or: [{ email: userID }, { username: userID }] }).exec()
+    let findUserInfo = User.findOne({ $or: [{ email: userID }, { username: userID }] }).exec()
     return findUserInfo
-  };
+};
 
-app.put('/users/edit',  async(req, res) => { //PUT- find user by id and update info. 
+app.put('/users/edit', async (req, res) => { //PUT- find user by id and update info. 
     let { userID, email, username } = req.body
 
-      let findUserInfo = await findUserForEdit(userID);
+    let findUserInfo = await findUserForEdit(userID);
 
-      if(findUserInfo.length === 1){
-        if(email==='') {email = findUserInfo[0].email}
-        if(username===''){ username = findUserInfo[0].username }
-      }
+    if (findUserInfo.length === 1) {
+        if (email === '') { email = findUserInfo[0].email }
+        if (username === '') { username = findUserInfo[0].username }
+    }
 
     User.findOneAndUpdate({ $or: [{ email: userID }, { username: userID }] }, {
         $set:
@@ -125,9 +125,9 @@ app.put('/users/edit',  async(req, res) => { //PUT- find user by id and update i
                 User.find({}, (err, users) => {
                     if (err) {
                         res.send({ ok: false })
-                    }else if(newUser === null){
-                        res.send({ok:false})
-                    } 
+                    } else if (newUser === null) {
+                        res.send({ ok: false })
+                    }
                     else {
                         res.send({ newUser, users })
                     }
@@ -138,17 +138,20 @@ app.put('/users/edit',  async(req, res) => { //PUT- find user by id and update i
 })
 
 app.delete('/users/delete', (req, res) => { //DELETE-  find user and delete 
-    const {user} = req.body
+    const { user } = req.body
     User.findOneAndRemove({
-        _id: user
-    }, function (err, user) {
+        $or: [{ email: user }, { username: user }]
+    }, async function (err, user) {
         if (err) {
             res.send({ ok: false })
         } else {
             User.find({}, (err, users) => {
                 if (err) {
                     res.send({ ok: false })
-                } else {
+                } else if (user === null) {
+                    res.send({ ok: false })
+                }
+                else {
                     console.log(`deleteing user ${user}`)
                     res.send({ ok: true, users })
                 }
@@ -156,6 +159,72 @@ app.delete('/users/delete', (req, res) => { //DELETE-  find user and delete
         }
     })
 })
+async function findUsers(infoObj) {
+    let email = false
+    let username = false
+    let users = []
+    if (typeof (infoObj.user) != "undefined") {
+        username = true
+    }
+    if (typeof (infoObj.email) != "undefined") {
+        email = true
+    }
+    if (infoObj.user === '' && infoObj.email === '') {
+        await User.find({}, (err, user) => {
+            if (err) {
+                console.log('err')
+            } else {
+                users = user
+            }
+        })
+    }
+    else if (email && username) {
+        await User.find({ $or: [{ username: infoObj.user }, { email: infoObj.email }] }, (err, user) => {
+            if (err) {
+                console.log('err')
+            } else {
+                users = user
+            }
+        })
+    } else if (email === false && username === false) {
+        console.log('nothing entered')
+    }
+    else if (email === true && username === false) {
+        console.log('only email found')
+        await User.find({ email: infoObj.email }, (err, user) => {
+            if (err) {
+                console.log('err')
+            } else {
+                users = user
+            }
+        })
+    }
+    else if (email === false && username === true) {
+        await User.find({ username: infoObj.user }, (err, user) => {
+            if (err) {
+                console.log('err')
+            } else {
+                users = user
+            }
+        })
+    }
+    if (users.length === 0) {
+        return null;
+    }
+    return users;
+}
+async function random() {
+    let sendUser = await findUsers({
+        user: '1',
+        email: '123'
+    });
+    if (sendUser === null) {
+        console.log('no user found')
+    } else {
+        console.log(sendUser)
+    }
+}
+
 app.delete('/deleteAll', (req, res) => { //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
     User.deleteMany({}, function (err, user) {
         if (err) {
