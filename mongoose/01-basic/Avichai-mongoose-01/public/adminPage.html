@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="checkRole()">
+    <p>
+        <label>Show all users</label><button onclick="handleFindAllUsers(event)">Show</button>
+    </p>
+    <p>
+    <form onsubmit="handleNewUser(event)">
+        <label>Create new user</label>
+        <input type="text" required name='email' placeholder="email">
+        <input type="text" required name='username' placeholder="username">
+        <input type="password" required name='password' placeholder="password">
+        <input type="submit">
+    </form>
+    </p>
+
+    <p>
+    <form onsubmit="handleEditUser(event)">
+        <label>Edit user by email/username</label>
+        <input type="text" required name="userID" placeholder="email/username">
+        <input type="text" name='email' placeholder="New email">
+        <input type="text" name='username' placeholder="New username">
+        <input type="submit">
+    </form>
+    </p>
+    <p>
+    <form onsubmit="handleFindUser(event)">
+        <label>Find users by email/username</label>
+        <input type="text" name="userID" placeholder="username/email">
+        <input type="submit">
+    </form>
+    </p>
+
+    <p>
+    <form onsubmit="deleteUserById(event)">
+        <label>Delete user by email/username</label>
+        <input type="text" name="userID" placeholder="email/username">
+        <input type="submit">
+    </form>
+    </p>
+    <p>
+    <form onsubmit="handleDeleteAllUser(event)">
+        <label>Delete ALL users</label>
+        <input type="submit" value="Delete">
+    </form>
+    </p>
+
+
+    <div id="root"></div>
+    <script src='js.js'></script>
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=07739ffJkbo&list=PLGquJ_T_JBMQ1C0Pp41sykceli8G1UGtg&index=3&ab_channel=JsWiz -->

@@ -12,22 +12,22 @@ const url = "mongodb+srv://hillel:Aa25802580@cluster0.z35go.mongodb.net/test";
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const Car = mongoose.model('Car', {
+const Users = mongoose.model('Car', {
     name: String,
     price: Number
 });
 
-const bmw = new Car({ name: 'renult', price: 1230 });
+const bmw = new Users({ name: 'hillel', price: 12345 });
 bmw.save().then(doc => console.log(doc)).catch(e => { console.log(e) });
 
 
-const House = mongoose.model('House', {
-    address: String,
-    price: Number
-});
+// const House = mongoose.model('House', {
+//     address: String,
+//     price: Number
+// });
 
-const House1 = new House({address:'blabla', price:70000})
-House1.save().then(doc=> console.log(doc))
+// const House1 = new House({address:'blabla', price:70000})
+// House1.save().then(doc=> console.log(doc))
 
 app.get('/api/geroup', async (req, res) => {
     let docs = await Car.find({})
