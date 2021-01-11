@@ -34,7 +34,7 @@
     <p>
     <form onsubmit="handleEditUser(event)">
         <label>Edit user by ID</label>
-        <input type="text" name="userID" placeholder="user ID">
+        <input type="text" required name="userID" placeholder="user ID">
         <input type="text" name='email' placeholder="email">
         <input type="text" name='username' placeholder="username">
         <input type="submit">
@@ -42,7 +42,7 @@
     </p>
 
     <p>
-    <form onsubmit="handleDeleteUser(event)">
+    <form onsubmit="deleteUserById(event)">
         <label>Delete user by ID</label>
         <input type="text" name="userID" placeholder="user ID">
         <input type="submit">

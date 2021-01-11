@@ -60,9 +60,10 @@ app.get('/users', (req, res) => { //GET-  show all users
     })
 })
 
-app.get('/users/:id', (req, res) => { //GET-  find user by id localhost:3000/users/USER-ID-HERE
+app.post('/users/find', (req, res) => { //GET-  find user by id localhost:3000/users/USER-ID-HERE
     console.log('finding user by id.')
-    User.findOne({ _id: req.params.id }, (err, user) => {
+    const {userID} = req.body
+    User.findOne({ _id: userID }, (err, user) => {
         if (err) {
             res.send({ ok: false })
         } else {
@@ -71,7 +72,7 @@ app.get('/users/:id', (req, res) => { //GET-  find user by id localhost:3000/use
         }
     })
 })
-app.post('/users', (req, res) => { //POST- add new user Method 1 - FORM: EMAIL,USERNAME,PASSWORD
+app.post('/users/create', (req, res) => { //POST- add new user Method 1 - FORM: EMAIL,USERNAME,PASSWORD
     const newUser = new User();
     newUser.email = req.body.email
     newUser.username = req.body.username
@@ -91,6 +92,77 @@ app.post('/users', (req, res) => { //POST- add new user Method 1 - FORM: EMAIL,U
                     res.send({ newUser, users })
                 }
             })
+        }
+    })
+})
+// app.post('/users2', (req, res) => { //POST-  add new user Method 2 POST - FORM: EMAIL,USERNAME,PASSWORD
+//     User.create(req.body).then(user => console.log(user), res.send(user)).catch(e => console.log(e))
+// })
+function findUserForEdit(userID) {
+    let findUserInfo = User.find({$or: [{ email: userID }, { username: userID }] }).exec()
+    return findUserInfo
+  };
+
+app.put('/users/edit',  async(req, res) => { //PUT- find user by id and update info. 
+    let { userID, email, username } = req.body
+
+      let findUserInfo = await findUserForEdit(userID);
+
+      if(findUserInfo.length === 1){
+        if(email==='') {email = findUserInfo[0].email}
+        if(username===''){ username = findUserInfo[0].username }
+      }
+
+    User.findOneAndUpdate({ $or: [{ email: userID }, { username: userID }] }, {
+        $set:
+            { email, username }
+    },
+        function (err, newUser) {
+            if (err) {
+                console.log('error')
+                res.send({ ok: false });
+            } else {
+                User.find({}, (err, users) => {
+                    if (err) {
+                        res.send({ ok: false })
+                    }else if(newUser === null){
+                        res.send({ok:false})
+                    } 
+                    else {
+                        res.send({ newUser, users })
+                    }
+                })
+            }
+        }
+    )
+})
+
+app.delete('/users/delete', (req, res) => { //DELETE-  find user and delete 
+    const {user} = req.body
+    User.findOneAndRemove({
+        _id: user
+    }, function (err, user) {
+        if (err) {
+            res.send({ ok: false })
+        } else {
+            User.find({}, (err, users) => {
+                if (err) {
+                    res.send({ ok: false })
+                } else {
+                    console.log(`deleteing user ${user}`)
+                    res.send({ ok: true, users })
+                }
+            })
+        }
+    })
+})
+app.delete('/deleteAll', (req, res) => { //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
+    User.deleteMany({}, function (err, user) {
+        if (err) {
+            console.log('err')
+            res.send({ ok: false })
+        } else {
+            res.send({ ok: true })
         }
     })
 })
@@ -139,65 +211,6 @@ async function giveRole(username) {
 app.get('/checkCookie', (req, res) => {
     const cookie = req.cookies
     res.send({ cookie })
-})
-app.post('/users2', (req, res) => { //POST-  add new user Method 2 POST - FORM: EMAIL,USERNAME,PASSWORD
-    User.create(req.body).then(user => console.log(user), res.send(user)).catch(e => console.log(e))
-})
-
-app.put('/users/:id', (req, res) => { //PUT- find user by id and update info. 
-    const { email, username } = req.body
-
-    User.findOneAndUpdate({
-        _id: req.params.id
-    }, {
-        $set:
-            { email, username }
-    },
-        function (err, newUser) {
-            if (err) {
-                console.log('error')
-                res.send({ ok: false });
-            } else {
-                User.find({}, (err, users) => {
-                    if (err) {
-                        res.send({ ok: false })
-                    } else {
-                        console.log(newUser)
-                        res.send({ newUser, users })
-                    }
-                })
-            }
-        }
-    )
-})
-
-app.delete('/users/:id', (req, res) => { //DELETE-  find user and delete 
-    User.findOneAndRemove({
-        _id: req.params.id
-    }, function (err, user) {
-        if (err) {
-            res.send({ ok: false })
-        } else {
-            User.find({}, (err, users) => {
-                if (err) {
-                    res.send({ ok: false })
-                } else {
-                    console.log(`deleteing user ${user}`)
-                    res.send({ ok: true, users })
-                }
-            })
-        }
-    })
-})
-app.delete('/deleteAll', (req, res) => { //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
-    User.deleteMany({}, function (err, user) {
-        if (err) {
-            console.log('err')
-            res.send({ ok: false })
-        } else {
-            res.send({ ok: true })
-        }
-    })
 })
 
 const port = process.env.PORT || 3000;

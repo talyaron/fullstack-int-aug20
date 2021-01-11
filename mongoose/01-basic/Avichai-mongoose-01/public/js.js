@@ -10,9 +10,15 @@ function handleFindAllUsers(e) {
 
 function handleFindUser(e) {
     e.preventDefault()
+    const userArray = []
     const userID = e.target.children.userID.value
-
-    fetch(`/users/${userID}`)
+    fetch('/users/find', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userID })
+    })
         .then(res => res.json())
         .then(data => {
             if (data.ok === false) {
@@ -21,7 +27,8 @@ function handleFindUser(e) {
                 console.log(`user with ID: ${userID} not found`)
             }
             else {
-                console.log(data.user)
+                userArray.push(data.user)
+                writeUsersToDom(userArray)
             }
         })
 }
@@ -32,7 +39,7 @@ function handleNewUser(e) {
     const username = e.target.children.username.value
     const password = e.target.children.password.value
 
-    fetch('/users', {
+    fetch('/users/create', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -49,7 +56,6 @@ function handleNewUser(e) {
             Username: ${data.newUser.username}
             Password: ${data.newUser.password}
             User ID: ${data.newUser._id} `)
-                // writeUsersToDom(data.users)
             }
         })
 }
@@ -59,12 +65,13 @@ function handleEditUser(e) {
     const email = e.target.children.email.value
     const username = e.target.children.username.value
 
-    fetch(`/users/${userID}`, {
+
+    fetch('/users/edit', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, username })
+        body: JSON.stringify({ userID , email, username })
     })
         .then(res => res.json())
         .then(data => {
@@ -79,23 +86,31 @@ function handleEditUser(e) {
             }
         })
 }
-function handleDeleteUser(e) {
+function deleteUserById(e){
     e.preventDefault();
     const userID = e.target.children.userID.value
+    handleDeleteUser(userID)
+}
+function deleteUserByButton(e){
+    const userID = e.target.dataset.id
+    handleDeleteUser(userID)
+}
 
-    fetch(`/users/${userID}`, {
+function handleDeleteUser(user) {
+
+    fetch('/users/delete', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({})
+        body: JSON.stringify({user})
     })
         .then(res => res.json())
         .then(data => {
             if (data.ok === false) {
-                console.log(`User with ID: ${userID} not found`)
+                console.log(`User with ID: ${user} not found`)
             } else {
-                console.log(`user with id ${userID} is deleted.`)
+                console.log(`user with id ${user} is deleted.`)
                 console.log(data.users)
                 writeUsersToDom(data.users)
             }
@@ -193,6 +208,7 @@ function writeUsersToDom(data) {
                 Username: ${user.username}
                 Password: ${user.password}
                 User ID: ${user._id}
+                <button data-id='${user._id}' onclick='deleteUserByButton(event)'>Delete this user</button>
                  </p>`
     })
     root.innerHTML = html
