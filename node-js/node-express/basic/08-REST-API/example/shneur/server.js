@@ -20,16 +20,15 @@ app.post('/sendStock', (req, res) => {
         console.log(myStock)
 
 
-        fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US", {
+        fetch("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=TSLA", {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-key": "e846b0c7f4msha2c3878c64cee80p17095djsn12b3512845a6",
-                    "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+                    "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
                 }
             })
             .then(response => {
                 console.log(response);
-                res.send(response)
             })
             .catch(err => {
                 console.error(err);
