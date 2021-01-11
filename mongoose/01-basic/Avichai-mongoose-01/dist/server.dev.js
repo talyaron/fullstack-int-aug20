@@ -264,165 +264,6 @@ app["delete"]('/users/delete', function (req, res) {
     });
   });
 });
-
-function findUsers(infoObj) {
-  var email, username, users;
-  return regeneratorRuntime.async(function findUsers$(_context3) {
-    while (1) {
-      switch (_context3.prev = _context3.next) {
-        case 0:
-          email = false;
-          username = false;
-          users = [];
-
-          if (typeof infoObj.user != "undefined") {
-            username = true;
-          }
-
-          if (typeof infoObj.email != "undefined") {
-            email = true;
-          }
-
-          if (!(infoObj.user === '' && infoObj.email === '')) {
-            _context3.next = 10;
-            break;
-          }
-
-          _context3.next = 8;
-          return regeneratorRuntime.awrap(User.find({}, function (err, user) {
-            if (err) {
-              console.log('err');
-            } else {
-              users = user;
-            }
-          }));
-
-        case 8:
-          _context3.next = 28;
-          break;
-
-        case 10:
-          if (!(email && username)) {
-            _context3.next = 15;
-            break;
-          }
-
-          _context3.next = 13;
-          return regeneratorRuntime.awrap(User.find({
-            $or: [{
-              username: infoObj.user
-            }, {
-              email: infoObj.email
-            }]
-          }, function (err, user) {
-            if (err) {
-              console.log('err');
-            } else {
-              users = user;
-            }
-          }));
-
-        case 13:
-          _context3.next = 28;
-          break;
-
-        case 15:
-          if (!(email === false && username === false)) {
-            _context3.next = 19;
-            break;
-          }
-
-          console.log('nothing entered');
-          _context3.next = 28;
-          break;
-
-        case 19:
-          if (!(email === true && username === false)) {
-            _context3.next = 25;
-            break;
-          }
-
-          console.log('only email found');
-          _context3.next = 23;
-          return regeneratorRuntime.awrap(User.find({
-            email: infoObj.email
-          }, function (err, user) {
-            if (err) {
-              console.log('err');
-            } else {
-              users = user;
-            }
-          }));
-
-        case 23:
-          _context3.next = 28;
-          break;
-
-        case 25:
-          if (!(email === false && username === true)) {
-            _context3.next = 28;
-            break;
-          }
-
-          _context3.next = 28;
-          return regeneratorRuntime.awrap(User.find({
-            username: infoObj.user
-          }, function (err, user) {
-            if (err) {
-              console.log('err');
-            } else {
-              users = user;
-            }
-          }));
-
-        case 28:
-          if (!(users.length === 0)) {
-            _context3.next = 30;
-            break;
-          }
-
-          return _context3.abrupt("return", null);
-
-        case 30:
-          return _context3.abrupt("return", users);
-
-        case 31:
-        case "end":
-          return _context3.stop();
-      }
-    }
-  });
-}
-
-function random() {
-  var sendUser;
-  return regeneratorRuntime.async(function random$(_context4) {
-    while (1) {
-      switch (_context4.prev = _context4.next) {
-        case 0:
-          _context4.next = 2;
-          return regeneratorRuntime.awrap(findUsers({
-            user: '1',
-            email: '123'
-          }));
-
-        case 2:
-          sendUser = _context4.sent;
-
-          if (sendUser === null) {
-            console.log('no user found');
-          } else {
-            console.log(sendUser);
-          }
-
-        case 4:
-        case "end":
-          return _context4.stop();
-      }
-    }
-  });
-}
-
 app["delete"]('/deleteAll', function (req, res) {
   //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
   User.deleteMany({}, function (err, user) {
@@ -445,22 +286,22 @@ app.post('/login', function (req, res) {
       password = _req$body2.password;
   User.find({}, function _callee3(err, users) {
     var userValid, role;
-    return regeneratorRuntime.async(function _callee3$(_context5) {
+    return regeneratorRuntime.async(function _callee3$(_context3) {
       while (1) {
-        switch (_context5.prev = _context5.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
             userValid = false;
             role = 'denied';
 
             if (!err) {
-              _context5.next = 6;
+              _context3.next = 6;
               break;
             }
 
             res.send({
               ok: false
             });
-            _context5.next = 14;
+            _context3.next = 14;
             break;
 
           case 6:
@@ -477,15 +318,15 @@ app.post('/login', function (req, res) {
             });
 
             if (!(userValid === true)) {
-              _context5.next = 12;
+              _context3.next = 12;
               break;
             }
 
-            _context5.next = 10;
+            _context3.next = 10;
             return regeneratorRuntime.awrap(giveRole(username));
 
           case 10:
-            role = _context5.sent;
+            role = _context3.sent;
             console.log('user role: ' + role);
 
           case 12:
@@ -499,7 +340,7 @@ app.post('/login', function (req, res) {
 
           case 14:
           case "end":
-            return _context5.stop();
+            return _context3.stop();
         }
       }
     });
@@ -508,12 +349,12 @@ app.post('/login', function (req, res) {
 
 function giveRole(username) {
   var role;
-  return regeneratorRuntime.async(function giveRole$(_context6) {
+  return regeneratorRuntime.async(function giveRole$(_context4) {
     while (1) {
-      switch (_context6.prev = _context6.next) {
+      switch (_context4.prev = _context4.next) {
         case 0:
           role = 'denied';
-          _context6.next = 3;
+          _context4.next = 3;
           return regeneratorRuntime.awrap(User.findOne({
             $or: [{
               username: username
@@ -529,11 +370,11 @@ function giveRole(username) {
           }));
 
         case 3:
-          return _context6.abrupt("return", role);
+          return _context4.abrupt("return", role);
 
         case 4:
         case "end":
-          return _context6.stop();
+          return _context4.stop();
       }
     }
   });
