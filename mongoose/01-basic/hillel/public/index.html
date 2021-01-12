@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;1,300;1,500;1,600&display=swap"
+        rel="stylesheet">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="root"></div>
-    <script>
-        fetch('/api/geroup')
-        .then(r=>r.json())
-        .then(data=>{
-            console.log(data)
-            data.forEach(element => {
-                console.log(element._id)
-                    document.querySelector('.root').innerHTML+=`<div>${element.price}</div>`
 
-            });
-        })
-    </script>
+<body dir="rtl">
+    <div class="nard">
+        <div class="card">
+            <form onsubmit="mysubmit(event)">
+                <input type="text" name="name" placeholder="שם:" class="VALU1">
+                <input type="text" name="Family" placeholder="משפחה:" class="VALU2">
+                <input type="text" name="tel" placeholder="פלאפון:" class="VALU3">
+                <button type="submit">אישור</button>
+            </form>
+        </div>
+        <div class="boxi"></div>
+    </div>
+    <script src="js.js"></script>
 </body>
+
 </html>
