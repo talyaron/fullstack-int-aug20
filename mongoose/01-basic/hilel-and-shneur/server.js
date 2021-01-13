@@ -52,7 +52,6 @@ app.post('/sendItem', async (req, res) => {
         const newItem = new list({ name, catgory, number, status: 'false' })
         newItem.save()
             .then(doc => {
-                console.log(doc)
             })
             .catch(e => {
                 console.log('ER:' + e)
@@ -63,21 +62,6 @@ app.post('/sendItem', async (req, res) => {
     else {
     }
 })
-
-// app.post('/delete', async (req, res) => {
-//     const dele = req.body.dataid
-//     await users.deleteOne({ _id: dele });
-//     res.send({ ok:'ok' })
-// })
-
-// async function getserverapi(users) {
-//     try {
-//         return await users.find({})
-//     }
-//     catch (e) {
-//         console.log('ER:' + e)
-//     }
-// }
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log('server listen on port ', port))
