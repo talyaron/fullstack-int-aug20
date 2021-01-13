@@ -1,32 +1,46 @@
+body {
+    background-color: rgba(218, 216, 201, 0.74);
+}
+
 .container {
-    background-color: rgba(124, 182, 182, 0.733);
+    background-color: rgba(158, 168, 168, 0.548);
     text-align: center;
     width: 80%;
     max-width: 1200px;
     margin: auto;
     font-family: 'Rubik', sans-serif;
     border-radius: 20px;
-    height: 950px;
-    border: 5px solid rgba(124, 182, 182, 0.931);
+    border: 5px solid rgba(119, 119, 119, 0.931);
+    min-width: 350px;
 }
 
 .formContainer {
-    background-color: rgba(124, 182, 182, 0.931);
+    background-color: rgba(180, 190, 190, 0.692);
     text-align: center;
     width: 100%;
     margin: auto;
     font-family: 'Rubik', sans-serif;
-    padding: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
     box-sizing: border-box;
     border-radius: 15px 15px 0px 0px;
 }
 
-input[type=text] {
+input[type=text],
+#country {
     width: 200px;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid gray;
     font-size: 20px;
+    outline: none;
+    background: (124, 182, 182, 0.931);
+    margin-top: 10px;
+
+}
+
+option {
+    background-color: rgba(143, 182, 182, 0.37);
 }
 
 button {
@@ -34,47 +48,84 @@ button {
     padding: 10px;
     border-radius: 10px;
     border: 2px solid gray;
-    background: grey;
+    background:rgba(128, 128, 128, 0.363);
     color: white;
     font-size: 20px;
+    outline: none;
+    margin-top: 10px;
+}
+
+button:active {
+    border: 2px solid white;
+    background-color: rgb(131, 131, 131);
+}
+
+button:hover {
+    background-color: rgb(216, 214, 212);
 }
 
 .root {
     width: 100%;
-    height: 90.8%;
+    height: 84%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
+    padding: 10px 0px;
+
 }
 
 .item1,
 .item2,
 .item3,
 .item4 {
-    margin: 0px;
-    width: 45%;
-    height: 300px;
-    background-color: wheat;
-    border-radius: 10px;
-    padding: 5px;
-    overflow: auto;
+    margin: 10px;
+    width: 100%;
+    min-width: 300px;
+    background-color: rgb(240, 237, 232);
+    padding: 10px;
+    padding-bottom: 0;
+    min-height: 300px;
+    border-radius: 5px;
 }
 
 .lists {
-    background-color: rgb(181, 209, 200);
+    background-color: rgba(194, 212, 207, 0.801);
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
     padding: 0px 10px;
-    border-radius: 10px;
+border-radius: 5px;
+
 }
 
 .list {
     padding: 10px;
     font-size: 20px;
+    width: 130px;
 }
-img{
+
+img {
     width: 35px;
+}
+
+@media only screen and (max-width:700px) {
+    input[type=text] {
+        width: 80%;
+    }
+
+    #country {
+        width: 85%;
+    }
+}
+
+.listtu {
+    width: 100%;
+    height: 50px;
+    background: rgba(128, 128, 128, 0.363);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(56, 36, 36);
 }
