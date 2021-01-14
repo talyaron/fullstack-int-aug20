@@ -12,7 +12,15 @@ function handleFindAllUsers(e) {
 function handleFindUser(e) {
   e.preventDefault();
   var userID = e.target.children.userID.value;
-  fetch("/users/".concat(userID)).then(function (res) {
+  fetch('/users/find', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      userID: userID
+    })
+  }).then(function (res) {
     return res.json();
   }).then(function (data) {
     if (data.ok === false) {
@@ -20,7 +28,8 @@ function handleFindUser(e) {
     } else if (data.user === null) {
       console.log("user with ID: ".concat(userID, " not found"));
     } else {
-      console.log(data.user);
+      console.log(data.users);
+      writeUsersToDom(data.users);
     }
   });
 }
@@ -30,7 +39,7 @@ function handleNewUser(e) {
   var email = e.target.children.email.value;
   var username = e.target.children.username.value;
   var password = e.target.children.password.value;
-  fetch('/users', {
+  fetch('/users/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -46,7 +55,7 @@ function handleNewUser(e) {
     if (data.ok === false) {
       console.log('User with this email or username already exist');
     } else {
-      console.log("New User created--\n            email: ".concat(data.newUser.email, "\n            Username: ").concat(data.newUser.username, "\n            Password: ").concat(data.newUser.password, "\n            User ID: ").concat(data.newUser._id, " ")); // writeUsersToDom(data.users)
+      console.log("New User created--\n            email: ".concat(data.newUser.email, "\n            Username: ").concat(data.newUser.username, "\n            Password: ").concat(data.newUser.password, "\n            User ID: ").concat(data.newUser._id, " "));
     }
   });
 }
@@ -56,12 +65,13 @@ function handleEditUser(e) {
   var userID = e.target.children.userID.value;
   var email = e.target.children.email.value;
   var username = e.target.children.username.value;
-  fetch("/users/".concat(userID), {
+  fetch('/users/edit', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+      userID: userID,
       email: email,
       username: username
     })
@@ -80,22 +90,36 @@ function handleEditUser(e) {
   });
 }
 
-function handleDeleteUser(e) {
+function deleteUserById(e) {
   e.preventDefault();
   var userID = e.target.children.userID.value;
-  fetch("/users/".concat(userID), {
+  handleDeleteUser(userID);
+}
+
+function deleteUserByButton(e) {
+  var userEmail = e.target.dataset.id;
+  handleDeleteUser(userEmail);
+}
+
+function handleDeleteUser(user) {
+  var ifNoUsers = [];
+  fetch('/users/delete', {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({})
+    body: JSON.stringify({
+      user: user
+    })
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
     if (data.ok === false) {
-      console.log("User with ID: ".concat(userID, " not found"));
+      console.log("User with ID: ".concat(user, " not found"));
+    } else if (data.users.length === 0) {
+      writeUsersToDom(ifNoUsers);
     } else {
-      console.log("user with id ".concat(userID, " is deleted."));
+      console.log("user with id ".concat(user, " is deleted."));
       console.log(data.users);
       writeUsersToDom(data.users);
     }
@@ -197,7 +221,7 @@ function writeUsersToDom(data) {
   var html = '';
   var root = document.getElementById('root');
   data.forEach(function (user) {
-    html += "<p class='userDisplay'>         \n                email: ".concat(user.email, "\n                Username: ").concat(user.username, "\n                Password: ").concat(user.password, "\n                User ID: ").concat(user._id, "\n                 </p>");
+    html += "<p class='userDisplay'>         \n                email: ".concat(user.email, "\n                Username: ").concat(user.username, "\n                Password: ").concat(user.password, "\n                User ID: ").concat(user._id, "\n                <button data-id='").concat(user.email, "' onclick='deleteUserByButton(event)'>Delete this user</button>\n                 </p>");
   });
   root.innerHTML = html;
 }

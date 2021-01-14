@@ -77,26 +77,35 @@ app.get('/users', function (req, res) {
     }
   });
 });
-app.get('/users/:id', function (req, res) {
+app.post('/users/find', function (req, res) {
   //GET-  find user by id localhost:3000/users/USER-ID-HERE
-  console.log('finding user by id.');
-  User.findOne({
-    _id: req.params.id
-  }, function (err, user) {
+  console.log('finding users by email/username.');
+  var userID = req.body.userID;
+  User.find({
+    $or: [{
+      email: {
+        $regex: userID
+      }
+    }, {
+      username: {
+        $regex: userID
+      }
+    }]
+  }, function (err, users) {
     if (err) {
       res.send({
         ok: false
       });
     } else {
-      console.log("deleteing user ".concat(user));
+      console.log("user found: ".concat(users));
       res.send({
         ok: true,
-        user: user
+        users: users
       });
     }
   });
 });
-app.post('/users', function (req, res) {
+app.post('/users/create', function (req, res) {
   //POST- add new user Method 1 - FORM: EMAIL,USERNAME,PASSWORD
   var newUser = new User();
   newUser.email = req.body.email;
@@ -124,30 +133,175 @@ app.post('/users', function (req, res) {
       });
     }
   });
+}); // app.post('/users2', (req, res) => { //POST-  add new user Method 2 POST - FORM: EMAIL,USERNAME,PASSWORD
+//     User.create(req.body).then(user => console.log(user), res.send(user)).catch(e => console.log(e))
+// })
+
+function findUserForEdit(userID) {
+  var findUserInfo = User.findOne({
+    $or: [{
+      email: userID
+    }, {
+      username: userID
+    }]
+  }).exec();
+  return findUserInfo;
+}
+
+;
+app.put('/users/edit', function _callee(req, res) {
+  var _req$body, userID, email, username, findUserInfo;
+
+  return regeneratorRuntime.async(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          //PUT- find user by id and update info. 
+          _req$body = req.body, userID = _req$body.userID, email = _req$body.email, username = _req$body.username;
+          _context.next = 3;
+          return regeneratorRuntime.awrap(findUserForEdit(userID));
+
+        case 3:
+          findUserInfo = _context.sent;
+
+          if (findUserInfo.length === 1) {
+            if (email === '') {
+              email = findUserInfo[0].email;
+            }
+
+            if (username === '') {
+              username = findUserInfo[0].username;
+            }
+          }
+
+          User.findOneAndUpdate({
+            $or: [{
+              email: userID
+            }, {
+              username: userID
+            }]
+          }, {
+            $set: {
+              email: email,
+              username: username
+            }
+          }, function (err, newUser) {
+            if (err) {
+              console.log('error');
+              res.send({
+                ok: false
+              });
+            } else {
+              User.find({}, function (err, users) {
+                if (err) {
+                  res.send({
+                    ok: false
+                  });
+                } else if (newUser === null) {
+                  res.send({
+                    ok: false
+                  });
+                } else {
+                  res.send({
+                    newUser: newUser,
+                    users: users
+                  });
+                }
+              });
+            }
+          });
+
+        case 6:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+});
+app["delete"]('/users/delete', function (req, res) {
+  //DELETE-  find user and delete 
+  var user = req.body.user;
+  User.findOneAndRemove({
+    $or: [{
+      email: user
+    }, {
+      username: user
+    }]
+  }, function _callee2(err, user) {
+    return regeneratorRuntime.async(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            if (err) {
+              res.send({
+                ok: false
+              });
+            } else {
+              User.find({}, function (err, users) {
+                if (err) {
+                  res.send({
+                    ok: false
+                  });
+                } else if (user === null) {
+                  res.send({
+                    ok: false
+                  });
+                } else {
+                  console.log("deleteing user ".concat(user));
+                  res.send({
+                    ok: true,
+                    users: users
+                  });
+                }
+              });
+            }
+
+          case 1:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    });
+  });
+});
+app["delete"]('/deleteAll', function (req, res) {
+  //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
+  User.deleteMany({}, function (err, user) {
+    if (err) {
+      console.log('err');
+      res.send({
+        ok: false
+      });
+    } else {
+      res.send({
+        ok: true
+      });
+    }
+  });
 });
 app.post('/login', function (req, res) {
   // valid logn
-  var _req$body = req.body,
-      username = _req$body.username,
-      password = _req$body.password;
-  User.find({}, function _callee(err, users) {
+  var _req$body2 = req.body,
+      username = _req$body2.username,
+      password = _req$body2.password;
+  User.find({}, function _callee3(err, users) {
     var userValid, role;
-    return regeneratorRuntime.async(function _callee$(_context) {
+    return regeneratorRuntime.async(function _callee3$(_context3) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
             userValid = false;
             role = 'denied';
 
             if (!err) {
-              _context.next = 6;
+              _context3.next = 6;
               break;
             }
 
             res.send({
               ok: false
             });
-            _context.next = 14;
+            _context3.next = 14;
             break;
 
           case 6:
@@ -164,15 +318,15 @@ app.post('/login', function (req, res) {
             });
 
             if (!(userValid === true)) {
-              _context.next = 12;
+              _context3.next = 12;
               break;
             }
 
-            _context.next = 10;
+            _context3.next = 10;
             return regeneratorRuntime.awrap(giveRole(username));
 
           case 10:
-            role = _context.sent;
+            role = _context3.sent;
             console.log('user role: ' + role);
 
           case 12:
@@ -186,7 +340,7 @@ app.post('/login', function (req, res) {
 
           case 14:
           case "end":
-            return _context.stop();
+            return _context3.stop();
         }
       }
     });
@@ -195,12 +349,12 @@ app.post('/login', function (req, res) {
 
 function giveRole(username) {
   var role;
-  return regeneratorRuntime.async(function giveRole$(_context2) {
+  return regeneratorRuntime.async(function giveRole$(_context4) {
     while (1) {
-      switch (_context2.prev = _context2.next) {
+      switch (_context4.prev = _context4.next) {
         case 0:
           role = 'denied';
-          _context2.next = 3;
+          _context4.next = 3;
           return regeneratorRuntime.awrap(User.findOne({
             $or: [{
               username: username
@@ -216,11 +370,11 @@ function giveRole(username) {
           }));
 
         case 3:
-          return _context2.abrupt("return", role);
+          return _context4.abrupt("return", role);
 
         case 4:
         case "end":
-          return _context2.stop();
+          return _context4.stop();
       }
     }
   });
@@ -230,90 +384,6 @@ app.get('/checkCookie', function (req, res) {
   var cookie = req.cookies;
   res.send({
     cookie: cookie
-  });
-});
-app.post('/users2', function (req, res) {
-  //POST-  add new user Method 2 POST - FORM: EMAIL,USERNAME,PASSWORD
-  User.create(req.body).then(function (user) {
-    return console.log(user);
-  }, res.send(user))["catch"](function (e) {
-    return console.log(e);
-  });
-});
-app.put('/users/:id', function (req, res) {
-  //PUT- find user by id and update info. 
-  var _req$body2 = req.body,
-      email = _req$body2.email,
-      username = _req$body2.username;
-  User.findOneAndUpdate({
-    _id: req.params.id
-  }, {
-    $set: {
-      email: email,
-      username: username
-    }
-  }, function (err, newUser) {
-    if (err) {
-      console.log('error');
-      res.send({
-        ok: false
-      });
-    } else {
-      User.find({}, function (err, users) {
-        if (err) {
-          res.send({
-            ok: false
-          });
-        } else {
-          console.log(newUser);
-          res.send({
-            newUser: newUser,
-            users: users
-          });
-        }
-      });
-    }
-  });
-});
-app["delete"]('/users/:id', function (req, res) {
-  //DELETE-  find user and delete 
-  User.findOneAndRemove({
-    _id: req.params.id
-  }, function (err, user) {
-    if (err) {
-      res.send({
-        ok: false
-      });
-    } else {
-      User.find({}, function (err, users) {
-        if (err) {
-          res.send({
-            ok: false
-          });
-        } else {
-          console.log("deleteing user ".concat(user));
-          res.send({
-            ok: true,
-            users: users
-          });
-        }
-      });
-    }
-  });
-});
-app["delete"]('/deleteAll', function (req, res) {
-  //DELETE-  find user and delete localhost:3000/users/USER-ID-HERE
-  User.deleteMany({}, function (err, user) {
-    if (err) {
-      console.log('err');
-      res.send({
-        ok: false
-      });
-    } else {
-      res.send({
-        ok: true
-      });
-    }
   });
 });
 var port = process.env.PORT || 3000;
