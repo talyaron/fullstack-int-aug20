@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main {
+            width: 60%;
+            margin: auto;
+            background-color: rgb(209, 209, 209);
+            height: 50vh;
+            text-align: center;
+        }
+        
+        h1 {
+            padding: 1%;
+            text-shadow: 0px 0px 3px rgb(2, 72, 129);
+        }
+        
+        form {
+            padding: 3%;
+            width: 50%;
+            margin: auto;
+            background-color: rgb(144, 129, 241);
+        }
+        
+        input {
+            /* height: 3vh; */
+            font-size: 1.2rem;
+        }
+        
+        h5 {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>From Euro to Shekel and Dollar</h1>
+        <form onsubmit="hendleNum(event)">
+            <input type="text" name="coin" placeholder="Euro">
+            <input type="submit" value="Set">
+        </form>
+
+        <h2>Shekel:
+            <div id="shekel"></div>
+        </h2>
+
+        <h2>Dollar:
+            <div id="dollar"></div>
+        </h2>
+
+        <script>
+            function hendleNum(e) {
+                e.preventDefault();
+
+                const shekel = document.getElementById('shekel')
+                const dollar = document.getElementById('dollar')
+                const coin = e.target.children.coin.value;
+
+                fetch('/get-euro', {
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            coin
+                        })
+                    }).then(r => r.json())
+                    .then(data => {
+                        console.log(data)
+                        shekel.innerHTML = `<h5>${data.number} NIS</h5>`
+
+                        fetch('http://localhost:4141/send-dollar', {
+                                method: 'post',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    dollar: data.number
+                                })
+                            }).then(r => r.json())
+                            .then(data => {
+                                console.log(data)
+                                dollar.innerHTML = `<h5>${data.number} USD</h5>`;
+
+                            })
+                    })
+            }
+
+            // function getEuro() {
+            //     return new Promise((resolve, reject) => {
+            //         fetch('/get-euro', {
+            //                 method: 'post',
+            //                 headers: {
+            //                     'Content-Type': 'application/json'
+            //                 },
+            //                 body: JSON.stringify({
+            //                     coin
+            //                 })
+            //             }).then(r => r.json())
+            //             .then(data => {
+            //                 resolve(data)
+            //                 shekel.innerHTML = `<h5>${data.number} NIS</h5>`
+            //             }).catch(e => {
+            //                 reject(e)
+            //             })
+            //     })
+            // }
+
+            // function getDollar() {
+            //     return new Promise((resolve, reject) => {
+            //         fetch('http://localhost:4141/send-dollar', {
+            //                 method: 'post',
+            //                 headers: {
+            //                     'Content-Type': 'application/json'
+            //                 },
+            //                 body: JSON.stringify({
+            //                     dollar: data.number
+            //                 })
+            //             }).then(r => r.json())
+            //             .then(data => {
+            //                 resolve.log(data)
+            //                 dollar.innerHTML = `<h5>${data.number} USD</h5>`;
+            //             }).catch(e => {
+            //                 reject(e)
+            //             })
+            //     })
+            // }
+        </script>
+</body>
+
+</html>

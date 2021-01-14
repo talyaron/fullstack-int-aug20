@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="hendelOnSubmit(event)">
+        <input type="text" name="sity1">
+        <input type="text" name="sity2">
+        <button type="submit"></button>
+
+    </form>
+
+    <script>
+        let sity1 = ""
+        let sity2 = ""
+        console.log(sity1, sity2)
+
+
+        hendelOnSubmit = (e) => {
+            e.preventDefault()
+            let sity1 = e.target.children.sity1.value
+            let sity2 = e.target.children.sity2.value
+            console.log(sity1, sity2)
+            sendSity(sity1, sity2)
+    
+        }
+
+        function sendSity(sity1, sity2) {
+            fetch('/getSity', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        sity1, sity2
+                    })
+                }).then(r => r.json())
+                .then(waether => {
+                    console.log(waether)
+                  
+                })
+                .catch(e => {
+                    console.log(e)
+                })
+        }
+    </script>
+
+</body>
+
+</html>

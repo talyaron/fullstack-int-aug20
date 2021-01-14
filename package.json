@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/talyaron/fullstack-int-aug20/issues"
   },
-  "homepage": "https://github.com/talyaron/fullstack-int-aug20#readme"
+  "homepage": "https://github.com/talyaron/fullstack-int-aug20#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "init": "^0.1.2",
+    "mongoose": "^5.11.10"
+  }
 }

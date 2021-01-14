@@ -1,0 +1,20 @@
+body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+body .nbaPic {
+  width: 400px;
+  border-radius: 20px;
+}
+body .teamPic {
+  margin-top: 30px;
+  width: 150px;
+}
+body .container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 3fr;
+}
+body .container .divStyle {
+  font-family: "Roboto", sans-serif;
+}
