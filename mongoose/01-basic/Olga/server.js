@@ -21,9 +21,21 @@ const Car = mongoose.model('Car', {
     price: Number
 });
 
-const bmw = new Car({ name: 'renult', price: 1230 });
-bmw.save().then(() => console.log('meow3'));
+const cars = [
+    {name: 'Hundai', price: 600000},
+    {name: 'Hundai2', price: 600000},
+    {name: 'Hundai3', price: 600000},
+    {name: 'Hundai4', price: 600000},
+    {name: 'Hundai5', price: 600000},
+]
 
+const bmw = new Car({ name: 'renult', price: 1230 });
+//bmw.save().then(() => console.log('meow3'));
+//car.insertMany(cars).then(()=>)
+
+Car.findOneAndUpdate({name: 'Hundai'},{price: 10}, {useFindAndModify:false}.then(doc=>{
+    if(doc === null) bmw.save().then(doc => console.log(e))
+}))
 const House = mongoose.model('house', {
     address: String,
     price:Number
