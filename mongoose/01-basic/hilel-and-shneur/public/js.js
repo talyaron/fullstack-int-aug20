@@ -8,7 +8,8 @@ function mysubmit(event) {
     fetch("/sendItem", {
             method: "post",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'cache-control':'no-cache'
             },
             body: JSON.stringify({
                 name,
@@ -78,37 +79,38 @@ function printData(data) {
     item2.innerHTML = ''
     item3.innerHTML = ''
     item4.innerHTML = ''
+const style = 'rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'
 
     for (i = 0; i < data.length; i++) {
-        if (data[i].status == 'true') {   
+        if (data[i].status == 'true') {
             if (data[i].number == null) {
                 if (data[i].catgory == 'b') {
-                    item1.innerHTML += `<div class="lists" style='background:rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">1</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
+                    item1.innerHTML += `<div class="lists" style='${style}'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">1</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
                 }
                 else if (data[i].catgory == 'c') {
-                    item2.innerHTML += `<div class="lists" style='background:rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">1</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
+                    item2.innerHTML += `<div class="lists" style='${style}'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">1</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
                 }
                 else if (data[i].catgory == 'd') {
-                    item3.innerHTML += `<div class="lists" style='background:rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">1</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
+                    item3.innerHTML += `<div class="lists" style='${style}'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">1</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
                 }
                 else if (data[i].catgory == 'e') {
-                    item4.innerHTML += `<div class="lists" style='background:rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">1</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
+                    item4.innerHTML += `<div class="lists" style='${style}'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">1</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
                 }
                 else {
                 }
             }
             else {
                 if (data[i].catgory == 'b') {
-                    item1.innerHTML += `<div class="lists" style='background:rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">${data[i].number}</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
+                    item1.innerHTML += `<div class="lists" style='${style}'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">${data[i].number}</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
                 }
                 else if (data[i].catgory == 'c') {
-                    item2.innerHTML += `<div class="lists" style='background:rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">${data[i].number}</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
+                    item2.innerHTML += `<div class="lists" style='${style}'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">${data[i].number}</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
                 }
                 else if (data[i].catgory == 'd') {
-                    item3.innerHTML += `<div class="lists" style='background:rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">${data[i].number}</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
+                    item3.innerHTML += `<div class="lists" style='${style}'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">${data[i].number}</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
                 }
                 else if (data[i].catgory == 'e') {
-                    item4.innerHTML += `<div class="lists" style='background:rgba(181, 209, 200, 0.562);opacity:0.4;color:grey'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">${data[i].number}</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
+                    item4.innerHTML += `<div class="lists" style='${style}'><input type="checkbox" checked="true" onclick="statusItem(event)"data-id="${data[i]._id}"><div class="list">${data[i].name}</div><div class="list">${data[i].number}</div><img src="img/icons8-close-window-100.png" onclick="deleteitem(event)" data-id="${data[i]._id}"></div>`
                 }
                 else {
                 }
