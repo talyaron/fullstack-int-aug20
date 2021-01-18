@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\..\\Project_House"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5502,
+		"compile-hero.disable-compile-files-on-did-save-code": false
+	}
+}
