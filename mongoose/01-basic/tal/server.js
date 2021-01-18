@@ -21,11 +21,26 @@ const Car = mongoose.model('Car', { //collection
     price: Number
 });
 
+const cars = [
+    { name: 'Hundai', price: 60000 },
+    { name: 'Hundai2', price: 60000 },
+    { name: 'Hundai3', price: 60000 },
+    { name: 'Hundai4', price: 60000 },
+    { name: 'Hundai5', price: 60000 },
+]
+
 const bmw = new Car({ name: 'Hundai', price: 60000 });
 // bmw.save().then(doc => console.log(doc)).catch(e=>{console.log(e)});
+// Car.insertMany(cars).then(() => { console.log('cars saved correctly') }).catch(e => { console.error(e.message) })
 
-Car.findOne({ name: 'Hundai' , price:60000}).then(doc=>{
-    if(doc === null) bmw.save().then(doc => console.log(doc)).catch(e=>{console.log(e)}); 
+// Car.findOneAndUpdate({ name: 'Hundai' },{price:17},{returnOriginal:false, useFindAndModify:false}).then(doc => {
+//     if (doc === null) bmw.save().then(doc => console.log(doc)).catch(e => { console.log(e) });
+//     console.log(doc)
+// })
+
+Car.updateMany({ name: /Hundai/i },{price:23}).then(docs => {
+    
+    console.log(docs)
 })
 
 const Man = mongoose.model('Man', {
