@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Classes it  -->
+    <script>
+        class Cars {
+            #engineType
+            constructor(color, brand, model, engineType) {
+                try {
+
+
+                    this.color = color;
+                    this.brand = brand;
+                    this.model = model;
+                    this.#engineType = engineType;
+                } catch (e) {
+                    console.error(e)
+                }
+            }
+
+            sayModel() {
+                return `This car is a ${this.brand} model ${this.model}`
+            }
+
+            set changeColor(color) {
+                this.color = color
+            }
+            get carEngineType(){
+                return this.#engineType
+            }
+
+
+
+
+        }
+
+        class ElectricCars extends Cars {
+            constructor(color, brand, model, engineType, watts) {
+                super(color, brand, model, engineType);
+
+                try {
+                    if (typeof watts !== 'number') throw new Error('watts should be a number')
+                    this.watts = watts;
+                } catch (e) {
+                    console.error(e)
+                }
+
+
+            }
+
+            sayWatts() {
+                return `${this.sayModel()} has ${this.watts} watts`;
+            }
+
+            get getWattsToMiles(){
+                return this.watts *1004;
+            }
+
+            
+
+
+        }
+
+        let myCar = new Cars('gray', 'Hundai', 'i20', 'gasoline');
+        let eyalsCar = new Cars('white', 'Hundai', 'i10', 'gasoline');
+        let shniursCar = new ElectricCars('blue', 'Tesla', 'model s', 'electric', 100000)
+        // console.log(myCar);
+        // console.log(eyalsCar);
+        // eyalsCar.changeColor = 'black';
+        // console.log(eyalsCar);
+
+        // console.log(shniursCar)
+
+
+        // console.log(myCar.hasOwnProperty('price'));
+
+        // console.log(myCar.sayModel());
+        // console.log(eyalsCar.sayModel());
+        // console.log(shniursCar.sayModel());
+        // console.log(shniursCar.sayWatts());
+
+        // console.log(shniursCar.getWattsToMiles)
+        console.log(myCar.carEngineType);
+        myCar.engineType = 'hidrogen';
+
+        console.log(myCar.carEngineType);
+
+
+
+
+        let cars = [eyalsCar, myCar]
+    </script>
+</body>
+
+</html>
