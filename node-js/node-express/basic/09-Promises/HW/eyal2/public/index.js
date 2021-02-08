@@ -2,33 +2,31 @@
 let typingTimer;                //timer identifier
 const doneTypingInterval = 2000;  //time in ms (5 seconds)
 const OrigenText = document.getElementById('Origen');
-const LangFrom =  document.getElementById('LangFrom');
+const LangFrom = document.getElementById('LangFrom');
+const LangTo = document.getElementById('LangTo');
 
 
-window.addEventListener('load', async() => {      
- const allLangs = await handleLoadLang() ;
- const t = [...allLangs]
- console.log(t);
- t.forEach(lang => {
-     console.log(lang);
-   
-     const LangFrom1 = document.getElementById("LangFrom");
-     const LangTo =  document.getElementById('LangTo');
 
-     var option = document.createElement("option");
-     var option1 = document.createElement("option");
+window.addEventListener('load', async () => {
+    const allLangs = await handleLoadLang();
+    const t = [...allLangs]
 
-     option.text = lang.name;
-     option.value = lang.code;
-     option1.text = lang.name;
-     option1.value = lang.code;
+    t.forEach(lang => {
+        const option = document.createElement("option");
 
-     LangFrom1.add(option);
-     LangTo.add(option1);
- });
+        option.text = lang.name;
+        option.value = lang.code;
+        LangFrom.add(option);
 
+        option.text = lang.name;
+        option.value = lang.code;
+        LangTo.add(option);
+    });
 
 });
+
+
+
 
 //on keyup, start the countdown
 
@@ -39,48 +37,45 @@ OrigenText.addEventListener('keyup', () => {
     }
 });
 
-//user is "finished typing," do something
-function doneTyping () {
-    const ariaTranslated =  document.getElementById('transform');
-    const LangFrom =  document.getElementById('LangFrom');
-    const LangTo =  document.getElementById('LangTo');
+//user is "finished typing"
+function doneTyping() {
+    const LangFrom = document.getElementById('LangFrom');
+    const LangTo = document.getElementById('LangTo');
     const message = OrigenText.value;
-    console.log(message)
-   
+    try {
+        fetch('/SendTranslation', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(
+                {
+                    formlang: `${LangFrom.value}`,
+                    toLang: `${LangTo.value}`,
+                    message: `${message}`
+                }
+            ),
+        }
+        ).then(r => r.json())
+            .then(data => {
+                document.getElementById('transform').innerHTML = `<p>${data.transaction}</p>`;
+            })
+    } catch (e) {
+        console.log(e);
+    }
+}
 
-        try {
-            fetch('/SendTranslation', {
-                method: 'post',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ formlang: `${LangFrom.value}`, toLang: `${LangTo.value}`, message: `${message}` }),
-            }).then(r => r.json())
-                .then(data => {
-                    console.log(ariaTranslated);
-                    document.getElementById('transform').value = data.Transaction;
-                })
-        } catch (e) {
-            console.log(e);
-        }
-        }
- 
 
 
 
 async function handleLoadLang() {
-    let t ;
-    console.log('handleLoadLang called')
-    try { 
-   await fetch('/getLang')
-    .then(r => r.json())
-    .then(data => {
-       
-        t = data
-      //  document.getElementById('transform').value = data.Transaction;
-    })} catch (e) {
+    try {
+        let t;
+        await fetch('/getLang')
+            .then(r => r.json())
+            .then(data => t = data)
+    } catch (e) {
         console.log(e);
     }
-   console.log('handleLoadLang OK')
     return t;
 
-    }
-    
+}
+
