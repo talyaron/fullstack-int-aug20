@@ -35,7 +35,8 @@ body {
             flex-direction: row;
             /* flex: 1; */
             height: 40vh;
-
+            background-color: rgb(127, 172, 255);
+            padding: 1% 2% 3% 2%;
            
             @include mq(260px) {
                 flex-direction: column;
@@ -57,13 +58,16 @@ body {
                 margin-left: 1%;
                 margin-right: 1%;
 
-
+                #LangTolabel{
+                    align-self:flex-end;  
+                }
                 #LangTo {
                    /*  height: 10%; */
                     line-height: 1.5rem;
                     font-size: large;
                     margin-bottom: 1%;
                     width: 30%;
+                    align-self:flex-end;
                     @include mq(768px) {
                         height: 10%;
                     }
