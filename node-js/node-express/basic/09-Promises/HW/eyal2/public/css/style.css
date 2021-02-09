@@ -21,6 +21,8 @@ body #appContainer #body {
   flex-direction: row;
   /* flex: 1; */
   height: 40vh;
+  background-color: #7facff;
+  padding: 1% 2% 3% 2%;
 }
 @media only screen and (min-width: 260px) {
   body #appContainer #body {
@@ -49,12 +51,16 @@ body #appContainer #body .Column {
   margin-left: 1%;
   margin-right: 1%;
 }
+body #appContainer #body .Column #LangTolabel {
+  align-self: flex-end;
+}
 body #appContainer #body .Column #LangTo {
   /*  height: 10%; */
   line-height: 1.5rem;
   font-size: large;
   margin-bottom: 1%;
   width: 30%;
+  align-self: flex-end;
 }
 @media only screen and (min-width: 768px) {
   body #appContainer #body .Column #LangTo {
