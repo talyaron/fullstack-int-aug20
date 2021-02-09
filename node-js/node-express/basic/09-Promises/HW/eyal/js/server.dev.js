@@ -39,38 +39,37 @@ app.get('/getLang', function _callee(req, res) {
   });
 });
 app.post('/SendTranslation', function _callee2(req, res) {
-  var fromLang, toLang, Transaction;
+  var _req$body, fromLang, toLang, message, transaction;
+
   return regeneratorRuntime.async(function _callee2$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          fromLang = req.body.formlang;
-          toLang = req.body.toLang;
-          _context2.prev = 2;
-          console.log(req.body.message, fromLang, toLang);
-          _context2.next = 6;
-          return regeneratorRuntime.awrap(translate("".concat(fromLang), "".concat(toLang), req.body.message));
+          _context2.prev = 0;
+          _req$body = req.body, fromLang = _req$body.fromLang, toLang = _req$body.toLang, message = _req$body.message;
+          _context2.next = 4;
+          return regeneratorRuntime.awrap(translate(fromLang, toLang, message));
 
-        case 6:
-          Transaction = _context2.sent;
-          console.log(Transaction);
+        case 4:
+          transaction = _context2.sent;
+          console.log(transaction);
           res.send({
-            Transaction: Transaction
+            transaction: transaction
           });
-          _context2.next = 14;
+          _context2.next = 12;
           break;
 
-        case 11:
-          _context2.prev = 11;
-          _context2.t0 = _context2["catch"](2);
+        case 9:
+          _context2.prev = 9;
+          _context2.t0 = _context2["catch"](0);
           console.log(_context2.t0);
 
-        case 14:
+        case 12:
         case "end":
           return _context2.stop();
       }
     }
-  }, null, null, [[2, 11]]);
+  }, null, null, [[0, 9]]);
 });
 
 function GetLangFromAPI() {
@@ -104,7 +103,7 @@ function GetLangFromAPI() {
 
 ;
 
-var translate = function translate(fromLng, toLng, massage) {
+var translate = function translate(fromLang, toLang, massage) {
   var translatedMessage, textToTranslate;
   return regeneratorRuntime.async(function translate$(_context4) {
     while (1) {
@@ -112,7 +111,7 @@ var translate = function translate(fromLng, toLng, massage) {
         case 0:
           textToTranslate = encode(massage);
           _context4.next = 3;
-          return regeneratorRuntime.awrap(fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLng, "%7C").concat(toLng, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
+          return regeneratorRuntime.awrap(fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=".concat(fromLang, "%7C").concat(toLang, "&q=").concat(textToTranslate, "&mt=1&onlyprivate=1&de=a%40b.c"), {
             method: 'GET',
             headers: {
               'x-rapidapi-key': '2dae7de7a8msh9ca6fa97f167561p1494d2jsn956ba9663ea0',
@@ -129,9 +128,10 @@ var translate = function translate(fromLng, toLng, massage) {
           }));
 
         case 3:
+          console.log(translatedMessage);
           return _context4.abrupt("return", translatedMessage);
 
-        case 4:
+        case 5:
         case "end":
           return _context4.stop();
       }
