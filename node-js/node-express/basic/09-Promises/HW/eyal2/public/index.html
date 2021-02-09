@@ -14,22 +14,19 @@
         </header>
         <div id="body"  >
             <div id="fromSide" class="Column" >
-                <label for="LangFrom">Transition From:</label>
-                  <select id="LangFrom" name="LangFrom">
-                  <!-- <option value="iw">עברית</option>
-                  <option value="en">אנגלית</option>     -->        
+                <label for="LangFrom"><h3>Auto Language Detection</h3></label>
+                  <select id="LangFrom" name="LangFrom" style="display: none;">                      
                 </select>
                 <textarea id="Origen" name="Origen" ></textarea>
               </div>
            
             <div id="ToSide" class="Column" >
-                <label for="LangTo">Translation To:</label>
-                  <select id="LangTo" name="LangTo">
-                   <!--  <option value="iw">עברית</option>
-                    <option value="en">אנגלית</option>         -->
+                <label id="LangTolabel" for="LangTo">Translation To:</label>
+                  <select id="LangTo" name="LangTo">                  
                 </select>
                 <!-- <textarea name="transform" onkeyup='handleTextArea(event)'></textarea> -->
-                <textarea id="transform" name="transform" ></textarea>
+               <!-- <textarea id="transform" name="transform" ></textarea> -->
+                <div id="transform"style="border:1px solid black; height:100%; background-color:white"></div>
               </div>
             
         </div>

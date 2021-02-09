@@ -14,6 +14,7 @@ var doneTypingInterval = 2000; //time in ms (5 seconds)
 
 var OrigenText = document.getElementById('Origen');
 var LangFrom = document.getElementById('LangFrom');
+var LangTo = document.getElementById('LangTo');
 window.addEventListener('load', function _callee() {
   var allLangs, t;
   return regeneratorRuntime.async(function _callee$(_context) {
@@ -26,22 +27,17 @@ window.addEventListener('load', function _callee() {
         case 2:
           allLangs = _context.sent;
           t = _toConsumableArray(allLangs);
-          console.log(t);
           t.forEach(function (lang) {
-            console.log(lang);
-            var LangFrom1 = document.getElementById("LangFrom");
-            var LangTo = document.getElementById('LangTo');
             var option = document.createElement("option");
-            var option1 = document.createElement("option");
             option.text = lang.name;
             option.value = lang.code;
-            option1.text = lang.name;
-            option1.value = lang.code;
-            LangFrom1.add(option);
-            LangTo.add(option1);
+            LangFrom.add(option);
+            option.text = lang.name;
+            option.value = lang.code;
+            LangTo.add(option);
           });
 
-        case 6:
+        case 5:
         case "end":
           return _context.stop();
       }
@@ -55,14 +51,12 @@ OrigenText.addEventListener('keyup', function () {
   if (OrigenText.value) {
     typingTimer = setTimeout(doneTyping, doneTypingInterval);
   }
-}); //user is "finished typing," do something
+}); //user is "finished typing"
 
 function doneTyping() {
-  var ariaTranslated = document.getElementById('transform');
   var LangFrom = document.getElementById('LangFrom');
   var LangTo = document.getElementById('LangTo');
   var message = OrigenText.value;
-  console.log(message);
 
   try {
     fetch('/SendTranslation', {
@@ -78,8 +72,7 @@ function doneTyping() {
     }).then(function (r) {
       return r.json();
     }).then(function (data) {
-      console.log(ariaTranslated);
-      document.getElementById('transform').value = data.Transaction;
+      document.getElementById('transform').innerHTML = "<p>".concat(data.transaction, "</p>");
     });
   } catch (e) {
     console.log(e);
@@ -87,37 +80,36 @@ function doneTyping() {
 }
 
 function handleLoadLang() {
-  var t;
+  var _t;
+
   return regeneratorRuntime.async(function handleLoadLang$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          console.log('handleLoadLang called');
-          _context2.prev = 1;
-          _context2.next = 4;
+          _context2.prev = 0;
+          _context2.next = 3;
           return regeneratorRuntime.awrap(fetch('/getLang').then(function (r) {
             return r.json();
           }).then(function (data) {
-            t = data; //  document.getElementById('transform').value = data.Transaction;
+            return _t = data;
           }));
 
-        case 4:
-          _context2.next = 9;
+        case 3:
+          _context2.next = 8;
           break;
 
-        case 6:
-          _context2.prev = 6;
-          _context2.t0 = _context2["catch"](1);
+        case 5:
+          _context2.prev = 5;
+          _context2.t0 = _context2["catch"](0);
           console.log(_context2.t0);
 
-        case 9:
-          console.log('handleLoadLang OK');
+        case 8:
           return _context2.abrupt("return", t);
 
-        case 11:
+        case 9:
         case "end":
           return _context2.stop();
       }
     }
-  }, null, null, [[1, 6]]);
+  }, null, null, [[0, 5]]);
 }
