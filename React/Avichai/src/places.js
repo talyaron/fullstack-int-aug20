@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
 
 
 const Places = () => {
+    const [color, setColor] = useState('red')
+    const [counter, setCount] = useState(1)
+
+     
+    const randomColor = () => {
+        setColor("#" + ((1 << 24) * Math.random() | 0).toString(16))
+        setCount(counter+1)
+    }
 
     const places = [
         { title: 'bla', desc: '2 rooms', price: 5000, img: 'https://static.trip101.com/paragraph_media/pictures/001/591/649/large/d4315261-d756-4cfc-a927-4cb39a3e7e46.jpg?1552634605' },
@@ -12,11 +20,12 @@ const Places = () => {
     ]
 
     const placesMap = places.map(place =>
-    (<div className='placeBox' key={place.title}>
+    (<div style={{ color: color }} onClick={randomColor}  className='placeBox' key={place.title}>
         <img src={place.img} />
         <h1>{place.title}</h1>
         <h3>{place.desc}</h3>
         <h3>Price: {place.price}</h3>
+        {counter}
     </div>)
     )
 
