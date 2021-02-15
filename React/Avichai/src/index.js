@@ -6,7 +6,7 @@ import Img from './img.js'
 
 ReactDOM.render(
     <React.StrictMode>
-        {/* <Places/> */}
+        <Places/>
         <Img/>
     </React.StrictMode>
     ,document.getElementById('root')
