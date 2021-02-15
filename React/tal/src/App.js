@@ -23,13 +23,9 @@ function App() {
           Edit <code>src/App.js</code> and save to reload {multi(x)} .
         </p>
         <p>fgdfgdfg</p>
-        {Box({ name, gender: 'female' })} 
-        {/* Shneur's syntax */}
-        <Box name={name} gender='male' />
-        <Box name={name} gender='male' />
-        <Box name={name} gender='female' />
-        <Box name={name} gender='male' />
-        <Box name={name} gender='male' />
+        
+        <Box info={{name, gender:'male'}} />
+       
       </header>
 
     </div>
