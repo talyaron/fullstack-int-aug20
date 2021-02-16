@@ -18,13 +18,28 @@ function Img() {
             imgCounter = 0
         }
 
-        imgCounter=Math.floor(Math.random()*imgs.length)
+        imgCounter = Math.floor(Math.random() * imgs.length)
 
         setImg(imgs[imgCounter])
         console.log(imgCounter)
     }
 
+    function listImg() {
+        imgs.map((img, index) => { 
+            return (<div onClick={randomImg}><img src={img} key={imdex}/></div>)
+        })
+    } 
+        
+    
+
     return (<div onClick={randomImg}><img src={img} /></div>)
 }
+
+// function List() {
+
+//     {imgs.map((img) => { /* slice(0,2) - give us two first persons */
+//         return (<div onClick={randomImg}><img src={img} /></div>)
+//       })}
+// }
 
 export default Img;

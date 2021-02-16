@@ -15,7 +15,6 @@ let mockData = [
   { name: 'Shanel', gender: 'male' }
 ]
 
-
 function App() {
 
   function multi(a) {
@@ -30,7 +29,7 @@ function App() {
           Bla bla bla {multi(x)}.
         </p>
 
-        {mockData.slice(0,2).map((person, index) => { /* slice(0,2) - give us two first persons */
+        {mockData.slice(0, 2).map((person, index) => { /* slice(0,2) - give us two first persons */
           return (<Box key={index} info={person} />)
         })}
 
@@ -45,7 +44,6 @@ function App() {
         <p>Have a nice day!</p>
         {/* <Box info={{ name, gender: 'female' }} /> */}
         <Img />
-
 
       </header>
     </div>
