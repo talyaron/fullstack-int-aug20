@@ -4,12 +4,14 @@ import './App.css';
 //components
 import Box from './view/components/Box/Box';
 
-let x = 42;
-let name = 'moshe'
+let mockData = [
+  { name: 'itzik', gender: 'male' },
+  { name: 'Yona', gender: 'femal' },
+  { name: 'Hadar', gender: 'Female' },
+  { name: 'itYonizik', gender: 'male' }
+]
 
-function multi(a) {
-  return a * 2
-}
+
 
 function App() {
 
@@ -20,12 +22,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload {multi(x)} .
+
         </p>
         <p>fgdfgdfg</p>
-        
-        <Box info={{name, gender:'male'}} />
-       
+        {mockData.slice(0,2).map((person) => {
+          return (<Box key={person.name} info={person} />)
+        })
+
+        }
+
       </header>
 
     </div>
