@@ -7,6 +7,15 @@ import Img from './view/components/Box/Img'
 let x = 32;
 let name = 'Katya'
 
+
+let mockData = [
+  { name: 'Koko', gender: 'male' },
+  { name: 'Key', gender: 'female' },
+  { name: 'Map', gender: 'female' },
+  { name: 'Shanel', gender: 'male' }
+]
+
+
 function App() {
 
   function multi(a) {
@@ -18,8 +27,13 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload {multi(x)}.
+          Bla bla bla {multi(x)}.
         </p>
+
+        {mockData.slice(0,2).map((person, index) => { /* slice(0,2) - give us two first persons */
+          return (<Box key={index} info={person} />)
+        })}
+
         <a
           className="App-link"
           href="https://reactjs.org "
@@ -29,10 +43,10 @@ function App() {
           Learn React
         </a>
         <p>Have a nice day!</p>
-        <Box info={{ name, gender: 'female' }} />
+        {/* <Box info={{ name, gender: 'female' }} /> */}
         <Img />
 
- 
+
       </header>
     </div>
   );
