@@ -19,22 +19,19 @@ const Places = () => {
         { title: 'bla4', desc: '1 rooms', price: 1234, img: 'https://a0.muscache.com/im/pictures/miso/Hosting-33909319/original/e9aac12d-c2cf-4f12-8560-4e9cec029386.jpeg?im_w=720' }
     ]
 
-    const placesMap = places.map(place =>
-    (<div style={{ color: color }} onClick={randomColor}  className='placeBox' key={place.title}>
-        <img src={place.img} />
-        <h1>{place.title}</h1>
-        <h3>{place.desc}</h3>
-        <h3>Price: {place.price}</h3>
-        {counter}
-    </div>)
-    )
 
-    return (renderBox(placesMap))
+    return (<div className='placesContainer'>{
+        places.map(place =>
+            (<div style={{ color: color }} onClick={randomColor}  className='placeBox' key={place.title}>
+                <img src={place.img} />
+                <h1>{place.title}</h1>
+                <h3>{place.desc}</h3>
+                <h3>Price: {place.price}</h3>
+                {counter}
+            </div>)
+            )
+    }</div>)
 }
 
-
-const renderBox = (placesBox) => {
-    return (<div className='placesContainer'>{placesBox}</div>)
-}
 
 export default Places
