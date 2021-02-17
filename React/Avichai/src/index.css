@@ -18,5 +18,14 @@ body{
     grid-template-columns: 3fr 1fr;
 }
 img{
-    width: 80%;
+    width: 250px;
+    height: 250px;
+}
+.randomImg{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin: 5% auto;
 }
