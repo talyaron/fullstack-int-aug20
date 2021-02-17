@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+//components
+import Box from './view/components/Box/Box';
+ import dataArray from './data/data';
+
+
+let d = dataArray;
+let carType = 'mazda';
+let speed = '120';
+
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       
+        
+       
+       
+       {d.map((img,i) =>{
+         return (<Box carType={carType} speed={speed} d={d} key={i}/>)
+       })
+
+       }
+        
+       
       </header>
+
     </div>
+
   );
 }
+
+
 
 export default App;
