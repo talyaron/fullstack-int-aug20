@@ -13,14 +13,18 @@ function Puzzle() {
   '/images/img1.png'
   ]
 
+
+  
+
   return(
 
    <div className='puzzle'>
    {images.map((img,index) => {
           return (<RamdomImg key={index}/>)
         })
-
+       
     }
+
    </div>
   
   )
