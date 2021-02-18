@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
 
-const Login = () => {
+const Login = props => {
+    const { showBigForm } = props
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [color, setColor] = useState('red')
     const [imgURL, setImg] = useState('http://www.google.com/logos/2008/olympics08_basketball.gif')
-
+    const [showForm, setShowForm] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -23,26 +24,35 @@ const Login = () => {
 
         setImg(e.target.children.img.value)
     }
+    const showOrHideForm = () => {
+        setShowForm(!showForm)
+    }
 
-    return (
-        <div className='form' style={{ background: color }}>
-            <form onSubmit={handleSubmit}>
-                <input type='text' name='username' placeholder="Username" />
-                <input type='text' name='password' placeholder="Password" />
-                <button>Submit</button>
-            </form>
+    if (showBigForm) {
+        return (
+            <div className='form' style={{ background: color }}>
+                <button onClick={showOrHideForm}>Show</button>
 
-            <input type='color' onChange={changeColor} />
+                {showForm ? <form onSubmit={handleSubmit}>
+                    <input type='text' name='username' placeholder="Username" />
+                    <input type='text' name='password' placeholder="Password" />
+                    <button>Submit</button>
+                </form>
+                    : null}
 
-            <form onSubmit={changeImg}>
-                <input type='text' name='img' placeholder='URL' />
-                <button>Submit new IMG</button>
-            </form>
-            <img src={imgURL} />
+                <input type='color' onChange={changeColor} />
 
-        </div>
+                <form onSubmit={changeImg}>
+                    <input type='text' name='img' placeholder='URL' />
+                    <button>Submit new IMG</button>
+                </form>
+                <img src={imgURL} />
 
-    )
+            </div>
+        )
+    }else{
+        return(null)
+    }
 }
 
 export default Login;
