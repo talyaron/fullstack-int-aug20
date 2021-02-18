@@ -4,12 +4,19 @@ import './App.css';
 
 
 function App() {
+  const [theImg, setTheImg] = useState("")
+
+  const img = (e) =>{
+    setTheImg(e.tatget.children.value)
+
+  }
 
   return (
     <div className="App">
-      <header className="App-header">
-       <img onMouseOver={newImg} src={img} className="App-logo" alt="logo" />
-      </header>
+      <form onSubmit={img}>
+        <input type="text" name="url"/>
+      </form>
+      <img src={img} />
     </div>
   );
 }
