@@ -1,8 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 //components
 import Box from './view/components/Box/Box';
+import Login from './view/components/Login/Login';
 
 let mockData = [
   { name: 'itzik', gender: 'male' },
@@ -20,10 +21,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-
-        </p>
+      
+        <Login />
         <p>fgdfgdfg</p>
         {mockData.slice(0,2).map((person) => {
           return (<Box key={person.name} info={person} />)
