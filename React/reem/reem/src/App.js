@@ -3,7 +3,7 @@ import './App.css';
 
 //components
 import Box from './component/box';
-
+import Login from './component/login/login';
 let x = 42;
 let name = 'moshe'
 
@@ -25,7 +25,13 @@ function App() {
         <p>fgdfgdfg</p>
         
         <Box info={{name, gender:'male'}} />
-       
+        <Login />
+        <p>fgdfgdfg</p>
+        {mockData.slice(0,2).map((person) => {
+          return (<Box key={person.name} info={person} />)
+        })
+
+        }
       </header>
 
     </div>
