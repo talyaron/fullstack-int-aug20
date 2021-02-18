@@ -16,9 +16,6 @@ function App() {
     <div className="App">
       <header className="App-header">
        
-        
-       
-       
        {d.map((img,i) =>{
          return (<Box carType={carType} speed={speed} d={d} key={i}/>)
        })
