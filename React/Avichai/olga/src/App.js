@@ -1,28 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
 
-let x= 42;
+//components
+import Box from './view/components/Box/Box';
+
+const imgData2 = [{src:'https://helpx.adobe.com/content/dam/help/en/stock/how-to/adobe-stock-video-footage_297x176.jpg'},
+     {src:'https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search-v2_297x176.jpg'}, 
+     {src:'https://helpx.adobe.com/content/dam/help/en/stock/how-to/open-in-app-purchase_297x176.jpg'}
+  ]
+
+
+
+
 
 function App() {
+
+
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload {x}.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>Hello</p>
+        
+        
+        
+        {imgData2.map((img, index) => {
+          return (<Box info={img} />)
+        })
+      }
       </header>
+
     </div>
+
   );
 }
+
+
 
 export default App;
