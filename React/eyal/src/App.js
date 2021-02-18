@@ -19,8 +19,12 @@ function App() {
         
        
        
-       
-        <Box carType={carType} speed={speed} d={d}/>
+       {d.map((img,i) =>{
+         return (<Box carType={carType} speed={speed} d={d} key={i}/>)
+       })
+
+       }
+        
        
       </header>
 
