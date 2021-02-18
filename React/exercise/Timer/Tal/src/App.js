@@ -3,6 +3,7 @@ import './App.css';
 
 //components
 import Box from './view/components/Box/Box';
+import Login from './view/components/Login/Login';
 
 let mockData = [
   { name: 'itzik', gender: 'male' },
