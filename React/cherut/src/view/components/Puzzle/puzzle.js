@@ -19,10 +19,11 @@ function Puzzle() {
   return(
 
    <div className='puzzle'>
-   {images.map((img,index) => {
-          return (<RamdomImg key={index}/>)
-        })
-       
+
+    {images.map((img,index) => {
+            return (<RamdomImg key={index}/>)
+          })
+        
     }
 
    </div>

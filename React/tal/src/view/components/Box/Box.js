@@ -19,8 +19,7 @@ function Box(props) {
     setCounter(counter + 1);
   }
 
-  function xPlus(e) {
-    console.log(e);
+  function xPlus() {
     x++;
     setColor("#" + ((1 << 24) * Math.random() | 0).toString(16));
     setPassword(Math.random().toString(36).slice(-8))
