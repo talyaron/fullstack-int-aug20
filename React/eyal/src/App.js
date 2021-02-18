@@ -1,35 +1,31 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 //components
 import Box from './view/components/Box/Box';
+ import dataArray from './data/data';
 
-let x = 42;
-let name = 'moshe'
 
-function multi(a) {
-  return a * 2
-}
+let d = dataArray;
+let carType = 'mazda';
+let speed = '120';
 
 function App() {
-
-
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload {multi(x)} .
-        </p>
-        <p>fgdfgdfg</p>
-        {Box({ name, gender: 'female' })} 
-        {/* Shneur's syntax */}
-        <Box name={name} gender='male' />
-        <Box name={name} gender='male' />
-        <Box name={name} gender='female' />
-        <Box name={name} gender='male' />
-        <Box name={name} gender='male' />
+       
+        
+       
+       
+       {d.map((img,i) =>{
+         return (<Box carType={carType} speed={speed} d={d} key={i}/>)
+       })
+
+       }
+        
+       
       </header>
 
     </div>
