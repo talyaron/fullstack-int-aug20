@@ -22,22 +22,22 @@ function RandomImg() {
     setUrl(randomImg.url)
     setIndex(randomImg.index)
 
-    let solved = true;
-    document.querySelector('.puzzle').childNodes.forEach((img,index)=>{
-      if(img.id!=index){
-        solved = false
-      }
-    })
-    if(solved){
-      alert('solvad');
-    } 
+    // let solved = true;
+    // document.querySelector('.puzzle').childNodes.forEach((img,index)=>{
+    //   if(img.id!=index){
+    //     solved = false
+    //   }
+    // })
+    // if(solved){
+    //   alert('solvad');
+    // } 
   }
 
 
 
   return(
     <>
-      <img id={index} src={url} alt='sorry:\, cannot find the img' onClick={switchUrl} />
+      <img className='puzzlePiece'id={index} src={url} alt='sorry:\, cannot find the img' onClick={switchUrl} />
     </>
   )
 }
