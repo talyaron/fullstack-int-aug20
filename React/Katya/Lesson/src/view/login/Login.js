@@ -5,7 +5,8 @@ import './Login.css'
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [backgroundColor, setbackgroundColor] = useState('red')
+    const [backgroundColor, setbackgroundColor] = useState('red') //change color background form
+    const [showForm, setShowForm] = useState(false); //change show form
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -29,10 +30,15 @@ const Login = () => {
     //     setPassword(e.target.value);
     // }
 
+    function hendleShowForm() {
+        setShowForm(!showForm);
+    }
+
 
     return (
         <div>
-            <form onSubmit={handleSubmit} style={{ background: backgroundColor }}>
+            <button onClick={hendleShowForm}>Show</button>
+            {showForm? <form onSubmit={handleSubmit} style={{ background: backgroundColor }}>
                 <input
                     type='text'
                     placeholder='username'
@@ -49,7 +55,7 @@ const Login = () => {
                     type='submit'>
                     Login
                 </button>
-            </form>
+            </form>: null}
             <input
                 type='color'
                 onChange={handleColor}
