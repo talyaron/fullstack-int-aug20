@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import './Body.css'
+import React, { useState } from 'react';
+import './Img.css';
 
-import Img from './Img'
+let imgCounter = 0;
 
 const imgs = [
     { src: 'https://st2.depositphotos.com/1064024/10769/i/600/depositphotos_107694484-stock-photo-little-prince-illustration.jpg', alt: '' },
@@ -12,17 +12,23 @@ const imgs = [
     { src: 'https://i.pinimg.com/originals/ad/08/75/ad087592346aaa5c39eea699100c586f.jpg', alt: '' }
 ]
 
-function Body() {
+function Img() {
+    const [src, setSrc] = useState(imgs[0].src);
 
+    function randomIMG() {
+        if (imgCounter === 5) {
+            imgCounter = 0
+        }
 
-    return (
-        <div className='ImgMap'>
-            {imgs.map((img, index) => {
-                return (<Img />)
-            })}
-        </div>
-    )
+        imgCounter = Math.floor(Math.random() * imgs.length)
+
+        setSrc(imgs[imgCounter].src)
+        console.log(imgs[imgCounter].src)
+    }
+
+    return (<div onClick={randomIMG}><  img src={src} className="imgSrc"/></div>)
+
 
 }
 
-export default Body;
+export default Img;

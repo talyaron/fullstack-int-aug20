@@ -3,6 +3,7 @@ import './App.css';
 
 import Box from './view/components/Box/Box'
 import Img from './view/components/Box/Img'
+import Login from "./view/login/Login";
 
 let x = 32;
 let name = 'Katya'
@@ -36,6 +37,7 @@ function App() {
         <p>
           Bla bla bla {multi(x)}.
         </p>
+        <Login />
 
         {mockData.slice(0, 2).map((person, index) => { /* slice(0,2) - give us two first persons */
           return (<Box key={index} info={person} />)
