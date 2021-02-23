@@ -16,9 +16,9 @@ function Img() {
     const [src, setSrc] = useState(imgs[0].src);
 
     function randomIMG() {
-        if (imgCounter === 5) {
-            imgCounter = 0
-        }
+         if (imgCounter === 5) {
+             imgCounter = 0
+         }
 
         imgCounter = Math.floor(Math.random() * imgs.length)
 
@@ -26,8 +26,7 @@ function Img() {
         console.log(imgs[imgCounter].src)
     }
 
-    return (<div onClick={randomIMG}><  img src={src} className="imgSrc"/></div>)
-
+    return (<div onClick={randomIMG}><img src={src} className="imgSrc"/></div>)
 
 }
 

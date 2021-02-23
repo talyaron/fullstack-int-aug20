@@ -17,7 +17,9 @@ function Body() {
 
     return (
         <div className='ImgMap'>
+            {console.log("y")}
             {imgs.map((img, index) => {
+                console.log("x")
                 return (<Img />)
             })}
         </div>

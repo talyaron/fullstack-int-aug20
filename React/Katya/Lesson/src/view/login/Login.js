@@ -19,7 +19,6 @@ const Login = () => {
 
     function handleColor(e) {
         setbackgroundColor(e.target.value)
-
     }
 
     // function handleUser(e) {
