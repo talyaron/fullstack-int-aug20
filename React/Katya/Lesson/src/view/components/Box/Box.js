@@ -1,15 +1,14 @@
 import React, { useState } from 'react'; //useState = hooks
 
-
 const mockData = [
     { src: 'https://www.w3schools.com/howto/img_snow_wide.jpg' },
     { src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg' },
     { src: 'https://www.w3schools.com/howto/img_lights_wide.jpg' }
 ]
 
-
 function Box(props) {
     //There are two options for sending objects
+
     //----First----//
     const [url, setUrl] = useState(mockData[0].src)
     const [color, setColor] = useState('red');
@@ -21,12 +20,13 @@ function Box(props) {
     let x = 1;
 
     //---RANDOM IMG---//
+
     function randomImg() {
         let r = Math.floor(Math.random() * mockData.length);
         setUrl(mockData[r].src)
     }
 
-    //----RANDOM COLOR----/
+    //----RANDOM COLOR----//
 
     function randomColor() {
         setColor('#' + ((1 << 24) * Math.random() | 0).toString(16))
@@ -42,12 +42,10 @@ function Box(props) {
         setPassword(Math.random().toString(36).slice(-8))
     }
 
-    // console.dir(useState()) //showing all functions
-
     return (
-        <div>
-            <img src={url} alt='bla' onClick={randomImg}/>
-            <h1 style={{ color: color }} onMouseOver={xPlus} onClick={randomColor}>
+        <div style={{padding:'1%', width:'100%'}}>
+            <img src={url} alt='bla' onClick={randomImg} style={{width:'90%'}}/>
+            <h1 style={{ color: color, width:'90%', marginLeft:'5%' }} onMouseOver={xPlus} onClick={randomColor}>
                 Hello {name} you are {gender}: {counter}, and your password is: {password}
             </h1>
         </div>

@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
+
 import './App.css';
 
 import Box from './view/components/Box/Box'
@@ -26,42 +27,50 @@ const imgs = [
 
 function App() {
 
+  const [showLogin, setShowLogin] = useState(false)
+
   function multi(a) {
     return a * 2
+  }
+
+  function handleShowLogin() {
+    setShowLogin(!showLogin)
   }
 
   return (
     <div className="App"> {/* Can use only one parent */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Bla bla bla {multi(x)}.
-        </p>
-        <Login />
 
+        <p>
+          32&times;2={multi(x)}.
+        </p>
+        <button onClick={handleShowLogin} className='buttonShowLogin'>Show Login</button>
+        <Login showLogin={showLogin} />
+
+        <p>With map we can get all pics one by one in array</p>
+
+        <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'10%' }}>
+          {imgs.map((img, index) => {
+            return (<Img />)
+          })}
+        </div>
+
+        <p>With slice we can show only those element that we want</p>
+
+        <div style={{display: 'flex', flexDirection: 'row'}}>
         {mockData.slice(0, 2).map((person, index) => { /* slice(0,2) - give us two first persons */
           return (<Box key={index} info={person} />)
         })}
+</div>
 
-        {imgs.map((img, index)=> {
-          return (<Img />)
-        })}
-
-        <a
-          className="App-link"
-          href="https://reactjs.org "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         <p>Have a nice day!</p>
         {/* <Box info={{ name, gender: 'female' }} /> */}
+        {/* במקום לרשום מספר פעמים את התמונות, ניתן להוציא כל אחת מהן בעזרת פונקצית מיפוי */}
+        {/* <Img />
         <Img />
         <Img />
         <Img />
-        <Img />
-        <Img />
+        <Img /> */}
 
 
       </header>

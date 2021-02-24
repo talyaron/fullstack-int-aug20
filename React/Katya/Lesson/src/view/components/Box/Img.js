@@ -24,7 +24,7 @@ function Img() {
         console.log(imgCounter)
     }  
 
-    return (<div onClick={randomImg}><img src={img} /></div>)
+return (<div onClick={randomImg} style={{width:'20%', paddingLeft:'2%'}}><img src={img} style={{width:'100%'}}/></div>)
 }
 
 export default Img;
