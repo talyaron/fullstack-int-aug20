@@ -10,8 +10,6 @@ const Login = props => {
     const [backgroundColor, setbackgroundColor] = useState('red') //change color background form
     const [showForm, setShowForm] = useState(false); //change show form
 
-
-    ////////=====1.16.00=====///////
     function handleSubmit(e) {
         e.preventDefault();
 
