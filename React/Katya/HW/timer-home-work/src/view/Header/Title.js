@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
-function Title() {
+function Title(props) {
+    const {login} = props;
+
 
     const [title, setTitle] = useState('Choose your title')
 
@@ -15,6 +17,8 @@ function Title() {
 
     return (
         <div>
+
+            <h1>Welcome {login}</h1>
             <form onSubmit={hendleChangeTitle}> {/* form of change title */}
                 <input
                     type="text"
