@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Title from '../Login/Login'
+import Title from '../Header/Title'
 
 const Login = () => {
 
@@ -32,7 +32,7 @@ const Login = () => {
                 />
             </form>
 
-            {/* <Title login={login} /> */}
+            <Title login={login} />
         </div>
     )
 }
