@@ -6,11 +6,11 @@ function ListMap(props) {
     const { notes } = props;
 
     return (
-        <ol>
+        <ul style={{display:'flex', flexDirection:'column', justifyContent: 'space-around'}}>
             {notes.map((note, index) => {
                 return <Notes note={note} key={index}/>
             })}
-        </ol>
+        </ul>
     )
 }
 

@@ -54,18 +54,17 @@ function Notes(props) {
     }
 
     //----Delete the row---//
-    const [done, setDone] = useState('block')
+    const [done, setDone] = useState('grid')
 
     function handleDelete() {
-        if (done==='block') {
+        if (done==='grid') {
             setDone('none')
         }
     }
 
-
     return (
-        <li key={index} style={{ textDecoration: cross, display:done }}>
-            {note.text} {note.date} {note.time}
+        <li key={index} style={{ textDecoration: cross, display:done, gridTemplateColumns:'repeat(5, 1fr)'}}>
+            <span>{note.text}</span> <span>{note.date}</span> <span>{note.time}</span>
             <input
                 type="checkbox"
                 onClick={handleCross}

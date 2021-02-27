@@ -1,0 +1,55 @@
+.main {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+}
+.mainWelcome {
+  color: yellow;
+  font-size: 4rem;
+}
+.mainWelcome__h2 {
+  color: white;
+  text-shadow: 0px 0px 7px black;
+}
+.mainInput {
+  width: 50%;
+  font-size: 1.2rem;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding: 1.2%;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+.mainSubmit {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  font-size: 1.2rem;
+  padding: 1.2%;
+  border: none;
+  outline: none;
+}
+.mainSubmit:hover {
+  background-color: plum;
+  transition: 0.4s;
+}
+.mainThank {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.mainGetIn {
+  position: absolute;
+  top: 55%;
+  right: 37%;
+  width: 25%;
+  font-size: 1.2rem;
+  padding: 1%;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+}
+.mainGetIn:hover {
+  background-color: plum;
+  transition: 0.3s;
+}
