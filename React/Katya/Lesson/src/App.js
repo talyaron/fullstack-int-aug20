@@ -5,8 +5,6 @@ import Box from './view/components/Box/Box'
 import Img from './view/components/Box/Img'
 import Login from "./view/login/Login";
 
-
-/////====2:18:00====//
 let x = 32;
 let name = 'Katya'
 
