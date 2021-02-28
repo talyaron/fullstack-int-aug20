@@ -1,0 +1,8 @@
+.ImgGrid {
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+}

@@ -1,10 +1,14 @@
 .FoodItem {
-  width: 30%;
+  width: 100%;
   display: grid;
   grid-template-columns: 225px 1fr;
+  column-gap: 3%;
 }
 .FoodItem__img {
   width: 100%;
+  border: 5px solid #c59d5f;
+  border-radius: 5px;
+  height: 15vh;
 }
 .FoodItem__info {
   padding: 0 0 0 4%;
@@ -17,4 +21,18 @@
 }
 .FoodItem__info--header > h4 {
   margin: 0;
+  font-size: 1.1rem;
+}
+.FoodItem__info--Underline {
+  border-bottom: 1px solid grey;
+  margin-top: 1%;
+}
+.FoodItem__info--h4Header {
+  color: #102a42;
+}
+.FoodItem__info--h4Price {
+  color: #c59d5f;
+}
+.FoodItem__info--p {
+  color: #617d98;
 }

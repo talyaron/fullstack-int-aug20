@@ -1,12 +1,13 @@
 import React from 'react'
 import './dist/App.css';
 
-import ImgArray from './view/ImgArray/ImgArray'
+import ImgMap from './view/ImgMap/ImgMap'
+
 
 function App() {
   return (
     <div>
-      <ImgArray />
+      <ImgMap />
     </div>
   );
 }
