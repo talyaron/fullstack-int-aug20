@@ -1,0 +1,20 @@
+.FoodItem {
+  width: 30%;
+  display: grid;
+  grid-template-columns: 225px 1fr;
+}
+.FoodItem__img {
+  width: 100%;
+}
+.FoodItem__info {
+  padding: 0 0 0 4%;
+  margin: 0;
+}
+.FoodItem__info--header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.FoodItem__info--header > h4 {
+  margin: 0;
+}
