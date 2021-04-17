@@ -4,6 +4,9 @@ import './dist/FoodItem.css'
 
 function FoodItem(props) {
     const { img, index } = props
+
+    console.log('what', img)
+
     return (
         <div className="FoodItem">
             <img key={index} src={img.src} alt={img.alt}  className="FoodItem__img" />
